@@ -27,7 +27,38 @@ function recordAnswer(qid, correct) {
   e.last = Date.now();
   p[qid] = e;
   store.set('progress', p);
+  updateSrs(qid, correct);
 }
+
+/* Leitner spaced repetition: srs = { [questionId]: { box: 0..4, due: timestamp } }
+   wrong → box 0, due now; correct → box+1 (max 4), due after the box interval. */
+const DAY = 24 * 60 * 60 * 1000;
+const BOX_DAYS = [0, 1, 2, 4, 7];
+function getSrs() { return store.get('srs', {}); }
+function updateSrs(qid, correct) {
+  const srs = getSrs();
+  const e = srs[qid] || { box: 0, due: 0 };
+  if (correct) {
+    e.box = Math.min(4, e.box + 1);
+    e.due = Date.now() + BOX_DAYS[e.box] * DAY;
+  } else {
+    e.box = 0;
+    e.due = Date.now();
+  }
+  srs[qid] = e;
+  store.set('srs', srs);
+}
+// Due questions that still exist in the data, lowest box first, then oldest due.
+function dueQuestions() {
+  const srs = getSrs();
+  const now = Date.now();
+  return DATA.questions
+    .filter(q => srs[q.id] && srs[q.id].due <= now)
+    .sort((a, b) => (srs[a.id].box - srs[b.id].box) || (srs[a.id].due - srs[b.id].due));
+}
+
+function getSettings() { return Object.assign({ examMinutes: 12 }, store.get('settings', {})); }
+function saveSettings(s) { store.set('settings', s); }
 
 // learned cards: { [cardId]: true }
 function getLearned() { return store.get('learned', {}); }
@@ -86,6 +117,9 @@ async function loadData() {
 const routes = {
   '': renderHome,
   'practice': renderPracticeSetup,
+  'exam': renderExamSetup,
+  'review': renderReview,
+  'progress': renderProgress,
   'cards': renderCards,
   'card': renderCardDetail
 };
@@ -102,16 +136,19 @@ function router() {
 /* ---------- Home ---------- */
 function renderHome() {
   setHeader('B2 Prüfungstrainer', false);
-  const p = getProgress();
-  const solved = Object.keys(p).length;
+  const due = dueQuestions().length;
+  const solved = DATA.questions.filter(q => getProgress()[q.id]).length;
   $app.innerHTML = `
     <div class="card hero">
-      <div class="big">${solved} / ${DATA.questions.length}</div>
-      <div class="muted">soru en az bir kez çözüldü</div>
+      <div class="big">${due}</div>
+      <div class="muted">soru tekrar bekliyor</div>
+      <div class="muted small">${solved} / ${DATA.questions.length} soru çözüldü</div>
     </div>
     <a class="btn primary" href="#/practice">Pratik</a>
+    <a class="btn" href="#/exam">Sınav modu</a>
+    <a class="btn" href="#/review">Tekrar${due ? ` (${due})` : ''}</a>
     <a class="btn" href="#/cards">Kartlar</a>
-    <p class="muted small center">Sınav modu · Tekrar · İlerleme yakında</p>
+    <a class="btn" href="#/progress">İlerleme</a>
   `;
 }
 
@@ -195,10 +232,13 @@ function runQuiz(opts) {
   const results = [];
   const requeued = new Set();
   let i = 0;
+  let done = false;
   setHeader(opts.title, true);
+  onLeave(() => { done = true; });
 
   function show() {
-    if (i >= queue.length) { opts.onDone(results); return; }
+    if (done) return;
+    if (i >= queue.length) { done = true; opts.onDone(results); return; }
     const q = queue[i];
     // Shuffle option order on every display; keep track of which one is correct.
     const order = shuffle(q.options.map((text, idx) => ({ text, correct: idx === q.answer })));
@@ -215,6 +255,7 @@ function runQuiz(opts) {
     const buttons = Array.from(document.querySelectorAll('.opt'));
     buttons.forEach(btn => {
       btn.onclick = () => {
+        if (done) return;
         const k = Number(btn.dataset.k);
         const chosen = order[k];
         const correct = chosen.correct;
@@ -252,6 +293,205 @@ function runQuiz(opts) {
   }
   show();
   return { finishNow() { i = queue.length; show(); }, results };
+}
+
+/* ---------- Review (Leitner) ---------- */
+const REVIEW_LIMIT = 20;
+
+function renderReview() {
+  setHeader('Tekrar', true);
+  const due = dueQuestions();
+  if (!due.length) {
+    const srs = getSrs();
+    const next = Object.keys(srs).map(id => srs[id].due).filter(d => d > Date.now()).sort((a, b) => a - b)[0];
+    $app.innerHTML = `
+      <div class="card hero">
+        <div class="big">✓</div>
+        <div>Şu an tekrar bekleyen soru yok.</div>
+        ${next ? `<div class="muted small">Sıradaki tekrar: ${new Date(next).toLocaleString('tr-TR', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</div>` : ''}
+      </div>
+      <a class="btn primary" href="#/practice">Pratik yap</a>
+      <a class="btn" href="#/">Ana sayfa</a>`;
+    return;
+  }
+  const srs = getSrs();
+  const counts = [0, 0, 0, 0, 0];
+  due.forEach(q => { counts[srs[q.id].box] += 1; });
+  $app.innerHTML = `
+    <div class="card hero">
+      <div class="big">${due.length}</div>
+      <div class="muted">soru tekrar bekliyor</div>
+      <div class="muted small">Kutu 0–4: ${counts.join(' · ')}</div>
+    </div>
+    <button class="btn primary" id="startBtn">Tekrara başla (${Math.min(due.length, REVIEW_LIMIT)} soru)</button>
+    <p class="muted small">Yanlış cevaplanan sorular tur sonunda bir kez daha sorulur. Doğru → sonraki kutu (1, 2, 4, 7 gün sonra).</p>
+  `;
+  document.getElementById('startBtn').onclick = () => {
+    runQuiz({
+      title: 'Tekrar',
+      questions: due.slice(0, REVIEW_LIMIT),
+      feedback: true,
+      requeueWrong: true,
+      onDone: results => {
+        const ok = results.filter(r => r.correct).length;
+        const left = dueQuestions().length;
+        $app.innerHTML = `
+          <div class="card hero">
+            <div class="big">${ok} / ${results.length}</div>
+            <div class="muted">doğru</div>
+            <div class="muted small">${left} soru hâlâ tekrar bekliyor</div>
+          </div>
+          ${left ? '<button class="btn primary" id="moreBtn">Devam et</button>' : ''}
+          <a class="btn" href="#/">Ana sayfa</a>`;
+        const more = document.getElementById('moreBtn');
+        if (more) more.onclick = renderReview;
+      }
+    });
+  };
+}
+
+/* ---------- Exam mode ---------- */
+const EXAM_SIZE = 20;
+
+function renderExamSetup() {
+  setHeader('Sınav modu', true);
+  const settings = getSettings();
+  $app.innerHTML = `
+    <div class="card">
+      <p>Tüm bölümlerden karışık <strong>${Math.min(EXAM_SIZE, DATA.questions.length)} soru</strong>. Sınav sırasında açıklama gösterilmez; sonuçlar sonda.</p>
+      <label class="field"><span>Süre (dakika)</span>
+        <input type="number" id="minutes" min="1" max="120" inputmode="numeric" value="${settings.examMinutes}">
+      </label>
+      <button class="btn primary" id="startBtn">Sınavı başlat</button>
+    </div>`;
+  document.getElementById('startBtn').onclick = () => {
+    const m = Math.max(1, Math.min(120, parseInt(document.getElementById('minutes').value, 10) || 12));
+    settings.examMinutes = m;
+    saveSettings(settings);
+    startExam(m);
+  };
+}
+
+function startExam(minutes) {
+  const questions = shuffle(DATA.questions).slice(0, EXAM_SIZE);
+  const endAt = Date.now() + minutes * 60 * 1000;
+  let handle = null;
+  let finished = false;
+
+  const quiz = runQuiz({
+    title: 'Sınav modu',
+    questions,
+    feedback: false,
+    onDone: results => {
+      finished = true;
+      clearInterval(handle);
+      showExamResult(questions, results, Date.now() >= endAt);
+    }
+  });
+
+  function tick() {
+    if (finished) return;
+    const left = Math.max(0, endAt - Date.now());
+    const s = Math.ceil(left / 1000);
+    $topRight.textContent = `⏱ ${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    $topRight.classList.toggle('warn', s <= 60);
+    if (left <= 0) quiz.finishNow();
+  }
+  handle = setInterval(tick, 500);
+  tick();
+  onLeave(() => { finished = true; clearInterval(handle); });
+}
+
+function showExamResult(questions, results, timeUp) {
+  $topRight.textContent = '';
+  const byId = {};
+  results.forEach(r => { byId[r.q.id] = r; });
+  const ok = results.filter(r => r.correct).length;
+  const wrong = questions.filter(q => !byId[q.id] || !byId[q.id].correct);
+  const pct = Math.round((ok / questions.length) * 100);
+  $app.innerHTML = `
+    <div class="card hero">
+      ${timeUp ? '<div class="verdict bad">Süre doldu</div>' : ''}
+      <div class="big">${ok} / ${questions.length}</div>
+      <div class="muted">%${pct} doğru ${pct >= 60 ? '· geçme sınırı (%60) üstünde' : '· hedef: %60+'}</div>
+    </div>
+    ${wrong.length ? '<h3>Yanlışlar</h3>' : '<p class="center">Hepsi doğru! 🎉</p>'}
+    ${wrong.map(q => {
+      const r = byId[q.id];
+      const right = q.options[q.answer];
+      return `<div class="card explain bad">
+        <div class="q-meta">${esc([SECTION_NAME[q.section], q.topic].filter(Boolean).join(' · '))}</div>
+        <div lang="de" style="margin-bottom:6px">${renderPrompt(q.prompt, right)}</div>
+        <div class="small">${r ? `Senin cevabın: <span class="verdict bad">${esc(r.chosen)}</span>` : '<span class="muted">Cevaplanmadı</span>'}
+          · Doğrusu: <strong class="verdict ok">${esc(right)}</strong></div>
+        <div class="small" style="margin-top:6px">${esc(q.explanation_tr || '')}</div>
+      </div>`;
+    }).join('')}
+    <button class="btn primary" id="againBtn">Yeni sınav</button>
+    <a class="btn" href="#/">Ana sayfa</a>`;
+  document.getElementById('againBtn').onclick = renderExamSetup;
+}
+
+/* ---------- Progress ---------- */
+function pctClass(p) { return p < 50 ? 'low' : (p >= 75 ? 'high' : ''); }
+function barRow(label, ok, n) {
+  const p = n ? Math.round((ok / n) * 100) : 0;
+  return `<div class="bar-row">
+    <div class="bar-label"><span>${esc(label)}</span><span class="muted">${n ? '%' + p : '–'} <span class="small">(${ok}/${n})</span></span></div>
+    <div class="bar ${n ? pctClass(p) : ''}"><div style="width:${p}%"></div></div>
+  </div>`;
+}
+
+function renderProgress() {
+  setHeader('İlerleme', true);
+  const prog = getProgress();
+  const srs = getSrs();
+  const bySection = {};
+  const byTopic = {};
+  let solved = 0, attempts = 0, correct = 0;
+  DATA.questions.forEach(q => {
+    const e = prog[q.id];
+    if (!e) return;
+    solved += 1; attempts += e.n; correct += e.ok;
+    const s = bySection[q.section] = bySection[q.section] || { ok: 0, n: 0 };
+    s.ok += e.ok; s.n += e.n;
+    if (q.topic) {
+      const t = byTopic[q.topic] = byTopic[q.topic] || { ok: 0, n: 0 };
+      t.ok += e.ok; t.n += e.n;
+    }
+  });
+  const topics = Object.keys(byTopic).map(t => ({ t, ok: byTopic[t].ok, n: byTopic[t].n, p: byTopic[t].ok / byTopic[t].n }));
+  const weakest = topics.filter(x => x.p < 1).sort((a, b) => (a.p - b.p) || (b.n - a.n)).slice(0, 3);
+  topics.sort((a, b) => a.t.localeCompare(b.t, 'de'));
+  const boxes = [0, 0, 0, 0, 0];
+  Object.keys(srs).forEach(id => { boxes[srs[id].box] = (boxes[srs[id].box] || 0) + 1; });
+  const learned = Object.keys(getLearned()).length;
+
+  $app.innerHTML = `
+    <div class="card hero">
+      <div class="big">${solved} / ${DATA.questions.length}</div>
+      <div class="muted">soru çözüldü · ${attempts} deneme · %${attempts ? Math.round(correct / attempts * 100) : 0} doğru</div>
+      <div class="muted small">Leitner kutuları 0–4: ${boxes.join(' · ')} · Öğrenilen kart: ${learned}/${DATA.cards.length}</div>
+    </div>
+    ${weakest.length ? `<div class="card"><h3>En zayıf 3 konu</h3>
+      ${weakest.map(x => barRow(x.t, x.ok, x.n)).join('')}
+      <button class="btn" id="weakBtn">En zayıf konuyu çalış</button></div>` : ''}
+    <div class="card"><h3>Bölümler</h3>
+      ${DATA.sections.map(s => barRow(s.name, (bySection[s.id] || {}).ok || 0, (bySection[s.id] || {}).n || 0)).join('')}
+    </div>
+    ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
+    <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
+  `;
+  const weakBtn = document.getElementById('weakBtn');
+  if (weakBtn) weakBtn.onclick = () => {
+    store.set('practiceFilter', { section: '', topic: weakest[0].t });
+    location.hash = '#/practice';
+  };
+  document.getElementById('resetBtn').onclick = () => {
+    if (!confirm('Tüm ilerleme, tekrar kutuları ve "öğrendim" işaretleri silinsin mi? Bu işlem geri alınamaz.')) return;
+    ['progress', 'srs', 'learned', 'practiceFilter'].forEach(k => store.remove(k));
+    renderProgress();
+  };
 }
 
 /* ---------- Cards ---------- */

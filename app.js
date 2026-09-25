@@ -647,6 +647,12 @@ function setupSpeech(text) {
 }
 
 /* ---------- Boot ---------- */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => { /* offline support unavailable */ });
+  });
+}
+
 async function boot() {
   try {
     await loadData();

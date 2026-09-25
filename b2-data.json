@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.0",
+  "version": "1.1",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -1797,10 +1797,10 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "die Branche · das Unternehmen · der Standort",
-      "herstellen · anbieten · vertreiben",
-      "die Abteilung: Einkauf, Vertrieb, Buchhaltung, Personal",
-      "zuständig sein für · verantwortlich sein für"
+      "das Gesundheitswesen · die Klinik · die Beratungsstelle",
+      "psychologische Beratung / Diagnostik anbieten",
+      "die Station · die Ambulanz · die Verwaltung",
+      "zuständig sein für · Gespräche führen · Tests auswerten"
      ]
     },
     {
@@ -1816,11 +1816,11 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich möchte über meinen letzten Arbeitgeber sprechen, die Firma [Name] in [Stadt]. Das Unternehmen gehört zur [Branche]-Branche und hat ungefähr [Zahl] Mitarbeiter.\n\nDie Firma stellt [Produkte] her und bietet außerdem [Dienstleistung] an. Die Kunden sind vor allem [Privatkunden / andere Firmen].\n\nEs gibt mehrere Abteilungen, zum Beispiel den Einkauf, den Vertrieb, die Buchhaltung und die Personalabteilung. Ich habe in der Abteilung [Abteilung] gearbeitet. Dort war ich für [Aufgabe] zuständig. Außerdem habe ich [zweite Aufgabe] übernommen.\n\nEine Besonderheit der Firma war das gute Arbeitsklima. Die Kollegen haben sich gegenseitig unterstützt, und es gab regelmäßig Weiterbildungen. Deshalb würde ich diesen Arbeitgeber jederzeit weiterempfehlen.",
+   "sample": "Ich möchte über meinen letzten Arbeitgeber sprechen, [eine private Klinik / eine Beratungsstelle] in [Stadt] in der Türkei. Die Einrichtung gehört zum Gesundheitswesen und hat ungefähr [Zahl] Mitarbeiter.\n\nSie bietet psychologische Beratung, Diagnostik und Therapie an, für Erwachsene, Jugendliche und Familien.\n\nEs gibt mehrere Abteilungen: die Ambulanz, eine Station für Patienten, die Verwaltung und die Anmeldung. Ich habe als Psychologin in der Ambulanz gearbeitet. Dort war ich für Erstgespräche und psychologische Tests zuständig. Außerdem habe ich Beratungsgespräche mit Eltern geführt.\n\nEine Besonderheit war die gute Zusammenarbeit im Team. Ärzte, Psychologen und Sozialarbeiter haben jede Woche gemeinsam über schwierige Fälle gesprochen. Außerdem gab es regelmäßig Supervision. Deshalb habe ich dort sehr viel gelernt.",
    "examiner_questions": [
     "Was hat Ihnen dort nicht so gut gefallen?",
-    "Würden Sie wieder dort arbeiten? Warum?",
-    "Wie sah ein typischer Arbeitstag aus?"
+    "Wie sah ein typischer Arbeitstag aus?",
+    "Möchten Sie in Deutschland in einer Klinik oder in einer Beratungsstelle arbeiten?"
    ]
   },
   {
@@ -1843,8 +1843,8 @@
      "lines": [
       "ein unbefristeter Vertrag · die Jobsicherheit",
       "ein faires Gehalt · Zusatzleistungen",
-      "Aufstiegschancen · Weiterbildung",
-      "ein offenes Arbeitsklima · Wertschätzung"
+      "Weiterbildung · Supervision · Aufstiegschancen",
+      "Wertschätzung · offene Kommunikation"
      ]
     },
     {
@@ -1860,11 +1860,11 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich spreche heute darüber, wie ich mir ein gutes Arbeitsumfeld vorstelle.\n\nZuerst ist für mich Jobsicherheit sehr wichtig. Ein unbefristeter Vertrag gibt mir Ruhe, und ich kann meine Zukunft besser planen.\n\nZweitens sollte das Gehalt fair sein, also passend zur Leistung und zur Qualifikation. Zusatzleistungen wie ein Jobticket sind natürlich auch schön.\n\nDrittens wünsche ich mir Karrierechancen. Ich möchte Weiterbildungen machen und später mehr Verantwortung übernehmen.\n\nAm wichtigsten ist für mich aber die Kommunikation. In meiner letzten Stelle gab es jeden Montag eine kurze Teambesprechung. Dort konnte jeder seine Probleme ansprechen, und der Chef hat zugehört. So entstehen weniger Missverständnisse.\n\nZusammenfassend kann ich sagen: Ein gutes Arbeitsumfeld bedeutet für mich Sicherheit, Fairness und Respekt.",
+   "sample": "Ich spreche heute darüber, wie ich mir ein gutes Arbeitsumfeld vorstelle.\n\nZuerst ist für mich Jobsicherheit wichtig. Ein unbefristeter Vertrag gibt mir Ruhe, und ich kann meine Zukunft und die meiner Familie besser planen.\n\nZweitens sollte das Gehalt fair sein, also passend zur Qualifikation und zur Verantwortung.\n\nDrittens sind Weiterbildung und Karrierechancen wichtig. In meinem Beruf als Psychologin muss man sich ständig weiterbilden, und regelmäßige Supervision ist sehr hilfreich.\n\nAm wichtigsten ist für mich aber die Kommunikation. In meiner letzten Stelle hatten wir jede Woche eine Teambesprechung. Dort konnte jeder schwierige Fälle ansprechen, und wir haben gemeinsam Lösungen gesucht. Die Arbeit mit Patienten ist oft belastend, deshalb braucht man ein Team, das sich gegenseitig unterstützt.\n\nZusammenfassend kann ich sagen: Ein gutes Arbeitsumfeld bedeutet für mich Sicherheit, Fairness und Respekt.",
    "examiner_questions": [
     "Was ist wichtiger: Gehalt oder Arbeitsklima?",
-    "Was machen Sie bei einem Konflikt mit einem Kollegen?",
-    "Möchten Sie lieber in einer großen oder kleinen Firma arbeiten?"
+    "Was machen Sie bei einem Konflikt mit einer Kollegin?",
+    "Wie gehen Sie mit Stress bei der Arbeit um?"
    ]
   },
   {
@@ -1885,10 +1885,10 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "die Schulzeit · das Praktikum · die Ausbildung · das Studium",
-      "beeinflussen · sich entscheiden für",
-      "die Motivation · das Interesse an",
-      "ins Ausland gehen · neu anfangen"
+      "das Psychologiestudium · das Praktikum",
+      "sich interessieren für · sich entscheiden für",
+      "die Anerkennung des Abschlusses",
+      "neu anfangen · sich weiterbilden"
      ]
     },
     {
@@ -1904,9 +1904,9 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich möchte erzählen, wie ich zu meinem Beruf gekommen bin.\n\nSchon in der Schule hatte ich großes Interesse an [Fach]. Nach der Schule habe ich ein Praktikum bei [Firma/Bereich] gemacht. Diese Erfahrung war sehr wichtig, denn ich habe gemerkt, dass mir die Arbeit Spaß macht.\n\nEine wichtige Person war [meine Lehrerin / mein Onkel]. Er/Sie hat mich motiviert und mir viele Tipps gegeben.\n\nDanach habe ich [eine Ausbildung / ein Studium] als [Beruf] gemacht und einige Jahre in [Land] gearbeitet.\n\nDer Umzug nach Deutschland war ein großer Schritt. Ich musste die Sprache lernen und meinen Abschluss anerkennen lassen. Das war nicht leicht, aber ich habe viel gelernt.\n\nHeute möchte ich wieder in meinem Beruf arbeiten, weil ich [Grund]. Rückblickend bin ich froh über meine Entscheidung.",
+   "sample": "Ich möchte erzählen, wie ich Psychologin geworden bin.\n\nSchon in der Schule haben mich Menschen und ihr Verhalten interessiert. Freundinnen haben mir oft ihre Probleme erzählt, und ich habe gern zugehört.\n\nEine wichtige Person war [meine Lehrerin / meine Tante]. Sie hat gesagt: „Du kannst gut zuhören, studier doch Psychologie.“ Das hat mich motiviert.\n\nWährend des Studiums habe ich ein Praktikum in [einer Klinik] gemacht. Dort habe ich gemerkt, wie sehr man Menschen helfen kann. Danach habe ich [Zahl] Jahre als Psychologin gearbeitet.\n\nDer Umzug nach Deutschland war ein großer Schritt. Ich musste die Sprache lernen, und mein Abschluss muss anerkannt werden. Das ist nicht leicht, aber sehr wichtig für mich.\n\nHeute möchte ich wieder in meinem Beruf arbeiten, vielleicht mit Familien aus der Türkei, weil ich beide Sprachen und Kulturen kenne.",
    "examiner_questions": [
-    "Würden Sie heute denselben Beruf wählen?",
+    "Würden Sie heute wieder Psychologie studieren?",
     "Was war die schwierigste Station?",
     "Welche Pläne haben Sie für die nächsten Jahre?"
    ]
@@ -1929,8 +1929,8 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "das Vorbild · bewundern",
-      "zuverlässig · geduldig · ehrgeizig · hilfsbereit",
+      "das Vorbild · bewundern · die Supervisorin",
+      "geduldig · empathisch · zuverlässig · professionell",
       "Einfluss haben auf · prägen",
       "sich ein Beispiel nehmen an"
      ]
@@ -1948,7 +1948,7 @@
     "teil1",
     "thema"
    ],
-   "sample": "Mein berufliches Vorbild ist [Name], meine frühere Kollegin / mein früherer Chef bei [Firma].\n\nWir haben [drei] Jahre zusammengearbeitet. Am Anfang war sie meine Mentorin und hat mich eingearbeitet.\n\nIch bewundere sie aus mehreren Gründen. Erstens ist sie sehr zuverlässig: Was sie verspricht, das macht sie auch. Zweitens ist sie geduldig. Auch in stressigen Situationen bleibt sie ruhig und freundlich. Drittens bildet sie sich ständig weiter.\n\nSie hat einen großen Einfluss auf mich gehabt. Von ihr habe ich gelernt, wie man Aufgaben gut organisiert und wie wichtig Kommunikation im Team ist. Wenn ich heute ein Problem habe, frage ich mich oft: Was würde sie jetzt tun?\n\nIch nehme mir an ihr ein Beispiel und möchte später auch neue Kollegen so gut unterstützen.",
+   "sample": "Mein berufliches Vorbild ist [Name], meine frühere Supervisorin in [Klinik/Stadt].\n\nWir haben [drei] Jahre zusammengearbeitet. Am Anfang war sie meine Mentorin. Sie hat mich eingearbeitet und meine ersten Beratungsgespräche begleitet.\n\nIch bewundere sie aus mehreren Gründen. Erstens ist sie sehr empathisch. Die Patienten haben sich bei ihr sofort wohl gefühlt. Zweitens bleibt sie auch in schwierigen Situationen ruhig und professionell. Drittens bildet sie sich ständig weiter.\n\nSie hatte einen großen Einfluss auf mich. Von ihr habe ich gelernt, wie wichtig es ist, gut zuzuhören und Grenzen zu setzen, damit man selbst gesund bleibt. Wenn ich heute unsicher bin, frage ich mich oft: Was würde sie jetzt tun?\n\nIch nehme mir an ihr ein Beispiel und möchte später auch junge Kolleginnen so gut unterstützen.",
    "examiner_questions": [
     "Haben Sie noch Kontakt zu dieser Person?",
     "Welche Eigenschaft möchten Sie selbst noch verbessern?",
@@ -1975,8 +1975,8 @@
      "lines": [
       "die Stellenanzeige · das Jobportal · die Agentur für Arbeit",
       "die Bewerbungsunterlagen: Anschreiben, Lebenslauf, Zeugnisse",
-      "die Initiativbewerbung · das Netzwerk",
-      "Vitamin B (Beziehungen)"
+      "die Anerkennung · die Hospitation",
+      "Beziehungen · das Netzwerk"
      ]
     },
     {
@@ -1992,9 +1992,9 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich möchte die Arbeitssuche in Deutschland und in der Türkei vergleichen.\n\nIn Deutschland findet man Stellenangebote vor allem in Jobportalen im Internet, bei der Agentur für Arbeit oder direkt auf den Webseiten der Firmen. In der Türkei spielen persönliche Kontakte eine größere Rolle. Viele Stellen findet man über Freunde oder Verwandte.\n\nDer Erstkontakt ist in Deutschland meistens schriftlich. Man schickt eine Bewerbung per E-Mail oder über ein Online-Formular. Manchmal kann man vorher anrufen und Fragen stellen.\n\nDie Bewerbungsunterlagen sind in Deutschland sehr wichtig: ein Anschreiben, ein tabellarischer Lebenslauf und Zeugnisse. Alles muss vollständig und ohne Fehler sein.\n\nZum Schluss: In Deutschland braucht man Geduld, denn der Prozess dauert oft mehrere Wochen.",
+   "sample": "Ich möchte die Arbeitssuche in Deutschland und in der Türkei vergleichen.\n\nIn Deutschland findet man Stellenangebote vor allem in Jobportalen, bei der Agentur für Arbeit oder direkt auf den Webseiten von Kliniken und Beratungsstellen. In der Türkei spielen persönliche Kontakte eine größere Rolle. Viele Stellen findet man über Bekannte.\n\nDer Erstkontakt ist in Deutschland meistens schriftlich, per E-Mail oder über ein Online-Formular. Manchmal kann man vorher anrufen und Fragen stellen.\n\nDie Bewerbungsunterlagen sind sehr wichtig: ein Anschreiben, ein tabellarischer Lebenslauf und Zeugnisse. Für ausländische Abschlüsse braucht man oft zusätzlich eine Anerkennung, zum Beispiel bei Berufen im Gesundheitswesen wie meinem.\n\nZum Schluss: In Deutschland braucht man Geduld, denn der Prozess dauert oft mehrere Wochen.",
    "examiner_questions": [
-    "Was war für Sie bei der Arbeitssuche am schwierigsten?",
+    "Was ist für Sie bei der Arbeitssuche am schwierigsten?",
     "Was halten Sie von Initiativbewerbungen?",
     "Wie wichtig sind Kontakte in Deutschland?"
    ]
@@ -2017,9 +2017,9 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "sich vorbereiten · sich über die Firma informieren",
+      "sich vorbereiten · sich über die Einrichtung informieren",
       "pünktlich · gepflegt · angemessen gekleidet",
-      "Stärken und Schwächen · Gehaltsvorstellung",
+      "Stärken und Schwächen · Fallbeispiel",
       "Fragen stellen · einen guten Eindruck machen"
      ]
     },
@@ -2036,11 +2036,11 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich spreche über Bewerbungsgespräche in Deutschland.\n\nZuerst ist die Vorbereitung sehr wichtig. Man sollte sich über die Firma informieren: Was stellt sie her, wie groß ist sie? Außerdem sollte man seinen Lebenslauf gut kennen.\n\nDie Kleidung hängt vom Berufsfeld ab. In einer Bank trägt man einen Anzug oder ein Kostüm, in einer Werkstatt reicht ordentliche, saubere Kleidung. Pünktlichkeit ist in Deutschland ein Muss.\n\nTypische Fragen sind: Warum möchten Sie bei uns arbeiten? Was sind Ihre Stärken und Schwächen? Wo sehen Sie sich in fünf Jahren? Oft fragt man auch nach der Gehaltsvorstellung.\n\nAm Ende sollte man selbst Fragen stellen, zum Beispiel zur Einarbeitung. Das zeigt Interesse.\n\nIn der Türkei ist das Gespräch oft etwas persönlicher, aber die Grundregeln sind ähnlich.",
+   "sample": "Ich spreche über Bewerbungsgespräche in Deutschland, zum Beispiel für eine Stelle als Psychologin.\n\nZuerst ist die Vorbereitung sehr wichtig. Man sollte sich über die Einrichtung informieren: Mit welchen Patienten arbeitet sie? Welche Therapieangebote gibt es?\n\nDie Kleidung sollte gepflegt und angemessen sein, zum Beispiel eine Bluse und eine Stoffhose. Pünktlichkeit ist in Deutschland ein Muss.\n\nTypische Fragen sind: Warum möchten Sie bei uns arbeiten? Was sind Ihre Stärken und Schwächen? In meinem Bereich fragt man oft auch: Wie würden Sie in einem schwierigen Fall reagieren? Wie gehen Sie mit Stress um?\n\nAm Ende sollte man selbst Fragen stellen, zum Beispiel zur Einarbeitung oder zur Supervision. Das zeigt Interesse.\n\nIn der Türkei ist das Gespräch oft etwas persönlicher, aber die Grundregeln sind ähnlich.",
    "examiner_questions": [
     "Wie antworten Sie auf die Frage nach Ihren Schwächen?",
-    "Hatten Sie schon ein Bewerbungsgespräch in Deutschland?",
-    "Was sollte man auf keinen Fall tun?"
+    "Was sollte man auf keinen Fall tun?",
+    "Welche Frage würden Sie selbst stellen?"
    ]
   },
   {
@@ -2061,10 +2061,10 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "das Merkmal · die Funktion",
-      "der Nutzen · praktisch · zeitsparend",
-      "der Vorteil / der Nachteil",
-      "erfolgreich sein · die Nachfrage"
+      "die Online-Beratung · die Videosprechstunde",
+      "der Nutzen · flexibel · ortsunabhängig",
+      "der Vorteil / der Nachteil · der Datenschutz",
+      "erfolgreich sein · die Nachfrage steigt"
      ]
     },
     {
@@ -2080,11 +2080,11 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich möchte über eine Dienstleistung sprechen, die ich oft benutze: den Online-Lieferservice für Lebensmittel.\n\nDie wichtigsten Merkmale sind: Man bestellt die Lebensmittel per App, wählt ein Zeitfenster, und die Ware wird direkt nach Hause gebracht.\n\nDer Nutzen für Kunden ist groß. Man spart Zeit, besonders mit Kindern oder bei langen Arbeitszeiten. Außerdem muss man keine schweren Taschen tragen.\n\nEs gibt aber auch Nachteile. Die Liefergebühren sind oft hoch, und man kann Obst und Gemüse nicht selbst aussuchen. Manchmal fehlen einzelne Produkte.\n\nDie Dienstleistung ist trotzdem sehr erfolgreich, vor allem seit der Corona-Zeit. Die Nachfrage in Großstädten ist stark gestiegen.\n\nFür mich persönlich überwiegen die Vorteile.",
+   "sample": "Ich möchte über eine Dienstleistung aus meinem Berufsfeld sprechen: psychologische Online-Beratung.\n\nDie wichtigsten Merkmale sind: Die Klienten sprechen per Video mit einer Psychologin. Termine bucht man online, und man braucht nur einen Computer oder ein Handy.\n\nDer Nutzen für Kunden ist groß. Man spart den Weg, und die Wartezeit ist oft kürzer. Das ist besonders gut für Menschen auf dem Land oder für Eltern mit kleinen Kindern. Außerdem kann man eine Beratung in der Muttersprache finden.\n\nEs gibt aber auch Nachteile. Der persönliche Kontakt fehlt, und man sieht die Körpersprache nicht so gut. Auch der Datenschutz muss sicher sein. Für schwere Krisen ist Online-Beratung nicht geeignet.\n\nTrotzdem ist die Dienstleistung sehr erfolgreich, besonders seit der Corona-Zeit. Die Nachfrage ist stark gestiegen.\n\nFür mich ist sie eine gute Ergänzung, aber kein Ersatz für persönliche Gespräche.",
    "examiner_questions": [
-    "Würden Sie das Produkt weiterempfehlen?",
+    "Würden Sie selbst online beraten?",
     "Was könnte man verbessern?",
-    "Kaufen Sie lieber online oder im Geschäft?"
+    "Ist Datenschutz ein großes Problem?"
    ]
   },
   {
@@ -2105,10 +2105,10 @@
     {
      "heading": "Wortschatz",
      "lines": [
-      "sich selbstständig machen · gründen",
-      "die Zielgruppe · die Konkurrenz",
-      "das Startkapital · der Kredit",
-      "die Besonderheit · sich unterscheiden von"
+      "sich selbstständig machen · eine Praxis eröffnen",
+      "die Zielgruppe · der Bedarf",
+      "das Startkapital · die Beratung (z. B. IHK)",
+      "zweisprachig · kultursensibel"
      ]
     },
     {
@@ -2124,11 +2124,11 @@
     "teil1",
     "thema"
    ],
-   "sample": "Wenn ich mich selbstständig machen würde, würde ich ein kleines Café mit Kinderspielecke eröffnen.\n\nIch würde Frühstück, Kuchen und kleine warme Gerichte anbieten, alles frisch und selbst gemacht.\n\nDie Besonderheit ist der Spielbereich für Kinder. Eltern können in Ruhe einen Kaffee trinken, und die Kinder spielen sicher in der Nähe. Einmal pro Woche gäbe es außerdem einen Bastelnachmittag.\n\nMeine Zielgruppe sind vor allem junge Familien und Eltern in Elternzeit.\n\nFür die Gründung bräuchte ich Startkapital, zum Beispiel einen Kredit. Außerdem würde ich mich bei der IHK beraten lassen.\n\nIch glaube, die Idee kann erfolgreich sein, weil es in vielen Stadtteilen zu wenige familienfreundliche Cafés gibt.",
+   "sample": "Wenn ich mich selbstständig machen würde, würde ich eine psychologische Beratungspraxis für Familien eröffnen.\n\nIch würde Beratung für Eltern, Paare und Jugendliche anbieten, zum Beispiel bei Erziehungsfragen, Stress oder Problemen nach einem Umzug in ein neues Land.\n\nDie Besonderheit ist, dass die Beratung auf Deutsch und auf Türkisch stattfindet. Viele Familien können ihre Gefühle in der Muttersprache besser ausdrücken. Außerdem kenne ich beide Kulturen. Einmal im Monat würde ich einen kostenlosen Informationsabend für Eltern anbieten.\n\nMeine Zielgruppe sind vor allem Familien mit Migrationshintergrund.\n\nFür die Gründung bräuchte ich einen Raum und etwas Startkapital. Vorher würde ich mich gut beraten lassen, auch zur Anerkennung meines Abschlusses.\n\nIch glaube, die Idee kann erfolgreich sein, weil es für diese Familien noch zu wenige Angebote gibt.",
    "examiner_questions": [
     "Welche Risiken sehen Sie?",
-    "Wie wollen Sie Kunden gewinnen?",
-    "Würden Sie allein oder mit Partner gründen?"
+    "Wie wollen Sie Klienten gewinnen?",
+    "Würden Sie allein oder mit Partnerin gründen?"
    ]
   },
   {

@@ -1,0 +1,160 @@
+:root {
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --text: #1b1f27;
+  --muted: #677084;
+  --border: #d9dee8;
+  --primary: #1f5fbf;
+  --primary-text: #ffffff;
+  --ok: #1d8a4a;
+  --ok-bg: #e2f5ea;
+  --bad: #c0392b;
+  --bad-bg: #fbe5e2;
+  --blank: #e8eefb;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11141a;
+    --card: #1b2029;
+    --text: #e8ebf1;
+    --muted: #9aa3b5;
+    --border: #2e3542;
+    --primary: #4d8ef0;
+    --primary-text: #0b1220;
+    --ok: #4cc27f;
+    --ok-bg: #173325;
+    --bad: #f07565;
+    --bad-bg: #3a1d1a;
+    --blank: #22314d;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 8px;
+  padding: calc(8px + env(safe-area-inset-top)) 12px 8px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.topbar h1 { flex: 1; margin: 0; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.back {
+  min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;
+  font-size: 32px; text-decoration: none; color: var(--primary);
+}
+.back.hidden { visibility: hidden; }
+.topbar-right { font-variant-numeric: tabular-nums; font-weight: 600; }
+.topbar-right.warn { color: var(--bad); }
+
+main { max-width: 680px; margin: 0 auto; padding: 16px; }
+
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.small { font-size: 14px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: block; width: 100%;
+  min-height: 52px; padding: 12px 16px; margin: 0 0 10px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--card); color: var(--text);
+  font: inherit; font-weight: 600; text-align: center; text-decoration: none;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: scale(0.99); }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-text); }
+.btn.danger { color: var(--bad); border-color: var(--bad); }
+.btn[disabled] { opacity: .45; }
+.btn.inline { display: inline-block; width: auto; min-height: 44px; margin-right: 8px; }
+.row { display: flex; gap: 10px; }
+.row > .btn { flex: 1; }
+
+.hero { text-align: center; padding: 20px 16px; }
+.hero .big { font-size: 40px; font-weight: 800; color: var(--primary); line-height: 1.1; }
+
+label.field { display: block; margin-bottom: 12px; }
+label.field span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+select, input[type=number] {
+  width: 100%; min-height: 48px; padding: 8px 12px;
+  font: inherit; color: var(--text); background: var(--card);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+
+/* Quiz */
+.progress-line { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+.progress-line > div { height: 100%; background: var(--primary); transition: width .2s; }
+.q-meta { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.q-prompt { font-size: 20px; font-weight: 500; margin: 0 0 16px; }
+.blank {
+  display: inline-block; min-width: 3.5em; padding: 0 6px; border-radius: 6px;
+  background: var(--blank); border-bottom: 2px solid var(--primary); text-align: center;
+}
+.opt {
+  display: block; width: 100%; min-height: 56px; margin-bottom: 10px; padding: 12px 16px;
+  text-align: left; font: inherit; font-size: 18px; color: var(--text);
+  background: var(--card); border: 2px solid var(--border); border-radius: var(--radius);
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.opt.chosen { border-color: var(--primary); }
+.opt.correct { border-color: var(--ok); background: var(--ok-bg); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.opt[disabled] { cursor: default; opacity: 1; color: var(--text); }
+.explain { border-left: 4px solid var(--primary); }
+.explain.ok { border-left-color: var(--ok); }
+.explain.bad { border-left-color: var(--bad); }
+.verdict { font-weight: 700; margin-bottom: 4px; }
+.verdict.ok { color: var(--ok); }
+.verdict.bad { color: var(--bad); }
+
+/* Tabs & lists */
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.tab {
+  flex: 1; min-height: 44px; font: inherit; font-weight: 600;
+  border: 1px solid var(--border); border-radius: 999px;
+  background: var(--card); color: var(--text); cursor: pointer;
+}
+.tab.active { background: var(--primary); border-color: var(--primary); color: var(--primary-text); }
+.list { list-style: none; margin: 0; padding: 0; }
+.list a {
+  display: flex; align-items: center; gap: 10px; min-height: 56px;
+  padding: 12px 14px; margin-bottom: 8px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--text); text-decoration: none;
+}
+.list .t { flex: 1; }
+.list .sub { display: block; font-size: 13px; color: var(--muted); }
+.tick { color: var(--ok); font-weight: 800; font-size: 20px; width: 20px; text-align: center; }
+
+/* Card detail */
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.card ul { margin: 0; padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+.sample { white-space: pre-wrap; }
+details summary { min-height: 44px; display: flex; align-items: center; font-weight: 600; cursor: pointer; }
+.timer { font-size: 44px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
+.timer.done { color: var(--bad); }
+
+/* Stats */
+.bar-row { margin-bottom: 12px; }
+.bar-label { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 4px; }
+.bar { height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+.bar > div { height: 100%; background: var(--primary); }
+.bar.low > div { background: var(--bad); }
+.bar.high > div { background: var(--ok); }

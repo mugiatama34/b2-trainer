@@ -16,3 +16,7 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 - Eklendi: `manifest.json` (standalone, `start_url`/`scope` = `./`), iOS meta etiketleri + `apple-touch-icon`, `icons/` (SVG + 180/192/512 PNG), `sw.js` (cache `b2trainer-v1`: JSON network-first, diğer dosyalar cache-first; sadece `b2trainer-` önekli eski cache'leri siler). Uygulama dosyası değişince `sw.js` içindeki `VERSION`'ı artır; yeni soru/kart için sadece `b2-data.json` güncellemek yeterli.
 - Yayın: GitHub Pages → main branch, root. Tüm yollar relative, alt klasörde çalışır.
 - Test: iPhone Safari'de siteyi aç → Paylaş → Ana Ekrana Ekle → ikondan tam ekran açılır; bir kez açtıktan sonra uçak modunda tekrar aç, pratik/kartlar/ilerleme çalışır.
+
+## Adım 4 – Güncelleme bildirimi (v1.1.0)
+- Eklendi: `version.json` (SW önbelleğe almaz), açılışta ve `visibilitychange` ile sürüm kontrolü; farklıysa altta "Yeni sürüm var 🎉 — Yenile" banner'ı → bekleyen SW'ye `SKIP_WAITING`, eski cache'ler silinir, sayfa yenilenir. Kurallar `CLAUDE.md`'de (sürüm üç yerde aynı olmalı).
+- Test: siteyi aç, sonra sunucuda `version.json`'u farklı bir sürüme çek (ör. yeni push) → uygulamayı arka plana alıp tekrar aç → banner çıkar; "Yenile" → yeni sürüm yüklenir, banner kaybolur. iPhone'da ana ekrandan (standalone) açıkken de dene.

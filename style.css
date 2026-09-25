@@ -158,3 +158,14 @@ details summary { min-height: 44px; display: flex; align-items: center; font-wei
 .bar > div { height: 100%; background: var(--primary); }
 .bar.low > div { background: var(--bad); }
 .bar.high > div { background: var(--ok); }
+
+/* Update banner */
+.update-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: var(--card); border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .12); font-weight: 600;
+}
+.update-banner .btn { margin: 0; }
+body.has-banner main { padding-bottom: 96px; }

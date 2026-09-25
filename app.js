@@ -1,5 +1,8 @@
 'use strict';
 
+// Must match version.json and the cache name in sw.js (see CLAUDE.md).
+const APP_VERSION = '1.1.0';
+
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
 const store = {
@@ -647,11 +650,77 @@ function setupSpeech(text) {
 }
 
 /* ---------- Boot ---------- */
+let swReg = null;
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => { /* offline support unavailable */ });
+    navigator.serviceWorker.register('./sw.js', { scope: './', updateViaCache: 'none' })
+      .then(reg => { swReg = reg; })
+      .catch(() => { /* offline support unavailable */ });
   });
 }
+
+/* ---------- Update notice ----------
+   version.json is never cached (SW skips it, fetch uses no-store). If the server
+   version differs from APP_VERSION, show a banner; tapping it activates the new SW. */
+async function checkForUpdate() {
+  let server;
+  try {
+    const res = await fetch('./version.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) return;
+    server = String((await res.json()).version || '');
+  } catch (e) { return; /* offline */ }
+  if (server && server !== APP_VERSION) showUpdateBanner(server);
+}
+
+function showUpdateBanner(version) {
+  if (document.getElementById('updateBanner')) return;
+  const bar = document.createElement('div');
+  bar.id = 'updateBanner';
+  bar.className = 'update-banner';
+  bar.innerHTML = '<span>Yeni sürüm var 🎉</span><button class="btn primary inline" id="updateBtn">Yenile</button>';
+  document.body.appendChild(bar);
+  document.body.classList.add('has-banner');
+  document.getElementById('updateBtn').onclick = e => {
+    e.target.disabled = true;
+    e.target.textContent = 'Yükleniyor…';
+    applyUpdate(version);
+  };
+}
+
+function waitFor(promiseFn, ms) {
+  return Promise.race([promiseFn(), new Promise(r => setTimeout(r, ms))]);
+}
+
+async function applyUpdate(version) {
+  try {
+    const reg = swReg || (navigator.serviceWorker && await navigator.serviceWorker.getRegistration());
+    if (reg) {
+      await waitFor(() => reg.update(), 8000).catch(() => {});
+      // Wait for a freshly found worker to finish installing.
+      const sw = reg.installing;
+      if (sw) {
+        await waitFor(() => new Promise(r => sw.addEventListener('statechange', () => {
+          if (sw.state === 'installed' || sw.state === 'redundant') r();
+        })), 15000);
+      }
+      if (reg.waiting) {
+        const changed = new Promise(r => navigator.serviceWorker.addEventListener('controllerchange', r, { once: true }));
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+        await waitFor(() => changed, 5000);
+      }
+    }
+    if (window.caches) {
+      const keep = 'b2trainer-v' + version;
+      const keys = await caches.keys();
+      await Promise.all(keys.filter(k => k.startsWith('b2trainer-') && k !== keep).map(k => caches.delete(k)));
+    }
+  } catch (e) { /* reload anyway */ }
+  location.reload();
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') checkForUpdate();
+});
 
 async function boot() {
   try {
@@ -664,5 +733,6 @@ async function boot() {
   }
   window.addEventListener('hashchange', router);
   router();
+  checkForUpdate();
 }
 boot();

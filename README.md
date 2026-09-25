@@ -20,3 +20,8 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 ## Adım 4 – Güncelleme bildirimi (v1.1.0)
 - Eklendi: `version.json` (SW önbelleğe almaz), açılışta ve `visibilitychange` ile sürüm kontrolü; farklıysa altta "Yeni sürüm var 🎉 — Yenile" banner'ı → bekleyen SW'ye `SKIP_WAITING`, eski cache'ler silinir, sayfa yenilenir. Kurallar `CLAUDE.md`'de (sürüm üç yerde aynı olmalı).
 - Test: siteyi aç, sonra sunucuda `version.json`'u farklı bir sürüme çek (ör. yeni push) → uygulamayı arka plana alıp tekrar aç → banner çıkar; "Yenile" → yeni sürüm yüklenir, banner kaybolur. iPhone'da ana ekrandan (standalone) açıkken de dene.
+
+## Adım 5a–5c – Sprechen-Coach: Ayarlar + Monolog (v1.2.0)
+- Eklendi: Ayarlar (API anahtarı `b2trainer:apiKey` sadece cihazda, "Sil", model varsayılan `claude-sonnet-5`, "Bağlantıyı test et"), tek API fonksiyonu `callClaude` (Türkçe hata mesajları, yükleniyor göstergesi), `prompts.js`. Teil 1A kartlarında "Coach ile çalış": 2 dk ses kaydı + Dinle (sadece oturumda), dikte metni, "Bewerten" → A–D puanları, düzeltmeler, Verbesserte Version + Vorlesen, ipuçları; Teil 1B Prüferfragen sesli okunur ve cevaba kısa geri bildirim gelir. Özetler `b2trainer:coachHistory`'de, İlerleme ekranında temaya göre son puanlar.
+- Anahtar yoksa ya da API hata verirse yedek mod: "Prompt'u kopyala" → Claude uygulamasına yapıştır.
+- Test: Ayarlar → anahtarı gir → "Bağlantıyı test et" ✅; Kartlar → Sprechen → Teil 1A kartı → Coach ile çalış → metni dikte et → Bewerten; İlerleme'de puanlar görünür. Anahtarı silince aynı ekranda sadece "Prompt'u kopyala" çıkar.

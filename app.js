@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -124,11 +124,20 @@ const routes = {
   'review': renderReview,
   'progress': renderProgress,
   'cards': renderCards,
-  'card': renderCardDetail
+  'card': renderCardDetail,
+  'settings': renderSettings,
+  'coach': renderCoach
 };
+
+function renderCoach(args) {
+  const mode = args[0];
+  if (mode === 'mono') return renderCoachMonolog(args.slice(1));
+  return renderCoachHub();
+}
 
 function router() {
   runCleanups();
+  screenId += 1;
   const parts = location.hash.replace(/^#\/?/, '').split('/');
   const name = parts[0] || '';
   const fn = routes[name] || renderHome;
@@ -151,7 +160,9 @@ function renderHome() {
     <a class="btn" href="#/exam">Sınav modu</a>
     <a class="btn" href="#/review">Tekrar${due ? ` (${due})` : ''}</a>
     <a class="btn" href="#/cards">Kartlar</a>
+    <a class="btn" href="#/coach">🎙 Sprechen-Coach</a>
     <a class="btn" href="#/progress">İlerleme</a>
+    <a class="btn" href="#/settings">Ayarlar</a>
   `;
 }
 
@@ -483,6 +494,7 @@ function renderProgress() {
       ${DATA.sections.map(s => barRow(s.name, (bySection[s.id] || {}).ok || 0, (bySection[s.id] || {}).n || 0)).join('')}
     </div>
     ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
+    ${coachProgressHtml()}
     <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
   `;
   const weakBtn = document.getElementById('weakBtn');
@@ -491,10 +503,24 @@ function renderProgress() {
     location.hash = '#/practice';
   };
   document.getElementById('resetBtn').onclick = () => {
-    if (!confirm('Tüm ilerleme, tekrar kutuları ve "öğrendim" işaretleri silinsin mi? Bu işlem geri alınamaz.')) return;
-    ['progress', 'srs', 'learned', 'practiceFilter'].forEach(k => store.remove(k));
+    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri ve Coach puanları silinsin mi? Bu işlem geri alınamaz.')) return;
+    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory'].forEach(k => store.remove(k));
     renderProgress();
   };
+}
+
+// Latest Sprechen-Coach scores per theme.
+function coachProgressHtml() {
+  const last = lastScoresByTheme();
+  const keys = Object.keys(last);
+  if (!keys.length) return '';
+  const rows = keys.map(k => last[k]).sort((a, b) => b.date - a.date).map(e => `
+    <div class="coach-row">
+      <span class="t">${esc(e.theme)}<span class="sub">${new Date(e.date).toLocaleString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span></span>
+      <span class="mini-scores">${scoresInline(e.scores)}</span>
+    </div>`).join('');
+  return `<div class="card"><h3>Sprechen-Coach · son puanlar</h3>
+    <p class="small muted">Aufgabe · Kohärenz · Wortschatz · Strukturen</p>${rows}</div>`;
 }
 
 /* ---------- Cards ---------- */
@@ -567,8 +593,10 @@ function renderCardDetail(args) {
       <ul>${card.examiner_questions.map(q => `<li lang="de">${esc(q)}</li>`).join('')}</ul>
     </div>` : '';
 
+  const coachHref = coachLinkFor(card);
   $app.innerHTML = `
     <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong></div>
+    ${coachHref ? `<a class="btn primary" href="${coachHref}">🎙 Coach ile çalış</a>` : ''}
     ${timer}
     ${blocks}
     ${sample}
@@ -584,6 +612,11 @@ function renderCardDetail(args) {
 
   if (card.deck === 'sprechen') setupSpeakingTimer(120);
   if (card.sample) setupSpeech(card.sample);
+}
+
+function coachLinkFor(card) {
+  if (/^sprechen-t1-/.test(card.id)) return '#/coach/mono/' + encodeURIComponent(card.id);
+  return '';
 }
 
 function setupSpeakingTimer(seconds) {
@@ -631,22 +664,534 @@ function setupSpeech(text) {
     stopBtn.disabled = true;
     return;
   }
-  const synth = window.speechSynthesis;
-  function pickVoice() {
-    const voices = synth.getVoices();
-    return voices.find(v => v.lang === 'de-DE') || voices.find(v => /^de/i.test(v.lang)) || null;
-  }
-  speakBtn.onclick = () => {
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(text.replace(/\[|\]/g, ''));
-    u.lang = 'de-DE';
-    u.rate = 0.9;
-    const v = pickVoice();
-    if (v) u.voice = v;
-    synth.speak(u);
+  speakBtn.onclick = () => speakDe(text);
+  stopBtn.onclick = stopSpeech;
+  onLeave(stopSpeech);
+}
+
+/* ---------- Sprechen-Coach: settings, API, shared UI ---------- */
+const DEFAULT_MODEL = 'claude-sonnet-5';
+const API_URL = 'https://api.anthropic.com/v1/messages';
+const EVAL_TOKENS = 2000;
+const CHAT_TOKENS = 400;
+
+// The key only lives in this device's localStorage (b2trainer:apiKey); never log it.
+function getApiKey() { return store.get('apiKey', ''); }
+function getModel() { return getSettings().model || DEFAULT_MODEL; }
+
+let promptsModule = null;
+function loadPrompts() {
+  if (!promptsModule) promptsModule = import('./prompts.js').catch(e => { promptsModule = null; throw e; });
+  return promptsModule;
+}
+
+class CoachError extends Error {}
+
+function apiErrorText(status, apiMsg) {
+  if (status === 401) return 'Anahtar hatalı';
+  if (status === 429 || status === 529) return 'Yoğunluk var, 10 sn sonra tekrar dene';
+  if (status === 403) return 'Bu anahtarın yetkisi yok';
+  if (status === 404) return 'Model bulunamadı — Ayarlar\'da model adını kontrol et';
+  if (status >= 500) return 'Sunucu hatası, biraz sonra tekrar dene';
+  return 'İstek hatası (' + status + ')' + (apiMsg ? ': ' + apiMsg : '');
+}
+
+/* Single entry point for the Claude API. Returns the joined text blocks.
+   opts.maxTokens: 2000 for evaluations, 400 for chat. */
+async function callClaude(system, messages, opts) {
+  const key = getApiKey();
+  if (!key) throw new CoachError('API anahtarı yok — Ayarlar\'dan ekle');
+  const body = {
+    model: getModel(),
+    max_tokens: (opts && opts.maxTokens) || CHAT_TOKENS,
+    system,
+    messages,
+    thinking: { type: 'disabled' } // short answers; retried without it for models that reject this
   };
-  stopBtn.onclick = () => synth.cancel();
-  onLeave(() => synth.cancel());
+  async function post() {
+    if (navigator.onLine === false) throw new CoachError('İnternet yok');
+    try {
+      return await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'content-type': 'application/json',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify(body)
+      });
+    } catch (e) {
+      throw new CoachError('İnternet yok');
+    }
+  }
+  let res = await post();
+  let err = res.ok ? null : await res.json().catch(() => null);
+  if (res.status === 400 && err && err.error && /thinking/i.test(err.error.message || '')) {
+    delete body.thinking;
+    res = await post();
+    err = res.ok ? null : await res.json().catch(() => null);
+  }
+  if (!res.ok) throw new CoachError(apiErrorText(res.status, err && err.error && err.error.message));
+  const data = await res.json();
+  if (data.stop_reason === 'refusal') throw new CoachError('Model bu isteği yanıtlamadı, metni değiştirip tekrar dene');
+  const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
+  if (!text) throw new CoachError('Boş cevap geldi, tekrar dene');
+  return text;
+}
+
+// Strip ``` fences and parse; null if it is not valid JSON.
+function parseJsonReply(text) {
+  const clean = String(text).replace(/```(?:json)?/gi, '').trim();
+  try { return JSON.parse(clean); } catch (e) { /* try the outermost object */ }
+  const a = clean.indexOf('{');
+  const b = clean.lastIndexOf('}');
+  if (a >= 0 && b > a) {
+    try { return JSON.parse(clean.slice(a, b + 1)); } catch (e) { /* fall through */ }
+  }
+  return null;
+}
+
+// Lock a button and show a spinner while fn runs.
+async function withBusy(btn, fn) {
+  const label = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Bekle…';
+  try { return await fn(); } finally {
+    btn.disabled = false;
+    btn.innerHTML = label;
+  }
+}
+
+// Screen token: async results are dropped once the user has navigated away.
+let screenId = 0;
+
+/* German TTS */
+function germanVoice() {
+  const voices = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  return voices.find(v => v.lang === 'de-DE') || voices.find(v => /^de/i.test(v.lang)) || null;
+}
+function speakDe(text) {
+  if (!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(String(text).replace(/\[|\]/g, ''));
+  u.lang = 'de-DE';
+  u.rate = 0.9;
+  const v = germanVoice();
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+function stopSpeech() { if ('speechSynthesis' in window) speechSynthesis.cancel(); }
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+    ta.remove();
+    return ok;
+  }
+}
+
+/* Fallback mode (no key or API error): copy system + task + text as one prompt
+   and paste it into the Claude app. getPrompt() is called at click time. */
+function renderFallback(el, getPrompt, reason) {
+  el.innerHTML = `
+    <div class="card fallback">
+      <h3>Yedek mod</h3>
+      ${reason ? `<p class="small">${esc(reason)}</p>` : ''}
+      <button class="btn" data-copy>📋 Prompt'u kopyala</button>
+      <p class="small muted" data-hint>Kopyaladıktan sonra Claude uygulamasını aç, yeni sohbete yapıştır ve gönder.</p>
+    </div>`;
+  const btn = el.querySelector('[data-copy]');
+  btn.onclick = async () => {
+    const ok = await copyText(await getPrompt());
+    el.querySelector('[data-hint]').innerHTML = ok
+      ? '✅ Kopyalandı. Şimdi <strong>Claude uygulamasına yapıştır</strong> ve gönder.'
+      : 'Kopyalanamadı — metni elle seçip kopyala.';
+  };
+}
+
+/* Evaluation result (monologue + dialog share the schema) */
+const CRITERIA = [
+  ['aufgabe', 'Aufgabenerfüllung'],
+  ['kohaerenz', 'Kohärenz'],
+  ['wortschatz', 'Wortschatz'],
+  ['strukturen', 'Strukturen']
+];
+const GRADE_TEXT = { A: 'B2 gut', B: 'B2', C: 'B1', D: 'unter B1' };
+function gradeBadge(g) {
+  const k = String(g || '?').trim().charAt(0).toUpperCase();
+  return `<span class="grade grade-${/[ABCD]/.test(k) ? k : 'x'}" title="${esc(GRADE_TEXT[k] || '')}">${esc(k)}</span>`;
+}
+function correctionsHtml(list) {
+  if (!Array.isArray(list) || !list.length) return '';
+  return `<ul class="corrections">${list.map(c => `
+    <li>
+      <div lang="de"><span class="wrong-text">${esc(c.original)}</span> → <span class="right-text">${esc(c.corrected)}</span></div>
+      ${c.explanation_tr ? `<div class="small muted">${esc(c.explanation_tr)}</div>` : ''}
+    </li>`).join('')}</ul>`;
+}
+function renderEvalResult(el, result, rawText) {
+  if (!result) {
+    el.innerHTML = `<div class="card"><h3>Değerlendirme (ham metin)</h3>
+      <div class="sample small">${esc(rawText)}</div></div>`;
+    return;
+  }
+  const scores = result.scores || {};
+  el.innerHTML = `
+    <div class="card">
+      <h3>Puanlar</h3>
+      <div class="scores">${CRITERIA.map(([k, name]) => `
+        <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
+      <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1</p>
+      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+    </div>
+    ${Array.isArray(result.corrections) && result.corrections.length ? `
+      <div class="card"><h3>Düzeltmeler</h3>${correctionsHtml(result.corrections)}</div>` : ''}
+    ${result.improved_de ? `
+      <div class="card">
+        <h3>Verbesserte Version</h3>
+        <div class="row" style="margin:8px 0">
+          <button class="btn" data-speak>🔊 Vorlesen</button>
+          <button class="btn" data-stop>■ Durdur</button>
+        </div>
+        <div class="sample" lang="de">${esc(result.improved_de)}</div>
+      </div>` : ''}
+    ${Array.isArray(result.tips_tr) && result.tips_tr.length ? `
+      <div class="card"><h3>İpuçları</h3><ul>${result.tips_tr.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+  const sp = el.querySelector('[data-speak]');
+  if (sp) {
+    sp.onclick = () => speakDe(result.improved_de);
+    el.querySelector('[data-stop]').onclick = stopSpeech;
+  }
+}
+
+/* History: b2trainer:coachHistory = [{ date, cardId, theme, mode, scores }] */
+function getCoachHistory() { return store.get('coachHistory', []); }
+function addCoachHistory(entry) {
+  const h = getCoachHistory();
+  h.push(entry);
+  store.set('coachHistory', h.slice(-300));
+}
+function lastScoresByTheme() {
+  const last = {};
+  getCoachHistory().forEach(e => { last[e.cardId || e.theme] = e; });
+  return last;
+}
+function scoresInline(scores) {
+  return CRITERIA.map(([k]) => gradeBadge((scores || {})[k])).join('');
+}
+
+/* ---------- Settings ---------- */
+function renderSettings() {
+  setHeader('Ayarlar', true);
+  const settings = getSettings();
+  const hasKey = !!getApiKey();
+  $app.innerHTML = `
+    <div class="card">
+      <h3>Sprechen-Coach (Claude API)</h3>
+      <label class="field"><span>API anahtarı (sadece bu cihazda saklanır)</span>
+        <input type="password" id="keyInput" autocomplete="off" autocapitalize="off" spellcheck="false"
+          placeholder="${hasKey ? '•••••••• (kayıtlı)' : 'sk-ant-…'}">
+      </label>
+      <div class="row">
+        <button class="btn primary" id="saveKey">Kaydet</button>
+        <button class="btn danger" id="delKey" ${hasKey ? '' : 'disabled'}>Sil</button>
+      </div>
+      <label class="field"><span>Model</span>
+        <input type="text" id="modelInput" autocomplete="off" autocapitalize="off" spellcheck="false"
+          value="${esc(settings.model || DEFAULT_MODEL)}">
+      </label>
+      <button class="btn" id="testBtn">Bağlantıyı test et</button>
+      <p id="testOut" class="small"></p>
+      <p class="small muted">Anahtar yoksa Coach ekranları yedek modda çalışır: prompt kopyalanır, Claude uygulamasına yapıştırılır.</p>
+    </div>`;
+  const keyInput = document.getElementById('keyInput');
+  const modelInput = document.getElementById('modelInput');
+  const out = document.getElementById('testOut');
+  function saveModel() {
+    const s = getSettings();
+    s.model = modelInput.value.trim() || DEFAULT_MODEL;
+    saveSettings(s);
+  }
+  modelInput.onchange = saveModel;
+  document.getElementById('saveKey').onclick = () => {
+    const v = keyInput.value.trim();
+    if (!v) { out.textContent = 'Anahtar alanı boş.'; return; }
+    store.set('apiKey', v);
+    renderSettings();
+    document.getElementById('testOut').textContent = 'Kaydedildi.';
+  };
+  document.getElementById('delKey').onclick = () => {
+    if (!confirm('API anahtarı bu cihazdan silinsin mi?')) return;
+    store.remove('apiKey');
+    renderSettings();
+  };
+  const testBtn = document.getElementById('testBtn');
+  testBtn.onclick = () => withBusy(testBtn, async () => {
+    saveModel();
+    if (keyInput.value.trim()) store.set('apiKey', keyInput.value.trim());
+    out.textContent = '';
+    try {
+      await callClaude('Reply with the single word: OK', [{ role: 'user', content: 'Test' }], { maxTokens: 16 });
+      out.textContent = '✅ Bağlantı çalışıyor (' + getModel() + ')';
+    } catch (e) {
+      out.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+    }
+  });
+}
+
+/* ---------- Coach hub ---------- */
+function t1Cards() { return DATA.cards.filter(c => /^sprechen-t1-/.test(c.id)); }
+
+function renderCoachHub() {
+  setHeader('Sprechen-Coach', true);
+  const last = lastScoresByTheme();
+  const item = (href, title, sub, entry) => `
+    <li><a href="${href}">
+      <span class="t">${esc(title)}<span class="sub">${esc(sub || '')}</span></span>
+      ${entry ? `<span class="mini-scores">${scoresInline(entry.scores)}</span>` : ''}
+    </a></li>`;
+  $app.innerHTML = `
+    ${getApiKey() ? '' : `<div class="card small">API anahtarı yok → <strong>yedek mod</strong> (prompt kopyala → Claude uygulaması).
+      <a href="#/settings">Ayarlar'dan anahtar ekle</a></div>`}
+    <h3>Teil 1 · Monolog</h3>
+    <ul class="list">${t1Cards().map(c => item('#/coach/mono/' + encodeURIComponent(c.id), c.title, c.prompt, last[c.id])).join('')}</ul>
+  `;
+}
+
+/* ---------- Mode 1: Monolog (Teil 1A + 1B) ---------- */
+function renderCoachMonolog(args) {
+  const card = DATA.cards.find(c => c.id === args[0]);
+  if (!card) { location.hash = '#/coach'; return; }
+  const my = screenId;
+  setHeader('Coach · ' + card.title, true);
+  $back.setAttribute('href', '#/coach');
+  onLeave(() => { $back.setAttribute('href', '#/'); stopSpeech(); });
+  const draftKey = 'coachDraft:' + card.id;
+  const hasKey = !!getApiKey();
+
+  $app.innerHTML = `
+    <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong>
+      ${(card.blocks || []).length ? `<details><summary>Stichpunkte</summary>${card.blocks.map(b => `
+        ${b.heading ? `<h3>${esc(b.heading)}</h3>` : ''}
+        <ul>${(b.lines || []).map(l => `<li lang="de">${esc(l)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
+    </div>
+    <div class="card">
+      <h3>1 · Kayıt (2 dk)</h3>
+      <div class="timer" id="recTimer">2:00</div>
+      <div class="row">
+        <button class="btn primary" id="recBtn">🎙 Kaydı başlat</button>
+        <button class="btn" id="playBtn" disabled>▶ Dinle</button>
+      </div>
+      <p class="small muted" id="recInfo">Kayıt sadece bu oturumda, telefonda kalır; hiçbir yere gönderilmez.</p>
+    </div>
+    <div class="card">
+      <h3>2 · Metin</h3>
+      <p class="small muted">Klavyedeki 🎤 simgesine bas ve tekrar konuş.</p>
+      <textarea id="mText" rows="8" lang="de" placeholder="Ich möchte über … sprechen."></textarea>
+      <p class="small muted" id="wordCount"></p>
+      ${hasKey ? '<button class="btn primary" id="evalBtn">Bewerten</button>' : ''}
+      <p class="small error" id="evalErr"></p>
+      <div id="fallback"></div>
+    </div>
+    <div id="result"></div>
+    <div id="followups"></div>`;
+
+  setupRecorder(120);
+
+  const ta = document.getElementById('mText');
+  const wc = document.getElementById('wordCount');
+  function countWords() {
+    const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+    wc.textContent = n + ' kelime' + (n ? ' (2 dk ≈ 200–250 kelime)' : '');
+  }
+  ta.value = store.get(draftKey, '');
+  countWords();
+  ta.oninput = () => { store.set(draftKey, ta.value); countWords(); };
+
+  function taskText() {
+    const points = (card.blocks || []).map(b => (b.heading ? b.heading + ': ' : '') + (b.lines || []).join('; ')).join('\n');
+    return `Task (DTB B2 Sprechen Teil 1A, about 2 minutes):\n${card.prompt}\n\nNotes on the card:\n${points}`;
+  }
+  function userMessage() {
+    return `${taskText()}\n\nCandidate transcript:\n${ta.value.trim()}`;
+  }
+  const fallbackEl = document.getElementById('fallback');
+  const fallbackPrompt = async () => (await loadPrompts()).PROMPT_MONOLOG + '\n\n' + userMessage();
+  if (!hasKey) {
+    renderFallback(fallbackEl, fallbackPrompt, 'API anahtarı yok. Metni yazdıktan sonra prompt\'u kopyalayıp Claude uygulamasına yapıştır.');
+    return;
+  }
+
+  const evalBtn = document.getElementById('evalBtn');
+  const errEl = document.getElementById('evalErr');
+  evalBtn.onclick = () => {
+    if (!ta.value.trim()) { errEl.textContent = 'Önce metni yaz (dikte).'; return; }
+    errEl.textContent = '';
+    fallbackEl.innerHTML = '';
+    withBusy(evalBtn, async () => {
+      let text;
+      try {
+        const P = await loadPrompts();
+        text = await callClaude(P.PROMPT_MONOLOG, [{ role: 'user', content: userMessage() }], { maxTokens: EVAL_TOKENS });
+      } catch (e) {
+        if (my !== screenId) return;
+        errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+        renderFallback(fallbackEl, fallbackPrompt);
+        return;
+      }
+      if (my !== screenId) return;
+      const result = parseJsonReply(text);
+      const resultEl = document.getElementById('result');
+      renderEvalResult(resultEl, result, text);
+      if (result && result.scores) {
+        addCoachHistory({ date: Date.now(), cardId: card.id, theme: card.title, mode: 'mono', scores: result.scores });
+      }
+      renderFollowups(document.getElementById('followups'), result && result.followup_questions_de, card, my);
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+}
+
+/* Teil 1B: examiner follow-up questions, read aloud, answered by dictation */
+function renderFollowups(el, questions, card, my) {
+  if (!Array.isArray(questions) || !questions.length) { el.innerHTML = ''; return; }
+  el.innerHTML = `<h3>Prüferfragen (Teil 1B)</h3>` + questions.map((q, i) => `
+    <div class="card" data-i="${i}">
+      <p lang="de"><strong>${esc(q)}</strong></p>
+      <button class="btn inline" data-say>🔊 Frage vorlesen</button>
+      <textarea rows="4" lang="de" placeholder="Klavyedeki 🎤 ile cevapla…"></textarea>
+      <button class="btn primary" data-send>Antwort prüfen</button>
+      <p class="small error" data-err></p>
+      <div data-out></div>
+    </div>`).join('');
+  el.querySelectorAll('[data-i]').forEach(box => {
+    const q = questions[Number(box.dataset.i)];
+    const ta = box.querySelector('textarea');
+    const out = box.querySelector('[data-out]');
+    const err = box.querySelector('[data-err]');
+    box.querySelector('[data-say]').onclick = () => speakDe(q);
+    const send = box.querySelector('[data-send]');
+    send.onclick = () => {
+      if (!ta.value.trim()) { err.textContent = 'Önce cevabını yaz (dikte).'; return; }
+      err.textContent = '';
+      withBusy(send, async () => {
+        const msg = `Talk topic: ${card.prompt}\n\nExaminer question: ${q}\n\nCandidate answer (dictation):\n${ta.value.trim()}`;
+        let text;
+        try {
+          const P = await loadPrompts();
+          text = await callClaude(P.PROMPT_FOLLOWUP, [{ role: 'user', content: msg }], { maxTokens: EVAL_TOKENS });
+        } catch (e) {
+          if (my !== screenId) return;
+          err.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+          renderFallback(out, async () => (await loadPrompts()).PROMPT_FOLLOWUP + '\n\n' + msg);
+          return;
+        }
+        if (my !== screenId) return;
+        const r = parseJsonReply(text);
+        if (!r) { out.innerHTML = `<div class="sample small">${esc(text)}</div>`; return; }
+        out.innerHTML = `
+          ${r.ok_tr ? `<p class="verdict ok">✓ ${esc(r.ok_tr)}</p>` : ''}
+          ${correctionsHtml(r.corrections)}
+          ${r.better_answer_de ? `<h3>Musterantwort</h3>
+            <button class="btn inline" data-say2>🔊 Vorlesen</button>
+            <div class="sample" lang="de">${esc(r.better_answer_de)}</div>` : ''}`;
+        const s2 = out.querySelector('[data-say2]');
+        if (s2) s2.onclick = () => speakDe(r.better_answer_de);
+      });
+    };
+  });
+  // Read the first question aloud, like an examiner would.
+  speakDe(questions[0]);
+}
+
+/* 2-minute voice recording (MediaRecorder). The recording stays in memory only. */
+function setupRecorder(seconds) {
+  const recBtn = document.getElementById('recBtn');
+  const playBtn = document.getElementById('playBtn');
+  const timerEl = document.getElementById('recTimer');
+  const info = document.getElementById('recInfo');
+  let recorder = null, stream = null, chunks = [], handle = null, url = null, audio = null;
+
+  function draw(left) {
+    const s = Math.max(0, Math.ceil(left));
+    timerEl.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    timerEl.classList.toggle('done', s === 0);
+  }
+  function release() {
+    if (handle) clearInterval(handle);
+    handle = null;
+    if (stream) stream.getTracks().forEach(t => t.stop());
+    stream = null;
+  }
+  function stop() {
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+    release();
+  }
+  if (!window.MediaRecorder || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    recBtn.disabled = true;
+    info.textContent = 'Bu cihaz/tarayıcı ses kaydını desteklemiyor. Zamanlayıcı yerine doğrudan dikte kullan.';
+    return;
+  }
+  recBtn.onclick = async () => {
+    if (recorder && recorder.state === 'recording') { stop(); return; }
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (e) {
+      info.textContent = 'Mikrofon izni verilmedi.';
+      return;
+    }
+    const type = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].find(t => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t));
+    recorder = new MediaRecorder(stream, type ? { mimeType: type } : undefined);
+    chunks = [];
+    recorder.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = () => {
+      if (url) URL.revokeObjectURL(url);
+      url = URL.createObjectURL(new Blob(chunks, { type: recorder.mimeType || type || 'audio/mp4' }));
+      audio = new Audio(url);
+      audio.onended = () => { playBtn.textContent = '▶ Dinle'; };
+      playBtn.disabled = false;
+      playBtn.textContent = '▶ Dinle';
+      recBtn.textContent = '🎙 Yeniden kaydet';
+    };
+    recorder.start(1000);
+    const endAt = Date.now() + seconds * 1000;
+    recBtn.textContent = '■ Durdur';
+    playBtn.disabled = true;
+    if (audio) audio.pause();
+    handle = setInterval(() => {
+      const left = (endAt - Date.now()) / 1000;
+      draw(left);
+      if (left <= 0) {
+        stop();
+        if (navigator.vibrate) navigator.vibrate(300);
+      }
+    }, 250);
+    draw(seconds);
+  };
+  playBtn.onclick = () => {
+    if (!audio) return;
+    if (audio.paused) { audio.currentTime = audio.ended ? 0 : audio.currentTime; audio.play(); playBtn.textContent = '❚❚ Durdur'; }
+    else { audio.pause(); playBtn.textContent = '▶ Dinle'; }
+  };
+  onLeave(() => {
+    stop();
+    if (audio) audio.pause();
+    if (url) URL.revokeObjectURL(url);
+  });
+  draw(seconds);
 }
 
 /* ---------- Boot ---------- */

@@ -1,12 +1,14 @@
 /* B2 Prüfungstrainer service worker.
-   Bump VERSION when app files change so clients pick up the new cache. */
-const VERSION = 'v1';
-const CACHE = 'b2trainer-' + VERSION;
+   VERSION must match version.json and APP_VERSION in app.js (see CLAUDE.md). */
+const VERSION = '1.3.0';
+const CACHE = 'b2trainer-v' + VERSION;
+const LEGACY_CACHE = 'b2trainer-v1'; // pre-banner release that cannot show the update banner
 const DATA_URL = './b2-data.json';
 const APP_FILES = [
   './',
   './index.html',
   './app.js',
+  './prompts.js',
   './style.css',
   './manifest.json',
   './icons/icon.svg',
@@ -20,8 +22,15 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
       .then(cache => cache.addAll(APP_FILES.map(u => new Request(u, { cache: 'reload' }))))
-      .then(() => self.skipWaiting())
+      // A new version waits until the page sends SKIP_WAITING (update banner).
+      // Exception: clients still on the legacy release have no banner, so take over directly.
+      .then(() => caches.has(LEGACY_CACHE))
+      .then(legacy => { if (legacy) return self.skipWaiting(); })
   );
+});
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
@@ -34,6 +43,10 @@ self.addEventListener('activate', event => {
       .then(() => self.clients.claim())
   );
 });
+
+function isVersion(url) {
+  return url.pathname.endsWith('/version.json');
+}
 
 function isData(url) {
   return url.pathname.endsWith('/b2-data.json');
@@ -77,5 +90,6 @@ self.addEventListener('fetch', event => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
   if (!url.pathname.startsWith(new URL(self.registration.scope).pathname)) return;
+  if (isVersion(url)) return; // never cached: always straight from the network
   event.respondWith(isData(url) ? networkFirst(req) : cacheFirst(req));
 });

@@ -16,3 +16,17 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 - Eklendi: `manifest.json` (standalone, `start_url`/`scope` = `./`), iOS meta etiketleri + `apple-touch-icon`, `icons/` (SVG + 180/192/512 PNG), `sw.js` (cache `b2trainer-v1`: JSON network-first, diğer dosyalar cache-first; sadece `b2trainer-` önekli eski cache'leri siler). Uygulama dosyası değişince `sw.js` içindeki `VERSION`'ı artır; yeni soru/kart için sadece `b2-data.json` güncellemek yeterli.
 - Yayın: GitHub Pages → main branch, root. Tüm yollar relative, alt klasörde çalışır.
 - Test: iPhone Safari'de siteyi aç → Paylaş → Ana Ekrana Ekle → ikondan tam ekran açılır; bir kez açtıktan sonra uçak modunda tekrar aç, pratik/kartlar/ilerleme çalışır.
+
+## Adım 4 – Güncelleme bildirimi (v1.1.0)
+- Eklendi: `version.json` (SW önbelleğe almaz), açılışta ve `visibilitychange` ile sürüm kontrolü; farklıysa altta "Yeni sürüm var 🎉 — Yenile" banner'ı → bekleyen SW'ye `SKIP_WAITING`, eski cache'ler silinir, sayfa yenilenir. Kurallar `CLAUDE.md`'de (sürüm üç yerde aynı olmalı).
+- Test: siteyi aç, sonra sunucuda `version.json`'u farklı bir sürüme çek (ör. yeni push) → uygulamayı arka plana alıp tekrar aç → banner çıkar; "Yenile" → yeni sürüm yüklenir, banner kaybolur. iPhone'da ana ekrandan (standalone) açıkken de dene.
+
+## Adım 5a–5c – Sprechen-Coach: Ayarlar + Monolog (v1.2.0)
+- Eklendi: Ayarlar (API anahtarı `b2trainer:apiKey` sadece cihazda, "Sil", model varsayılan `claude-sonnet-5`, "Bağlantıyı test et"), tek API fonksiyonu `callClaude` (Türkçe hata mesajları, yükleniyor göstergesi), `prompts.js`. Teil 1A kartlarında "Coach ile çalış": 2 dk ses kaydı + Dinle (sadece oturumda), dikte metni, "Bewerten" → A–D puanları, düzeltmeler, Verbesserte Version + Vorlesen, ipuçları; Teil 1B Prüferfragen sesli okunur ve cevaba kısa geri bildirim gelir. Özetler `b2trainer:coachHistory`'de, İlerleme ekranında temaya göre son puanlar.
+- Anahtar yoksa ya da API hata verirse yedek mod: "Prompt'u kopyala" → Claude uygulamasına yapıştır.
+- Test: Ayarlar → anahtarı gir → "Bağlantıyı test et" ✅; Kartlar → Sprechen → Teil 1A kartı → Coach ile çalış → metni dikte et → Bewerten; İlerleme'de puanlar görünür. Anahtarı silince aynı ekranda sadece "Prompt'u kopyala" çıkar.
+
+## Adım 5d–5e – Partnerli pratik + yedek mod (v1.3.0)
+- Eklendi: Teil 2 Smalltalk (Claude iş arkadaşı, "du", karttaki sorulardan biriyle ya da rastgele başlar, 5 tur) ve Teil 3 Lösungswege (durum kartlardan seçilir ya da "Neue Situation" ile üretilir, 6–8 tur). Claude'un mesajları otomatik sesli okunur (`de-DE`, 0.9), susturma butonu var (`b2trainer:coachMute`). "Beenden & bewerten" → konuşma `PROMPT_DIALOG_EVAL` ile değerlendirilir, sonuç Monolog ile aynı formatta, puanlar İlerleme'ye yazılır.
+- Yedek mod: anahtar yoksa rol oyunu prompt'u kopyalanır; sohbet ya da değerlendirme hata verirse (ör. 529) ilgili prompt (konuşma dahil) kopyalanıp Claude uygulamasına yapıştırılabilir.
+- Test: Sprechen-Coach → Teil 2 → "Gespräch starten" → ses geliyor mu (iPhone'da sessiz mod kapalı olmalı) → dikteyle 2–3 cevap → "Beenden & bewerten". Teil 3 → "Neue Situation" → yeni durum görünür. Ayarlar'dan anahtarı silip aynı ekranları aç → sadece "Prompt'u kopyala".

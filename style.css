@@ -91,7 +91,7 @@ main { max-width: 680px; margin: 0 auto; padding: 16px; }
 
 label.field { display: block; margin-bottom: 12px; }
 label.field span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; }
-select, input[type=number] {
+select, input[type=number], input[type=text], input[type=password], textarea {
   width: 100%; min-height: 48px; padding: 8px 12px;
   font: inherit; color: var(--text); background: var(--card);
   border: 1px solid var(--border); border-radius: 10px;
@@ -158,3 +158,67 @@ details summary { min-height: 44px; display: flex; align-items: center; font-wei
 .bar > div { height: 100%; background: var(--primary); }
 .bar.low > div { background: var(--bad); }
 .bar.high > div { background: var(--ok); }
+
+/* Update banner */
+.update-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: var(--card); border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .12); font-weight: 600;
+}
+.update-banner .btn { margin: 0; }
+body.has-banner main { padding-bottom: 96px; }
+
+textarea { display: block; min-height: 120px; margin-bottom: 8px; resize: vertical; line-height: 1.4; }
+.error { color: var(--bad); }
+.error:empty { display: none; }
+
+/* Coach */
+.spinner {
+  display: inline-block; width: 16px; height: 16px; vertical-align: -2px;
+  border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.scores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; margin: 8px 0; }
+.score { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
+.score .small { font-size: 12px; -webkit-hyphens: auto; hyphens: auto; }
+.grade {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px; font-weight: 800; font-size: 18px;
+  background: var(--border); color: var(--text);
+}
+.grade-A { background: var(--ok); color: #fff; }
+.grade-B { background: var(--ok-bg); color: var(--ok); }
+.grade-C { background: #f5e3b3; color: #8a5a00; }
+.grade-D { background: var(--bad-bg); color: var(--bad); }
+.mini-scores { display: flex; gap: 4px; }
+.mini-scores .grade { width: 26px; height: 26px; font-size: 14px; border-radius: 7px; }
+.corrections { list-style: none; padding: 0; margin: 0; }
+.corrections li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.corrections li:last-child { border-bottom: 0; }
+.wrong-text { color: var(--bad); text-decoration: line-through; }
+.right-text { color: var(--ok); font-weight: 600; }
+.coach-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.coach-row .t { flex: 1; }
+.coach-row .sub { display: block; font-size: 13px; color: var(--muted); }
+.fallback { border-style: dashed; margin-top: 10px; }
+@media (prefers-color-scheme: dark) {
+  .grade-C { background: #3d3113; color: #f0c35a; }
+}
+
+/* Coach chat */
+.chat-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.chat-bar .btn { margin: 0; }
+.chat { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.msg {
+  max-width: 85%; padding: 10px 14px; border-radius: 16px; white-space: pre-wrap;
+  background: var(--card); border: 1px solid var(--border);
+}
+.msg.them { align-self: flex-start; border-bottom-left-radius: 4px; }
+.msg.me { align-self: flex-end; background: var(--primary); border-color: var(--primary); color: var(--primary-text); border-bottom-right-radius: 4px; }
+.msg .say {
+  margin-left: 6px; min-width: 32px; min-height: 32px; border: 0; background: none;
+  font-size: 16px; cursor: pointer; vertical-align: middle;
+}

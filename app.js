@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.3.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -132,6 +132,7 @@ const routes = {
 function renderCoach(args) {
   const mode = args[0];
   if (mode === 'mono') return renderCoachMonolog(args.slice(1));
+  if (mode === 't2' || mode === 't3') return renderCoachDialog(mode, args[1]);
   return renderCoachHub();
 }
 
@@ -616,6 +617,9 @@ function renderCardDetail(args) {
 
 function coachLinkFor(card) {
   if (/^sprechen-t1-/.test(card.id)) return '#/coach/mono/' + encodeURIComponent(card.id);
+  if (/^sprechen-t2/.test(card.id)) return '#/coach/t2/' + encodeURIComponent(card.id);
+  if (t3Situations().some(c => c.id === card.id)) return '#/coach/t3/' + encodeURIComponent(card.id);
+  if (/^sprechen-t3/.test(card.id)) return '#/coach/t3';
   return '';
 }
 
@@ -852,7 +856,7 @@ function renderEvalResult(el, result, rawText) {
   el.innerHTML = `
     <div class="card">
       <h3>Puanlar</h3>
-      <div class="scores">${CRITERIA.map(([k, name]) => `
+      <div class="scores" lang="de">${CRITERIA.map(([k, name]) => `
         <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
       <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1</p>
       ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
@@ -968,6 +972,11 @@ function renderCoachHub() {
       <a href="#/settings">Ayarlar'dan anahtar ekle</a></div>`}
     <h3>Teil 1 · Monolog</h3>
     <ul class="list">${t1Cards().map(c => item('#/coach/mono/' + encodeURIComponent(c.id), c.title, c.prompt, last[c.id])).join('')}</ul>
+    <h3>Teil 2 · Smalltalk (Partner)</h3>
+    <ul class="list">${item('#/coach/t2/' + encodeURIComponent((t2Cards()[0] || {}).id || ''), 'Smalltalk mit Kollegen', '5 tur · du-Form · sesli', last['coach-t2'])}</ul>
+    <h3>Teil 3 · Lösungswege (Partner)</h3>
+    <a class="btn primary" href="#/coach/t3/new">✨ Neue Situation</a>
+    <ul class="list">${t3Situations().map(c => item('#/coach/t3/' + encodeURIComponent(c.id), c.title, c.prompt, last[c.id])).join('')}</ul>
   `;
 }
 
@@ -1192,6 +1201,270 @@ function setupRecorder(seconds) {
     if (url) URL.revokeObjectURL(url);
   });
   draw(seconds);
+}
+
+/* ---------- Modes 2 + 3: partner dialogues (Teil 2 Smalltalk, Teil 3 Lösungswege) ---------- */
+const PROMPT_NEW_SITUATION = `You write practice situations for the German exam "Deutsch-Test für den Beruf B2", Sprechen Teil 3 (Lösungswege diskutieren).
+Invent ONE new, realistic workplace problem that two colleagues must solve together (vary the setting: office, clinic, care, counselling centre, logistics, customer service). 1-2 German sentences at B2 level. Output only the situation, no introduction, no quotes.`;
+
+const DIALOG_KINDS = {
+  t2: { title: 'Teil 2 · Smalltalk', task: 'Teil 2 Smalltalk mit Kollegen (du-Form)', turns: '5', maxTurns: 5 },
+  t3: { title: 'Teil 3 · Lösungswege', task: 'Teil 3 Lösungswege diskutieren', turns: '6–8', maxTurns: 8 }
+};
+
+function t2Cards() { return DATA.cards.filter(c => /^sprechen-t2/.test(c.id)); }
+function t3Situations() {
+  const all = DATA.cards.filter(c => /^sprechen-t3/.test(c.id));
+  const fall = all.filter(c => (c.tags || []).includes('fall'));
+  return fall.length ? fall : all.filter(c => c.id !== 'sprechen-t3');
+}
+// Small-talk questions from the Teil 2 cards (lines ending with "?").
+function smalltalkQuestions() {
+  const qs = [];
+  t2Cards().forEach(c => (c.blocks || []).forEach(b => (b.lines || []).forEach(l => {
+    // Skip generic counter-questions ("Und wie ist das bei dir?", "Hast du auch schon mal …?").
+    if (/\?\s*$/.test(l) && !/…|^Und /.test(l)) qs.push(l.trim());
+  })));
+  return uniq(qs);
+}
+
+function monologSchema(P) {
+  const s = P.PROMPT_MONOLOG;
+  const i = s.indexOf('{"scores"');
+  return i >= 0 ? s.slice(i) : '';
+}
+
+function renderCoachT3Picker() {
+  setHeader('Coach · Teil 3', true);
+  $back.setAttribute('href', '#/coach');
+  onLeave(() => $back.setAttribute('href', '#/'));
+  $app.innerHTML = `
+    <p class="muted small">Bir durum seç ya da Claude yeni bir iş yeri sorunu üretsin.</p>
+    <a class="btn primary" href="#/coach/t3/new">✨ Neue Situation</a>
+    <ul class="list">${t3Situations().map(c => `
+      <li><a href="#/coach/t3/${encodeURIComponent(c.id)}"><span class="t">${esc(c.title)}<span class="sub" lang="de">${esc(c.prompt)}</span></span></a></li>`).join('')}</ul>`;
+}
+
+function renderCoachDialog(kind, arg) {
+  const K = DIALOG_KINDS[kind];
+  let card = null;
+  if (kind === 't2') card = DATA.cards.find(c => c.id === arg) || t2Cards()[0] || null;
+  if (kind === 't3') {
+    if (!arg) { renderCoachT3Picker(); return; }
+    card = arg === 'new' ? null : DATA.cards.find(c => c.id === arg);
+    if (arg !== 'new' && !card) { location.hash = '#/coach/t3'; return; }
+  }
+  const my = screenId;
+  const hasKey = !!getApiKey();
+  setHeader('Coach · ' + K.title, true);
+  $back.setAttribute('href', kind === 't3' ? '#/coach/t3' : '#/coach');
+  onLeave(() => { $back.setAttribute('href', '#/'); stopSpeech(); });
+
+  let situation = kind === 't3' && card ? card.prompt : '';
+  let history = [];   // API messages; history[0] is the hidden kick-off instruction
+  let busy = false;
+  let muted = !!store.get('coachMute', false);
+
+  $app.innerHTML = `
+    <div class="card" id="sitBox"></div>
+    <div id="chatArea"></div>
+    <div id="dlgFallback"></div>
+    <div id="dlgResult"></div>`;
+  const sitBox = document.getElementById('sitBox');
+  const chatArea = document.getElementById('chatArea');
+  const fallbackEl = document.getElementById('dlgFallback');
+  const resultEl = document.getElementById('dlgResult');
+
+  function drawSituation() {
+    if (kind === 't2') {
+      sitBox.innerHTML = `<strong>Smalltalk mit einer Kollegin / einem Kollegen</strong>
+        <p class="small muted">Claude bir iş arkadaşı, sana "du" diye hitap eder. ${K.turns} tur. Cevap ver → gerekçe → örnek → karşı soru (Und du?).</p>`;
+    } else {
+      sitBox.innerHTML = `
+        <strong>Situation</strong>
+        <p lang="de" id="sitText">${situation ? esc(situation) : '<span class="muted">Henüz durum yok.</span>'}</p>
+        <p class="small muted">Claude iş arkadaşın; birlikte çözüm bulun, görev paylaşın, uzun vadeli önlem konuşun. ${K.turns} tur.</p>
+        ${hasKey ? '<button class="btn" id="newSitBtn">✨ Neue Situation</button><p class="small error" id="sitErr"></p>' : ''}`;
+      const nb = document.getElementById('newSitBtn');
+      if (nb) nb.onclick = () => withBusy(nb, newSituation);
+    }
+  }
+
+  async function newSituation() {
+    const errEl = document.getElementById('sitErr');
+    errEl.textContent = '';
+    try {
+      const text = await callClaude(PROMPT_NEW_SITUATION,
+        [{ role: 'user', content: 'Neue Situation, bitte. (' + Math.floor(Math.random() * 1e6) + ')' }], { maxTokens: CHAT_TOKENS });
+      if (my !== screenId) return;
+      situation = text.replace(/^["„]|["“]$/g, '').trim();
+      history = [];
+      resultEl.innerHTML = '';
+      drawSituation();
+      drawChat();
+    } catch (e) {
+      if (my !== screenId) return;
+      const el = document.getElementById('sitErr');
+      if (el) el.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+    }
+  }
+
+  async function systemPrompt() {
+    const P = await loadPrompts();
+    return kind === 't2' ? P.PROMPT_T2 : P.PROMPT_T3.replace('{{SITUATION}}', situation);
+  }
+  function kickoff() {
+    if (kind === 't2') {
+      const qs = smalltalkQuestions();
+      if (qs.length && Math.random() < 0.7) {
+        const q = qs[Math.floor(Math.random() * qs.length)];
+        return `Start the small talk now. Greet me briefly and ask this question (you may phrase it naturally): "${q}"`;
+      }
+      return 'Start the small talk now. Greet me briefly and ask me a typical workplace small-talk question of your choice.';
+    }
+    return 'Start the discussion now: briefly describe the problem from your point of view and make a first suggestion or ask what we should do first.';
+  }
+  function candidateTurns() { return history.filter((m, i) => i > 0 && m.role === 'user').length; }
+  function transcript() {
+    return history.slice(1).map(m => (m.role === 'user' ? 'Kandidatin: ' : 'Partner: ') + m.content).join('\n');
+  }
+
+  function drawChat() {
+    if (kind === 't3' && !situation) { chatArea.innerHTML = ''; return; }
+    if (!hasKey) { chatArea.innerHTML = ''; drawNoKeyFallback(); return; }
+    const started = history.length > 0;
+    const turns = candidateTurns();
+    chatArea.innerHTML = `
+      <div class="chat-bar">
+        <span class="small muted">${started ? `Tur ${Math.min(turns, K.maxTurns)} / ${K.turns}` : ''}</span>
+        <button class="btn inline" id="muteBtn">${muted ? '🔇 Ses kapalı' : '🔊 Ses açık'}</button>
+      </div>
+      <div class="chat" id="chatLog">${history.slice(1).map(m => `
+        <div class="msg ${m.role === 'user' ? 'me' : 'them'}" lang="de">${esc(m.content)}${m.role === 'assistant'
+          ? '<button class="say" aria-label="Vorlesen">🔊</button>' : ''}</div>`).join('')}
+        ${busy ? '<div class="msg them typing"><span class="spinner"></span></div>' : ''}
+      </div>
+      ${started ? `
+        <p class="small muted">Klavyedeki 🎤 simgesine bas ve konuş, sonra gönder.</p>
+        <textarea id="chatInput" rows="3" lang="de" placeholder="Deine Antwort…"></textarea>
+        <button class="btn primary" id="sendBtn" ${busy ? 'disabled' : ''}>Gönder</button>
+        ${turns >= K.maxTurns ? '<p class="small">Tur sayısı doldu — şimdi değerlendirebilirsin.</p>' : ''}
+        <button class="btn" id="endBtn" ${busy || !turns ? 'disabled' : ''}>Beenden &amp; bewerten</button>`
+      : `<button class="btn primary" id="startBtn" ${busy ? 'disabled' : ''}>Gespräch starten</button>`}
+      <p class="small error" id="chatErr"></p>`;
+    document.getElementById('muteBtn').onclick = () => {
+      muted = !muted;
+      store.set('coachMute', muted);
+      if (muted) stopSpeech();
+      document.getElementById('muteBtn').textContent = muted ? '🔇 Ses kapalı' : '🔊 Ses açık';
+    };
+    chatArea.querySelectorAll('.msg.them .say').forEach(btn => {
+      btn.onclick = () => speakDe(btn.parentNode.firstChild.textContent);
+    });
+    const log = document.getElementById('chatLog');
+    if (log.lastElementChild) log.lastElementChild.scrollIntoView({ block: 'nearest' });
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) startBtn.onclick = () => {
+      unlockSpeech();
+      history = [{ role: 'user', content: kickoff() }];
+      partnerTurn();
+    };
+    const sendBtn = document.getElementById('sendBtn');
+    if (sendBtn) sendBtn.onclick = () => {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      unlockSpeech();
+      history.push({ role: 'user', content: text });
+      partnerTurn();
+    };
+    const endBtn = document.getElementById('endBtn');
+    if (endBtn) endBtn.onclick = () => withBusy(endBtn, evaluate);
+  }
+
+  // iOS only lets speechSynthesis talk after a user gesture; speak an empty utterance in the tap.
+  function unlockSpeech() {
+    if (muted || !('speechSynthesis' in window)) return;
+    try { speechSynthesis.speak(new SpeechSynthesisUtterance('')); } catch (e) { /* ignore */ }
+  }
+
+  async function partnerTurn() {
+    busy = true;
+    fallbackEl.innerHTML = '';
+    drawChat();
+    try {
+      const reply = await callClaude(await systemPrompt(), history, { maxTokens: CHAT_TOKENS });
+      if (my !== screenId) return;
+      history.push({ role: 'assistant', content: reply });
+      busy = false;
+      drawChat();
+      if (!muted) speakDe(reply);
+    } catch (e) {
+      if (my !== screenId) return;
+      // Drop the unanswered message so the conversation stays user/assistant alternating.
+      const last = history.pop();
+      busy = false;
+      drawChat();
+      if (history.length && last) { const inp = document.getElementById('chatInput'); if (inp) inp.value = last.content; }
+      document.getElementById('chatErr').textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      renderFallback(fallbackEl, rolePlayPrompt, 'Konuşmayı Claude uygulamasında sürdürebilirsin.');
+    }
+  }
+
+  async function evaluationPrompt() {
+    const P = await loadPrompts();
+    const system = P.PROMPT_DIALOG_EVAL.replace('{{TASK}}', K.task);
+    const user = `Task type: ${K.task}\n${situation ? 'Situation: ' + situation + '\n' : ''}\n` +
+      `JSON schema of the monologue evaluation:\n${monologSchema(P)}\n\nDialogue:\n${transcript()}`;
+    return { system, user };
+  }
+
+  async function evaluate() {
+    const errEl = document.getElementById('chatErr');
+    errEl.textContent = '';
+    fallbackEl.innerHTML = '';
+    stopSpeech();
+    const { system, user } = await evaluationPrompt();
+    let text;
+    try {
+      text = await callClaude(system, [{ role: 'user', content: user }], { maxTokens: EVAL_TOKENS });
+    } catch (e) {
+      if (my !== screenId) return;
+      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      renderFallback(fallbackEl, async () => { const p = await evaluationPrompt(); return p.system + '\n\n' + p.user; });
+      return;
+    }
+    if (my !== screenId) return;
+    const result = parseJsonReply(text);
+    renderEvalResult(resultEl, result, text);
+    if (result && result.scores) {
+      // All Teil 2 chats share one entry; Teil 3 is tracked per situation.
+      const id = kind === 't2' ? 'coach-t2' : (card ? card.id : 'coach-t3-new');
+      const theme = kind === 't2' ? 'Teil 2 · Smalltalk' : (card ? card.title : 'Teil 3 · Neue Situation');
+      addCoachHistory({ date: Date.now(), cardId: id, theme, mode: kind, scores: result.scores });
+    }
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Fallback: the role-play as one prompt for the Claude app (plus the dialogue so far).
+  async function rolePlayPrompt() {
+    const sys = await systemPrompt();
+    const done = history.length > 1 ? '\n\nConversation so far:\n' + transcript() + '\n\nContinue the role-play from here.' : '\n\n' + kickoff();
+    return sys + done + '\n\nAt the end, when I write "Bewerten", evaluate only my turns as a DTB B2 examiner (A/B/C/D for Aufgabe, Kohärenz, Wortschatz, Strukturen; corrections with Turkish explanations).';
+  }
+  function drawNoKeyFallback() {
+    renderFallback(fallbackEl, rolePlayPrompt,
+      'API anahtarı yok. Rol oyunu prompt\'unu kopyala; Claude uygulamasında (sesli modda da olur) konuşmayı yap.');
+  }
+
+  drawSituation();
+  drawChat();
+  if (kind === 't3' && !situation && hasKey) {
+    const nb = document.getElementById('newSitBtn');
+    if (nb) withBusy(nb, newSituation);
+  } else if (kind === 't3' && !situation) {
+    sitBox.insertAdjacentHTML('beforeend', '<p class="small">Yeni durum üretmek için API anahtarı gerekir — listeden bir durum seç.</p>');
+  }
 }
 
 /* ---------- Boot ---------- */

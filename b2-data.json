@@ -1,0 +1,2405 @@
+{
+ "meta": {
+  "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
+  "version": "1.0",
+  "created": "2026-09-25",
+  "language_ui": "tr",
+  "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
+ },
+ "sections": [
+  {
+   "id": "sprachbausteine1",
+   "name": "Sprachbausteine T1 · Bağlaçlar & edatlar",
+   "exam_part": "Sprachbausteine Teil 1"
+  },
+  {
+   "id": "sprachbausteine2",
+   "name": "Sprachbausteine T2 · Resmî kalıplar",
+   "exam_part": "Sprachbausteine Teil 2"
+  },
+  {
+   "id": "wortschatz",
+   "name": "İş hayatı kelimeleri (Lesen/Hören)",
+   "exam_part": "Lesen/Hören"
+  },
+  {
+   "id": "schreiben-redemittel",
+   "name": "Schreiben · Doğru kalıp",
+   "exam_part": "Schreiben"
+  }
+ ],
+ "questions": [
+  {
+   "id": "sprachbausteine1-001",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "___ ich aus familiären Gründen umziehe, kann ich die Stelle leider nicht antreten.",
+   "options": [
+    "Da",
+    "Denn",
+    "Deshalb",
+    "Trotzdem"
+   ],
+   "answer": 0,
+   "explanation_tr": "Fiil (umziehe) sonda → yan cümle bağlacı lazım: 'da' (çünkü). 'denn' ve 'deshalb' yan cümle kurmaz.",
+   "tags": [
+    "grund",
+    "nebensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-002",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Zeit",
+   "prompt": "___ drei Wochen warte ich auf eine Antwort.",
+   "options": [
+    "Seit",
+    "Seitdem",
+    "Vor",
+    "Ab"
+   ],
+   "answer": 0,
+   "explanation_tr": "İsimden önce 'seit' (+Dativ) = '...den beri'. 'Seitdem' cümle başlatır (fiil ile).",
+   "tags": [
+    "zeit"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-003",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "___ ich die Unterlagen abgeschickt habe, warte ich auf eine Antwort.",
+   "options": [
+    "Seitdem",
+    "Bis",
+    "Wann",
+    "Obwohl"
+   ],
+   "answer": 0,
+   "explanation_tr": "'Seitdem' + yan cümle = '...dığımdan beri'. Geçmişte başlayıp hâlâ süren durum.",
+   "tags": [
+    "zeit",
+    "nebensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-004",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Indirekte Frage",
+   "prompt": "Könnten Sie mir mitteilen, ___ ich mit einer Entscheidung rechnen kann?",
+   "options": [
+    "wann",
+    "wenn",
+    "als",
+    "ob"
+   ],
+   "answer": 0,
+   "explanation_tr": "Dolaylı soru, zaman soruluyor → 'wann'. 'wenn' koşul/tekrar, soru değildir.",
+   "tags": [
+    "frage"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-005",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Indirekte Frage",
+   "prompt": "Bitte teilen Sie mir mit, ___ meine Unterlagen vollständig sind.",
+   "options": [
+    "ob",
+    "dass",
+    "wenn",
+    "wann"
+   ],
+   "answer": 0,
+   "explanation_tr": "Evet/hayır sorusu dolaylı hale gelince → 'ob' (-ip -madığı).",
+   "tags": [
+    "frage"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-006",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Zeit",
+   "prompt": "Ich bin telefonisch ___ 8 und 17 Uhr erreichbar.",
+   "options": [
+    "zwischen",
+    "von",
+    "bis",
+    "ab"
+   ],
+   "answer": 0,
+   "explanation_tr": "'zwischen ... und ...' kalıbı. 'von' olsaydı 'bis' gerekirdi.",
+   "tags": [
+    "zeit",
+    "feste Verbindung"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-007",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Zeit",
+   "prompt": "Bitte senden Sie mir die Unterlagen ___ Freitag zu.",
+   "options": [
+    "bis",
+    "seit",
+    "zwischen",
+    "während"
+   ],
+   "answer": 0,
+   "explanation_tr": "Son tarih → 'bis' (…e kadar).",
+   "tags": [
+    "zeit"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-008",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Zeit",
+   "prompt": "Die bestellte Ware ist ___ heute nicht angekommen.",
+   "options": [
+    "bis",
+    "seit",
+    "ab",
+    "von"
+   ],
+   "answer": 0,
+   "explanation_tr": "'bis heute nicht' = hâlâ gelmedi. Şikâyet mektuplarında çok sık.",
+   "tags": [
+    "zeit",
+    "beschwerde"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-009",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Ich habe keinen Urlaub mehr, ___ ich am Freitag arbeiten muss.",
+   "options": [
+    "sodass",
+    "damit",
+    "obwohl",
+    "deshalb"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sonuç → 'sodass' (…dığı için / böylece). 'damit' amaç bildirir; 'deshalb' fiili 2. sıraya çeker.",
+   "tags": [
+    "folge",
+    "nebensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-010",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Ich schicke Ihnen die Originale per Post, ___ Sie alles vollständig haben.",
+   "options": [
+    "damit",
+    "sodass",
+    "weil",
+    "ob"
+   ],
+   "answer": 0,
+   "explanation_tr": "Amaç → 'damit' (…sın diye).",
+   "tags": [
+    "ziel",
+    "nebensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-011",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Grund",
+   "prompt": "___ der guten Verkehrsanbindung würde ich sehr gern bei Ihnen arbeiten.",
+   "options": [
+    "Aufgrund",
+    "Obwohl",
+    "Trotz",
+    "Damit"
+   ],
+   "answer": 0,
+   "explanation_tr": "İsim + Genitiv ile sebep → 'aufgrund'. 'trotz' zıtlık; 'obwohl/damit' yan cümle kurar.",
+   "tags": [
+    "grund",
+    "genitiv"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-012",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Pronominaladverb",
+   "prompt": "Sie haben mir bei der Einarbeitung sehr geholfen. ___ bedanke ich mich herzlich.",
+   "options": [
+    "Dafür",
+    "Darüber",
+    "Dagegen",
+    "Daran"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich bedanken FÜR → 'dafür'. Fiilin edatını bil, da(r)+edat seç.",
+   "tags": [
+    "da-wort"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-013",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Pronominaladverb",
+   "prompt": "Ich freue mich schon ___, Sie nächste Woche persönlich kennenzulernen.",
+   "options": [
+    "darauf",
+    "dafür",
+    "daran",
+    "damit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Gelecekteki şeye sevinmek: sich freuen AUF → 'darauf'.",
+   "tags": [
+    "da-wort"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-014",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Pronominaladverb",
+   "prompt": "Ich habe von Ihnen noch keine Antwort erhalten. Ich möchte Sie ___ erinnern, dass die Frist morgen endet.",
+   "options": [
+    "daran",
+    "darauf",
+    "dafür",
+    "davon"
+   ],
+   "answer": 0,
+   "explanation_tr": "jemanden erinnern AN → 'daran'.",
+   "tags": [
+    "da-wort"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-015",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Ich habe inzwischen eine andere Stelle angenommen. ___ muss ich meine Bewerbung zurückziehen.",
+   "options": [
+    "Daher",
+    "Trotzdem",
+    "Obwohl",
+    "Weil"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sonuç zarfı, fiil 2. sırada → 'daher' (bu yüzden).",
+   "tags": [
+    "folge"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-016",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Das Gehalt ist nicht sehr hoch. ___ möchte ich die Stelle gern annehmen.",
+   "options": [
+    "Trotzdem",
+    "Deshalb",
+    "Obwohl",
+    "Denn"
+   ],
+   "answer": 0,
+   "explanation_tr": "Beklenenin tersi, fiil 2. sırada → 'trotzdem'. 'obwohl' olsaydı fiil sona giderdi.",
+   "tags": [
+    "gegensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-017",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "___ Sie weitere Fragen haben, können Sie mich gern anrufen.",
+   "options": [
+    "Falls",
+    "Ob",
+    "Als",
+    "Wann"
+   ],
+   "answer": 0,
+   "explanation_tr": "Koşul → 'falls' (= wenn, eğer).",
+   "tags": [
+    "bedingung"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-018",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "___ ich letztes Jahr in Hamburg gearbeitet habe, habe ich viel gelernt.",
+   "options": [
+    "Als",
+    "Wenn",
+    "Wann",
+    "Ob"
+   ],
+   "answer": 0,
+   "explanation_tr": "Geçmişte TEK seferlik dönem → 'als'. Tekrarlıysa 'wenn'.",
+   "tags": [
+    "zeit",
+    "als-wenn"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-019",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Jedes Mal, ___ ich auf „Senden“ klicke, erscheint eine Fehlermeldung.",
+   "options": [
+    "wenn",
+    "als",
+    "ob",
+    "dass"
+   ],
+   "answer": 0,
+   "explanation_tr": "'jedes Mal' = tekrar → 'wenn'.",
+   "tags": [
+    "zeit",
+    "als-wenn"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-020",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Doppelkonnektoren",
+   "prompt": "Ich habe sowohl Erfahrung im Verkauf ___ auch im Kundenservice.",
+   "options": [
+    "als",
+    "wie",
+    "und",
+    "noch"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sabit kalıp: sowohl ... als auch.",
+   "tags": [
+    "doppel"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-021",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Doppelkonnektoren",
+   "prompt": "Ich spreche weder Französisch ___ Spanisch.",
+   "options": [
+    "noch",
+    "oder",
+    "und",
+    "als"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sabit kalıp: weder ... noch (ne ... ne).",
+   "tags": [
+    "doppel"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-022",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Doppelkonnektoren",
+   "prompt": "Die Stelle ist ___ für Berufseinsteiger als auch für Erfahrene geeignet.",
+   "options": [
+    "sowohl",
+    "entweder",
+    "weder",
+    "zwar"
+   ],
+   "answer": 0,
+   "explanation_tr": "'als auch' görünce → 'sowohl'. Metinde ikinci parçayı ara!",
+   "tags": [
+    "doppel"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-023",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Doppelkonnektoren",
+   "prompt": "Die Arbeit ist ___ anstrengend, aber sehr abwechslungsreich.",
+   "options": [
+    "zwar",
+    "sowohl",
+    "weder",
+    "entweder"
+   ],
+   "answer": 0,
+   "explanation_tr": "zwar ... aber (gerçi ... ama).",
+   "tags": [
+    "doppel"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-024",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Feste Wendungen",
+   "prompt": "___ der Anlage finden Sie meinen Lebenslauf und meine Zeugnisse.",
+   "options": [
+    "In",
+    "Mit",
+    "Bei",
+    "An"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kalıp: 'In der Anlage' / 'Anbei' (ekte).",
+   "tags": [
+    "brief"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-025",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Verb",
+   "prompt": "Ich bin im Internet ___ Ihre Stellenanzeige aufmerksam geworden.",
+   "options": [
+    "auf",
+    "an",
+    "für",
+    "über"
+   ],
+   "answer": 0,
+   "explanation_tr": "aufmerksam werden AUF + Akk.",
+   "tags": [
+    "bewerbung"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-026",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Präpositionen Verb",
+   "prompt": "Hiermit bewerbe ich mich ___ Ihrer Firma als Lagerist.",
+   "options": [
+    "bei",
+    "an",
+    "zu",
+    "für"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich bewerben BEI (firma), UM (die Stelle), AUF (die Anzeige).",
+   "tags": [
+    "bewerbung"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-027",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Adverbien",
+   "prompt": "Ich kann leider erst ___ am 1. Mai anfangen, nicht früher.",
+   "options": [
+    "frühestens",
+    "höchstens",
+    "mindestens",
+    "meistens"
+   ],
+   "answer": 0,
+   "explanation_tr": "'erst ... nicht früher' → en erken: 'frühestens'. Karşıtı: 'spätestens'.",
+   "tags": [
+    "zeit"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-028",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Adverbien",
+   "prompt": "Die Übergabe meiner Projekte bereite ich ___ gründlich vor.",
+   "options": [
+    "selbstverständlich",
+    "sowohl",
+    "sodass",
+    "zwischen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Cümle zaten tam; boşluğa sadece zarf girebilir → 'selbstverständlich' (elbette).",
+   "tags": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-029",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Adverbien",
+   "prompt": "Den Eingang meiner Unterlagen hat man mir ___ bestätigt. Es ist aber noch keine Entscheidung gefallen.",
+   "options": [
+    "bereits",
+    "erst",
+    "noch",
+    "bis"
+   ],
+   "answer": 0,
+   "explanation_tr": "'bereits' = zaten/çoktan. 'erst' = ancak (geç kalma vurgusu).",
+   "tags": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-030",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Relativsatz",
+   "prompt": "Die Unterlagen, ___ Sie mir geschickt haben, sind leider unvollständig.",
+   "options": [
+    "die",
+    "denen",
+    "deren",
+    "der"
+   ],
+   "answer": 0,
+   "explanation_tr": "Çoğul, 'schicken' Akkusativ ister → 'die'.",
+   "tags": [
+    "relativ"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-031",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Relativsatz",
+   "prompt": "Die Kollegin, ___ ich die Übergabe mache, heißt Frau Ritter.",
+   "options": [
+    "mit der",
+    "der",
+    "die",
+    "mit dem"
+   ],
+   "answer": 0,
+   "explanation_tr": "'mit jemandem machen' → edat + Dativ dişil: 'mit der'.",
+   "tags": [
+    "relativ"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-032",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Relativsatz",
+   "prompt": "Der Kunde, ___ Bestellung falsch geliefert wurde, hat sich beschwert.",
+   "options": [
+    "dessen",
+    "deren",
+    "der",
+    "dem"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sahiplik, eril (der Kunde) → 'dessen'.",
+   "tags": [
+    "relativ",
+    "genitiv"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-033",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Indirekte Frage",
+   "prompt": "Ich weiß nicht, ___ ich den Antrag schicken soll.",
+   "options": [
+    "an wen",
+    "wem",
+    "wen",
+    "wer"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas schicken AN + Akk. → 'an wen'.",
+   "tags": [
+    "frage"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-034",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "___ ich die Stelle nicht bekomme, mache ich eine Weiterbildung.",
+   "options": [
+    "Falls",
+    "Ob",
+    "Damit",
+    "Seit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Koşul → 'falls'.",
+   "tags": [
+    "bedingung"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-035",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Konnektoren",
+   "prompt": "Ich arbeite gern im Team, ___ ich auch selbstständig arbeiten kann.",
+   "options": [
+    "wobei",
+    "sodass",
+    "damit",
+    "als"
+   ],
+   "answer": 0,
+   "explanation_tr": "'wobei' = bununla birlikte / ...ken (ek bilgi, hafif kısıtlama).",
+   "tags": [
+    "nebensatz"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-001",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Auftrag",
+   "prompt": "Nach Ihrem guten Angebot möchten wir Ihnen den Auftrag ___.",
+   "options": [
+    "erteilen",
+    "stellen",
+    "legen"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Auftrag erteilen (sipariş/iş vermek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-002",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Kommunikation",
+   "prompt": "Bitte ___ Sie sich bis Freitag mit unserer Buchhaltung in Verbindung.",
+   "options": [
+    "setzen",
+    "stellen",
+    "bringen"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich mit jdm. in Verbindung setzen (iletişime geçmek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-003",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Leider hat Ihr Mitarbeiter sein Versprechen nicht ___.",
+   "options": [
+    "gehalten",
+    "getroffen",
+    "gestellt"
+   ],
+   "answer": 0,
+   "explanation_tr": "ein Versprechen halten (sözünü tutmak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-004",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Angebot",
+   "prompt": "Gern möchten wir Ihnen ein günstiges Angebot ___.",
+   "options": [
+    "unterbreiten",
+    "unterbieten",
+    "unterlegen"
+   ],
+   "answer": 0,
+   "explanation_tr": "ein Angebot unterbreiten (resmî: teklif sunmak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-005",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Bestellung",
+   "prompt": "Ihre Bestellung ist heute Morgen bei uns ___.",
+   "options": [
+    "eingegangen",
+    "ausgegangen",
+    "aufgegangen"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Bestellung geht ein (sipariş ulaştı).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-006",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Lieferung",
+   "prompt": "Die Lieferung erfolgt ___, Sie zahlen also keine Versandkosten.",
+   "options": [
+    "frei Haus",
+    "ab Werk",
+    "ins Haus"
+   ],
+   "answer": 0,
+   "explanation_tr": "'frei Haus' = kargo ücretsiz kapıya teslim. 'ab Werk' = alıcı taşır.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-007",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Zahlung",
+   "prompt": "Bei Zahlung innerhalb von 10 Tagen erhalten Sie 2 % ___.",
+   "options": [
+    "Skonto",
+    "Zinsen",
+    "Mahngebühr"
+   ],
+   "answer": 0,
+   "explanation_tr": "Erken ödeme indirimi = Skonto.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-008",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Zusammenarbeit",
+   "prompt": "Wir sind an einer langfristigen ___ mit Ihrem Unternehmen interessiert.",
+   "options": [
+    "Zusammenarbeit",
+    "Mitarbeit",
+    "Bearbeitung"
+   ],
+   "answer": 0,
+   "explanation_tr": "langfristige Zusammenarbeit (uzun vadeli iş birliği).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-009",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Auftrag",
+   "prompt": "Wir haben gestern bestellt. Bitte schicken Sie uns eine kurze ___.",
+   "options": [
+    "Auftragsbestätigung",
+    "Kündigung",
+    "Mahnung"
+   ],
+   "answer": 0,
+   "explanation_tr": "Siparişin onayı = Auftragsbestätigung.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-010",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Termine",
+   "prompt": "Wegen einer Krankheit muss der Termin leider ___ werden.",
+   "options": [
+    "verschoben",
+    "verspätet",
+    "verzögert"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Termin verschieben (ertelemek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-011",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Zahlung",
+   "prompt": "Wir bitten Sie, die Rechnung ___ zu begleichen.",
+   "options": [
+    "fristgerecht",
+    "zeitweise",
+    "vorläufig"
+   ],
+   "answer": 0,
+   "explanation_tr": "fristgerecht = süresi içinde. Rechnung begleichen = fatura ödemek.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-012",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Ich möchte hiermit eine Beschwerde ___.",
+   "options": [
+    "einreichen",
+    "anbieten",
+    "aufnehmen"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Beschwerde einreichen (şikâyette bulunmak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-013",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Wir werden Ihre Reklamation umgehend ___.",
+   "options": [
+    "bearbeiten",
+    "verarbeiten",
+    "erarbeiten"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Reklamation bearbeiten (işleme almak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-014",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Selbstverständlich ___ wir die Kosten für die Rücksendung.",
+   "options": [
+    "übernehmen",
+    "annehmen",
+    "abnehmen"
+   ],
+   "answer": 0,
+   "explanation_tr": "die Kosten übernehmen (masrafı üstlenmek). Şikâyet cevabında çok kullanılır!",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-015",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Bitte ___ Sie die Verzögerung.",
+   "options": [
+    "entschuldigen",
+    "beschuldigen",
+    "erlauben"
+   ],
+   "answer": 0,
+   "explanation_tr": "Entschuldigen Sie bitte ... (özür). beschuldigen = suçlamak.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-016",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Besprechung",
+   "prompt": "Ich möchte dieses Problem in der nächsten Besprechung ___.",
+   "options": [
+    "zur Sprache bringen",
+    "in Gang setzen",
+    "zur Verfügung stellen"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas zur Sprache bringen (gündeme getirmek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-017",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Ausstattung",
+   "prompt": "Wir ___ Ihnen für die Dienstreise einen Firmenwagen zur Verfügung.",
+   "options": [
+    "stellen",
+    "setzen",
+    "legen"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas zur Verfügung stellen (tahsis etmek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-018",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Problemlösung",
+   "prompt": "Ich bin sicher, dass wir schnell eine Lösung ___.",
+   "options": [
+    "finden",
+    "treffen",
+    "geben"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Lösung finden. (Ama: eine Entscheidung TREFFEN.)",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-019",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Problemlösung",
+   "prompt": "Wir müssen bis morgen eine Entscheidung ___.",
+   "options": [
+    "treffen",
+    "machen",
+    "finden"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Entscheidung treffen (karar vermek).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-020",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Zeit",
+   "prompt": "Bitte melden Sie sich ___ der nächsten Woche bei mir.",
+   "options": [
+    "im Laufe",
+    "in Gang",
+    "im Grunde"
+   ],
+   "answer": 0,
+   "explanation_tr": "im Laufe der Woche (hafta içinde).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-021",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Projekt",
+   "prompt": "Nach langer Planung kommt das Projekt endlich in ___.",
+   "options": [
+    "Gang",
+    "Frage",
+    "Betracht"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Gang kommen (işlemeye başlamak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-022",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Absage",
+   "prompt": "Dieser Vorschlag kommt für uns leider nicht in ___.",
+   "options": [
+    "Frage",
+    "Gang",
+    "Ordnung"
+   ],
+   "answer": 0,
+   "explanation_tr": "nicht in Frage kommen (söz konusu olmamak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-023",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Wir nehmen Ihre Kritik ernst und werden sofort ___ ergreifen.",
+   "options": [
+    "Maßnahmen",
+    "Entscheidungen",
+    "Vorschläge"
+   ],
+   "answer": 0,
+   "explanation_tr": "Maßnahmen ergreifen (önlem almak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-024",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Preis",
+   "prompt": "Bei weiteren Aufträgen gewähren wir Ihnen einen ___ von 5 %.",
+   "options": [
+    "Preisnachlass",
+    "Aufpreis",
+    "Zuschlag"
+   ],
+   "answer": 0,
+   "explanation_tr": "Preisnachlass = indirim. Aufpreis/Zuschlag = ek ücret.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-025",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Brief",
+   "prompt": "Vielen Dank für Ihr ___ an unseren Produkten.",
+   "options": [
+    "Interesse",
+    "Anliegen",
+    "Angebot"
+   ],
+   "answer": 0,
+   "explanation_tr": "Interesse an + Dativ (…e ilgi).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-026",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Leider ist uns bei der Bearbeitung Ihrer Bestellung ein Fehler ___.",
+   "options": [
+    "unterlaufen",
+    "geraten",
+    "gelungen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Resmî: uns ist ein Fehler unterlaufen (bir hata yaptık).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-027",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Die beschädigte Ware werden wir Ihnen selbstverständlich ___.",
+   "options": [
+    "ersetzen",
+    "besetzen",
+    "versetzen"
+   ],
+   "answer": 0,
+   "explanation_tr": "ersetzen = yenisiyle değiştirmek / tazmin etmek.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-028",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Vertrag",
+   "prompt": "Der Vertrag kann mit einer ___ von drei Monaten gekündigt werden.",
+   "options": [
+    "Frist",
+    "Dauer",
+    "Pause"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kündigungsfrist = fesih süresi. 'mit einer Frist von'.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-029",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Bewerbung",
+   "prompt": "Ich würde mich über eine Einladung zu einem Vorstellungsgespräch sehr ___.",
+   "options": [
+    "freuen",
+    "danken",
+    "wünschen"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich über etwas freuen. Başvuru mektubunun klasik kapanışı.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-030",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Auftrag",
+   "prompt": "Bei einwandfreier Lieferung können Sie in Zukunft mit weiteren Aufträgen ___.",
+   "options": [
+    "rechnen",
+    "zählen",
+    "planen"
+   ],
+   "answer": 0,
+   "explanation_tr": "mit etwas rechnen (…i beklemek/hesaba katmak).",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-031",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Termine",
+   "prompt": "Frau Ritter hat mir am Telefon fest ___, dass sie am Montag kommt.",
+   "options": [
+    "zugesagt",
+    "abgesagt",
+    "angesagt"
+   ],
+   "answer": 0,
+   "explanation_tr": "zusagen = söz vermek/onaylamak; absagen = iptal etmek.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-032",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Angaben",
+   "prompt": "Bitte überprüfen Sie Ihre ___ im Formular noch einmal.",
+   "options": [
+    "Angaben",
+    "Aufgaben",
+    "Abgaben"
+   ],
+   "answer": 0,
+   "explanation_tr": "Angaben = verilen bilgiler.",
+   "tags": [
+    "kollokation"
+   ]
+  },
+  {
+   "id": "wortschatz-001",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Krankheit",
+   "prompt": "Wer krank ist, muss dem Arbeitgeber meist ab dem dritten Tag eine ___ vorlegen.",
+   "options": [
+    "Arbeitsunfähigkeitsbescheinigung",
+    "Lohnabrechnung",
+    "Arbeitszeugnis"
+   ],
+   "answer": 0,
+   "explanation_tr": "AU-Bescheinigung = doktor raporu ('gelber Schein').",
+   "tags": [
+    "lesen",
+    "rechte-pflichten"
+   ]
+  },
+  {
+   "id": "wortschatz-002",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Arbeitszeit",
+   "prompt": "Überstunden werden bei uns durch ___ ausgeglichen.",
+   "options": [
+    "Freizeitausgleich",
+    "Kündigung",
+    "Vorschuss"
+   ],
+   "answer": 0,
+   "explanation_tr": "Fazla mesai karşılığı izin = Freizeitausgleich.",
+   "tags": [
+    "lesen",
+    "arbeitszeit"
+   ]
+  },
+  {
+   "id": "wortschatz-003",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Vertrag",
+   "prompt": "Während der ___ können beide Seiten mit kurzer Frist kündigen.",
+   "options": [
+    "Probezeit",
+    "Elternzeit",
+    "Kurzarbeit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Probezeit = deneme süresi (genelde 6 ay).",
+   "tags": [
+    "lesen",
+    "vertrag"
+   ]
+  },
+  {
+   "id": "wortschatz-004",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Vertrag",
+   "prompt": "Am Ende des Arbeitsverhältnisses stellt der Arbeitgeber ein ___ aus.",
+   "options": [
+    "Arbeitszeugnis",
+    "Führungszeugnis",
+    "Attest"
+   ],
+   "answer": 0,
+   "explanation_tr": "Arbeitszeugnis = iş referans belgesi. Führungszeugnis = sabıka kaydı.",
+   "tags": [
+    "lesen",
+    "vertrag"
+   ]
+  },
+  {
+   "id": "wortschatz-005",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Besprechung",
+   "prompt": "Der nächste Punkt auf der ___ ist das Budget.",
+   "options": [
+    "Tagesordnung",
+    "Tageszeitung",
+    "Speisekarte"
+   ],
+   "answer": 0,
+   "explanation_tr": "Tagesordnung = gündem. Lesen Teil 4 (Protokoll) için önemli.",
+   "tags": [
+    "lesen",
+    "besprechung"
+   ]
+  },
+  {
+   "id": "wortschatz-006",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Besprechung",
+   "prompt": "Frau Kaya schreibt in der Sitzung das ___.",
+   "options": [
+    "Protokoll",
+    "Rezept",
+    "Formular"
+   ],
+   "answer": 0,
+   "explanation_tr": "Toplantı tutanağı = Protokoll.",
+   "tags": [
+    "lesen",
+    "besprechung"
+   ]
+  },
+  {
+   "id": "wortschatz-007",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Arbeitsschutz",
+   "prompt": "Auf der Baustelle ist das Tragen eines ___ Pflicht.",
+   "options": [
+    "Schutzhelms",
+    "Namensschilds",
+    "Anzugs"
+   ],
+   "answer": 0,
+   "explanation_tr": "Arbeitsschutz: Schutzhelm, Sicherheitsschuhe, Schutzbrille.",
+   "tags": [
+    "lesen",
+    "vorschriften"
+   ]
+  },
+  {
+   "id": "wortschatz-008",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Mitbestimmung",
+   "prompt": "Bei Konflikten mit der Geschäftsleitung kann man sich an den ___ wenden.",
+   "options": [
+    "Betriebsrat",
+    "Kundendienst",
+    "Lieferanten"
+   ],
+   "answer": 0,
+   "explanation_tr": "Betriebsrat = işçi temsilciliği/konseyi.",
+   "tags": [
+    "lesen",
+    "rechte-pflichten"
+   ]
+  },
+  {
+   "id": "wortschatz-009",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Arbeitszeit",
+   "prompt": "Bei ___ können die Mitarbeiter Beginn und Ende der Arbeitszeit selbst bestimmen.",
+   "options": [
+    "Gleitzeit",
+    "Schichtarbeit",
+    "Teilzeit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Gleitzeit = esnek mesai (çekirdek saatlerle).",
+   "tags": [
+    "hören",
+    "arbeitszeit"
+   ]
+  },
+  {
+   "id": "wortschatz-010",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Familie",
+   "prompt": "Nach der Geburt ihres Kindes nimmt sie ein Jahr ___.",
+   "options": [
+    "Elternzeit",
+    "Urlaubsanspruch",
+    "Kurzarbeit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Elternzeit = ebeveyn izni.",
+   "tags": [
+    "schreiben",
+    "familie"
+   ]
+  },
+  {
+   "id": "wortschatz-011",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Gehalt",
+   "prompt": "Nach Abzug von Steuern und Sozialabgaben bleibt das ___ übrig.",
+   "options": [
+    "Nettogehalt",
+    "Bruttogehalt",
+    "Trinkgeld"
+   ],
+   "answer": 0,
+   "explanation_tr": "Brüt – kesintiler = Netto.",
+   "tags": [
+    "lesen",
+    "gehalt"
+   ]
+  },
+  {
+   "id": "wortschatz-012",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Kündigung",
+   "prompt": "Die ___ beträgt in meinem Vertrag vier Wochen zum Monatsende.",
+   "options": [
+    "Kündigungsfrist",
+    "Probezeit",
+    "Arbeitszeit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kündigungsfrist = fesih ihbar süresi.",
+   "tags": [
+    "lesen",
+    "vertrag"
+   ]
+  },
+  {
+   "id": "wortschatz-013",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Kunden",
+   "prompt": "Der Kunde möchte die defekte Ware ___ und sein Geld zurück.",
+   "options": [
+    "umtauschen",
+    "umziehen",
+    "umsteigen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Ware umtauschen / zurückgeben.",
+   "tags": [
+    "hören",
+    "kunden"
+   ]
+  },
+  {
+   "id": "wortschatz-014",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Arbeitsplatz",
+   "prompt": "Neue Mitarbeiter werden in der ersten Woche von einer Kollegin ___.",
+   "options": [
+    "eingearbeitet",
+    "eingestellt",
+    "eingereicht"
+   ],
+   "answer": 0,
+   "explanation_tr": "einarbeiten = işe alıştırmak; einstellen = işe almak.",
+   "tags": [
+    "hören",
+    "betrieb"
+   ]
+  },
+  {
+   "id": "wortschatz-015",
+   "section": "wortschatz",
+   "type": "mc",
+   "topic": "Arbeitsplatz",
+   "prompt": "Wegen Auftragsmangel hat die Firma ___ angemeldet: alle arbeiten weniger Stunden.",
+   "options": [
+    "Kurzarbeit",
+    "Nachtschicht",
+    "Gleitzeit"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kurzarbeit = kısa çalışma (devlet destekli).",
+   "tags": [
+    "lesen",
+    "betrieb"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-001",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Anrede",
+   "prompt": "Du antwortest einer Kundin namens Weber. Welche Anrede passt?",
+   "options": [
+    "Sehr geehrte Frau Weber,",
+    "Liebe Frau Weber!",
+    "Hallo Frau Weber,"
+   ],
+   "answer": 0,
+   "explanation_tr": "Resmî e-posta: 'Sehr geehrte Frau …,' + virgül; sonra küçük harfle devam.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-002",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Gruß",
+   "prompt": "Welcher Gruß passt am Ende einer Antwort an einen Kunden?",
+   "options": [
+    "Mit freundlichen Grüßen",
+    "Liebe Grüße",
+    "Tschüss"
+   ],
+   "answer": 0,
+   "explanation_tr": "Resmî kapanış: 'Mit freundlichen Grüßen' (virgül YOK) + isim.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-003",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Welcher Einstieg passt am besten zu einer Antwort auf eine Beschwerde?",
+   "options": [
+    "vielen Dank für Ihre E-Mail. Es tut uns sehr leid, dass Sie mit unserem Service nicht zufrieden waren.",
+    "Ihre E-Mail war nicht korrekt.",
+    "Wir haben keine Zeit für Beschwerden."
+   ],
+   "answer": 0,
+   "explanation_tr": "Önce teşekkür + özür. Kibar ve çözüm odaklı olmak puan getirir.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-004",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Beschwerde",
+   "prompt": "Wie bieten Sie dem Kunden höflich eine Lösung an?",
+   "options": [
+    "Als kleine Entschädigung bieten wir Ihnen einen Gutschein über 20 Euro an.",
+    "Sie müssen das akzeptieren.",
+    "Das ist Ihr Problem."
+   ],
+   "answer": 0,
+   "explanation_tr": "Çözüm + telafi (Gutschein, Rabatt, kostenloser Ersatz) = tam puan için şart.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-005",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Forum",
+   "prompt": "Welcher Satz leitet im Forumsbeitrag ein Gegenargument ein?",
+   "options": [
+    "Andererseits muss man bedenken, dass …",
+    "Erstens finde ich, dass …",
+    "Zum Schluss möchte ich sagen, dass …"
+   ],
+   "answer": 0,
+   "explanation_tr": "Karşı argüman: 'Andererseits …', 'Dagegen spricht, dass …'.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  },
+  {
+   "id": "schreiben-redemittel-006",
+   "section": "schreiben-redemittel",
+   "type": "mc",
+   "topic": "Forum",
+   "prompt": "Welcher Satz passt als Schluss im Forumsbeitrag?",
+   "options": [
+    "Alles in allem bin ich der Meinung, dass …",
+    "Sehr geehrte Damen und Herren,",
+    "Anbei sende ich Ihnen …"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sonuç: 'Alles in allem …', 'Zusammenfassend …'.",
+   "tags": [
+    "schreiben",
+    "register"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "id": "info-1",
+   "deck": "pruefung",
+   "title": "Prüfung auf einen Blick (DTB B2)",
+   "prompt": "Puanlar ve geçme kuralı",
+   "blocks": [
+    {
+     "heading": "Puanlar (240 toplam, her beceri 60)",
+     "lines": [
+      "Lesen 60 · Hören 60 · Schreiben 60 · Sprechen 60",
+      "Geçmek: toplam ≥144 (60 %)",
+      "4 beceriden en az 3'ünde ≥36 puan; bir beceri 24–36 arası olabilir"
+     ]
+    },
+    {
+     "heading": "Schreiben 60 puanın dağılımı",
+     "lines": [
+      "Beschwerde-Antwort (Lesen+Schreiben T2): 7",
+      "Notiz (Hören+Schreiben T2): 6",
+      "Sprachbausteine T1+T2: 6 (12 × 0,5!)",
+      "Forumsbeitrag: 14",
+      "Tüm metinlere genel dil puanı: 27 → Redemittel burada puan getirir"
+     ]
+    },
+    {
+     "heading": "Strateji",
+     "lines": [
+      "Sprachbausteine'ye max. 8–10 dk ayır, Forumsbeitrag'a zaman bırak (35 dk toplam)",
+      "Emin olmadığın soruyu boş bırakma"
+     ]
+    }
+   ],
+   "tags": [
+    "überblick"
+   ]
+  },
+  {
+   "id": "schreiben-forum",
+   "deck": "schreiben",
+   "title": "Forumsbeitrag (Aufgabe 58)",
+   "prompt": "Firmaforumunda bir konu hakkında görüş yaz: argüman + örnek + paragraflar. ~150 kelime, ~20 dk.",
+   "blocks": [
+    {
+     "heading": "Yapı (5 paragraf)",
+     "lines": [
+      "1 Einleitung: Thema nennen + eigene Meinung kurz",
+      "2 Pro-Argument + Beispiel",
+      "3 Contra-Argument + Beispiel",
+      "4 Eigener Vorschlag / Kompromiss",
+      "5 Schluss: Meinung zusammenfassen"
+     ]
+    },
+    {
+     "heading": "Einleitung",
+     "lines": [
+      "Hallo zusammen, ich möchte etwas zum Thema „…“ schreiben.",
+      "Ich habe gelesen, dass … Dazu habe ich eine klare Meinung.",
+      "Meiner Meinung nach ist das (keine) gute Idee."
+     ]
+    },
+    {
+     "heading": "Argumente",
+     "lines": [
+      "Ein wichtiges Argument dafür ist, dass …",
+      "Dafür spricht auch, dass …",
+      "Andererseits muss man bedenken, dass …",
+      "Dagegen spricht, dass …",
+      "Ein Beispiel: In meiner letzten Firma …"
+     ]
+    },
+    {
+     "heading": "Vorschlag",
+     "lines": [
+      "Ich schlage vor, dass …",
+      "Wäre es nicht besser, wenn …?",
+      "Ein Kompromiss könnte sein, dass …"
+     ]
+    },
+    {
+     "heading": "Schluss",
+     "lines": [
+      "Alles in allem bin ich der Meinung, dass …",
+      "Zusammenfassend finde ich …",
+      "Was meint ihr/meinen Sie dazu?"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum"
+   ],
+   "sample": "Thema: „Homeoffice nur noch einen Tag pro Woche“\n\nHallo zusammen,\nich habe gelesen, dass wir ab nächsten Monat nur noch einen Tag pro Woche im Homeoffice arbeiten dürfen. Ehrlich gesagt finde ich diese Entscheidung nicht gut.\n\nNatürlich gibt es Argumente dafür. Im Büro kann man Probleme schneller im Team besprechen, und neue Kolleginnen und Kollegen werden besser eingearbeitet.\n\nAndererseits muss man bedenken, dass viele von uns einen langen Arbeitsweg haben. Ich fahre zum Beispiel jeden Tag über eine Stunde. Im Homeoffice spare ich diese Zeit und kann mich besser konzentrieren. Außerdem lassen sich Beruf und Familie so leichter vereinbaren.\n\nIch schlage deshalb einen Kompromiss vor: Jedes Team entscheidet selbst, an welchen zwei oder drei Tagen alle im Büro sind.\n\nAlles in allem bin ich der Meinung, dass flexible Regeln für alle besser sind. Was meint ihr dazu?\n\nViele Grüße\n[Name]"
+  },
+  {
+   "id": "schreiben-beschwerde",
+   "deck": "schreiben",
+   "title": "Antwort auf eine Beschwerde (Lesen & Schreiben T2)",
+   "prompt": "Şefin bir müşteri şikâyetini sana iletti. Müşteriye resmî cevap yaz; verilen tüm noktalara değin. ~15 dk.",
+   "blocks": [
+    {
+     "heading": "Yapı",
+     "lines": [
+      "Anrede",
+      "Dank + Entschuldigung",
+      "Grund erklären (kurz, ohne Ausreden)",
+      "Lösung anbieten",
+      "Entschädigung / Angebot",
+      "Abschluss + Gruß"
+     ]
+    },
+    {
+     "heading": "Dank & Entschuldigung",
+     "lines": [
+      "vielen Dank für Ihre E-Mail vom … .",
+      "Es tut uns sehr leid, dass …",
+      "Bitte entschuldigen Sie die Unannehmlichkeiten."
+     ]
+    },
+    {
+     "heading": "Erklärung",
+     "lines": [
+      "Leider ist uns ein Fehler unterlaufen.",
+      "Grund dafür war ein technisches Problem / ein Personalengpass."
+     ]
+    },
+    {
+     "heading": "Lösung",
+     "lines": [
+      "Selbstverständlich ersetzen wir Ihnen die Ware kostenlos.",
+      "Wir übernehmen die Kosten für die Rücksendung.",
+      "Wir haben bereits Maßnahmen ergriffen, damit so etwas nicht wieder passiert."
+     ]
+    },
+    {
+     "heading": "Entschädigung",
+     "lines": [
+      "Als kleine Entschädigung erhalten Sie einen Gutschein über … Euro.",
+      "Bei Ihrer nächsten Bestellung gewähren wir Ihnen 10 % Rabatt."
+     ]
+    },
+    {
+     "heading": "Abschluss",
+     "lines": [
+      "Wir hoffen, dass Sie uns weiterhin Ihr Vertrauen schenken.",
+      "Für Rückfragen stehe ich Ihnen gern zur Verfügung.",
+      "Mit freundlichen Grüßen"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde"
+   ],
+   "sample": "Sehr geehrte Frau Berger,\n\nvielen Dank für Ihre E-Mail vom 12. März. Es tut uns sehr leid, dass die bestellten Stühle beschädigt bei Ihnen angekommen sind und die Lieferung sich um eine Woche verspätet hat.\n\nLeider hatten wir in den letzten Wochen einen Engpass in unserem Lager. Das ist aber keine Entschuldigung für die schlechte Verpackung.\n\nSelbstverständlich schicken wir Ihnen neue Stühle kostenlos zu. Die Lieferung erfolgt bis spätestens Freitag. Die beschädigten Stühle holt unser Fahrer bei der Lieferung ab, die Kosten übernehmen wir.\n\nAls kleine Entschädigung erhalten Sie bei Ihrer nächsten Bestellung 10 % Rabatt.\n\nWir hoffen, dass Sie uns weiterhin Ihr Vertrauen schenken. Für Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\n[Name]\nKundenservice"
+  },
+  {
+   "id": "schreiben-notiz",
+   "deck": "schreiben",
+   "title": "Notiz nach Telefonat (Hören & Schreiben T2)",
+   "prompt": "Müşteri telefonunu dinle, formdaki 4 boşluğu doldur (42–45). Tam cümle gerekmez.",
+   "blocks": [
+    {
+     "heading": "Taktik",
+     "lines": [
+      "Dinlemeden önce formu oku: hangi bilgi lazım? (Name, Datum, Anzahl, Problem, Rückruf …)",
+      "Sadece anahtar bilgiyi yaz: 'Lieferung Montag statt Freitag'",
+      "İsim harf harf söylenirse dikkatle yaz (buchstabieren)",
+      "Sayılar/tarihler: '15.' = 'fünfzehnten' — tarih formatında yaz"
+     ]
+    },
+    {
+     "heading": "Hazır kısaltmalar",
+     "lines": [
+      "Rückruf erbeten → Rückruf bis …",
+      "Tel.-Nr.",
+      "Anz. = Anzahl",
+      "Termin: Di, 14 Uhr"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "hören",
+    "notiz"
+   ]
+  },
+  {
+   "id": "sprechen-t1-1",
+   "deck": "sprechen",
+   "title": "Teil 1A · 1 · Arbeitgeber",
+   "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "die Branche · das Unternehmen · der Standort",
+      "herstellen · anbieten · vertreiben",
+      "die Abteilung: Einkauf, Vertrieb, Buchhaltung, Personal",
+      "zuständig sein für · verantwortlich sein für"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich möchte über meinen letzten Arbeitgeber sprechen, die Firma [Name] in [Stadt]. Das Unternehmen gehört zur [Branche]-Branche und hat ungefähr [Zahl] Mitarbeiter.\n\nDie Firma stellt [Produkte] her und bietet außerdem [Dienstleistung] an. Die Kunden sind vor allem [Privatkunden / andere Firmen].\n\nEs gibt mehrere Abteilungen, zum Beispiel den Einkauf, den Vertrieb, die Buchhaltung und die Personalabteilung. Ich habe in der Abteilung [Abteilung] gearbeitet. Dort war ich für [Aufgabe] zuständig. Außerdem habe ich [zweite Aufgabe] übernommen.\n\nEine Besonderheit der Firma war das gute Arbeitsklima. Die Kollegen haben sich gegenseitig unterstützt, und es gab regelmäßig Weiterbildungen. Deshalb würde ich diesen Arbeitgeber jederzeit weiterempfehlen.",
+   "examiner_questions": [
+    "Was hat Ihnen dort nicht so gut gefallen?",
+    "Würden Sie wieder dort arbeiten? Warum?",
+    "Wie sah ein typischer Arbeitstag aus?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-2",
+   "deck": "sprechen",
+   "title": "Teil 1A · 2 · Gutes Arbeitsumfeld",
+   "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "ein unbefristeter Vertrag · die Jobsicherheit",
+      "ein faires Gehalt · Zusatzleistungen",
+      "Aufstiegschancen · Weiterbildung",
+      "ein offenes Arbeitsklima · Wertschätzung"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich spreche heute darüber, wie ich mir ein gutes Arbeitsumfeld vorstelle.\n\nZuerst ist für mich Jobsicherheit sehr wichtig. Ein unbefristeter Vertrag gibt mir Ruhe, und ich kann meine Zukunft besser planen.\n\nZweitens sollte das Gehalt fair sein, also passend zur Leistung und zur Qualifikation. Zusatzleistungen wie ein Jobticket sind natürlich auch schön.\n\nDrittens wünsche ich mir Karrierechancen. Ich möchte Weiterbildungen machen und später mehr Verantwortung übernehmen.\n\nAm wichtigsten ist für mich aber die Kommunikation. In meiner letzten Stelle gab es jeden Montag eine kurze Teambesprechung. Dort konnte jeder seine Probleme ansprechen, und der Chef hat zugehört. So entstehen weniger Missverständnisse.\n\nZusammenfassend kann ich sagen: Ein gutes Arbeitsumfeld bedeutet für mich Sicherheit, Fairness und Respekt.",
+   "examiner_questions": [
+    "Was ist wichtiger: Gehalt oder Arbeitsklima?",
+    "Was machen Sie bei einem Konflikt mit einem Kollegen?",
+    "Möchten Sie lieber in einer großen oder kleinen Firma arbeiten?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-3",
+   "deck": "sprechen",
+   "title": "Teil 1A · 3 · Berufswahl",
+   "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "die Schulzeit · das Praktikum · die Ausbildung · das Studium",
+      "beeinflussen · sich entscheiden für",
+      "die Motivation · das Interesse an",
+      "ins Ausland gehen · neu anfangen"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich möchte erzählen, wie ich zu meinem Beruf gekommen bin.\n\nSchon in der Schule hatte ich großes Interesse an [Fach]. Nach der Schule habe ich ein Praktikum bei [Firma/Bereich] gemacht. Diese Erfahrung war sehr wichtig, denn ich habe gemerkt, dass mir die Arbeit Spaß macht.\n\nEine wichtige Person war [meine Lehrerin / mein Onkel]. Er/Sie hat mich motiviert und mir viele Tipps gegeben.\n\nDanach habe ich [eine Ausbildung / ein Studium] als [Beruf] gemacht und einige Jahre in [Land] gearbeitet.\n\nDer Umzug nach Deutschland war ein großer Schritt. Ich musste die Sprache lernen und meinen Abschluss anerkennen lassen. Das war nicht leicht, aber ich habe viel gelernt.\n\nHeute möchte ich wieder in meinem Beruf arbeiten, weil ich [Grund]. Rückblickend bin ich froh über meine Entscheidung.",
+   "examiner_questions": [
+    "Würden Sie heute denselben Beruf wählen?",
+    "Was war die schwierigste Station?",
+    "Welche Pläne haben Sie für die nächsten Jahre?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-4",
+   "deck": "sprechen",
+   "title": "Teil 1A · 4 · Berufliches Vorbild",
+   "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "das Vorbild · bewundern",
+      "zuverlässig · geduldig · ehrgeizig · hilfsbereit",
+      "Einfluss haben auf · prägen",
+      "sich ein Beispiel nehmen an"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Mein berufliches Vorbild ist [Name], meine frühere Kollegin / mein früherer Chef bei [Firma].\n\nWir haben [drei] Jahre zusammengearbeitet. Am Anfang war sie meine Mentorin und hat mich eingearbeitet.\n\nIch bewundere sie aus mehreren Gründen. Erstens ist sie sehr zuverlässig: Was sie verspricht, das macht sie auch. Zweitens ist sie geduldig. Auch in stressigen Situationen bleibt sie ruhig und freundlich. Drittens bildet sie sich ständig weiter.\n\nSie hat einen großen Einfluss auf mich gehabt. Von ihr habe ich gelernt, wie man Aufgaben gut organisiert und wie wichtig Kommunikation im Team ist. Wenn ich heute ein Problem habe, frage ich mich oft: Was würde sie jetzt tun?\n\nIch nehme mir an ihr ein Beispiel und möchte später auch neue Kollegen so gut unterstützen.",
+   "examiner_questions": [
+    "Haben Sie noch Kontakt zu dieser Person?",
+    "Welche Eigenschaft möchten Sie selbst noch verbessern?",
+    "Kann ein Chef ein Vorbild sein?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-5",
+   "deck": "sprechen",
+   "title": "Teil 1A · 5 · Arbeitssuche in einem Land",
+   "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "die Stellenanzeige · das Jobportal · die Agentur für Arbeit",
+      "die Bewerbungsunterlagen: Anschreiben, Lebenslauf, Zeugnisse",
+      "die Initiativbewerbung · das Netzwerk",
+      "Vitamin B (Beziehungen)"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich möchte die Arbeitssuche in Deutschland und in der Türkei vergleichen.\n\nIn Deutschland findet man Stellenangebote vor allem in Jobportalen im Internet, bei der Agentur für Arbeit oder direkt auf den Webseiten der Firmen. In der Türkei spielen persönliche Kontakte eine größere Rolle. Viele Stellen findet man über Freunde oder Verwandte.\n\nDer Erstkontakt ist in Deutschland meistens schriftlich. Man schickt eine Bewerbung per E-Mail oder über ein Online-Formular. Manchmal kann man vorher anrufen und Fragen stellen.\n\nDie Bewerbungsunterlagen sind in Deutschland sehr wichtig: ein Anschreiben, ein tabellarischer Lebenslauf und Zeugnisse. Alles muss vollständig und ohne Fehler sein.\n\nZum Schluss: In Deutschland braucht man Geduld, denn der Prozess dauert oft mehrere Wochen.",
+   "examiner_questions": [
+    "Was war für Sie bei der Arbeitssuche am schwierigsten?",
+    "Was halten Sie von Initiativbewerbungen?",
+    "Wie wichtig sind Kontakte in Deutschland?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-6",
+   "deck": "sprechen",
+   "title": "Teil 1A · 6 · Bewerbungsgespräch",
+   "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "sich vorbereiten · sich über die Firma informieren",
+      "pünktlich · gepflegt · angemessen gekleidet",
+      "Stärken und Schwächen · Gehaltsvorstellung",
+      "Fragen stellen · einen guten Eindruck machen"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich spreche über Bewerbungsgespräche in Deutschland.\n\nZuerst ist die Vorbereitung sehr wichtig. Man sollte sich über die Firma informieren: Was stellt sie her, wie groß ist sie? Außerdem sollte man seinen Lebenslauf gut kennen.\n\nDie Kleidung hängt vom Berufsfeld ab. In einer Bank trägt man einen Anzug oder ein Kostüm, in einer Werkstatt reicht ordentliche, saubere Kleidung. Pünktlichkeit ist in Deutschland ein Muss.\n\nTypische Fragen sind: Warum möchten Sie bei uns arbeiten? Was sind Ihre Stärken und Schwächen? Wo sehen Sie sich in fünf Jahren? Oft fragt man auch nach der Gehaltsvorstellung.\n\nAm Ende sollte man selbst Fragen stellen, zum Beispiel zur Einarbeitung. Das zeigt Interesse.\n\nIn der Türkei ist das Gespräch oft etwas persönlicher, aber die Grundregeln sind ähnlich.",
+   "examiner_questions": [
+    "Wie antworten Sie auf die Frage nach Ihren Schwächen?",
+    "Hatten Sie schon ein Bewerbungsgespräch in Deutschland?",
+    "Was sollte man auf keinen Fall tun?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-7",
+   "deck": "sprechen",
+   "title": "Teil 1A · 7 · Produkt / Dienstleistung",
+   "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "das Merkmal · die Funktion",
+      "der Nutzen · praktisch · zeitsparend",
+      "der Vorteil / der Nachteil",
+      "erfolgreich sein · die Nachfrage"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Ich möchte über eine Dienstleistung sprechen, die ich oft benutze: den Online-Lieferservice für Lebensmittel.\n\nDie wichtigsten Merkmale sind: Man bestellt die Lebensmittel per App, wählt ein Zeitfenster, und die Ware wird direkt nach Hause gebracht.\n\nDer Nutzen für Kunden ist groß. Man spart Zeit, besonders mit Kindern oder bei langen Arbeitszeiten. Außerdem muss man keine schweren Taschen tragen.\n\nEs gibt aber auch Nachteile. Die Liefergebühren sind oft hoch, und man kann Obst und Gemüse nicht selbst aussuchen. Manchmal fehlen einzelne Produkte.\n\nDie Dienstleistung ist trotzdem sehr erfolgreich, vor allem seit der Corona-Zeit. Die Nachfrage in Großstädten ist stark gestiegen.\n\nFür mich persönlich überwiegen die Vorteile.",
+   "examiner_questions": [
+    "Würden Sie das Produkt weiterempfehlen?",
+    "Was könnte man verbessern?",
+    "Kaufen Sie lieber online oder im Geschäft?"
+   ]
+  },
+  {
+   "id": "sprechen-t1-8",
+   "deck": "sprechen",
+   "title": "Teil 1A · 8 · Geschäftsidee (Selbstständigkeit)",
+   "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+   "blocks": [
+    {
+     "heading": "Aufbau (≈2 Min.)",
+     "lines": [
+      "Einleitung: Ich möchte über … sprechen.",
+      "Alle Stichpunkte der Aufgabe der Reihe nach",
+      "Beispiel aus eigener Erfahrung",
+      "Schluss: Zusammenfassend …"
+     ]
+    },
+    {
+     "heading": "Wortschatz",
+     "lines": [
+      "sich selbstständig machen · gründen",
+      "die Zielgruppe · die Konkurrenz",
+      "das Startkapital · der Kredit",
+      "die Besonderheit · sich unterscheiden von"
+     ]
+    },
+    {
+     "heading": "Verbinden",
+     "lines": [
+      "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+      "Zum Beispiel … · Deshalb … · Allerdings …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1",
+    "thema"
+   ],
+   "sample": "Wenn ich mich selbstständig machen würde, würde ich ein kleines Café mit Kinderspielecke eröffnen.\n\nIch würde Frühstück, Kuchen und kleine warme Gerichte anbieten, alles frisch und selbst gemacht.\n\nDie Besonderheit ist der Spielbereich für Kinder. Eltern können in Ruhe einen Kaffee trinken, und die Kinder spielen sicher in der Nähe. Einmal pro Woche gäbe es außerdem einen Bastelnachmittag.\n\nMeine Zielgruppe sind vor allem junge Familien und Eltern in Elternzeit.\n\nFür die Gründung bräuchte ich Startkapital, zum Beispiel einen Kredit. Außerdem würde ich mich bei der IHK beraten lassen.\n\nIch glaube, die Idee kann erfolgreich sein, weil es in vielen Stadtteilen zu wenige familienfreundliche Cafés gibt.",
+   "examiner_questions": [
+    "Welche Risiken sehen Sie?",
+    "Wie wollen Sie Kunden gewinnen?",
+    "Würden Sie allein oder mit Partner gründen?"
+   ]
+  },
+  {
+   "id": "sprechen-t1b",
+   "deck": "sprechen",
+   "title": "Teil 1B · Prüferfragen beantworten",
+   "prompt": "Sunumdan sonra sınav görevlisi 2–3 soru sorar (~2 dk).",
+   "blocks": [
+    {
+     "heading": "Zeit gewinnen",
+     "lines": [
+      "Das ist eine gute Frage.",
+      "Darüber habe ich noch nicht nachgedacht, aber …",
+      "Wenn ich ehrlich bin, …"
+     ]
+    },
+    {
+     "heading": "Antwort-Formel",
+     "lines": [
+      "Antwort (1 Satz) → Grund (weil …) → Beispiel (Zum Beispiel …)"
+     ]
+    },
+    {
+     "heading": "Nicht verstanden?",
+     "lines": [
+      "Entschuldigung, können Sie die Frage bitte wiederholen?",
+      "Meinen Sie damit, dass …?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1"
+   ]
+  },
+  {
+   "id": "sprechen-t1c",
+   "deck": "sprechen",
+   "title": "Teil 1C · Einen Aspekt erläutern",
+   "prompt": "Partnerinin sunumundan bir noktayı ~30 sn açıkla. Partner konuşurken NOT AL!",
+   "blocks": [
+    {
+     "heading": "Redemittel",
+     "lines": [
+      "Meine Gesprächspartnerin hat über … gesprochen.",
+      "Ein wichtiger Punkt war …",
+      "Sie hat erklärt, dass …",
+      "Als Beispiel hat sie … genannt.",
+      "Das fand ich interessant, weil …"
+     ]
+    },
+    {
+     "heading": "Notiz-Tipp",
+     "lines": [
+      "Sadece 3–4 anahtar kelime: Thema · Punkt 1 · Punkt 2 · Beispiel"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil1"
+   ]
+  },
+  {
+   "id": "sprechen-t2",
+   "deck": "sprechen",
+   "title": "Teil 2 · Smalltalk mit Kollegen",
+   "prompt": "İki kart: iş arkadaşının sorusuna cevap ver, sonra sen de soru sor. Du-Form! ~3 dk.",
+   "blocks": [
+    {
+     "heading": "Formel",
+     "lines": [
+      "Antworten → Begründen → Beispiel → Gegenfrage (Und du?)"
+     ]
+    },
+    {
+     "heading": "Reagieren",
+     "lines": [
+      "Ach, echt? Das wusste ich nicht.",
+      "Das geht mir genauso.",
+      "Bei mir ist das ein bisschen anders.",
+      "Das kann ich gut verstehen."
+     ]
+    },
+    {
+     "heading": "Gegenfragen",
+     "lines": [
+      "Und wie ist das bei dir?",
+      "Was machst du normalerweise …?",
+      "Hast du auch schon mal …?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil2"
+   ],
+   "sample": "Karte: „Ich arbeite manchmal ganz gerne am Wochenende. Und du?“\n\nA: Ehrlich gesagt nicht so gern. Am Wochenende habe ich Zeit für meine Familie, und die Kinder haben frei. Aber wenn es ein wichtiges Projekt gibt, mache ich natürlich eine Ausnahme. Warum arbeitest du gern am Wochenende?\nB: Es ist ruhiger im Büro, niemand ruft an.\nA: Ach so, das verstehe ich. Bekommst du dafür einen Freizeitausgleich?\n\nKarte: „Unternimmst du gerne in der Freizeit etwas mit den Kollegen?“\n\nA: Ja, ab und zu. Letzten Monat waren wir zusammen bowlen, das war richtig lustig. Aber jede Woche wäre mir zu viel. Wie ist das bei dir?"
+  },
+  {
+   "id": "sprechen-t2-themen",
+   "deck": "sprechen",
+   "title": "Teil 2 · Typische Smalltalk-Fragen",
+   "prompt": "Her birine 3 cümle + karşı soru ile cevap vermeyi sesli çalış.",
+   "blocks": [
+    {
+     "heading": "Fragen",
+     "lines": [
+      "Machst du lieber Früh- oder Spätschicht?",
+      "Wie kommst du morgens zur Arbeit?",
+      "Wo verbringst du deine Mittagspause?",
+      "Arbeitest du gern im Homeoffice?",
+      "Hast du schon Pläne für den Urlaub?",
+      "Gehst du zur Weihnachtsfeier der Firma?",
+      "Machst du gerade eine Weiterbildung?",
+      "Wie findest du die neue Kantine?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil2"
+   ]
+  },
+  {
+   "id": "sprechen-t3",
+   "deck": "sprechen",
+   "title": "Teil 3 · Lösungswege diskutieren",
+   "prompt": "İş yerinde bir sorun: partnerle birlikte çözüm bul, görev paylaş, uzun vadeli önlem konuş. ~4 dk.",
+   "blocks": [
+    {
+     "heading": "Ablauf",
+     "lines": [
+      "1 Problem zusammenfassen",
+      "2 Sofortmaßnahme vorschlagen",
+      "3 Auf Partner reagieren (zustimmen / Alternative)",
+      "4 Aufgaben verteilen: Wer macht was?",
+      "5 Langfristige Lösung",
+      "6 Zusammenfassen"
+     ]
+    },
+    {
+     "heading": "Vorschlagen",
+     "lines": [
+      "Ich schlage vor, dass wir zuerst …",
+      "Wie wäre es, wenn wir …?",
+      "Wir könnten doch …"
+     ]
+    },
+    {
+     "heading": "Zustimmen",
+     "lines": [
+      "Gute Idee, so machen wir das.",
+      "Da hast du recht.",
+      "Einverstanden."
+     ]
+    },
+    {
+     "heading": "Widersprechen (höflich)",
+     "lines": [
+      "Ich verstehe deinen Punkt, aber …",
+      "Ich bin mir nicht sicher, ob das funktioniert, weil …",
+      "Was hältst du stattdessen von …?"
+     ]
+    },
+    {
+     "heading": "Aufgaben verteilen",
+     "lines": [
+      "Ich kümmere mich um …, und du übernimmst …",
+      "Wer ruft den Lieferanten an?",
+      "Kannst du bitte … erledigen?"
+     ]
+    },
+    {
+     "heading": "Langfristig & Schluss",
+     "lines": [
+      "Langfristig sollten wir …",
+      "Damit das nicht wieder passiert, …",
+      "Also, fassen wir zusammen: …"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3"
+   ],
+   "sample": "Situation: Falsche Ware geliefert (Lamm statt Rind), Veranstaltung heute Abend für 40 Personen, Menükarten schon gedruckt.\n\nA: Wir haben ein Problem: Der Lieferant hat Lamm statt Rind gebracht, und heute Abend kommen 40 Gäste. Was machen wir?\nB: Ich schlage vor, dass wir zuerst den Lieferanten anrufen. Vielleicht kann er das Rindfleisch noch heute bringen.\nA: Gute Idee. Aber wenn das nicht klappt, brauchen wir einen Plan B. Wie wäre es, wenn wir den Kunden anrufen und ihm ein Lammgericht anbieten?\nB: Einverstanden. Wir könnten ihm als Entschuldigung ein kostenloses Dessert anbieten.\nA: Gut. Ich kümmere mich um den Lieferanten, und du rufst den Kunden an, okay?\nB: Okay. Und langfristig? Das ist schon das zweite Mal.\nA: Langfristig sollten wir einen zweiten Lieferanten suchen. Wenn es noch einmal passiert, kündigen wir den Vertrag.\nB: Also, fassen wir zusammen: …"
+  },
+  {
+   "id": "sprechen-t3-fall-1",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 1",
+   "prompt": "Im Büro ist der Drucker kaputt. Morgen früh müssen 50 Angebotsmappen für eine Messe fertig sein.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Sofort: Copyshop? Anderer Drucker im Haus?",
+      "Wer macht was?",
+      "Langfristig: Wartungsvertrag, Ersatzgerät"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-2",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 2",
+   "prompt": "Zwei Kollegen sind krank. In der Pflegestation fehlt am Wochenende Personal.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Schichtplan ändern? Aushilfe?",
+      "Chefin informieren",
+      "Langfristig: Springerpool, Überstundenausgleich"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-3",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 3",
+   "prompt": "Ein wichtiger Kunde beschwert sich, weil seine Bestellung schon zum dritten Mal verspätet ist.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Kunden anrufen, entschuldigen, Rabatt?",
+      "Ursache im Lager klären",
+      "Langfristig: Lieferprozess verbessern"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-4",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 4",
+   "prompt": "Das neue Computerprogramm ist seit einer Woche im Einsatz, aber viele Kollegen kommen nicht damit zurecht.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Kurzfristig: Hilfe durch IT, Anleitung",
+      "Schulung organisieren",
+      "Langfristig: Ansprechpartner im Team"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall"
+   ]
+  }
+ ]
+}

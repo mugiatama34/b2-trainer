@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.3.0';
+const APP_VERSION = '1.4.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -112,6 +112,8 @@ async function loadData() {
   DATA.sections = DATA.sections || [];
   DATA.questions = (DATA.questions || []).filter(q => q && q.id && Array.isArray(q.options));
   DATA.cards = DATA.cards || [];
+  DATA.reading_parts = (DATA.reading_parts || []).filter(p => p && p.id);
+  DATA.reading = (DATA.reading || []).filter(s => s && s.id && Array.isArray(s.texts) && Array.isArray(s.questions));
   SECTION_NAME = {};
   DATA.sections.forEach(s => { SECTION_NAME[s.id] = s.name; });
 }
@@ -126,7 +128,8 @@ const routes = {
   'cards': renderCards,
   'card': renderCardDetail,
   'settings': renderSettings,
-  'coach': renderCoach
+  'coach': renderCoach,
+  'lesen': renderLesen
 };
 
 function renderCoach(args) {
@@ -160,6 +163,7 @@ function renderHome() {
     <a class="btn primary" href="#/practice">Pratik</a>
     <a class="btn" href="#/exam">Sınav modu</a>
     <a class="btn" href="#/review">Tekrar${due ? ` (${due})` : ''}</a>
+    <a class="btn" href="#/lesen">📖 Lesen</a>
     <a class="btn" href="#/cards">Kartlar</a>
     <a class="btn" href="#/coach">🎙 Sprechen-Coach</a>
     <a class="btn" href="#/progress">İlerleme</a>
@@ -495,6 +499,7 @@ function renderProgress() {
       ${DATA.sections.map(s => barRow(s.name, (bySection[s.id] || {}).ok || 0, (bySection[s.id] || {}).n || 0)).join('')}
     </div>
     ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
+    ${readingProgressHtml()}
     ${coachProgressHtml()}
     <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
   `;
@@ -504,8 +509,8 @@ function renderProgress() {
     location.hash = '#/practice';
   };
   document.getElementById('resetBtn').onclick = () => {
-    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri ve Coach puanları silinsin mi? Bu işlem geri alınamaz.')) return;
-    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory'].forEach(k => store.remove(k));
+    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları ve Coach puanları silinsin mi? Bu işlem geri alınamaz.')) return;
+    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading'].forEach(k => store.remove(k));
     renderProgress();
   };
 }
@@ -524,11 +529,303 @@ function coachProgressHtml() {
     <p class="small muted">Aufgabe · Kohärenz · Wortschatz · Strukturen</p>${rows}</div>`;
 }
 
+/* ---------- Lesen ----------
+   b2trainer:reading = { [setId]: { best, last, total, wrong: [questionId], ok, n, date } }
+   ok/n add up every checked attempt (used for the per-part percentage on the progress screen). */
+function getReading() { return store.get('reading', {}); }
+function saveReadingResult(set, ok, wrongIds) {
+  const all = getReading();
+  const total = set.questions.length;
+  const e = all[set.id] || { best: 0, ok: 0, n: 0 };
+  e.last = ok;
+  e.best = Math.max(e.best || 0, ok);
+  e.total = total;
+  e.wrong = wrongIds;
+  e.ok = (e.ok || 0) + ok;
+  e.n = (e.n || 0) + total;
+  e.date = Date.now();
+  all[set.id] = e;
+  store.set('reading', all);
+}
+
+// Sets grouped by reading_parts order; sets with an unknown part go into a trailing group.
+function readingGroups() {
+  const groups = DATA.reading_parts.map(p => ({ id: p.id, name: p.name, sets: [] }));
+  const byId = {};
+  groups.forEach(g => { byId[g.id] = g; });
+  DATA.reading.forEach(s => {
+    if (!byId[s.part]) groups.push(byId[s.part] = { id: s.part, name: s.part || 'Diğer', sets: [] });
+    byId[s.part].sets.push(s);
+  });
+  return groups.filter(g => g.sets.length);
+}
+
+function renderLesen(args) {
+  if (args[0]) return renderReadingSet(args[0]);
+  setHeader('Lesen', true);
+  const rec = getReading();
+  const groups = readingGroups();
+  $app.innerHTML = groups.map(g => `
+    <h3>${esc(g.name)}</h3>
+    <ul class="list">${g.sets.map(s => {
+      const e = rec[s.id];
+      const total = s.questions.length;
+      return `<li><a href="#/lesen/${encodeURIComponent(s.id)}">
+        <span class="t">${esc(s.title)}<span class="sub">${total} soru${e ? ` · son: ${e.last}/${total}` : ''}</span></span>
+        <span class="best ${e && e.best === total ? 'full' : ''}">${e ? `${e.best}/${total}` : '–'}</span>
+      </a></li>`;
+    }).join('')}</ul>`).join('') || '<p class="muted center">Okuma alıştırması yok.</p>';
+}
+
+function readingParagraphs(body) {
+  return String(body || '').split('\n').filter(l => l.trim())
+    .map(l => `<p>${l.split(/(\s+)/).map(w => (/^\s*$/.test(w) ? w : `<span class="w">${esc(w)}</span>`)).join('')}</p>`)
+    .join('');
+}
+
+function renderReadingSet(id) {
+  const set = DATA.reading.find(s => s.id === id);
+  if (!set) { location.hash = '#/lesen'; return; }
+  setHeader(set.title, true);
+  $back.setAttribute('href', '#/lesen');
+  const matching = set.layout === 'matching';
+  const minutes = matching ? 10 : 12;
+  const answers = {};
+  let checked = false;
+  let timer = null;
+  let activeKey = set.texts.length ? set.texts[0].key : '';
+  let autoRef = null;
+  const onScroll = () => requestAnimationFrame(syncTabToQuestions);
+  onLeave(() => {
+    $back.setAttribute('href', '#/');
+    document.body.classList.remove('has-checkbar');
+    window.removeEventListener('scroll', onScroll);
+    stopTimer();
+  });
+
+  const keys = set.texts.map(t => t.key).concat(set.allow_none ? ['x'] : []);
+  const textTitle = t => t.title || (String(t.body || '').slice(0, 70).trim() + '…');
+  const last = getReading()[set.id];
+
+  function questionHtml(q) {
+    let choices;
+    if (q.kind === 'match') {
+      choices = `<div class="keys">${keys.map(k =>
+        `<button class="keybtn" data-v="${esc(k)}" ${k === 'x' ? 'title="kein Tipp"' : ''}>${esc(k)}</button>`).join('')}</div>`;
+    } else if (q.kind === 'rf') {
+      choices = `<div class="keys">${(q.options || []).map((o, i) =>
+        `<button class="keybtn wide" data-v="${i}" lang="de">${esc(o)}</button>`).join('')}</div>`;
+    } else {
+      choices = (q.options || []).map((o, i) =>
+        `<button class="opt ropt" data-v="${i}" lang="de"><b>${'abcdefgh'.charAt(i)})</b> ${esc(o)}</button>`).join('');
+    }
+    return `<div class="rq" data-q="${esc(q.id)}" data-ref="${esc(q.text_ref || '')}">
+      <div class="rq-head"><span class="num">${esc(q.num)}</span><span lang="de">${esc(q.prompt)}</span></div>
+      ${choices}
+      <div class="rq-after"></div>
+    </div>`;
+  }
+
+  const textsHtml = matching
+    ? set.texts.map(t => `
+      <details class="card rtext">
+        <summary><span class="keybadge">${esc(t.key)}</span><span lang="de">${esc(textTitle(t))}</span></summary>
+        <div class="rbody" lang="de">${t.title ? `<p class="rtitle">${esc(t.title)}</p>` : ''}${readingParagraphs(t.body)}</div>
+      </details>`).join('')
+    : `<div class="rpane" id="rpane">
+        ${set.texts.length > 1 ? `<div class="tabs">${set.texts.map(t =>
+          `<button class="tab" data-tab="${esc(t.key)}">${esc(t.key)}</button>`).join('')}</div>` : ''}
+        ${set.texts.map(t => `
+          <div class="card rscroll rbody" data-text="${esc(t.key)}" lang="de">
+            ${t.title ? `<p class="rtitle">${esc(t.title)}</p>` : ''}${readingParagraphs(t.body)}
+          </div>`).join('')}
+        <button class="rpane-toggle" id="rpaneToggle">⤢ Metni büyüt</button>
+      </div>`;
+
+  $app.innerHTML = `
+    <div class="rhead">
+      <p class="small muted">${esc(set.instructions_tr || '')}</p>
+      ${set.context_de ? `<p class="context" lang="de">${esc(set.context_de)}</p>` : ''}
+      <label class="switch"><input type="checkbox" id="timerChk"> Zamanlayıcı (${minutes} dk)</label>
+      ${last && last.wrong && last.wrong.length ? `<p class="small muted">Son deneme: ${last.last}/${last.total} · ${last.wrong.length} yanlış</p>` : ''}
+    </div>
+    ${textsHtml}
+    <h3>Sorular</h3>
+    <div id="rqs">${set.questions.map(questionHtml).join('')}</div>
+    <div class="check-bar" id="checkBar">
+      <span id="checkInfo" class="small muted"></span>
+      <button class="btn primary" id="checkBtn">Kontrol et</button>
+    </div>`;
+  document.body.classList.add('has-checkbar');
+
+  const rqs = document.getElementById('rqs');
+  const checkBtn = document.getElementById('checkBtn');
+  const checkInfo = document.getElementById('checkInfo');
+  const qById = {};
+  set.questions.forEach(q => { qById[q.id] = q; });
+
+  function drawInfo() {
+    if (checked) return;
+    const n = Object.keys(answers).length;
+    checkInfo.textContent = `${n}/${set.questions.length} cevaplandı`;
+  }
+
+  /* text-questions: tabs + auto-switch to the text of the question being worked on */
+  function showText(key) {
+    if (!key || matching) return;
+    activeKey = key;
+    document.querySelectorAll('[data-text]').forEach(el => { el.hidden = el.dataset.text !== key; });
+    document.querySelectorAll('[data-tab]').forEach(el => el.classList.toggle('active', el.dataset.tab === key));
+  }
+  function syncTabToQuestions() {
+    const pane = document.getElementById('rpane');
+    if (!pane || set.texts.length < 2) return;
+    const below = pane.getBoundingClientRect().bottom;
+    const first = Array.from(rqs.children).find(el => el.getBoundingClientRect().bottom > below + 20);
+    const ref = first && first.dataset.ref;
+    if (ref && ref !== autoRef) {
+      autoRef = ref;
+      if (ref !== activeKey) showText(ref);
+    }
+  }
+  if (!matching) {
+    const pane = document.getElementById('rpane');
+    pane.style.top = document.querySelector('.topbar').offsetHeight + 'px';
+    document.querySelectorAll('[data-tab]').forEach(el => { el.onclick = () => showText(el.dataset.tab); });
+    const toggle = document.getElementById('rpaneToggle');
+    toggle.onclick = () => {
+      const big = pane.classList.toggle('big');
+      toggle.textContent = big ? '⤡ Metni küçült' : '⤢ Metni büyüt';
+    };
+    showText(activeKey);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  rqs.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-v]');
+    if (!btn || checked) return;
+    const row = btn.closest('.rq');
+    const q = qById[row.dataset.q];
+    if (answers[q.id] === btn.dataset.v) delete answers[q.id];
+    else answers[q.id] = btn.dataset.v;
+    row.querySelectorAll('button[data-v]').forEach(b => b.classList.toggle('chosen', b.dataset.v === answers[q.id]));
+    if (q.text_ref) { autoRef = q.text_ref; showText(q.text_ref); }
+    drawInfo();
+  });
+
+  function answerLabel(q, v) {
+    if (q.kind === 'match') {
+      if (v === 'x') return 'x (kein Tipp)';
+      const t = set.texts.find(x => x.key === v);
+      return t && t.title ? `${v} – ${t.title}` : v;
+    }
+    const i = Number(v);
+    return (q.kind === 'mc' ? 'abcdefgh'.charAt(i) + ') ' : '') + ((q.options || [])[i] || '');
+  }
+
+  function check(timeUp) {
+    if (checked) return;
+    const empty = set.questions.length - Object.keys(answers).length;
+    if (!timeUp && empty && !confirm(`${empty} soru boş. Yine de kontrol edilsin mi?`)) return;
+    checked = true;
+    stopTimer();
+    let ok = 0;
+    const wrongIds = [];
+    set.questions.forEach(q => {
+      const row = rqs.querySelector(`[data-q="${CSS.escape(q.id)}"]`);
+      const right = String(q.answer);
+      const chosen = answers[q.id];
+      const correct = chosen === right;
+      if (correct) ok += 1; else wrongIds.push(q.id);
+      row.classList.add(correct ? 'ok' : 'bad');
+      row.querySelectorAll('button[data-v]').forEach(b => {
+        b.disabled = true;
+        if (b.dataset.v === right) b.classList.add('correct');
+        else if (b.dataset.v === chosen) b.classList.add('wrong');
+      });
+      row.querySelector('.rq-after').innerHTML = `
+        <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? '✓ Doğru'
+          : `✗ ${chosen === undefined ? 'Boş' : 'Yanlış'} — doğrusu: <span lang="de">${esc(answerLabel(q, right))}</span>`}</div>
+        ${q.explanation_tr ? `<div class="small">${esc(q.explanation_tr)}</div>` : ''}`;
+    });
+    saveReadingResult(set, ok, wrongIds);
+    document.getElementById('timerChk').disabled = true;
+    checkInfo.className = 'verdict ' + (ok === set.questions.length ? 'ok' : (ok / set.questions.length >= 0.6 ? '' : 'bad'));
+    checkInfo.textContent = `${timeUp ? 'Süre doldu · ' : ''}${ok}/${set.questions.length} doğru`;
+    checkBtn.textContent = 'Tekrar çöz';
+    checkBtn.classList.remove('primary');
+    checkBtn.onclick = () => renderReadingSet(set.id);
+    const firstBad = rqs.querySelector('.rq.bad');
+    if (firstBad) {
+      if (firstBad.dataset.ref) showText(firstBad.dataset.ref);
+      // Land just below the sticky text pane (or the top bar in matching sets).
+      const pane = document.getElementById('rpane');
+      const topEdge = pane ? pane.getBoundingClientRect().bottom : document.querySelector('.topbar').offsetHeight;
+      window.scrollBy({ top: firstBad.getBoundingClientRect().top - topEdge - 12, behavior: 'smooth' });
+    }
+  }
+  checkBtn.onclick = () => check(false);
+
+  /* Optional timer (off by default) */
+  function stopTimer() {
+    if (timer) clearInterval(timer);
+    timer = null;
+    $topRight.textContent = '';
+    $topRight.classList.remove('warn');
+  }
+  document.getElementById('timerChk').onchange = e => {
+    if (!e.target.checked) { stopTimer(); return; }
+    const endAt = Date.now() + minutes * 60 * 1000;
+    const tick = () => {
+      const left = Math.max(0, endAt - Date.now());
+      const s = Math.ceil(left / 1000);
+      $topRight.textContent = `⏱ ${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+      $topRight.classList.toggle('warn', s <= 60);
+      if (left <= 0) {
+        if (navigator.vibrate) navigator.vibrate(300);
+        check(true);
+      }
+    };
+    timer = setInterval(tick, 500);
+    tick();
+  };
+
+  /* Long press (or double click) on a word toggles a highlight; kept only on this screen. */
+  let pressTimer = null;
+  const toggleWord = el => { if (el && el.classList.contains('w')) el.classList.toggle('hl'); };
+  $app.querySelectorAll('.rbody').forEach(body => {
+    body.addEventListener('touchstart', e => {
+      const w = e.target.closest('.w');
+      clearTimeout(pressTimer);
+      if (w) pressTimer = setTimeout(() => { toggleWord(w); if (navigator.vibrate) navigator.vibrate(15); }, 450);
+    }, { passive: true });
+    ['touchend', 'touchmove', 'touchcancel'].forEach(t => body.addEventListener(t, () => clearTimeout(pressTimer), { passive: true }));
+    body.addEventListener('dblclick', e => toggleWord(e.target.closest('.w')));
+    body.addEventListener('contextmenu', e => { if (e.target.closest('.w')) e.preventDefault(); });
+  });
+  onLeave(() => clearTimeout(pressTimer));
+
+  drawInfo();
+}
+
+// Per reading part: share of correct answers over all checked attempts.
+function readingProgressHtml() {
+  if (!DATA.reading.length) return '';
+  const rec = getReading();
+  const rows = readingGroups().map(g => {
+    let ok = 0, n = 0;
+    g.sets.forEach(s => { const e = rec[s.id]; if (e) { ok += e.ok || 0; n += e.n || 0; } });
+    return barRow(g.name, ok, n);
+  }).join('');
+  return `<div class="card"><h3>Lesen</h3>${rows}</div>`;
+}
+
 /* ---------- Cards ---------- */
 const DECKS = [
   { id: 'pruefung', name: 'Prüfung' },
   { id: 'schreiben', name: 'Schreiben' },
-  { id: 'sprechen', name: 'Sprechen' }
+  { id: 'sprechen', name: 'Sprechen' },
+  { id: 'lesen', name: 'Lesen' }
 ];
 
 function renderCards(args) {
@@ -598,6 +895,7 @@ function renderCardDetail(args) {
   $app.innerHTML = `
     <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong></div>
     ${coachHref ? `<a class="btn primary" href="${coachHref}">🎙 Coach ile çalış</a>` : ''}
+    ${card.deck === 'lesen' && DATA.reading.length ? '<a class="btn primary" href="#/lesen">📖 Lesen alıştırmaları</a>' : ''}
     ${timer}
     ${blocks}
     ${sample}

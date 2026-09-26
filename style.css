@@ -124,9 +124,9 @@ select, input[type=number], input[type=text], input[type=password], textarea {
 .verdict.bad { color: var(--bad); }
 
 /* Tabs & lists */
-.tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; }
 .tab {
-  flex: 1; min-height: 44px; font: inherit; font-weight: 600;
+  flex: 1; min-height: 44px; padding: 0 10px; white-space: nowrap; font: inherit; font-size: 15px; font-weight: 600;
   border: 1px solid var(--border); border-radius: 999px;
   background: var(--card); color: var(--text); cursor: pointer;
 }
@@ -222,3 +222,71 @@ textarea { display: block; min-height: 120px; margin-bottom: 8px; resize: vertic
   margin-left: 6px; min-width: 32px; min-height: 32px; border: 0; background: none;
   font-size: 16px; cursor: pointer; vertical-align: middle;
 }
+
+/* Lesen */
+.list .best { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--muted); }
+.list .best.full { color: var(--ok); }
+.rhead { margin-bottom: 12px; }
+.rhead p { margin: 0 0 8px; }
+.context { font-style: italic; }
+.switch { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; }
+.switch input { width: 22px; height: 22px; margin: 0; }
+.rbody { font-size: 17px; line-height: 1.6; }
+.rbody p { margin: 0 0 .9em; }
+.rbody p:last-child { margin-bottom: 0; }
+.rbody .rtitle { font-weight: 700; }
+.rbody .w { -webkit-touch-callout: none; border-radius: 3px; }
+.rbody .w.hl { background: #ffe58a; color: #1b1f27; }
+.rtext { padding: 0 16px; }
+.rtext summary { gap: 10px; padding: 8px 0; line-height: 1.35; }
+.rtext[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 10px; }
+.rtext .rbody { padding-bottom: 14px; }
+.keybadge {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 30px; height: 30px; padding: 0 6px; border-radius: 8px;
+  background: var(--primary); color: var(--primary-text); font-weight: 800;
+}
+.rpane { position: sticky; top: 0; z-index: 5; background: var(--bg); padding-top: 6px; margin: 0 -4px; padding-left: 4px; padding-right: 4px; }
+.rpane .tabs { margin-bottom: 8px; }
+.rscroll { max-height: 35vh; overflow-y: auto; -webkit-overflow-scrolling: touch; margin-bottom: 4px; }
+.rpane.big .rscroll { max-height: 70vh; }
+.rpane-toggle {
+  display: block; margin: 0 0 4px auto; min-height: 32px; padding: 0 10px;
+  font: inherit; font-size: 14px; color: var(--primary); background: none; border: 0; cursor: pointer;
+}
+.rq {
+  background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px; margin-bottom: 10px;
+}
+.rq.ok { border-left-color: var(--ok); }
+.rq.bad { border-left-color: var(--bad); }
+.rq-head { display: flex; gap: 10px; margin-bottom: 10px; }
+.rq-head .num {
+  flex: none; min-width: 28px; height: 28px; border-radius: 50%; background: var(--blank);
+  display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+}
+.keys { display: flex; flex-wrap: wrap; gap: 8px; }
+.keybtn {
+  min-width: 44px; min-height: 44px; padding: 0 10px; font: inherit; font-weight: 700;
+  color: var(--text); background: var(--card); border: 2px solid var(--border); border-radius: 10px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.keybtn.wide { flex: 1; }
+.keybtn.chosen, .ropt.chosen { border-color: var(--primary); background: var(--blank); }
+.keybtn.correct { border-color: var(--ok); background: var(--ok-bg); }
+.keybtn.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.keybtn[disabled] { cursor: default; color: var(--text); }
+.ropt { font-size: 17px; min-height: 48px; }
+.ropt b { color: var(--primary); }
+.rq-after:not(:empty) { margin-top: 10px; }
+.check-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 15;
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: var(--card); border-top: 1px solid var(--border);
+}
+.check-bar > span { flex: 1; margin: 0; }
+.check-bar .btn { width: auto; flex: none; margin: 0; min-width: 150px; }
+body.has-checkbar main { padding-bottom: 96px; }
+body.has-checkbar.has-banner .check-bar { bottom: calc(72px + env(safe-area-inset-bottom)); }
+body.has-checkbar.has-banner main { padding-bottom: 170px; }

@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.2",
+  "version": "1.3",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -2402,6 +2402,53 @@
    ]
   },
   {
+   "id": "lesen-tuzaklar",
+   "deck": "lesen",
+   "title": "Lesen · Tuzak tipleri (hepsinde aynı)",
+   "prompt": "Sınavı yazanlar hep aynı 8 numarayı kullanır. Görünce hemen şüphelen!",
+   "blocks": [
+    {
+     "heading": "Kelime tuzakları",
+     "lines": [
+      "Aynı kelime, farklı konu: 'Stress' / 'Kopfschmerzen' geçiyor ama sebep başka",
+      "Metinde doğru bilgi, ama BAŞKA kişiye/soruya ait"
+     ]
+    },
+    {
+     "heading": "Kesinlik tuzakları",
+     "lines": [
+      "immer, nie, nur, alle, automatisch, auf jeden Fall, für immer → çoğu zaman yanlış",
+      "vorläufig / erst einmal ≠ für immer",
+      "bevorzugt ≠ garantiert · Hälfte ≠ ganz"
+     ]
+    },
+    {
+     "heading": "Karar tuzakları",
+     "lines": [
+      "fragt nach / prüft / schlägt vor ≠ beschlossen",
+      "verschoben ≠ fällt aus · später bearbeitet ≠ abgelehnt"
+     ]
+    },
+    {
+     "heading": "Kişi / rol tuzakları",
+     "lines": [
+      "Kim yapıyor? leitet ≠ besucht · übernimmt ≠ hilft",
+      "Protokolde isimleri ve görevleri eşleştir"
+     ]
+    },
+    {
+     "heading": "Ana konu tuzağı",
+     "lines": [
+      "'Hauptproblem', 'vor allem' soruları: metinde 'nicht mein Hauptproblem' gibi işaretler ara"
+     ]
+    }
+   ],
+   "tags": [
+    "lesen",
+    "strategie"
+   ]
+  },
+  {
    "id": "lesen-strategie-1",
    "deck": "lesen",
    "title": "Lesen Teil 1 · Personen ↔ Artikel",
@@ -3373,6 +3420,816 @@
      ],
      "answer": 1,
      "explanation_tr": "İki talep: haftaya kadar tamir + ilk Anfahrt ücretinin iadesi → b."
+    }
+   ]
+  },
+  {
+   "id": "L1-3",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 3: Artikel für Freunde",
+   "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır.",
+   "context_de": "Sie lesen den Online-Ratgeber einer Krankenkasse und einer Wirtschaftszeitung und möchten Bekannten Artikel empfehlen.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Ausbildung mit 30 plus – nie zu spät",
+     "body": "Immer mehr Erwachsene beginnen erst spät eine Ausbildung. Betriebe schätzen ihre Lebenserfahrung. Wer schon Familie hat, kann die Ausbildung oft auch in Teilzeit machen."
+    },
+    {
+     "key": "b",
+     "title": "Mehr Geld für Nachtarbeit",
+     "body": "Wer nachts oder am Wochenende arbeitet, bekommt in vielen Branchen Zuschläge. Wie hoch sie sind, steht im Tarifvertrag. Ein Teil davon ist sogar steuerfrei."
+    },
+    {
+     "key": "c",
+     "title": "Gut schlafen trotz Schichtarbeit",
+     "body": "Wechselnde Arbeitszeiten bringen den inneren Rhythmus durcheinander. Ein dunkles, kühles Schlafzimmer, feste Rituale vor dem Schlafengehen und wenig Koffein in den letzten Stunden der Schicht helfen beim Einschlafen."
+    },
+    {
+     "key": "d",
+     "title": "Betriebe finden keine Azubis",
+     "body": "In vielen Regionen bleiben Ausbildungsplätze leer. Besonders Handwerk und Gastronomie klagen über zu wenige Bewerbungen von Schulabgängern."
+    },
+    {
+     "key": "e",
+     "title": "Arbeiten im Nachbarland",
+     "body": "Österreich sucht Fachkräfte aus Deutschland. Doch vieles ist anders: Es gibt zum Beispiel 14 Monatsgehälter und andere Regeln bei Urlaub und Kündigung. Unser Überblick hilft beim Start."
+    },
+    {
+     "key": "f",
+     "title": "Loben statt zahlen",
+     "body": "Geld ist nicht alles: Anerkennung, interessante Aufgaben und flexible Arbeitszeiten motivieren Beschäftigte oft stärker als eine Gehaltserhöhung. Tipps für Führungskräfte."
+    },
+    {
+     "key": "g",
+     "title": "Tarifrunde 2027: Das sind die Ergebnisse",
+     "body": "In mehreren Branchen haben sich Arbeitgeber und Gewerkschaften geeinigt. Die Gehälter der Beschäftigten steigen im Durchschnitt um 4 Prozent."
+    },
+    {
+     "key": "h",
+     "title": "Wenn das Kind krank ist",
+     "body": "Eltern haben pro Kind und Jahr Anspruch auf eine bestimmte Zahl von Kinderkrankentagen. In dieser Zeit zahlt die Krankenkasse Kinderkrankengeld. Wir erklären, wie viele Tage es gibt und welche Bescheinigung nötig ist."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-3-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Sevgi arbeitet im Schichtdienst und kann nach der Arbeit schlecht einschlafen.",
+     "answer": "c",
+     "explanation_tr": "Tuzak b: 'Nacht/Schicht' kelimeleri var ama konu PARA. Sevgi'nin sorunu uyku → c."
+    },
+    {
+     "id": "L1-3-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Robert leitet ein kleines Team und möchte seine Leute motivieren, ohne mehr zu bezahlen.",
+     "answer": "f",
+     "explanation_tr": "Tuzak g: 'Gehälter, Beschäftigte' geçiyor ama maaş artışı; Robert 'ohne mehr zu bezahlen' → f."
+    },
+    {
+     "id": "L1-3-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Elif ist 35 und möchte jetzt noch eine Berufsausbildung beginnen.",
+     "answer": "a",
+     "explanation_tr": "Tuzak d: 'Ausbildung' var ama işverenin sorunu, yaşlı başvuran değil → a (30 plus)."
+    },
+    {
+     "id": "L1-3-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Karins Sohn ist oft krank. Sie will wissen, wie viele Tage sie deshalb zu Hause bleiben darf.",
+     "answer": "h",
+     "explanation_tr": "Kaç gün evde kalabilir → h (Kinderkrankentage)."
+    },
+    {
+     "id": "L1-3-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Burak möchte bald in Österreich arbeiten und sich über die Bedingungen dort informieren.",
+     "answer": "e",
+     "explanation_tr": "Avusturya'da çalışma koşulları → e."
+    }
+   ]
+  },
+  {
+   "id": "L1-4",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 4: Artikel für Kolleginnen",
+   "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır.",
+   "context_de": "Sie lesen Artikel in einem Online-Magazin für Beschäftigte und möchten sie Kolleginnen und Kollegen schicken.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Befristet – und dann?",
+     "body": "Viele Beschäftigte hoffen, dass ihr befristeter Vertrag verlängert wird. Einen Anspruch darauf gibt es aber nicht. Der Artikel erklärt, wie oft ein Vertrag befristet werden darf und wann er automatisch unbefristet wird."
+    },
+    {
+     "key": "b",
+     "title": "Jobticket: Die Firma fährt mit",
+     "body": "Immer mehr Arbeitgeber bezahlen ihren Beschäftigten Bus und Bahn. Für viele Pendler lohnt sich der Umstieg vom Auto."
+    },
+    {
+     "key": "c",
+     "title": "Pendlerpauschale richtig nutzen",
+     "body": "Wer einen langen Arbeitsweg hat, kann pro Kilometer einen festen Betrag in der Steuererklärung angeben. Ab dem 21. Kilometer ist der Betrag sogar höher. So bekommen Sie Geld vom Finanzamt zurück."
+    },
+    {
+     "key": "d",
+     "title": "Quereinstieg in soziale Berufe",
+     "body": "Pflege, Erziehung, Sozialarbeit: Menschen mit Berufserfahrung aus anderen Bereichen sind willkommen. Es gibt verkürzte Ausbildungen und Förderprogramme für Umsteiger."
+    },
+    {
+     "key": "e",
+     "title": "Immer mehr befristete Verträge",
+     "body": "Eine Statistik zeigt: Fast jeder zweite neue Arbeitsvertrag ist inzwischen befristet. Besonders betroffen sind junge Beschäftigte."
+    },
+    {
+     "key": "f",
+     "title": "Stress? So schützen Sie sich",
+     "body": "Wer ständig unter Druck steht, sollte auf Warnsignale achten: schlechter Schlaf, Gereiztheit, Kopfschmerzen. Kleine Pausen und klare Grenzen helfen, gesund zu bleiben."
+    },
+    {
+     "key": "g",
+     "title": "Erste Hilfe für die Seele",
+     "body": "In eintägigen Kursen lernen Beschäftigte, psychische Belastungen bei anderen zu erkennen, ein Gespräch zu beginnen und Betroffene an professionelle Hilfe weiterzuleiten."
+    },
+    {
+     "key": "h",
+     "title": "Gute Ideen werden belohnt",
+     "body": "Viele Unternehmen haben ein betriebliches Vorschlagswesen: Wer einen Verbesserungsvorschlag macht, mit dem die Firma Geld spart, bekommt eine Prämie."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-4-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Tanja hat 15 Jahre im Büro gearbeitet und möchte jetzt in einen sozialen Beruf wechseln.",
+     "answer": "d",
+     "explanation_tr": "Büro → sosyal meslek = Quereinstieg → d."
+    },
+    {
+     "id": "L1-4-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Michaels Vertrag endet im Sommer. Er fragt sich, ob die Firma ihn verlängern muss.",
+     "answer": "a",
+     "explanation_tr": "Tuzak e: 'befristet' var ama sadece istatistik. Michael'ın sorusu 'uzatmak zorunda mı?' → a (Anspruch yok)."
+    },
+    {
+     "id": "L1-4-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Aynur möchte lernen, wie sie Kollegen in einer psychischen Krise unterstützen kann.",
+     "answer": "g",
+     "explanation_tr": "Tuzak f: 'Stress' ama kendini koruma. Aynur BAŞKALARINA yardım etmek istiyor → g."
+    },
+    {
+     "id": "L1-4-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Frank fährt jeden Tag 80 Kilometer zur Arbeit und möchte Steuern sparen.",
+     "answer": "c",
+     "explanation_tr": "Tuzak b: yol/işe gidiş var ama vergi yok. 'Steuern sparen' → c."
+    },
+    {
+     "id": "L1-4-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Julia hat eine Idee, wie ihre Firma Energie sparen kann, und hofft auf eine Belohnung.",
+     "answer": "h",
+     "explanation_tr": "Fikir + ödül (Prämie) → h. 'Energie sparen' ≈ 'Geld sparen'."
+    }
+   ]
+  },
+  {
+   "id": "L2-3",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 3: Informationen im Betrieb",
+   "instructions_tr": "Her numara için önce richtig/falsch, sonra a/b/c.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Merkblatt: Was tun bei Krankheit?",
+     "body": "Wenn Sie krank sind, informieren Sie bitte am ersten Tag bis spätestens 8.30 Uhr telefonisch Ihre direkte Vorgesetzte oder Ihren direkten Vorgesetzten. Eine Nachricht per E-Mail reicht nicht aus.\n\nAb dem dritten Kalendertag brauchen Sie eine ärztliche Arbeitsunfähigkeitsbescheinigung. Diese übermittelt die Arztpraxis inzwischen elektronisch an Ihre Krankenkasse; wir rufen sie dort ab. Sie müssen uns also kein Papier mehr bringen – zum Arzt gehen müssen Sie aber trotzdem.\n\nIst Ihr Kind krank, benötigen wir eine Bescheinigung der Kinderärztin oder des Kinderarztes. Bitte schicken Sie diese an die Personalabteilung.\n\nWerden Sie während Ihres Urlaubs krank, werden die Krankheitstage nicht als Urlaub gezählt – allerdings nur, wenn Sie uns eine ärztliche Bescheinigung vorlegen."
+    },
+    {
+     "key": "T2",
+     "title": "Neue Regeln für die Firmenfahrzeuge",
+     "body": "Ab 1. September gelten neue Regeln für unsere fünf Firmenwagen.\n\nBuchung: Reservieren Sie das Fahrzeug spätestens einen Arbeitstag vorher im Buchungskalender im Intranet. Den Schlüssel erhalten Sie ab 7 Uhr am Empfang.\n\nNutzung: Die Fahrzeuge dürfen nur für dienstliche Fahrten genutzt werden. Private Fahrten sind auch am Wochenende nicht erlaubt. Ausnahme: Bei mehrtägigen Dienstreisen dürfen Sie mit dem Wagen vom Hotel zum Abendessen fahren.\n\nTanken: In jedem Fahrzeug liegt eine Tankkarte. Sie müssen also nichts vorstrecken.\n\nNach der Fahrt tragen Sie bitte Datum, Ziel und Kilometerstand ins Fahrtenbuch ein. Schäden melden Sie sofort der Fuhrparkverwaltung."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-3-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Man kann sich auch per E-Mail krankmelden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak: E-posta 'nicht ausreichend' → sadece telefon. Falsch."
+    },
+    {
+     "id": "L2-3-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Die Arbeitsunfähigkeitsbescheinigung …",
+     "options": [
+      "muss man selbst in der Personalabteilung abgeben.",
+      "bekommt die Firma über die Krankenkasse.",
+      "braucht man erst ab dem fünften Tag."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: eski kural. Metin: muayenehane kasaya elektronik gönderiyor, firma oradan alıyor → b. c: 3. gün, 5 değil."
+    },
+    {
+     "id": "L2-3-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Wer im Urlaub krank wird, bekommt die Urlaubstage automatisch zurück.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak 'automatisch': Sadece doktor belgesiyle → falsch."
+    },
+    {
+     "id": "L2-3-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Wenn das Kind krank ist, …",
+     "options": [
+      "muss man eine Bescheinigung an die Personalabteilung schicken.",
+      "ruft man die Kinderärztin in der Firma an.",
+      "braucht man keine Bescheinigung."
+     ],
+     "answer": 0,
+     "explanation_tr": "'Bescheinigung … an die Personalabteilung' → a."
+    },
+    {
+     "id": "L2-3-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Am Wochenende dürfen Mitarbeitende die Firmenwagen privat nutzen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'auch am Wochenende nicht erlaubt' → falsch. Tuzak: istisna sadece çok günlük iş seyahatinde."
+    },
+    {
+     "id": "L2-3-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Wer einen Firmenwagen braucht, …",
+     "options": [
+      "holt den Schlüssel bei der Chefin.",
+      "reserviert ihn spätestens am Vortag online.",
+      "ruft den Empfang an."
+     ],
+     "answer": 1,
+     "explanation_tr": "'spätestens einen Arbeitstag vorher … im Intranet' → b. Tuzak c: Empfang anahtar verir, rezervasyon almaz."
+    },
+    {
+     "id": "L2-3-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Das Benzin muss man zuerst selbst bezahlen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tankkarte var, 'nichts vorstrecken' → falsch."
+    },
+    {
+     "id": "L2-3-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Nach jeder Fahrt muss man …",
+     "options": [
+      "das Auto volltanken.",
+      "Angaben ins Fahrtenbuch schreiben.",
+      "den Wagen am Empfang kontrollieren lassen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tarih, hedef, km → Fahrtenbuch → b."
+    }
+   ]
+  },
+  {
+   "id": "L2-4",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 4: Informationen im Betrieb",
+   "instructions_tr": "Her numara için önce richtig/falsch, sonra a/b/c.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Betriebsvereinbarung „Mobiles Arbeiten“ – das Wichtigste",
+     "body": "Beschäftigte können bis zu zwei Tage pro Woche mobil arbeiten. Die Tage legen Sie gemeinsam mit Ihrer Teamleitung fest.\n\nDienstag ist Teamtag: An diesem Tag sind alle im Büro.\n\nAuch beim mobilen Arbeiten müssen Sie zwischen 9 und 14 Uhr erreichbar sein. Arbeiten aus dem Ausland ist aus steuerlichen und datenschutzrechtlichen Gründen nicht gestattet.\n\nBitte arbeiten Sie ausschließlich mit Ihrem Firmen-Laptop und der VPN-Verbindung. Private Geräte dürfen nicht verwendet werden.\n\nDie Kosten für Internet und Strom übernimmt das Unternehmen nicht. Einen zweiten Bildschirm können Sie aber bei der IT-Abteilung ausleihen."
+    },
+    {
+     "key": "T2",
+     "title": "Aushang: Umbau der Kantine",
+     "body": "Liebe Kolleginnen und Kollegen,\nvom 1. bis 26. Juli wird unsere Kantine renoviert. In dieser Zeit steht im Foyer ein Essenswagen mit zwei warmen Gerichten zur Auswahl (11.30–13.30 Uhr). Die Kaffeeautomaten im Erdgeschoss bleiben in Betrieb.\n\nDer Essenszuschuss von 3 Euro gilt auch am Essenswagen.\n\nNach dem Umbau erwartet Sie eine neue Salatbar, und die Kantine ist dann bis 14.30 Uhr geöffnet – eine halbe Stunde länger als bisher.\n\nWas wünschen Sie sich für die neue Kantine? Nehmen Sie bis zum 15. Juni an unserer Online-Umfrage teil!"
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-4-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Jede Person entscheidet allein, an welchen Tagen sie zu Hause arbeitet.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak 'allein': 'gemeinsam mit Ihrer Teamleitung' → falsch."
+    },
+    {
+     "id": "L2-4-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Am Dienstag …",
+     "options": [
+      "arbeiten alle Mitarbeitenden im Büro.",
+      "ist mobiles Arbeiten nur vormittags erlaubt.",
+      "muss man nur bis 14 Uhr erreichbar sein."
+     ],
+     "answer": 0,
+     "explanation_tr": "'Dienstag ist Teamtag: alle im Büro' → a."
+    },
+    {
+     "id": "L2-4-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Man darf auch eine Woche aus einer Ferienwohnung in Spanien arbeiten.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Yurt dışından çalışmak 'nicht gestattet' → falsch."
+    },
+    {
+     "id": "L2-4-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Das Unternehmen …",
+     "options": [
+      "bezahlt einen Teil der Internetkosten.",
+      "leiht Beschäftigten einen zusätzlichen Monitor.",
+      "erlaubt private Laptops mit VPN."
+     ],
+     "answer": 1,
+     "explanation_tr": "İnternet ödenmiyor (a yanlış), özel cihaz yasak (c yanlış), monitör ödünç → b."
+    },
+    {
+     "id": "L2-4-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Während des Umbaus gibt es kein warmes Essen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Essenswagen'da iki sıcak yemek var → falsch."
+    },
+    {
+     "id": "L2-4-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Den Essenszuschuss …",
+     "options": [
+      "gibt es während des Umbaus nicht.",
+      "bekommt man auch am Essenswagen.",
+      "erhöht die Firma nach dem Umbau."
+     ],
+     "answer": 1,
+     "explanation_tr": "'gilt auch am Essenswagen' → b. c: artış hiç söylenmiyor."
+    },
+    {
+     "id": "L2-4-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Nach dem Umbau kann man länger in der Kantine essen als vorher.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "'eine halbe Stunde länger als bisher' → richtig."
+    },
+    {
+     "id": "L2-4-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Bis zum 15. Juni kann man …",
+     "options": [
+      "sich für die Salatbar anmelden.",
+      "seine Wünsche für die Kantine mitteilen.",
+      "das Essen für Juli vorbestellen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Online-Umfrage = istek bildirmek → b."
+    }
+   ]
+  },
+  {
+   "id": "L3-3",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 3: Neu im deutschen Job",
+   "instructions_tr": "Her soruya uygun ipucunu seç (a–f). Bir sorunun cevabı YOK → x.",
+   "context_de": "Auf einer Website für internationale Fachkräfte beantworten Expertinnen Fragen zum Arbeitsalltag in Deutschland.",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "In vielen deutschen Firmen wird Kritik direkt und sachlich geäußert. Sie richtet sich meist gegen das Ergebnis, nicht gegen die Person. Fragen Sie ruhig nach, wie man es besser machen kann."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Das „Du“ bietet normalerweise die ältere oder ranghöhere Person an. Duzt Ihr Vorgesetzter Sie, dürfen Sie meistens zurückduzen. Im Zweifel fragen Sie einfach kurz nach."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Pünktlichkeit ist wichtig: Kommen Sie zu Besprechungen lieber fünf Minuten früher. Wenn Sie sich verspäten, melden Sie sich vorher."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Wer im Ausland ein Studium abgeschlossen hat, kann den Abschluss prüfen lassen. Das Ergebnis ist ein Bescheid, der den Vergleich mit einem deutschen Abschluss beschreibt."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Vom Bruttogehalt werden Lohnsteuer und Beiträge zur Kranken-, Renten-, Pflege- und Arbeitslosenversicherung abgezogen. Was übrig bleibt, ist das Nettogehalt."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Smalltalk in der Kaffeeküche gehört dazu. Beliebte Themen sind Wochenende, Urlaub und Wetter – Politik und Gehalt eher nicht."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-3-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Jin: Mein Chef duzt mich. Darf ich ihn jetzt auch duzen?",
+     "answer": "b",
+     "explanation_tr": "Du/Sie sorusu → b."
+    },
+    {
+     "id": "L3-3-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Carla: Ich verstehe meine Gehaltsabrechnung nicht. Warum bekomme ich so viel weniger ausgezahlt?",
+     "answer": "e",
+     "explanation_tr": "Brüt/net farkı → e."
+    },
+    {
+     "id": "L3-3-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Amir: Ich habe im Iran eine Ausbildung begonnen, aber nicht beendet. Kann ich sie hier fortsetzen?",
+     "answer": "x",
+     "explanation_tr": "Tuzak d: tanınma var ama BİTMİŞ üniversite diploması için. Amir'in yarım kalmış Ausbildung'u için ipucu yok → x."
+    },
+    {
+     "id": "L3-3-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Olga: Meine Kollegen kritisieren meine Arbeit sehr offen. Ist das unhöflich gemeint?",
+     "answer": "a",
+     "explanation_tr": "Açık eleştiri kaba mı? → a."
+    }
+   ]
+  },
+  {
+   "id": "L3-4",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 4: Gesund arbeiten",
+   "instructions_tr": "Her soruya uygun ipucunu seç (a–f). Bir sorunun cevabı YOK → x.",
+   "context_de": "In der Mitarbeiterzeitung gibt es die Rubrik „Gesund im Job – Ihre Fragen“.",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Führungskräfte sollten Erfolge ausdrücklich anerkennen und Überstunden zeitnah ausgleichen lassen. Ein offenes Gespräch über die Belastung zeigt dem Team, dass es ernst genommen wird."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Das Nachmittagstief kennt jeder. Statt zum dritten Kaffee zu greifen, gehen Sie lieber zehn Minuten an die frische Luft."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Stehen Sie mindestens alle 30 Minuten kurz auf. Ein höhenverstellbarer Schreibtisch hilft, zwischen Sitzen und Stehen zu wechseln."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Brennende Augen und Kopfschmerzen nach langer Bildschirmarbeit? Schauen Sie alle 20 Minuten für 20 Sekunden in die Ferne."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "In der Kantine lohnt sich ein Blick auf die Salatbar. Gemüse und Vollkornprodukte halten länger satt als Pommes."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Stellen Sie sich morgens eine große Wasserflasche auf den Schreibtisch. Auch eine App kann Sie regelmäßig ans Trinken erinnern."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-4-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Petra: Ich sitze den ganzen Tag am Schreibtisch und habe abends Rückenschmerzen.",
+     "answer": "c",
+     "explanation_tr": "Uzun oturma + sırt ağrısı → c."
+    },
+    {
+     "id": "L3-4-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Hakan: Nach der Nachtschicht kann ich tagsüber einfach nicht schlafen.",
+     "answer": "x",
+     "explanation_tr": "Tuzak b: yorgunluk var ama öğleden sonra düşüşü; gece vardiyası sonrası gündüz uykusu için ipucu yok → x."
+    },
+    {
+     "id": "L3-4-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Ines: Bei der Arbeit vergesse ich oft zu trinken und bekomme nachmittags Kopfschmerzen.",
+     "answer": "f",
+     "explanation_tr": "Tuzak d: 'Kopfschmerzen' geçiyor ama sebep ekran. Ines'in sorunu su içmeyi unutmak → f."
+    },
+    {
+     "id": "L3-4-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Stefan: Mein Team ist nach einem schwierigen Projekt völlig erschöpft. Was kann ich als Teamleiter tun?",
+     "answer": "a",
+     "explanation_tr": "Ekip lideri + tükenmiş ekip → a."
+    }
+   ]
+  },
+  {
+   "id": "L4-3",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 3: Protokoll (Beratungsstelle)",
+   "instructions_tr": "Tutanağı oku, a/b/c seç.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Teamsitzung – Psychosoziale Beratungsstelle Nord",
+     "body": "Datum: 8. April, 10.00–11.30 Uhr\nLeitung: Frau Berger\nProtokoll: Herr Kühn\nAnwesend: Frau Arslan, Herr Kühn, Frau Berger, Frau Scholz\nEntschuldigt: Herr Maier (Fortbildung)\n\nTOP 1: Wartezeiten\nDie Zahl der Anmeldungen ist seit Januar stark gestiegen; die Wartezeit auf ein Erstgespräch beträgt zurzeit sechs Wochen. Beschluss: Ab Mai gibt es jeden Donnerstag von 14 bis 16 Uhr eine offene Sprechstunde ohne Termin. Frau Arslan und Herr Kühn übernehmen sie abwechselnd.\n\nTOP 2: Dolmetscher\nDas Budget für Dolmetscher wurde vom Träger gekürzt. Herr Kühn fragt nach, ob zusätzliche Mittel beantragt werden können. Bis zu einer Antwort werden Dolmetscher nur noch für Erstgespräche eingesetzt.\n\nTOP 3: Fortbildung\nFrau Scholz besucht im Mai eine Fortbildung zum Thema Traumaberatung. Sie wird dem Team in der Sitzung im Juni über die wichtigsten Inhalte berichten.\n\nTOP 4: Praktikum\nAb 1. Mai macht die Psychologiestudentin Frau Lenz ein dreimonatiges Praktikum. Frau Arslan übernimmt die Einarbeitung. Frau Lenz bekommt einen Arbeitsplatz in Raum 2.\n\nTOP 5: Verschiedenes\nDer Teamausflug wird wegen der hohen Arbeitsbelastung auf September verschoben.\n\nNächste Sitzung: 6. Mai, 10.00 Uhr"
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-3-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die offene Sprechstunde …",
+     "options": [
+      "findet ab Mai jeden Donnerstag statt.",
+      "wird von allen Beraterinnen gemeinsam geleitet.",
+      "ersetzt die sechswöchige Wartezeit komplett."
+     ],
+     "answer": 0,
+     "explanation_tr": "Perşembe 14–16, Mayıs'tan itibaren → a. b tuzak: iki kişi 'abwechselnd' (dönüşümlü). c: metinde yok."
+    },
+    {
+     "id": "L4-3-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Dolmetscher …",
+     "options": [
+      "werden ab jetzt vom Träger bezahlt.",
+      "gibt es vorerst nur für Erstgespräche.",
+      "können nicht mehr eingesetzt werden."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: Herr Kühn sadece SORUYOR, karar yok. 'Bis zu einer Antwort … nur für Erstgespräche' → b. c aşırı genelleme."
+    },
+    {
+     "id": "L4-3-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Frau Scholz wird …",
+     "options": [
+      "im Juni eine Fortbildung leiten.",
+      "dem Team später über die Fortbildung berichten.",
+      "im Mai nicht an der Teamsitzung teilnehmen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Mayıs'ta katılıyor, Haziran'da ekibe anlatıyor → b. Tuzak a: 'leiten' ≠ 'besuchen'."
+    },
+    {
+     "id": "L4-3-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Praktikantin wird eingearbeitet von …",
+     "options": [
+      "Frau Arslan.",
+      "Frau Scholz.",
+      "Herrn Kühn."
+     ],
+     "answer": 0,
+     "explanation_tr": "'Frau Arslan übernimmt die Einarbeitung' → a."
+    },
+    {
+     "id": "L4-3-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Der Teamausflug …",
+     "options": [
+      "fällt dieses Jahr aus.",
+      "findet später statt.",
+      "wird im Juni geplant."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: 'verschoben' = ertelendi, iptal değil → b."
+    }
+   ]
+  },
+  {
+   "id": "L4-4",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 4: Protokoll (Lager)",
+   "instructions_tr": "Tutanağı oku, a/b/c seç.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Abteilungsbesprechung – Lager und Versand",
+     "body": "Datum: 12. Mai, 13.30–14.30 Uhr\nLeitung: Herr Schulte (Lagerleiter)\nProtokoll: Frau Kılıç\nAnwesend: 12 Mitarbeitende aus Früh- und Spätschicht\n\nTOP 1: Arbeitsunfall\nAm 5. Mai wurde ein Kollege von einem Gabelstapler leicht am Fuß verletzt. Ursache war zu hohe Geschwindigkeit. Der Stapler wurde geprüft und ist technisch in Ordnung. Alle Beschäftigten müssen an einer Sicherheitsunterweisung am 19. Mai teilnehmen. Wer an diesem Tag fehlt, holt sie bis Monatsende bei Herrn Schulte nach. Außerdem werden Schilder mit Tempo 6 km/h aufgestellt.\n\nTOP 2: Schichtzeiten\nAb Juni gelten neue Zeiten: Frühschicht 6–14 Uhr, Spätschicht 14–22 Uhr. Die Nachtschicht entfällt vorläufig, weil weniger Aufträge eingehen. Im Herbst wird neu entschieden.\n\nTOP 3: Inventur\nWegen der Inventur gilt im November eine Urlaubssperre. Bereits genehmigter Urlaub bleibt davon unberührt.\n\nTOP 4: Verschiedenes\nDie Sprechstunde des Betriebsrats findet ab sofort nicht mehr im Pausenraum, sondern im Büro neben der Kantine statt – wie bisher jeden ersten Montag im Monat."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-4-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Nach dem Unfall …",
+     "options": [
+      "müssen alle Beschäftigten eine Sicherheitsunterweisung besuchen.",
+      "wird der Gabelstapler ersetzt.",
+      "dürfen nur noch erfahrene Kollegen Stapler fahren."
+     ],
+     "answer": 0,
+     "explanation_tr": "Tuzak b: Stapler kontrol edildi, sağlam → değiştirilmiyor. → a."
+    },
+    {
+     "id": "L4-4-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wer bei der Unterweisung am 19. Mai fehlt, …",
+     "options": [
+      "bekommt eine Abmahnung.",
+      "muss sie bis Ende Mai nachholen.",
+      "darf nicht mehr im Lager arbeiten."
+     ],
+     "answer": 1,
+     "explanation_tr": "'holt sie bis Monatsende … nach' → b."
+    },
+    {
+     "id": "L4-4-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Ab Juni …",
+     "options": [
+      "wird die Nachtschicht für immer abgeschafft.",
+      "gibt es erst einmal keine Nachtschicht.",
+      "beginnt die Spätschicht um 13 Uhr."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: 'vorläufig' = şimdilik, 'für immer' değil; sonbaharda tekrar karar verilecek → b."
+    },
+    {
+     "id": "L4-4-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Im November …",
+     "options": [
+      "können keine neuen Urlaubsanträge genehmigt werden.",
+      "muss man bereits genehmigten Urlaub verschieben.",
+      "ist das Lager wegen Inventur geschlossen."
+     ],
+     "answer": 0,
+     "explanation_tr": "Urlaubssperre = yeni izin yok; onaylanmış izin etkilenmez (b yanlış) → a."
+    },
+    {
+     "id": "L4-4-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Sprechstunde des Betriebsrats …",
+     "options": [
+      "findet jetzt an einem anderen Ort statt.",
+      "gibt es jetzt jeden Montag.",
+      "wurde abgeschafft."
+     ],
+     "answer": 0,
+     "explanation_tr": "Değişen sadece YER, zaman 'wie bisher' → a. b tuzak: her ayın ilk pazartesi."
+    }
+   ]
+  },
+  {
+   "id": "LS1-2",
+   "part": "lesen-schreiben1",
+   "title": "Lesen & Schreiben T1 · Beschwerde verstehen (2)",
+   "instructions_tr": "Şikâyet e-postasını oku, a/b/c seç. Sonra şablonla cevap yaz!",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "M",
+     "title": "E-Mail von Herrn Baran",
+     "body": "Betreff: Kurs „Excel für Fortgeschrittene“ – Kursnummer 22-117\n\nSehr geehrte Damen und Herren,\n\nvom 3. bis 7. März habe ich an Ihrem Kurs „Excel für Fortgeschrittene“ teilgenommen. Meine Firma hat dafür 490 Euro bezahlt.\n\nLeider entsprach der Kurs überhaupt nicht der Beschreibung auf Ihrer Website. Statt komplexer Formeln und Makros haben wir fast nur Grundlagen wiederholt, die ich seit Jahren kenne. Dass der Kursleiter an zwei Tagen eine halbe Stunde zu spät kam, war ärgerlich, aber das ist nicht mein Hauptproblem.\n\nAußerdem habe ich bis heute keine Teilnahmebescheinigung erhalten, obwohl ich sie für meine Personalakte brauche.\n\nIch bitte Sie, mir die Bescheinigung umgehend zuzuschicken. Zudem erwarte ich, dass ich kostenlos an Ihrem nächsten Fortgeschrittenenkurs teilnehmen kann. Alternativ akzeptiere ich eine Erstattung der Hälfte der Kursgebühr.\n\nMit freundlichen Grüßen\nOkan Baran"
+    }
+   ],
+   "questions": [
+    {
+     "id": "LS1-2-q1",
+     "num": 19,
+     "text_ref": "M",
+     "kind": "mc",
+     "prompt": "Worüber beschwert sich Herr Baran vor allem?",
+     "options": [
+      "Der Kursleiter war unpünktlich.",
+      "Der Inhalt passte nicht zur Kursbeschreibung.",
+      "Der Kurs war zu teuer."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: gecikme var ama 'nicht mein Hauptproblem' diyor → b."
+    },
+    {
+     "id": "LS1-2-q2",
+     "num": 20,
+     "text_ref": "M",
+     "kind": "mc",
+     "prompt": "Was möchte Herr Baran?",
+     "options": [
+      "Er möchte die ganze Kursgebühr zurück.",
+      "Er möchte eine Bescheinigung und einen kostenlosen Kurs oder die Hälfte des Geldes.",
+      "Er möchte den Kurs bei einem anderen Kursleiter wiederholen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: 'Hälfte' ≠ 'ganze'. İki talep: belge + ücretsiz kurs ya da yarı iade → b."
     }
    ]
   }

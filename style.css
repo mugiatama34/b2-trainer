@@ -149,7 +149,12 @@ select, input[type=number], input[type=text], input[type=password], textarea {
 .sample { white-space: pre-wrap; }
 details summary { min-height: 44px; display: flex; align-items: center; font-weight: 600; cursor: pointer; }
 .timer { font-size: 44px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
-.timer.done { color: var(--bad); }
+.timer.done { color: var(--bad); animation: timer-flash 0.5s ease-in-out 4; }
+.timer-note { min-height: 1.3em; margin: -4px 0 10px; text-align: center; font-weight: 600; font-size: 15px; }
+.timer-note.milestone { color: var(--primary); }
+.timer-note.over { color: var(--bad); }
+@keyframes timer-flash { 50% { opacity: 0.2; } }
+@media (prefers-reduced-motion: reduce) { .timer.done { animation: none; } }
 
 /* Stats */
 .bar-row { margin-bottom: 12px; }

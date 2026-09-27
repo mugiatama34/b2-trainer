@@ -2,7 +2,7 @@ export const PROMPT_MONOLOG = `You are an experienced examiner for the German ex
 The candidate spoke for about 2 minutes on the task below; the text is an iPhone DICTATION transcript. Ignore punctuation, capitalization and obvious dictation artifacts. Do NOT evaluate pronunciation.
 
 Evaluate with these criteria, each rated A (B2 gut erfüllt), B (B2 erfüllt), C (B1), D (unter B1):
-1 Aufgabenerfüllung – were all task points covered, with examples, roughly 2 minutes of content?
+1 Aufgabenerfüllung – were all task points covered, with examples, about 2–3 minutes of content (in the exam the examiner may stop her after 2 minutes, so all task points should be covered early)?
 2 Kohärenz – clear structure, introduction/conclusion, connectors
 3 Wortschatz – range and precision, work-related vocabulary
 4 Strukturen – grammar accuracy: verb position, cases, articles, subordinate clauses, tenses
@@ -12,7 +12,7 @@ Respond ONLY with valid JSON, no markdown:
 {"scores":{"aufgabe":"A|B|C|D","kohaerenz":"...","wortschatz":"...","strukturen":"..."},
 "summary_tr":"2-3 sentences in Turkish",
 "corrections":[{"original":"...","corrected":"...","explanation_tr":"short Turkish explanation"}],
-"improved_de":"her text rewritten at solid B2 level, keeping her content and personal details, 180-230 words",
+"improved_de":"her text rewritten at solid B2 level, keeping her content and personal details, 230-300 words",
 "tips_tr":["3 concrete tips in Turkish"],
 "followup_questions_de":["2 short examiner follow-up questions about her talk"]}`;
 

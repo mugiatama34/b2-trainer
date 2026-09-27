@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.5.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -60,7 +60,37 @@ function dueQuestions() {
     .sort((a, b) => (srs[a.id].box - srs[b.id].box) || (srs[a.id].due - srs[b.id].due));
 }
 
-function getSettings() { return Object.assign({ examMinutes: 12 }, store.get('settings', {})); }
+function getSettings() { return Object.assign({ examMinutes: 12, monologMinutes: 3 }, store.get('settings', {})); }
+const MONOLOG_OPTIONS = [2, 3, 4];
+function monologSeconds() {
+  const m = Number(getSettings().monologMinutes);
+  return (MONOLOG_OPTIONS.includes(m) ? m : 3) * 60;
+}
+function fmtClock(sec) { return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`; }
+function vibrate(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* not supported */ } }
+
+/* Speaking timer cues: at 2:00 elapsed the examiner may stop the monologue
+   (only when the total is longer than 2 min), and a final alert at the end. */
+const EXAM_STOP_SEC = 120;
+function speakingCues(noteEl, total) {
+  let milestone = false;
+  return {
+    update(elapsed, remaining) {
+      if (!milestone && total > EXAM_STOP_SEC && elapsed >= EXAM_STOP_SEC && remaining > 0) {
+        milestone = true;
+        vibrate(200);
+        noteEl.textContent = '⏱ 2:00 — Sınavda burada durdurulabilirsin';
+        noteEl.className = 'timer-note milestone';
+      }
+    },
+    finish() {
+      vibrate([300, 150, 300]);
+      noteEl.textContent = '⏰ Süre doldu!';
+      noteEl.className = 'timer-note over';
+    },
+    reset() { milestone = false; noteEl.textContent = ''; noteEl.className = 'timer-note'; }
+  };
+}
 function saveSettings(s) { store.set('settings', s); }
 
 // learned cards: { [cardId]: true }
@@ -868,7 +898,8 @@ function renderCardDetail(args) {
   const timer = card.deck === 'sprechen' ? `
     <div class="card">
       <h3>Konuşma zamanlayıcısı</h3>
-      <div class="timer" id="timer">2:00</div>
+      <div class="timer" id="timer">${fmtClock(monologSeconds())}</div>
+      <p class="timer-note" id="timerNote" aria-live="polite"></p>
       <div class="row">
         <button class="btn primary" id="tStart">Başlat</button>
         <button class="btn" id="tReset">Sıfırla</button>
@@ -909,7 +940,7 @@ function renderCardDetail(args) {
     renderCardDetail(args);
   };
 
-  if (card.deck === 'sprechen') setupSpeakingTimer(120);
+  if (card.deck === 'sprechen') setupSpeakingTimer(monologSeconds());
   if (card.sample) setupSpeech(card.sample);
 }
 
@@ -925,12 +956,11 @@ function setupSpeakingTimer(seconds) {
   const el = document.getElementById('timer');
   const startBtn = document.getElementById('tStart');
   const resetBtn = document.getElementById('tReset');
+  const cues = speakingCues(document.getElementById('timerNote'), seconds);
   let remaining = seconds;
   let handle = null;
   function draw() {
-    const m = Math.floor(remaining / 60);
-    const s = remaining % 60;
-    el.textContent = `${m}:${String(s).padStart(2, '0')}`;
+    el.textContent = fmtClock(remaining);
     el.classList.toggle('done', remaining === 0);
   }
   function stop() {
@@ -940,20 +970,21 @@ function setupSpeakingTimer(seconds) {
   }
   startBtn.onclick = () => {
     if (handle) { stop(); return; }
-    if (remaining === 0) remaining = seconds;
+    if (remaining === 0) { remaining = seconds; cues.reset(); }
     const endAt = Date.now() + remaining * 1000;
     startBtn.textContent = 'Durdur';
     handle = setInterval(() => {
       remaining = Math.max(0, Math.round((endAt - Date.now()) / 1000));
       draw();
+      cues.update(seconds - remaining, remaining);
       if (remaining === 0) {
         stop();
-        if (navigator.vibrate) navigator.vibrate(300);
+        cues.finish();
       }
     }, 250);
     draw();
   };
-  resetBtn.onclick = () => { stop(); remaining = seconds; draw(); startBtn.textContent = 'Başlat'; };
+  resetBtn.onclick = () => { stop(); remaining = seconds; cues.reset(); draw(); startBtn.textContent = 'Başlat'; };
   onLeave(stop);
   draw();
 }
@@ -1218,7 +1249,20 @@ function renderSettings() {
       <button class="btn" id="testBtn">Bağlantıyı test et</button>
       <p id="testOut" class="small"></p>
       <p class="small muted">Anahtar yoksa Coach ekranları yedek modda çalışır: prompt kopyalanır, Claude uygulamasına yapıştırılır.</p>
+    </div>
+    <div class="card">
+      <h3>Sprechen</h3>
+      <label class="field"><span>Monolog süresi</span>
+        <select id="monoSelect">${MONOLOG_OPTIONS.map(m =>
+          `<option value="${m}" ${monologSeconds() === m * 60 ? 'selected' : ''}>${m} dk</option>`).join('')}</select>
+      </label>
+      <p class="small muted">Coach Monolog ve Sprechen kartlarındaki zamanlayıcı bu süreyi kullanır. Sınavda 2 dk'dan sonra durdurulabilirsin.</p>
     </div>`;
+  document.getElementById('monoSelect').onchange = e => {
+    const s = getSettings();
+    s.monologMinutes = parseInt(e.target.value, 10) || 3;
+    saveSettings(s);
+  };
   const keyInput = document.getElementById('keyInput');
   const modelInput = document.getElementById('modelInput');
   const out = document.getElementById('testOut');
@@ -1288,6 +1332,8 @@ function renderCoachMonolog(args) {
   onLeave(() => { $back.setAttribute('href', '#/'); stopSpeech(); });
   const draftKey = 'coachDraft:' + card.id;
   const hasKey = !!getApiKey();
+  const monoSec = monologSeconds();
+  const monoMin = monoSec / 60;
 
   $app.innerHTML = `
     <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong>
@@ -1296,8 +1342,9 @@ function renderCoachMonolog(args) {
         <ul>${(b.lines || []).map(l => `<li lang="de">${esc(l)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
     </div>
     <div class="card">
-      <h3>1 · Kayıt (2 dk)</h3>
-      <div class="timer" id="recTimer">2:00</div>
+      <h3>1 · Kayıt (${monoMin} dk)</h3>
+      <div class="timer" id="recTimer">${fmtClock(monoSec)}</div>
+      <p class="timer-note" id="recNote" aria-live="polite"></p>
       <div class="row">
         <button class="btn primary" id="recBtn">🎙 Kaydı başlat</button>
         <button class="btn" id="playBtn" disabled>▶ Dinle</button>
@@ -1316,13 +1363,13 @@ function renderCoachMonolog(args) {
     <div id="result"></div>
     <div id="followups"></div>`;
 
-  setupRecorder(120);
+  setupRecorder(monoSec);
 
   const ta = document.getElementById('mText');
   const wc = document.getElementById('wordCount');
   function countWords() {
     const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
-    wc.textContent = n + ' kelime' + (n ? ' (2 dk ≈ 200–250 kelime)' : '');
+    wc.textContent = n + ' kelime' + (n ? ` (${monoMin} dk ≈ ${monoMin * 100}–${monoMin * 125} kelime)` : '');
   }
   ta.value = store.get(draftKey, '');
   countWords();
@@ -1424,17 +1471,18 @@ function renderFollowups(el, questions, card, my) {
   speakDe(questions[0]);
 }
 
-/* 2-minute voice recording (MediaRecorder). The recording stays in memory only. */
+/* Monologue voice recording (MediaRecorder, length from settings). The recording stays in memory only. */
 function setupRecorder(seconds) {
   const recBtn = document.getElementById('recBtn');
   const playBtn = document.getElementById('playBtn');
   const timerEl = document.getElementById('recTimer');
   const info = document.getElementById('recInfo');
+  const cues = speakingCues(document.getElementById('recNote'), seconds);
   let recorder = null, stream = null, chunks = [], handle = null, url = null, audio = null;
 
   function draw(left) {
     const s = Math.max(0, Math.ceil(left));
-    timerEl.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    timerEl.textContent = fmtClock(s);
     timerEl.classList.toggle('done', s === 0);
   }
   function release() {
@@ -1474,6 +1522,7 @@ function setupRecorder(seconds) {
       recBtn.textContent = '🎙 Yeniden kaydet';
     };
     recorder.start(1000);
+    cues.reset();
     const endAt = Date.now() + seconds * 1000;
     recBtn.textContent = '■ Durdur';
     playBtn.disabled = true;
@@ -1481,9 +1530,10 @@ function setupRecorder(seconds) {
     handle = setInterval(() => {
       const left = (endAt - Date.now()) / 1000;
       draw(left);
+      cues.update(seconds - left, left);
       if (left <= 0) {
         stop();
-        if (navigator.vibrate) navigator.vibrate(300);
+        cues.finish();
       }
     }, 250);
     draw(seconds);

@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.3",
+  "version": "1.5",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -4230,6 +4230,865 @@
      ],
      "answer": 1,
      "explanation_tr": "Tuzak a: 'Hälfte' ≠ 'ganze'. İki talep: belge + ücretsiz kurs ya da yarı iade → b."
+    }
+   ]
+  },
+  {
+   "id": "L1-5",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 5 (schwer): Weiterbildung",
+   "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır. ZOR SET: kişilerde ortak anahtar kelime yok, her kişinin 2 şartı var — ikisini de karşılayan makaleyi bul.",
+   "context_de": "Sie lesen den Online-Ratgeber „Beruf & Karriere“ und möchten Bekannten passende Artikel schicken.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Karriere mit Zahlen",
+     "body": "Der IHK-Lehrgang zum Bilanzbuchhalter ist bei Arbeitgebern sehr angesehen. Der Unterricht findet zweimal pro Woche abends in unseren Schulungsräumen statt und dauert etwa 18 Monate. Wer die Prüfung besteht, kann mit einem deutlich höheren Gehalt rechnen."
+    },
+    {
+     "key": "b",
+     "title": "Lernen, wann es passt",
+     "body": "Unsere Fernlehrgänge im kaufmännischen Bereich – von Controlling bis Lohnbuchhaltung – bestehen aus Videos, digitalen Skripten und Online-Tutorien. Sie bestimmen selbst, wann und wo Sie lernen. Auch die Abschlussprüfung legen Sie online ab."
+    },
+    {
+     "key": "c",
+     "title": "Ausländische Abschlüsse anerkennen lassen",
+     "body": "Wer im Ausland eine Berufsausbildung abgeschlossen hat, kann prüfen lassen, ob sie einem deutschen Abschluss entspricht. Dafür müssen die Zeugnisse übersetzt und bei der zuständigen Stelle eingereicht werden. Das Verfahren dauert meist drei bis vier Monate."
+    },
+    {
+     "key": "d",
+     "title": "Freistellung für Weiterbildung",
+     "body": "In fast allen Bundesländern haben Beschäftigte Anspruch auf bezahlte Freistellung für anerkannte Weiterbildungen – meist fünf Arbeitstage im Jahr. Der Arbeitgeber darf sie nur aus dringenden betrieblichen Gründen verweigern. Wichtig: Der Antrag muss rechtzeitig gestellt werden."
+    },
+    {
+     "key": "e",
+     "title": "Qualifizierung trotz Job",
+     "body": "Nicht nur Arbeitslose können gefördert werden: Die Agentur für Arbeit unterstützt auch Beschäftigte, deren Tätigkeit durch neue Technik ersetzt werden könnte. Sie übernimmt einen Teil der Lehrgangskosten; je nach Betriebsgröße muss sich der Arbeitgeber beteiligen."
+    },
+    {
+     "key": "f",
+     "title": "Neustart nach dem Jobverlust",
+     "body": "Wer arbeitslos gemeldet ist, kann bei der Agentur für Arbeit einen Bildungsgutschein beantragen. Damit werden Umschulungen und Weiterbildungen komplett bezahlt. Voraussetzung ist ein Beratungsgespräch."
+    },
+    {
+     "key": "g",
+     "title": "Führen, wenn es knirscht",
+     "body": "Streit im Team kostet Nerven und Zeit. In unserem zweitägigen Seminar lernen Führungskräfte, Konflikte früh zu erkennen, Gespräche zwischen Beteiligten zu moderieren und gemeinsam Lösungen zu vereinbaren."
+    },
+    {
+     "key": "h",
+     "title": "Abschluss ohne Ausbildung",
+     "body": "Wer lange genug in einem Beruf gearbeitet hat, kann auch ohne Ausbildung direkt zur Abschlussprüfung zugelassen werden – der sogenannten Externenprüfung. Voraussetzung ist in der Regel, dass man etwa anderthalbmal so lange im Beruf tätig war, wie die Ausbildung dauert."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-5-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Selin ist Vollzeit in der Finanzabteilung tätig und möchte beruflich vorankommen. Abends in einen Kursraum zu fahren, ist für sie mit zwei kleinen Kindern aber unmöglich.",
+     "answer": "b",
+     "explanation_tr": "Tuzak a: muhasebe ✓ ama akşam sınıfta ✗. b: online ✓ + ticari alan ✓."
+    },
+    {
+     "id": "L1-5-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Marek (52) hat eine feste Stelle, befürchtet aber, dass seine Aufgaben bald von Software erledigt werden. Er möchte sich neu qualifizieren, kann das aber nicht allein finanzieren.",
+     "answer": "e",
+     "explanation_tr": "Tuzak f: devlet ödüyor ✓ ama sadece İŞSİZLERE ✗ (Marek'in işi var). e: 'trotz Job' + Agentur destekler ✓✓."
+    },
+    {
+     "id": "L1-5-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Hanna ist seit kurzem Abteilungsleiterin. Zwei ihrer Mitarbeiter streiten ständig, und sie weiß nicht, wie sie eingreifen soll.",
+     "answer": "g",
+     "explanation_tr": "Konu: yönetici olarak çalışan kavgasına müdahale → g (Führungskräfte + Konflikte moderieren)."
+    },
+    {
+     "id": "L1-5-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Yusuf arbeitet seit zwölf Jahren als Elektriker, hat aber nie ein Zeugnis über eine Berufsausbildung bekommen. Drei Jahre Schule kommen für ihn nicht in Frage.",
+     "answer": "h",
+     "explanation_tr": "Tuzak c: tanınma ✓ ama bitmiş bir DİPLOMA gerekir ✗ (Yusuf'ta yok). h: diploma olmadan sadece sınav ✓ + uzun eğitim yok ✓."
+    },
+    {
+     "id": "L1-5-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Nora würde gern an einem Seminar teilnehmen. Ihr Chef meint, dafür müsse sie Urlaubstage nehmen.",
+     "answer": "d",
+     "explanation_tr": "'Urlaubstage nehmen' sorunu → d: yıllık izinden AYRI ücretli eğitim izni (Bildungsurlaub)."
+    }
+   ]
+  },
+  {
+   "id": "L1-6",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 6 (schwer): Arbeitszeit",
+   "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır. ZOR SET: kişilerde ortak anahtar kelime yok, her kişinin 2 şartı var — ikisini de karşılayan makaleyi bul.",
+   "context_de": "Sie lesen Artikel auf einem Portal für Arbeitnehmerinnen und Arbeitnehmer und möchten sie Freunden empfehlen.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Teilzeit – was Sie wissen sollten",
+     "body": "Wer seine Stunden reduziert, verdient entsprechend weniger und zahlt weniger in die Rentenkasse ein. Achtung: Wer unbefristet in Teilzeit wechselt, hat nicht automatisch das Recht, später wieder Vollzeit zu arbeiten."
+    },
+    {
+     "key": "b",
+     "title": "Feierabend ist Feierabend",
+     "body": "Nach Arbeitsende müssen Beschäftigte grundsätzlich nicht erreichbar sein. Zwischen zwei Arbeitstagen ist eine Ruhezeit von elf Stunden vorgeschrieben. Anders ist es nur, wenn eine Rufbereitschaft ausdrücklich vereinbart und bezahlt wird."
+    },
+    {
+     "key": "c",
+     "title": "Vier Tage arbeiten, fünf Tage bezahlt",
+     "body": "Immer mehr Unternehmen testen die Vier-Tage-Woche bei vollem Gehalt. Die Beschäftigten arbeiten effizienter, Meetings werden gekürzt. Erste Ergebnisse zeigen: Die Produktivität bleibt gleich, die Zufriedenheit steigt."
+    },
+    {
+     "key": "d",
+     "title": "Das Handy am Arbeitsplatz",
+     "body": "Darf man während der Arbeit private Nachrichten lesen? Grundsätzlich entscheidet der Arbeitgeber. Viele Firmen erlauben das Handy in den Pausen, verbieten es aber an Maschinen oder im Kundenkontakt."
+    },
+    {
+     "key": "e",
+     "title": "Gleitender Übergang in den Ruhestand",
+     "body": "Ab 63 kann man unter bestimmten Bedingungen eine Teilrente beziehen und gleichzeitig mit reduzierter Stundenzahl weiterarbeiten. So lassen sich Einkommen und Freizeit flexibel kombinieren."
+    },
+    {
+     "key": "f",
+     "title": "Früher in Rente – lohnt sich das?",
+     "body": "Wer vor dem regulären Rentenalter aufhört zu arbeiten, muss mit dauerhaften Abschlägen rechnen. Ein Rechenbeispiel zeigt, wie viel Geld dabei verloren geht."
+    },
+    {
+     "key": "g",
+     "title": "Zeit für Angehörige",
+     "body": "Wer nahe Verwandte zu Hause pflegt, kann seine Arbeitszeit bis zu 24 Monate lang reduzieren – bis auf 15 Stunden pro Woche. Nach dieser Phase hat man das Recht, zur ursprünglichen Arbeitszeit zurückzukehren."
+    },
+    {
+     "key": "h",
+     "title": "So überzeugen Sie den Chef von Gleitzeit",
+     "body": "Flexible Arbeitszeiten müssen nicht Chaos bedeuten. Unsere Tipps zeigen, wie Sie Ihrem Arbeitgeber ein Modell mit Kernzeiten vorschlagen und welche Argumente wirklich ziehen."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-6-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Leon möchte mehr Zeit mit seinen Kindern verbringen. Auf einen Teil seines Einkommens kann die Familie aber nicht verzichten.",
+     "answer": "c",
+     "explanation_tr": "Tuzak a: daha az çalışma ✓ ama daha az para ✗. c: 4 gün + tam maaş ✓✓."
+    },
+    {
+     "id": "L1-6-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Deryas Mutter braucht seit einem Schlaganfall Unterstützung. Derya möchte für eine gewisse Zeit weniger arbeiten, danach aber unbedingt wieder auf ihre volle Stelle zurück.",
+     "answer": "g",
+     "explanation_tr": "Tuzak a (tekrar!): azaltma ✓ ama tam zamana geri dönüş hakkı YOK ✗. g: bakım için azaltma + geri dönüş hakkı ✓✓."
+    },
+    {
+     "id": "L1-6-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Timo bekommt von seiner Vorgesetzten oft spät am Abend noch Aufgaben per Messenger. Er ist unsicher, ob er sofort reagieren muss.",
+     "answer": "b",
+     "explanation_tr": "Tuzak d: telefon/mesaj kelime benzerliği ama konu işte özel kullanım. b: mesai sonrası ulaşılabilir olma zorunluluğu yok ✓."
+    },
+    {
+     "id": "L1-6-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Paula ist 63. Sie möchte nicht plötzlich ganz aufhören, sondern ihre Arbeit Schritt für Schritt reduzieren.",
+     "answer": "e",
+     "explanation_tr": "Tuzak f: emeklilik ✓ ama TAMAMEN bırakma ✗. e: kısmi emeklilik + az çalışma = kademeli ✓✓."
+    },
+    {
+     "id": "L1-6-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Kai ist Frühaufsteher und würde gern um 6 Uhr beginnen und am frühen Nachmittag gehen. In seiner Firma gelten aber feste Bürozeiten.",
+     "answer": "h",
+     "explanation_tr": "Sabit mesai saatleri var, esnek saat istiyor → h (şefi Gleitzeit'e ikna etme)."
+    }
+   ]
+  },
+  {
+   "id": "L1-7",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 7 (schwer): Rechte im Job",
+   "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır. ZOR SET: kişilerde ortak anahtar kelime yok, her kişinin 2 şartı var — ikisini de karşılayan makaleyi bul.",
+   "context_de": "Sie lesen die Rubrik „Recht im Job“ einer Tageszeitung und möchten Bekannten passende Artikel weiterleiten.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Wenn es sofort nicht passt",
+     "body": "In den ersten sechs Monaten einer neuen Stelle ist meistens eine Probezeit vereinbart. In dieser Zeit können beide Seiten den Vertrag mit einer Frist von nur zwei Wochen beenden – ohne Angabe von Gründen."
+    },
+    {
+     "key": "b",
+     "title": "Weihnachtsgeld: Wer bekommt es?",
+     "body": "Einen gesetzlichen Anspruch auf Weihnachtsgeld gibt es nicht. Er kann sich aber aus dem Arbeitsvertrag, einem Tarifvertrag oder daraus ergeben, dass der Arbeitgeber es drei Jahre hintereinander ohne Vorbehalt gezahlt hat."
+    },
+    {
+     "key": "c",
+     "title": "Sachbezug statt Gehaltserhöhung",
+     "body": "Arbeitgeber können ihren Beschäftigten Gutscheine oder Guthabenkarten im Wert von bis zu 50 Euro im Monat geben, ohne dass Steuern oder Sozialabgaben fällig werden. Wichtig: Bargeld ist nicht erlaubt."
+    },
+    {
+     "key": "d",
+     "title": "Wann der Chef nicht kündigen darf",
+     "body": "Wer länger als sechs Monate in einem Betrieb mit mehr als zehn Beschäftigten arbeitet, genießt Kündigungsschutz. Der Arbeitgeber braucht dann einen sozial gerechtfertigten Grund."
+    },
+    {
+     "key": "e",
+     "title": "Versichert auf dem Arbeitsweg",
+     "body": "Passiert auf dem direkten Weg zwischen Wohnung und Arbeitsplatz ein Unfall, zahlt die gesetzliche Unfallversicherung die Behandlung – egal ob zu Fuß, mit dem Rad oder dem Auto. Wer allerdings einen Umweg zum Einkaufen macht, ist nicht versichert."
+    },
+    {
+     "key": "f",
+     "title": "Streit im Team schlichten",
+     "body": "Für Führungskräfte gehört es zu den schwierigsten Aufgaben: zwischen streitenden Mitarbeitenden vermitteln. Eine Mediatorin erklärt, wie man neutral bleibt und beide Seiten zu Wort kommen lässt."
+    },
+    {
+     "key": "g",
+     "title": "Hitze am Arbeitsplatz",
+     "body": "Ab 26 Grad im Büro sollte der Arbeitgeber etwas unternehmen: Jalousien, Ventilatoren oder lockere Kleidungsregeln. Steigt die Temperatur über 30 Grad, muss er handeln. Beschäftigte sollten das Problem zuerst beim Vorgesetzten oder Betriebsrat ansprechen."
+    },
+    {
+     "key": "h",
+     "title": "Nicht alles gefallen lassen",
+     "body": "Wer am Arbeitsplatz systematisch schikaniert wird, sollte jeden Vorfall mit Datum und Zeugen notieren. Ansprechpartner sind der Betriebsrat oder die Beschwerdestelle des Unternehmens. In schweren Fällen kann man Schadensersatz verlangen."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-7-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Emine hat vor vier Wochen eine neue Stelle angetreten und merkt, dass die Arbeit nicht zu ihr passt. Sie will wissen, wie schnell sie die Firma verlassen kann.",
+     "answer": "a",
+     "explanation_tr": "Tuzak d: işten ayrılma ✓ ama İŞVERENİN fesih kısıtı ve 6 ay sonrası ✗. a: deneme süresi, 2 hafta ✓✓."
+    },
+    {
+     "id": "L1-7-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Georg wird von einem Kollegen seit Monaten vor anderen lächerlich gemacht. Er möchte sich wehren.",
+     "answer": "h",
+     "explanation_tr": "Tuzak f: çatışma ✓ ama YÖNETİCİ için ✗. Georg mağdur → h (schikaniert = sistematik aşağılama)."
+    },
+    {
+     "id": "L1-7-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Svetlana ist morgens auf dem Weg ins Büro mit dem Fahrrad gestürzt. Sie fragt sich, wer die Behandlungskosten übernimmt.",
+     "answer": "e",
+     "explanation_tr": "İşe giderken kaza = Wegeunfall → e. Kelime yok, anlamdan bul."
+    },
+    {
+     "id": "L1-7-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Ralf hat eine kleine Firma. Er möchte seinem Team jeden Monat einen kleinen Bonus geben, ohne dass Steuern darauf anfallen.",
+     "answer": "c",
+     "explanation_tr": "Tuzak b: prim/Weihnachtsgeld ✓ ama vergi muafiyeti yok, aylık değil ✗. c: aylık + vergisiz ✓✓."
+    },
+    {
+     "id": "L1-7-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Mias Schreibtisch steht direkt an einer großen Fensterfront. Im Sommer ist es dort kaum auszuhalten.",
+     "answer": "g",
+     "explanation_tr": "'kaum auszuhalten' + pencere + yaz = sıcak → g."
+    }
+   ]
+  },
+  {
+   "id": "L2-5",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 5 (schwer): Zeiterfassung & Jobrad",
+   "instructions_tr": "ZOR SET: Metinler uzun, bilgi istisnalar ve koşullar içinde saklı. richtig/falsch: tek bir koşul eksikse FALSCH. a/b/c: her seçenek metinde geçiyor ama sadece biri soruya ait.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Rundschreiben: Arbeitszeiterfassung und Mehrarbeit",
+     "body": "Seit Januar erfassen alle Beschäftigten ihre Arbeitszeit digital über die App „ZeitPlus“. Wer im Außendienst tätig ist und kein Diensthandy besitzt, kann die Zeiten weiterhin auf dem Papierformular notieren; dieses muss jedoch spätestens am dritten Werktag des Folgemonats im Personalbüro vorliegen.\n\nMehrarbeit muss vorab von der Teamleitung genehmigt werden. Eine Ausnahme gilt nur, wenn ein Notfall die sofortige Weiterarbeit erfordert; in diesem Fall ist die Teamleitung am nächsten Arbeitstag zu informieren.\n\nGenehmigte Überstunden werden grundsätzlich durch Freizeit ausgeglichen. Eine Auszahlung ist nur möglich, wenn das Zeitkonto am Ende eines Quartals mehr als 40 Plusstunden aufweist und ein Ausgleich aus betrieblichen Gründen nicht möglich war. Über entsprechende Anträge entscheidet die Personalabteilung.\n\nMinusstunden dürfen 20 Stunden nicht überschreiten. Liegt jemand darüber, vereinbart die Teamleitung ein Gespräch, in dem ein Plan für den Ausgleich festgelegt wird."
+    },
+    {
+     "key": "T2",
+     "title": "Neu: Dienstfahrrad-Leasing",
+     "body": "Ab März können alle festangestellten Beschäftigten nach Ende der Probezeit ein Dienstfahrrad leasen – auch ein E-Bike. Die Leasingrate wird direkt vom Bruttogehalt abgezogen; dadurch sparen Sie Steuern und Sozialabgaben. Die Kosten für die Versicherung übernimmt zusätzlich das Unternehmen.\n\nDas Rad darf auch privat und im Urlaub genutzt werden. Pro Person ist ein Fahrrad möglich; Partnerinnen und Partner, die nicht bei uns beschäftigt sind, können leider nicht teilnehmen.\n\nDie Laufzeit beträgt 36 Monate. Wer das Unternehmen vorher verlässt, muss das Rad zurückgeben oder die restlichen Raten auf einmal bezahlen. Am Ende der Laufzeit können Sie das Rad zu einem Restwert von etwa 18 Prozent des Kaufpreises übernehmen – eine Pflicht dazu besteht nicht.\n\nBestellungen sind nur bei den Partnerhändlern möglich, die im Intranet aufgeführt sind."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-5-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Alle Beschäftigten müssen ihre Arbeitszeit mit der App erfassen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak 'alle': Diensthandy'si olmayan Außendienst çalışanları kâğıt form kullanabilir → falsch."
+    },
+    {
+     "id": "L2-5-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Wer Überstunden machen möchte, …",
+     "options": [
+      "braucht vorher die Zustimmung der Teamleitung – außer in einem Notfall.",
+      "informiert die Teamleitung am nächsten Arbeitstag.",
+      "braucht eine Genehmigung der Personalabteilung."
+     ],
+     "answer": 0,
+     "explanation_tr": "b sadece ACİL DURUM için; c sadece ÖDEME başvurusu için. Normal kural: önceden Teamleitung onayı → a."
+    },
+    {
+     "id": "L2-5-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Wer am Quartalsende mehr als 40 Plusstunden hat, bekommt sie ausgezahlt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "İKİ koşul var: >40 saat VE izinle telafi işletme nedeniyle mümkün olmamalı; üstelik Personalabteilung karar verir, otomatik değil → falsch."
+    },
+    {
+     "id": "L2-5-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Das Papierformular …",
+     "options": [
+      "muss man bis zum dritten Tag des laufenden Monats abgeben.",
+      "muss spätestens am dritten Werktag des nächsten Monats im Personalbüro sein.",
+      "benutzen alle Beschäftigten im Außendienst."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: 'laufender Monat' ≠ 'Folgemonat'. Tuzak c: sadece telefonu OLMAYANLAR → b."
+    },
+    {
+     "id": "L2-5-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Auch neue Mitarbeitende können sofort ein Rad leasen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'nach Ende der Probezeit' → falsch."
+    },
+    {
+     "id": "L2-5-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Die Versicherung für das Fahrrad …",
+     "options": [
+      "ist in der Leasingrate enthalten.",
+      "bezahlt der Arbeitgeber.",
+      "braucht man nur für E-Bikes."
+     ],
+     "answer": 1,
+     "explanation_tr": "'übernimmt zusätzlich das Unternehmen' → b. a mantıklı görünür ama metinde yok."
+    },
+    {
+     "id": "L2-5-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Nach 36 Monaten muss man das Fahrrad kaufen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'eine Pflicht dazu besteht nicht' → falsch."
+    },
+    {
+     "id": "L2-5-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Wer vor Ablauf der 36 Monate kündigt, …",
+     "options": [
+      "darf das Rad zum Restwert behalten.",
+      "muss das Rad abgeben oder die offenen Raten sofort bezahlen.",
+      "zahlt die Raten weiter monatlich."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: Restwert sadece süre SONUNDA. c: 'auf einmal' = tek seferde → b."
+    }
+   ]
+  },
+  {
+   "id": "L2-6",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 6 (schwer): Datenschutz & Weiterbildung",
+   "instructions_tr": "ZOR SET: Metinler uzun, bilgi istisnalar ve koşullar içinde saklı. richtig/falsch: tek bir koşul eksikse FALSCH. a/b/c: her seçenek metinde geçiyor ama sadece biri soruya ait.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Merkblatt: Umgang mit Kundendaten",
+     "body": "Kundendaten dürfen nur für den Zweck verwendet werden, für den sie erhoben wurden. Eine Weitergabe an andere Abteilungen ist nur erlaubt, wenn diese die Daten für ihre Aufgaben benötigen – etwa die Buchhaltung für die Rechnungsstellung.\n\nE-Mails mit personenbezogenen Daten an externe Empfänger müssen verschlüsselt werden. Innerhalb des Unternehmens ist das nicht erforderlich, sofern Sie das interne Mailsystem nutzen.\n\nAusdrucke mit Kundendaten dürfen nicht offen auf dem Schreibtisch liegen bleiben. Entsorgen Sie sie ausschließlich in den grauen Datenschutztonnen, keinesfalls im normalen Papierkorb.\n\nWenn Sie vermuten, dass Daten verloren gegangen oder in falsche Hände geraten sind – zum Beispiel durch einen verlorenen Laptop –, informieren Sie unverzüglich den Datenschutzbeauftragten. Die Meldung ist auch dann Pflicht, wenn Sie sich nicht sicher sind."
+    },
+    {
+     "key": "T2",
+     "title": "Richtlinie: Kosten für Weiterbildungen",
+     "body": "Das Unternehmen übernimmt die Kosten für berufliche Weiterbildungen, wenn diese vorher sowohl von der Abteilungsleitung als auch von der Personalentwicklung genehmigt wurden. Findet die Weiterbildung während der Arbeitszeit statt, wird das Gehalt weitergezahlt; Kurse am Wochenende gelten nicht als Arbeitszeit.\n\nBei Weiterbildungen über 2.000 Euro wird eine Rückzahlungsvereinbarung geschlossen: Wer innerhalb von zwei Jahren nach Abschluss auf eigenen Wunsch kündigt, zahlt einen Teil der Kosten zurück. Für jeden vollen Monat im Unternehmen verringert sich der Betrag um ein Vierundzwanzigstel. Kündigt das Unternehmen, entfällt die Rückzahlung.\n\nFahrt- und Übernachtungskosten werden nach der Reisekostenrichtlinie erstattet. Prüfungsgebühren übernimmt das Unternehmen nur für den ersten Versuch."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-6-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Innerhalb der Firma darf man Kundendaten frei weitergeben.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Sadece görevi için İHTİYACI olan departmana → falsch."
+    },
+    {
+     "id": "L2-6-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Verschlüsseln muss man eine E-Mail, wenn …",
+     "options": [
+      "man Kundendaten an Personen außerhalb der Firma schickt.",
+      "man Kundendaten an die Buchhaltung schickt.",
+      "man das interne Mailsystem benutzt."
+     ],
+     "answer": 0,
+     "explanation_tr": "'an externe Empfänger' → a. b ve c şirket içi, şifre gerekmez."
+    },
+    {
+     "id": "L2-6-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Einen möglichen Datenverlust muss man nur melden, wenn man sicher ist.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'auch dann Pflicht, wenn Sie sich nicht sicher sind' → falsch."
+    },
+    {
+     "id": "L2-6-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Ausdrucke mit Kundendaten …",
+     "options": [
+      "darf man in den Papierkorb werfen, wenn sie zerrissen sind.",
+      "gehören in spezielle Behälter.",
+      "gibt man dem Datenschutzbeauftragten."
+     ],
+     "answer": 1,
+     "explanation_tr": "'graue Datenschutztonnen' = özel kutular → b. a: 'zerrissen' metinde yok, uydurma koşul."
+    },
+    {
+     "id": "L2-6-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Für einen Kurs am Samstag bekommt man einen freien Tag.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Hafta sonu kursları mesai sayılmaz → falsch."
+    },
+    {
+     "id": "L2-6-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Die Firma bezahlt eine Weiterbildung, wenn …",
+     "options": [
+      "die Abteilungsleitung zustimmt.",
+      "zwei Stellen vorher zustimmen.",
+      "sie weniger als 2.000 Euro kostet."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: tek onay yetmez, 'sowohl … als auch' = iki onay → b. c: 2000 € sadece geri ödeme sınırı."
+    },
+    {
+     "id": "L2-6-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Wer von der Firma gekündigt wird, muss die Weiterbildungskosten nicht zurückzahlen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "'Kündigt das Unternehmen, entfällt die Rückzahlung' → richtig."
+    },
+    {
+     "id": "L2-6-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Wer die Prüfung beim ersten Mal nicht besteht, …",
+     "options": [
+      "muss die Kurskosten zurückzahlen.",
+      "bezahlt die Gebühr für den zweiten Versuch selbst.",
+      "darf keine weitere Weiterbildung machen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Sınav ücreti sadece ilk deneme için → ikinci deneme kendi cebinden → b."
+    }
+   ]
+  },
+  {
+   "id": "L3-5",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 5 (schwer): Karriere-Coaching",
+   "instructions_tr": "ZOR SET: Tüm ipuçları aynı konu alanında, sorular dolaylı ve iki yönlü. x sorusunun çok yakın ama yanlış bir ipucu var — bakış açısına (kim soruyor?) ve asıl soruya dikkat.",
+   "context_de": "Auf einem Karriereportal beantworten Coaches Fragen von Leserinnen und Lesern.",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Längere Pausen im Lebenslauf – etwa durch Elternzeit oder die Pflege von Angehörigen – sind heute keine Seltenheit. Erklären Sie im Gespräch kurz und ehrlich, was Sie in dieser Zeit getan haben, und betonen Sie, welche Fähigkeiten Sie dabei gewonnen haben."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Initiativbewerbungen werden unterschätzt. Schreiben Sie Firmen an, die Sie interessieren, auch wenn keine Stelle ausgeschrieben ist. Nennen Sie konkret, welche Aufgaben Sie übernehmen könnten."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Bevor Sie nach außen schauen: Viele Unternehmen haben ein internes Stellenportal. Sprechen Sie mit der Personalentwicklung über Ihre Ziele. Ein Wechsel in eine andere Abteilung bringt neue Aufgaben, ohne dass Sie Ihr Netzwerk verlieren."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Beim Gehalt gilt: Wer nicht fragt, bekommt nichts. Ermitteln Sie vorher Ihren Marktwert und nennen Sie eine konkrete Zahl, die etwas über Ihrem Ziel liegt."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Arbeitszeugnisse müssen wohlwollend formuliert sein. Deshalb hat sich eine eigene Sprache entwickelt: „stets zu unserer vollsten Zufriedenheit“ bedeutet „sehr gut“, „er hat sich bemüht“ dagegen „mangelhaft“. Lassen Sie Ihr Zeugnis im Zweifel prüfen."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Wer kündigen will, muss das schriftlich tun – eine E-Mail reicht nicht. Achten Sie auf die Kündigungsfrist in Ihrem Vertrag und verabschieden Sie sich fair von Ihrem Team."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-5-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Lena: Ich arbeite seit acht Jahren in derselben Firma und trete auf der Stelle. Eigentlich mag ich das Unternehmen. Muss ich wirklich kündigen, um mich weiterzuentwickeln?",
+     "answer": "c",
+     "explanation_tr": "Tuzak f: istifa ✓ konu ama Lena istifa ETMEDEN gelişmek istiyor → c (şirket içi geçiş)."
+    },
+    {
+     "id": "L3-5-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Tarık: Im Vorstellungsgespräch wurde ich gefragt, warum ich zwei Jahre nicht berufstätig war. Ich war bei meinen Kindern zu Hause und habe nur gestottert.",
+     "answer": "a",
+     "explanation_tr": "Çocuklarla evde geçen boşluk = Lebenslauf-Pause → a. Soruda 'Lücke' kelimesi yok, anlamdan bul."
+    },
+    {
+     "id": "L3-5-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Birgit: Ich habe zwei Zusagen – eine Stelle mit deutlich mehr Gehalt, eine mit einem sehr sympathischen Team. Wie treffe ich die richtige Wahl?",
+     "answer": "x",
+     "explanation_tr": "Tuzak d: maaş ✓ kelimesi var ama pazarlık hakkında; iki teklif arasında KARAR vermeye dair ipucu yok → x."
+    },
+    {
+     "id": "L3-5-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Samuel: Mein Arbeitszeugnis klingt eigentlich sehr freundlich. Eine Bekannte meint aber, es sei eher schlecht. Wie kann das sein?",
+     "answer": "e",
+     "explanation_tr": "Nazik ama kötü referans = Zeugnissprache → e."
+    }
+   ]
+  },
+  {
+   "id": "L3-6",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 6 (schwer): Kommunikation im Team",
+   "instructions_tr": "ZOR SET: Tüm ipuçları aynı konu alanında, sorular dolaylı ve iki yönlü. x sorusunun çok yakın ama yanlış bir ipucu var — bakış açısına (kim soruyor?) ve asıl soruya dikkat.",
+   "context_de": "In der Mitarbeiterzeitschrift gibt es die Rubrik „Frag die Expertin – Kommunikation im Job“.",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Wenn gegensätzliche Interessen aufeinandertreffen, braucht es klare Regeln: Legen Sie zu Beginn Redezeiten fest, fassen Sie Argumente beider Seiten neutral zusammen und halten Sie Zwischenergebnisse sichtbar fest."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Kritik kommt besser an, wenn Sie in Ich-Botschaften sprechen: „Ich schaffe es nicht, Aufgaben so spät noch gut zu erledigen.“ Beschreiben Sie das konkrete Verhalten und schlagen Sie eine Lösung vor."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Führungskräfte sollten neue Mitarbeitende aktiv integrieren: Eine Patin, ein gemeinsames Mittagessen in der ersten Woche und regelmäßige Feedbackgespräche erleichtern den Start."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Zu viele E-Mails? Vereinbaren Sie im Team, dass Aufgaben nur noch über das Projekttool verteilt werden. So sieht jeder, wer woran arbeitet."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Unangenehme Nachrichten sollte man nicht per E-Mail verkünden. Erklären Sie die Gründe offen, auch wenn Sie selbst nicht einverstanden sind, und geben Sie Raum für Fragen und Ärger."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Vor der Geschäftsführung präsentieren? Beginnen Sie mit dem wichtigsten Ergebnis, halten Sie sich kurz und bereiten Sie Antworten auf kritische Fragen vor."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-6-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Julia: Nächste Woche soll ich eine Besprechung leiten, in der zwei Abteilungen völlig unterschiedliche Positionen vertreten. Ich habe Angst, dass es eskaliert.",
+     "answer": "a",
+     "explanation_tr": "İki taraf, farklı görüş, toplantı yönetimi → a."
+    },
+    {
+     "id": "L3-6-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Mehmet: Eine Kollegin gibt mir ihre Aufgaben ständig fünf Minuten vor Feierabend. Ich will das ändern, aber keinen Streit anfangen.",
+     "answer": "b",
+     "explanation_tr": "Tuzak d: görev dağıtımı ✓ ama sorun e-posta yoğunluğu değil. Kavgasız dile getirmek → b (Ich-Botschaften)."
+    },
+    {
+     "id": "L3-6-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Carina: Die Geschäftsführung hat entschieden, dass unser Team die Weihnachtsgratifikation verliert. Ich muss das meinen Leuten sagen.",
+     "answer": "e",
+     "explanation_tr": "Tuzak f: Geschäftsführung kelimesi ✓ ama sunum hakkında. Kötü haberi ekibe iletmek → e."
+    },
+    {
+     "id": "L3-6-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Paul: Ich bin seit drei Wochen neu. Die anderen gehen immer zusammen essen, aber niemand fragt mich. Was kann ich tun?",
+     "answer": "x",
+     "explanation_tr": "Tuzak c: yeni çalışan ✓ ama tavsiye YÖNETİCİLERE; Paul'ün kendisi ne yapabilir sorusuna cevap yok → x."
+    }
+   ]
+  },
+  {
+   "id": "L4-5",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 5 (schwer): Protokoll Umzug",
+   "instructions_tr": "ZOR SET: Tutanakta öneriler reddediliyor, kararlar değişiyor, kişiler birbirini temsil ediyor. Sadece BESCHLUSS/karar olanı say; 'schlägt vor', 'möchte prüfen' karar değildir.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Projektsitzung „Umzug der Verwaltung“",
+     "body": "Datum: 21. Februar, 9.00–10.45 Uhr\nLeitung: Frau Albrecht (Verwaltungsleitung)\nProtokoll: Herr Yılmaz\nAnwesend: Frau Albrecht, Herr Yılmaz, Frau Roth (IT), Herr Fischer (Facility-Management), Frau Weiß (Betriebsrat), Frau Klein (Personal, in Vertretung von Herrn Dorn)\n\nTOP 1: Umzugstermin\nHerr Fischer berichtet, dass die Handwerker im neuen Gebäude zwei Wochen im Verzug sind; der ursprünglich geplante Termin am 15. März ist nicht zu halten. Frau Albrecht schlägt den 29. März vor. Frau Roth weist darauf hin, dass an diesem Tag Quartalsende ist und die IT-Systeme nicht abgeschaltet werden dürfen. Beschluss: Der Umzug findet am Wochenende 5./6. April statt.\n\nTOP 2: Wochenendarbeit\nFrau Weiß betont, dass die Mitarbeit am Wochenende freiwillig sein muss. Für jeden Umzugstag erhalten Helfende einen Tag Freizeitausgleich. Frau Klein sammelt die Namen der Freiwilligen bis zum 10. März.\n\nTOP 3: IT\nDas Team von Frau Roth baut die Arbeitsplätze am Sonntag auf. Die Beschäftigten müssen ihre Rechner nicht selbst abbauen, sollen aber alle persönlichen Dateien vorher auf dem Netzlaufwerk speichern. Am Montag, 7. April, steht von 7 bis 10 Uhr ein IT-Support im Foyer bereit.\n\nTOP 4: Parkplätze\nIm neuen Gebäude gibt es 20 Parkplätze weniger. Herr Fischers Vorschlag, die Plätze zu verlosen, wird abgelehnt. Stattdessen erhalten zuerst Beschäftigte mit Schwerbehinderung und Pendelnde mit mehr als 30 km Arbeitsweg einen Platz. Herr Fischer erstellt die Liste.\n\nTOP 5: Nächste Sitzung\n14. März, 9.00 Uhr. Da Frau Albrecht im Urlaub ist, leitet Herr Fischer die Sitzung."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-5-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Der Umzug findet …",
+     "options": [
+      "am 15. März statt.",
+      "am 29. März statt.",
+      "an einem Wochenende im April statt."
+     ],
+     "answer": 2,
+     "explanation_tr": "15 Mart eski plan, 29 Mart sadece ÖNERİ ve reddedildi. Beschluss: 5./6. Nisan → c."
+    },
+    {
+     "id": "L4-5-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wer beim Umzug hilft, …",
+     "options": [
+      "meldet sich bei Frau Weiß.",
+      "bekommt dafür freie Tage.",
+      "erhält eine zusätzliche Bezahlung."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: Frau Weiß gönüllülüğü vurgulayan Betriebsrat; isimleri Frau KLEIN topluyor. Freizeitausgleich = serbest gün → b."
+    },
+    {
+     "id": "L4-5-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Vor dem Umzug müssen die Beschäftigten …",
+     "options": [
+      "ihre Computer abbauen.",
+      "ihre Dateien auf dem Netzlaufwerk sichern.",
+      "einen Termin beim IT-Support vereinbaren."
+     ],
+     "answer": 1,
+     "explanation_tr": "'nicht selbst abbauen' (a yanlış); IT-Support taşınmadan SONRA ve randevusuz → b."
+    },
+    {
+     "id": "L4-5-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Parkplätze im neuen Gebäude …",
+     "options": [
+      "werden verlost.",
+      "werden zuerst an bestimmte Gruppen vergeben.",
+      "reichen für alle Beschäftigten."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: kura önerisi REDDEDİLDİ → b."
+    },
+    {
+     "id": "L4-5-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die nächste Sitzung …",
+     "options": [
+      "leitet Frau Albrecht.",
+      "findet ohne die Verwaltungsleiterin statt.",
+      "wurde auf April verschoben."
+     ],
+     "answer": 1,
+     "explanation_tr": "Frau Albrecht = Verwaltungsleitung ve izinde → onsuz yapılıyor → b. (Dolaylı ifade!)"
+    }
+   ]
+  },
+  {
+   "id": "L4-6",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 6 (schwer): Protokoll Hotel",
+   "instructions_tr": "ZOR SET: Tutanakta öneriler reddediliyor, kararlar değişiyor, kişiler birbirini temsil ediyor. Sadece BESCHLUSS/karar olanı say; 'schlägt vor', 'möchte prüfen' karar değildir.",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Abteilungsleiterrunde – Hotel Seeblick",
+     "body": "Datum: 4. Juni, 15.00–16.30 Uhr\nLeitung: Herr Brenner (Direktor)\nProtokoll: Frau Ahmadi (Rezeption)\nAnwesend: Herr Brenner, Frau Ahmadi, Frau Vogel (Housekeeping), Herr Lang (Küche), Frau Petersen (Veranstaltungen)\n\nTOP 1: Gästebewertungen\nDie Bewertungen im Mai waren überwiegend positiv. Mehrfach kritisiert wurde jedoch die lange Wartezeit beim Check-in am Freitagnachmittag. Frau Ahmadi schlägt vor, freitags zwischen 15 und 18 Uhr eine zusätzliche Kraft einzusetzen. Herr Brenner stimmt grundsätzlich zu, möchte aber zuerst prüfen lassen, ob ein Online-Check-in schneller umgesetzt werden kann. Die Entscheidung fällt in der nächsten Runde.\n\nTOP 2: Sommerpersonal\nDrei Aushilfen für das Housekeeping haben kurzfristig abgesagt. Frau Vogel hat bereits Kontakt zu einer Zeitarbeitsfirma aufgenommen; zwei Kräfte können ab 15. Juni anfangen. Für die dritte Stelle wird eine Anzeige geschaltet.\n\nTOP 3: Hochzeit am 21. Juni\nFür die Hochzeit mit 120 Gästen wünscht das Brautpaar nachträglich ein vegetarisches Menü für alle. Herr Lang hält das für machbar, benötigt aber die endgültige Gästezahl bis spätestens 14. Juni. Frau Petersen klärt das mit dem Brautpaar.\n\nTOP 4: Energie\nAb Juli werden in den Fluren Bewegungsmelder installiert. Die Klimaanlagen in den Zimmern schalten sich künftig automatisch ab, sobald ein Fenster geöffnet wird. Die Gäste werden durch einen Hinweis im Zimmer informiert.\n\nTOP 5: Verschiedenes\nFrau Ahmadi ist vom 10. bis 24. Juni im Urlaub. Das Protokoll der nächsten Runde am 18. Juni schreibt Frau Vogel."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-6-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wegen der Wartezeiten beim Check-in …",
+     "options": [
+      "arbeitet freitags ab sofort eine Person mehr an der Rezeption.",
+      "wird zunächst eine andere Möglichkeit geprüft.",
+      "wurde ein Online-Check-in beschlossen."
+     ],
+     "answer": 1,
+     "explanation_tr": "'stimmt grundsätzlich zu, möchte aber zuerst prüfen' + 'Entscheidung in der nächsten Runde' = henüz karar yok → b. a ve c karar gibi sunulmuş tuzaklar."
+    },
+    {
+     "id": "L4-6-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Im Housekeeping …",
+     "options": [
+      "fehlt für den Sommer noch eine Aushilfe.",
+      "fangen drei Kräfte einer Zeitarbeitsfirma an.",
+      "werden zwei Stellen ausgeschrieben."
+     ],
+     "answer": 0,
+     "explanation_tr": "3 kişi eksik, 2'si Zeitarbeit'tan geliyor, 1'i için ilan → hâlâ 1 eksik → a."
+    },
+    {
+     "id": "L4-6-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Für die Hochzeit …",
+     "options": [
+      "muss die Küche bis 14. Juni die Zahl der Gäste kennen.",
+      "gibt es ein Menü mit Fleisch und ohne Fleisch.",
+      "spricht Herr Lang mit dem Brautpaar."
+     ],
+     "answer": 0,
+     "explanation_tr": "Tuzak c: çiftle Frau PETERSEN konuşuyor. Herkes için vejetaryen (b yanlış) → a."
+    },
+    {
+     "id": "L4-6-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Klimaanlagen in den Zimmern …",
+     "options": [
+      "werden ab Juli ganz abgeschaltet.",
+      "gehen aus, wenn ein Fenster offen ist.",
+      "werden über Bewegungsmelder gesteuert."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak c: hareket sensörü KORİDORLARDA. → b."
+    },
+    {
+     "id": "L4-6-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Das nächste Protokoll …",
+     "options": [
+      "schreibt Frau Ahmadi.",
+      "schreibt die Leiterin des Housekeepings.",
+      "entfällt, weil die Rezeption fehlt."
+     ],
+     "answer": 1,
+     "explanation_tr": "Frau Vogel = Housekeeping (başlıkta yazıyor). Dolaylı ifade → b."
     }
    ]
   }

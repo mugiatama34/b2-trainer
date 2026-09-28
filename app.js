@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.5.4';
+const APP_VERSION = '1.6.2';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -60,7 +60,7 @@ function dueQuestions() {
     .sort((a, b) => (srs[a.id].box - srs[b.id].box) || (srs[a.id].due - srs[b.id].due));
 }
 
-function getSettings() { return Object.assign({ examMinutes: 12, monologMinutes: 3 }, store.get('settings', {})); }
+function getSettings() { return Object.assign({ examMinutes: 12, monologMinutes: 3, bsMinutes: 20, forumMinutes: 25 }, store.get('settings', {})); }
 const MONOLOG_OPTIONS = [2, 3, 4];
 function monologSeconds() {
   const m = Number(getSettings().monologMinutes);
@@ -159,7 +159,8 @@ const routes = {
   'card': renderCardDetail,
   'settings': renderSettings,
   'coach': renderCoach,
-  'lesen': renderLesen
+  'lesen': renderLesen,
+  'schreiben': renderSchreiben
 };
 
 function renderCoach(args) {
@@ -194,6 +195,7 @@ function renderHome() {
     <a class="btn" href="#/exam">Sınav modu</a>
     <a class="btn" href="#/review">Tekrar${due ? ` (${due})` : ''}</a>
     <a class="btn" href="#/lesen">📖 Lesen</a>
+    <a class="btn" href="#/schreiben">✍️ Schreiben</a>
     <a class="btn" href="#/cards">Kartlar</a>
     <a class="btn" href="#/coach">🎙 Sprechen-Coach</a>
     <a class="btn" href="#/progress">İlerleme</a>
@@ -531,6 +533,7 @@ function renderProgress() {
     ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
     ${readingProgressHtml()}
     ${coachProgressHtml()}
+    ${writingProgressHtml()}
     <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
   `;
   const weakBtn = document.getElementById('weakBtn');
@@ -539,8 +542,8 @@ function renderProgress() {
     location.hash = '#/practice';
   };
   document.getElementById('resetBtn').onclick = () => {
-    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları ve Coach puanları silinsin mi? Bu işlem geri alınamaz.')) return;
-    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading'].forEach(k => store.remove(k));
+    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları, Coach ve Schreiben puanları silinsin mi? ("Benim kalıplarım" kalır.) Bu işlem geri alınamaz.')) return;
+    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading', 'writingHistory'].forEach(k => store.remove(k));
     renderProgress();
   };
 }
@@ -863,8 +866,9 @@ function renderCards(args) {
   const known = DECKS.map(d => d.id);
   const extra = uniq(DATA.cards.map(c => c.deck)).filter(d => !known.includes(d))
     .map(d => ({ id: d, name: d }));
-  const decks = DECKS.concat(extra);
+  const decks = DECKS.concat(extra, [{ id: MY_PHRASES_DECK, name: 'Benim kalıplarım' }]);
   const deck = args[0] || store.get('lastDeck', 'pruefung');
+  if (deck === MY_PHRASES_DECK) return renderMyPhrasesDeck(decks);
   const learned = getLearned();
   const cards = DATA.cards.filter(c => c.deck === deck);
   $app.innerHTML = `
@@ -880,6 +884,29 @@ function renderCards(args) {
   document.querySelectorAll('.tab').forEach(t => {
     t.onclick = () => { location.hash = '#/cards/' + encodeURIComponent(t.dataset.deck); };
   });
+}
+
+const MY_PHRASES_DECK = 'benim';
+
+function renderMyPhrasesDeck(decks) {
+  store.set('lastDeck', MY_PHRASES_DECK);
+  const phrases = getMyPhrases();
+  $app.innerHTML = `
+    <div class="tabs">${decks.map(d =>
+      `<button class="tab ${d.id === MY_PHRASES_DECK ? 'active' : ''}" data-deck="${esc(d.id)}">${esc(d.name)}</button>`).join('')}</div>
+    ${phrases.length ? `<ul class="phrase-list card">${phrases.map((p, i) => `
+      <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
+        <button class="icon-btn" data-say="${i}" aria-label="Vorlesen">🔊</button>
+        <button class="icon-btn" data-del="${i}" aria-label="Sil">🗑</button></li>`).join('')}</ul>`
+    : '<p class="muted center">Henüz kalıp yok. Schreiben değerlendirmesinde "➕ Kartlara ekle" ile ekleyebilirsin.</p>'}`;
+  document.querySelectorAll('.tab').forEach(t => {
+    t.onclick = () => { location.hash = '#/cards/' + encodeURIComponent(t.dataset.deck); };
+  });
+  $app.querySelectorAll('[data-say]').forEach(b => { b.onclick = () => speakDe(phrases[Number(b.dataset.say)].de); });
+  $app.querySelectorAll('[data-del]').forEach(b => {
+    b.onclick = () => { removeMyPhrase(phrases[Number(b.dataset.del)].de); renderMyPhrasesDeck(decks); };
+  });
+  onLeave(stopSpeech);
 }
 
 function renderCardDetail(args) {
@@ -952,11 +979,12 @@ function coachLinkFor(card) {
   return '';
 }
 
-function setupSpeakingTimer(seconds) {
+// makeCues(noteEl, total) defaults to the speaking cues (2:00 exam stop + end alert).
+function setupSpeakingTimer(seconds, makeCues) {
   const el = document.getElementById('timer');
   const startBtn = document.getElementById('tStart');
   const resetBtn = document.getElementById('tReset');
-  const cues = speakingCues(document.getElementById('timerNote'), seconds);
+  const cues = (makeCues || speakingCues)(document.getElementById('timerNote'), seconds);
   let remaining = seconds;
   let handle = null;
   function draw() {
@@ -1222,8 +1250,8 @@ function lastScoresByTheme() {
   getCoachHistory().forEach(e => { last[e.cardId || e.theme] = e; });
   return last;
 }
-function scoresInline(scores) {
-  return CRITERIA.map(([k]) => gradeBadge((scores || {})[k])).join('');
+function scoresInline(scores, criteria) {
+  return (criteria || CRITERIA).map(([k]) => gradeBadge((scores || {})[k])).join('');
 }
 
 /* ---------- Settings ---------- */
@@ -1257,7 +1285,23 @@ function renderSettings() {
           `<option value="${m}" ${monologSeconds() === m * 60 ? 'selected' : ''}>${m} dk</option>`).join('')}</select>
       </label>
       <p class="small muted">Coach Monolog ve Sprechen kartlarındaki zamanlayıcı bu süreyi kullanır. Sınavda 2 dk'dan sonra durdurulabilirsin.</p>
+    </div>
+    <div class="card">
+      <h3>Schreiben</h3>
+      ${Object.keys(WRITING_KINDS).map(k => `
+        <label class="field"><span>${WRITING_KINDS[k].name} süresi (dk)</span>
+          <input type="number" data-wmin="${k}" min="5" max="60" inputmode="numeric" value="${writingMinutes(k)}">
+        </label>`).join('')}
     </div>`;
+  document.querySelectorAll('[data-wmin]').forEach(inp => {
+    inp.onchange = () => {
+      const K = WRITING_KINDS[inp.dataset.wmin];
+      const s = getSettings();
+      s[K.minutesKey] = Math.max(5, Math.min(60, parseInt(inp.value, 10) || K.defaultMinutes));
+      saveSettings(s);
+      inp.value = s[K.minutesKey];
+    };
+  });
   document.getElementById('monoSelect').onchange = e => {
     const s = getSettings();
     s.monologMinutes = parseInt(e.target.value, 10) || 3;
@@ -1812,6 +1856,676 @@ function renderCoachDialog(kind, arg) {
     if (nb) withBusy(nb, newSituation);
   } else if (kind === 't3' && !situation) {
     sitBox.insertAdjacentHTML('beforeend', '<p class="small">Yeni durum üretmek için API anahtarı gerekir — listeden bir durum seç.</p>');
+  }
+}
+
+/* ---------- Schreiben-Coach ----------
+   Tasks come from the cards: Beschwerde = "bs-*" cards, Forumsbeitrag = one line of a "forum-themen-*" card
+   ("Thema — Pro: … | Contra: …"). Photos are only kept in memory: shrunk, sent to the API, then dropped. */
+const WRITING_KINDS = {
+  bs: { name: 'Beschwerde', minutesKey: 'bsMinutes', defaultMinutes: 20, words: '120–170' },
+  forum: { name: 'Forumsbeitrag', minutesKey: 'forumMinutes', defaultMinutes: 25, words: '150–200' }
+};
+const MAX_PAGES = 3;
+const IMAGE_MAX_SIDE = 1600;
+const IMAGE_QUALITY = 0.8;
+const MIN_TRANSCRIPT_WORDS = 30;
+const TRANSCRIBE_TOKENS = 2000;
+const BLURRY_MSG = 'Fotoğraf net değil, daha aydınlık bir yerde ve düz açıdan tekrar çek.';
+const WRITING_EVAL_TOKENS = 3000;
+const WRITING_CRITERIA = [
+  ['aufgabe', 'Aufgabe'],
+  ['register', 'Register'],
+  ['kohaerenz', 'Kohärenz'],
+  ['sprache', 'Sprache']
+];
+
+function writingMinutes(kind) {
+  const K = WRITING_KINDS[kind];
+  const m = parseInt(getSettings()[K.minutesKey], 10);
+  return m >= 5 && m <= 60 ? m : K.defaultMinutes;
+}
+function countWords(text) {
+  const t = String(text || '').replace(/\[\?\]/g, '').trim();
+  return t ? t.split(/\s+/).length : 0;
+}
+function blockLines(card, headingStart) {
+  const b = (card.blocks || []).find(x => String(x.heading || '').startsWith(headingStart));
+  return b ? (b.lines || []) : [];
+}
+function beschwerdeCards() { return DATA.cards.filter(c => /^bs-/.test(c.id)); }
+function forumCards() { return DATA.cards.filter(c => /^forum-themen-/.test(c.id)); }
+function forumLines(card) { return (card.blocks || []).reduce((a, b) => a.concat(b.lines || []), []); }
+function parseTopic(line) {
+  const s = String(line);
+  const i = s.indexOf('—');
+  const rest = i >= 0 ? s.slice(i + 1) : '';
+  return {
+    title: (i >= 0 ? s.slice(0, i) : s).trim(),
+    pro: ((rest.match(/Pro:\s*([^|]*)/) || [])[1] || '').trim(),
+    contra: ((rest.match(/Contra:\s*(.*)$/) || [])[1] || '').trim()
+  };
+}
+function topicHintHtml(t) {
+  return `<span lang="de"><strong>Pro:</strong> ${esc(t.pro || '–')}<br><strong>Contra:</strong> ${esc(t.contra || '–')}</span>`;
+}
+
+// { kind, id, href, title, task, card, chef, kunde } for Beschwerde; { …, topic } for Forumsbeitrag.
+function writingTask(kind, cardId, idx) {
+  const card = DATA.cards.find(c => c.id === cardId);
+  if (!card) return null;
+  if (kind === 'bs') {
+    if (!/^bs-/.test(card.id)) return null;
+    return {
+      kind, card, id: card.id,
+      href: '#/schreiben/bs/' + encodeURIComponent(card.id),
+      title: card.title.replace(/^Beschwerde-Übung\s*·\s*/, ''),
+      task: card.prompt || '',
+      chef: blockLines(card, 'Chef'),
+      kunde: blockLines(card, 'Kunden')
+    };
+  }
+  if (kind !== 'forum' || !/^forum-themen-/.test(card.id)) return null;
+  const line = forumLines(card)[Number(idx)];
+  if (!line) return null;
+  const topic = parseTopic(line);
+  return {
+    kind, card, topic, id: card.id + ':' + idx,
+    href: '#/schreiben/forum/' + encodeURIComponent(card.id) + '/' + idx,
+    title: topic.title,
+    task: `Ihre Firma plant eine neue Regel: „${topic.title}“. Schreiben Sie einen Beitrag im Firmenforum (ca. 150 Wörter): Äußern Sie Ihre Meinung, begründen Sie sie und nennen Sie Beispiele.`
+  };
+}
+
+function fillPrompt(template, values) {
+  // Placeholders are replaced in order; {{TEXT}} comes last so the candidate's text is never re-scanned.
+  return Object.keys(values).reduce((acc, k) => acc.split('{{' + k + '}}').join(values[k]), template);
+}
+function writingEvalPrompt(P, task, text) {
+  if (task.kind === 'bs') {
+    return fillPrompt(P.PROMPT_EVAL_BESCHWERDE, {
+      CHEF: task.chef.join('\n'), KUNDE: task.kunde.join(' '), TASK: task.task, TEXT: text
+    });
+  }
+  // The forum prompt refers to "the same schema as the complaint evaluation": append that schema.
+  const b = P.PROMPT_EVAL_BESCHWERDE;
+  const schema = b.slice(b.indexOf('{"word_count"'));
+  return fillPrompt(P.PROMPT_EVAL_FORUM, { TOPIC: task.topic.title, TEXT: text }) +
+    '\n\nJSON schema of the complaint evaluation:\n' + schema;
+}
+function isCovered(item) { return item && (item.covered === true || item.covered === 'true'); }
+
+/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım") */
+function getMyPhrases() { return store.get('myPhrases', []); }
+function phraseKey(de) { return String(de || '').trim().toLowerCase(); }
+function hasMyPhrase(de) { return getMyPhrases().some(p => phraseKey(p.de) === phraseKey(de)); }
+function addMyPhrase(p) {
+  const list = getMyPhrases();
+  if (!p || !p.de || list.some(x => phraseKey(x.de) === phraseKey(p.de))) return;
+  list.push({ de: String(p.de).trim(), tr: String(p.tr || '').trim(), date: Date.now() });
+  store.set('myPhrases', list);
+}
+function removeMyPhrase(de) {
+  store.set('myPhrases', getMyPhrases().filter(p => phraseKey(p.de) !== phraseKey(de)));
+}
+
+/* History: b2trainer:writingHistory = [{ date, kind, taskId, title, scores, words, checklist: { ok, n }, text }] (no images) */
+function getWritingHistory() { return store.get('writingHistory', []); }
+function addWritingHistory(entry) {
+  const h = getWritingHistory();
+  h.push(entry);
+  store.set('writingHistory', h.slice(-100));
+}
+function lastWritingByTask() {
+  const last = {};
+  getWritingHistory().forEach(e => { last[e.taskId] = e; });
+  return last;
+}
+
+function renderWritingResult(el, result, rawText, task, text) {
+  if (!result) {
+    el.innerHTML = `<div class="card"><h3>Değerlendirme (ham metin)</h3><div class="sample small">${esc(rawText)}</div></div>`;
+    return;
+  }
+  const K = WRITING_KINDS[task.kind];
+  const scores = result.scores || {};
+  const checklist = Array.isArray(result.checklist) ? result.checklist : [];
+  const okN = checklist.filter(isCovered).length;
+  const phrases = (Array.isArray(result.useful_phrases) ? result.useful_phrases : []).filter(p => p && p.de);
+  const tips = Array.isArray(result.tips_tr) ? result.tips_tr : [];
+  el.innerHTML = `
+    ${checklist.length ? `
+      <div class="card">
+        <h3>Kontrol listesi · ${okN}/${checklist.length}</h3>
+        <p class="small muted">En çok puan buradan gelir: her madde metinde olmalı.</p>
+        <ul class="checklist">${checklist.map(c => `
+          <li class="${isCovered(c) ? 'ok' : 'bad'}"><span class="mark">${isCovered(c) ? '✅' : '❌'}</span>
+            <span><span lang="de">${esc(c.point)}</span>${c.comment_tr ? `<span class="sub">${esc(c.comment_tr)}</span>` : ''}</span></li>`).join('')}
+        </ul>
+      </div>` : ''}
+    <div class="card">
+      <h3>Puanlar</h3>
+      <div class="scores" lang="de">${WRITING_CRITERIA.map(([k, name]) => `
+        <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
+      <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1 · <strong>${countWords(text)} kelime</strong> (hedef ≈ ${K.words})</p>
+      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+    </div>
+    ${Array.isArray(result.corrections) && result.corrections.length ? `
+      <div class="card"><h3>Düzeltmeler</h3>${correctionsHtml(result.corrections)}</div>` : ''}
+    ${phrases.length ? `
+      <div class="card"><h3>Kullanabileceğin Redemittel</h3>
+        <ul class="phrase-list">${phrases.map((p, i) => `
+          <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
+            <button class="btn inline" data-add="${i}" ${hasMyPhrase(p.de) ? 'disabled' : ''}>${hasMyPhrase(p.de) ? '✓ Eklendi' : '➕ Kartlara ekle'}</button></li>`).join('')}
+        </ul>
+      </div>` : ''}
+    ${result.improved_de ? `
+      <div class="card">
+        <details>
+          <summary>Mustertext</summary>
+          <div class="row" style="margin:8px 0">
+            <button class="btn" data-speak>🔊 Vorlesen</button>
+            <button class="btn" data-stop>■ Durdur</button>
+          </div>
+          <div class="sample" lang="de">${esc(result.improved_de)}</div>
+        </details>
+      </div>` : ''}
+    ${tips.length ? `<div class="card"><h3>İpuçları</h3><ul>${tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+  el.querySelectorAll('[data-add]').forEach(b => {
+    b.onclick = () => {
+      addMyPhrase(phrases[Number(b.dataset.add)]);
+      b.disabled = true;
+      b.textContent = '✓ Eklendi';
+    };
+  });
+  const sp = el.querySelector('[data-speak]');
+  if (sp) {
+    sp.onclick = () => speakDe(result.improved_de);
+    el.querySelector('[data-stop]').onclick = stopSpeech;
+  }
+}
+
+// Latest Schreiben scores per task (progress screen).
+function writingProgressHtml() {
+  const last = lastWritingByTask();
+  const rows = Object.keys(last).map(k => last[k]).sort((a, b) => b.date - a.date).map(e => `
+    <div class="coach-row">
+      <span class="t">${esc((WRITING_KINDS[e.kind] || {}).name || '')} · ${esc(e.title)}<span class="sub">${new Date(e.date).toLocaleString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+        · ${e.words || 0} kelime${e.checklist && e.checklist.n ? ` · ✅ ${e.checklist.ok}/${e.checklist.n}` : ''}</span></span>
+      <span class="mini-scores">${scoresInline(e.scores, WRITING_CRITERIA)}</span>
+    </div>`).join('');
+  if (!rows) return '';
+  return `<div class="card"><h3>Schreiben · son puanlar</h3>
+    <p class="small muted">Aufgabe · Register · Kohärenz · Sprache</p>${rows}</div>`;
+}
+
+/* Writing support: task points to tick while writing on paper, offline cards, outline (API), my phrases. */
+const FORUM_POINTS = [
+  'Net kişisel görüş',
+  'En az iki argüman + gerekçe',
+  'Kişisel örnek / deneyim',
+  'Karşı tarafı da düşün',
+  'Öneri ya da uzlaşma',
+  'Sonuç cümlesi',
+  'Forum üslubu (samimi: du/ihr ya da nötr)'
+];
+// Boss instructions split into single points ("Siehe …: a, b, c" lists are split at commas).
+function chefPoints(lines) {
+  const out = [];
+  lines.forEach(line => {
+    const s = String(line).replace(/^\s*Chef(in)?\s*:\s*/i, '').replace(/^[„"“]\s*/, '').replace(/\s*[“"”]\s*$/, '').trim();
+    const siehe = s.match(/^Siehe [^:]+:\s*(.*)$/);
+    if (siehe) { siehe[1].split(/,\s*/).forEach(x => out.push(x.replace(/\.$/, '').trim())); return; }
+    (s.match(/[^.!?]+[.!?]*/g) || []).forEach(x => out.push(x.trim()));
+  });
+  return out.filter(Boolean);
+}
+function writingPoints(task) {
+  if (task.kind === 'forum') return FORUM_POINTS;
+  return chefPoints(task.chef).concat(['Müşterinin her şikâyetine cevap ver', 'Resmî çerçeve: Anrede, Gruß, Sie-Form']);
+}
+// Refusal wording in the boss instructions ("kein Austauschgerät", "nicht verantwortlich", …).
+const REFUSAL_RE = /\bkein(e|en|em|er|es)?\b|nicht verantwortlich|nicht (am|an|bei|in) |nicht unsere|bleiben bestehen|ablehnen/i;
+function supportCardIds(task) {
+  if (task.kind === 'forum') return ['schreiben-forum', 'schreiben-fehler', 'schreiben-konnektoren'];
+  const ids = ['schreiben-beschwerde', 'schreiben-ablehnen', 'schreiben-fehler', 'schreiben-konnektoren'];
+  return REFUSAL_RE.test(task.chef.join(' ')) ? ['schreiben-ablehnen'].concat(ids.filter(id => id !== 'schreiben-ablehnen')) : ids;
+}
+function outlineTaskInfo(task) {
+  if (task.kind === 'bs') {
+    return `Task: formal reply e-mail to a customer complaint (DTB B2, Lesen & Schreiben Teil 2).\nBoss instructions (all must appear):\n${task.chef.join('\n')}\nCustomer complaint (summary): ${task.kunde.join(' ')}\nWriting task: ${task.task}`;
+  }
+  return `Task: Forumsbeitrag (DTB B2), about 150 words: colleagues discuss a new company rule in the internal forum, she gives her opinion with reasons and examples.\nTopic: ${task.topic.title}`;
+}
+
+function renderWritingSupport(el, task, hasKey, my) {
+  const cards = supportCardIds(task).map(id => DATA.cards.find(c => c.id === id)).filter(Boolean);
+  const points = writingPoints(task);
+  const phrases = getMyPhrases();
+  el.innerHTML = `
+    <div class="card">
+      <h3>✅ Görev maddeleri</h3>
+      <p class="small muted">Kâğıda yazarken eklediğin maddeyi işaretle.</p>
+      <ul class="ticklist">${points.map((pt, i) => `
+        <li><label><input type="checkbox" data-tick="${i}"><span ${task.kind === 'bs' && i < points.length - 2 ? 'lang="de"' : ''}>${esc(pt)}</span></label></li>`).join('')}</ul>
+      <p class="small muted" id="tickInfo"></p>
+    </div>
+    <details class="card support">
+      <summary>🧰 Yazma desteği</summary>
+      <h3>Kartlar</h3>
+      ${cards.map(c => `
+        <details class="sub-card">
+          <summary>${esc(c.title)}</summary>
+          ${(c.blocks || []).map(b => `${b.heading ? `<h4>${esc(b.heading)}</h4>` : ''}
+            <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>`).join('')}
+          ${c.sample ? `<h4>Mustertext</h4>
+            <button class="btn inline" data-say-card="${esc(c.id)}">🔊 Vorlesen</button>
+            <div class="sample small" lang="de">${esc(c.sample)}</div>` : ''}
+        </details>`).join('')}
+      <h3>🧭 Paragraf planı</h3>
+      ${hasKey ? '<button class="btn" id="outlineBtn">🧭 Başlamama yardım et</button>' : ''}
+      <p class="small muted">Hazır metin değil: her paragraf için amaç + cümle başlangıçları.</p>
+      <p class="small error" id="outlineErr"></p>
+      <div id="outline"></div>
+      <h3>Benim kalıplarım</h3>
+      ${phrases.length ? `<ul class="phrase-list">${phrases.map(p => `
+        <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span></li>`).join('')}</ul>`
+        : '<p class="small muted">Henüz yok — değerlendirmeden sonra "➕ Kartlara ekle" ile kaydedebilirsin.</p>'}
+    </details>`;
+
+  const ticks = Array.from(el.querySelectorAll('[data-tick]'));
+  const tickInfo = el.querySelector('#tickInfo');
+  const drawTicks = () => { tickInfo.textContent = `${ticks.filter(t => t.checked).length}/${ticks.length} madde işaretlendi`; };
+  ticks.forEach(t => { t.onchange = drawTicks; });
+  drawTicks();
+
+  el.querySelectorAll('[data-say-card]').forEach(b => {
+    b.onclick = () => { const c = cards.find(x => x.id === b.dataset.sayCard); if (c) speakDe(c.sample); };
+  });
+
+  const outlineEl = el.querySelector('#outline');
+  const errEl = el.querySelector('#outlineErr');
+  const outlinePrompt = async () => fillPrompt((await loadPrompts()).PROMPT_OUTLINE, { TASKINFO: outlineTaskInfo(task) });
+  const btn = el.querySelector('#outlineBtn');
+  if (!btn) {
+    renderFallback(outlineEl, outlinePrompt, 'API anahtarı yok. Plan için prompt\'u kopyalayıp Claude uygulamasına yapıştırabilirsin.');
+    return;
+  }
+  btn.onclick = () => withBusy(btn, async () => {
+    errEl.textContent = '';
+    outlineEl.innerHTML = '';
+    let raw;
+    try {
+      raw = await callClaude(undefined, [{ role: 'user', content: await outlinePrompt() }], { maxTokens: 1200 });
+    } catch (e) {
+      if (my !== screenId) return;
+      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      renderFallback(outlineEl, outlinePrompt);
+      return;
+    }
+    if (my !== screenId) return;
+    const r = parseJsonReply(raw);
+    const paras = r && Array.isArray(r.paragraphs) ? r.paragraphs : null;
+    outlineEl.innerHTML = paras ? `<ol class="outline">${paras.map(p => `
+      <li><div>${esc(p.goal_tr || '')}</div>
+        <ul>${(Array.isArray(p.starters_de) ? p.starters_de : []).map(x => `<li lang="de">${esc(x)}</li>`).join('')}</ul></li>`).join('')}</ol>`
+      : `<div class="sample small">${esc(raw)}</div>`;
+  });
+}
+
+function renderSchreiben(args) {
+  const a = args[0] || '';
+  if (a === 'bs' || a === 'forum') {
+    const task = writingTask(a, args[1], args[2]);
+    if (!task) { location.hash = '#/schreiben'; return; }
+    return renderWritingTask(task);
+  }
+  if (a === 'sim') return renderForumSim();
+  return renderSchreibenList(a === 'tab' ? args[1] : store.get('schreibenTab', 'bs'));
+}
+
+function renderSchreibenList(tab) {
+  if (!WRITING_KINDS[tab]) tab = 'bs';
+  store.set('schreibenTab', tab);
+  setHeader('Schreiben', true);
+  const last = lastWritingByTask();
+  const tabs = `<div class="tabs">${Object.keys(WRITING_KINDS).map(k =>
+    `<button class="tab ${k === tab ? 'active' : ''}" data-tab="${k}">${WRITING_KINDS[k].name}</button>`).join('')}</div>`;
+  const intro = getApiKey() ? '' : `<div class="card small">API anahtarı yok → metin girişi + <strong>yedek mod</strong> (prompt kopyala → Claude uygulaması).
+    Fotoğrafla okuma için <a href="#/settings">Ayarlar'dan anahtar ekle</a>.</div>`;
+  let body;
+  if (tab === 'bs') {
+    body = `<p class="small muted">Şefin talimatlarıyla müşteriye resmî cevap yaz (${writingMinutes('bs')} dk).</p>
+      <ul class="list">${beschwerdeCards().map(c => {
+        const t = writingTask('bs', c.id);
+        return `<li><a href="${t.href}">
+          <span class="t">${esc(t.title)}<span class="sub" lang="de">${esc(t.kunde.join(' '))}</span></span>
+          ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}
+        </a></li>`;
+      }).join('') || '<p class="muted center">Beschwerde görevi yok.</p>'}</ul>`;
+  } else {
+    body = `<p class="small muted">Sınavda iki konu verilir, birini seçersin (${writingMinutes('forum')} dk).</p>
+      <a class="btn primary" href="#/schreiben/sim">🎲 Sınav simülasyonu</a>
+      ${forumCards().map(c => `
+        <h3>${esc(c.title.replace(/^Forum-Themen\s*·\s*/, ''))}</h3>
+        <ul class="list">${forumLines(c).map((line, i) => {
+          const t = writingTask('forum', c.id, i);
+          return `<li class="topic"><a href="${t.href}"><span class="t" lang="de">${esc(t.title)}</span>
+            ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}</a>
+            <button class="hint-btn" data-hint aria-label="İpucu göster" aria-expanded="false">💡</button>
+            <div class="hint small" hidden>${topicHintHtml(t.topic)}</div></li>`;
+        }).join('')}</ul>`).join('')}`;
+  }
+  $app.innerHTML = intro + tabs + body;
+  $app.querySelectorAll('[data-tab]').forEach(b => {
+    b.onclick = () => { location.hash = '#/schreiben/tab/' + b.dataset.tab; };
+  });
+  $app.querySelectorAll('[data-hint]').forEach(b => {
+    b.onclick = () => {
+      const hint = b.nextElementSibling;
+      hint.hidden = !hint.hidden;
+      b.setAttribute('aria-expanded', String(!hint.hidden));
+    };
+  });
+}
+
+// Exam simulation: two random topics, pick one (as in the exam).
+function renderForumSim() {
+  setHeader('Sınav simülasyonu', true);
+  $back.setAttribute('href', '#/schreiben/tab/forum');
+  onLeave(() => $back.setAttribute('href', '#/'));
+  const all = [];
+  forumCards().forEach(c => forumLines(c).forEach((l, i) => all.push(writingTask('forum', c.id, i))));
+  const pick = shuffle(all.filter(Boolean)).slice(0, 2);
+  $app.innerHTML = `
+    <p class="small muted">Sınavdaki gibi: iki konudan birini seç, ${writingMinutes('forum')} dk içinde yaz.</p>
+    ${pick.map((t, k) => `
+      <div class="card">
+        <h3>Thema ${'AB'.charAt(k)}</h3>
+        <p lang="de"><strong>${esc(t.title)}</strong></p>
+        <details><summary>💡 İpucu göster</summary><p class="small">${topicHintHtml(t.topic)}</p></details>
+        <a class="btn primary" href="${t.href}">Bu konuyu seç</a>
+      </div>`).join('')}
+    <button class="btn" id="againBtn">🔀 Başka iki konu</button>`;
+  document.getElementById('againBtn').onclick = renderForumSim;
+}
+
+/* Shrink a photo with a canvas (long side ≤ 1600 px, JPEG 0.8) → data URL. */
+function shrinkImage(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const w0 = img.naturalWidth, h0 = img.naturalHeight;
+        const scale = Math.min(1, IMAGE_MAX_SIDE / Math.max(w0, h0));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(w0 * scale));
+        canvas.height = Math.max(1, Math.round(h0 * scale));
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const data = canvas.toDataURL('image/jpeg', IMAGE_QUALITY);
+        canvas.width = canvas.height = 0; // release the bitmap early (iOS memory)
+        resolve(data);
+      } catch (e) { reject(e); } finally { URL.revokeObjectURL(url); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('decode')); };
+    img.src = url;
+  });
+}
+
+function writingTaskCardHtml(task) {
+  if (task.kind === 'bs') {
+    return `<div class="card">
+      <p><strong lang="de">${esc(task.task)}</strong></p>
+      <h3>Chef/Chefin schreibt</h3>
+      ${task.chef.map(l => `<p lang="de" class="quote">${esc(l)}</p>`).join('')}
+      <h3>Kunden-E-Mail (kurz)</h3>
+      ${task.kunde.map(l => `<p lang="de">${esc(l)}</p>`).join('')}
+    </div>`;
+  }
+  return `<div class="card">
+    <h3>Forumsbeitrag</h3>
+    <p lang="de"><strong>${esc(task.title)}</strong></p>
+    <p lang="de" class="small">${esc(task.task)}</p>
+    <details><summary>💡 İpucu göster</summary><p class="small">${topicHintHtml(task.topic)}</p></details>
+  </div>`;
+}
+
+// Writing timer: note + vibration 5 min before the end, remaining time mirrored in the top bar.
+function writingCues(noteEl, total) {
+  let warned = false;
+  const base = speakingCues(noteEl, 0);
+  return {
+    update(elapsed, remaining) {
+      $topRight.textContent = '⏱ ' + fmtClock(Math.max(0, Math.round(remaining)));
+      $topRight.classList.toggle('warn', remaining <= 60);
+      if (!warned && total > 300 && remaining <= 300 && remaining > 0) {
+        warned = true;
+        vibrate(200);
+        noteEl.textContent = '⏱ Son 5 dk — görev maddelerini kontrol et';
+        noteEl.className = 'timer-note milestone';
+      }
+    },
+    finish() { base.finish(); },
+    reset() { warned = false; base.reset(); $topRight.textContent = ''; $topRight.classList.remove('warn'); }
+  };
+}
+
+function renderWritingTask(task) {
+  const K = WRITING_KINDS[task.kind];
+  const my = screenId;
+  const hasKey = !!getApiKey();
+  const seconds = writingMinutes(task.kind) * 60;
+  const draftKey = 'writingDraft:' + task.id;
+  let pages = []; // data URLs, memory only
+  setHeader(K.name + ' · ' + task.title, true);
+  $back.setAttribute('href', '#/schreiben/tab/' + task.kind);
+  onLeave(() => {
+    pages = [];
+    $back.setAttribute('href', '#/');
+    $topRight.classList.remove('warn');
+    stopSpeech();
+  });
+
+  $app.innerHTML = `
+    ${writingTaskCardHtml(task)}
+    <div class="card">
+      <h3>Zamanlayıcı (${seconds / 60} dk)</h3>
+      <div class="timer" id="timer">${fmtClock(seconds)}</div>
+      <p class="timer-note" id="timerNote" aria-live="polite"></p>
+      <div class="row">
+        <button class="btn primary" id="tStart">Başlat</button>
+        <button class="btn" id="tReset">Sıfırla</button>
+      </div>
+    </div>
+    <div id="support"></div>
+    <div class="card">
+      <h3>Metni yükle</h3>
+      ${hasKey ? `
+        <label class="btn primary file-btn" id="camLabel">📷 Fotoğraf çek / yükle
+          <input type="file" class="file-input" id="camInput" accept="image/*" capture="environment" multiple></label>
+        <label class="btn file-btn" id="galLabel">🖼 Galeriden seç
+          <input type="file" class="file-input" id="galInput" accept="image/*" multiple></label>
+        <div class="thumbs" id="thumbs"></div>
+        <p class="small muted" id="pageInfo"></p>
+        <button class="btn primary" id="readBtn" hidden>📝 Metni oku</button>
+        <p class="small error" id="upErr"></p>
+        <button class="btn" id="typeBtn">⌨️ Metin olarak gir</button>`
+      : `<p class="small">Fotoğrafla okuma için API anahtarı gerekir (<a href="#/settings">Ayarlar</a>). Kâğıda yazdığın metni aşağıya yaz.</p>`}
+    </div>
+    <div class="card" id="textCard" hidden>
+      <h3>Metin</h3>
+      <p class="warn-note" id="trWarn" hidden>⚠️ Okunamayan yerleri düzelt, ama kendi hatalarını düzeltme.</p>
+      <p class="small error" id="trErr"></p>
+      <textarea id="sText" rows="12" lang="de" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+        placeholder="Sehr geehrte… / Hallo zusammen, …"></textarea>
+      <div id="unclear"></div>
+      <p class="small muted" id="sCount"></p>
+      <div id="evalArea"></div>
+    </div>
+    <div id="wResult"></div>`;
+
+  setupSpeakingTimer(seconds, writingCues);
+  renderWritingSupport(document.getElementById('support'), task, hasKey, my);
+
+  /* Text box (transcription result or typed text) */
+  const textCard = document.getElementById('textCard');
+  const ta = document.getElementById('sText');
+  const trWarn = document.getElementById('trWarn');
+  const trErr = document.getElementById('trErr');
+  const unclear = document.getElementById('unclear');
+  const sCount = document.getElementById('sCount');
+  function drawText() {
+    const n = (ta.value.match(/\[\?\]/g) || []).length;
+    unclear.innerHTML = n ? `
+      <p class="small"><strong>${n} okunamayan yer</strong> — fotoğrafa bakıp düzelt, sonra <code>[?]</code> işaretini sil.</p>
+      <div class="sample unclear-preview" lang="de">${esc(ta.value).replace(/(\S*\s?)\[\?\]/g, '<mark>$1[?]</mark>')}</div>` : '';
+    const w = countWords(ta.value);
+    sCount.textContent = `${w} kelime · hedef ≈ ${K.words}`;
+  }
+  function showText(text, fromPhoto) {
+    textCard.hidden = false;
+    if (text != null) { ta.value = text; store.set(draftKey, text); }
+    trWarn.hidden = !fromPhoto;
+    drawText();
+  }
+  ta.oninput = () => { store.set(draftKey, ta.value); drawText(); };
+  const draft = store.get(draftKey, '');
+  if (draft || !hasKey) showText(draft, false);
+
+  if (hasKey) setupPhotoUpload();
+  setupEvaluation();
+
+  /* Step B: evaluation of the confirmed text */
+  function setupEvaluation() {
+    const area = document.getElementById('evalArea');
+    area.innerHTML = `
+      ${hasKey ? '<button class="btn primary" id="evalBtn">Değerlendir</button>' : ''}
+      <p class="small error" id="evalErr"></p>
+      <div id="wFallback"></div>`;
+    const errEl = document.getElementById('evalErr');
+    const fallbackEl = document.getElementById('wFallback');
+    const resultEl = document.getElementById('wResult');
+    const cleanText = () => ta.value.replace(/[ \t]*\[\?\]/g, '').trim();
+    const fallbackPrompt = async () => writingEvalPrompt(await loadPrompts(), task, cleanText());
+    if (!hasKey) {
+      renderFallback(fallbackEl, fallbackPrompt, 'API anahtarı yok. Metni yazdıktan sonra prompt\'u (görev + metin) kopyalayıp Claude uygulamasına yapıştır.');
+      return;
+    }
+    const evalBtn = document.getElementById('evalBtn');
+    evalBtn.onclick = () => {
+      const text = cleanText();
+      if (!text) { errEl.textContent = 'Önce metni yükle ya da yaz.'; return; }
+      errEl.textContent = '';
+      fallbackEl.innerHTML = '';
+      withBusy(evalBtn, async () => {
+        let raw;
+        try {
+          const P = await loadPrompts();
+          raw = await callClaude(undefined, [{ role: 'user', content: writingEvalPrompt(P, task, text) }], { maxTokens: WRITING_EVAL_TOKENS });
+        } catch (e) {
+          if (my !== screenId) return;
+          errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+          renderFallback(fallbackEl, fallbackPrompt);
+          return;
+        }
+        if (my !== screenId) return;
+        const result = parseJsonReply(raw);
+        renderWritingResult(resultEl, result, raw, task, text);
+        if (result && result.scores) {
+          const list = Array.isArray(result.checklist) ? result.checklist : [];
+          addWritingHistory({
+            date: Date.now(), kind: task.kind, taskId: task.id, title: task.title,
+            scores: result.scores, words: countWords(text),
+            checklist: { ok: list.filter(isCovered).length, n: list.length },
+            text
+          });
+        }
+        resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    };
+  }
+
+  function setupPhotoUpload() {
+    const thumbs = document.getElementById('thumbs');
+    const pageInfo = document.getElementById('pageInfo');
+    const readBtn = document.getElementById('readBtn');
+    const upErr = document.getElementById('upErr');
+    const inputs = [document.getElementById('camInput'), document.getElementById('galInput')];
+    let preparing = 0;
+
+    function drawPages() {
+      thumbs.innerHTML = pages.map((data, i) => `
+        <div class="thumb"><img src="${data}" alt="Sayfa ${i + 1}"><span>${i + 1}</span>
+          <button data-del="${i}" aria-label="Sayfa ${i + 1} sil">×</button></div>`).join('');
+      thumbs.querySelectorAll('[data-del]').forEach(b => {
+        b.onclick = () => { pages.splice(Number(b.dataset.del), 1); drawPages(); };
+      });
+      const full = pages.length >= MAX_PAGES;
+      inputs.forEach(inp => { inp.disabled = full; inp.parentNode.classList.toggle('disabled', full); });
+      readBtn.hidden = !pages.length;
+      readBtn.textContent = `📝 Metni oku (${pages.length} sayfa)`;
+      pageInfo.textContent = preparing ? 'Fotoğraf hazırlanıyor…'
+        : pages.length ? `${pages.length}/${MAX_PAGES} sayfa. Sıra doğru mu? Yanlış sayfayı × ile sil.`
+          : `Kâğıdın tamamı görünsün, düz açıdan ve aydınlıkta çek. En fazla ${MAX_PAGES} sayfa. Fotoğraflar hiçbir yerde saklanmaz.`;
+    }
+    async function addFiles(input) {
+      const files = Array.from(input.files || []);
+      input.value = '';
+      upErr.textContent = '';
+      const room = MAX_PAGES - pages.length - preparing;
+      if (files.length > room) upErr.textContent = `En fazla ${MAX_PAGES} sayfa — ${files.length - Math.max(0, room)} fotoğraf eklenmedi.`;
+      for (const f of files.slice(0, Math.max(0, room))) {
+        preparing += 1;
+        drawPages();
+        try {
+          const data = await shrinkImage(f);
+          if (my !== screenId) return;
+          pages.push(data);
+        } catch (e) {
+          if (my !== screenId) return;
+          upErr.textContent = 'Bu fotoğraf açılamadı, tekrar çek.';
+        } finally { preparing -= 1; }
+        drawPages();
+      }
+    }
+    inputs.forEach(inp => { inp.onchange = () => addFiles(inp); });
+    drawPages();
+
+    readBtn.onclick = () => withBusy(readBtn, async () => {
+      upErr.textContent = '';
+      trErr.textContent = '';
+      let text;
+      try {
+        const P = await loadPrompts();
+        const content = pages.map(data => ({
+          type: 'image',
+          source: { type: 'base64', media_type: 'image/jpeg', data: data.slice(data.indexOf(',') + 1) }
+        }));
+        content.push({ type: 'text', text: P.PROMPT_TRANSCRIBE });
+        text = await callClaude(undefined, [{ role: 'user', content }], { maxTokens: TRANSCRIBE_TOKENS });
+      } catch (e) {
+        if (my !== screenId) return;
+        upErr.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata') +
+          ' — tekrar dene ya da "⌨️ Metin olarak gir" ile devam et.';
+        return;
+      }
+      if (my !== screenId) return;
+      pages = []; // the photos leave memory once the text is back
+      drawPages();
+      showText(text.trim(), true);
+      if (countWords(text) < MIN_TRANSCRIPT_WORDS) trErr.textContent = BLURRY_MSG;
+      textCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('typeBtn').onclick = () => {
+      showText(null, false);
+      ta.focus();
+      textCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
   }
 }
 

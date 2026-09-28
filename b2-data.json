@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.6",
+  "version": "1.7",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -3460,267 +3460,6 @@
    ]
   },
   {
-   "id": "bs-webseite",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Webseite",
-   "prompt": "Sie arbeiten bei einer Webagentur. Ein Kunde beschwert sich: Die neue Firmen-Website sollte am 1. März online gehen, ist aber drei Wochen zu spät gekommen. Außerdem funktioniert das Kontaktformular nicht, und auf der Handy-Version fehlen Bilder. Er hat schon zweimal angerufen, aber niemand hat zurückgerufen.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Verspätung erklären und entschuldigen",
-      "Kontaktformular & mobile Version: bis wann repariert?",
-      "Fehlende Rückrufe: fester Ansprechpartner",
-      "Entschädigung: z. B. kostenlose Wartung für drei Monate"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-pflanzen",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Pflanzenlieferung",
-   "prompt": "Sie arbeiten bei einer Gärtnerei. Eine Firma hat 40 Büropflanzen bestellt. Viele kamen mit gelben Blättern an, sechs Töpfe waren zerbrochen, und die Lieferung kam einen Tag später als vereinbart, als niemand im Büro war.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Entschuldigung für Zustand und Verspätung",
-      "Ersatz der beschädigten Pflanzen kostenlos",
-      "Neuen Liefertermin mit Uhrzeit anbieten",
-      "Pflegehinweise / Gutschein als Entschädigung"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-reinigung",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Reinigung",
-   "prompt": "Sie arbeiten bei einer Reinigungsfirma. Ein Kunde (Büro) beschwert sich: Die Papierkörbe werden oft nicht geleert, in der Küche bleibt schmutziges Geschirr stehen, und die Reinigungskraft kam letzte Woche zweimal gar nicht. Der Kunde denkt über eine Kündigung nach.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Verständnis zeigen, Fehler zugeben",
-      "Grund: z. B. Krankheit, fehlende Vertretung",
-      "Lösung: neue Kraft, Kontrolle durch Teamleitung, Checkliste",
-      "Entschädigung: Preisnachlass für diesen Monat; Bitte, nicht zu kündigen"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-tischlampe",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Tischlampe",
-   "prompt": "Sie arbeiten im Kundenservice eines Online-Shops. Eine Kundin hat eine Designer-Tischlampe bestellt. Die Lampe hatte einen Kratzer, und der Schalter funktioniert nicht. Auf ihre erste E-Mail hat sie nach zehn Tagen noch keine Antwort bekommen.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Entschuldigung für Mangel und späte Antwort",
-      "Umtausch oder Rückgabe mit Erstattung – Kundin wählt",
-      "Rücksendung kostenlos, Abholung organisieren",
-      "Gutschein als Entschädigung"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-umzug",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Umzug",
-   "prompt": "Sie arbeiten bei einer Umzugsfirma. Ein Kunde beschwert sich: Die Möbelpacker kamen zwei Stunden zu spät, ein Schrank wurde beschädigt, und zwei Kartons fehlen noch immer. Außerdem wurden ihm mehr Stunden berechnet als vereinbart.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Entschuldigung für Verspätung",
-      "Schaden: Versicherung übernimmt, Gutachter kommt",
-      "Fehlende Kartons: werden gesucht, Rückmeldung bis …",
-      "Rechnung korrigieren, nur vereinbarte Stunden"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-spuelmaschine",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Spülmaschine",
-   "prompt": "Sie arbeiten bei einem Elektrofachhandel. Ein Restaurant hat eine gewerbliche Spülmaschine gekauft. Nach einer Woche ist sie ausgefallen. Der Techniker kam erst nach vier Tagen, hatte aber das Ersatzteil nicht dabei. Das Restaurant musste in dieser Zeit mit der Hand spülen.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Verständnis für die schwierige Situation",
-      "Reparatur: fester Termin, Ersatzteil ist bestellt",
-      "Übergangslösung: Leihgerät",
-      "Entschädigung: Kosten für zusätzliche Arbeitsstunden teilweise übernehmen"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-drucker",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Drucker",
-   "prompt": "Sie arbeiten bei einer IT-Firma, die Drucker vermietet. Ein Kunde beschwert sich: Der neue Drucker verursacht ständig Papierstau, und die Hotline ist kaum erreichbar. Wichtige Unterlagen für einen Kundentermin konnten nicht gedruckt werden.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Entschuldigung, Problem bestätigen",
-      "Techniker-Termin / Austauschgerät",
-      "Direkte Telefonnummer statt Hotline",
-      "Mietfreier Monat als Entschädigung"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-rechnung",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Rechnung",
-   "prompt": "Sie arbeiten in der Buchhaltung eines Catering-Services. Eine Kundin beschwert sich: Auf der Rechnung stehen 60 Essen statt der bestellten 45. Außerdem wurde der vereinbarte Rabatt von 10 % nicht abgezogen, und sie hat bereits eine Mahnung bekommen.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Fehler zugeben und entschuldigen",
-      "Korrigierte Rechnung schicken",
-      "Mahnung ist ungültig / zurückgezogen",
-      "Kleine Entschädigung, z. B. kostenloses Dessert bei der nächsten Bestellung"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
-   "id": "bs-lieferung",
-   "deck": "schreiben",
-   "title": "Beschwerde-Übung · Mangelhafte Lieferung",
-   "prompt": "Sie arbeiten bei einem Büromöbelhändler. Ein Kunde hat 20 Bürostühle bestellt, aber nur 15 geliefert bekommen; drei davon haben die falsche Farbe. Die Montageanleitung fehlte ganz.",
-   "blocks": [
-    {
-     "heading": "Cevabında mutlaka değin",
-     "lines": [
-      "Entschuldigung, Fehler im Lager erklären",
-      "Fehlende 5 Stühle + Ersatz für 3 falsche: Termin",
-      "Montageanleitung per E-Mail sofort",
-      "Entschädigung: Preisnachlass / kostenlose Montage"
-     ]
-    },
-    {
-     "heading": "Hatırlatma",
-     "lines": [
-      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
-      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
-     ]
-    }
-   ],
-   "tags": [
-    "schreiben",
-    "beschwerde",
-    "übung"
-   ]
-  },
-  {
    "id": "forum-themen-zeit",
    "deck": "schreiben",
    "title": "Forum-Themen · Arbeitszeit & Urlaub",
@@ -3848,6 +3587,725 @@
     "schreiben",
     "forum",
     "themen"
+   ]
+  },
+  {
+   "id": "schreiben-ablehnen",
+   "deck": "schreiben",
+   "title": "Beschwerde · Höflich ablehnen & entgegenkommen",
+   "prompt": "Bazen şef 'bu bizim sorumluluğumuz değil' der. O zaman kibarca reddet ama bir şey teklif et.",
+   "blocks": [
+    {
+     "heading": "Ablehnen",
+     "lines": [
+      "Nach sorgfältiger Prüfung müssen wir Ihnen leider mitteilen, dass …",
+      "Der Fehler liegt leider nicht in unserem Verantwortungsbereich.",
+      "Daher können wir Ihrem Wunsch nach … leider nicht entsprechen.",
+      "Die Kosten für … sind gemäß unserer Vereinbarung von Ihnen zu tragen."
+     ]
+    },
+    {
+     "heading": "Entgegenkommen",
+     "lines": [
+      "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+      "Gern ist unser Techniker bereit, … kostenlos …",
+      "Wir hoffen auf Ihr Verständnis."
+     ]
+    },
+    {
+     "heading": "Şef talimatı kontrol listesi",
+     "lines": [
+      "Şefin e-postasındaki HER cümleyi işaretle: sebep, çözüm, teklif, ret",
+      "Hepsini cevabında kullandın mı? Birini unutmak = puan kaybı"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "redemittel"
+   ]
+  },
+  {
+   "id": "bs-reinigung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Reinigungsfirma",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Lassen.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chefin: „Bitte antworten Sie Herrn Lassen. Unsere Reinigungskraft war zwei Wochen krank, die Vertretung kannte das Büro nicht. Ab Montag ist die alte Kraft wieder da. Bieten Sie 15 % Rabatt auf die nächste Rechnung an. Wir dürfen den Kunden nicht verlieren!“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Papierkörbe nicht geleert, Küche schmutzig, Reinigungskraft kam nur 2 statt 3 Stunden; will nur geleistete Stunden bezahlen."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-tischlampe",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Tischlampe (Online-Shop)",
+   "prompt": "Schreiben Sie eine E-Mail an Frau Berger.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chef: „Frau Berger hat recht, die Lampen aus dieser Lieferung hatten einen Produktionsfehler. Schicken Sie ihr sofort eine neue Lampe, die Rücksendung der alten ist kostenlos (Etikett anhängen). Entschuldigen Sie sich auch für die späte Antwort – unser Postfach war überlastet.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kundin: Lampe mit Kratzer, Schalter kaputt, nach zehn Tagen noch keine Antwort; erwartet umgehende Rückmeldung."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-webseite",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Webagentur – Entwurf",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Stiller.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chefin: „Herr Stiller ist unzufrieden mit dem Entwurf. Aber er hat uns die Fotos zwei Wochen zu spät geschickt, deshalb die Verspätung – das bitte höflich erwähnen. Bieten Sie einen Termin mit unserer Designerin Frau Spindler an, um den Entwurf gemeinsam zu ändern. Zusätzliche Kosten entstehen für ihn nicht.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Entwurf gefällt nicht (Farben, zu wenig Bilder), Website sollte schon online sein, ist verärgert."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-umzug",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Umzugsfirma",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Zaun.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chef: „Unser Lkw hatte eine Panne, deshalb kamen die Möbelpacker zu spät. Für den beschädigten Schrank kommt unsere Versicherung auf – ein Gutachter meldet sich diese Woche. Die berechneten Stunden stimmen nicht, wir schicken eine neue Rechnung.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Packer 2 Stunden zu spät, Schrank beschädigt, zu viele Stunden berechnet."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-pflanzen",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Pflanzen für eine Veranstaltung",
+   "prompt": "Schreiben Sie eine E-Mail an den Veranstalter, Herrn Roth.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chefin: „Da ist bei uns etwas schiefgelaufen: Wir haben die Bestellung eines anderen Kunden geliefert. Entschuldigen Sie sich bitte. Die Rechnung übernehmen wir zu 50 %, und für die nächste Veranstaltung bekommt der Kunde die Dekoration kostenlos.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Für eine Firmenfeier zum Thema „Frühling“ kamen Herbstblumen; musste kurzfristig woanders kaufen."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-rechnung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Rechnung mit Fehlern",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Schmidt.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chefin: „Herr Schmidt ist ein langjähriger Kunde. Wir hatten ein Computerproblem, das ist inzwischen behoben. Schicken Sie ihm die korrigierte Rechnung mit seinem üblichen Rabatt von 10 %.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Ware in Ordnung, aber falsche Mengen und falsche Artikel auf der Rechnung, üblicher Rabatt fehlt."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-lieferung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Mangelhafte Lieferung",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Schramm.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chef: „Im Lager wurde falsch gepackt. Die fehlenden fünf Stühle und die drei in der richtigen Farbe liefern wir am Mittwoch. Die falschen holt der Fahrer gleich mit. Als Entschuldigung übernehmen wir die Lieferkosten.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: 20 Stühle bestellt, 15 geliefert, drei in falscher Farbe."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-drucker",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Drucker – nicht unsere Schuld",
+   "prompt": "Schreiben Sie eine E-Mail an Frau Zeller.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Chef: „Laut Techniker liegt der Fehler an der Software des Kunden, nicht am Gerät. Höflich darauf hinweisen. Kein Austauschgerät, aber eine kostenlose Fernwartung anbieten. Die Kosten für den Technikerbesuch bleiben bestehen.“"
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kundin: Gerät zeigt immer wieder Fehlermeldungen, wichtige Unterlagen nicht verschickt; will kostenloses neues Gerät und die Technikerrechnung nicht zahlen."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-spuelmaschine",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Spülmaschine",
+   "prompt": "Schreiben Sie eine E-Mail an Herrn Wagner.",
+   "blocks": [
+    {
+     "heading": "Chef/Chefin schreibt",
+     "lines": [
+      "Siehe Lesen & Schreiben Set 3: Ersatzteil am Donnerstag, Reparatur Freitagvormittag, bis dahin kostenloses Leihgerät, Reparatur auf Garantie, kein Rabatt."
+     ]
+    },
+    {
+     "heading": "Kunden-E-Mail (kurz)",
+     "lines": [
+      "Kunde: Maschine defekt, Techniker ohne Ersatzteil, niemand hat sich gemeldet; will Reparatur diese Woche und Kosten für Aushilfe."
+     ]
+    },
+    {
+     "heading": "Kontrol",
+     "lines": [
+      "Şefin söylediği HER noktayı yazdın mı? (sebep · çözüm · teklif · ret)",
+      "Müşterinin her şikâyetine cevap verdin mi? Karşılamadığın talebi (ör. masraf iadesi) kibarca reddet",
+      "Yapı: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "schreiben-notiz-themen",
+   "deck": "schreiben",
+   "title": "Telefonnotiz · Sık çıkan durumlar",
+   "prompt": "Hören & Schreiben T2: telefon mesajından formu doldur. Durumlar hep benzer.",
+   "blocks": [
+    {
+     "heading": "Sık durumlar",
+     "lines": [
+      "Teklif / fiyat bilgisi (araç kiralama, fotokopi kâğıdı)",
+      "Usta randevusu değişikliği (boya, tamir)",
+      "Eksik teslimat (sipariş 180, gelen 100)",
+      "Masa rezervasyonu",
+      "Etkinlik için içecek teslimatı gelmedi",
+      "Şikâyet + geri arama isteği"
+     ]
+    },
+    {
+     "heading": "Formda neredeyse hep sorulan",
+     "lines": [
+      "Name – harf harf söylenir: S-T-Ä-D-T-L-E-R → dikkatle yaz",
+      "Firma",
+      "Anzahl / Menge (bestellt ↔ geliefert FARKI)",
+      "Datum & Uhrzeit (neuer Termin?)",
+      "Was soll passieren? (Rückruf, Nachlieferung, Angebot schicken)",
+      "Telefonnummer / Rückruf bis …"
+     ]
+    },
+    {
+     "heading": "Tuzak",
+     "lines": [
+      "Konuşmacı önce bir tarih/sayı söyleyip sonra DÜZELTİR: 'am Dienstag … nein, doch lieber Mittwoch' → sonuncusu geçerli"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "hören",
+    "notiz"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-5",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 5",
+   "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Sofort: Was tun?",
+      "Gäste: Wie informieren? Was anbieten?",
+      "Wen anrufen?",
+      "Langfristig: Wartung? Ersatzgerät?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-6",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 6",
+   "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Chef/Chefin: Wie informieren?",
+      "Kunden: Wie informieren? Was anbieten?",
+      "Neues Mehl: Woher? Wie lagern?",
+      "Lager: Was ändern?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-7",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 7",
+   "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Hotel?",
+      "Abholung?",
+      "Wen treffen?",
+      "Was zeigen? Abendprogramm?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-8",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 8",
+   "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Kollege: Was tun?",
+      "Chef/Chefin: Wie ansprechen?",
+      "Kurzfristig: Wie reagieren?",
+      "Arbeitsablauf: Was umorganisieren?",
+      "Langfristig?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-9",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 9",
+   "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Wie Personal bekommen?",
+      "Öffnungszeiten ändern?",
+      "Überstunden? Urlaubssperre?",
+      "Abteilung schließen?",
+      "Wie den Mitarbeitenden danken?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-10",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 10",
+   "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Andere Umzugsfirmen?",
+      "Umzug anders organisieren?",
+      "Wer kann helfen?",
+      "Vermieter informieren?",
+      "Schadenersatz?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-11",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 11",
+   "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Kühlraum: Wen kontaktieren?",
+      "Verdorbene Lebensmittel: Ersatz woher?",
+      "Andere Lebensmittel: Wie verwenden?",
+      "Langfristig: Kühlalternativen?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-12",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 12",
+   "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Heute: Was tun?",
+      "Gäste: Was anbieten?",
+      "Buchungen kontrollieren: Wie?",
+      "Langfristig: Wie vermeiden?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-13",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 13",
+   "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Kunden: Wie beruhigen? Was anbieten?",
+      "Lieferant: Wie kontaktieren? Was verlangen?",
+      "Prospekt / Aushang?",
+      "Langfristig: Lieferanten wechseln?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-14",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 14",
+   "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Handwerker: Wie finden?",
+      "Gäste: Wie informieren? Was anbieten?",
+      "Eingekaufte Lebensmittel?",
+      "Aushilfen informieren?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-15",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 15",
+   "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Heute: Wie aufwärmen?",
+      "Bewohner: Wie beruhigen?",
+      "Lieferant: Wie kontaktieren? Was fordern?",
+      "Langfristig: Neuer Lieferant? Selbst kochen?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-16",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 16",
+   "prompt": "Sie arbeiten in einer psychologischen Beratungsstelle. Das Online-Terminsystem ist ausgefallen; heute warten mehrere Klientinnen und Klienten, einige Termine sind doppelt vergeben.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Wartende: Wie informieren? Was anbieten?",
+      "Termine: Wie neu organisieren?",
+      "IT / Anbieter: Wen kontaktieren?",
+      "Langfristig: Papier-Backup? Anderes System?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprechen-t3-fall-17",
+   "deck": "sprechen",
+   "title": "Teil 3 · Übungsfall 17",
+   "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+   "blocks": [
+    {
+     "heading": "Stichpunkte",
+     "lines": [
+      "Winterdienst informieren?",
+      "Kunden: Wie beruhigen? Was anbieten?",
+      "Was selbst tun?",
+      "Erste Hilfe nötig?"
+     ]
+    }
+   ],
+   "tags": [
+    "sprechen",
+    "teil3",
+    "fall",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "info-analyse",
+   "deck": "pruefung",
+   "title": "Sınav analizi · Sık çıkanlar",
+   "prompt": "Gerçek sınav derlemelerindeki kalıpların özeti (içerik kopyalanmadı, sadece desenler).",
+   "blocks": [
+    {
+     "heading": "Lesen",
+     "lines": [
+      "T1: makaleler aynı konu kümesinde (Kündigung, Eltern, Ausland, Selbstständigkeit); tuzak = işveren/çalışan bakış açısı",
+      "T2: HEP 'Willkommensmappe' bölümleri (Zeiterfassung, Unfall, Datenschutz, Sport, Rauchen, Kantine, Berichtsheft)",
+      "T3: iş hukuku forumu (hastalık, izin, mola, kıyafet, Azubi); fikir bildiren cevaplar + benzer-ama-farklı durum = x",
+      "T4: 6 TOP, TOP 1'de düzeltme, öne alınan/ertelenen TOP, reddedilen öneriler"
+     ]
+    },
+    {
+     "heading": "Schreiben",
+     "lines": [
+      "Şikâyet: şefin iç e-postası talimat verir — bazen RET (sorumluluk bizde değil)",
+      "Sık durumlar: temizlik, masa lambası, web sitesi, taşınma, bitki, fatura, teslimat, yazıcı, bulaşık makinesi",
+      "Forum: 'Firma yeni kural getiriyor' — iki konudan birini seçersin"
+     ]
+    },
+    {
+     "heading": "Sprachbausteine",
+     "lines": [
+      "T1: wie (besprochen), da, bis dahin, davon/dafür, deren, sowie, dennoch, sobald + sıfat çekimleri",
+      "T2: resmî mektup: eingetroffen, begleichen, fällig, Skonto gewähren, entnehmen, Unannehmlichkeiten, in Höhe von"
+     ]
+    },
+    {
+     "heading": "Sprechen T3",
+     "lines": [
+      "Hep aynı eksen: Sofort → Kunden informieren/anbieten → Lieferant/Handwerker kontaktieren/fordern → Langfristig"
+     ]
+    }
+   ],
+   "tags": [
+    "überblick",
+    "analyse"
    ]
   }
  ],
@@ -6350,6 +6808,999 @@
      ],
      "answer": 1,
      "explanation_tr": "Frau Vogel = Housekeeping (başlıkta yazıyor). Dolaylı ifade → b."
+    }
+   ]
+  },
+  {
+   "id": "L1-8",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 8 (Prüfungsstil): Familie & Beruf",
+   "instructions_tr": "SINAV TARZI: 8 makalenin çoğu aynı konu kümesinde. Tuzak: BAKIŞ AÇISI (çalışan mı işveren mi?) ve KAPSAM (genel konu mu, kişinin tam sorusu mu?).",
+   "context_de": "Sie lesen Kurzartikel auf einem Online-Portal für Eltern und Beschäftigte.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Schutz vor und nach der Geburt",
+     "body": "Sechs Wochen vor dem errechneten Geburtstermin beginnt die Schutzfrist. Dann dürfen Schwangere nur noch arbeiten, wenn sie es ausdrücklich wünschen. Nach der Geburt gilt in der Regel ein Beschäftigungsverbot von acht Wochen."
+    },
+    {
+     "key": "b",
+     "title": "Kinder im Büro?",
+     "body": "Grundsätzlich entscheidet der Arbeitgeber, ob Kinder mit an den Arbeitsplatz dürfen. Bei einem kranken Kind raten Experten davon ab – besser sind Kinderkrankentage. Einige Firmen bieten inzwischen Eltern-Kind-Büros für Notfälle an."
+    },
+    {
+     "key": "c",
+     "title": "Elterngeld: So viel gibt es",
+     "body": "Wie hoch das Elterngeld ausfällt, hängt vom bisherigen Einkommen ab. Unser Rechner zeigt, mit welchem Betrag Sie in den ersten Monaten rechnen können."
+    },
+    {
+     "key": "d",
+     "title": "Zurück aus der Elternzeit",
+     "body": "Wer nach der Elternzeit nicht Vollzeit arbeiten möchte, kann unter bestimmten Voraussetzungen eine Verringerung der Arbeitszeit verlangen. Den Antrag sollte man rechtzeitig vor dem Ende der Elternzeit stellen."
+    },
+    {
+     "key": "e",
+     "title": "Wenn die eigenen Eltern Hilfe brauchen",
+     "body": "Beschäftigte, die einen nahen Angehörigen pflegen, können sich bis zu sechs Monate ganz oder teilweise freistellen lassen. Außerdem gibt es kurzfristig bis zu zehn Tage Auszeit, wenn plötzlich eine Pflegesituation entsteht."
+    },
+    {
+     "key": "f",
+     "title": "Väter in Elternzeit",
+     "body": "Immer mehr Männer nehmen Elternzeit – allerdings meist nur zwei Monate. Eine Studie untersucht, warum Väter so selten länger zu Hause bleiben."
+    },
+    {
+     "key": "g",
+     "title": "Ferien? Die Firma hilft",
+     "body": "Sechs Wochen Sommerferien, aber nur 30 Tage Urlaub: Viele Unternehmen organisieren deshalb Ferienprogramme für die Kinder ihrer Beschäftigten – mit Ausflügen, Sport und Betreuung von morgens bis nachmittags."
+    },
+    {
+     "key": "h",
+     "title": "Kita-Plätze fehlen",
+     "body": "In vielen Städten warten Eltern monatelang auf einen Betreuungsplatz für ihr Kleinkind. Die Kommunen versprechen, bis 2028 tausende neue Plätze zu schaffen."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-8-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Aylin ist schwanger und fragt sich, ab wann sie nicht mehr arbeiten muss.",
+     "answer": "a",
+     "explanation_tr": "Hamilelik + ne zaman çalışmayı bırakır → a (Schutzfrist)."
+    },
+    {
+     "id": "L1-8-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Tobias möchte wissen, ob er sein krankes Kind mit ins Büro bringen darf.",
+     "answer": "b",
+     "explanation_tr": "Hasta çocuk ofise → b. f/h tuzak: çocuk var ama konu farklı."
+    },
+    {
+     "id": "L1-8-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Jana will nach der Geburt ihres Kindes mit weniger Stunden in den Job zurück.",
+     "answer": "d",
+     "explanation_tr": "Tuzak c: doğum sonrası ✓ ama PARA. Daha az saatle dönüş → d."
+    },
+    {
+     "id": "L1-8-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Martin muss sich um seinen pflegebedürftigen Vater kümmern und braucht Zeit.",
+     "answer": "e",
+     "explanation_tr": "Bakıma muhtaç baba = naher Angehöriger → e. Kelime 'Vater' geçmiyor, 'Angehörige' geçiyor."
+    },
+    {
+     "id": "L1-8-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Sabine sucht jemanden, der in den Sommerferien auf ihre Kinder aufpasst.",
+     "answer": "g",
+     "explanation_tr": "Tuzak h: çocuk bakımı ✓ ama KREŞ, tatil değil → g."
+    }
+   ]
+  },
+  {
+   "id": "L1-9",
+   "part": "lesen1",
+   "title": "Lesen T1 · Set 9 (Prüfungsstil): Kündigung & Jobwechsel",
+   "instructions_tr": "SINAV TARZI: 8 makalenin çoğu aynı konu kümesinde. Tuzak: BAKIŞ AÇISI (çalışan mı işveren mi?) ve KAPSAM (genel konu mu, kişinin tam sorusu mu?).",
+   "context_de": "Sie lesen Artikel in der Rubrik „Arbeit & Recht“ einer Online-Zeitung.",
+   "layout": "matching",
+   "allow_none": false,
+   "texts": [
+    {
+     "key": "a",
+     "title": "Gegen die Kündigung vorgehen",
+     "body": "Wer eine Kündigung für unwirksam hält, muss schnell handeln: Innerhalb von drei Wochen muss die Klage beim Arbeitsgericht eingereicht werden. Danach gilt die Kündigung in der Regel als wirksam."
+    },
+    {
+     "key": "b",
+     "title": "Weniger Klagen vor Arbeitsgerichten",
+     "body": "Die Zahl der Verfahren an deutschen Arbeitsgerichten ist im vergangenen Jahr erneut gesunken. Experten führen das auf den stabilen Arbeitsmarkt zurück."
+    },
+    {
+     "key": "c",
+     "title": "Kündigen – aber richtig",
+     "body": "Arbeitgeber, die einem Beschäftigten kündigen wollen, müssen viele Regeln beachten: Schriftform, Fristen, Anhörung des Betriebsrats. Ein Fehler kann teuer werden."
+    },
+    {
+     "key": "d",
+     "title": "Anspruch auf ein Zeugnis",
+     "body": "Wer ein Arbeitsverhältnis beendet, kann ein qualifiziertes Arbeitszeugnis verlangen. Es beschreibt nicht nur die Aufgaben, sondern auch Leistung und Verhalten – und muss wohlwollend formuliert sein."
+    },
+    {
+     "key": "e",
+     "title": "Selbst kündigen: Das müssen Sie beachten",
+     "body": "Eine Kündigung durch Beschäftigte ist nur schriftlich und mit Unterschrift wirksam – E-Mail oder WhatsApp reichen nicht. Prüfen Sie außerdem Ihre Kündigungsfrist im Vertrag, bevor Sie beim neuen Arbeitgeber unterschreiben."
+    },
+    {
+     "key": "f",
+     "title": "Mehr Gehalt beim Jobwechsel",
+     "body": "Wer die Firma wechselt, verdient im Schnitt deutlich mehr als bei einer Gehaltserhöhung im alten Job. Wir zeigen, wie Sie gut verhandeln."
+    },
+    {
+     "key": "g",
+     "title": "Warum Mitarbeiter gehen",
+     "body": "Nicht das Gehalt ist der häufigste Grund für eine Kündigung, sondern fehlende Wertschätzung und schlechte Führung. So halten Unternehmen ihre Fachkräfte."
+    },
+    {
+     "key": "h",
+     "title": "Arbeitslos? Zeit nutzen",
+     "body": "Die Zeit zwischen zwei Jobs muss nicht verloren sein: Weiterbildungen, ein Ehrenamt oder ein Sprachkurs machen sich gut im Lebenslauf – und halten fit für den nächsten Start."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L1-9-q1",
+     "num": 1,
+     "kind": "match",
+     "prompt": "Deniz hat die Kündigung bekommen und hält sie für ungerecht.",
+     "answer": "a",
+     "explanation_tr": "Tuzak b: dava konusu ✓ ama istatistik. Tuzak c: fesih ✓ ama İŞVEREN için. Deniz itiraz etmek istiyor → a."
+    },
+    {
+     "id": "L1-9-q2",
+     "num": 2,
+     "kind": "match",
+     "prompt": "Lara hat ein besseres Angebot und möchte ihre Stelle selbst aufgeben.",
+     "answer": "e",
+     "explanation_tr": "Tuzak f: iş değişikliği ✓ ama maaş. Kendi istifası nasıl olur → e."
+    },
+    {
+     "id": "L1-9-q3",
+     "num": 3,
+     "kind": "match",
+     "prompt": "Herr Wolf leitet eine Firma, aus der immer wieder gute Leute weggehen.",
+     "answer": "g",
+     "explanation_tr": "Herr Wolf İŞVEREN, çalışanlar gidiyor → g (işveren bakış açısı)."
+    },
+    {
+     "id": "L1-9-q4",
+     "num": 4,
+     "kind": "match",
+     "prompt": "Emil ist seit Kurzem ohne Arbeit und will die Zeit bis zur nächsten Stelle sinnvoll nutzen.",
+     "answer": "h",
+     "explanation_tr": "İşsiz, zamanı değerlendirmek → h."
+    },
+    {
+     "id": "L1-9-q5",
+     "num": 5,
+     "kind": "match",
+     "prompt": "Petra verlässt ihre Firma und möchte eine schriftliche Beurteilung ihrer Arbeit.",
+     "answer": "d",
+     "explanation_tr": "'schriftliche Beurteilung' = Arbeitszeugnis → d."
+    }
+   ]
+  },
+  {
+   "id": "L2-7",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 7 (Prüfungsstil): Zugang & Arbeitsunfall",
+   "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Willkommensmappe – Zugangskontrolle und Zeiterfassung",
+     "body": "Ihren Mitarbeiterausweis erhalten Sie am ersten Arbeitstag an der Pforte. Bitte schicken Sie uns dafür vorher ein Passfoto per E-Mail. Der Ausweis öffnet alle Türen, die Sie für Ihre Arbeit brauchen, und dient gleichzeitig zur Zeiterfassung: Halten Sie ihn beim Kommen und Gehen an das Terminal.\n\nHaben Sie Ihren Ausweis vergessen, bekommen Sie am Empfang einen Tagesausweis. Ihre Arbeitszeit tragen Sie dann nachträglich im Portal ein; Ihre Vorgesetzte oder Ihr Vorgesetzter muss den Eintrag bestätigen.\n\nEin Verlust ist sofort zu melden, damit der Ausweis gesperrt werden kann. Für einen Ersatzausweis berechnen wir 15 Euro.\n\nBesucherinnen und Besucher müssen spätestens einen Tag vorher angemeldet werden und werden am Empfang von der gastgebenden Person abgeholt."
+    },
+    {
+     "key": "T2",
+     "title": "Willkommensmappe – Arbeitsunfall und Berufsgenossenschaft",
+     "body": "Jeder Unfall bei der Arbeit – auch eine kleine Schnittwunde – wird ins Verbandbuch eingetragen. Das Verbandbuch und eine Liste der Ersthelferinnen und Ersthelfer finden Sie auf jeder Etage neben dem Erste-Hilfe-Kasten.\n\nKönnen Sie nach einem Unfall über den Unfalltag hinaus nicht arbeiten oder brauchen Sie eine ärztliche Behandlung, gehen Sie bitte zu einem Durchgangsarzt. Eine Liste dieser Ärzte hängt am Schwarzen Brett. Sagen Sie in der Praxis unbedingt, dass es sich um einen Arbeitsunfall handelt.\n\nMelden Sie den Unfall innerhalb von drei Tagen der Personalabteilung. Diese informiert die Berufsgenossenschaft, die die Kosten übernimmt.\n\nAuch Unfälle auf dem direkten Weg zur Arbeit und nach Hause sind versichert."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-7-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Den Ausweis bekommt man schon vor dem ersten Arbeitstag per Post.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'am ersten Arbeitstag an der Pforte' → falsch. Önceden sadece FOTO gönderiliyor."
+    },
+    {
+     "id": "L2-7-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Wer seinen Ausweis zu Hause vergessen hat, …",
+     "options": [
+      "muss wieder nach Hause fahren.",
+      "bekommt einen Tagesausweis und trägt die Zeit später ein.",
+      "kann an diesem Tag nicht arbeiten."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tagesausweis + nachträglich im Portal → b."
+    },
+    {
+     "id": "L2-7-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Einen verlorenen Ausweis ersetzt die Firma nur gegen Bezahlung.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "'Für einen Ersatzausweis berechnen wir 15 Euro' → richtig."
+    },
+    {
+     "id": "L2-7-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Besucher …",
+     "options": [
+      "melden sich selbst am Empfang an.",
+      "müssen vorher angemeldet und abgeholt werden.",
+      "bekommen einen eigenen Mitarbeiterausweis."
+     ],
+     "answer": 1,
+     "explanation_tr": "En geç bir gün önce kayıt + resepsiyondan alınma → b."
+    },
+    {
+     "id": "L2-7-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Kleine Verletzungen muss man nicht dokumentieren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'auch eine kleine Schnittwunde' → Verbandbuch'a yazılır → falsch."
+    },
+    {
+     "id": "L2-7-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Wer nach einem Unfall behandelt werden muss, geht …",
+     "options": [
+      "zur Hausärztin.",
+      "zu einem Durchgangsarzt.",
+      "zur Personalabteilung."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak c: Personalabteilung'a BİLDİRİM yapılır, tedavi değil → b."
+    },
+    {
+     "id": "L2-7-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Den Unfall meldet man selbst der Berufsgenossenschaft.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Çalışan Personalabteilung'a bildirir; BG'ye Personalabteilung bildirir → falsch."
+    },
+    {
+     "id": "L2-7-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Beim Arzt sollte man …",
+     "options": [
+      "seine Versichertenkarte zeigen.",
+      "sagen, dass es ein Arbeitsunfall war.",
+      "die Behandlung selbst bezahlen."
+     ],
+     "answer": 1,
+     "explanation_tr": "'Sagen Sie … unbedingt' → b."
+    }
+   ]
+  },
+  {
+   "id": "L2-8",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 8 (Prüfungsstil): Betriebssport & Zeitkonto",
+   "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Willkommensmappe – Betriebssport",
+     "body": "Im Untergeschoss steht Ihnen unser Fitnessraum zur Verfügung. Er ist von 6 bis 22 Uhr geöffnet und kann vor und nach der Arbeit sowie in der Mittagspause genutzt werden. Vor der ersten Nutzung ist eine Einweisung durch unseren Trainer Pflicht; einen Termin buchen Sie im Intranet.\n\nZusätzlich bieten wir kostenlose Kurse wie Yoga und Rückenfit an. Da die Plätze auf zwölf Personen begrenzt sind, ist eine Anmeldung erforderlich.\n\nJeden Donnerstag um 17.30 Uhr startet unsere Laufgruppe am Haupteingang. Hier sind auch Familienangehörige herzlich willkommen.\n\nBitte bringen Sie ein eigenes Handtuch mit."
+    },
+    {
+     "key": "T2",
+     "title": "Willkommensmappe – Lebensarbeitszeitkonto",
+     "body": "Mit dem Lebensarbeitszeitkonto können Sie Überstunden und Teile Ihres Weihnachtsgelds ansparen. Das Guthaben wird in Euro geführt. Später können Sie es nutzen, um längere Zeit bei vollem Gehalt freizunehmen – etwa für eine Auszeit, die Pflege von Angehörigen oder einen früheren Ruhestand.\n\nDie Teilnahme ist freiwillig. Wie viel Sie im nächsten Jahr einzahlen möchten, beantragen Sie jeweils bis zum 31. Oktober.\n\nWechseln Sie den Arbeitgeber, geht Ihr Guthaben nicht verloren: Es kann zum neuen Arbeitgeber übertragen oder – nach Abzug von Steuern – ausgezahlt werden."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-8-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Man darf den Fitnessraum während der Arbeitszeit benutzen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Sadece iş öncesi/sonrası ve öğle arasında → falsch."
+    },
+    {
+     "id": "L2-8-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Bevor man zum ersten Mal trainiert, …",
+     "options": [
+      "braucht man eine Einweisung.",
+      "muss man eine Gebühr bezahlen.",
+      "braucht man ein ärztliches Attest."
+     ],
+     "answer": 0,
+     "explanation_tr": "'Einweisung durch unseren Trainer Pflicht' → a."
+    },
+    {
+     "id": "L2-8-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "An der Laufgruppe können auch Partnerinnen und Partner teilnehmen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "'auch Familienangehörige herzlich willkommen' → richtig."
+    },
+    {
+     "id": "L2-8-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Für die Kurse …",
+     "options": [
+      "muss man sich anmelden.",
+      "zahlt man einen kleinen Beitrag.",
+      "gibt es keine Teilnehmerbegrenzung."
+     ],
+     "answer": 0,
+     "explanation_tr": "Kurslar ücretsiz, 12 kişiyle sınırlı → kayıt gerekli → a."
+    },
+    {
+     "id": "L2-8-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Alle Beschäftigten müssen ein Lebensarbeitszeitkonto haben.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'Die Teilnahme ist freiwillig' → falsch."
+    },
+    {
+     "id": "L2-8-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Das Guthaben kann man nutzen, um …",
+     "options": [
+      "sein Gehalt zu erhöhen.",
+      "eine längere Zeit nicht zu arbeiten.",
+      "mehr Überstunden zu machen."
+     ],
+     "answer": 1,
+     "explanation_tr": "'längere Zeit … freizunehmen' → b."
+    },
+    {
+     "id": "L2-8-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Wer die Firma verlässt, verliert sein Guthaben.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'geht Ihr Guthaben nicht verloren' → falsch."
+    },
+    {
+     "id": "L2-8-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Wie viel man im nächsten Jahr einzahlt, …",
+     "options": [
+      "kann man jederzeit ändern.",
+      "muss man bis Ende Oktober beantragen.",
+      "bestimmt die Firma."
+     ],
+     "answer": 1,
+     "explanation_tr": "'bis zum 31. Oktober' → b."
+    }
+   ]
+  },
+  {
+   "id": "L2-9",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 9 (Prüfungsstil): Rauchen & Berichtsheft",
+   "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Willkommensmappe – Rauchen",
+     "body": "Im gesamten Gebäude gilt ein striktes Rauchverbot. Das gilt ausdrücklich auch für E-Zigaretten. Rauchen ist nur im gekennzeichneten Bereich im Innenhof hinter Halle 2 erlaubt – nicht vor dem Haupteingang und nicht auf dem Parkplatz.\n\nRaucherpausen gelten nicht als Arbeitszeit. Bitte stempeln Sie dafür aus.\n\nSie möchten aufhören? Wir unterstützen Sie: Die Kosten für einen anerkannten Nichtraucherkurs übernehmen wir zur Hälfte. Wenn Sie den Kurs erfolgreich abschließen, erstatten wir auch den Rest."
+    },
+    {
+     "key": "T2",
+     "title": "Willkommensmappe – Für Auszubildende: der Ausbildungsnachweis",
+     "body": "Während Ihrer Ausbildung führen Sie wöchentlich einen digitalen Ausbildungsnachweis, das sogenannte Berichtsheft. Dafür steht Ihnen etwa eine Stunde pro Woche während der Arbeitszeit zur Verfügung.\n\nTragen Sie ein, welche Tätigkeiten Sie im Betrieb ausgeführt haben. Auch die Berufsschultage gehören dazu – mit den Themen des Unterrichts. Wenn Sie krank waren, vermerken Sie das ebenfalls.\n\nIhre Ausbilderin oder Ihr Ausbilder kontrolliert und unterschreibt die Nachweise einmal im Monat. Bitte nehmen Sie das ernst: Ein vollständiges Berichtsheft ist Voraussetzung für die Zulassung zur Abschlussprüfung."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-9-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "E-Zigaretten sind im Büro erlaubt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'ausdrücklich auch für E-Zigaretten' → falsch."
+    },
+    {
+     "id": "L2-9-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Raucherpausen …",
+     "options": [
+      "zählen als Arbeitszeit.",
+      "muss man ausstempeln.",
+      "sind nur mittags erlaubt."
+     ],
+     "answer": 1,
+     "explanation_tr": "'nicht als Arbeitszeit … stempeln Sie aus' → b."
+    },
+    {
+     "id": "L2-9-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Die Firma bezahlt einen Nichtraucherkurs ganz, wenn man ihn erfolgreich beendet.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "Yarısı baştan, başarıyla bitirirse kalanı da → richtig."
+    },
+    {
+     "id": "L2-9-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Rauchen darf man …",
+     "options": [
+      "vor dem Haupteingang.",
+      "im Innenhof hinter Halle 2.",
+      "auf dem Parkplatz."
+     ],
+     "answer": 1,
+     "explanation_tr": "a ve c açıkça yasak → b."
+    },
+    {
+     "id": "L2-9-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Das Berichtsheft schreibt man in der Freizeit.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'während der Arbeitszeit' → falsch."
+    },
+    {
+     "id": "L2-9-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Die Ausbilderin …",
+     "options": [
+      "unterschreibt jede Woche.",
+      "prüft die Nachweise monatlich.",
+      "schreibt das Berichtsheft für die Azubis."
+     ],
+     "answer": 1,
+     "explanation_tr": "'einmal im Monat' → b. Tuzak a: Azubi HAFTALIK yazar, eğitmen AYLIK imzalar."
+    },
+    {
+     "id": "L2-9-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Ohne vollständiges Berichtsheft wird man nicht zur Abschlussprüfung zugelassen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "'Voraussetzung für die Zulassung' → richtig."
+    },
+    {
+     "id": "L2-9-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Berufsschultage …",
+     "options": [
+      "muss man nicht eintragen.",
+      "trägt man mit den Unterrichtsthemen ein.",
+      "zählen als Urlaub."
+     ],
+     "answer": 1,
+     "explanation_tr": "'mit den Themen des Unterrichts' → b."
+    }
+   ]
+  },
+  {
+   "id": "L3-7",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 7 (Prüfungsstil): Arbeitszeit & Pausen",
+   "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "context_de": "Forum: Rund um den Beruf",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Jörg, vor 2 Stunden: Wer mehr als sechs Stunden arbeitet, muss mindestens 30 Minuten Pause machen. Die Pause darf man in Abschnitte von 15 Minuten teilen, aber ausfallen lassen darf man sie nicht – auch nicht freiwillig und auch nicht gegen früheren Feierabend."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Mareike, vor 5 Stunden: Ich finde, in Arztpraxen wird sowieso viel zu viel gearbeitet. Unser ganzes Gesundheitssystem müsste sich ändern, sonst gibt es bald keine Praxishelferinnen mehr."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Tom, vor 1 Stunde: Pünktlich anzukommen ist deine Sache – Stau, Streik oder Glatteis gehören zum sogenannten Wegerisiko. Dein Arbeitgeber darf verlangen, dass du die Zeit nacharbeitest oder sie von deinem Zeitkonto abzieht."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Heike, vor 3 Stunden: Wenn du freiwillig am Wochenende eine Fortbildung besuchst, die dein Arbeitgeber nicht angeordnet hat, ist das deine Privatsache. Einen Ausgleich kannst du dann leider nicht verlangen."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Nils, vor 30 Minuten: Wenn der Arbeitgeber eine bestimmte Kleidung vorschreibt und man sie im Betrieb an- und ausziehen muss, gilt die Umkleidezeit in der Regel als Arbeitszeit. Sprich doch mal mit dem Betriebsrat."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Carina, vor 4 Stunden: Nachtarbeit wird in vielen Branchen mit Zuschlägen bezahlt. Schau mal in deinen Tarifvertrag, da steht, wie hoch sie sind."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-7-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Selin: Ich arbeite in einer Arztpraxis. Wenn viele Patienten da sind, soll ich meine Mittagspause verschieben – manchmal mache ich dann gar keine. Meine Chefin sagt, ich könne ja dafür früher gehen. Ist das in Ordnung?",
+     "answer": "a",
+     "explanation_tr": "Tuzak b: Arztpraxis kelimesi ✓ ama sadece FİKİR. Mola kuralı → a."
+    },
+    {
+     "id": "L3-7-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Boris: In unserem Werk muss ich vor Schichtbeginn Schutzkleidung anziehen, die im Betrieb bleibt. Das dauert jeden Tag 15 Minuten. Mein Chef rechnet das nicht als Arbeitszeit. Darf er das?",
+     "answer": "e",
+     "explanation_tr": "İşyerinde giyilen zorunlu kıyafet → e."
+    },
+    {
+     "id": "L3-7-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Anja: Gestern stand ich auf dem Weg ins Büro im Stau und kam 40 Minuten zu spät. Jetzt soll ich die Zeit nacharbeiten. Ich kann doch nichts dafür!",
+     "answer": "c",
+     "explanation_tr": "Trafik = Wegerisiko → c."
+    },
+    {
+     "id": "L3-7-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Felix: Mein Chef hat angeordnet, dass ich letzten Samstag unseren Stand auf einer Messe betreue. Bekomme ich dafür einen Ausgleich?",
+     "answer": "x",
+     "explanation_tr": "Tuzak d: hafta sonu ✓ ama GÖNÜLLÜ ve emredilmemiş eğitim. Felix'e ise ŞEF EMRETTİ → farklı durum → x."
+    }
+   ]
+  },
+  {
+   "id": "L3-8",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 8 (Prüfungsstil): Urlaub & Krankheit",
+   "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "context_de": "Forum: Rund um den Beruf",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Birgit, vor 6 Stunden: Resturlaub verfällt normalerweise am 31. März des Folgejahres – aber nur, wenn dein Arbeitgeber dich vorher rechtzeitig darauf hingewiesen hat. Sonst bleibt er bestehen."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Sven, vor 1 Stunde: Genehmigten Urlaub darf der Chef nur in absoluten Ausnahmefällen zurücknehmen. Dass Personal fehlt, reicht in der Regel nicht. Und falls doch: Die Kosten für deine Stornierung muss dann die Firma tragen."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Anna, vor 3 Stunden: Keine Sorge! Wenn du im Urlaub krank wirst und eine ärztliche Bescheinigung hast, werden dir die Tage wieder gutgeschrieben. Informiere deinen Arbeitgeber aber sofort."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Ralf, vor 2 Stunden: Ich nehme nie mehr als eine Woche Urlaub am Stück. Nach zwei Wochen ist man völlig raus aus der Arbeit, das lohnt sich doch gar nicht."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Miriam, vor 45 Minuten: Den vollen Urlaubsanspruch hast du tatsächlich erst nach sechs Monaten. Vorher steht dir aber für jeden vollen Monat ein Zwölftel zu – nach vier Monaten also schon einige Tage. Frag einfach in der Personalabteilung."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Paul, vor 5 Stunden: Wer ein Kind bekommt, kann bis zu drei Jahre Elternzeit nehmen. Den Antrag muss man aber rechtzeitig stellen."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-8-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Ömer: Ich bin seit vier Monaten in meiner neuen Firma und würde im Sommer gern zwei Wochen Urlaub machen. Eine Kollegin meint, im ersten halben Jahr hätte ich überhaupt keinen Anspruch. Stimmt das?",
+     "answer": "e",
+     "explanation_tr": "Tuzak: kolegası 'hiç hakkın yok' diyor ama e: orantılı hak var → e."
+    },
+    {
+     "id": "L3-8-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Katja: Gleich am zweiten Urlaubstag habe ich eine schwere Grippe bekommen und war beim Arzt. Sind diese Urlaubstage jetzt einfach weg?",
+     "answer": "c",
+     "explanation_tr": "Tatilde hastalık → c."
+    },
+    {
+     "id": "L3-8-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Luca: Mein Urlaub ist seit Monaten genehmigt und gebucht. Jetzt hat ein Kollege gekündigt, und mein Chef will, dass ich den Urlaub absage. Muss ich das?",
+     "answer": "b",
+     "explanation_tr": "Onaylı izin geri alınabilir mi → b."
+    },
+    {
+     "id": "L3-8-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Vera: Ich habe noch acht Tage Resturlaub, möchte aber lieber arbeiten und mir die Tage auszahlen lassen. Geht das?",
+     "answer": "x",
+     "explanation_tr": "Tuzak a: Resturlaub ✓ ama konu SÜRESİNİN DOLMASI; Vera PARA OLARAK ödenmesini soruyor → cevap yok → x."
+    }
+   ]
+  },
+  {
+   "id": "L4-7",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 7 (Prüfungsstil): Abteilungsleitersitzung",
+   "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Abteilungsleitersitzung",
+     "body": "Datum: 12.03., 09.00–11.30 Uhr\nProtokollantin: Julia Neumann (JN)\nAnwesend: Herr Kraus (Vertrieb), Frau Özdemir (Einkauf), Herr Lenz (Betriebsrat), Frau Hahn (Produktion), Frau Neumann (Assistenz der Geschäftsführung)\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nHerr Kraus bittet um eine Korrektur: Die Messe in Köln findet nicht im April, sondern im Mai statt. Mit dieser Änderung wird das Protokoll genehmigt. Da Herr Lenz die Sitzung um 10 Uhr verlassen muss, wird TOP 5 vorgezogen und als TOP 2 behandelt.\n\nTOP 2 Neue Pausenregelung (vorgezogener TOP)\nUm das Gedränge in der Kantine zu verringern, sollen die Mittagspausen künftig zwischen 11.30 und 13.30 Uhr nach Abteilungen gestaffelt werden. Herr Lenz stimmt im Namen des Betriebsrats unter einer Bedingung zu: Die Regelung wird zunächst drei Monate getestet und danach gemeinsam bewertet.\n\nTOP 3 Probleme mit einem Zulieferer\nDie Firma Bolt & Co. hat in diesem Quartal dreimal verspätet geliefert, wodurch es in der Produktion zu Stillständen kam. Frau Özdemir führt nächste Woche ein Gespräch mit dem Geschäftsführer von Bolt & Co. Verbessert sich die Lage bis Ende April nicht, wird ein zweiter Lieferant hinzugezogen. Herr Kraus holt bereits jetzt Vergleichsangebote ein.\n\nTOP 4 Messe in Köln\nDer Stand wird aus Kostengründen nur halb so groß wie im Vorjahr. Am Stand werden vier Personen benötigt. Interessierte melden sich bis zum 30.03. bei Frau Neumann. Die Hotelzimmer bucht das Sekretariat der Geschäftsführung.\n\nTOP 5 Fahrradständer\nEs werden 20 überdachte Stellplätze gebaut. Der ursprünglich geplante Platz vor dem Haupteingang ist nicht möglich, weil dort die Feuerwehrzufahrt liegt. Die Stellplätze entstehen stattdessen neben Halle B. Der Bau beginnt im Juni.\n\nTOP 6 Sonstiges\nHerr Kraus geht ab 1. April für vier Monate in Elternzeit. Die Vertretung im Vertrieb übernimmt Herr Yildiz; Frau Özdemir bleibt für den Einkauf zuständig.\n\nNächste Sitzung: 09.04., 09.00 Uhr"
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-7-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Im Protokoll der letzten Sitzung …",
+     "options": [
+      "stand ein falscher Monat für die Messe.",
+      "fehlte ein Tagesordnungspunkt.",
+      "war der Name des Zulieferers falsch."
+     ],
+     "answer": 0,
+     "explanation_tr": "Kraus'un düzeltmesi: Nisan değil Mayıs → a."
+    },
+    {
+     "id": "L4-7-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die neue Pausenregelung …",
+     "options": [
+      "wird zunächst ausprobiert.",
+      "wurde vom Betriebsrat abgelehnt.",
+      "gilt ab sofort dauerhaft."
+     ],
+     "answer": 0,
+     "explanation_tr": "Betriebsrat ŞARTLI kabul etti: 3 ay test → a. (TOP öne alındı çünkü Lenz erken çıkıyor.)"
+    },
+    {
+     "id": "L4-7-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wenn Bolt & Co. weiter zu spät liefert, …",
+     "options": [
+      "wird der Vertrag sofort gekündigt.",
+      "arbeitet die Firma zusätzlich mit einem anderen Lieferanten.",
+      "übernimmt Herr Kraus den Einkauf."
+     ],
+     "answer": 1,
+     "explanation_tr": "'ein zweiter Lieferant hinzugezogen' = ek tedarikçi, iptal değil → b."
+    },
+    {
+     "id": "L4-7-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wer auf der Messe arbeiten möchte, meldet sich …",
+     "options": [
+      "beim Sekretariat der Geschäftsführung.",
+      "bei der Protokollantin.",
+      "beim Vertriebsleiter."
+     ],
+     "answer": 1,
+     "explanation_tr": "Frau Neumann = Protokollantin (başlıkta). Tuzak a: sekreterlik OTEL rezervasyonu yapar → b."
+    },
+    {
+     "id": "L4-7-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Fahrradständer …",
+     "options": [
+      "werden vor dem Haupteingang gebaut.",
+      "entstehen an einem anderen Ort als geplant.",
+      "sind bereits fertig."
+     ],
+     "answer": 1,
+     "explanation_tr": "Planlanan yer olmadı, Halle B yanına → b."
+    }
+   ]
+  },
+  {
+   "id": "L4-8",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 8 (Prüfungsstil): Mitarbeiterbesprechung Verwaltung",
+   "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Mitarbeiterbesprechung – Verwaltung",
+     "body": "Datum: 03.11., 14.00–16.00 Uhr\nProtokollant: Jonas Stoll\nAnwesend: Frau Richter (Leitung Verwaltung), Frau Aksoy, Herr Brandt, Frau Lorenz (Betriebsrat), Herr Stoll\n\nTOP 1 Begrüßung und Tagesordnung\nFrau Richter begrüßt die Anwesenden. TOP 4 „Betriebliche Altersvorsorge“ entfällt heute, da der Referent der Versicherung erkrankt ist, und wird in der nächsten Sitzung behandelt.\n\nTOP 2 Kosteneinsparungen\nDer Papierverbrauch soll um 20 Prozent sinken. Alle Drucker werden auf doppelseitigen Schwarz-Weiß-Druck eingestellt; Farbdrucke sind nur noch mit einer persönlichen PIN möglich. Der Vorschlag, die Raumtemperatur auf 19 Grad zu senken, wird nach Einwänden des Betriebsrats nicht umgesetzt. Stattdessen wird die Heizung am Wochenende abgesenkt.\n\nTOP 3 Personelle Engpässe in der Buchhaltung\nZwei Kolleginnen der Buchhaltung sind bis Mitte nächsten Jahres abwesend. Eine befristete Stelle wurde bereits ausgeschrieben. Bis sie besetzt ist, unterstützen Frau Aksoy und Herr Brandt die Buchhaltung an jeweils einem Tag pro Woche. Die dadurch entstehenden Überstunden werden ausnahmsweise ausgezahlt.\n\nTOP 4 Betriebliche Altersvorsorge\nentfällt (siehe TOP 1)\n\nTOP 5 Betriebsausflug\nIn einer Umfrage hat sich die Mehrheit für eine Schifffahrt auf dem Rhein statt einer Wanderung entschieden. Termin ist Freitag, der 15. Mai. Der Ausflug gilt als Arbeitszeit. Aus Kostengründen können Angehörige diesmal nicht teilnehmen.\n\nTOP 6 Sonstiges\nDer Vertrag mit dem bisherigen Betriebsarzt wurde gekündigt. Ab Januar ist Dr. Wegner zuständig. Er bietet jeden Dienstag eine Sprechstunde in Raum 004 an.\n\nNächste Sitzung: 01.12., 14.00 Uhr"
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-8-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Über die Altersvorsorge …",
+     "options": [
+      "wurde heute ausführlich gesprochen.",
+      "spricht man bei einem späteren Treffen.",
+      "informiert künftig der Betriebsarzt."
+     ],
+     "answer": 1,
+     "explanation_tr": "'entfällt heute … in der nächsten Sitzung' → b. TOP listede var ama konuşulmadı!"
+    },
+    {
+     "id": "L4-8-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Um Kosten zu sparen, …",
+     "options": [
+      "wird die Raumtemperatur auf 19 Grad gesenkt.",
+      "kann man farbig nur noch mit einer PIN drucken.",
+      "werden einige Drucker abgeschafft."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: öneri Betriebsrat itirazıyla REDDEDİLDİ → b."
+    },
+    {
+     "id": "L4-8-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Die Buchhaltung …",
+     "options": [
+      "bekommt vorübergehend Hilfe aus dem eigenen Haus.",
+      "erhält zwei neue unbefristete Stellen.",
+      "darf keine Überstunden machen."
+     ],
+     "answer": 0,
+     "explanation_tr": "Aksoy ve Brandt haftada birer gün yardım ediyor; ilan edilen yer 'befristet' ve BİR tane → a."
+    },
+    {
+     "id": "L4-8-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Beim Betriebsausflug …",
+     "options": [
+      "wird gewandert.",
+      "dürfen Familienmitglieder mitkommen.",
+      "fährt man mit dem Schiff."
+     ],
+     "answer": 2,
+     "explanation_tr": "Schifffahrt → c. Aileler bu kez katılamıyor."
+    },
+    {
+     "id": "L4-8-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Der neue Betriebsarzt …",
+     "options": [
+      "ist ab sofort im Haus.",
+      "bietet einmal pro Woche eine Sprechstunde an.",
+      "ersetzt die Leiterin der Verwaltung."
+     ],
+     "answer": 1,
+     "explanation_tr": "Her salı muayene → b. Başlangıç Ocak, 'ab sofort' değil."
+    }
+   ]
+  },
+  {
+   "id": "LS1-3",
+   "part": "lesen-schreiben1",
+   "title": "Lesen & Schreiben T1 · Set 3 (Prüfungsstil): Spülmaschine",
+   "instructions_tr": "SINAV TARZI: Önce ŞEFİN iç e-postası (ne yazman gerektiği), altında müşterinin şikâyeti. Sorular müşteri hakkında. Sonra şefin talimatlarının HEPSİNİ cevabına koy!",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "C",
+     "title": "Interne E-Mail von Ihrer Chefin",
+     "body": "Hallo,\nbitte kümmern Sie sich um die E-Mail unten. Das Restaurant Linde ist ein wichtiger Kunde. Unser Techniker sagt, das Ersatzteil kommt am Donnerstag, er kann die Maschine dann am Freitagvormittag reparieren. Bieten Sie dem Kunden bis dahin kostenlos ein Leihgerät an. Einen Rabatt können wir leider nicht geben, aber die Reparatur ist natürlich kostenlos, weil die Maschine noch Garantie hat.\nDanke!\nMarion Kurz"
+    },
+    {
+     "key": "M",
+     "title": "E-Mail von Herrn Wagner, Restaurant Linde",
+     "body": "Sehr geehrte Damen und Herren,\nvor drei Wochen haben wir bei Ihnen eine gewerbliche Spülmaschine gekauft. Seit Montag funktioniert sie nicht mehr: Das Wasser läuft nicht ab. Ihr Techniker war am Dienstag bei uns, konnte aber nichts tun, weil ihm ein Ersatzteil fehlte. Seitdem hat sich niemand mehr gemeldet.\nWir müssen seit Tagen mit der Hand spülen und brauchen dafür eine zusätzliche Aushilfe. Ich erwarte, dass die Maschine noch diese Woche repariert wird. Außerdem bitte ich Sie, uns die Kosten für die Aushilfe zu erstatten.\nMit freundlichen Grüßen\nPeter Wagner"
+    }
+   ],
+   "questions": [
+    {
+     "id": "LS1-3-q1",
+     "num": 19,
+     "text_ref": "M",
+     "kind": "mc",
+     "prompt": "Herr Wagner …",
+     "options": [
+      "möchte eine neue Spülmaschine.",
+      "hat seit Tagen eine defekte Maschine.",
+      "hatte einen Wasserschaden in der Küche."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak c: 'Wasser läuft nicht ab' = su boşalmıyor, hasar değil → b. Yeni makine istemiyor, tamir istiyor."
+    },
+    {
+     "id": "LS1-3-q2",
+     "num": 20,
+     "text_ref": "C",
+     "kind": "mc",
+     "prompt": "Die Chefin möchte, dass Sie dem Kunden …",
+     "options": [
+      "einen Rabatt anbieten.",
+      "bis zur Reparatur ein anderes Gerät leihen.",
+      "die Kosten für die Aushilfe erstatten."
+     ],
+     "answer": 1,
+     "explanation_tr": "Rabatt YOK; yardımcı masrafından şef hiç bahsetmiyor. Ödünç makine → b."
+    }
+   ]
+  },
+  {
+   "id": "LS1-4",
+   "part": "lesen-schreiben1",
+   "title": "Lesen & Schreiben T1 · Set 4 (Prüfungsstil): Kopierer – höflich ablehnen",
+   "instructions_tr": "SINAV TARZI: Önce ŞEFİN iç e-postası (ne yazman gerektiği), altında müşterinin şikâyeti. Sorular müşteri hakkında. Sonra şefin talimatlarının HEPSİNİ cevabına koy!",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "C",
+     "title": "Interne E-Mail von Ihrem Chef",
+     "body": "Guten Morgen,\ndie Nachricht unten kam gerade von der Firma Solmar. Unser Techniker hat das Gerät geprüft: Der Fehler entstand, weil dort falsches Papier verwendet wurde – dafür sind wir nicht verantwortlich. Bitte antworten Sie Frau Kessler freundlich, aber klar: Ein kostenloses Austauschgerät gibt es nicht. Wir bieten aber an, dass unser Techniker die Mitarbeitenden dort kostenlos schult. Die Kosten für den Technikereinsatz trägt Solmar.\nViele Grüße\nJan Brenner"
+    },
+    {
+     "key": "M",
+     "title": "E-Mail von Frau Kessler, Solmar GmbH",
+     "body": "Sehr geehrter Herr Brenner,\nder Kopierer, den wir vor zwei Monaten bei Ihnen gemietet haben, hat in dieser Woche schon zum dritten Mal Papierstau. Gestern konnten wir deshalb wichtige Unterlagen für einen Kunden nicht rechtzeitig fertigstellen.\nOffensichtlich handelt es sich um einen technischen Mangel des Geräts. Ich bitte Sie deshalb, uns umgehend und kostenlos ein anderes Gerät zu liefern. Die Rechnung für den letzten Technikerbesuch werden wir nicht bezahlen.\nMit freundlichen Grüßen\nSandra Kessler"
+    }
+   ],
+   "questions": [
+    {
+     "id": "LS1-4-q1",
+     "num": 19,
+     "text_ref": "M",
+     "kind": "mc",
+     "prompt": "Frau Kessler …",
+     "options": [
+      "meint, das Gerät habe einen technischen Fehler.",
+      "hat falsches Papier gekauft.",
+      "möchte den Mietvertrag kündigen."
+     ],
+     "answer": 0,
+     "explanation_tr": "b teknisyenin görüşü, müşterinin değil! Tuzak: kim ne diyor? → a."
+    },
+    {
+     "id": "LS1-4-q2",
+     "num": 20,
+     "text_ref": "C",
+     "kind": "mc",
+     "prompt": "In Ihrer Antwort sollen Sie …",
+     "options": [
+      "ein Austauschgerät zusagen.",
+      "eine kostenlose Schulung anbieten.",
+      "auf die Rechnung für den Technikereinsatz verzichten."
+     ],
+     "answer": 1,
+     "explanation_tr": "Şef: değişim YOK, masraf müşteride; ücretsiz eğitim VAR → b."
     }
    ]
   }

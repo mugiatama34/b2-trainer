@@ -43,3 +43,7 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 ## Veri v1.7 (v1.5.3)
 - `b2-data.json` v1.7 (manuel güncelleme): 132 soru, 58 kart (Sprechen 30, Schreiben 20, Lesen 6, Prüfung 2), 38 Lesen seti. Kod değişikliği yok; sadece sürüm 1.5.3'e çekildi (banner + yeni SW cache).
 - Test: uygulamayı aç → "Yeni sürüm var" banner'ı → Yenile; Lesen listesinde 38 set, Kartlar sekmelerinde yeni kartlar görünür.
+
+## Veri v1.8 (v1.5.4)
+- `b2-data.json` v1.8 (manuel güncelleme): 2 yeni Schreiben kartı ("En sık hatalar" kontrol listesi, "Bağlaç çantası"). Toplam 60 kart (Schreiben 22). Kod değişikliği yok.
+- Test: banner → Yenile; Kartlar → Schreiben'de iki yeni kart görünür.

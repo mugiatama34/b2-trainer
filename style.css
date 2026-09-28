@@ -295,3 +295,35 @@ textarea { display: block; min-height: 120px; margin-bottom: 8px; resize: vertic
 body.has-checkbar main { padding-bottom: 96px; }
 body.has-checkbar.has-banner .check-bar { bottom: calc(72px + env(safe-area-inset-bottom)); }
 body.has-checkbar.has-banner main { padding-bottom: 170px; }
+
+/* Schreiben */
+[hidden] { display: none !important; }
+.topic { position: relative; }
+.topic a { padding-right: 56px; }
+.hint-btn {
+  position: absolute; top: 6px; right: 6px; width: 44px; height: 44px;
+  border: 0; background: none; font-size: 20px; cursor: pointer;
+}
+.hint { margin: -4px 0 10px; padding: 8px 14px; background: var(--blank); border-radius: 10px; }
+.quote { font-style: italic; }
+.file-btn { position: relative; overflow: hidden; }
+.file-btn.disabled { opacity: .45; }
+.file-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.thumbs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.thumbs:empty { display: none; }
+.thumb { position: relative; width: 92px; height: 120px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb span {
+  position: absolute; left: 4px; bottom: 4px; min-width: 22px; height: 22px; border-radius: 6px;
+  background: var(--primary); color: var(--primary-text); font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+}
+.thumb button {
+  position: absolute; top: 2px; right: 2px; width: 32px; height: 32px; border: 0; border-radius: 50%;
+  background: rgba(0, 0, 0, .6); color: #fff; font-size: 20px; line-height: 1; cursor: pointer;
+}
+.warn-note { margin: 0 0 8px; padding: 8px 12px; border-radius: 10px; background: #fff3cd; color: #6b4e00; font-weight: 600; font-size: 15px; }
+mark { background: #ffe58a; color: #1b1f27; border-radius: 3px; padding: 0 2px; }
+.unclear-preview { font-size: 15px; max-height: 30vh; overflow-y: auto; padding: 8px; border: 1px dashed var(--border); border-radius: 10px; margin-bottom: 8px; }
+@media (prefers-color-scheme: dark) {
+  .warn-note { background: #3d3113; color: #f0c35a; }
+}

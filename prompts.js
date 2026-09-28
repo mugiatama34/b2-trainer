@@ -27,3 +27,8 @@ Discuss how to react: immediate steps, who does what, contacting people involved
 export const PROMPT_DIALOG_EVAL = `You are a DTB B2 examiner. Below is a dialogue between the candidate (Turkish, psychologist; her turns are iPhone dictation, ignore punctuation) and a partner (AI). Evaluate ONLY the candidate's turns for task type {{TASK}}.
 Criteria rated A/B/C/D as in DTB: aufgabe (reacting appropriately, making suggestions, agreeing/disagreeing, distributing tasks, asking back), kohaerenz, wortschatz, strukturen.
 Respond ONLY with the same JSON schema as the monologue evaluation, but "improved_de" contains 4-6 of her turns rewritten at B2 level (format "Du: ... → Besser: ..."), and "followup_questions_de" is an empty array.`;
+
+export const PROMPT_TRANSCRIBE = `These images show a handwritten German text by a language learner (exam practice). Transcribe it EXACTLY as written.
+Do NOT correct spelling, grammar, capitalization or word order – the errors are important for the evaluation.
+Keep paragraph breaks. If a word is unreadable, write your best guess followed by [?].
+Output ONLY the transcribed text, nothing else.`;

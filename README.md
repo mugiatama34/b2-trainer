@@ -47,3 +47,11 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 ## Veri v1.8 (v1.5.4)
 - `b2-data.json` v1.8 (manuel güncelleme): 2 yeni Schreiben kartı ("En sık hatalar" kontrol listesi, "Bağlaç çantası"). Toplam 60 kart (Schreiben 22). Kod değişikliği yok.
 - Test: banner → Yenile; Kartlar → Schreiben'de iki yeni kart görünür.
+
+## Görev 5 – Schreiben-Coach
+### Adım 1 – Görev seçimi + fotoğraf/metin yükleme + transkripsiyon (v1.6.0)
+- Eklendi: Ana sayfada **✍️ Schreiben**. İki sekme: **Beschwerde** (`bs-*` kartları; görev = `prompt`, şef talimatları = "Chef/Chefin schreibt", müşteri = "Kunden-E-Mail (kurz)") ve **Forumsbeitrag** (`forum-themen-*` kartlarının satırları; listede sadece `—` öncesi, 💡 ile Pro/Contra). "🎲 Sınav simülasyonu": rastgele iki konu, birini seç.
+- Görev ekranı: görev metni + zamanlayıcı (Beschwerde 20 dk, Forum 25 dk; Ayarlar → Schreiben; çalışırken süre üst barda, son 5 dk'da titreşim + not, sonunda "Süre doldu!").
+- **📷 Fotoğraf çek / yükle** (`capture="environment"`, çoklu) + "🖼 Galeriden seç": en fazla 3 sayfa, önizleme, × ile sil. Her foto canvas ile küçültülür (uzun kenar ≤ 1600 px, JPEG 0.8). **📝 Metni oku** → `PROMPT_TRANSCRIBE` (görüntüler `image` blokları + metin talimatı). Metin düzenlenebilir kutuda, üstte uyarı; `[?]` yerleri vurgulanır. Fotoğraflar hiçbir yerde saklanmaz: cevap gelince bellekten silinir. 30 kelimeden kısa gelirse "Fotoğraf net değil…" uyarısı. Yedek yol: **⌨️ Metin olarak gir**. Metin taslağı `b2trainer:writingDraft:<görev>` altında tutulur (görüntüler değil).
+- Anahtar yoksa foto butonu yerine not + metin kutusu.
+- Test (iPhone): Ayarlar'da anahtar kayıtlı → Schreiben → Beschwerde → bir görev → **bir kâğıda 3 satır yaz, 📷 ile fotoğrafını çek → "Metni oku" → transkripsiyon kutuda gelir** (3 satır < 30 kelime olduğu için "Fotoğraf net değil" notu da çıkar — bu beklenen davranış). Forumsbeitrag → 💡 → Pro/Contra açılır; Sınav simülasyonu → iki konu.

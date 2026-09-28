@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.7",
+  "version": "1.8",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -4306,6 +4306,92 @@
    "tags": [
     "überblick",
     "analyse"
+   ]
+  },
+  {
+   "id": "schreiben-fehler",
+   "deck": "schreiben",
+   "title": "Schreiben · En sık hatalar (kontrol listesi)",
+   "prompt": "Yazdıktan sonra 2 dakika ayır ve bu listeyle kontrol et.",
+   "blocks": [
+    {
+     "heading": "Biçim",
+     "lines": [
+      "Anrede: 'Sehr geehrter Herr Schmidt,' → virgül, sonraki satır KÜÇÜK harfle başlar",
+      "'Sie / Ihr / Ihnen' resmî hitapta hep BÜYÜK harf",
+      "Gruß: 'Mit freundlichen Grüßen' → sonunda virgül YOK, altına isim",
+      "Betreff yazılırsa kısa: 'Ihre Beschwerde vom 12. Mai'"
+     ]
+    },
+    {
+     "heading": "Dilbilgisi",
+     "lines": [
+      "Yan cümlede fiil SONA: …, dass wir das Problem gelöst HABEN.",
+      "weil / dass / wenn / obwohl → fiil sonda; deshalb / trotzdem / außerdem → fiil 2. sırada",
+      "das (artikel/zamir) ≠ dass (bağlaç)",
+      "Edatla kalıplar: sich entschuldigen FÜR, sich beschweren ÜBER, sich kümmern UM"
+     ]
+    },
+    {
+     "heading": "İçerik",
+     "lines": [
+      "Şefin/görevin HER noktası var mı? Tek tek işaretle",
+      "Her paragrafta bir fikir; paragraflar arası boş satır",
+      "Aynı bağlacı tekrar etme: außerdem → zudem → darüber hinaus"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "fehler",
+    "checkliste"
+   ]
+  },
+  {
+   "id": "schreiben-konnektoren",
+   "deck": "schreiben",
+   "title": "Schreiben · Bağlaç çantası (Kohärenz)",
+   "prompt": "Metni akıcı yapan kelimeler — genel dil puanını yükseltir.",
+   "blocks": [
+    {
+     "heading": "Sıralama",
+     "lines": [
+      "Zunächst … · Anschließend … · Schließlich …",
+      "Zum einen … zum anderen …"
+     ]
+    },
+    {
+     "heading": "Ekleme",
+     "lines": [
+      "Außerdem · Zudem · Darüber hinaus · Hinzu kommt, dass …"
+     ]
+    },
+    {
+     "heading": "Zıtlık",
+     "lines": [
+      "Allerdings · Jedoch · Trotzdem · Dennoch · Andererseits",
+      "Zwar …, aber …"
+     ]
+    },
+    {
+     "heading": "Sebep & sonuç",
+     "lines": [
+      "Da … · weil … · denn …",
+      "Deshalb · Daher · Aus diesem Grund · sodass …"
+     ]
+    },
+    {
+     "heading": "Örnek & sonuç",
+     "lines": [
+      "Zum Beispiel · Beispielsweise · So habe ich in meiner letzten Firma …",
+      "Alles in allem · Zusammenfassend · Abschließend möchte ich sagen, …"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "konnektoren",
+    "redemittel"
    ]
   }
  ],

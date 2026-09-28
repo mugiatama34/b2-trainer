@@ -327,3 +327,16 @@ mark { background: #ffe58a; color: #1b1f27; border-radius: 3px; padding: 0 2px; 
 @media (prefers-color-scheme: dark) {
   .warn-note { background: #3d3113; color: #f0c35a; }
 }
+.card .checklist, .checklist { list-style: none; padding: 0; margin: 0; }
+.checklist li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.checklist li:last-child { border-bottom: 0; }
+.checklist .mark { flex: none; }
+.checklist .sub, .phrase-list .sub { display: block; font-size: 14px; color: var(--muted); }
+.checklist li.bad > span:last-child > span:first-child { color: var(--bad); font-weight: 600; }
+.card .phrase-list, .phrase-list { list-style: none; padding: 0; margin: 0; }
+.phrase-list li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.phrase-list li:last-child { border-bottom: 0; }
+.phrase-list .t { flex: 1; }
+.phrase-list .btn.inline { margin: 0; font-size: 14px; min-height: 40px; padding: 6px 10px; }
+.phrase-list.card { padding: 4px 16px; }
+.icon-btn { flex: none; width: 44px; height: 44px; border: 0; background: none; font-size: 18px; cursor: pointer; }

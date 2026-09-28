@@ -32,3 +32,39 @@ export const PROMPT_TRANSCRIBE = `These images show a handwritten German text by
 Do NOT correct spelling, grammar, capitalization or word order – the errors are important for the evaluation.
 Keep paragraph breaks. If a word is unreadable, write your best guess followed by [?].
 Output ONLY the transcribed text, nothing else.`;
+
+export const PROMPT_EVAL_BESCHWERDE = `You are an examiner for "Deutsch-Test für den Beruf B2" (telc/BAMF), coaching a Turkish-speaking candidate (a psychologist).
+Task type: formal reply e-mail to a customer complaint (Lesen & Schreiben Teil 2).
+The candidate's boss gave these instructions, which MUST all appear in the reply:
+{{CHEF}}
+The customer's complaint (summary): {{KUNDE}}
+Writing task: {{TASK}}
+
+Candidate's text (transcribed from handwriting):
+"""{{TEXT}}"""
+
+Evaluate:
+- checklist: one item per instruction from the boss PLUS "responds to each customer point" PLUS "formal frame (Anrede, Gruß, Sie-Form)". Mark covered true/false with a short Turkish comment.
+- scores A/B/C/D (A = B2 gut erfüllt, B = B2 erfüllt, C = B1, D = unter B1) for: aufgabe (all points covered, appropriate), register (polite, formal, fits business context), kohaerenz (structure, paragraphs, connectors), sprache (grammar and vocabulary accuracy/range).
+- Focus corrections on the 5-8 most important errors.
+Respond ONLY with valid JSON, no markdown:
+{"word_count":0,"checklist":[{"point":"...","covered":true,"comment_tr":"..."}],
+"scores":{"aufgabe":"A","register":"A","kohaerenz":"A","sprache":"A"},
+"summary_tr":"2-3 sentences in Turkish",
+"corrections":[{"original":"...","corrected":"...","explanation_tr":"..."}],
+"useful_phrases":[{"de":"...","tr":"..."}],
+"improved_de":"her e-mail rewritten at solid B2 level, keeping her ideas, including every boss instruction, 120-170 words",
+"tips_tr":["3 concrete tips in Turkish"]}`;
+
+export const PROMPT_EVAL_FORUM = `You are an examiner for "Deutsch-Test für den Beruf B2" (telc/BAMF), coaching a Turkish-speaking candidate (a psychologist).
+Task type: Forumsbeitrag. Colleagues discuss a new company rule in the internal forum; the candidate gives her opinion.
+Topic: {{TOPIC}}
+
+Candidate's text (transcribed from handwriting):
+"""{{TEXT}}"""
+
+Evaluate:
+- checklist items: "clear personal opinion", "at least two arguments with reasons", "personal example or experience", "considers the other side", "suggestion or compromise", "conclusion", "suitable forum register (friendly, can use du/ihr or neutral)".
+- scores A/B/C/D for: aufgabe, register, kohaerenz, sprache (same scale as DTB).
+- Focus corrections on the 5-8 most important errors.
+Respond ONLY with valid JSON using exactly the same schema as the complaint evaluation; "improved_de" = her text rewritten at solid B2 level, keeping her opinion and ideas, 150-200 words.`;

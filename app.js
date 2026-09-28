@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.6.0';
+const APP_VERSION = '1.6.1';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -533,6 +533,7 @@ function renderProgress() {
     ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
     ${readingProgressHtml()}
     ${coachProgressHtml()}
+    ${writingProgressHtml()}
     <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
   `;
   const weakBtn = document.getElementById('weakBtn');
@@ -541,8 +542,8 @@ function renderProgress() {
     location.hash = '#/practice';
   };
   document.getElementById('resetBtn').onclick = () => {
-    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları ve Coach puanları silinsin mi? Bu işlem geri alınamaz.')) return;
-    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading'].forEach(k => store.remove(k));
+    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları, Coach ve Schreiben puanları silinsin mi? ("Benim kalıplarım" kalır.) Bu işlem geri alınamaz.')) return;
+    ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading', 'writingHistory'].forEach(k => store.remove(k));
     renderProgress();
   };
 }
@@ -865,8 +866,9 @@ function renderCards(args) {
   const known = DECKS.map(d => d.id);
   const extra = uniq(DATA.cards.map(c => c.deck)).filter(d => !known.includes(d))
     .map(d => ({ id: d, name: d }));
-  const decks = DECKS.concat(extra);
+  const decks = DECKS.concat(extra, [{ id: MY_PHRASES_DECK, name: 'Benim kalıplarım' }]);
   const deck = args[0] || store.get('lastDeck', 'pruefung');
+  if (deck === MY_PHRASES_DECK) return renderMyPhrasesDeck(decks);
   const learned = getLearned();
   const cards = DATA.cards.filter(c => c.deck === deck);
   $app.innerHTML = `
@@ -882,6 +884,29 @@ function renderCards(args) {
   document.querySelectorAll('.tab').forEach(t => {
     t.onclick = () => { location.hash = '#/cards/' + encodeURIComponent(t.dataset.deck); };
   });
+}
+
+const MY_PHRASES_DECK = 'benim';
+
+function renderMyPhrasesDeck(decks) {
+  store.set('lastDeck', MY_PHRASES_DECK);
+  const phrases = getMyPhrases();
+  $app.innerHTML = `
+    <div class="tabs">${decks.map(d =>
+      `<button class="tab ${d.id === MY_PHRASES_DECK ? 'active' : ''}" data-deck="${esc(d.id)}">${esc(d.name)}</button>`).join('')}</div>
+    ${phrases.length ? `<ul class="phrase-list card">${phrases.map((p, i) => `
+      <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
+        <button class="icon-btn" data-say="${i}" aria-label="Vorlesen">🔊</button>
+        <button class="icon-btn" data-del="${i}" aria-label="Sil">🗑</button></li>`).join('')}</ul>`
+    : '<p class="muted center">Henüz kalıp yok. Schreiben değerlendirmesinde "➕ Kartlara ekle" ile ekleyebilirsin.</p>'}`;
+  document.querySelectorAll('.tab').forEach(t => {
+    t.onclick = () => { location.hash = '#/cards/' + encodeURIComponent(t.dataset.deck); };
+  });
+  $app.querySelectorAll('[data-say]').forEach(b => { b.onclick = () => speakDe(phrases[Number(b.dataset.say)].de); });
+  $app.querySelectorAll('[data-del]').forEach(b => {
+    b.onclick = () => { removeMyPhrase(phrases[Number(b.dataset.del)].de); renderMyPhrasesDeck(decks); };
+  });
+  onLeave(stopSpeech);
 }
 
 function renderCardDetail(args) {
@@ -1225,8 +1250,8 @@ function lastScoresByTheme() {
   getCoachHistory().forEach(e => { last[e.cardId || e.theme] = e; });
   return last;
 }
-function scoresInline(scores) {
-  return CRITERIA.map(([k]) => gradeBadge((scores || {})[k])).join('');
+function scoresInline(scores, criteria) {
+  return (criteria || CRITERIA).map(([k]) => gradeBadge((scores || {})[k])).join('');
 }
 
 /* ---------- Settings ---------- */
@@ -1847,6 +1872,13 @@ const IMAGE_QUALITY = 0.8;
 const MIN_TRANSCRIPT_WORDS = 30;
 const TRANSCRIBE_TOKENS = 2000;
 const BLURRY_MSG = 'Fotoğraf net değil, daha aydınlık bir yerde ve düz açıdan tekrar çek.';
+const WRITING_EVAL_TOKENS = 3000;
+const WRITING_CRITERIA = [
+  ['aufgabe', 'Aufgabe'],
+  ['register', 'Register'],
+  ['kohaerenz', 'Kohärenz'],
+  ['sprache', 'Sprache']
+];
 
 function writingMinutes(kind) {
   const K = WRITING_KINDS[kind];
@@ -1905,6 +1937,128 @@ function writingTask(kind, cardId, idx) {
   };
 }
 
+function fillPrompt(template, values) {
+  // Placeholders are replaced in order; {{TEXT}} comes last so the candidate's text is never re-scanned.
+  return Object.keys(values).reduce((acc, k) => acc.split('{{' + k + '}}').join(values[k]), template);
+}
+function writingEvalPrompt(P, task, text) {
+  if (task.kind === 'bs') {
+    return fillPrompt(P.PROMPT_EVAL_BESCHWERDE, {
+      CHEF: task.chef.join('\n'), KUNDE: task.kunde.join(' '), TASK: task.task, TEXT: text
+    });
+  }
+  // The forum prompt refers to "the same schema as the complaint evaluation": append that schema.
+  const b = P.PROMPT_EVAL_BESCHWERDE;
+  const schema = b.slice(b.indexOf('{"word_count"'));
+  return fillPrompt(P.PROMPT_EVAL_FORUM, { TOPIC: task.topic.title, TEXT: text }) +
+    '\n\nJSON schema of the complaint evaluation:\n' + schema;
+}
+function isCovered(item) { return item && (item.covered === true || item.covered === 'true'); }
+
+/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım") */
+function getMyPhrases() { return store.get('myPhrases', []); }
+function phraseKey(de) { return String(de || '').trim().toLowerCase(); }
+function hasMyPhrase(de) { return getMyPhrases().some(p => phraseKey(p.de) === phraseKey(de)); }
+function addMyPhrase(p) {
+  const list = getMyPhrases();
+  if (!p || !p.de || list.some(x => phraseKey(x.de) === phraseKey(p.de))) return;
+  list.push({ de: String(p.de).trim(), tr: String(p.tr || '').trim(), date: Date.now() });
+  store.set('myPhrases', list);
+}
+function removeMyPhrase(de) {
+  store.set('myPhrases', getMyPhrases().filter(p => phraseKey(p.de) !== phraseKey(de)));
+}
+
+/* History: b2trainer:writingHistory = [{ date, kind, taskId, title, scores, words, checklist: { ok, n }, text }] (no images) */
+function getWritingHistory() { return store.get('writingHistory', []); }
+function addWritingHistory(entry) {
+  const h = getWritingHistory();
+  h.push(entry);
+  store.set('writingHistory', h.slice(-100));
+}
+function lastWritingByTask() {
+  const last = {};
+  getWritingHistory().forEach(e => { last[e.taskId] = e; });
+  return last;
+}
+
+function renderWritingResult(el, result, rawText, task, text) {
+  if (!result) {
+    el.innerHTML = `<div class="card"><h3>Değerlendirme (ham metin)</h3><div class="sample small">${esc(rawText)}</div></div>`;
+    return;
+  }
+  const K = WRITING_KINDS[task.kind];
+  const scores = result.scores || {};
+  const checklist = Array.isArray(result.checklist) ? result.checklist : [];
+  const okN = checklist.filter(isCovered).length;
+  const phrases = (Array.isArray(result.useful_phrases) ? result.useful_phrases : []).filter(p => p && p.de);
+  const tips = Array.isArray(result.tips_tr) ? result.tips_tr : [];
+  el.innerHTML = `
+    ${checklist.length ? `
+      <div class="card">
+        <h3>Kontrol listesi · ${okN}/${checklist.length}</h3>
+        <p class="small muted">En çok puan buradan gelir: her madde metinde olmalı.</p>
+        <ul class="checklist">${checklist.map(c => `
+          <li class="${isCovered(c) ? 'ok' : 'bad'}"><span class="mark">${isCovered(c) ? '✅' : '❌'}</span>
+            <span><span lang="de">${esc(c.point)}</span>${c.comment_tr ? `<span class="sub">${esc(c.comment_tr)}</span>` : ''}</span></li>`).join('')}
+        </ul>
+      </div>` : ''}
+    <div class="card">
+      <h3>Puanlar</h3>
+      <div class="scores" lang="de">${WRITING_CRITERIA.map(([k, name]) => `
+        <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
+      <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1 · <strong>${countWords(text)} kelime</strong> (hedef ≈ ${K.words})</p>
+      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+    </div>
+    ${Array.isArray(result.corrections) && result.corrections.length ? `
+      <div class="card"><h3>Düzeltmeler</h3>${correctionsHtml(result.corrections)}</div>` : ''}
+    ${phrases.length ? `
+      <div class="card"><h3>Kullanabileceğin Redemittel</h3>
+        <ul class="phrase-list">${phrases.map((p, i) => `
+          <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
+            <button class="btn inline" data-add="${i}" ${hasMyPhrase(p.de) ? 'disabled' : ''}>${hasMyPhrase(p.de) ? '✓ Eklendi' : '➕ Kartlara ekle'}</button></li>`).join('')}
+        </ul>
+      </div>` : ''}
+    ${result.improved_de ? `
+      <div class="card">
+        <details>
+          <summary>Mustertext</summary>
+          <div class="row" style="margin:8px 0">
+            <button class="btn" data-speak>🔊 Vorlesen</button>
+            <button class="btn" data-stop>■ Durdur</button>
+          </div>
+          <div class="sample" lang="de">${esc(result.improved_de)}</div>
+        </details>
+      </div>` : ''}
+    ${tips.length ? `<div class="card"><h3>İpuçları</h3><ul>${tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+  el.querySelectorAll('[data-add]').forEach(b => {
+    b.onclick = () => {
+      addMyPhrase(phrases[Number(b.dataset.add)]);
+      b.disabled = true;
+      b.textContent = '✓ Eklendi';
+    };
+  });
+  const sp = el.querySelector('[data-speak]');
+  if (sp) {
+    sp.onclick = () => speakDe(result.improved_de);
+    el.querySelector('[data-stop]').onclick = stopSpeech;
+  }
+}
+
+// Latest Schreiben scores per task (progress screen).
+function writingProgressHtml() {
+  const last = lastWritingByTask();
+  const rows = Object.keys(last).map(k => last[k]).sort((a, b) => b.date - a.date).map(e => `
+    <div class="coach-row">
+      <span class="t">${esc((WRITING_KINDS[e.kind] || {}).name || '')} · ${esc(e.title)}<span class="sub">${new Date(e.date).toLocaleString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+        · ${e.words || 0} kelime${e.checklist && e.checklist.n ? ` · ✅ ${e.checklist.ok}/${e.checklist.n}` : ''}</span></span>
+      <span class="mini-scores">${scoresInline(e.scores, WRITING_CRITERIA)}</span>
+    </div>`).join('');
+  if (!rows) return '';
+  return `<div class="card"><h3>Schreiben · son puanlar</h3>
+    <p class="small muted">Aufgabe · Register · Kohärenz · Sprache</p>${rows}</div>`;
+}
+
 function renderSchreiben(args) {
   const a = args[0] || '';
   if (a === 'bs' || a === 'forum') {
@@ -1920,6 +2074,7 @@ function renderSchreibenList(tab) {
   if (!WRITING_KINDS[tab]) tab = 'bs';
   store.set('schreibenTab', tab);
   setHeader('Schreiben', true);
+  const last = lastWritingByTask();
   const tabs = `<div class="tabs">${Object.keys(WRITING_KINDS).map(k =>
     `<button class="tab ${k === tab ? 'active' : ''}" data-tab="${k}">${WRITING_KINDS[k].name}</button>`).join('')}</div>`;
   const intro = getApiKey() ? '' : `<div class="card small">API anahtarı yok → metin girişi + <strong>yedek mod</strong> (prompt kopyala → Claude uygulaması).
@@ -1931,6 +2086,7 @@ function renderSchreibenList(tab) {
         const t = writingTask('bs', c.id);
         return `<li><a href="${t.href}">
           <span class="t">${esc(t.title)}<span class="sub" lang="de">${esc(t.kunde.join(' '))}</span></span>
+          ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}
         </a></li>`;
       }).join('') || '<p class="muted center">Beschwerde görevi yok.</p>'}</ul>`;
   } else {
@@ -1940,7 +2096,8 @@ function renderSchreibenList(tab) {
         <h3>${esc(c.title.replace(/^Forum-Themen\s*·\s*/, ''))}</h3>
         <ul class="list">${forumLines(c).map((line, i) => {
           const t = writingTask('forum', c.id, i);
-          return `<li class="topic"><a href="${t.href}"><span class="t" lang="de">${esc(t.title)}</span></a>
+          return `<li class="topic"><a href="${t.href}"><span class="t" lang="de">${esc(t.title)}</span>
+            ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}</a>
             <button class="hint-btn" data-hint aria-label="İpucu göster" aria-expanded="false">💡</button>
             <div class="hint small" hidden>${topicHintHtml(t.topic)}</div></li>`;
         }).join('')}</ul>`).join('')}`;
@@ -2125,6 +2282,57 @@ function renderWritingTask(task) {
   if (draft || !hasKey) showText(draft, false);
 
   if (hasKey) setupPhotoUpload();
+  setupEvaluation();
+
+  /* Step B: evaluation of the confirmed text */
+  function setupEvaluation() {
+    const area = document.getElementById('evalArea');
+    area.innerHTML = `
+      ${hasKey ? '<button class="btn primary" id="evalBtn">Değerlendir</button>' : ''}
+      <p class="small error" id="evalErr"></p>
+      <div id="wFallback"></div>`;
+    const errEl = document.getElementById('evalErr');
+    const fallbackEl = document.getElementById('wFallback');
+    const resultEl = document.getElementById('wResult');
+    const cleanText = () => ta.value.replace(/[ \t]*\[\?\]/g, '').trim();
+    const fallbackPrompt = async () => writingEvalPrompt(await loadPrompts(), task, cleanText());
+    if (!hasKey) {
+      renderFallback(fallbackEl, fallbackPrompt, 'API anahtarı yok. Metni yazdıktan sonra prompt\'u (görev + metin) kopyalayıp Claude uygulamasına yapıştır.');
+      return;
+    }
+    const evalBtn = document.getElementById('evalBtn');
+    evalBtn.onclick = () => {
+      const text = cleanText();
+      if (!text) { errEl.textContent = 'Önce metni yükle ya da yaz.'; return; }
+      errEl.textContent = '';
+      fallbackEl.innerHTML = '';
+      withBusy(evalBtn, async () => {
+        let raw;
+        try {
+          const P = await loadPrompts();
+          raw = await callClaude(undefined, [{ role: 'user', content: writingEvalPrompt(P, task, text) }], { maxTokens: WRITING_EVAL_TOKENS });
+        } catch (e) {
+          if (my !== screenId) return;
+          errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+          renderFallback(fallbackEl, fallbackPrompt);
+          return;
+        }
+        if (my !== screenId) return;
+        const result = parseJsonReply(raw);
+        renderWritingResult(resultEl, result, raw, task, text);
+        if (result && result.scores) {
+          const list = Array.isArray(result.checklist) ? result.checklist : [];
+          addWritingHistory({
+            date: Date.now(), kind: task.kind, taskId: task.id, title: task.title,
+            scores: result.scores, words: countWords(text),
+            checklist: { ok: list.filter(isCovered).length, n: list.length },
+            text
+          });
+        }
+        resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    };
+  }
 
   function setupPhotoUpload() {
     const thumbs = document.getElementById('thumbs');

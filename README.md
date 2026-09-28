@@ -39,3 +39,7 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 ## Görev 4 – Coach süresi + veri v1.3 (v1.5.0)
 - Eklendi: Ayarlar → "Monolog süresi" (2/3/4 dk, varsayılan 3; `b2trainer:settings.monologMinutes`). Coach Monolog kaydı ve Sprechen kartlarındaki zamanlayıcı bu süreyi kullanır. 2:00'de kısa titreşim + "Sınavda burada durdurulabilirsin" notu (süre 2 dk'dan uzunsa); süre bitince titreşim + yanıp sönen kırmızı sayaç + "Süre doldu!". `PROMPT_MONOLOG`: 2–3 dk içerik, örnek metin 230-300 kelime. `b2-data.json` v1.3: 18 Lesen seti + "Tuzak tipleri" kartı (kod değişikliği yok).
 - Test: Ayarlar → Monolog süresi 3 dk → Kartlar → Sprechen → bir Teil 1 kartı → zamanlayıcı 3:00 → Başlat → 1:00 kalınca (2:00 geçti) titreşim + not; 0:00'da titreşim + kırmızı yanıp sönme. Coach ile çalış → "Kayıt (3 dk)". Ayarı 4 dk yapıp tekrar aç → 4:00. Lesen listesinde 18 set; Kartlar → Lesen'de "Tuzak tipleri" kartı.
+
+## Veri v1.7 (v1.5.3)
+- `b2-data.json` v1.7 (manuel güncelleme): 132 soru, 58 kart (Sprechen 30, Schreiben 20, Lesen 6, Prüfung 2), 38 Lesen seti. Kod değişikliği yok; sadece sürüm 1.5.3'e çekildi (banner + yeni SW cache).
+- Test: uygulamayı aç → "Yeni sürüm var" banner'ı → Yenile; Lesen listesinde 38 set, Kartlar sekmelerinde yeni kartlar görünür.

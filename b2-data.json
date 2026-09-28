@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.5",
+  "version": "1.6",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -1590,6 +1590,849 @@
     "schreiben",
     "register"
    ]
+  },
+  {
+   "id": "sprachbausteine1-036",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "___ telefonisch besprochen, sende ich Ihnen heute die Unterlagen.",
+   "options": [
+    "Wie",
+    "Als",
+    "Da",
+    "Ob"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kalıp: 'Wie besprochen / Wie vereinbart' (konuştuğumuz gibi). Sınavda EN SIK çıkan boşluklardan.",
+   "tags": [
+    "feste Verbindung",
+    "brief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-037",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "___ vereinbart, liefern wir die Ware am Montag.",
+   "options": [
+    "Wie",
+    "So",
+    "Als",
+    "Damit"
+   ],
+   "answer": 0,
+   "explanation_tr": "'Wie vereinbart' = kararlaştırıldığı gibi.",
+   "tags": [
+    "feste Verbindung",
+    "brief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-038",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Die Reparatur dauert noch zwei Wochen. Bis ___ stellen wir Ihnen ein Ersatzgerät zur Verfügung.",
+   "options": [
+    "dahin",
+    "damit",
+    "daher",
+    "davon"
+   ],
+   "answer": 0,
+   "explanation_tr": "'bis dahin' = o zamana kadar.",
+   "tags": [
+    "zeit",
+    "da-wort",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-039",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir haben zwei Angebote erhalten. Eines ___ ist deutlich günstiger.",
+   "options": [
+    "davon",
+    "dafür",
+    "darüber",
+    "daran"
+   ],
+   "answer": 0,
+   "explanation_tr": "'eines davon' = bunlardan biri.",
+   "tags": [
+    "da-wort",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-040",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir haben Ihre Nachricht erhalten und uns ___ sehr gefreut.",
+   "options": [
+    "darüber",
+    "darauf",
+    "dafür",
+    "davon"
+   ],
+   "answer": 0,
+   "explanation_tr": "Olmuş şeye sevinmek: sich freuen ÜBER → darüber. (Gelecek için: darauf.)",
+   "tags": [
+    "da-wort",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-041",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Kunden, ___ Bestellungen noch offen sind, werden per E-Mail informiert.",
+   "options": [
+    "deren",
+    "dessen",
+    "denen",
+    "die"
+   ],
+   "answer": 0,
+   "explanation_tr": "Çoğul sahiplik → 'deren'. Eril/nötr tekil → 'dessen'.",
+   "tags": [
+    "relativ",
+    "genitiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-042",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Die Firma, ___ Produkte wir seit Jahren kaufen, hat die Preise erhöht.",
+   "options": [
+    "deren",
+    "dessen",
+    "der",
+    "die"
+   ],
+   "answer": 0,
+   "explanation_tr": "die Firma (dişil) + sahiplik → 'deren'.",
+   "tags": [
+    "relativ",
+    "genitiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-043",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir liefern Tische ___ die passenden Stühle.",
+   "options": [
+    "sowie",
+    "sowohl",
+    "so",
+    "als"
+   ],
+   "answer": 0,
+   "explanation_tr": "'sowie' = ve ayrıca (tek başına). 'sowohl' yalnızsa 'als auch' ister.",
+   "tags": [
+    "konnektor",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-044",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Die Verpackung war beschädigt. ___ haben wir die Lieferung angenommen.",
+   "options": [
+    "Dennoch",
+    "Denn",
+    "Deshalb",
+    "Obwohl"
+   ],
+   "answer": 0,
+   "explanation_tr": "Zıtlık + fiil 2. sırada → 'dennoch' (= trotzdem).",
+   "tags": [
+    "gegensatz",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-045",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "___ die Ware bei uns eintrifft, melden wir uns bei Ihnen.",
+   "options": [
+    "Sobald",
+    "Sodass",
+    "Ob",
+    "Obwohl"
+   ],
+   "answer": 0,
+   "explanation_tr": "'sobald' = …ır …maz.",
+   "tags": [
+    "zeit",
+    "nebensatz",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-046",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Ich kann an der Sitzung nicht teilnehmen. Ich bin ___ auf einer Dienstreise.",
+   "options": [
+    "nämlich",
+    "denn",
+    "also",
+    "zwar"
+   ],
+   "answer": 0,
+   "explanation_tr": "Cümle İÇİNDE sebep → 'nämlich'. 'denn' sadece cümle başında.",
+   "tags": [
+    "grund",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-047",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "___ Ihres Aufenthalts steht Ihnen ein Parkplatz zur Verfügung.",
+   "options": [
+    "Während",
+    "Wegen",
+    "Seit",
+    "Bei"
+   ],
+   "answer": 0,
+   "explanation_tr": "'Ihres' = Genitiv → 'während' (süresince). 'bei' Dativ ister (bei Ihrem Aufenthalt).",
+   "tags": [
+    "zeit",
+    "genitiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-048",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Die neuen Formulare stehen Ihnen ab sofort ___ Verfügung.",
+   "options": [
+    "zur",
+    "zum",
+    "in",
+    "bei"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kalıp: zur Verfügung stehen/stellen.",
+   "tags": [
+    "feste Verbindung",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-049",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir haben ___ Beispiel neue Bürostühle bestellt.",
+   "options": [
+    "zum",
+    "zur",
+    "im",
+    "beim"
+   ],
+   "answer": 0,
+   "explanation_tr": "'zum Beispiel' (das Beispiel → zum).",
+   "tags": [
+    "feste Verbindung",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-050",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir bitten Sie, uns die Kosten bis Ende Mai ___ erstatten.",
+   "options": [
+    "zu",
+    "um",
+    "für",
+    "damit"
+   ],
+   "answer": 0,
+   "explanation_tr": "'bitten, … zu + Infinitiv'.",
+   "tags": [
+    "infinitiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-051",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wegen der ___ Hitze schließt das Büro heute um 14 Uhr.",
+   "options": [
+    "anhaltenden",
+    "anhaltende",
+    "anhalten",
+    "angehaltenen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sıfat çekimi: 'wegen der …' Genitiv dişil → -en: 'der anhaltenden Hitze'.",
+   "tags": [
+    "adjektiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-052",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir bedauern die ___ Kündigung Ihres Vertrags.",
+   "options": [
+    "vorzeitige",
+    "vorzeitigen",
+    "vorzeitig",
+    "vorzeitiger"
+   ],
+   "answer": 0,
+   "explanation_tr": "'die' + dişil Akk. → -e: 'die vorzeitige Kündigung'.",
+   "tags": [
+    "adjektiv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-053",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Ich weise Sie ___ darauf hin, dass die Frist morgen endet.",
+   "options": [
+    "ausdrücklich",
+    "ausdrückliche",
+    "ausdrücklichen",
+    "Ausdruck"
+   ],
+   "answer": 0,
+   "explanation_tr": "Fiili niteliyor = zarf → çekimsiz 'ausdrücklich'.",
+   "tags": [
+    "adverb",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-054",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Wir möchten gern wissen, ___ Sie mit unserem Service zufrieden waren.",
+   "options": [
+    "ob",
+    "dass",
+    "wenn",
+    "was"
+   ],
+   "answer": 0,
+   "explanation_tr": "Evet/hayır sorusu dolaylı → 'ob'.",
+   "tags": [
+    "frage",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine1-055",
+   "section": "sprachbausteine1",
+   "type": "mc",
+   "topic": "Sprachbausteine T1 · häufig",
+   "prompt": "Ich interessiere mich besonders ___ die Arbeit im Kundenservice.",
+   "options": [
+    "für",
+    "an",
+    "auf",
+    "über"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich interessieren FÜR.",
+   "tags": [
+    "präposition",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-033",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Leider ist die bestellte Ware bis heute nicht ___.",
+   "options": [
+    "eingetroffen",
+    "getroffen",
+    "betroffen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Ware trifft ein = mal ulaşır. Şikâyetlerde çok sık.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-034",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir bitten Sie, den offenen Betrag innerhalb von 14 Tagen zu ___.",
+   "options": [
+    "begleichen",
+    "vergleichen",
+    "beschließen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Rechnung/Betrag begleichen = ödemek.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-035",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Der Betrag ist bis zum 30. Juni ___.",
+   "options": [
+    "fällig",
+    "gültig",
+    "fähig"
+   ],
+   "answer": 0,
+   "explanation_tr": "fällig = vadesi gelmiş. gültig = geçerli.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-036",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Unser Angebot ist bis Ende des Monats ___.",
+   "options": [
+    "gültig",
+    "fällig",
+    "gütig"
+   ],
+   "answer": 0,
+   "explanation_tr": "Angebot ist gültig = teklif geçerli.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-037",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Bei Zahlung innerhalb von zehn Tagen ___ wir Ihnen 3 % Skonto.",
+   "options": [
+    "gewähren",
+    "bewähren",
+    "gewöhnen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Skonto/Rabatt/Preisnachlass GEWÄHREN.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-038",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Weitere Einzelheiten ___ Sie bitte dem beigefügten Prospekt.",
+   "options": [
+    "entnehmen",
+    "unternehmen",
+    "benehmen"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas einem Dokument entnehmen = belgeden öğrenmek.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-039",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir bitten Sie, die entstandenen ___ zu entschuldigen.",
+   "options": [
+    "Unannehmlichkeiten",
+    "Unmöglichkeiten",
+    "Unverträglichkeiten"
+   ],
+   "answer": 0,
+   "explanation_tr": "Unannehmlichkeiten = rahatsızlıklar. Özür kalıbı.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-040",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Bitte halten Sie bei Rückfragen Ihre Auftragsnummer ___.",
+   "options": [
+    "bereit",
+    "bereits",
+    "breit"
+   ],
+   "answer": 0,
+   "explanation_tr": "bereithalten = hazır bulundurmak. 'bereits' = zaten (tuzak!).",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-041",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir haben Ihre Reklamation sorgfältig ___.",
+   "options": [
+    "geprüft",
+    "geprägt",
+    "geplant"
+   ],
+   "answer": 0,
+   "explanation_tr": "Reklamation prüfen = incelemek.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-042",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir haben die Lieferung der Ersatzteile bereits ___.",
+   "options": [
+    "veranlasst",
+    "verlassen",
+    "entlassen"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas veranlassen = başlatmak/talimat vermek.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-043",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Die Ware befindet sich ___ in unserem Lager.",
+   "options": [
+    "mittlerweile",
+    "mittelmäßig",
+    "mitten"
+   ],
+   "answer": 0,
+   "explanation_tr": "mittlerweile = bu arada / artık.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-044",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Für die Anfahrt berechnen wir eine Pauschale ___ 50 Euro.",
+   "options": [
+    "in Höhe von",
+    "in Hinsicht auf",
+    "im Laufe von"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Höhe von = … tutarında.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-045",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir würden uns freuen, Sie bald wieder in unserem Hotel ___ zu dürfen.",
+   "options": [
+    "begrüßen",
+    "grüßen",
+    "begründen"
+   ],
+   "answer": 0,
+   "explanation_tr": "jemanden begrüßen dürfen = ağırlamak. Kapanış kalıbı.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-046",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Nach ___ der Garantiezeit sind Reparaturen kostenpflichtig.",
+   "options": [
+    "Ablauf",
+    "Anlauf",
+    "Auflauf"
+   ],
+   "answer": 0,
+   "explanation_tr": "nach Ablauf = süre bitince.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-047",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir bitten Sie um eine schriftliche ___ zu diesem Vorfall.",
+   "options": [
+    "Stellungnahme",
+    "Stellenanzeige",
+    "Stellvertretung"
+   ],
+   "answer": 0,
+   "explanation_tr": "Stellungnahme = görüş/açıklama.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-048",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Leider wurde der Mangel bei der Endkontrolle ___.",
+   "options": [
+    "übersehen",
+    "übersetzt",
+    "überholt"
+   ],
+   "answer": 0,
+   "explanation_tr": "übersehen = gözden kaçırmak.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-049",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "In diesem ___ können wir das Gerät leider nicht zurücknehmen.",
+   "options": [
+    "Zustand",
+    "Umstand",
+    "Abstand"
+   ],
+   "answer": 0,
+   "explanation_tr": "in diesem Zustand = bu durumda (fiziksel hâl).",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-050",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir werden das defekte Teil ___ austauschen.",
+   "options": [
+    "schnellstmöglich",
+    "höchstmöglich",
+    "meistmöglich"
+   ],
+   "answer": 0,
+   "explanation_tr": "schnellstmöglich = en kısa sürede.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-051",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir haben den Raum ganz ___ Ihren Wünschen dekoriert.",
+   "options": [
+    "gemäß",
+    "gemessen",
+    "gemäßigt"
+   ],
+   "answer": 0,
+   "explanation_tr": "gemäß + Dativ = …e uygun olarak.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-052",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Am 3. Mai schickten wir Ihnen ein Angebot und erhielten ___ Ihre Bestellung.",
+   "options": [
+    "daraufhin",
+    "dahinter",
+    "darunter"
+   ],
+   "answer": 0,
+   "explanation_tr": "daraufhin = bunun üzerine.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-053",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir erwarten Ihre ___ Antwort.",
+   "options": [
+    "umgehende",
+    "umgebende",
+    "umgängliche"
+   ],
+   "answer": 0,
+   "explanation_tr": "umgehend = derhal.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-054",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Um den Schaden festzustellen, lassen wir ein Gutachten ___.",
+   "options": [
+    "erstellen",
+    "einstellen",
+    "abstellen"
+   ],
+   "answer": 0,
+   "explanation_tr": "ein Gutachten erstellen = bilirkişi raporu hazırlamak.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-055",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Wir freuen uns, Sie zu unseren Kunden ___ zu dürfen.",
+   "options": [
+    "zählen",
+    "erzählen",
+    "bezahlen"
+   ],
+   "answer": 0,
+   "explanation_tr": "jemanden zu den Kunden zählen = müşterilerimiz arasında saymak.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "sprachbausteine2-056",
+   "section": "sprachbausteine2",
+   "type": "mc",
+   "topic": "Sprachbausteine T2 · Geschäftsbrief",
+   "prompt": "Ihre Zahlung ist ___ bei uns eingegangen.",
+   "options": [
+    "zwischenzeitlich",
+    "zeitweilig",
+    "zeitlos"
+   ],
+   "answer": 0,
+   "explanation_tr": "zwischenzeitlich = bu arada.",
+   "tags": [
+    "kollokation",
+    "geschäftsbrief",
+    "exam-häufig"
+   ]
   }
  ],
  "cards": [
@@ -2587,6 +3430,424 @@
     "lesen",
     "schreiben",
     "strategie"
+   ]
+  },
+  {
+   "id": "schreiben-info-pruefung",
+   "deck": "schreiben",
+   "title": "Schreiben · Sınavda ne var?",
+   "prompt": "Schreiben bölümünün yapısı ve sık çıkan durumlar.",
+   "blocks": [
+    {
+     "heading": "Forumsbeitrag",
+     "lines": [
+      "Sınavda İKİ konu verilir, birini seçersin",
+      "Konular hep 'Firma yeni bir kural getiriyor' tipinde: görüş + gerekçe + örnek + öneri",
+      "Konu kartlarında her tema için Pro/Contra fikirleri var"
+     ]
+    },
+    {
+     "heading": "Beschwerde (Lesen & Schreiben T2)",
+     "lines": [
+      "Sık tekrar eden durumlar: web sitesi, bitki teslimatı, temizlik firması, masa lambası, taşınma, bulaşık makinesi, yazıcı, fatura, kusurlu teslimat",
+      "Her durum için bir alıştırma kartı var"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "überblick"
+   ]
+  },
+  {
+   "id": "bs-webseite",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Webseite",
+   "prompt": "Sie arbeiten bei einer Webagentur. Ein Kunde beschwert sich: Die neue Firmen-Website sollte am 1. März online gehen, ist aber drei Wochen zu spät gekommen. Außerdem funktioniert das Kontaktformular nicht, und auf der Handy-Version fehlen Bilder. Er hat schon zweimal angerufen, aber niemand hat zurückgerufen.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Verspätung erklären und entschuldigen",
+      "Kontaktformular & mobile Version: bis wann repariert?",
+      "Fehlende Rückrufe: fester Ansprechpartner",
+      "Entschädigung: z. B. kostenlose Wartung für drei Monate"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-pflanzen",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Pflanzenlieferung",
+   "prompt": "Sie arbeiten bei einer Gärtnerei. Eine Firma hat 40 Büropflanzen bestellt. Viele kamen mit gelben Blättern an, sechs Töpfe waren zerbrochen, und die Lieferung kam einen Tag später als vereinbart, als niemand im Büro war.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Entschuldigung für Zustand und Verspätung",
+      "Ersatz der beschädigten Pflanzen kostenlos",
+      "Neuen Liefertermin mit Uhrzeit anbieten",
+      "Pflegehinweise / Gutschein als Entschädigung"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-reinigung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Reinigung",
+   "prompt": "Sie arbeiten bei einer Reinigungsfirma. Ein Kunde (Büro) beschwert sich: Die Papierkörbe werden oft nicht geleert, in der Küche bleibt schmutziges Geschirr stehen, und die Reinigungskraft kam letzte Woche zweimal gar nicht. Der Kunde denkt über eine Kündigung nach.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Verständnis zeigen, Fehler zugeben",
+      "Grund: z. B. Krankheit, fehlende Vertretung",
+      "Lösung: neue Kraft, Kontrolle durch Teamleitung, Checkliste",
+      "Entschädigung: Preisnachlass für diesen Monat; Bitte, nicht zu kündigen"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-tischlampe",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Tischlampe",
+   "prompt": "Sie arbeiten im Kundenservice eines Online-Shops. Eine Kundin hat eine Designer-Tischlampe bestellt. Die Lampe hatte einen Kratzer, und der Schalter funktioniert nicht. Auf ihre erste E-Mail hat sie nach zehn Tagen noch keine Antwort bekommen.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Entschuldigung für Mangel und späte Antwort",
+      "Umtausch oder Rückgabe mit Erstattung – Kundin wählt",
+      "Rücksendung kostenlos, Abholung organisieren",
+      "Gutschein als Entschädigung"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-umzug",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Umzug",
+   "prompt": "Sie arbeiten bei einer Umzugsfirma. Ein Kunde beschwert sich: Die Möbelpacker kamen zwei Stunden zu spät, ein Schrank wurde beschädigt, und zwei Kartons fehlen noch immer. Außerdem wurden ihm mehr Stunden berechnet als vereinbart.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Entschuldigung für Verspätung",
+      "Schaden: Versicherung übernimmt, Gutachter kommt",
+      "Fehlende Kartons: werden gesucht, Rückmeldung bis …",
+      "Rechnung korrigieren, nur vereinbarte Stunden"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-spuelmaschine",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Spülmaschine",
+   "prompt": "Sie arbeiten bei einem Elektrofachhandel. Ein Restaurant hat eine gewerbliche Spülmaschine gekauft. Nach einer Woche ist sie ausgefallen. Der Techniker kam erst nach vier Tagen, hatte aber das Ersatzteil nicht dabei. Das Restaurant musste in dieser Zeit mit der Hand spülen.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Verständnis für die schwierige Situation",
+      "Reparatur: fester Termin, Ersatzteil ist bestellt",
+      "Übergangslösung: Leihgerät",
+      "Entschädigung: Kosten für zusätzliche Arbeitsstunden teilweise übernehmen"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-drucker",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Drucker",
+   "prompt": "Sie arbeiten bei einer IT-Firma, die Drucker vermietet. Ein Kunde beschwert sich: Der neue Drucker verursacht ständig Papierstau, und die Hotline ist kaum erreichbar. Wichtige Unterlagen für einen Kundentermin konnten nicht gedruckt werden.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Entschuldigung, Problem bestätigen",
+      "Techniker-Termin / Austauschgerät",
+      "Direkte Telefonnummer statt Hotline",
+      "Mietfreier Monat als Entschädigung"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-rechnung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Rechnung",
+   "prompt": "Sie arbeiten in der Buchhaltung eines Catering-Services. Eine Kundin beschwert sich: Auf der Rechnung stehen 60 Essen statt der bestellten 45. Außerdem wurde der vereinbarte Rabatt von 10 % nicht abgezogen, und sie hat bereits eine Mahnung bekommen.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Fehler zugeben und entschuldigen",
+      "Korrigierte Rechnung schicken",
+      "Mahnung ist ungültig / zurückgezogen",
+      "Kleine Entschädigung, z. B. kostenloses Dessert bei der nächsten Bestellung"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "bs-lieferung",
+   "deck": "schreiben",
+   "title": "Beschwerde-Übung · Mangelhafte Lieferung",
+   "prompt": "Sie arbeiten bei einem Büromöbelhändler. Ein Kunde hat 20 Bürostühle bestellt, aber nur 15 geliefert bekommen; drei davon haben die falsche Farbe. Die Montageanleitung fehlte ganz.",
+   "blocks": [
+    {
+     "heading": "Cevabında mutlaka değin",
+     "lines": [
+      "Entschuldigung, Fehler im Lager erklären",
+      "Fehlende 5 Stühle + Ersatz für 3 falsche: Termin",
+      "Montageanleitung per E-Mail sofort",
+      "Entschädigung: Preisnachlass / kostenlose Montage"
+     ]
+    },
+    {
+     "heading": "Hatırlatma",
+     "lines": [
+      "Schreiben kartındaki yapı: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung → Abschluss",
+      "Her noktaya en az 1–2 cümle; resmî 'Sie'"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "beschwerde",
+    "übung"
+   ]
+  },
+  {
+   "id": "forum-themen-zeit",
+   "deck": "schreiben",
+   "title": "Forum-Themen · Arbeitszeit & Urlaub",
+   "prompt": "Sınavda sık çıkan konu tipleri. Her birinde görüşünü 1 cümlede söyle, sonra Pro/Contra'dan birer örnek seç ve bir öneriyle bitir.",
+   "blocks": [
+    {
+     "heading": "Konular (Pro | Contra)",
+     "lines": [
+      "Überstunden nur noch als Freizeit, keine Auszahlung — Pro: mehr Erholung | Contra: manche brauchen das Geld",
+      "Keine Überstunden: automatische Abmeldung nach 8 Stunden — Pro: Gesundheit, Work-Life-Balance | Contra: Projekte mit Termindruck",
+      "Vier-Tage-Woche mit 10-Stunden-Tagen — Pro: langes Wochenende | Contra: lange Tage, Kinderbetreuung",
+      "Sommerferien-Urlaub nur für Eltern schulpflichtiger Kinder — Pro: Familien brauchen es | Contra: ungerecht für andere",
+      "Pflicht-Betriebsferien zwischen Weihnachten und Neujahr — Pro: Ruhe für alle | Contra: keine freie Urlaubsplanung",
+      "Urlaubssperre im Sommer gegen Geldprämie — Pro: Extra-Geld | Contra: Erholung ist wichtiger",
+      "Samstagsarbeit mit Zuschlag — Pro: mehr Verdienst | Contra: weniger Zeit für Familie",
+      "Gleitzeit wird abgeschafft, feste Zeiten — Pro: bessere Erreichbarkeit | Contra: weniger Flexibilität"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum",
+    "themen"
+   ]
+  },
+  {
+   "id": "forum-themen-technik",
+   "deck": "schreiben",
+   "title": "Forum-Themen · Handy, Technik & Homeoffice",
+   "prompt": "Sınavda sık çıkan konu tipleri. Her birinde görüşünü 1 cümlede söyle, sonra Pro/Contra'dan birer örnek seç ve bir öneriyle bitir.",
+   "blocks": [
+    {
+     "heading": "Konular (Pro | Contra)",
+     "lines": [
+      "Privathandy nur in den Pausen (Handy im Aufenthaltsraum) — Pro: Konzentration | Contra: Notfälle mit Kindern",
+      "Handyverbot, aber nicht für Chefs — Pro: – | Contra: Ungleichbehandlung, schlechtes Klima",
+      "Firmenhandy, aber immer erreichbar — Pro: praktisch | Contra: keine Erholung, Stress",
+      "Homeoffice nur noch ein Tag pro Woche — Pro: Teamarbeit | Contra: Arbeitsweg, Familie",
+      "Homeoffice nur mit privatem Laptop — Pro: Flexibilität | Contra: Datenschutz, Kosten",
+      "Kamera bei Videokonferenzen immer an — Pro: persönlicher Kontakt | Contra: Privatsphäre",
+      "Kein eigener Schreibtisch mehr (Desk-Sharing) — Pro: spart Platz | Contra: keine persönliche Ecke",
+      "Gehaltsabrechnung nur noch online — Pro: Umwelt, schnell | Contra: ältere Kollegen, Datenschutz"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum",
+    "themen"
+   ]
+  },
+  {
+   "id": "forum-themen-lernen",
+   "deck": "schreiben",
+   "title": "Forum-Themen · Weiterbildung & Kommunikation",
+   "prompt": "Sınavda sık çıkan konu tipleri. Her birinde görüşünü 1 cümlede söyle, sonra Pro/Contra'dan birer örnek seç ve bir öneriyle bitir.",
+   "blocks": [
+    {
+     "heading": "Konular (Pro | Contra)",
+     "lines": [
+      "Pflicht-Weiterbildung zweimal im Jahr am Wochenende — Pro: Qualifikation | Contra: Freizeit, Familie",
+      "Workshop zum Zeitmanagement für alle — Pro: effizienter arbeiten | Contra: nicht jeder braucht es",
+      "Kommunikationstraining am Wochenende — Pro: besseres Klima | Contra: Wochenende = Freizeit",
+      "Erste-Hilfe-Kurs am Wochenende mit Freizeitausgleich — Pro: Sicherheit | Contra: Wochenende",
+      "Weiterbildungen nur noch online — Pro: flexibel, günstig | Contra: weniger Austausch",
+      "Nur noch Englisch als Firmensprache — Pro: international | Contra: Missverständnisse, Druck",
+      "Für Fortbildungen einen Urlaubstag nehmen — Pro: Firma zahlt Kurs | Contra: Fortbildung ist Arbeit",
+      "Azubis werben: Mitarbeitende stellen die Firma in Schulen vor — Pro: Nachwuchs | Contra: keine Zeit, nicht jeder kann präsentieren"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum",
+    "themen"
+   ]
+  },
+  {
+   "id": "forum-themen-geld",
+   "deck": "schreiben",
+   "title": "Forum-Themen · Geld, Gesundheit & Vorteile",
+   "prompt": "Sınavda sık çıkan konu tipleri. Her birinde görüşünü 1 cümlede söyle, sonra Pro/Contra'dan birer örnek seç ve bir öneriyle bitir.",
+   "blocks": [
+    {
+     "heading": "Konular (Pro | Contra)",
+     "lines": [
+      "Jobticket für alle, Gebühr wird vom Gehalt abgezogen — Pro: Umwelt, günstig | Contra: nicht jeder fährt Bus/Bahn",
+      "Fitnessstudio in der Firma gegen Gehaltsabzug — Pro: Gesundheit | Contra: Pflichtgebühr",
+      "Ärztliche Krankmeldung ab dem ersten Tag — Pro: weniger Missbrauch | Contra: Misstrauen, volle Arztpraxen",
+      "Obst nicht mehr kostenlos (5 € im Monat) — Pro: regionale Landwirtschaft | Contra: kleine Geste fällt weg",
+      "Zusätzliche Urlaubstage statt Bonuszahlung — Pro: Erholung | Contra: manche brauchen Geld",
+      "„Mitarbeiter/in des Jahres“ mit Geldprämie — Pro: Motivation | Contra: Konkurrenz im Team",
+      "Parkplätze kostenpflichtig oder nur für Kunden — Pro: Umwelt, Kundenservice | Contra: Pendler ohne Alternative",
+      "Zuschuss nur für Radfahrer / Fahrgemeinschaften — Pro: Umwelt | Contra: ungerecht für andere"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum",
+    "themen"
+   ]
+  },
+  {
+   "id": "forum-themen-firma",
+   "deck": "schreiben",
+   "title": "Forum-Themen · Arbeitsplatz & Firma",
+   "prompt": "Sınavda sık çıkan konu tipleri. Her birinde görüşünü 1 cümlede söyle, sonra Pro/Contra'dan birer örnek seç ve bir öneriyle bitir.",
+   "blocks": [
+    {
+     "heading": "Konular (Pro | Contra)",
+     "lines": [
+      "Kantine schließt, dafür Essensgutscheine — Pro: mehr Auswahl | Contra: Treffpunkt fällt weg, Zeit",
+      "Heizung erst ab Oktober, max. 19 °C — Pro: Energie sparen | Contra: Gesundheit, Konzentration",
+      "Glaswände statt Einzelbüros / Großraumbüro — Pro: Kommunikation | Contra: Lärm, keine Ruhe",
+      "Dresscode: formelle Kleidung statt Jeans — Pro: professionell | Contra: Kosten, Bequemlichkeit",
+      "Einheitliche Firmenkleidung auf eigene Kosten — Pro: Image | Contra: Firma soll zahlen",
+      "Hunde im Büro erlaubt — Pro: gutes Klima | Contra: Allergien, Angst, Lärm",
+      "Firma zieht in eine andere Stadt, Umzugskosten erstattet — Pro: Firma hilft | Contra: Familie, Schule, Partnerjob",
+      "Keine Festanstellungen mehr, nur Leiharbeit — Pro: Flexibilität für Firma | Contra: Unsicherheit, schlechte Einarbeitung"
+     ]
+    }
+   ],
+   "tags": [
+    "schreiben",
+    "forum",
+    "themen"
    ]
   }
  ],

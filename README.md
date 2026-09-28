@@ -62,3 +62,10 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 - Geçmiş `b2trainer:writingHistory` (tarih, görev, puanlar, kelime, kontrol listesi skoru, metin; görüntü yok). İlerleme'de "Schreiben · son puanlar", Schreiben listesinde görev yanında son puanlar. "İlerlemeyi sıfırla" Schreiben puanlarını da siler (kalıplar kalır).
 - Anahtar yoksa ya da API hata verirse: "📋 Prompt'u kopyala" (görev + metin tek parça) → Claude uygulamasına yapıştır.
 - Test: bir görevde metni yaz/oku → Değerlendir → kontrol listesi en üstte; bir Redemittel'i ekle → Kartlar → Benim kalıplarım'da görünür; İlerleme'de Schreiben puanı. Anahtarı sil → aynı ekranda sadece metin kutusu + "Prompt'u kopyala".
+
+### Adım 3 – Yazma desteği + "Başlamama yardım et" + "Benim kalıplarım" (v1.6.2)
+- Eklendi: Görev ekranında **✅ Görev maddeleri** (yüklemeden önce tik atılabilir liste; Beschwerde'de şef talimatları cümle cümle + "müşterinin her şikâyeti" + "resmî çerçeve", Forum'da 7 madde).
+- Katlanabilir **🧰 Yazma desteği** (offline, `cards`'tan): Beschwerde → `schreiben-beschwerde` (yapı + Mustertext + Vorlesen), `schreiben-ablehnen`, `schreiben-fehler`, `schreiben-konnektoren`; şef talimatında ret ifadesi (kein…, nicht verantwortlich, bleiben bestehen…) varsa `schreiben-ablehnen` en üstte. Forum → `schreiben-forum`, `schreiben-fehler`, `schreiben-konnektoren`. Sadece başlıklar, dokununca açılır.
+- **🧭 Başlamama yardım et** (`PROMPT_OUTLINE`): paragraf başına Türkçe amaç + Almanca cümle başlangıçları (hazır metin yok). Anahtar yoksa prompt kopyalanabilir.
+- **Benim kalıplarım**: kaydedilen Redemittel panelde listelenir.
+- Test: Schreiben → "Drucker – nicht unsere Schuld" → Yazma desteği'ni aç → ilk kart "Höflich ablehnen"; bir maddeyi işaretle → sayaç artar; "Başlamama yardım et" → paragraf planı. Forum konusunda 3 kart + 7 madde.

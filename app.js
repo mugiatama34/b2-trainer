@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.6.1';
+const APP_VERSION = '1.6.2';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -2059,6 +2059,120 @@ function writingProgressHtml() {
     <p class="small muted">Aufgabe · Register · Kohärenz · Sprache</p>${rows}</div>`;
 }
 
+/* Writing support: task points to tick while writing on paper, offline cards, outline (API), my phrases. */
+const FORUM_POINTS = [
+  'Net kişisel görüş',
+  'En az iki argüman + gerekçe',
+  'Kişisel örnek / deneyim',
+  'Karşı tarafı da düşün',
+  'Öneri ya da uzlaşma',
+  'Sonuç cümlesi',
+  'Forum üslubu (samimi: du/ihr ya da nötr)'
+];
+// Boss instructions split into single points ("Siehe …: a, b, c" lists are split at commas).
+function chefPoints(lines) {
+  const out = [];
+  lines.forEach(line => {
+    const s = String(line).replace(/^\s*Chef(in)?\s*:\s*/i, '').replace(/^[„"“]\s*/, '').replace(/\s*[“"”]\s*$/, '').trim();
+    const siehe = s.match(/^Siehe [^:]+:\s*(.*)$/);
+    if (siehe) { siehe[1].split(/,\s*/).forEach(x => out.push(x.replace(/\.$/, '').trim())); return; }
+    (s.match(/[^.!?]+[.!?]*/g) || []).forEach(x => out.push(x.trim()));
+  });
+  return out.filter(Boolean);
+}
+function writingPoints(task) {
+  if (task.kind === 'forum') return FORUM_POINTS;
+  return chefPoints(task.chef).concat(['Müşterinin her şikâyetine cevap ver', 'Resmî çerçeve: Anrede, Gruß, Sie-Form']);
+}
+// Refusal wording in the boss instructions ("kein Austauschgerät", "nicht verantwortlich", …).
+const REFUSAL_RE = /\bkein(e|en|em|er|es)?\b|nicht verantwortlich|nicht (am|an|bei|in) |nicht unsere|bleiben bestehen|ablehnen/i;
+function supportCardIds(task) {
+  if (task.kind === 'forum') return ['schreiben-forum', 'schreiben-fehler', 'schreiben-konnektoren'];
+  const ids = ['schreiben-beschwerde', 'schreiben-ablehnen', 'schreiben-fehler', 'schreiben-konnektoren'];
+  return REFUSAL_RE.test(task.chef.join(' ')) ? ['schreiben-ablehnen'].concat(ids.filter(id => id !== 'schreiben-ablehnen')) : ids;
+}
+function outlineTaskInfo(task) {
+  if (task.kind === 'bs') {
+    return `Task: formal reply e-mail to a customer complaint (DTB B2, Lesen & Schreiben Teil 2).\nBoss instructions (all must appear):\n${task.chef.join('\n')}\nCustomer complaint (summary): ${task.kunde.join(' ')}\nWriting task: ${task.task}`;
+  }
+  return `Task: Forumsbeitrag (DTB B2), about 150 words: colleagues discuss a new company rule in the internal forum, she gives her opinion with reasons and examples.\nTopic: ${task.topic.title}`;
+}
+
+function renderWritingSupport(el, task, hasKey, my) {
+  const cards = supportCardIds(task).map(id => DATA.cards.find(c => c.id === id)).filter(Boolean);
+  const points = writingPoints(task);
+  const phrases = getMyPhrases();
+  el.innerHTML = `
+    <div class="card">
+      <h3>✅ Görev maddeleri</h3>
+      <p class="small muted">Kâğıda yazarken eklediğin maddeyi işaretle.</p>
+      <ul class="ticklist">${points.map((pt, i) => `
+        <li><label><input type="checkbox" data-tick="${i}"><span ${task.kind === 'bs' && i < points.length - 2 ? 'lang="de"' : ''}>${esc(pt)}</span></label></li>`).join('')}</ul>
+      <p class="small muted" id="tickInfo"></p>
+    </div>
+    <details class="card support">
+      <summary>🧰 Yazma desteği</summary>
+      <h3>Kartlar</h3>
+      ${cards.map(c => `
+        <details class="sub-card">
+          <summary>${esc(c.title)}</summary>
+          ${(c.blocks || []).map(b => `${b.heading ? `<h4>${esc(b.heading)}</h4>` : ''}
+            <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>`).join('')}
+          ${c.sample ? `<h4>Mustertext</h4>
+            <button class="btn inline" data-say-card="${esc(c.id)}">🔊 Vorlesen</button>
+            <div class="sample small" lang="de">${esc(c.sample)}</div>` : ''}
+        </details>`).join('')}
+      <h3>🧭 Paragraf planı</h3>
+      ${hasKey ? '<button class="btn" id="outlineBtn">🧭 Başlamama yardım et</button>' : ''}
+      <p class="small muted">Hazır metin değil: her paragraf için amaç + cümle başlangıçları.</p>
+      <p class="small error" id="outlineErr"></p>
+      <div id="outline"></div>
+      <h3>Benim kalıplarım</h3>
+      ${phrases.length ? `<ul class="phrase-list">${phrases.map(p => `
+        <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span></li>`).join('')}</ul>`
+        : '<p class="small muted">Henüz yok — değerlendirmeden sonra "➕ Kartlara ekle" ile kaydedebilirsin.</p>'}
+    </details>`;
+
+  const ticks = Array.from(el.querySelectorAll('[data-tick]'));
+  const tickInfo = el.querySelector('#tickInfo');
+  const drawTicks = () => { tickInfo.textContent = `${ticks.filter(t => t.checked).length}/${ticks.length} madde işaretlendi`; };
+  ticks.forEach(t => { t.onchange = drawTicks; });
+  drawTicks();
+
+  el.querySelectorAll('[data-say-card]').forEach(b => {
+    b.onclick = () => { const c = cards.find(x => x.id === b.dataset.sayCard); if (c) speakDe(c.sample); };
+  });
+
+  const outlineEl = el.querySelector('#outline');
+  const errEl = el.querySelector('#outlineErr');
+  const outlinePrompt = async () => fillPrompt((await loadPrompts()).PROMPT_OUTLINE, { TASKINFO: outlineTaskInfo(task) });
+  const btn = el.querySelector('#outlineBtn');
+  if (!btn) {
+    renderFallback(outlineEl, outlinePrompt, 'API anahtarı yok. Plan için prompt\'u kopyalayıp Claude uygulamasına yapıştırabilirsin.');
+    return;
+  }
+  btn.onclick = () => withBusy(btn, async () => {
+    errEl.textContent = '';
+    outlineEl.innerHTML = '';
+    let raw;
+    try {
+      raw = await callClaude(undefined, [{ role: 'user', content: await outlinePrompt() }], { maxTokens: 1200 });
+    } catch (e) {
+      if (my !== screenId) return;
+      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      renderFallback(outlineEl, outlinePrompt);
+      return;
+    }
+    if (my !== screenId) return;
+    const r = parseJsonReply(raw);
+    const paras = r && Array.isArray(r.paragraphs) ? r.paragraphs : null;
+    outlineEl.innerHTML = paras ? `<ol class="outline">${paras.map(p => `
+      <li><div>${esc(p.goal_tr || '')}</div>
+        <ul>${(Array.isArray(p.starters_de) ? p.starters_de : []).map(x => `<li lang="de">${esc(x)}</li>`).join('')}</ul></li>`).join('')}</ol>`
+      : `<div class="sample small">${esc(raw)}</div>`;
+  });
+}
+
 function renderSchreiben(args) {
   const a = args[0] || '';
   if (a === 'bs' || a === 'forum') {
@@ -2255,6 +2369,7 @@ function renderWritingTask(task) {
     <div id="wResult"></div>`;
 
   setupSpeakingTimer(seconds, writingCues);
+  renderWritingSupport(document.getElementById('support'), task, hasKey, my);
 
   /* Text box (transcription result or typed text) */
   const textCard = document.getElementById('textCard');

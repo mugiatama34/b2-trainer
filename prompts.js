@@ -68,3 +68,8 @@ Evaluate:
 - scores A/B/C/D for: aufgabe, register, kohaerenz, sprache (same scale as DTB).
 - Focus corrections on the 5-8 most important errors.
 Respond ONLY with valid JSON using exactly the same schema as the complaint evaluation; "improved_de" = her text rewritten at solid B2 level, keeping her opinion and ideas, 150-200 words.`;
+
+export const PROMPT_OUTLINE = `A German B2 learner (Turkish, psychologist) has to write the following exam text and wants help to START, not a finished text.
+{{TASKINFO}}
+Give a paragraph-by-paragraph outline in German: for each paragraph 1 line saying what it should contain and 1-2 sentence starters (only beginnings, max 6 words each, ending with "…"). Do NOT write complete sentences or a model text.
+Respond ONLY with JSON: {"paragraphs":[{"goal_tr":"what this paragraph does, in Turkish","starters_de":["…","…"]}]}`;

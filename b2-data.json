@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.8",
+  "version": "1.9",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -26,6 +26,11 @@
    "id": "schreiben-redemittel",
    "name": "Schreiben · Doğru kalıp",
    "exam_part": "Schreiben"
+  },
+  {
+   "id": "nvv",
+   "name": "Nomen-Verb-Verbindungen",
+   "exam_part": "Sprachbausteine T2 / Schreiben"
   }
  ],
  "questions": [
@@ -2433,6 +2438,863 @@
     "geschäftsbrief",
     "exam-häufig"
    ]
+  },
+  {
+   "id": "nvv-001",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "zur Verfügung",
+   "prompt": "Für Rückfragen ___ ich Ihnen jederzeit gern zur Verfügung.",
+   "options": [
+    "stehe",
+    "stelle",
+    "gebe",
+    "liege"
+   ],
+   "answer": 0,
+   "explanation_tr": "zur Verfügung STEHEN = hazır olmak (kişi). En sık kalıp!",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-002",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "zur Verfügung",
+   "prompt": "Wir ___ Ihnen für die Reparaturzeit ein Ersatzgerät zur Verfügung.",
+   "options": [
+    "stellen",
+    "stehen",
+    "legen",
+    "setzen"
+   ],
+   "answer": 0,
+   "explanation_tr": "etwas zur Verfügung STELLEN = sağlamak/tahsis etmek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-003",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "zur Verfügung",
+   "prompt": "Die neuen Parkplätze stehen ab Montag ___ Verfügung.",
+   "options": [
+    "zur",
+    "zum",
+    "in",
+    "bei"
+   ],
+   "answer": 0,
+   "explanation_tr": "Sabit: ZUR Verfügung.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-004",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Ersatz",
+   "prompt": "Selbstverständlich ___ wir Ihnen für die beschädigte Ware Ersatz.",
+   "options": [
+    "leisten",
+    "machen",
+    "treffen",
+    "nehmen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Ersatz leisten = tazmin etmek / yenisini vermek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-005",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Schadenersatz",
+   "prompt": "Der Kunde verlangt ___ für den entstandenen Schaden.",
+   "options": [
+    "Schadenersatz",
+    "Schadensfall",
+    "Ersatzteil",
+    "Schadenfreude"
+   ],
+   "answer": 0,
+   "explanation_tr": "Schadenersatz verlangen/fordern = tazminat istemek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-006",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Bescheid",
+   "prompt": "Bitte ___ Sie mir bis Freitag Bescheid, ob der Termin passt.",
+   "options": [
+    "geben",
+    "machen",
+    "nehmen",
+    "stellen"
+   ],
+   "answer": 0,
+   "explanation_tr": "jemandem Bescheid geben/sagen = haber vermek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-007",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Bescheid",
+   "prompt": "Ich ___ dir Bescheid, sobald ich mehr weiß.",
+   "options": [
+    "sage",
+    "spreche",
+    "rede",
+    "erzähle"
+   ],
+   "answer": 0,
+   "explanation_tr": "Bescheid SAGEN (günlük) = Bescheid geben.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-008",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "gewähren",
+   "prompt": "Bei Zahlung innerhalb von 7 Tagen ___ wir 2 % Skonto.",
+   "options": [
+    "gewähren",
+    "geben an",
+    "erlauben",
+    "gestatten"
+   ],
+   "answer": 0,
+   "explanation_tr": "Skonto / Rabatt / Preisnachlass GEWÄHREN.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-009",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "gewähren",
+   "prompt": "Als Entschuldigung ___ wir Ihnen einen Preisnachlass von 10 %.",
+   "options": [
+    "gewähren",
+    "gewähnen",
+    "bewähren",
+    "verwähren"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Preisnachlass gewähren.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-010",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Verantwortung",
+   "prompt": "Für den Fehler ___ wir selbstverständlich die volle Verantwortung.",
+   "options": [
+    "übernehmen",
+    "nehmen über",
+    "machen",
+    "geben"
+   ],
+   "answer": 0,
+   "explanation_tr": "Verantwortung übernehmen/tragen = sorumluluğu üstlenmek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-011",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Verantwortung",
+   "prompt": "Für Schäden durch falsche Bedienung ___ wir leider keine Verantwortung.",
+   "options": [
+    "tragen",
+    "legen",
+    "bringen",
+    "setzen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Verantwortung TRAGEN (olumsuz cümlede sık: keine Verantwortung tragen).",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-012",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Vorschlag",
+   "prompt": "Darf ich einen Vorschlag ___?",
+   "options": [
+    "machen",
+    "tun",
+    "stellen",
+    "geben"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Vorschlag machen = öneride bulunmak. Sprechen T3 için de!",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-013",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "in Ordnung",
+   "prompt": "Wir werden die Sache so schnell wie möglich in Ordnung ___.",
+   "options": [
+    "bringen",
+    "machen",
+    "setzen",
+    "stellen"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Ordnung bringen = düzeltmek/halletmek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-014",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Überstunden",
+   "prompt": "In der Weihnachtszeit müssen viele Mitarbeitende Überstunden ___.",
+   "options": [
+    "leisten",
+    "geben",
+    "nehmen",
+    "halten"
+   ],
+   "answer": 0,
+   "explanation_tr": "Überstunden leisten/machen.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-015",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Rechnung",
+   "prompt": "Die Anfahrt wird Ihnen nicht in Rechnung ___.",
+   "options": [
+    "gestellt",
+    "gelegt",
+    "gesetzt",
+    "gemacht"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Rechnung stellen = faturaya eklemek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-016",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Stellung",
+   "prompt": "Bitte ___ Sie bis Montag zu den Vorwürfen Stellung.",
+   "options": [
+    "nehmen",
+    "geben",
+    "machen",
+    "setzen"
+   ],
+   "answer": 0,
+   "explanation_tr": "zu etwas Stellung nehmen = görüş bildirmek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-017",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Gebrauch",
+   "prompt": "Sie können jederzeit von Ihrem Rückgaberecht Gebrauch ___.",
+   "options": [
+    "machen",
+    "nehmen",
+    "geben",
+    "tun"
+   ],
+   "answer": 0,
+   "explanation_tr": "von etwas Gebrauch machen = …i kullanmak.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-018",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Mühe",
+   "prompt": "Unsere Mitarbeiter ___ sich große Mühe, alle Wünsche zu erfüllen.",
+   "options": [
+    "geben",
+    "machen",
+    "nehmen",
+    "haben"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich Mühe geben = çaba göstermek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-019",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Verbindung",
+   "prompt": "Bitte ___ Sie sich mit unserer Buchhaltung in Verbindung.",
+   "options": [
+    "setzen",
+    "stellen",
+    "legen",
+    "bringen"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich in Verbindung setzen.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-020",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Termin",
+   "prompt": "Bitte ___ Sie telefonisch einen Termin mit unserem Techniker.",
+   "options": [
+    "vereinbaren",
+    "verabschieden",
+    "verbinden",
+    "vertreten"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Termin vereinbaren = randevu almak.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-021",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Frist",
+   "prompt": "Leider haben Sie die Frist für die Rückgabe nicht ___.",
+   "options": [
+    "eingehalten",
+    "eingestellt",
+    "gehalten an",
+    "eingetroffen"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Frist einhalten = süreye uymak. (Frist SETZEN = süre vermek.)",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-022",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Bestellung",
+   "prompt": "Wir möchten eine Bestellung ___.",
+   "options": [
+    "aufgeben",
+    "abgeben",
+    "angeben",
+    "ausgeben"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Bestellung aufgeben = sipariş vermek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-023",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Anspruch",
+   "prompt": "Nach sechs Monaten haben Sie Anspruch ___ den vollen Urlaub.",
+   "options": [
+    "auf",
+    "an",
+    "für",
+    "über"
+   ],
+   "answer": 0,
+   "explanation_tr": "Anspruch haben AUF + Akk.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-024",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Anspruch",
+   "prompt": "Viele Eltern nehmen die Beratung der Familienkasse in ___.",
+   "options": [
+    "Anspruch",
+    "Kauf",
+    "Betracht",
+    "Kraft"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Anspruch nehmen = yararlanmak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-025",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Maßnahmen",
+   "prompt": "Wir haben sofort Maßnahmen ___, damit das nicht wieder passiert.",
+   "options": [
+    "ergriffen",
+    "gegriffen",
+    "begriffen",
+    "angegriffen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Maßnahmen ergreifen/treffen.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-026",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Bezug",
+   "prompt": "Ich nehme Bezug ___ Ihr Schreiben vom 3. Mai.",
+   "options": [
+    "auf",
+    "an",
+    "zu",
+    "über"
+   ],
+   "answer": 0,
+   "explanation_tr": "Bezug nehmen AUF (resmî mektup girişi). Ayrıca: 'Bezugnehmend auf …'.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-027",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kontakt",
+   "prompt": "Unser Kundenservice wird umgehend Kontakt mit Ihnen ___.",
+   "options": [
+    "aufnehmen",
+    "annehmen",
+    "abnehmen",
+    "zunehmen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kontakt aufnehmen = irtibata geçmek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-028",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Wert",
+   "prompt": "Wir legen großen Wert ___ Pünktlichkeit.",
+   "options": [
+    "auf",
+    "an",
+    "für",
+    "in"
+   ],
+   "answer": 0,
+   "explanation_tr": "Wert legen AUF = önem vermek.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-029",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kosten",
+   "prompt": "Die Kosten für die Rücksendung ___ selbstverständlich wir.",
+   "options": [
+    "tragen",
+    "halten",
+    "nehmen",
+    "bringen"
+   ],
+   "answer": 0,
+   "explanation_tr": "die Kosten tragen/übernehmen.",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-030",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Rücksicht",
+   "prompt": "Bitte nehmen Sie Rücksicht ___ Ihre Kolleginnen im Großraumbüro.",
+   "options": [
+    "auf",
+    "an",
+    "für",
+    "zu"
+   ],
+   "answer": 0,
+   "explanation_tr": "Rücksicht nehmen AUF = saygı göstermek/dikkate almak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-031",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Entscheidung",
+   "prompt": "Die Geschäftsleitung hat noch keine Entscheidung ___.",
+   "options": [
+    "getroffen",
+    "gemacht",
+    "gefunden",
+    "gestellt"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Entscheidung treffen.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-032",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Betracht",
+   "prompt": "Eine Kündigung kommt für mich nicht in ___.",
+   "options": [
+    "Betracht",
+    "Anspruch",
+    "Gebrauch",
+    "Kraft"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Betracht kommen = söz konusu olmak. (= in Frage kommen)",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-033",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kenntnis",
+   "prompt": "Wir haben Ihre Beschwerde zur ___ genommen.",
+   "options": [
+    "Kenntnis",
+    "Kenntnisse",
+    "Erkenntnis",
+    "Bekanntschaft"
+   ],
+   "answer": 0,
+   "explanation_tr": "zur Kenntnis nehmen = not etmek, bilgi edinmek.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-034",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Antrag",
+   "prompt": "Den Antrag auf Elternzeit müssen Sie sieben Wochen vorher ___.",
+   "options": [
+    "stellen",
+    "legen",
+    "machen",
+    "geben"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Antrag stellen = başvuru yapmak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-035",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Rolle",
+   "prompt": "Bei der Auswahl spielt die Berufserfahrung eine wichtige ___.",
+   "options": [
+    "Rolle",
+    "Bedeutung",
+    "Stelle",
+    "Folge"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Rolle spielen = rol oynamak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-036",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kritik",
+   "prompt": "Die Kunden haben Kritik ___ der langen Wartezeit geübt.",
+   "options": [
+    "an",
+    "über",
+    "für",
+    "gegen"
+   ],
+   "answer": 0,
+   "explanation_tr": "Kritik üben AN + Dativ.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-037",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Folge",
+   "prompt": "Die Verspätung hatte zur ___, dass wir einen Auftrag verloren.",
+   "options": [
+    "Folge",
+    "Folgen",
+    "Nachfolge",
+    "Erfolg"
+   ],
+   "answer": 0,
+   "explanation_tr": "zur Folge haben = sonucunu doğurmak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-038",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kauf",
+   "prompt": "Für eine sichere Stelle nehme ich einen längeren Arbeitsweg in ___.",
+   "options": [
+    "Kauf",
+    "Anspruch",
+    "Betracht",
+    "Kraft"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Kauf nehmen = (olumsuzluğa) katlanmak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-039",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Kraft",
+   "prompt": "Die neue Regelung tritt am 1. Januar in ___.",
+   "options": [
+    "Kraft",
+    "Gang",
+    "Betrieb",
+    "Frage"
+   ],
+   "answer": 0,
+   "explanation_tr": "in Kraft treten = yürürlüğe girmek.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-040",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Ausdruck",
+   "prompt": "In ihrer E-Mail bringt die Kundin ihren Ärger deutlich zum ___.",
+   "options": [
+    "Ausdruck",
+    "Ausdrücken",
+    "Eindruck",
+    "Abdruck"
+   ],
+   "answer": 0,
+   "explanation_tr": "zum Ausdruck bringen = ifade etmek.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-041",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Beitrag",
+   "prompt": "Mit dem Jobticket leisten wir einen Beitrag ___ Umweltschutz.",
+   "options": [
+    "zum",
+    "für den",
+    "an den",
+    "beim"
+   ],
+   "answer": 0,
+   "explanation_tr": "einen Beitrag leisten ZU = katkıda bulunmak.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-042",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Hilfe",
+   "prompt": "Bei einem Unfall muss jeder Erste Hilfe ___.",
+   "options": [
+    "leisten",
+    "geben",
+    "machen",
+    "tun"
+   ],
+   "answer": 0,
+   "explanation_tr": "Erste Hilfe leisten.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-043",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Sorgen",
+   "prompt": "Ich mache mir Sorgen ___ die Zukunft unserer Abteilung.",
+   "options": [
+    "um",
+    "über",
+    "für",
+    "wegen"
+   ],
+   "answer": 0,
+   "explanation_tr": "sich Sorgen machen UM.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-044",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Einfluss",
+   "prompt": "Der Betriebsrat hat großen Einfluss ___ die Arbeitszeiten.",
+   "options": [
+    "auf",
+    "an",
+    "über",
+    "für"
+   ],
+   "answer": 0,
+   "explanation_tr": "Einfluss haben/nehmen AUF.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-045",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Abschied",
+   "prompt": "Nächste Woche nehmen wir ___ unserer Kollegin Abschied.",
+   "options": [
+    "von",
+    "mit",
+    "bei",
+    "an"
+   ],
+   "answer": 0,
+   "explanation_tr": "Abschied nehmen VON.",
+   "tags": [
+    "nvv"
+   ]
+  },
+  {
+   "id": "nvv-046",
+   "section": "nvv",
+   "type": "mc",
+   "topic": "Lösung",
+   "prompt": "Ich bin sicher, dass wir gemeinsam eine Lösung ___.",
+   "options": [
+    "finden",
+    "treffen",
+    "machen",
+    "stellen"
+   ],
+   "answer": 0,
+   "explanation_tr": "eine Lösung finden. (Entscheidung TREFFEN ile karıştırma!)",
+   "tags": [
+    "nvv",
+    "exam-häufig"
+   ]
   }
  ],
  "cards": [
@@ -4392,6 +5254,84 @@
     "schreiben",
     "konnektoren",
     "redemittel"
+   ]
+  },
+  {
+   "id": "nvv-top",
+   "deck": "schreiben",
+   "title": "Nomen-Verb-Verbindungen · Sınavda en sık 20",
+   "prompt": "Gerçek sınav derlemesinde en sık geçenler (sıklık sırasıyla). Şikâyet cevabında ve Sprachbausteine T2'de puan getirir.",
+   "blocks": [
+    {
+     "heading": "En sık",
+     "lines": [
+      "zur Verfügung stehen / stellen — hazır olmak / sağlamak",
+      "Ersatz leisten · Schadenersatz verlangen — tazmin etmek / tazminat istemek",
+      "Bescheid geben / sagen — haber vermek",
+      "Rabatt · Skonto · Preisnachlass gewähren — indirim yapmak",
+      "Verantwortung übernehmen / tragen — sorumluluk almak",
+      "einen Vorschlag machen — öneride bulunmak",
+      "in Ordnung bringen — düzeltmek, halletmek",
+      "Überstunden leisten — fazla mesai yapmak",
+      "in Rechnung stellen — faturalamak",
+      "Stellung nehmen zu — görüş bildirmek"
+     ]
+    },
+    {
+     "heading": "Sık",
+     "lines": [
+      "Gebrauch machen von — kullanmak",
+      "sich Mühe geben — çaba göstermek",
+      "sich in Verbindung setzen mit — irtibata geçmek",
+      "einen Termin vereinbaren — randevu almak",
+      "eine Frist einhalten / setzen — süreye uymak / süre vermek",
+      "eine Bestellung aufgeben — sipariş vermek",
+      "Anspruch haben auf — hakkı olmak",
+      "Maßnahmen ergreifen — önlem almak",
+      "Bezug nehmen auf — atıfta bulunmak",
+      "Wert legen auf — önem vermek"
+     ]
+    }
+   ],
+   "tags": [
+    "nvv",
+    "wortschatz",
+    "exam-häufig"
+   ]
+  },
+  {
+   "id": "nvv-b2",
+   "deck": "schreiben",
+   "title": "Nomen-Verb-Verbindungen · B2 genel",
+   "prompt": "Sprechen ve Schreiben'de dili 'B2 gibi' gösteren kalıplar.",
+   "blocks": [
+    {
+     "heading": "Liste",
+     "lines": [
+      "in Anspruch nehmen — yararlanmak",
+      "in Betracht kommen / ziehen — söz konusu olmak / düşünmek",
+      "in Frage kommen — söz konusu olmak",
+      "zur Kenntnis nehmen — not etmek",
+      "einen Antrag stellen — başvurmak",
+      "eine Entscheidung treffen — karar vermek",
+      "eine Lösung finden — çözüm bulmak",
+      "eine Rolle spielen — rol oynamak",
+      "Kritik üben an — eleştirmek",
+      "zur Folge haben — sonucunu doğurmak",
+      "in Kauf nehmen — katlanmak",
+      "in Kraft treten — yürürlüğe girmek",
+      "zum Ausdruck bringen — ifade etmek",
+      "einen Beitrag leisten zu — katkıda bulunmak",
+      "Rücksicht nehmen auf — dikkate almak",
+      "sich Sorgen machen um — endişelenmek",
+      "Einfluss haben auf — etkisi olmak",
+      "Abschied nehmen von — vedalaşmak"
+     ]
+    }
+   ],
+   "tags": [
+    "nvv",
+    "wortschatz"
    ]
   }
  ],

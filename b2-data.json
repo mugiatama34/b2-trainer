@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "1.9",
+  "version": "2.0",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -8827,6 +8827,500 @@
      ],
      "answer": 1,
      "explanation_tr": "Şef: değişim YOK, masraf müşteride; ücretsiz eğitim VAR → b."
+    }
+   ]
+  },
+  {
+   "id": "L2-10",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 10 (Prüfungsstil): Urlaub & Einführungswoche",
+   "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Willkommensmappe – Urlaub",
+     "body": "Alle Beschäftigten haben Anspruch auf 28 Urlaubstage im Jahr. Während der sechsmonatigen Probezeit ist nach Absprache mit der Teamleitung bereits ein anteiliger Urlaub möglich.\n\nIhre Urlaubswünsche für das kommende Jahr tragen Sie bitte bis zum 30. November im Personalportal ein. Die Anträge prüft Ihre Teamleitung, nicht die Personalabteilung.\n\nWollen mehrere Kolleginnen und Kollegen gleichzeitig Urlaub nehmen, haben in den Schulferien Eltern schulpflichtiger Kinder Vorrang. Außerhalb der Ferien hat Vorrang, wer im Vorjahr auf einen Wunschtermin verzichten musste.\n\nNicht genommener Urlaub kann bis zum 31. März des Folgejahres nachgeholt werden. Eine Auszahlung ist nicht möglich."
+    },
+    {
+     "key": "T2",
+     "title": "Willkommensmappe – Ihre Einführungswoche",
+     "body": "In Ihrer ersten Woche nehmen Sie an unserem Einführungsprogramm teil. Die Teilnahme ist verpflichtend; angemeldet werden Sie automatisch von der Personalabteilung.\n\nAm ersten Tag zeigt Ihnen Ihre Patin oder Ihr Pate das Gebäude und stellt Sie Ihrem Team vor. Am zweiten Tag erhalten Sie eine IT-Schulung und eine Unterweisung zum Brandschutz. Zum Abschluss lädt die Geschäftsführung alle neuen Kolleginnen und Kollegen am dritten Tag zu einem Frühstück ein.\n\nSollten Sie an einem Tag krank sein, holen Sie die verpassten Teile beim nächsten Einführungsprogramm im Folgemonat nach."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-10-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "In der Probezeit kann man überhaupt keinen Urlaub nehmen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Anteilig, nach Absprache mümkün → falsch. Tuzak 'überhaupt keinen'."
+    },
+    {
+     "id": "L2-10-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Wenn außerhalb der Schulferien mehrere gleichzeitig Urlaub wollen, …",
+     "options": [
+      "entscheidet das Los.",
+      "hat Vorrang, wer im Vorjahr verzichten musste.",
+      "haben Eltern immer Vorrang."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak c: ebeveyn önceliği SADECE okul tatillerinde → b."
+    },
+    {
+     "id": "L2-10-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Urlaubsanträge werden von der Personalabteilung geprüft.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch."
+    },
+    {
+     "id": "L2-10-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Resturlaub …",
+     "options": [
+      "verfällt am Jahresende.",
+      "kann man bis Ende März nehmen.",
+      "wird ausgezahlt."
+     ],
+     "answer": 1,
+     "explanation_tr": "31 Mart'a kadar; ödeme yok → b."
+    },
+    {
+     "id": "L2-10-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Neue Mitarbeitende müssen sich selbst für die Einführungswoche anmelden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Personalabteilung otomatik kaydediyor → falsch."
+    },
+    {
+     "id": "L2-10-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "In der Einführungswoche …",
+     "options": [
+      "lernt man Regeln zum Brandschutz kennen.",
+      "stellt jede Abteilung sich vor.",
+      "führt die Geschäftsführung durch das Gebäude."
+     ],
+     "answer": 0,
+     "explanation_tr": "Tuzak c: turu PATE yapıyor, Geschäftsführung kahvaltı veriyor → a."
+    },
+    {
+     "id": "L2-10-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Wer krank ist, kann verpasste Teile später nachholen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "Bir sonraki ayki programda → richtig."
+    },
+    {
+     "id": "L2-10-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Den Rundgang durch das Gebäude …",
+     "options": [
+      "macht man mit einer Patin oder einem Paten.",
+      "organisiert die IT-Abteilung.",
+      "leitet die Personalabteilung."
+     ],
+     "answer": 0,
+     "explanation_tr": "→ a."
+    }
+   ]
+  },
+  {
+   "id": "L2-11",
+   "part": "lesen2",
+   "title": "Lesen T2 · Set 11 (Prüfungsstil): IT-Sicherheit & Kantine",
+   "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "T1",
+     "title": "Willkommensmappe – IT-Sicherheit",
+     "body": "Ihr Passwort muss mindestens zwölf Zeichen haben und wird alle 90 Tage geändert; das System erinnert Sie automatisch daran. Verwenden Sie es nicht für private Konten.\n\nSperren Sie Ihren Bildschirm immer, wenn Sie Ihren Arbeitsplatz verlassen – auch nur kurz.\n\nUSB-Sticks, die nicht von der Firma stammen, dürfen erst nach einer Prüfung durch die IT-Abteilung angeschlossen werden. Software dürfen Sie grundsätzlich nicht selbst installieren.\n\nIn den Pausen dürfen Sie auf dem Firmenlaptop private E-Mails lesen. Verdächtige Nachrichten öffnen Sie bitte nicht, sondern leiten sie an it-sicherheit@firma.de weiter."
+    },
+    {
+     "key": "T2",
+     "title": "Willkommensmappe – Verpflegung",
+     "body": "Unsere Kantine ist montags bis freitags von 7 bis 15 Uhr geöffnet. Für die Spät- und Nachtschicht stehen im Erdgeschoss rund um die Uhr Automaten mit Snacks und warmen Gerichten zur Verfügung.\n\nBezahlt wird ausschließlich mit dem Mitarbeiterausweis; Bargeld wird nicht angenommen. Guthaben laden Sie am Terminal neben der Kasse auf. Pro Mittagessen gewährt die Firma einen Zuschuss von 2,50 Euro, der automatisch abgezogen wird.\n\nGäste sind willkommen, zahlen aber den vollen Preis. Den Speiseplan finden Sie jeden Freitag für die folgende Woche im Intranet."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L2-11-q1",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "Das Passwort muss jedes halbe Jahr geändert werden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "90 gün = yaklaşık 3 ay → falsch."
+    },
+    {
+     "id": "L2-11-q2",
+     "num": 6,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Fremde USB-Sticks …",
+     "options": [
+      "darf man nie benutzen.",
+      "muss die IT-Abteilung vorher prüfen.",
+      "darf man nur in der Pause benutzen."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak a: 'nie' fazla kesin; test SONRASI kullanılabilir → b."
+    },
+    {
+     "id": "L2-11-q3",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "rf",
+     "prompt": "In der Pause darf man auf dem Firmenlaptop private E-Mails lesen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 0,
+     "explanation_tr": "→ richtig."
+    },
+    {
+     "id": "L2-11-q4",
+     "num": 7,
+     "text_ref": "T1",
+     "kind": "mc",
+     "prompt": "Verdächtige E-Mails …",
+     "options": [
+      "löscht man sofort.",
+      "leitet man an die IT-Sicherheit weiter.",
+      "öffnet man nur in der Pause."
+     ],
+     "answer": 1,
+     "explanation_tr": "→ b."
+    },
+    {
+     "id": "L2-11-q5",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "In der Kantine kann man bar bezahlen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "'Bargeld wird nicht angenommen' → falsch."
+    },
+    {
+     "id": "L2-11-q6",
+     "num": 8,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Den Zuschuss zum Mittagessen …",
+     "options": [
+      "muss man jeden Monat beantragen.",
+      "bekommt man automatisch.",
+      "gibt es auch für Gäste."
+     ],
+     "answer": 1,
+     "explanation_tr": "'automatisch abgezogen' → b."
+    },
+    {
+     "id": "L2-11-q7",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "rf",
+     "prompt": "Die Kantine ist rund um die Uhr geöffnet.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak: 7–15 arası; 24 saat açık olan OTOMATLAR → falsch."
+    },
+    {
+     "id": "L2-11-q8",
+     "num": 9,
+     "text_ref": "T2",
+     "kind": "mc",
+     "prompt": "Guthaben auf dem Ausweis …",
+     "options": [
+      "lädt man am Terminal auf.",
+      "bezahlt die Firma.",
+      "wird vom Gehalt abgezogen."
+     ],
+     "answer": 0,
+     "explanation_tr": "→ a."
+    }
+   ]
+  },
+  {
+   "id": "L3-9",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 9 (Prüfungsstil): Kinder & Arbeitszeit",
+   "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "context_de": "Forum: Rund um den Beruf",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Mira, vor 2 Stunden: Nein, Urlaub musst du dafür nicht nehmen. Mit einer Bescheinigung vom Kinderarzt hast du Anspruch auf Kinderkrankentage. In dieser Zeit zahlt die Krankenkasse Kinderkrankengeld."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Olaf, vor 5 Stunden: Ich finde, jede größere Firma sollte eine eigene Kita haben. Das wäre für alle viel entspannter."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Petra, vor 1 Stunde: Einen automatischen Anspruch hast du leider nicht – außer du hattest damals eine befristete Teilzeit vereinbart. Wird aber eine passende Vollzeitstelle frei, muss dein Arbeitgeber dich bevorzugt berücksichtigen."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Heike, vor 3 Stunden: Kranke Kinder gehören auf keinen Fall ins Büro, auch nicht mit Erlaubnis des Chefs. Die Ansteckungsgefahr für die Kolleginnen und Kollegen ist einfach zu groß."
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Tim, vor 4 Stunden: Eine gesetzliche Pflicht, es sofort zu sagen, gibt es nicht. Aber der Mutterschutz gilt auch für Auszubildende – und er schützt dich erst richtig, wenn dein Betrieb davon weiß. Deshalb ist es klug, bald Bescheid zu geben."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Lars, vor 6 Stunden: Elternzeit kann man teilweise auch später nehmen, bis das Kind acht Jahre alt ist. Das wissen viele gar nicht."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-9-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Derya: Mein Sohn hat hohes Fieber und ich muss zu Hause bleiben. Meine Chefin sagt, dafür müsse ich Urlaub nehmen. Stimmt das wirklich?",
+     "answer": "a",
+     "explanation_tr": "Hasta çocuk + izin mi? → a."
+    },
+    {
+     "id": "L3-9-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Jonas: Ich arbeite seit zehn Jahren Teilzeit. Jetzt sind die Kinder groß und ich möchte wieder Vollzeit arbeiten. Muss mein Arbeitgeber das akzeptieren?",
+     "answer": "c",
+     "explanation_tr": "Kısmi süreden tam süreye dönüş → c."
+    },
+    {
+     "id": "L3-9-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Selma: Ich mache eine Ausbildung und habe gerade erfahren, dass ich schwanger bin. Muss ich das meinem Betrieb sofort sagen?",
+     "answer": "e",
+     "explanation_tr": "Azubi + hamilelik bildirimi → e."
+    },
+    {
+     "id": "L3-9-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Frank: Unsere Kita schließt im August drei Wochen, und wir haben keine Betreuung. Darf ich meine Kinder dann mit ins Büro bringen?",
+     "answer": "x",
+     "explanation_tr": "Tuzak d: çocuk ofiste ✓ ama HASTA çocuk. Frank'in çocukları sağlıklı, kreş kapalı → cevap yok → x. Tuzak b: sadece fikir."
+    }
+   ]
+  },
+  {
+   "id": "L3-10",
+   "part": "lesen3",
+   "title": "Lesen T3 · Set 10 (Prüfungsstil): Arbeitsweg & Arbeitsort",
+   "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "context_de": "Forum: Rund um den Beruf",
+   "layout": "matching",
+   "allow_none": true,
+   "texts": [
+    {
+     "key": "a",
+     "title": "",
+     "body": "Uwe, vor 1 Stunde: Leider trägst du als Arbeitnehmerin das Wegerisiko. Für die ausgefallene Zeit hast du keinen Anspruch auf Lohn. Oft kann man aber einen Urlaubstag nehmen oder die Stunden vom Zeitkonto abbuchen lassen."
+    },
+    {
+     "key": "b",
+     "title": "",
+     "body": "Dana, vor 2 Stunden: Ja! Wer auf dem Arbeitsweg sein Kind zur Betreuung bringt, ist auch auf diesem Umweg gesetzlich unfallversichert. Melde den Unfall schnell bei deiner Firma."
+    },
+    {
+     "key": "c",
+     "title": "",
+     "body": "Rolf, vor 4 Stunden: Ab 26 Grad im Büro muss der Arbeitgeber etwas gegen die Hitze tun, zum Beispiel Jalousien anbringen oder Ventilatoren aufstellen."
+    },
+    {
+     "key": "d",
+     "title": "",
+     "body": "Sina, vor 3 Stunden: Ich fahre seit Jahren nur noch mit dem Rad zur Arbeit. Kein Stau, kein Ärger mit dem Bus – kann ich jedem empfehlen!"
+    },
+    {
+     "key": "e",
+     "title": "",
+     "body": "Klaus, vor 30 Minuten: Das hängt von deinem Arbeitsvertrag ab. Steht dort kein fester Arbeitsort, darf die Firma innerhalb der Stadt umziehen. Ist der Ort im Vertrag festgelegt, braucht sie deine Zustimmung."
+    },
+    {
+     "key": "f",
+     "title": "",
+     "body": "Ilse, vor 5 Stunden: Wer einen Dienstwagen auch privat nutzt, muss meistens ein Fahrtenbuch führen. Frag am besten in der Buchhaltung nach."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L3-10-q1",
+     "num": 10,
+     "kind": "match",
+     "prompt": "Tanja: Wegen Glatteis fuhr heute früh kein einziger Bus, und ich bin zu Hause geblieben. Bekomme ich für den Tag trotzdem meinen Lohn?",
+     "answer": "a",
+     "explanation_tr": "Buz yüzünden gelinemedi → Wegerisiko → a."
+    },
+    {
+     "id": "L3-10-q2",
+     "num": 11,
+     "kind": "match",
+     "prompt": "Kerem: Auf dem Weg zur Arbeit habe ich meine Tochter zur Kita gebracht und bin dort auf der Treppe gestürzt. Bin ich trotzdem versichert?",
+     "answer": "b",
+     "explanation_tr": "Kreş dolambacı sigortalı → b."
+    },
+    {
+     "id": "L3-10-q3",
+     "num": 12,
+     "kind": "match",
+     "prompt": "Nadine: Mein Chef verlangt, dass ich auch bei 34 Grad im Anzug zur Arbeit komme. Darf er das?",
+     "answer": "x",
+     "explanation_tr": "Tuzak c: sıcaklık ✓ ama konu ofis sıcaklığı; Nadine KIYAFET kuralını soruyor → x."
+    },
+    {
+     "id": "L3-10-q4",
+     "num": 13,
+     "kind": "match",
+     "prompt": "Björn: Unsere Firma zieht an den Stadtrand, mein Arbeitsweg wird dadurch eine Stunde länger. Muss ich das einfach akzeptieren?",
+     "answer": "e",
+     "explanation_tr": "İşyeri taşınıyor, sözleşmeye bağlı → e."
+    }
+   ]
+  },
+  {
+   "id": "L4-9",
+   "part": "lesen4",
+   "title": "Lesen T4 · Set 9 (Prüfungsstil): Möbelhersteller",
+   "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
+   "layout": "text-questions",
+   "texts": [
+    {
+     "key": "P",
+     "title": "Protokoll der Abteilungsleitersitzung – Holzwerk Brandner GmbH",
+     "body": "Datum: 06.05., 10.00–12.00 Uhr\nSitzungsleitung: Ute Brandner (UB, Geschäftsführung)\nProtokoll: Kai Lang (KL, Personal)\nAnwesend: Frau Brandner, Herr Lang, Frau Ceylan (FC, Marketing), Herr Roth (HR, Produktion), Frau Nowak (AN, Finanzen)\nEntschuldigt: Herr Petersen (Vertrieb)\n\nTOP 1 Begrüßung und Genehmigung der Tagesordnung\nUB begrüßt die Anwesenden. Auf Wunsch von KL wird unter „Sonstiges“ das Thema Parkplätze ergänzt. Mit dieser Ergänzung wird die Tagesordnung genehmigt. Der Termin der nächsten Sitzung soll nach der Sommerpause liegen und wird per Umfrage festgelegt.\n\nTOP 2 Reklamationen\nHR berichtet, dass die Zahl der Reklamationen wegen zerkratzter Möbel gestiegen ist. Die Ursache liegt beim Logistikpartner, der die Ware nicht ausreichend sichert. Nach einem Gespräch hat sich der Partner bereit erklärt, die Kosten für beschädigte Ware zu übernehmen. Zusätzlich wird ab Juni eine neue Schutzfolie getestet.\n\nTOP 3 Werbemaßnahmen\nFür dieses Jahr stehen 80.000 Euro zur Verfügung. Die Mehrheit spricht sich dafür aus, das Geld eher für einen Messeauftritt als für Anzeigen in Zeitschriften zu verwenden. FC holt bis zur nächsten Sitzung Angebote von Messebauern ein; entschieden wird erst danach.\n\nTOP 4 Überstunden\nBisher konnten Überstunden ausgezahlt oder durch Freizeit ausgeglichen werden. Wegen des Personalmangels in der Produktion werden sie bis Jahresende ausschließlich ausgezahlt. Der Betriebsrat hat dieser Regelung bereits zugestimmt.\n\nTOP 5 Dienstwagen\nDie Dienstwagenflotte wird schrittweise auf Elektroautos umgestellt. Die private Nutzung bleibt erlaubt. Wer sein Fahrzeug zu Hause lädt, bekommt die Stromkosten gegen Nachweis erstattet.\n\nTOP 6 Sonstiges\nAuf dem Mitarbeiterparkplatz werden zehn Plätze für Fahrgemeinschaften reserviert. Interessierte melden sich bei KL."
+    }
+   ],
+   "questions": [
+    {
+     "id": "L4-9-q1",
+     "num": 14,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Der Termin der nächsten Sitzung …",
+     "options": [
+      "wurde heute festgelegt.",
+      "wird noch abgestimmt.",
+      "liegt vor der Sommerpause."
+     ],
+     "answer": 1,
+     "explanation_tr": "'per Umfrage festgelegt' = henüz belli değil → b."
+    },
+    {
+     "id": "L4-9-q2",
+     "num": 15,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Für beschädigte Möbel …",
+     "options": [
+      "zahlt der Logistikpartner.",
+      "gibt es ab sofort eine neue Folie.",
+      "müssen die Kunden selbst aufkommen."
+     ],
+     "answer": 0,
+     "explanation_tr": "Tuzak b: folyo Haziran'da TEST edilecek, 'ab sofort' değil → a."
+    },
+    {
+     "id": "L4-9-q3",
+     "num": 16,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Über die Verwendung des Werbebudgets …",
+     "options": [
+      "wurde endgültig entschieden.",
+      "entscheidet man in einer späteren Sitzung.",
+      "entscheidet Frau Ceylan allein."
+     ],
+     "answer": 1,
+     "explanation_tr": "Çoğunluk fuardan yana ama 'entschieden wird erst danach' → b."
+    },
+    {
+     "id": "L4-9-q4",
+     "num": 17,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Überstunden …",
+     "options": [
+      "werden bis Jahresende nur bezahlt.",
+      "muss der Betriebsrat noch genehmigen.",
+      "werden abgeschafft."
+     ],
+     "answer": 0,
+     "explanation_tr": "Tuzak b: Betriebsrat ZATEN onayladı → a."
+    },
+    {
+     "id": "L4-9-q5",
+     "num": 18,
+     "text_ref": "P",
+     "kind": "mc",
+     "prompt": "Wer ein E-Auto zu Hause lädt, …",
+     "options": [
+      "darf es nicht mehr privat nutzen.",
+      "bekommt die Stromkosten erstattet.",
+      "muss sich beim Personal melden."
+     ],
+     "answer": 1,
+     "explanation_tr": "Tuzak c: Personal'e başvuru OTOPARK için → b."
     }
    ]
   }

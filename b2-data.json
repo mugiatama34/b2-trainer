@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "2.2",
+  "version": "2.3",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -1310,7 +1310,7 @@
    "section": "sprachbausteine2",
    "type": "mc",
    "topic": "Auftrag",
-   "prompt": "Bei einwandfreier Lieferung können Sie in Zukunft mit weiteren Aufträgen ___.",
+   "prompt": "Wenn die Ware auch künftig pünktlich und fehlerfrei ankommt, dürfen Sie mit weiteren Bestellungen ___.",
    "options": [
     "rechnen",
     "zählen",
@@ -4375,7 +4375,7 @@
     "teil1",
     "thema"
    ],
-   "sample": "Ich spreche heute darüber, wie ich mir ein gutes Arbeitsumfeld vorstelle.\n\nZuerst ist für mich Jobsicherheit wichtig. Ein unbefristeter Vertrag gibt mir Ruhe, und ich kann meine Zukunft und die meiner Familie besser planen.\n\nZweitens sollte das Gehalt fair sein, also passend zur Qualifikation und zur Verantwortung.\n\nDrittens sind Weiterbildung und Karrierechancen wichtig. In meinem Beruf als Psychologin muss man sich ständig weiterbilden, und regelmäßige Supervision ist sehr hilfreich.\n\nAm wichtigsten ist für mich aber die Kommunikation. In meiner letzten Stelle hatten wir jede Woche eine Teambesprechung. Dort konnte jeder schwierige Fälle ansprechen, und wir haben gemeinsam Lösungen gesucht. Die Arbeit mit Patienten ist oft belastend, deshalb braucht man ein Team, das sich gegenseitig unterstützt.\n\nZusammenfassend kann ich sagen: Ein gutes Arbeitsumfeld bedeutet für mich Sicherheit, Fairness und Respekt.",
+   "sample": "Heute erzähle ich, was für mich einen guten Arbeitsplatz ausmacht.\n\nZuerst ist für mich Jobsicherheit wichtig. Ein unbefristeter Vertrag gibt mir Ruhe, und ich kann meine Zukunft und die meiner Familie besser planen.\n\nZweitens sollte das Gehalt fair sein, also passend zur Qualifikation und zur Verantwortung.\n\nDrittens sind Weiterbildung und Karrierechancen wichtig. In meinem Beruf als Psychologin muss man sich ständig weiterbilden, und regelmäßige Supervision ist sehr hilfreich.\n\nAm wichtigsten ist für mich aber die Kommunikation. In meiner letzten Stelle hatten wir jede Woche eine Teambesprechung. Dort konnte jeder schwierige Fälle ansprechen, und wir haben gemeinsam Lösungen gesucht. Die Arbeit mit Patienten ist oft belastend, deshalb braucht man ein Team, das sich gegenseitig unterstützt.\n\nZusammenfassend kann ich sagen: Ein gutes Arbeitsumfeld bedeutet für mich Sicherheit, Fairness und Respekt.",
    "examiner_questions": [
     "Was ist wichtiger: Gehalt oder Arbeitsklima?",
     "Was machen Sie bei einem Konflikt mit einer Kollegin?",
@@ -6605,7 +6605,7 @@
     {
      "heading": "Entgegenkommen",
      "lines": [
-      "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+      "Trotzdem kommen wir Ihnen gern entgegen und bieten Ihnen … an.",
       "Gern ist unser Techniker bereit, … kostenlos …",
       "Wir hoffen auf Ihr Verständnis."
      ]
@@ -6634,7 +6634,7 @@
       {
        "heading": "Entgegenkommen",
        "lines": [
-        "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+        "Trotzdem kommen wir Ihnen gern entgegen und bieten Ihnen … an.",
         "Gern ist unser Techniker bereit, … kostenlos …",
         "Wir hoffen auf Ihr Verständnis."
        ]
@@ -6663,7 +6663,7 @@
       {
        "heading": "Entgegenkommen",
        "lines": [
-        "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+        "Trotzdem kommen wir Ihnen gern entgegen und bieten Ihnen … an.",
         "Gern ist unser Techniker bereit, … kostenlos …",
         "Wir hoffen auf Ihr Verständnis."
        ]
@@ -7469,7 +7469,7 @@
     {
      "heading": "Formda neredeyse hep sorulan",
      "lines": [
-      "Name – harf harf söylenir: S-T-Ä-D-T-L-E-R → dikkatle yaz",
+      "Name – harf harf söylenir: K-Ö-H-L-E-R → dikkatle yaz",
       "Firma",
       "Anzahl / Menge (bestellt ↔ geliefert FARKI)",
       "Datum & Uhrzeit (neuer Termin?)",
@@ -7502,7 +7502,7 @@
       {
        "heading": "Almost always asked in the form",
        "lines": [
-        "Name – spelled out letter by letter: S-T-Ä-D-T-L-E-R → write carefully",
+        "Name – spelled out letter by letter: K-Ö-H-L-E-R → write carefully",
         "Firma",
         "Anzahl / Menge (bestellt ↔ geliefert DIFFERENCE)",
         "Datum & Uhrzeit (neuer Termin?)",
@@ -7535,7 +7535,7 @@
       {
        "heading": "Що майже завжди питають у формі",
        "lines": [
-        "Name – диктують по літерах: S-T-Ä-D-T-L-E-R → пиши уважно",
+        "Name – диктують по літерах: K-Ö-H-L-E-R → пиши уважно",
         "Firma",
         "Anzahl / Menge (РІЗНИЦЯ bestellt ↔ geliefert)",
         "Datum & Uhrzeit (neuer Termin?)",
@@ -8840,7 +8840,7 @@
    "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır.",
    "instructions_en": "Choose the right article for each person (a–h). 3 articles are left over.",
    "instructions_uk": "Обери для кожної людини відповідну статтю (a–h). 3 статті залишаються зайвими.",
-   "context_de": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden passende Artikel schicken.",
+   "context_de": "Sie stöbern im Karriereteil einer Online-Zeitung und wollen Bekannten passende Beiträge weiterleiten.",
    "layout": "matching",
    "allow_none": false,
    "texts": [

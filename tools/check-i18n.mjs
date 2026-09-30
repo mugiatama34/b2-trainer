@@ -27,7 +27,7 @@ const dataIdx = args.indexOf('--data');
 const dataPath = dataIdx >= 0 ? args[dataIdx + 1] : path.join(ROOT, 'b2-data.json');
 const patchIdx = args.indexOf('--patch');
 const patchPath = patchIdx >= 0 ? args[patchIdx + 1] : path.join(ROOT, 'patch-v2.2.json');
-const EXPECTED_VERSION = '2.2';
+const EXPECTED_VERSION = '2.3';
 const origArg = args.find((a, i) => !a.startsWith('--')
   && !(dataIdx >= 0 && i === dataIdx + 1) && !(patchIdx >= 0 && i === patchIdx + 1));
 
@@ -75,6 +75,21 @@ if (patchIdx >= 0 || existsSync(patchPath) || patchRaw) {
     });
   });
 }
+
+// Görev 7b: small field edits made in place (translations untouched). Applied to orig, so they are not reported as changes.
+const EDITS_7B = [
+  ['Bei einwandfreier Lieferung können Sie in Zukunft mit weiteren Aufträgen ___.',
+    'Wenn die Ware auch künftig pünktlich und fehlerfrei ankommt, dürfen Sie mit weiteren Bestellungen ___.'],
+  ['Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden passende Artikel schicken.',
+    'Sie stöbern im Karriereteil einer Online-Zeitung und wollen Bekannten passende Beiträge weiterleiten.'],
+  ['Ich spreche heute darüber, wie ich mir ein gutes Arbeitsumfeld vorstelle.',
+    'Heute erzähle ich, was für mich einen guten Arbeitsplatz ausmacht.'],
+  ['Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.',
+    'Trotzdem kommen wir Ihnen gern entgegen und bieten Ihnen … an.'],
+  ['S-T-Ä-D-T-L-E-R', 'K-Ö-H-L-E-R'],
+];
+orig = JSON.parse(EDITS_7B.reduce((s, [a, b]) => s.split(JSON.stringify(a).slice(1, -1)).join(JSON.stringify(b).slice(1, -1)),
+  JSON.stringify(orig)));
 
 /* ---- 2. text rules ---- */
 // Capitalized words that occur in the German exam content (names like "Aydın").

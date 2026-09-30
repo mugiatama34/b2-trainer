@@ -223,5 +223,10 @@
  "update.available": "Yeni sürüm var 🎉",
  "update.reload": "Yenile",
  "boot.loadFailed": "İçerik yüklenemedi (b2-data.json).",
- "boot.retry": "Tekrar dene"
+ "boot.retry": "Tekrar dene",
+ "about.title": "Hakkında",
+ "about.disclaimer": "Bu çalışma programı bağımsız, özel bir projedir. telc gGmbH veya Federal Göç ve Mülteci Dairesi (BAMF) ile hiçbir bağlantısı yoktur ve resmî sınav materyali değildir. Tüm alıştırmalar özgün olarak hazırlanmıştır, yalnızca sınavın formatını örnek alır. Bazı içerikler yapay zekâ yardımıyla üretilmiştir ve hata içerebilir.",
+ "about.ok": "Anladım",
+ "about.footer": "Bağımsız alıştırma projesi – resmî telc/BAMF materyali değildir",
+ "about.version": "Sürüm {v}"
 }

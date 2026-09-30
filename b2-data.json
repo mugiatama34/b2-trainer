@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "2.0",
+  "version": "2.1",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -7391,6 +7391,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Wagner.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Siehe Lesen & Schreiben Set 3: Ersatzteil am Donnerstag, Reparatur Freitagvormittag, bis dahin kostenloses Leihgerät, Reparatur auf Garantie, kein Rabatt."
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Maschine defekt, Techniker ohne Ersatzteil, niemand hat sich gemeldet; will Reparatur diese Woche und Kosten für Aushilfe."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point your boss mentioned? (reason · solution · offer · refusal)",
+        "Did you answer every complaint of the customer? Politely refuse any request you can't meet (e.g. refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Wagner.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Siehe Lesen & Schreiben Set 3: Ersatzteil am Donnerstag, Reparatur Freitagvormittag, bis dahin kostenloses Leihgerät, Reparatur auf Garantie, kein Rabatt."
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Maschine defekt, Techniker ohne Ersatzteil, niemand hat sich gemeldet; will Reparatur diese Woche und Kosten für Aushilfe."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи написав ти КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи відповів ти на кожну скаргу клієнта? Вимогу, яку не можеш виконати (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -7432,6 +7484,74 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Hören & Schreiben T2: fill in the form from a phone message. The situations are always similar.",
+     "blocks": [
+      {
+       "heading": "Common situations",
+       "lines": [
+        "Offer / price information (car rental, copy paper)",
+        "Change of a tradesman's appointment (painting, repair)",
+        "Incomplete delivery (ordered 180, received 100)",
+        "Table reservation",
+        "Drinks delivery for an event didn't arrive",
+        "Complaint + callback request"
+       ]
+      },
+      {
+       "heading": "Almost always asked in the form",
+       "lines": [
+        "Name – spelled out letter by letter: S-T-Ä-D-T-L-E-R → write carefully",
+        "Firma",
+        "Anzahl / Menge (bestellt ↔ geliefert DIFFERENCE)",
+        "Datum & Uhrzeit (neuer Termin?)",
+        "Was soll passieren? (Rückruf, Nachlieferung, Angebot schicken)",
+        "Telefonnummer / Rückruf bis …"
+       ]
+      },
+      {
+       "heading": "Trap",
+       "lines": [
+        "The speaker first says a date/number and then CORRECTS it: 'am Dienstag … nein, doch lieber Mittwoch' → the last one counts"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Hören & Schreiben T2: заповни форму за телефонним повідомленням. Ситуації завжди схожі.",
+     "blocks": [
+      {
+       "heading": "Типові ситуації",
+       "lines": [
+        "Пропозиція / інформація про ціну (оренда авто, папір для копіювання)",
+        "Зміна часу візиту майстра (фарбування, ремонт)",
+        "Неповна поставка (замовлено 180, прийшло 100)",
+        "Бронювання столика",
+        "Не прибула доставка напоїв для заходу",
+        "Скарга + прохання передзвонити"
+       ]
+      },
+      {
+       "heading": "Що майже завжди питають у формі",
+       "lines": [
+        "Name – диктують по літерах: S-T-Ä-D-T-L-E-R → пиши уважно",
+        "Firma",
+        "Anzahl / Menge (РІЗНИЦЯ bestellt ↔ geliefert)",
+        "Datum & Uhrzeit (neuer Termin?)",
+        "Was soll passieren? (Rückruf, Nachlieferung, Angebot schicken)",
+        "Telefonnummer / Rückruf bis …"
+       ]
+      },
+      {
+       "heading": "Пастка",
+       "lines": [
+        "Мовець спочатку називає дату/число, а потім ВИПРАВЛЯЄ: 'am Dienstag … nein, doch lieber Mittwoch' → діє останнє"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "hören",
@@ -7454,6 +7574,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Sofort: Was tun?",
+        "Gäste: Wie informieren? Was anbieten?",
+        "Wen anrufen?",
+        "Langfristig: Wartung? Ersatzgerät?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Sofort: Was tun?",
+        "Gäste: Wie informieren? Was anbieten?",
+        "Wen anrufen?",
+        "Langfristig: Wartung? Ersatzgerät?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7477,6 +7627,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Chef/Chefin: Wie informieren?",
+        "Kunden: Wie informieren? Was anbieten?",
+        "Neues Mehl: Woher? Wie lagern?",
+        "Lager: Was ändern?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Chef/Chefin: Wie informieren?",
+        "Kunden: Wie informieren? Was anbieten?",
+        "Neues Mehl: Woher? Wie lagern?",
+        "Lager: Was ändern?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7500,6 +7680,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Hotel?",
+        "Abholung?",
+        "Wen treffen?",
+        "Was zeigen? Abendprogramm?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Hotel?",
+        "Abholung?",
+        "Wen treffen?",
+        "Was zeigen? Abendprogramm?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7524,6 +7734,38 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kollege: Was tun?",
+        "Chef/Chefin: Wie ansprechen?",
+        "Kurzfristig: Wie reagieren?",
+        "Arbeitsablauf: Was umorganisieren?",
+        "Langfristig?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kollege: Was tun?",
+        "Chef/Chefin: Wie ansprechen?",
+        "Kurzfristig: Wie reagieren?",
+        "Arbeitsablauf: Was umorganisieren?",
+        "Langfristig?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7548,6 +7790,38 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Wie Personal bekommen?",
+        "Öffnungszeiten ändern?",
+        "Überstunden? Urlaubssperre?",
+        "Abteilung schließen?",
+        "Wie den Mitarbeitenden danken?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Wie Personal bekommen?",
+        "Öffnungszeiten ändern?",
+        "Überstunden? Urlaubssperre?",
+        "Abteilung schließen?",
+        "Wie den Mitarbeitenden danken?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7572,6 +7846,38 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Andere Umzugsfirmen?",
+        "Umzug anders organisieren?",
+        "Wer kann helfen?",
+        "Vermieter informieren?",
+        "Schadenersatz?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Andere Umzugsfirmen?",
+        "Umzug anders organisieren?",
+        "Wer kann helfen?",
+        "Vermieter informieren?",
+        "Schadenersatz?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7595,6 +7901,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kühlraum: Wen kontaktieren?",
+        "Verdorbene Lebensmittel: Ersatz woher?",
+        "Andere Lebensmittel: Wie verwenden?",
+        "Langfristig: Kühlalternativen?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kühlraum: Wen kontaktieren?",
+        "Verdorbene Lebensmittel: Ersatz woher?",
+        "Andere Lebensmittel: Wie verwenden?",
+        "Langfristig: Kühlalternativen?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7618,6 +7954,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Heute: Was tun?",
+        "Gäste: Was anbieten?",
+        "Buchungen kontrollieren: Wie?",
+        "Langfristig: Wie vermeiden?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Heute: Was tun?",
+        "Gäste: Was anbieten?",
+        "Buchungen kontrollieren: Wie?",
+        "Langfristig: Wie vermeiden?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7641,6 +8007,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kunden: Wie beruhigen? Was anbieten?",
+        "Lieferant: Wie kontaktieren? Was verlangen?",
+        "Prospekt / Aushang?",
+        "Langfristig: Lieferanten wechseln?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kunden: Wie beruhigen? Was anbieten?",
+        "Lieferant: Wie kontaktieren? Was verlangen?",
+        "Prospekt / Aushang?",
+        "Langfristig: Lieferanten wechseln?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7664,6 +8060,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Handwerker: Wie finden?",
+        "Gäste: Wie informieren? Was anbieten?",
+        "Eingekaufte Lebensmittel?",
+        "Aushilfen informieren?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Handwerker: Wie finden?",
+        "Gäste: Wie informieren? Was anbieten?",
+        "Eingekaufte Lebensmittel?",
+        "Aushilfen informieren?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7687,6 +8113,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Heute: Wie aufwärmen?",
+        "Bewohner: Wie beruhigen?",
+        "Lieferant: Wie kontaktieren? Was fordern?",
+        "Langfristig: Neuer Lieferant? Selbst kochen?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Heute: Wie aufwärmen?",
+        "Bewohner: Wie beruhigen?",
+        "Lieferant: Wie kontaktieren? Was fordern?",
+        "Langfristig: Neuer Lieferant? Selbst kochen?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7710,6 +8166,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einer psychologischen Beratungsstelle. Das Online-Terminsystem ist ausgefallen; heute warten mehrere Klientinnen und Klienten, einige Termine sind doppelt vergeben.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Wartende: Wie informieren? Was anbieten?",
+        "Termine: Wie neu organisieren?",
+        "IT / Anbieter: Wen kontaktieren?",
+        "Langfristig: Papier-Backup? Anderes System?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einer psychologischen Beratungsstelle. Das Online-Terminsystem ist ausgefallen; heute warten mehrere Klientinnen und Klienten, einige Termine sind doppelt vergeben.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Wartende: Wie informieren? Was anbieten?",
+        "Termine: Wie neu organisieren?",
+        "IT / Anbieter: Wen kontaktieren?",
+        "Langfristig: Papier-Backup? Anderes System?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7733,6 +8219,36 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Winterdienst informieren?",
+        "Kunden: Wie beruhigen? Was anbieten?",
+        "Was selbst tun?",
+        "Erste Hilfe nötig?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Winterdienst informieren?",
+        "Kunden: Wie beruhigen? Was anbieten?",
+        "Was selbst tun?",
+        "Erste Hilfe nötig?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -7777,6 +8293,78 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Summary of patterns from real exam collections (no content copied, only patterns).",
+     "blocks": [
+      {
+       "heading": "Lesen",
+       "lines": [
+        "T1: articles from the same set of topics (Kündigung, Eltern, Ausland, Selbstständigkeit); trap = employer/employee perspective",
+        "T2: ALWAYS 'Willkommensmappe' sections (Zeiterfassung, Unfall, Datenschutz, Sport, Rauchen, Kantine, Berichtsheft)",
+        "T3: labour law forum (illness, leave, breaks, clothing, Azubi); opinion answers + similar-but-different situation = x",
+        "T4: 6 TOP, a correction in TOP 1, a TOP moved forward/postponed, rejected proposals"
+       ]
+      },
+      {
+       "heading": "Schreiben",
+       "lines": [
+        "Complaint: the boss's internal e-mail gives instructions — sometimes a REFUSAL (not our responsibility)",
+        "Common situations: cleaning, desk lamp, website, moving, plants, invoice, delivery, printer, dishwasher",
+        "Forum: 'The company is introducing a new rule' — you choose one of two topics"
+       ]
+      },
+      {
+       "heading": "Sprachbausteine",
+       "lines": [
+        "T1: wie (besprochen), da, bis dahin, davon/dafür, deren, sowie, dennoch, sobald + adjective endings",
+        "T2: formal letter: eingetroffen, begleichen, fällig, Skonto gewähren, entnehmen, Unannehmlichkeiten, in Höhe von"
+       ]
+      },
+      {
+       "heading": "Sprechen T3",
+       "lines": [
+        "Always the same structure: Sofort → Kunden informieren/anbieten → Lieferant/Handwerker kontaktieren/fordern → Langfristig"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Підсумок шаблонів зі збірок реальних іспитів (зміст не скопійовано, лише шаблони).",
+     "blocks": [
+      {
+       "heading": "Lesen",
+       "lines": [
+        "T1: статті з одного кола тем (Kündigung, Eltern, Ausland, Selbstständigkeit); пастка = погляд роботодавця/працівника",
+        "T2: ЗАВЖДИ розділи 'Willkommensmappe' (Zeiterfassung, Unfall, Datenschutz, Sport, Rauchen, Kantine, Berichtsheft)",
+        "T3: форум про трудове право (хвороба, відпустка, перерва, одяг, Azubi); відповіді-думки + схожа-але-інша ситуація = x",
+        "T4: 6 TOP, виправлення в TOP 1, TOP, перенесений раніше/пізніше, відхилені пропозиції"
+       ]
+      },
+      {
+       "heading": "Schreiben",
+       "lines": [
+        "Скарга: внутрішній e-mail керівника дає вказівки — іноді ВІДМОВА (відповідальність не на нас)",
+        "Типові ситуації: прибирання, настільна лампа, вебсайт, переїзд, рослини, рахунок, доставка, принтер, посудомийна машина",
+        "Forum: 'Фірма вводить нове правило' — ти обираєш одну з двох тем"
+       ]
+      },
+      {
+       "heading": "Sprachbausteine",
+       "lines": [
+        "T1: wie (besprochen), da, bis dahin, davon/dafür, deren, sowie, dennoch, sobald + відмінювання прикметників",
+        "T2: офіційний лист: eingetroffen, begleichen, fällig, Skonto gewähren, entnehmen, Unannehmlichkeiten, in Höhe von"
+       ]
+      },
+      {
+       "heading": "Sprechen T3",
+       "lines": [
+        "Завжди та сама схема: Sofort → Kunden informieren/anbieten → Lieferant/Handwerker kontaktieren/fordern → Langfristig"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "überblick",
     "analyse"
@@ -7815,6 +8403,70 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "After writing, take 2 minutes and check with this list.",
+     "blocks": [
+      {
+       "heading": "Format",
+       "lines": [
+        "Anrede: 'Sehr geehrter Herr Schmidt,' → comma, the next line starts with a LOWER-CASE letter",
+        "'Sie / Ihr / Ihnen' always with a CAPITAL letter in formal address",
+        "Gruß: 'Mit freundlichen Grüßen' → NO comma at the end, name below",
+        "If you write a Betreff, keep it short: 'Ihre Beschwerde vom 12. Mai'"
+       ]
+      },
+      {
+       "heading": "Grammar",
+       "lines": [
+        "In a subordinate clause the verb goes to the END: …, dass wir das Problem gelöst HABEN.",
+        "weil / dass / wenn / obwohl → verb at the end; deshalb / trotzdem / außerdem → verb in 2nd position",
+        "das (article/pronoun) ≠ dass (conjunction)",
+        "Phrases with prepositions: sich entschuldigen FÜR, sich beschweren ÜBER, sich kümmern UM"
+       ]
+      },
+      {
+       "heading": "Content",
+       "lines": [
+        "Is EVERY point from the boss/task covered? Tick them off one by one",
+        "One idea per paragraph; a blank line between paragraphs",
+        "Don't repeat the same connector: außerdem → zudem → darüber hinaus"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Після написання виділи 2 хвилини й перевір за цим списком.",
+     "blocks": [
+      {
+       "heading": "Оформлення",
+       "lines": [
+        "Anrede: 'Sehr geehrter Herr Schmidt,' → кома, наступний рядок починається з МАЛОЇ літери",
+        "'Sie / Ihr / Ihnen' у ввічливому звертанні завжди з ВЕЛИКОЇ літери",
+        "Gruß: 'Mit freundlichen Grüßen' → БЕЗ коми в кінці, нижче ім'я",
+        "Betreff, якщо пишеш, — коротко: 'Ihre Beschwerde vom 12. Mai'"
+       ]
+      },
+      {
+       "heading": "Граматика",
+       "lines": [
+        "У підрядному реченні дієслово в КІНЕЦЬ: …, dass wir das Problem gelöst HABEN.",
+        "weil / dass / wenn / obwohl → дієслово в кінці; deshalb / trotzdem / außerdem → дієслово на 2-му місці",
+        "das (артикль/займенник) ≠ dass (сполучник)",
+        "Вирази з прийменниками: sich entschuldigen FÜR, sich beschweren ÜBER, sich kümmern UM"
+       ]
+      },
+      {
+       "heading": "Зміст",
+       "lines": [
+        "Чи є КОЖЕН пункт від керівника/завдання? Відміть по черзі",
+        "Одна думка на абзац; між абзацами порожній рядок",
+        "Не повторюй той самий сполучник: außerdem → zudem → darüber hinaus"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "fehler",
@@ -7862,6 +8514,86 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Words that make the text flow — they raise your overall language score.",
+     "blocks": [
+      {
+       "heading": "Sequence",
+       "lines": [
+        "Zunächst … · Anschließend … · Schließlich …",
+        "Zum einen … zum anderen …"
+       ]
+      },
+      {
+       "heading": "Addition",
+       "lines": [
+        "Außerdem · Zudem · Darüber hinaus · Hinzu kommt, dass …"
+       ]
+      },
+      {
+       "heading": "Contrast",
+       "lines": [
+        "Allerdings · Jedoch · Trotzdem · Dennoch · Andererseits",
+        "Zwar …, aber …"
+       ]
+      },
+      {
+       "heading": "Cause & effect",
+       "lines": [
+        "Da … · weil … · denn …",
+        "Deshalb · Daher · Aus diesem Grund · sodass …"
+       ]
+      },
+      {
+       "heading": "Example & conclusion",
+       "lines": [
+        "Zum Beispiel · Beispielsweise · So habe ich in meiner letzten Firma …",
+        "Alles in allem · Zusammenfassend · Abschließend möchte ich sagen, …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Слова, що роблять текст плавним, — підвищують загальну оцінку за мову.",
+     "blocks": [
+      {
+       "heading": "Послідовність",
+       "lines": [
+        "Zunächst … · Anschließend … · Schließlich …",
+        "Zum einen … zum anderen …"
+       ]
+      },
+      {
+       "heading": "Доповнення",
+       "lines": [
+        "Außerdem · Zudem · Darüber hinaus · Hinzu kommt, dass …"
+       ]
+      },
+      {
+       "heading": "Протиставлення",
+       "lines": [
+        "Allerdings · Jedoch · Trotzdem · Dennoch · Andererseits",
+        "Zwar …, aber …"
+       ]
+      },
+      {
+       "heading": "Причина й наслідок",
+       "lines": [
+        "Da … · weil … · denn …",
+        "Deshalb · Daher · Aus diesem Grund · sodass …"
+       ]
+      },
+      {
+       "heading": "Приклад і висновок",
+       "lines": [
+        "Zum Beispiel · Beispielsweise · So habe ich in meiner letzten Firma …",
+        "Alles in allem · Zusammenfassend · Abschließend möchte ich sagen, …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "konnektoren",
@@ -7905,6 +8637,78 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "The most frequent ones in real exam collections (in order of frequency). They earn points in the complaint reply and in Sprachbausteine T2.",
+     "blocks": [
+      {
+       "heading": "Most frequent",
+       "lines": [
+        "zur Verfügung stehen / stellen — to be available / to provide",
+        "Ersatz leisten · Schadenersatz verlangen — to compensate / to demand compensation",
+        "Bescheid geben / sagen — to let someone know",
+        "Rabatt · Skonto · Preisnachlass gewähren — to give a discount",
+        "Verantwortung übernehmen / tragen — to take responsibility",
+        "einen Vorschlag machen — to make a suggestion",
+        "in Ordnung bringen — to fix, to sort out",
+        "Überstunden leisten — to work overtime",
+        "in Rechnung stellen — to invoice",
+        "Stellung nehmen zu — to comment on, to give an opinion"
+       ]
+      },
+      {
+       "heading": "Frequent",
+       "lines": [
+        "Gebrauch machen von — to make use of",
+        "sich Mühe geben — to make an effort",
+        "sich in Verbindung setzen mit — to get in touch",
+        "einen Termin vereinbaren — to make an appointment",
+        "eine Frist einhalten / setzen — to meet a deadline / to set a deadline",
+        "eine Bestellung aufgeben — to place an order",
+        "Anspruch haben auf — to be entitled to",
+        "Maßnahmen ergreifen — to take measures",
+        "Bezug nehmen auf — to refer to",
+        "Wert legen auf — to attach importance to"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Найчастіші у збірках реальних іспитів (за частотою). Дають бали у відповіді на скаргу та в Sprachbausteine T2.",
+     "blocks": [
+      {
+       "heading": "Найчастіші",
+       "lines": [
+        "zur Verfügung stehen / stellen — бути в наявності / надавати",
+        "Ersatz leisten · Schadenersatz verlangen — відшкодувати / вимагати відшкодування",
+        "Bescheid geben / sagen — повідомити",
+        "Rabatt · Skonto · Preisnachlass gewähren — надати знижку",
+        "Verantwortung übernehmen / tragen — брати відповідальність",
+        "einen Vorschlag machen — внести пропозицію",
+        "in Ordnung bringen — виправити, залагодити",
+        "Überstunden leisten — працювати понаднормово",
+        "in Rechnung stellen — виставити рахунок",
+        "Stellung nehmen zu — висловити свою думку"
+       ]
+      },
+      {
+       "heading": "Часті",
+       "lines": [
+        "Gebrauch machen von — використовувати",
+        "sich Mühe geben — докладати зусиль",
+        "sich in Verbindung setzen mit — зв'язатися",
+        "einen Termin vereinbaren — домовитися про зустріч",
+        "eine Frist einhalten / setzen — дотримуватися строку / встановити строк",
+        "eine Bestellung aufgeben — зробити замовлення",
+        "Anspruch haben auf — мати право на",
+        "Maßnahmen ergreifen — вжити заходів",
+        "Bezug nehmen auf — посилатися на",
+        "Wert legen auf — надавати значення"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "nvv",
     "wortschatz",
@@ -7941,6 +8745,64 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Phrases that make your language sound 'B2-level' in Sprechen and Schreiben.",
+     "blocks": [
+      {
+       "heading": "List",
+       "lines": [
+        "in Anspruch nehmen — to make use of",
+        "in Betracht kommen / ziehen — to be an option / to consider",
+        "in Frage kommen — to be an option",
+        "zur Kenntnis nehmen — to take note of",
+        "einen Antrag stellen — to submit an application",
+        "eine Entscheidung treffen — to make a decision",
+        "eine Lösung finden — to find a solution",
+        "eine Rolle spielen — to play a role",
+        "Kritik üben an — to criticise",
+        "zur Folge haben — to result in",
+        "in Kauf nehmen — to put up with",
+        "in Kraft treten — to come into force",
+        "zum Ausdruck bringen — to express",
+        "einen Beitrag leisten zu — to contribute to",
+        "Rücksicht nehmen auf — to take into account",
+        "sich Sorgen machen um — to worry about",
+        "Einfluss haben auf — to have an influence on",
+        "Abschied nehmen von — to say goodbye to"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Вирази, завдяки яким твоя мова в Sprechen і Schreiben звучить 'як на B2'.",
+     "blocks": [
+      {
+       "heading": "Список",
+       "lines": [
+        "in Anspruch nehmen — скористатися",
+        "in Betracht kommen / ziehen — розглядатися / розглядати",
+        "in Frage kommen — бути можливим варіантом",
+        "zur Kenntnis nehmen — взяти до відома",
+        "einen Antrag stellen — подати заяву",
+        "eine Entscheidung treffen — ухвалити рішення",
+        "eine Lösung finden — знайти рішення",
+        "eine Rolle spielen — відігравати роль",
+        "Kritik üben an — критикувати",
+        "zur Folge haben — мати наслідком",
+        "in Kauf nehmen — миритися з",
+        "in Kraft treten — набувати чинності",
+        "zum Ausdruck bringen — висловлювати",
+        "einen Beitrag leisten zu — робити внесок у",
+        "Rücksicht nehmen auf — зважати на",
+        "sich Sorgen machen um — хвилюватися за",
+        "Einfluss haben auf — мати вплив на",
+        "Abschied nehmen von — прощатися з"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "nvv",
     "wortschatz"

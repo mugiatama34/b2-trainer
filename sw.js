@@ -1,6 +1,6 @@
 /* B2 Prüfungstrainer service worker.
    VERSION must match version.json and APP_VERSION in app.js (see CLAUDE.md). */
-const VERSION = '1.7.11';
+const VERSION = '1.7.12';
 const CACHE = 'b2trainer-v' + VERSION;
 const LEGACY_CACHE = 'b2trainer-v1'; // pre-banner release that cannot show the update banner
 const DATA_URL = './b2-data.json';

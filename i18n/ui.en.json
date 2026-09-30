@@ -223,5 +223,10 @@
  "update.available": "New version available 🎉",
  "update.reload": "Reload",
  "boot.loadFailed": "Could not load content (b2-data.json).",
- "boot.retry": "Try again"
+ "boot.retry": "Try again",
+ "about.title": "About",
+ "about.disclaimer": "This practice program is an independent, private project. It has no connection with telc gGmbH or the Federal Office for Migration and Refugees (BAMF) and is not official exam material. All exercises were created independently and only follow the format of the exam. Some content was created with the help of AI and may contain errors.",
+ "about.ok": "Got it",
+ "about.footer": "Independent practice project – not official telc/BAMF material",
+ "about.version": "Version {v}"
 }

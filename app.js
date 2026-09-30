@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.9.1';
+const APP_VERSION = '1.9.2';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -321,6 +321,7 @@ function renderHome() {
     <a class="btn" href="#/coach">🎙 Sprechen-Coach</a>
     <a class="btn" href="#/progress">${esc(t('home.progress'))}</a>
     <a class="btn" href="#/settings">${esc(t('home.settings'))}</a>
+    <p class="app-footer">${esc(t('about.footer'))}</p>
   `;
 }
 
@@ -1457,6 +1458,11 @@ function renderSettings() {
         <label class="field"><span>${esc(t('settings.writingMinutes', { name: WRITING_KINDS[k].name }))}</span>
           <input type="number" data-wmin="${k}" min="5" max="60" inputmode="numeric" value="${writingMinutes(k)}">
         </label>`).join('')}
+    </div>
+    <div class="card">
+      <h3>${esc(t('about.title'))}</h3>
+      ${disclaimerHtml()}
+      <p class="small muted">${esc(t('about.version', { v: APP_VERSION }))}</p>
     </div>`;
   $app.querySelectorAll('[data-lang]').forEach(b => {
     b.onclick = async () => {
@@ -2808,6 +2814,36 @@ function showLangPicker() {
   });
 }
 
+/* ---------- Disclaimer ----------
+   Shown once after the language choice (b2trainer:disclaimerAccepted); always readable in Settings → About.
+   The German wording is the reference text and is shown under the translation. */
+const DISCLAIMER_DE = 'Dieses Übungsprogramm ist ein unabhängiges, privates Projekt. Es steht in keiner Verbindung zur telc gGmbH '
+  + 'oder zum Bundesamt für Migration und Flüchtlinge (BAMF) und ist kein offizielles Prüfungsmaterial. Alle Übungen wurden '
+  + 'eigenständig erstellt und orientieren sich nur am Format der Prüfung. Einige Inhalte wurden mit Hilfe von KI erstellt '
+  + 'und können Fehler enthalten.';
+function disclaimerHtml() {
+  return `<p>${esc(t('about.disclaimer'))}</p>
+    <p class="small muted" lang="de">${esc(DISCLAIMER_DE)}</p>`;
+}
+function showDisclaimer() {
+  return new Promise(resolve => {
+    const box = document.createElement('div');
+    box.className = 'lang-screen';
+    box.innerHTML = `
+      <div class="lang-inner disclaimer">
+        <h1>${esc(t('about.title'))}</h1>
+        ${disclaimerHtml()}
+        <button class="btn primary" id="disclaimerOk">${esc(t('about.ok'))}</button>
+      </div>`;
+    document.body.appendChild(box);
+    box.querySelector('#disclaimerOk').onclick = () => {
+      store.set('disclaimerAccepted', true);
+      box.remove();
+      resolve();
+    };
+  });
+}
+
 async function boot() {
   migrateReading22();
   const saved = store.get('lang', '');
@@ -2823,6 +2859,7 @@ async function boot() {
     return;
   }
   if (!isLang(saved)) await showLangPicker();
+  if (!store.get('disclaimerAccepted', false)) await showDisclaimer();
   window.addEventListener('hashchange', router);
   router();
   checkForUpdate();

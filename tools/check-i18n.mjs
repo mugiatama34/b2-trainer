@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /* Validates the translations in b2-data.json (Görev 6, Adım 2).
 
-   Usage:  node tools/check-i18n.mjs [original.json] [--partial] [--data file.json]
+   Usage:  node tools/check-i18n.mjs [original.json] [--partial] [--data file.json] [--patch file.json]
      original.json  backup taken before the translation work (default: `git show HEAD:b2-data.json`)
      --partial      only report missing translations as a count (use between batches)
      --data         file to check (default: b2-data.json)
+     --patch        content patch (Görev 7; default: patch-v2.2.json, or its last version in git history). Objects whose id is in
+                    replace.{cards,reading,questions} are compared with the patch, not with original.json.
 
    Checks:
    1. every translatable item has en + uk (explanation_*, instructions_*, name_*, cards[].i18n.{en,uk})
@@ -12,7 +14,7 @@
       no Turkish-only letters (ı ş ğ İ …) left outside those quotes
    3. ids, answers, options and every existing field are unchanged (file minus the new fields == original)
    4. the JSON parses */
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -23,7 +25,11 @@ const args = process.argv.slice(2);
 const partial = args.includes('--partial');
 const dataIdx = args.indexOf('--data');
 const dataPath = dataIdx >= 0 ? args[dataIdx + 1] : path.join(ROOT, 'b2-data.json');
-const origArg = args.find((a, i) => !a.startsWith('--') && !(dataIdx >= 0 && i === dataIdx + 1));
+const patchIdx = args.indexOf('--patch');
+const patchPath = patchIdx >= 0 ? args[patchIdx + 1] : path.join(ROOT, 'patch-v2.2.json');
+const EXPECTED_VERSION = '2.2';
+const origArg = args.find((a, i) => !a.startsWith('--')
+  && !(dataIdx >= 0 && i === dataIdx + 1) && !(patchIdx >= 0 && i === patchIdx + 1));
 
 const errors = [];
 const missing = [];
@@ -44,6 +50,30 @@ try {
 } catch (e) {
   console.error('✗ cannot read the original file: ' + e.message);
   process.exit(1);
+}
+// Görev 7: replaced objects are checked against the patch (ids, answers, options, fields), everything else against orig.
+// The patch file is deleted from the repo after it is applied; then it is read from git history.
+function patchFromGit() {
+  const git = cmd => execSync(cmd, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20, stdio: ['ignore', 'pipe', 'ignore'] });
+  try { return git('git show HEAD:patch-v2.2.json'); } catch (e) { /* not in HEAD */ }
+  try { return git('git show "$(git rev-list -n 1 HEAD -- patch-v2.2.json)^:patch-v2.2.json"'); } catch (e) { return null; }
+}
+const patchRaw = patchIdx >= 0 || existsSync(patchPath) ? null : patchFromGit();
+if (patchIdx >= 0 || existsSync(patchPath) || patchRaw) {
+  let patch;
+  try {
+    patch = JSON.parse(patchRaw || readFileSync(patchPath, 'utf8'));
+  } catch (e) {
+    console.error('✗ cannot read the patch file: ' + e.message);
+    process.exit(1);
+  }
+  ['cards', 'reading', 'questions'].forEach(k => {
+    ((patch.replace || {})[k] || []).forEach(obj => {
+      const i = (orig[k] || []).findIndex(x => x.id === obj.id);
+      if (i < 0) { console.error(`✗ patch: ${k}[${obj.id}] not found in the original`); process.exit(1); }
+      orig[k][i] = obj;
+    });
+  });
 }
 
 /* ---- 2. text rules ---- */
@@ -178,7 +208,8 @@ function diff(a, b, where, out) {
 const stripped = strip(data, 0);
 stripped.meta = Object.assign({}, stripped.meta, { version: orig.meta.version });
 const changes = [];
-diff(stripped, orig, 'root', changes);
+// orig may already carry translations (Görev 7 starts from a translated file) — compare without them.
+diff(stripped, strip(orig, 0), 'root', changes);
 changes.forEach(c => err('original', c));
 
 /* ---- report ---- */
@@ -196,7 +227,7 @@ if (total) {
     if (total > 40) console.error(`  … ${total - 40} more`);
   }
 }
-if (!partial && data.meta.version !== '2.1') console.error(`✗ meta.version is ${data.meta.version}, expected 2.1`);
-const failed = errors.length || (!partial && (total || data.meta.version !== '2.1'));
+if (!partial && data.meta.version !== EXPECTED_VERSION) console.error(`✗ meta.version is ${data.meta.version}, expected ${EXPECTED_VERSION}`);
+const failed = errors.length || (!partial && (total || data.meta.version !== EXPECTED_VERSION));
 if (!failed) console.log('✓ i18n check passed' + (partial ? ' (partial)' : ''));
 process.exit(failed ? 1 : 0);

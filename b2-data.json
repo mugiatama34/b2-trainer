@@ -3696,6 +3696,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Points and passing rule",
+     "blocks": [
+      {
+       "heading": "Points (240 total, 60 per skill)",
+       "lines": [
+        "Lesen 60 · Hören 60 · Schreiben 60 · Sprechen 60",
+        "To pass: total ≥144 (60 %)",
+        "≥36 points in at least 3 of the 4 skills; one skill may be between 24–36"
+       ]
+      },
+      {
+       "heading": "How the 60 Schreiben points are split",
+       "lines": [
+        "Beschwerde-Antwort (Lesen+Schreiben T2): 7",
+        "Notiz (Hören+Schreiben T2): 6",
+        "Sprachbausteine T1+T2: 6 (12 × 0,5!)",
+        "Forumsbeitrag: 14",
+        "General language score for all texts: 27 → Redemittel earn points here"
+       ]
+      },
+      {
+       "heading": "Strategy",
+       "lines": [
+        "Spend max. 8–10 min on the Sprachbausteine, leave time for the Forumsbeitrag (35 min total)",
+        "Don't leave a question blank even if you're unsure"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Бали та правило складання",
+     "blocks": [
+      {
+       "heading": "Бали (240 загалом, по 60 за кожну навичку)",
+       "lines": [
+        "Lesen 60 · Hören 60 · Schreiben 60 · Sprechen 60",
+        "Щоб скласти: загалом ≥144 (60 %)",
+        "≥36 балів щонайменше в 3 з 4 навичок; одна навичка може бути в межах 24–36"
+       ]
+      },
+      {
+       "heading": "Розподіл 60 балів за Schreiben",
+       "lines": [
+        "Beschwerde-Antwort (Lesen+Schreiben T2): 7",
+        "Notiz (Hören+Schreiben T2): 6",
+        "Sprachbausteine T1+T2: 6 (12 × 0,5!)",
+        "Forumsbeitrag: 14",
+        "Загальна мовна оцінка за всі тексти: 27 → тут Redemittel приносять бали"
+       ]
+      },
+      {
+       "heading": "Стратегія",
+       "lines": [
+        "На Sprachbausteine виділи макс. 8–10 хв, залиш час на Forumsbeitrag (35 хв загалом)",
+        "Не залишай порожнім питання, навіть якщо не впевнений"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "überblick"
    ]
@@ -3751,6 +3813,106 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Write your opinion on a topic in the company forum: arguments + examples + paragraphs. ~150 words, ~20 min.",
+     "blocks": [
+      {
+       "heading": "Structure (5 paragraphs)",
+       "lines": [
+        "1 Einleitung: Thema nennen + eigene Meinung kurz",
+        "2 Pro-Argument + Beispiel",
+        "3 Contra-Argument + Beispiel",
+        "4 Eigener Vorschlag / Kompromiss",
+        "5 Schluss: Meinung zusammenfassen"
+       ]
+      },
+      {
+       "heading": "Einleitung",
+       "lines": [
+        "Hallo zusammen, ich möchte etwas zum Thema „…“ schreiben.",
+        "Ich habe gelesen, dass … Dazu habe ich eine klare Meinung.",
+        "Meiner Meinung nach ist das (keine) gute Idee."
+       ]
+      },
+      {
+       "heading": "Argumente",
+       "lines": [
+        "Ein wichtiges Argument dafür ist, dass …",
+        "Dafür spricht auch, dass …",
+        "Andererseits muss man bedenken, dass …",
+        "Dagegen spricht, dass …",
+        "Ein Beispiel: In meiner letzten Firma …"
+       ]
+      },
+      {
+       "heading": "Vorschlag",
+       "lines": [
+        "Ich schlage vor, dass …",
+        "Wäre es nicht besser, wenn …?",
+        "Ein Kompromiss könnte sein, dass …"
+       ]
+      },
+      {
+       "heading": "Schluss",
+       "lines": [
+        "Alles in allem bin ich der Meinung, dass …",
+        "Zusammenfassend finde ich …",
+        "Was meint ihr/meinen Sie dazu?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Напиши свою думку на тему у форумі компанії: аргументи + приклади + абзаци. ~150 слів, ~20 хв.",
+     "blocks": [
+      {
+       "heading": "Структура (5 абзаців)",
+       "lines": [
+        "1 Einleitung: Thema nennen + eigene Meinung kurz",
+        "2 Pro-Argument + Beispiel",
+        "3 Contra-Argument + Beispiel",
+        "4 Eigener Vorschlag / Kompromiss",
+        "5 Schluss: Meinung zusammenfassen"
+       ]
+      },
+      {
+       "heading": "Einleitung",
+       "lines": [
+        "Hallo zusammen, ich möchte etwas zum Thema „…“ schreiben.",
+        "Ich habe gelesen, dass … Dazu habe ich eine klare Meinung.",
+        "Meiner Meinung nach ist das (keine) gute Idee."
+       ]
+      },
+      {
+       "heading": "Argumente",
+       "lines": [
+        "Ein wichtiges Argument dafür ist, dass …",
+        "Dafür spricht auch, dass …",
+        "Andererseits muss man bedenken, dass …",
+        "Dagegen spricht, dass …",
+        "Ein Beispiel: In meiner letzten Firma …"
+       ]
+      },
+      {
+       "heading": "Vorschlag",
+       "lines": [
+        "Ich schlage vor, dass …",
+        "Wäre es nicht besser, wenn …?",
+        "Ein Kompromiss könnte sein, dass …"
+       ]
+      },
+      {
+       "heading": "Schluss",
+       "lines": [
+        "Alles in allem bin ich der Meinung, dass …",
+        "Zusammenfassend finde ich …",
+        "Was meint ihr/meinen Sie dazu?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum"
@@ -3813,6 +3975,116 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Your boss has forwarded a customer complaint to you. Write a formal reply to the customer; cover all the given points. ~15 min.",
+     "blocks": [
+      {
+       "heading": "Structure",
+       "lines": [
+        "Anrede",
+        "Dank + Entschuldigung",
+        "Grund erklären (kurz, ohne Ausreden)",
+        "Lösung anbieten",
+        "Entschädigung / Angebot",
+        "Abschluss + Gruß"
+       ]
+      },
+      {
+       "heading": "Dank & Entschuldigung",
+       "lines": [
+        "vielen Dank für Ihre E-Mail vom … .",
+        "Es tut uns sehr leid, dass …",
+        "Bitte entschuldigen Sie die Unannehmlichkeiten."
+       ]
+      },
+      {
+       "heading": "Erklärung",
+       "lines": [
+        "Leider ist uns ein Fehler unterlaufen.",
+        "Grund dafür war ein technisches Problem / ein Personalengpass."
+       ]
+      },
+      {
+       "heading": "Lösung",
+       "lines": [
+        "Selbstverständlich ersetzen wir Ihnen die Ware kostenlos.",
+        "Wir übernehmen die Kosten für die Rücksendung.",
+        "Wir haben bereits Maßnahmen ergriffen, damit so etwas nicht wieder passiert."
+       ]
+      },
+      {
+       "heading": "Entschädigung",
+       "lines": [
+        "Als kleine Entschädigung erhalten Sie einen Gutschein über … Euro.",
+        "Bei Ihrer nächsten Bestellung gewähren wir Ihnen 10 % Rabatt."
+       ]
+      },
+      {
+       "heading": "Abschluss",
+       "lines": [
+        "Wir hoffen, dass Sie uns weiterhin Ihr Vertrauen schenken.",
+        "Für Rückfragen stehe ich Ihnen gern zur Verfügung.",
+        "Mit freundlichen Grüßen"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Твій керівник переслав тобі скаргу клієнта. Напиши клієнту офіційну відповідь; розкрий усі задані пункти. ~15 хв.",
+     "blocks": [
+      {
+       "heading": "Структура",
+       "lines": [
+        "Anrede",
+        "Dank + Entschuldigung",
+        "Grund erklären (kurz, ohne Ausreden)",
+        "Lösung anbieten",
+        "Entschädigung / Angebot",
+        "Abschluss + Gruß"
+       ]
+      },
+      {
+       "heading": "Dank & Entschuldigung",
+       "lines": [
+        "vielen Dank für Ihre E-Mail vom … .",
+        "Es tut uns sehr leid, dass …",
+        "Bitte entschuldigen Sie die Unannehmlichkeiten."
+       ]
+      },
+      {
+       "heading": "Erklärung",
+       "lines": [
+        "Leider ist uns ein Fehler unterlaufen.",
+        "Grund dafür war ein technisches Problem / ein Personalengpass."
+       ]
+      },
+      {
+       "heading": "Lösung",
+       "lines": [
+        "Selbstverständlich ersetzen wir Ihnen die Ware kostenlos.",
+        "Wir übernehmen die Kosten für die Rücksendung.",
+        "Wir haben bereits Maßnahmen ergriffen, damit so etwas nicht wieder passiert."
+       ]
+      },
+      {
+       "heading": "Entschädigung",
+       "lines": [
+        "Als kleine Entschädigung erhalten Sie einen Gutschein über … Euro.",
+        "Bei Ihrer nächsten Bestellung gewähren wir Ihnen 10 % Rabatt."
+       ]
+      },
+      {
+       "heading": "Abschluss",
+       "lines": [
+        "Wir hoffen, dass Sie uns weiterhin Ihr Vertrauen schenken.",
+        "Für Rückfragen stehe ich Ihnen gern zur Verfügung.",
+        "Mit freundlichen Grüßen"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde"
@@ -3844,6 +4116,54 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Listen to the customer's phone call and fill in the 4 gaps in the form (42–45). Full sentences aren't needed.",
+     "blocks": [
+      {
+       "heading": "Tactics",
+       "lines": [
+        "Read the form before listening: what information is needed? (Name, Datum, Anzahl, Problem, Rückruf …)",
+        "Write only the key information: 'Lieferung Montag statt Freitag'",
+        "If a name is spelled out letter by letter, write it down carefully (buchstabieren)",
+        "Numbers/dates: '15.' = 'fünfzehnten' — write it in date format"
+       ]
+      },
+      {
+       "heading": "Ready-made abbreviations",
+       "lines": [
+        "Rückruf erbeten → Rückruf bis …",
+        "Tel.-Nr.",
+        "Anz. = Anzahl",
+        "Termin: Di, 14 Uhr"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Прослухай телефонну розмову клієнта й заповни 4 пропуски у формі (42–45). Повні речення не потрібні.",
+     "blocks": [
+      {
+       "heading": "Тактика",
+       "lines": [
+        "Прочитай форму перед прослуховуванням: яка інформація потрібна? (Name, Datum, Anzahl, Problem, Rückruf …)",
+        "Пиши лише ключову інформацію: 'Lieferung Montag statt Freitag'",
+        "Якщо ім'я диктують по літерах, записуй уважно (buchstabieren)",
+        "Числа/дати: '15.' = 'fünfzehnten' — пиши у форматі дати"
+       ]
+      },
+      {
+       "heading": "Готові скорочення",
+       "lines": [
+        "Rückruf erbeten → Rückruf bis …",
+        "Tel.-Nr.",
+        "Anz. = Anzahl",
+        "Termin: Di, 14 Uhr"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "hören",
@@ -3882,6 +4202,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Gesundheitswesen · die Klinik · die Beratungsstelle",
+        "psychologische Beratung / Diagnostik anbieten",
+        "die Station · die Ambulanz · die Verwaltung",
+        "zuständig sein für · Gespräche führen · Tests auswerten"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Gesundheitswesen · die Klinik · die Beratungsstelle",
+        "psychologische Beratung / Diagnostik anbieten",
+        "die Station · die Ambulanz · die Verwaltung",
+        "zuständig sein für · Gespräche führen · Tests auswerten"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -3926,6 +4308,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "ein unbefristeter Vertrag · die Jobsicherheit",
+        "ein faires Gehalt · Zusatzleistungen",
+        "Weiterbildung · Supervision · Aufstiegschancen",
+        "Wertschätzung · offene Kommunikation"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "ein unbefristeter Vertrag · die Jobsicherheit",
+        "ein faires Gehalt · Zusatzleistungen",
+        "Weiterbildung · Supervision · Aufstiegschancen",
+        "Wertschätzung · offene Kommunikation"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -3970,6 +4414,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Psychologiestudium · das Praktikum",
+        "sich interessieren für · sich entscheiden für",
+        "die Anerkennung des Abschlusses",
+        "neu anfangen · sich weiterbilden"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Psychologiestudium · das Praktikum",
+        "sich interessieren für · sich entscheiden für",
+        "die Anerkennung des Abschlusses",
+        "neu anfangen · sich weiterbilden"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4014,6 +4520,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Vorbild · bewundern · die Supervisorin",
+        "geduldig · empathisch · zuverlässig · professionell",
+        "Einfluss haben auf · prägen",
+        "sich ein Beispiel nehmen an"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "das Vorbild · bewundern · die Supervisorin",
+        "geduldig · empathisch · zuverlässig · professionell",
+        "Einfluss haben auf · prägen",
+        "sich ein Beispiel nehmen an"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4058,6 +4626,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "die Stellenanzeige · das Jobportal · die Agentur für Arbeit",
+        "die Bewerbungsunterlagen: Anschreiben, Lebenslauf, Zeugnisse",
+        "die Anerkennung · die Hospitation",
+        "Beziehungen · das Netzwerk"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "die Stellenanzeige · das Jobportal · die Agentur für Arbeit",
+        "die Bewerbungsunterlagen: Anschreiben, Lebenslauf, Zeugnisse",
+        "die Anerkennung · die Hospitation",
+        "Beziehungen · das Netzwerk"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4102,6 +4732,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "sich vorbereiten · sich über die Einrichtung informieren",
+        "pünktlich · gepflegt · angemessen gekleidet",
+        "Stärken und Schwächen · Fallbeispiel",
+        "Fragen stellen · einen guten Eindruck machen"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "sich vorbereiten · sich über die Einrichtung informieren",
+        "pünktlich · gepflegt · angemessen gekleidet",
+        "Stärken und Schwächen · Fallbeispiel",
+        "Fragen stellen · einen guten Eindruck machen"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4146,6 +4838,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "die Online-Beratung · die Videosprechstunde",
+        "der Nutzen · flexibel · ortsunabhängig",
+        "der Vorteil / der Nachteil · der Datenschutz",
+        "erfolgreich sein · die Nachfrage steigt"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "die Online-Beratung · die Videosprechstunde",
+        "der Nutzen · flexibel · ortsunabhängig",
+        "der Vorteil / der Nachteil · der Datenschutz",
+        "erfolgreich sein · die Nachfrage steigt"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4190,6 +4944,68 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "sich selbstständig machen · eine Praxis eröffnen",
+        "die Zielgruppe · der Bedarf",
+        "das Startkapital · die Beratung (z. B. IHK)",
+        "zweisprachig · kultursensibel"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+     "blocks": [
+      {
+       "heading": "Aufbau (≈2 Min.)",
+       "lines": [
+        "Einleitung: Ich möchte über … sprechen.",
+        "Alle Stichpunkte der Aufgabe der Reihe nach",
+        "Beispiel aus eigener Erfahrung",
+        "Schluss: Zusammenfassend …"
+       ]
+      },
+      {
+       "heading": "Wortschatz",
+       "lines": [
+        "sich selbstständig machen · eine Praxis eröffnen",
+        "die Zielgruppe · der Bedarf",
+        "das Startkapital · die Beratung (z. B. IHK)",
+        "zweisprachig · kultursensibel"
+       ]
+      },
+      {
+       "heading": "Verbinden",
+       "lines": [
+        "Zuerst … · Außerdem … · Ein weiterer Punkt ist … · Zum Schluss …",
+        "Zum Beispiel … · Deshalb … · Allerdings …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1",
@@ -4230,6 +5046,60 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "After your presentation the examiner asks 2–3 questions (~2 min).",
+     "blocks": [
+      {
+       "heading": "Zeit gewinnen",
+       "lines": [
+        "Das ist eine gute Frage.",
+        "Darüber habe ich noch nicht nachgedacht, aber …",
+        "Wenn ich ehrlich bin, …"
+       ]
+      },
+      {
+       "heading": "Antwort-Formel",
+       "lines": [
+        "Antwort (1 Satz) → Grund (weil …) → Beispiel (Zum Beispiel …)"
+       ]
+      },
+      {
+       "heading": "Nicht verstanden?",
+       "lines": [
+        "Entschuldigung, können Sie die Frage bitte wiederholen?",
+        "Meinen Sie damit, dass …?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Після презентації екзаменатор ставить 2–3 питання (~2 хв).",
+     "blocks": [
+      {
+       "heading": "Zeit gewinnen",
+       "lines": [
+        "Das ist eine gute Frage.",
+        "Darüber habe ich noch nicht nachgedacht, aber …",
+        "Wenn ich ehrlich bin, …"
+       ]
+      },
+      {
+       "heading": "Antwort-Formel",
+       "lines": [
+        "Antwort (1 Satz) → Grund (weil …) → Beispiel (Zum Beispiel …)"
+       ]
+      },
+      {
+       "heading": "Nicht verstanden?",
+       "lines": [
+        "Entschuldigung, können Sie die Frage bitte wiederholen?",
+        "Meinen Sie damit, dass …?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1"
@@ -4258,6 +5128,50 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Explain one point from your partner's presentation in ~30 sec. TAKE NOTES while your partner is speaking!",
+     "blocks": [
+      {
+       "heading": "Redemittel",
+       "lines": [
+        "Meine Gesprächspartnerin hat über … gesprochen.",
+        "Ein wichtiger Punkt war …",
+        "Sie hat erklärt, dass …",
+        "Als Beispiel hat sie … genannt.",
+        "Das fand ich interessant, weil …"
+       ]
+      },
+      {
+       "heading": "Notiz-Tipp",
+       "lines": [
+        "Only 3–4 key words: Thema · Punkt 1 · Punkt 2 · Beispiel"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Поясни один пункт із презентації партнера за ~30 с. РОБИ НОТАТКИ, поки партнер говорить!",
+     "blocks": [
+      {
+       "heading": "Redemittel",
+       "lines": [
+        "Meine Gesprächspartnerin hat über … gesprochen.",
+        "Ein wichtiger Punkt war …",
+        "Sie hat erklärt, dass …",
+        "Als Beispiel hat sie … genannt.",
+        "Das fand ich interessant, weil …"
+       ]
+      },
+      {
+       "heading": "Notiz-Tipp",
+       "lines": [
+        "Лише 3–4 ключові слова: Thema · Punkt 1 · Punkt 2 · Beispiel"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil1"
@@ -4293,6 +5207,64 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Two cards: answer your colleague's question, then ask a question yourself. Du-Form! ~3 min.",
+     "blocks": [
+      {
+       "heading": "Formel",
+       "lines": [
+        "Antworten → Begründen → Beispiel → Gegenfrage (Und du?)"
+       ]
+      },
+      {
+       "heading": "Reagieren",
+       "lines": [
+        "Ach, echt? Das wusste ich nicht.",
+        "Das geht mir genauso.",
+        "Bei mir ist das ein bisschen anders.",
+        "Das kann ich gut verstehen."
+       ]
+      },
+      {
+       "heading": "Gegenfragen",
+       "lines": [
+        "Und wie ist das bei dir?",
+        "Was machst du normalerweise …?",
+        "Hast du auch schon mal …?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Дві картки: дай відповідь на питання колеги, а потім сам постав питання. Du-Form! ~3 хв.",
+     "blocks": [
+      {
+       "heading": "Formel",
+       "lines": [
+        "Antworten → Begründen → Beispiel → Gegenfrage (Und du?)"
+       ]
+      },
+      {
+       "heading": "Reagieren",
+       "lines": [
+        "Ach, echt? Das wusste ich nicht.",
+        "Das geht mir genauso.",
+        "Bei mir ist das ein bisschen anders.",
+        "Das kann ich gut verstehen."
+       ]
+      },
+      {
+       "heading": "Gegenfragen",
+       "lines": [
+        "Und wie ist das bei dir?",
+        "Was machst du normalerweise …?",
+        "Hast du auch schon mal …?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil2"
@@ -4319,6 +5291,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Practise answering each one out loud with 3 sentences + a counter-question.",
+     "blocks": [
+      {
+       "heading": "Fragen",
+       "lines": [
+        "Machst du lieber Früh- oder Spätschicht?",
+        "Wie kommst du morgens zur Arbeit?",
+        "Wo verbringst du deine Mittagspause?",
+        "Arbeitest du gern im Homeoffice?",
+        "Hast du schon Pläne für den Urlaub?",
+        "Gehst du zur Weihnachtsfeier der Firma?",
+        "Machst du gerade eine Weiterbildung?",
+        "Wie findest du die neue Kantine?"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Потренуйся відповідати вголос на кожне: 3 речення + зустрічне питання.",
+     "blocks": [
+      {
+       "heading": "Fragen",
+       "lines": [
+        "Machst du lieber Früh- oder Spätschicht?",
+        "Wie kommst du morgens zur Arbeit?",
+        "Wo verbringst du deine Mittagspause?",
+        "Arbeitest du gern im Homeoffice?",
+        "Hast du schon Pläne für den Urlaub?",
+        "Gehst du zur Weihnachtsfeier der Firma?",
+        "Machst du gerade eine Weiterbildung?",
+        "Wie findest du die neue Kantine?"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil2"
@@ -4382,6 +5392,120 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "A problem at work: find a solution together with your partner, split the tasks, discuss a long-term measure. ~4 min.",
+     "blocks": [
+      {
+       "heading": "Ablauf",
+       "lines": [
+        "1 Problem zusammenfassen",
+        "2 Sofortmaßnahme vorschlagen",
+        "3 Auf Partner reagieren (zustimmen / Alternative)",
+        "4 Aufgaben verteilen: Wer macht was?",
+        "5 Langfristige Lösung",
+        "6 Zusammenfassen"
+       ]
+      },
+      {
+       "heading": "Vorschlagen",
+       "lines": [
+        "Ich schlage vor, dass wir zuerst …",
+        "Wie wäre es, wenn wir …?",
+        "Wir könnten doch …"
+       ]
+      },
+      {
+       "heading": "Zustimmen",
+       "lines": [
+        "Gute Idee, so machen wir das.",
+        "Da hast du recht.",
+        "Einverstanden."
+       ]
+      },
+      {
+       "heading": "Widersprechen (höflich)",
+       "lines": [
+        "Ich verstehe deinen Punkt, aber …",
+        "Ich bin mir nicht sicher, ob das funktioniert, weil …",
+        "Was hältst du stattdessen von …?"
+       ]
+      },
+      {
+       "heading": "Aufgaben verteilen",
+       "lines": [
+        "Ich kümmere mich um …, und du übernimmst …",
+        "Wer ruft den Lieferanten an?",
+        "Kannst du bitte … erledigen?"
+       ]
+      },
+      {
+       "heading": "Langfristig & Schluss",
+       "lines": [
+        "Langfristig sollten wir …",
+        "Damit das nicht wieder passiert, …",
+        "Also, fassen wir zusammen: …"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Проблема на роботі: разом із партнером знайди рішення, розподіліть завдання, обговоріть довгостроковий захід. ~4 хв.",
+     "blocks": [
+      {
+       "heading": "Ablauf",
+       "lines": [
+        "1 Problem zusammenfassen",
+        "2 Sofortmaßnahme vorschlagen",
+        "3 Auf Partner reagieren (zustimmen / Alternative)",
+        "4 Aufgaben verteilen: Wer macht was?",
+        "5 Langfristige Lösung",
+        "6 Zusammenfassen"
+       ]
+      },
+      {
+       "heading": "Vorschlagen",
+       "lines": [
+        "Ich schlage vor, dass wir zuerst …",
+        "Wie wäre es, wenn wir …?",
+        "Wir könnten doch …"
+       ]
+      },
+      {
+       "heading": "Zustimmen",
+       "lines": [
+        "Gute Idee, so machen wir das.",
+        "Da hast du recht.",
+        "Einverstanden."
+       ]
+      },
+      {
+       "heading": "Widersprechen (höflich)",
+       "lines": [
+        "Ich verstehe deinen Punkt, aber …",
+        "Ich bin mir nicht sicher, ob das funktioniert, weil …",
+        "Was hältst du stattdessen von …?"
+       ]
+      },
+      {
+       "heading": "Aufgaben verteilen",
+       "lines": [
+        "Ich kümmere mich um …, und du übernimmst …",
+        "Wer ruft den Lieferanten an?",
+        "Kannst du bitte … erledigen?"
+       ]
+      },
+      {
+       "heading": "Langfristig & Schluss",
+       "lines": [
+        "Langfristig sollten wir …",
+        "Damit das nicht wieder passiert, …",
+        "Also, fassen wir zusammen: …"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3"
@@ -4403,6 +5527,34 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Im Büro ist der Drucker kaputt. Morgen früh müssen 50 Angebotsmappen für eine Messe fertig sein.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Sofort: Copyshop? Anderer Drucker im Haus?",
+        "Wer macht was?",
+        "Langfristig: Wartungsvertrag, Ersatzgerät"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Im Büro ist der Drucker kaputt. Morgen früh müssen 50 Angebotsmappen für eine Messe fertig sein.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Sofort: Copyshop? Anderer Drucker im Haus?",
+        "Wer macht was?",
+        "Langfristig: Wartungsvertrag, Ersatzgerät"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -4424,6 +5576,34 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Zwei Kollegen sind krank. In der Pflegestation fehlt am Wochenende Personal.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Schichtplan ändern? Aushilfe?",
+        "Chefin informieren",
+        "Langfristig: Springerpool, Überstundenausgleich"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Zwei Kollegen sind krank. In der Pflegestation fehlt am Wochenende Personal.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Schichtplan ändern? Aushilfe?",
+        "Chefin informieren",
+        "Langfristig: Springerpool, Überstundenausgleich"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -4445,6 +5625,34 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Ein wichtiger Kunde beschwert sich, weil seine Bestellung schon zum dritten Mal verspätet ist.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kunden anrufen, entschuldigen, Rabatt?",
+        "Ursache im Lager klären",
+        "Langfristig: Lieferprozess verbessern"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Ein wichtiger Kunde beschwert sich, weil seine Bestellung schon zum dritten Mal verspätet ist.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kunden anrufen, entschuldigen, Rabatt?",
+        "Ursache im Lager klären",
+        "Langfristig: Lieferprozess verbessern"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",
@@ -4466,6 +5674,34 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Das neue Computerprogramm ist seit einer Woche im Einsatz, aber viele Kollegen kommen nicht damit zurecht.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kurzfristig: Hilfe durch IT, Anleitung",
+        "Schulung organisieren",
+        "Langfristig: Ansprechpartner im Team"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Das neue Computerprogramm ist seit einer Woche im Einsatz, aber viele Kollegen kommen nicht damit zurecht.",
+     "blocks": [
+      {
+       "heading": "Stichpunkte",
+       "lines": [
+        "Kurzfristig: Hilfe durch IT, Anleitung",
+        "Schulung organisieren",
+        "Langfristig: Ansprechpartner im Team"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "sprechen",
     "teil3",

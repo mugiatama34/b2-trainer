@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.7.12';
+const APP_VERSION = '1.8.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -1094,9 +1094,25 @@ function getApiKey() { return store.get('apiKey', ''); }
 function getModel() { return getSettings().model || DEFAULT_MODEL; }
 
 let promptsModule = null;
-function loadPrompts() {
+// Prompts with {{LANG_NAME}} / {{PROFESSION}} filled in for the current language and the optional profession setting.
+async function loadPrompts() {
   if (!promptsModule) promptsModule = import('./prompts.js').catch(e => { promptsModule = null; throw e; });
-  return promptsModule;
+  const mod = await promptsModule;
+  const out = {};
+  Object.keys(mod).forEach(k => { out[k] = localizePrompt(mod[k]); });
+  return out;
+}
+function localizePrompt(text) {
+  const job = String(getSettings().profession || '').trim();
+  return String(text)
+    .split('{{LANG_NAME}}').join(langInfo().llm)
+    .split('{{PROFESSION}}').join(job ? ', working as ' + job : '');
+}
+/* AI replies use language-neutral field names (summary, explanation, tips, comment, goal, ok);
+   older replies/history used *_tr — read both. */
+function pick(obj, name) {
+  if (!obj) return undefined;
+  return obj[name] != null ? obj[name] : obj[name + '_tr'];
 }
 
 class CoachError extends Error {}
@@ -1253,7 +1269,7 @@ function correctionsHtml(list) {
   return `<ul class="corrections">${list.map(c => `
     <li>
       <div lang="de"><span class="wrong-text">${esc(c.original)}</span> → <span class="right-text">${esc(c.corrected)}</span></div>
-      ${c.explanation_tr ? `<div class="small muted">${esc(c.explanation_tr)}</div>` : ''}
+      ${pick(c, 'explanation') ? `<div class="small muted">${esc(pick(c, 'explanation'))}</div>` : ''}
     </li>`).join('')}</ul>`;
 }
 function renderEvalResult(el, result, rawText) {
@@ -1269,7 +1285,7 @@ function renderEvalResult(el, result, rawText) {
       <div class="scores" lang="de">${CRITERIA.map(([k, name]) => `
         <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
       <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1</p>
-      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+      ${pick(result, 'summary') ? `<p>${esc(pick(result, 'summary'))}</p>` : ''}
     </div>
     ${Array.isArray(result.corrections) && result.corrections.length ? `
       <div class="card"><h3>${esc(t('eval.corrections'))}</h3>${correctionsHtml(result.corrections)}</div>` : ''}
@@ -1282,8 +1298,8 @@ function renderEvalResult(el, result, rawText) {
         </div>
         <div class="sample" lang="de">${esc(result.improved_de)}</div>
       </div>` : ''}
-    ${Array.isArray(result.tips_tr) && result.tips_tr.length ? `
-      <div class="card"><h3>${esc(t('eval.tips'))}</h3><ul>${result.tips_tr.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+    ${Array.isArray(pick(result, 'tips')) && pick(result, 'tips').length ? `
+      <div class="card"><h3>${esc(t('eval.tips'))}</h3><ul>${pick(result, 'tips').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}`;
   const sp = el.querySelector('[data-speak]');
   if (sp) {
     sp.onclick = () => speakDe(result.improved_de);
@@ -1336,6 +1352,14 @@ function renderSettings() {
       <p class="small muted">${esc(t('settings.noKeyHelp'))}</p>
     </div>
     <div class="card">
+      <h3>${esc(t('settings.aiTitle'))}</h3>
+      <label class="field"><span>${esc(t('settings.profession'))}</span>
+        <input type="text" id="jobInput" autocomplete="organization-title" value="${esc(settings.profession || '')}"
+          placeholder="${esc(t('settings.professionPlaceholder'))}">
+      </label>
+      <p class="small muted">${esc(t('settings.professionHelp'))}</p>
+    </div>
+    <div class="card">
       <h3>Sprechen</h3>
       <label class="field"><span>${esc(t('settings.monolog'))}</span>
         <select id="monoSelect">${MONOLOG_OPTIONS.map(m =>
@@ -1366,6 +1390,11 @@ function renderSettings() {
       inp.value = s[K.minutesKey];
     };
   });
+  document.getElementById('jobInput').onchange = e => {
+    const s = getSettings();
+    s.profession = e.target.value.trim();
+    saveSettings(s);
+  };
   document.getElementById('monoSelect').onchange = e => {
     const s = getSettings();
     s.monologMinutes = parseInt(e.target.value, 10) || 3;
@@ -1565,7 +1594,7 @@ function renderFollowups(el, questions, card, my) {
         const r = parseJsonReply(text);
         if (!r) { out.innerHTML = `<div class="sample small">${esc(text)}</div>`; return; }
         out.innerHTML = `
-          ${r.ok_tr ? `<p class="verdict ok">✓ ${esc(r.ok_tr)}</p>` : ''}
+          ${pick(r, 'ok') ? `<p class="verdict ok">✓ ${esc(pick(r, 'ok'))}</p>` : ''}
           ${correctionsHtml(r.corrections)}
           ${r.better_answer_de ? `<h3>Musterantwort</h3>
             <button class="btn inline" data-say2>🔊 Vorlesen</button>
@@ -1661,7 +1690,8 @@ function setupRecorder(seconds) {
 
 /* ---------- Modes 2 + 3: partner dialogues (Teil 2 Smalltalk, Teil 3 Lösungswege) ---------- */
 const PROMPT_NEW_SITUATION = `You write practice situations for the German exam "Deutsch-Test für den Beruf B2", Sprechen Teil 3 (Lösungswege diskutieren).
-Invent ONE new, realistic workplace problem that two colleagues must solve together (vary the setting: office, clinic, care, counselling centre, logistics, customer service). 1-2 German sentences at B2 level. Output only the situation, no introduction, no quotes.`;
+Invent ONE new, realistic workplace problem that two colleagues must solve together (vary the setting: office, clinic, care, counselling centre, logistics, customer service). 1-2 German sentences at B2 level. Output only the situation, no introduction, no quotes.
+Write every explanation, summary, tip and comment in {{LANG_NAME}}. Corrections and model texts stay in German.`;
 
 const DIALOG_KINDS = {
   t2: { title: 'Teil 2 · Smalltalk', task: 'Teil 2 Smalltalk mit Kollegen (du-Form)', turns: '5', maxTurns: 5 },
@@ -1750,7 +1780,7 @@ function renderCoachDialog(kind, arg) {
     const errEl = document.getElementById('sitErr');
     errEl.textContent = '';
     try {
-      const text = await callClaude(PROMPT_NEW_SITUATION,
+      const text = await callClaude(localizePrompt(PROMPT_NEW_SITUATION),
         [{ role: 'user', content: 'Neue Situation, bitte. (' + Math.floor(Math.random() * 1e6) + ')' }], { maxTokens: CHAT_TOKENS });
       if (my !== screenId) return;
       situation = text.replace(/^["„]|["“]$/g, '').trim();
@@ -1906,7 +1936,7 @@ function renderCoachDialog(kind, arg) {
   async function rolePlayPrompt() {
     const sys = await systemPrompt();
     const done = history.length > 1 ? '\n\nConversation so far:\n' + transcript() + '\n\nContinue the role-play from here.' : '\n\n' + kickoff();
-    return sys + done + '\n\nAt the end, when I write "Bewerten", evaluate only my turns as a DTB B2 examiner (A/B/C/D for Aufgabe, Kohärenz, Wortschatz, Strukturen; corrections with Turkish explanations).';
+    return sys + done + '\n\nAt the end, when I write "Bewerten", evaluate only my turns as a DTB B2 examiner (A/B/C/D for Aufgabe, Kohärenz, Wortschatz, Strukturen; corrections with explanations in ' + langInfo().llm + ').';
   }
   function drawNoKeyFallback() {
     renderFallback(fallbackEl, rolePlayPrompt, t('chat.noKey'));
@@ -2017,14 +2047,16 @@ function writingEvalPrompt(P, task, text) {
 }
 function isCovered(item) { return item && (item.covered === true || item.covered === 'true'); }
 
-/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım") */
+/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım").
+   `tr` keeps its old name for stored data but holds the meaning in whatever language the evaluation used. */
+function phraseMeaning(p) { return (p && (p.translation || p.tr)) || ''; }
 function getMyPhrases() { return store.get('myPhrases', []); }
 function phraseKey(de) { return String(de || '').trim().toLowerCase(); }
 function hasMyPhrase(de) { return getMyPhrases().some(p => phraseKey(p.de) === phraseKey(de)); }
 function addMyPhrase(p) {
   const list = getMyPhrases();
   if (!p || !p.de || list.some(x => phraseKey(x.de) === phraseKey(p.de))) return;
-  list.push({ de: String(p.de).trim(), tr: String(p.tr || '').trim(), date: Date.now() });
+  list.push({ de: String(p.de).trim(), tr: String(phraseMeaning(p)).trim(), date: Date.now() });
   store.set('myPhrases', list);
 }
 function removeMyPhrase(de) {
@@ -2054,7 +2086,7 @@ function renderWritingResult(el, result, rawText, task, text) {
   const checklist = Array.isArray(result.checklist) ? result.checklist : [];
   const okN = checklist.filter(isCovered).length;
   const phrases = (Array.isArray(result.useful_phrases) ? result.useful_phrases : []).filter(p => p && p.de);
-  const tips = Array.isArray(result.tips_tr) ? result.tips_tr : [];
+  const tips = Array.isArray(pick(result, 'tips')) ? pick(result, 'tips') : [];
   el.innerHTML = `
     ${checklist.length ? `
       <div class="card">
@@ -2062,7 +2094,7 @@ function renderWritingResult(el, result, rawText, task, text) {
         <p class="small muted">${esc(t('write.checklistHelp'))}</p>
         <ul class="checklist">${checklist.map(c => `
           <li class="${isCovered(c) ? 'ok' : 'bad'}"><span class="mark">${isCovered(c) ? '✅' : '❌'}</span>
-            <span><span lang="de">${esc(c.point)}</span>${c.comment_tr ? `<span class="sub">${esc(c.comment_tr)}</span>` : ''}</span></li>`).join('')}
+            <span><span lang="de">${esc(c.point)}</span>${pick(c, 'comment') ? `<span class="sub">${esc(pick(c, 'comment'))}</span>` : ''}</span></li>`).join('')}
         </ul>
       </div>` : ''}
     <div class="card">
@@ -2070,14 +2102,14 @@ function renderWritingResult(el, result, rawText, task, text) {
       <div class="scores" lang="de">${WRITING_CRITERIA.map(([k, name]) => `
         <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
       <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1 · <strong>${esc(t('common.words', { n: countWords(text) }))}</strong> (${esc(t('write.target', { words: K.words }))})</p>
-      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+      ${pick(result, 'summary') ? `<p>${esc(pick(result, 'summary'))}</p>` : ''}
     </div>
     ${Array.isArray(result.corrections) && result.corrections.length ? `
       <div class="card"><h3>${esc(t('eval.corrections'))}</h3>${correctionsHtml(result.corrections)}</div>` : ''}
     ${phrases.length ? `
       <div class="card"><h3>${esc(t('write.phrases'))}</h3>
         <ul class="phrase-list">${phrases.map((p, i) => `
-          <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
+          <li><span class="t"><span lang="de">${esc(p.de)}</span>${phraseMeaning(p) ? `<span class="sub">${esc(phraseMeaning(p))}</span>` : ''}</span>
             <button class="btn inline" data-add="${i}" ${hasMyPhrase(p.de) ? 'disabled' : ''}>${esc(hasMyPhrase(p.de) ? t('write.added') : t('write.addToCards'))}</button></li>`).join('')}
         </ul>
       </div>` : ''}
@@ -2221,7 +2253,7 @@ function renderWritingSupport(el, task, hasKey, my) {
     const r = parseJsonReply(raw);
     const paras = r && Array.isArray(r.paragraphs) ? r.paragraphs : null;
     outlineEl.innerHTML = paras ? `<ol class="outline">${paras.map(p => `
-      <li><div>${esc(p.goal_tr || '')}</div>
+      <li><div>${esc(pick(p, 'goal') || '')}</div>
         <ul>${(Array.isArray(p.starters_de) ? p.starters_de : []).map(x => `<li lang="de">${esc(x)}</li>`).join('')}</ul></li>`).join('')}</ol>`
       : `<div class="sample small">${esc(raw)}</div>`;
   });

@@ -5750,6 +5750,88 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "The exam writers always use the same 8 tricks. Be suspicious as soon as you see them!",
+     "blocks": [
+      {
+       "heading": "Word traps",
+       "lines": [
+        "Same word, different topic: 'Stress' / 'Kopfschmerzen' appears, but the reason is different",
+        "Correct information in the text, but it belongs to ANOTHER person/question"
+       ]
+      },
+      {
+       "heading": "Certainty traps",
+       "lines": [
+        "immer, nie, nur, alle, automatisch, auf jeden Fall, für immer → usually wrong",
+        "vorläufig / erst einmal ≠ für immer",
+        "bevorzugt ≠ garantiert · Hälfte ≠ ganz"
+       ]
+      },
+      {
+       "heading": "Decision traps",
+       "lines": [
+        "fragt nach / prüft / schlägt vor ≠ beschlossen",
+        "verschoben ≠ fällt aus · später bearbeitet ≠ abgelehnt"
+       ]
+      },
+      {
+       "heading": "Person / role traps",
+       "lines": [
+        "Who does it? leitet ≠ besucht · übernimmt ≠ hilft",
+        "In the Protokoll, match names and tasks"
+       ]
+      },
+      {
+       "heading": "Main topic trap",
+       "lines": [
+        "'Hauptproblem', 'vor allem' questions: look for signals like 'nicht mein Hauptproblem' in the text"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Автори іспиту завжди використовують ті самі 8 трюків. Побачив — одразу будь насторожі!",
+     "blocks": [
+      {
+       "heading": "Пастки зі словами",
+       "lines": [
+        "Те саме слово, інша тема: 'Stress' / 'Kopfschmerzen' є в тексті, але причина інша",
+        "Правильна інформація в тексті, але вона стосується ІНШОЇ особи/іншого питання"
+       ]
+      },
+      {
+       "heading": "Пастки категоричності",
+       "lines": [
+        "immer, nie, nur, alle, automatisch, auf jeden Fall, für immer → здебільшого неправильно",
+        "vorläufig / erst einmal ≠ für immer",
+        "bevorzugt ≠ garantiert · Hälfte ≠ ganz"
+       ]
+      },
+      {
+       "heading": "Пастки з рішеннями",
+       "lines": [
+        "fragt nach / prüft / schlägt vor ≠ beschlossen",
+        "verschoben ≠ fällt aus · später bearbeitet ≠ abgelehnt"
+       ]
+      },
+      {
+       "heading": "Пастки з особами / ролями",
+       "lines": [
+        "Хто це робить? leitet ≠ besucht · übernimmt ≠ hilft",
+        "У Protokoll зіставляй імена й завдання"
+       ]
+      },
+      {
+       "heading": "Пастка головної теми",
+       "lines": [
+        "Питання з 'Hauptproblem', 'vor allem': шукай у тексті сигнали на кшталт 'nicht mein Hauptproblem'"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "strategie"
@@ -5778,6 +5860,50 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "5 people, 8 articles: 3 articles are left over (5 × 3 points).",
+     "blocks": [
+      {
+       "heading": "Steps",
+       "lines": [
+        "1 First read the 5 people, mark 1–2 key needs for each (e.g. 'nicht Vollzeit', 'unterwegs')",
+        "2 Scan only the title and first sentence of the articles",
+        "3 Match them, then read the whole text to be sure"
+       ]
+      },
+      {
+       "heading": "Traps",
+       "lines": [
+        "Same word ≠ same meaning: an article mentioning 'Eltern' may not be about Elternzeit",
+        "Look for synonyms: viel unterwegs = reisen, Stelle verloren = arbeitslos",
+        "Solve the ones you're sure of first; the rest get easier by elimination"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "5 осіб, 8 статей: 3 статті залишаються зайвими (5 × 3 бали).",
+     "blocks": [
+      {
+       "heading": "Порядок дій",
+       "lines": [
+        "1 Спочатку прочитай про 5 осіб, у кожної познач 1–2 ключові потреби (напр. 'nicht Vollzeit', 'unterwegs')",
+        "2 Переглянь лише заголовок і перше речення статей",
+        "3 Зістав, потім прочитай увесь текст, щоб переконатися"
+       ]
+      },
+      {
+       "heading": "Пастки",
+       "lines": [
+        "Те саме слово ≠ той самий зміст: стаття, де є 'Eltern', може бути не про Elternzeit",
+        "Шукай синоніми: viel unterwegs = reisen, Stelle verloren = arbeitslos",
+        "Спочатку розв’яжи те, у чому впевнений, решта стане легшою методом виключення"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "strategie"
@@ -5807,6 +5933,52 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "2 workplace texts, 2 questions per item.",
+     "blocks": [
+      {
+       "heading": "Steps",
+       "lines": [
+        "1 Read the statement, find the RELEVANT PARAGRAPH in the text",
+        "2 richtig/falsch: the statement must match the text 100%",
+        "3 a/b/c: compare all three options with the text"
+       ]
+      },
+      {
+       "heading": "Trap words",
+       "lines": [
+        "immer / nie / nur / auf jeden Fall → usually falsch",
+        "'erst später bearbeiten' ≠ 'ablehnen'",
+        "'bevorzugt' ≠ 'garantiert'",
+        "The information in the text is correct but may belong to ANOTHER question"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "2 тексти про роботу, по 2 питання до кожного номера.",
+     "blocks": [
+      {
+       "heading": "Порядок дій",
+       "lines": [
+        "1 Прочитай твердження, знайди в тексті ПОТРІБНИЙ АБЗАЦ",
+        "2 richtig/falsch: твердження має на 100% збігатися з текстом",
+        "3 a/b/c: порівняй усі три варіанти з текстом"
+       ]
+      },
+      {
+       "heading": "Слова-пастки",
+       "lines": [
+        "immer / nie / nur / auf jeden Fall → здебільшого falsch",
+        "'erst später bearbeiten' ≠ 'ablehnen'",
+        "'bevorzugt' ≠ 'garantiert'",
+        "Інформація в тексті правильна, але може стосуватися ІНШОГО питання"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "strategie"
@@ -5834,6 +6006,48 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "4 questions, 6 tips. One question has NO answer → x.",
+     "blocks": [
+      {
+       "heading": "Steps",
+       "lines": [
+        "1 Write the REAL problem of each question in one word (E-Mails, Chef, Protokoll…)",
+        "2 Scan the tips, choose the one whose topic matches exactly",
+        "3 Similar but different topic = trap (Vorstellungsgespräch ≠ Jahresgespräch)"
+       ]
+      },
+      {
+       "heading": "The x rule",
+       "lines": [
+        "Every exam has exactly one x",
+        "If no tip answers the CORE of the question, say x — don't force a match"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "4 питання, 6 порад. На одне питання відповіді НЕМАЄ → x.",
+     "blocks": [
+      {
+       "heading": "Порядок дій",
+       "lines": [
+        "1 Запиши СПРАВЖНЮ проблему кожного питання одним словом (E-Mails, Chef, Protokoll…)",
+        "2 Переглянь поради, вибери ту, тема якої точно збігається",
+        "3 Схожа, але інша тема = пастка (Vorstellungsgespräch ≠ Jahresgespräch)"
+       ]
+      },
+      {
+       "heading": "Правило x",
+       "lines": [
+        "У кожному іспиті є рівно один x",
+        "Якщо жодна порада не відповідає на СУТЬ питання, обери x — не підганяй силою"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "strategie"
@@ -5863,6 +6077,52 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Meeting minutes, 5 × a/b/c. The questions follow the order of the text.",
+     "blocks": [
+      {
+       "heading": "Steps",
+       "lines": [
+        "1 First read the header info: who is present, who is absent, who writes the Protokoll",
+        "2 For each question find the relevant TOP (questions go in order)",
+        "3 'Wer macht was bis wann?' — person, task and date get mixed up"
+       ]
+      },
+      {
+       "heading": "Common phrases",
+       "lines": [
+        "wird verschoben (postponed) · entfällt (cancelled)",
+        "ist einverstanden · lehnt ab",
+        "übernimmt · kümmert sich um · bis spätestens",
+        "sich in eine Liste eintragen"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Протокол зустрічі, 5 × a/b/c. Питання йдуть у порядку тексту.",
+     "blocks": [
+      {
+       "heading": "Порядок дій",
+       "lines": [
+        "1 Спочатку прочитай шапку: хто присутній, кого немає, хто пише Protokoll",
+        "2 Для кожного питання знайди відповідний TOP (питання йдуть по порядку)",
+        "3 'Wer macht was bis wann?' — особу, завдання й дату плутають"
+       ]
+      },
+      {
+       "heading": "Часті звороти",
+       "lines": [
+        "wird verschoben (перенесено) · entfällt (скасовано)",
+        "ist einverstanden · lehnt ab",
+        "übernimmt · kümmert sich um · bis spätestens",
+        "sich in eine Liste eintragen"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "strategie"
@@ -5890,6 +6150,48 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "First understand the complaint (2 × a/b/c), then reply to the same email (7 points).",
+     "blocks": [
+      {
+       "heading": "Mark while reading",
+       "lines": [
+        "What happened? (event + date)",
+        "Why is the customer especially angry?",
+        "What does he/she demand? (usually 2 things)"
+       ]
+      },
+      {
+       "heading": "Connection",
+       "lines": [
+        "The demands you marked = the points you must address in your reply",
+        "Use the template from the Schreiben card: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Спочатку зрозумій скаргу (2 × a/b/c), потім напиши відповідь на цей самий лист (7 балів).",
+     "blocks": [
+      {
+       "heading": "Позначай під час читання",
+       "lines": [
+        "Що сталося? (подія + дата)",
+        "Чому клієнт особливо сердитий?",
+        "Чого він/вона вимагає? (зазвичай 2 речі)"
+       ]
+      },
+      {
+       "heading": "Зв’язок",
+       "lines": [
+        "Позначені вимоги = пункти, які потрібно вирішити у твоїй відповіді",
+        "Використовуй шаблон із картки Schreiben: Dank → Entschuldigung → Erklärung → Lösung → Entschädigung"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "lesen",
     "schreiben",
@@ -5918,6 +6220,48 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Structure of the Schreiben section and frequent situations.",
+     "blocks": [
+      {
+       "heading": "Forumsbeitrag",
+       "lines": [
+        "The exam gives you TWO topics, you choose one",
+        "Topics are always of the type 'The company is introducing a new rule': opinion + reason + example + suggestion",
+        "The topic cards have Pro/Contra ideas for each theme"
+       ]
+      },
+      {
+       "heading": "Beschwerde (Lesen & Schreiben T2)",
+       "lines": [
+        "Frequently recurring situations: website, plant delivery, cleaning company, desk lamp, moving, dishwasher, printer, invoice, defective delivery",
+        "There is a practice card for each situation"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Структура частини Schreiben і ситуації, що часто трапляються.",
+     "blocks": [
+      {
+       "heading": "Forumsbeitrag",
+       "lines": [
+        "На іспиті дають ДВІ теми, ти обираєш одну",
+        "Теми завжди типу 'Фірма вводить нове правило': думка + обґрунтування + приклад + пропозиція",
+        "На картках тем є ідеї Pro/Contra для кожної теми"
+       ]
+      },
+      {
+       "heading": "Beschwerde (Lesen & Schreiben T2)",
+       "lines": [
+        "Ситуації, що часто повторюються: вебсайт, доставка рослин, клінінгова фірма, настільна лампа, переїзд, посудомийна машина, принтер, рахунок, неякісна доставка",
+        "Для кожної ситуації є картка для вправ"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "überblick"
@@ -5943,6 +6287,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Topic types that often come up in the exam. For each, state your opinion in 1 sentence, then pick one example each from Pro/Contra and finish with a suggestion.",
+     "blocks": [
+      {
+       "heading": "Topics (Pro | Contra)",
+       "lines": [
+        "Überstunden nur noch als Freizeit, keine Auszahlung — Pro: mehr Erholung | Contra: manche brauchen das Geld",
+        "Keine Überstunden: automatische Abmeldung nach 8 Stunden — Pro: Gesundheit, Work-Life-Balance | Contra: Projekte mit Termindruck",
+        "Vier-Tage-Woche mit 10-Stunden-Tagen — Pro: langes Wochenende | Contra: lange Tage, Kinderbetreuung",
+        "Sommerferien-Urlaub nur für Eltern schulpflichtiger Kinder — Pro: Familien brauchen es | Contra: ungerecht für andere",
+        "Pflicht-Betriebsferien zwischen Weihnachten und Neujahr — Pro: Ruhe für alle | Contra: keine freie Urlaubsplanung",
+        "Urlaubssperre im Sommer gegen Geldprämie — Pro: Extra-Geld | Contra: Erholung ist wichtiger",
+        "Samstagsarbeit mit Zuschlag — Pro: mehr Verdienst | Contra: weniger Zeit für Familie",
+        "Gleitzeit wird abgeschafft, feste Zeiten — Pro: bessere Erreichbarkeit | Contra: weniger Flexibilität"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Типи тем, що часто трапляються на іспиті. Для кожної висло́в свою думку в 1 реченні, потім вибери по одному прикладу з Pro/Contra і заверши пропозицією.",
+     "blocks": [
+      {
+       "heading": "Теми (Pro | Contra)",
+       "lines": [
+        "Überstunden nur noch als Freizeit, keine Auszahlung — Pro: mehr Erholung | Contra: manche brauchen das Geld",
+        "Keine Überstunden: automatische Abmeldung nach 8 Stunden — Pro: Gesundheit, Work-Life-Balance | Contra: Projekte mit Termindruck",
+        "Vier-Tage-Woche mit 10-Stunden-Tagen — Pro: langes Wochenende | Contra: lange Tage, Kinderbetreuung",
+        "Sommerferien-Urlaub nur für Eltern schulpflichtiger Kinder — Pro: Familien brauchen es | Contra: ungerecht für andere",
+        "Pflicht-Betriebsferien zwischen Weihnachten und Neujahr — Pro: Ruhe für alle | Contra: keine freie Urlaubsplanung",
+        "Urlaubssperre im Sommer gegen Geldprämie — Pro: Extra-Geld | Contra: Erholung ist wichtiger",
+        "Samstagsarbeit mit Zuschlag — Pro: mehr Verdienst | Contra: weniger Zeit für Familie",
+        "Gleitzeit wird abgeschafft, feste Zeiten — Pro: bessere Erreichbarkeit | Contra: weniger Flexibilität"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum",
@@ -5969,6 +6351,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Topic types that often come up in the exam. For each, state your opinion in 1 sentence, then pick one example each from Pro/Contra and finish with a suggestion.",
+     "blocks": [
+      {
+       "heading": "Topics (Pro | Contra)",
+       "lines": [
+        "Privathandy nur in den Pausen (Handy im Aufenthaltsraum) — Pro: Konzentration | Contra: Notfälle mit Kindern",
+        "Handyverbot, aber nicht für Chefs — Pro: – | Contra: Ungleichbehandlung, schlechtes Klima",
+        "Firmenhandy, aber immer erreichbar — Pro: praktisch | Contra: keine Erholung, Stress",
+        "Homeoffice nur noch ein Tag pro Woche — Pro: Teamarbeit | Contra: Arbeitsweg, Familie",
+        "Homeoffice nur mit privatem Laptop — Pro: Flexibilität | Contra: Datenschutz, Kosten",
+        "Kamera bei Videokonferenzen immer an — Pro: persönlicher Kontakt | Contra: Privatsphäre",
+        "Kein eigener Schreibtisch mehr (Desk-Sharing) — Pro: spart Platz | Contra: keine persönliche Ecke",
+        "Gehaltsabrechnung nur noch online — Pro: Umwelt, schnell | Contra: ältere Kollegen, Datenschutz"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Типи тем, що часто трапляються на іспиті. Для кожної висло́в свою думку в 1 реченні, потім вибери по одному прикладу з Pro/Contra і заверши пропозицією.",
+     "blocks": [
+      {
+       "heading": "Теми (Pro | Contra)",
+       "lines": [
+        "Privathandy nur in den Pausen (Handy im Aufenthaltsraum) — Pro: Konzentration | Contra: Notfälle mit Kindern",
+        "Handyverbot, aber nicht für Chefs — Pro: – | Contra: Ungleichbehandlung, schlechtes Klima",
+        "Firmenhandy, aber immer erreichbar — Pro: praktisch | Contra: keine Erholung, Stress",
+        "Homeoffice nur noch ein Tag pro Woche — Pro: Teamarbeit | Contra: Arbeitsweg, Familie",
+        "Homeoffice nur mit privatem Laptop — Pro: Flexibilität | Contra: Datenschutz, Kosten",
+        "Kamera bei Videokonferenzen immer an — Pro: persönlicher Kontakt | Contra: Privatsphäre",
+        "Kein eigener Schreibtisch mehr (Desk-Sharing) — Pro: spart Platz | Contra: keine persönliche Ecke",
+        "Gehaltsabrechnung nur noch online — Pro: Umwelt, schnell | Contra: ältere Kollegen, Datenschutz"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum",
@@ -5995,6 +6415,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Topic types that often come up in the exam. For each, state your opinion in 1 sentence, then pick one example each from Pro/Contra and finish with a suggestion.",
+     "blocks": [
+      {
+       "heading": "Topics (Pro | Contra)",
+       "lines": [
+        "Pflicht-Weiterbildung zweimal im Jahr am Wochenende — Pro: Qualifikation | Contra: Freizeit, Familie",
+        "Workshop zum Zeitmanagement für alle — Pro: effizienter arbeiten | Contra: nicht jeder braucht es",
+        "Kommunikationstraining am Wochenende — Pro: besseres Klima | Contra: Wochenende = Freizeit",
+        "Erste-Hilfe-Kurs am Wochenende mit Freizeitausgleich — Pro: Sicherheit | Contra: Wochenende",
+        "Weiterbildungen nur noch online — Pro: flexibel, günstig | Contra: weniger Austausch",
+        "Nur noch Englisch als Firmensprache — Pro: international | Contra: Missverständnisse, Druck",
+        "Für Fortbildungen einen Urlaubstag nehmen — Pro: Firma zahlt Kurs | Contra: Fortbildung ist Arbeit",
+        "Azubis werben: Mitarbeitende stellen die Firma in Schulen vor — Pro: Nachwuchs | Contra: keine Zeit, nicht jeder kann präsentieren"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Типи тем, що часто трапляються на іспиті. Для кожної висло́в свою думку в 1 реченні, потім вибери по одному прикладу з Pro/Contra і заверши пропозицією.",
+     "blocks": [
+      {
+       "heading": "Теми (Pro | Contra)",
+       "lines": [
+        "Pflicht-Weiterbildung zweimal im Jahr am Wochenende — Pro: Qualifikation | Contra: Freizeit, Familie",
+        "Workshop zum Zeitmanagement für alle — Pro: effizienter arbeiten | Contra: nicht jeder braucht es",
+        "Kommunikationstraining am Wochenende — Pro: besseres Klima | Contra: Wochenende = Freizeit",
+        "Erste-Hilfe-Kurs am Wochenende mit Freizeitausgleich — Pro: Sicherheit | Contra: Wochenende",
+        "Weiterbildungen nur noch online — Pro: flexibel, günstig | Contra: weniger Austausch",
+        "Nur noch Englisch als Firmensprache — Pro: international | Contra: Missverständnisse, Druck",
+        "Für Fortbildungen einen Urlaubstag nehmen — Pro: Firma zahlt Kurs | Contra: Fortbildung ist Arbeit",
+        "Azubis werben: Mitarbeitende stellen die Firma in Schulen vor — Pro: Nachwuchs | Contra: keine Zeit, nicht jeder kann präsentieren"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum",
@@ -6021,6 +6479,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Topic types that often come up in the exam. For each, state your opinion in 1 sentence, then pick one example each from Pro/Contra and finish with a suggestion.",
+     "blocks": [
+      {
+       "heading": "Topics (Pro | Contra)",
+       "lines": [
+        "Jobticket für alle, Gebühr wird vom Gehalt abgezogen — Pro: Umwelt, günstig | Contra: nicht jeder fährt Bus/Bahn",
+        "Fitnessstudio in der Firma gegen Gehaltsabzug — Pro: Gesundheit | Contra: Pflichtgebühr",
+        "Ärztliche Krankmeldung ab dem ersten Tag — Pro: weniger Missbrauch | Contra: Misstrauen, volle Arztpraxen",
+        "Obst nicht mehr kostenlos (5 € im Monat) — Pro: regionale Landwirtschaft | Contra: kleine Geste fällt weg",
+        "Zusätzliche Urlaubstage statt Bonuszahlung — Pro: Erholung | Contra: manche brauchen Geld",
+        "„Mitarbeiter/in des Jahres“ mit Geldprämie — Pro: Motivation | Contra: Konkurrenz im Team",
+        "Parkplätze kostenpflichtig oder nur für Kunden — Pro: Umwelt, Kundenservice | Contra: Pendler ohne Alternative",
+        "Zuschuss nur für Radfahrer / Fahrgemeinschaften — Pro: Umwelt | Contra: ungerecht für andere"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Типи тем, що часто трапляються на іспиті. Для кожної висло́в свою думку в 1 реченні, потім вибери по одному прикладу з Pro/Contra і заверши пропозицією.",
+     "blocks": [
+      {
+       "heading": "Теми (Pro | Contra)",
+       "lines": [
+        "Jobticket für alle, Gebühr wird vom Gehalt abgezogen — Pro: Umwelt, günstig | Contra: nicht jeder fährt Bus/Bahn",
+        "Fitnessstudio in der Firma gegen Gehaltsabzug — Pro: Gesundheit | Contra: Pflichtgebühr",
+        "Ärztliche Krankmeldung ab dem ersten Tag — Pro: weniger Missbrauch | Contra: Misstrauen, volle Arztpraxen",
+        "Obst nicht mehr kostenlos (5 € im Monat) — Pro: regionale Landwirtschaft | Contra: kleine Geste fällt weg",
+        "Zusätzliche Urlaubstage statt Bonuszahlung — Pro: Erholung | Contra: manche brauchen Geld",
+        "„Mitarbeiter/in des Jahres“ mit Geldprämie — Pro: Motivation | Contra: Konkurrenz im Team",
+        "Parkplätze kostenpflichtig oder nur für Kunden — Pro: Umwelt, Kundenservice | Contra: Pendler ohne Alternative",
+        "Zuschuss nur für Radfahrer / Fahrgemeinschaften — Pro: Umwelt | Contra: ungerecht für andere"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum",
@@ -6047,6 +6543,44 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Topic types that often come up in the exam. For each, state your opinion in 1 sentence, then pick one example each from Pro/Contra and finish with a suggestion.",
+     "blocks": [
+      {
+       "heading": "Topics (Pro | Contra)",
+       "lines": [
+        "Kantine schließt, dafür Essensgutscheine — Pro: mehr Auswahl | Contra: Treffpunkt fällt weg, Zeit",
+        "Heizung erst ab Oktober, max. 19 °C — Pro: Energie sparen | Contra: Gesundheit, Konzentration",
+        "Glaswände statt Einzelbüros / Großraumbüro — Pro: Kommunikation | Contra: Lärm, keine Ruhe",
+        "Dresscode: formelle Kleidung statt Jeans — Pro: professionell | Contra: Kosten, Bequemlichkeit",
+        "Einheitliche Firmenkleidung auf eigene Kosten — Pro: Image | Contra: Firma soll zahlen",
+        "Hunde im Büro erlaubt — Pro: gutes Klima | Contra: Allergien, Angst, Lärm",
+        "Firma zieht in eine andere Stadt, Umzugskosten erstattet — Pro: Firma hilft | Contra: Familie, Schule, Partnerjob",
+        "Keine Festanstellungen mehr, nur Leiharbeit — Pro: Flexibilität für Firma | Contra: Unsicherheit, schlechte Einarbeitung"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Типи тем, що часто трапляються на іспиті. Для кожної висло́в свою думку в 1 реченні, потім вибери по одному прикладу з Pro/Contra і заверши пропозицією.",
+     "blocks": [
+      {
+       "heading": "Теми (Pro | Contra)",
+       "lines": [
+        "Kantine schließt, dafür Essensgutscheine — Pro: mehr Auswahl | Contra: Treffpunkt fällt weg, Zeit",
+        "Heizung erst ab Oktober, max. 19 °C — Pro: Energie sparen | Contra: Gesundheit, Konzentration",
+        "Glaswände statt Einzelbüros / Großraumbüro — Pro: Kommunikation | Contra: Lärm, keine Ruhe",
+        "Dresscode: formelle Kleidung statt Jeans — Pro: professionell | Contra: Kosten, Bequemlichkeit",
+        "Einheitliche Firmenkleidung auf eigene Kosten — Pro: Image | Contra: Firma soll zahlen",
+        "Hunde im Büro erlaubt — Pro: gutes Klima | Contra: Allergien, Angst, Lärm",
+        "Firma zieht in eine andere Stadt, Umzugskosten erstattet — Pro: Firma hilft | Contra: Familie, Schule, Partnerjob",
+        "Keine Festanstellungen mehr, nur Leiharbeit — Pro: Flexibilität für Firma | Contra: Unsicherheit, schlechte Einarbeitung"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "forum",
@@ -6084,6 +6618,66 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Sometimes the boss says 'this is not our responsibility'. Then politely refuse, but offer something.",
+     "blocks": [
+      {
+       "heading": "Ablehnen",
+       "lines": [
+        "Nach sorgfältiger Prüfung müssen wir Ihnen leider mitteilen, dass …",
+        "Der Fehler liegt leider nicht in unserem Verantwortungsbereich.",
+        "Daher können wir Ihrem Wunsch nach … leider nicht entsprechen.",
+        "Die Kosten für … sind gemäß unserer Vereinbarung von Ihnen zu tragen."
+       ]
+      },
+      {
+       "heading": "Entgegenkommen",
+       "lines": [
+        "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+        "Gern ist unser Techniker bereit, … kostenlos …",
+        "Wir hoffen auf Ihr Verständnis."
+       ]
+      },
+      {
+       "heading": "Boss's instructions checklist",
+       "lines": [
+        "Mark EVERY sentence in the boss's email: reason, solution, offer, refusal",
+        "Did you use all of them in your reply? Forgetting one = losing points"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Іноді керівник каже 'це не наша відповідальність'. Тоді ввічливо відмов, але щось запропонуй.",
+     "blocks": [
+      {
+       "heading": "Ablehnen",
+       "lines": [
+        "Nach sorgfältiger Prüfung müssen wir Ihnen leider mitteilen, dass …",
+        "Der Fehler liegt leider nicht in unserem Verantwortungsbereich.",
+        "Daher können wir Ihrem Wunsch nach … leider nicht entsprechen.",
+        "Die Kosten für … sind gemäß unserer Vereinbarung von Ihnen zu tragen."
+       ]
+      },
+      {
+       "heading": "Entgegenkommen",
+       "lines": [
+        "Dennoch möchten wir Ihnen entgegenkommen und bieten Ihnen … an.",
+        "Gern ist unser Techniker bereit, … kostenlos …",
+        "Wir hoffen auf Ihr Verständnis."
+       ]
+      },
+      {
+       "heading": "Чек-лист вказівок керівника",
+       "lines": [
+        "Познач КОЖНЕ речення в листі керівника: причина, рішення, пропозиція, відмова",
+        "Чи ти використав усе у відповіді? Забув одне = втрата балів"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6117,6 +6711,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Lassen.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Bitte antworten Sie Herrn Lassen. Unsere Reinigungskraft war zwei Wochen krank, die Vertretung kannte das Büro nicht. Ab Montag ist die alte Kraft wieder da. Bieten Sie 15 % Rabatt auf die nächste Rechnung an. Wir dürfen den Kunden nicht verlieren!“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Papierkörbe nicht geleert, Küche schmutzig, Reinigungskraft kam nur 2 statt 3 Stunden; will nur geleistete Stunden bezahlen."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Lassen.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Bitte antworten Sie Herrn Lassen. Unsere Reinigungskraft war zwei Wochen krank, die Vertretung kannte das Büro nicht. Ab Montag ist die alte Kraft wieder da. Bieten Sie 15 % Rabatt auf die nächste Rechnung an. Wir dürfen den Kunden nicht verlieren!“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Papierkörbe nicht geleert, Küche schmutzig, Reinigungskraft kam nur 2 statt 3 Stunden; will nur geleistete Stunden bezahlen."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6150,6 +6796,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Frau Berger.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Frau Berger hat recht, die Lampen aus dieser Lieferung hatten einen Produktionsfehler. Schicken Sie ihr sofort eine neue Lampe, die Rücksendung der alten ist kostenlos (Etikett anhängen). Entschuldigen Sie sich auch für die späte Antwort – unser Postfach war überlastet.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kundin: Lampe mit Kratzer, Schalter kaputt, nach zehn Tagen noch keine Antwort; erwartet umgehende Rückmeldung."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Frau Berger.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Frau Berger hat recht, die Lampen aus dieser Lieferung hatten einen Produktionsfehler. Schicken Sie ihr sofort eine neue Lampe, die Rücksendung der alten ist kostenlos (Etikett anhängen). Entschuldigen Sie sich auch für die späte Antwort – unser Postfach war überlastet.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kundin: Lampe mit Kratzer, Schalter kaputt, nach zehn Tagen noch keine Antwort; erwartet umgehende Rückmeldung."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6183,6 +6881,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Stiller.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Herr Stiller ist unzufrieden mit dem Entwurf. Aber er hat uns die Fotos zwei Wochen zu spät geschickt, deshalb die Verspätung – das bitte höflich erwähnen. Bieten Sie einen Termin mit unserer Designerin Frau Spindler an, um den Entwurf gemeinsam zu ändern. Zusätzliche Kosten entstehen für ihn nicht.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Entwurf gefällt nicht (Farben, zu wenig Bilder), Website sollte schon online sein, ist verärgert."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Stiller.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Herr Stiller ist unzufrieden mit dem Entwurf. Aber er hat uns die Fotos zwei Wochen zu spät geschickt, deshalb die Verspätung – das bitte höflich erwähnen. Bieten Sie einen Termin mit unserer Designerin Frau Spindler an, um den Entwurf gemeinsam zu ändern. Zusätzliche Kosten entstehen für ihn nicht.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Entwurf gefällt nicht (Farben, zu wenig Bilder), Website sollte schon online sein, ist verärgert."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6216,6 +6966,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Zaun.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Unser Lkw hatte eine Panne, deshalb kamen die Möbelpacker zu spät. Für den beschädigten Schrank kommt unsere Versicherung auf – ein Gutachter meldet sich diese Woche. Die berechneten Stunden stimmen nicht, wir schicken eine neue Rechnung.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Packer 2 Stunden zu spät, Schrank beschädigt, zu viele Stunden berechnet."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Zaun.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Unser Lkw hatte eine Panne, deshalb kamen die Möbelpacker zu spät. Für den beschädigten Schrank kommt unsere Versicherung auf – ein Gutachter meldet sich diese Woche. Die berechneten Stunden stimmen nicht, wir schicken eine neue Rechnung.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Packer 2 Stunden zu spät, Schrank beschädigt, zu viele Stunden berechnet."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6249,6 +7051,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an den Veranstalter, Herrn Roth.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Da ist bei uns etwas schiefgelaufen: Wir haben die Bestellung eines anderen Kunden geliefert. Entschuldigen Sie sich bitte. Die Rechnung übernehmen wir zu 50 %, und für die nächste Veranstaltung bekommt der Kunde die Dekoration kostenlos.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Für eine Firmenfeier zum Thema „Frühling“ kamen Herbstblumen; musste kurzfristig woanders kaufen."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an den Veranstalter, Herrn Roth.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Da ist bei uns etwas schiefgelaufen: Wir haben die Bestellung eines anderen Kunden geliefert. Entschuldigen Sie sich bitte. Die Rechnung übernehmen wir zu 50 %, und für die nächste Veranstaltung bekommt der Kunde die Dekoration kostenlos.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Für eine Firmenfeier zum Thema „Frühling“ kamen Herbstblumen; musste kurzfristig woanders kaufen."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6282,6 +7136,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Schmidt.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Herr Schmidt ist ein langjähriger Kunde. Wir hatten ein Computerproblem, das ist inzwischen behoben. Schicken Sie ihm die korrigierte Rechnung mit seinem üblichen Rabatt von 10 %.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Ware in Ordnung, aber falsche Mengen und falsche Artikel auf der Rechnung, üblicher Rabatt fehlt."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Schmidt.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chefin: „Herr Schmidt ist ein langjähriger Kunde. Wir hatten ein Computerproblem, das ist inzwischen behoben. Schicken Sie ihm die korrigierte Rechnung mit seinem üblichen Rabatt von 10 %.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: Ware in Ordnung, aber falsche Mengen und falsche Artikel auf der Rechnung, üblicher Rabatt fehlt."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6315,6 +7221,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Schramm.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Im Lager wurde falsch gepackt. Die fehlenden fünf Stühle und die drei in der richtigen Farbe liefern wir am Mittwoch. Die falschen holt der Fahrer gleich mit. Als Entschuldigung übernehmen wir die Lieferkosten.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: 20 Stühle bestellt, 15 geliefert, drei in falscher Farbe."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Herrn Schramm.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Im Lager wurde falsch gepackt. Die fehlenden fünf Stühle und die drei in der richtigen Farbe liefern wir am Mittwoch. Die falschen holt der Fahrer gleich mit. Als Entschuldigung übernehmen wir die Lieferkosten.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kunde: 20 Stühle bestellt, 15 geliefert, drei in falscher Farbe."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",
@@ -6348,6 +7306,58 @@
      ]
     }
    ],
+   "i18n": {
+    "en": {
+     "prompt": "Schreiben Sie eine E-Mail an Frau Zeller.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Laut Techniker liegt der Fehler an der Software des Kunden, nicht am Gerät. Höflich darauf hinweisen. Kein Austauschgerät, aber eine kostenlose Fernwartung anbieten. Die Kosten für den Technikerbesuch bleiben bestehen.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kundin: Gerät zeigt immer wieder Fehlermeldungen, wichtige Unterlagen nicht verschickt; will kostenloses neues Gerät und die Technikerrechnung nicht zahlen."
+       ]
+      },
+      {
+       "heading": "Check",
+       "lines": [
+        "Did you write EVERY point the boss mentioned? (reason · solution · offer · refusal)",
+        "Did you respond to every complaint of the customer? Politely refuse any demand you can't meet (e.g. a refund of costs)",
+        "Structure: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    },
+    "uk": {
+     "prompt": "Schreiben Sie eine E-Mail an Frau Zeller.",
+     "blocks": [
+      {
+       "heading": "Chef/Chefin schreibt",
+       "lines": [
+        "Chef: „Laut Techniker liegt der Fehler an der Software des Kunden, nicht am Gerät. Höflich darauf hinweisen. Kein Austauschgerät, aber eine kostenlose Fernwartung anbieten. Die Kosten für den Technikerbesuch bleiben bestehen.“"
+       ]
+      },
+      {
+       "heading": "Kunden-E-Mail (kurz)",
+       "lines": [
+        "Kundin: Gerät zeigt immer wieder Fehlermeldungen, wichtige Unterlagen nicht verschickt; will kostenloses neues Gerät und die Technikerrechnung nicht zahlen."
+       ]
+      },
+      {
+       "heading": "Перевірка",
+       "lines": [
+        "Чи ти написав КОЖЕН пункт, який назвав керівник? (причина · рішення · пропозиція · відмова)",
+        "Чи ти відповів на кожну скаргу клієнта? Вимогу, яку не виконуєш (напр. відшкодування витрат), ввічливо відхили",
+        "Структура: Dank → Entschuldigung → Erklärung → Lösung → Angebot → Abschluss"
+       ]
+      }
+     ]
+    }
+   },
    "tags": [
     "schreiben",
     "beschwerde",

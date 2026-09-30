@@ -957,6 +957,8 @@
    ],
    "answer": 0,
    "explanation_tr": "fristgerecht = süresi içinde. Rechnung begleichen = fatura ödemek.",
+   "explanation_en": "fristgerecht = within the deadline. Rechnung begleichen = to pay an invoice.",
+   "explanation_uk": "fristgerecht = у встановлений термін. Rechnung begleichen = оплатити рахунок.",
    "tags": [
     "kollokation"
    ]
@@ -974,6 +976,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Beschwerde einreichen (şikâyette bulunmak).",
+   "explanation_en": "eine Beschwerde einreichen (to file a complaint).",
+   "explanation_uk": "eine Beschwerde einreichen (подати скаргу).",
    "tags": [
     "kollokation"
    ]
@@ -991,6 +995,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Reklamation bearbeiten (işleme almak).",
+   "explanation_en": "eine Reklamation bearbeiten (to process it).",
+   "explanation_uk": "eine Reklamation bearbeiten (взяти в роботу, опрацювати).",
    "tags": [
     "kollokation"
    ]
@@ -1008,6 +1014,8 @@
    ],
    "answer": 0,
    "explanation_tr": "die Kosten übernehmen (masrafı üstlenmek). Şikâyet cevabında çok kullanılır!",
+   "explanation_en": "die Kosten übernehmen (to cover the costs). Used a lot in replies to complaints!",
+   "explanation_uk": "die Kosten übernehmen (взяти витрати на себе). Часто вживається у відповідях на скарги!",
    "tags": [
     "kollokation"
    ]
@@ -1025,6 +1033,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Entschuldigen Sie bitte ... (özür). beschuldigen = suçlamak.",
+   "explanation_en": "Entschuldigen Sie bitte ... (apology). beschuldigen = to accuse.",
+   "explanation_uk": "Entschuldigen Sie bitte ... (вибачення). beschuldigen = звинувачувати.",
    "tags": [
     "kollokation"
    ]
@@ -1042,6 +1052,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas zur Sprache bringen (gündeme getirmek).",
+   "explanation_en": "etwas zur Sprache bringen (to bring something up).",
+   "explanation_uk": "etwas zur Sprache bringen (порушити питання, винести на обговорення).",
    "tags": [
     "kollokation"
    ]
@@ -1059,6 +1071,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas zur Verfügung stellen (tahsis etmek).",
+   "explanation_en": "etwas zur Verfügung stellen (to provide / make available).",
+   "explanation_uk": "etwas zur Verfügung stellen (надати в розпорядження).",
    "tags": [
     "kollokation"
    ]
@@ -1076,6 +1090,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Lösung finden. (Ama: eine Entscheidung TREFFEN.)",
+   "explanation_en": "eine Lösung finden. (But: eine Entscheidung TREFFEN.)",
+   "explanation_uk": "eine Lösung finden. (Але: eine Entscheidung TREFFEN.)",
    "tags": [
     "kollokation"
    ]
@@ -1093,6 +1109,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Entscheidung treffen (karar vermek).",
+   "explanation_en": "eine Entscheidung treffen (to make a decision).",
+   "explanation_uk": "eine Entscheidung treffen (ухвалити рішення).",
    "tags": [
     "kollokation"
    ]
@@ -1110,6 +1128,8 @@
    ],
    "answer": 0,
    "explanation_tr": "im Laufe der Woche (hafta içinde).",
+   "explanation_en": "im Laufe der Woche (during the week).",
+   "explanation_uk": "im Laufe der Woche (протягом тижня).",
    "tags": [
     "kollokation"
    ]
@@ -1127,6 +1147,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Gang kommen (işlemeye başlamak).",
+   "explanation_en": "in Gang kommen (to get going / start running).",
+   "explanation_uk": "in Gang kommen (зрушити з місця, почати працювати).",
    "tags": [
     "kollokation"
    ]
@@ -1144,6 +1166,8 @@
    ],
    "answer": 0,
    "explanation_tr": "nicht in Frage kommen (söz konusu olmamak).",
+   "explanation_en": "nicht in Frage kommen (to be out of the question).",
+   "explanation_uk": "nicht in Frage kommen (не може бути й мови).",
    "tags": [
     "kollokation"
    ]
@@ -1161,6 +1185,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Maßnahmen ergreifen (önlem almak).",
+   "explanation_en": "Maßnahmen ergreifen (to take measures).",
+   "explanation_uk": "Maßnahmen ergreifen (вжити заходів).",
    "tags": [
     "kollokation"
    ]
@@ -1178,6 +1204,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Preisnachlass = indirim. Aufpreis/Zuschlag = ek ücret.",
+   "explanation_en": "Preisnachlass = discount. Aufpreis/Zuschlag = extra charge.",
+   "explanation_uk": "Preisnachlass = знижка. Aufpreis/Zuschlag = доплата.",
    "tags": [
     "kollokation"
    ]
@@ -1195,6 +1223,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Interesse an + Dativ (…e ilgi).",
+   "explanation_en": "Interesse an + Dativ (interest in …).",
+   "explanation_uk": "Interesse an + Dativ (інтерес до …).",
    "tags": [
     "kollokation"
    ]
@@ -1212,6 +1242,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Resmî: uns ist ein Fehler unterlaufen (bir hata yaptık).",
+   "explanation_en": "Formal: uns ist ein Fehler unterlaufen (we made a mistake).",
+   "explanation_uk": "Офіційно: uns ist ein Fehler unterlaufen (ми припустилися помилки).",
    "tags": [
     "kollokation"
    ]
@@ -1229,6 +1261,8 @@
    ],
    "answer": 0,
    "explanation_tr": "ersetzen = yenisiyle değiştirmek / tazmin etmek.",
+   "explanation_en": "ersetzen = to replace with a new one / to compensate.",
+   "explanation_uk": "ersetzen = замінити на новий / відшкодувати.",
    "tags": [
     "kollokation"
    ]
@@ -1246,6 +1280,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kündigungsfrist = fesih süresi. 'mit einer Frist von'.",
+   "explanation_en": "Kündigungsfrist = notice period. 'mit einer Frist von'.",
+   "explanation_uk": "Kündigungsfrist = строк розірвання договору. 'mit einer Frist von'.",
    "tags": [
     "kollokation"
    ]
@@ -1263,6 +1299,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich über etwas freuen. Başvuru mektubunun klasik kapanışı.",
+   "explanation_en": "sich über etwas freuen. The classic closing of an application letter.",
+   "explanation_uk": "sich über etwas freuen. Класичне завершення мотиваційного листа.",
    "tags": [
     "kollokation"
    ]
@@ -1280,6 +1318,8 @@
    ],
    "answer": 0,
    "explanation_tr": "mit etwas rechnen (…i beklemek/hesaba katmak).",
+   "explanation_en": "mit etwas rechnen (to expect / count on something).",
+   "explanation_uk": "mit etwas rechnen (очікувати / розраховувати на щось).",
    "tags": [
     "kollokation"
    ]
@@ -1297,6 +1337,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zusagen = söz vermek/onaylamak; absagen = iptal etmek.",
+   "explanation_en": "zusagen = to promise/confirm; absagen = to cancel.",
+   "explanation_uk": "zusagen = пообіцяти/підтвердити; absagen = скасувати.",
    "tags": [
     "kollokation"
    ]
@@ -1314,6 +1356,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Angaben = verilen bilgiler.",
+   "explanation_en": "Angaben = the information given.",
+   "explanation_uk": "Angaben = надані дані.",
    "tags": [
     "kollokation"
    ]
@@ -1331,6 +1375,8 @@
    ],
    "answer": 0,
    "explanation_tr": "AU-Bescheinigung = doktor raporu ('gelber Schein').",
+   "explanation_en": "AU-Bescheinigung = doctor's sick note ('gelber Schein').",
+   "explanation_uk": "AU-Bescheinigung = лікарняний ('gelber Schein').",
    "tags": [
     "lesen",
     "rechte-pflichten"
@@ -1349,6 +1395,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Fazla mesai karşılığı izin = Freizeitausgleich.",
+   "explanation_en": "Time off in return for overtime = Freizeitausgleich.",
+   "explanation_uk": "Відгул за понаднормову роботу = Freizeitausgleich.",
    "tags": [
     "lesen",
     "arbeitszeit"
@@ -1367,6 +1415,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Probezeit = deneme süresi (genelde 6 ay).",
+   "explanation_en": "Probezeit = probation period (usually 6 months).",
+   "explanation_uk": "Probezeit = випробувальний термін (зазвичай 6 місяців).",
    "tags": [
     "lesen",
     "vertrag"
@@ -1385,6 +1435,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Arbeitszeugnis = iş referans belgesi. Führungszeugnis = sabıka kaydı.",
+   "explanation_en": "Arbeitszeugnis = employer's reference letter. Führungszeugnis = criminal record certificate.",
+   "explanation_uk": "Arbeitszeugnis = характеристика з місця роботи. Führungszeugnis = довідка про несудимість.",
    "tags": [
     "lesen",
     "vertrag"
@@ -1403,6 +1455,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Tagesordnung = gündem. Lesen Teil 4 (Protokoll) için önemli.",
+   "explanation_en": "Tagesordnung = agenda. Important for Lesen Teil 4 (Protokoll).",
+   "explanation_uk": "Tagesordnung = порядок денний. Важливо для Lesen Teil 4 (Protokoll).",
    "tags": [
     "lesen",
     "besprechung"
@@ -1421,6 +1475,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Toplantı tutanağı = Protokoll.",
+   "explanation_en": "Meeting minutes = Protokoll.",
+   "explanation_uk": "Протокол зустрічі = Protokoll.",
    "tags": [
     "lesen",
     "besprechung"
@@ -1439,6 +1495,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Arbeitsschutz: Schutzhelm, Sicherheitsschuhe, Schutzbrille.",
+   "explanation_en": "Arbeitsschutz: Schutzhelm, Sicherheitsschuhe, Schutzbrille.",
+   "explanation_uk": "Arbeitsschutz: Schutzhelm, Sicherheitsschuhe, Schutzbrille.",
    "tags": [
     "lesen",
     "vorschriften"
@@ -1457,6 +1515,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Betriebsrat = işçi temsilciliği/konseyi.",
+   "explanation_en": "Betriebsrat = works council (employee representation).",
+   "explanation_uk": "Betriebsrat = рада працівників (представництво працівників).",
    "tags": [
     "lesen",
     "rechte-pflichten"
@@ -1475,6 +1535,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Gleitzeit = esnek mesai (çekirdek saatlerle).",
+   "explanation_en": "Gleitzeit = flexible working hours (with core hours).",
+   "explanation_uk": "Gleitzeit = гнучкий графік (з обов'язковими основними годинами).",
    "tags": [
     "hören",
     "arbeitszeit"
@@ -1493,6 +1555,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Elternzeit = ebeveyn izni.",
+   "explanation_en": "Elternzeit = parental leave.",
+   "explanation_uk": "Elternzeit = відпустка по догляду за дитиною.",
    "tags": [
     "schreiben",
     "familie"
@@ -1511,6 +1575,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Brüt – kesintiler = Netto.",
+   "explanation_en": "Gross – deductions = Netto.",
+   "explanation_uk": "Брутто – відрахування = Netto.",
    "tags": [
     "lesen",
     "gehalt"
@@ -1529,6 +1595,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kündigungsfrist = fesih ihbar süresi.",
+   "explanation_en": "Kündigungsfrist = notice period for termination.",
+   "explanation_uk": "Kündigungsfrist = строк попередження про звільнення.",
    "tags": [
     "lesen",
     "vertrag"
@@ -1547,6 +1615,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Ware umtauschen / zurückgeben.",
+   "explanation_en": "Ware umtauschen / zurückgeben.",
+   "explanation_uk": "Ware umtauschen / zurückgeben.",
    "tags": [
     "hören",
     "kunden"
@@ -1565,6 +1635,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einarbeiten = işe alıştırmak; einstellen = işe almak.",
+   "explanation_en": "einarbeiten = to train someone in (on the job); einstellen = to hire.",
+   "explanation_uk": "einarbeiten = ввести в роботу; einstellen = прийняти на роботу.",
    "tags": [
     "hören",
     "betrieb"
@@ -1583,6 +1655,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kurzarbeit = kısa çalışma (devlet destekli).",
+   "explanation_en": "Kurzarbeit = short-time work (state-subsidised).",
+   "explanation_uk": "Kurzarbeit = скорочений робочий час (з державною підтримкою).",
    "tags": [
     "lesen",
     "betrieb"
@@ -1601,6 +1675,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Resmî e-posta: 'Sehr geehrte Frau …,' + virgül; sonra küçük harfle devam.",
+   "explanation_en": "Formal e-mail: 'Sehr geehrte Frau …,' + comma; then continue with a lower-case letter.",
+   "explanation_uk": "Офіційний e-mail: 'Sehr geehrte Frau …,' + кома; далі продовжуй з малої літери.",
    "tags": [
     "schreiben",
     "register"
@@ -1619,6 +1695,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Resmî kapanış: 'Mit freundlichen Grüßen' (virgül YOK) + isim.",
+   "explanation_en": "Formal closing: 'Mit freundlichen Grüßen' (NO comma) + name.",
+   "explanation_uk": "Офіційне завершення: 'Mit freundlichen Grüßen' (БЕЗ коми) + ім'я.",
    "tags": [
     "schreiben",
     "register"
@@ -1637,6 +1715,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Önce teşekkür + özür. Kibar ve çözüm odaklı olmak puan getirir.",
+   "explanation_en": "First thanks + apology. Being polite and solution-oriented earns points.",
+   "explanation_uk": "Спочатку подяка + вибачення. Ввічливість і орієнтація на рішення приносять бали.",
    "tags": [
     "schreiben",
     "register"
@@ -1655,6 +1735,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Çözüm + telafi (Gutschein, Rabatt, kostenloser Ersatz) = tam puan için şart.",
+   "explanation_en": "Solution + compensation (Gutschein, Rabatt, kostenloser Ersatz) = required for full points.",
+   "explanation_uk": "Рішення + компенсація (Gutschein, Rabatt, kostenloser Ersatz) = обов'язково для повного балу.",
    "tags": [
     "schreiben",
     "register"
@@ -1673,6 +1755,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Karşı argüman: 'Andererseits …', 'Dagegen spricht, dass …'.",
+   "explanation_en": "Counter-argument: 'Andererseits …', 'Dagegen spricht, dass …'.",
+   "explanation_uk": "Контраргумент: 'Andererseits …', 'Dagegen spricht, dass …'.",
    "tags": [
     "schreiben",
     "register"
@@ -1691,6 +1775,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sonuç: 'Alles in allem …', 'Zusammenfassend …'.",
+   "explanation_en": "Conclusion: 'Alles in allem …', 'Zusammenfassend …'.",
+   "explanation_uk": "Висновок: 'Alles in allem …', 'Zusammenfassend …'.",
    "tags": [
     "schreiben",
     "register"
@@ -1710,6 +1796,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kalıp: 'Wie besprochen / Wie vereinbart' (konuştuğumuz gibi). Sınavda EN SIK çıkan boşluklardan.",
+   "explanation_en": "Set phrase: 'Wie besprochen / Wie vereinbart' (as discussed). One of the MOST FREQUENT gaps in the exam.",
+   "explanation_uk": "Сталий вислів: 'Wie besprochen / Wie vereinbart' (як ми обговорили). Один із НАЙЧАСТІШИХ пропусків на іспиті.",
    "tags": [
     "feste Verbindung",
     "brief",
@@ -1730,6 +1818,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'Wie vereinbart' = kararlaştırıldığı gibi.",
+   "explanation_en": "'Wie vereinbart' = as agreed.",
+   "explanation_uk": "'Wie vereinbart' = як домовлено.",
    "tags": [
     "feste Verbindung",
     "brief",

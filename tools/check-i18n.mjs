@@ -23,7 +23,7 @@ const args = process.argv.slice(2);
 const partial = args.includes('--partial');
 const dataIdx = args.indexOf('--data');
 const dataPath = dataIdx >= 0 ? args[dataIdx + 1] : path.join(ROOT, 'b2-data.json');
-const origArg = args.find((a, i) => !a.startsWith('--') && i !== dataIdx + 1);
+const origArg = args.find((a, i) => !a.startsWith('--') && !(dataIdx >= 0 && i === dataIdx + 1));
 
 const errors = [];
 const missing = [];

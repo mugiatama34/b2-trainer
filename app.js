@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.7.8';
+const APP_VERSION = '1.7.9';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';

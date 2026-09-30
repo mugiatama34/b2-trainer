@@ -9473,6 +9473,8 @@
    "part": "lesen4",
    "title": "Lesen T4 · Set 8 (Prüfungsstil): Mitarbeiterbesprechung Verwaltung",
    "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
+   "instructions_en": "EXAM STYLE: 6 TOPs, in TOP 1 a CORRECTION to the previous minutes, one TOP brought forward or postponed. In the questions, people are referred to by their TITLE (Protokollantin, Einkauf…).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: 6 TOP, у TOP 1 — ВИПРАВЛЕННЯ до попереднього протоколу, один TOP перенесено раніше або відкладено. У питаннях людей називають за ПОСАДОЮ (Protokollantin, Einkauf…).",
    "layout": "text-questions",
    "texts": [
     {
@@ -9494,7 +9496,9 @@
       "informiert künftig der Betriebsarzt."
      ],
      "answer": 1,
-     "explanation_tr": "'entfällt heute … in der nächsten Sitzung' → b. TOP listede var ama konuşulmadı!"
+     "explanation_tr": "'entfällt heute … in der nächsten Sitzung' → b. TOP listede var ama konuşulmadı!",
+     "explanation_en": "'entfällt heute … in der nächsten Sitzung' → b. The TOP is on the list but was not discussed!",
+     "explanation_uk": "'entfällt heute … in der nächsten Sitzung' → b. TOP є в списку, але його не обговорювали!"
     },
     {
      "id": "L4-8-q2",
@@ -9508,7 +9512,9 @@
       "werden einige Drucker abgeschafft."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: öneri Betriebsrat itirazıyla REDDEDİLDİ → b."
+     "explanation_tr": "Tuzak a: öneri Betriebsrat itirazıyla REDDEDİLDİ → b.",
+     "explanation_en": "Trap a: the proposal was REJECTED after the Betriebsrat objected → b.",
+     "explanation_uk": "Пастка a: пропозицію ВІДХИЛИЛИ через заперечення Betriebsrat → b."
     },
     {
      "id": "L4-8-q3",
@@ -9522,7 +9528,9 @@
       "darf keine Überstunden machen."
      ],
      "answer": 0,
-     "explanation_tr": "Aksoy ve Brandt haftada birer gün yardım ediyor; ilan edilen yer 'befristet' ve BİR tane → a."
+     "explanation_tr": "Aksoy ve Brandt haftada birer gün yardım ediyor; ilan edilen yer 'befristet' ve BİR tane → a.",
+     "explanation_en": "Aksoy and Brandt each help one day a week; the advertised position is 'befristet' and there is only ONE → a.",
+     "explanation_uk": "Aksoy і Brandt допомагають по одному дню на тиждень; оголошена посада 'befristet' і лише ОДНА → a."
     },
     {
      "id": "L4-8-q4",
@@ -9536,7 +9544,9 @@
       "fährt man mit dem Schiff."
      ],
      "answer": 2,
-     "explanation_tr": "Schifffahrt → c. Aileler bu kez katılamıyor."
+     "explanation_tr": "Schifffahrt → c. Aileler bu kez katılamıyor.",
+     "explanation_en": "Schifffahrt → c. Families can't come along this time.",
+     "explanation_uk": "Schifffahrt → c. Цього разу родини не можуть поїхати."
     },
     {
      "id": "L4-8-q5",
@@ -9550,7 +9560,9 @@
       "ersetzt die Leiterin der Verwaltung."
      ],
      "answer": 1,
-     "explanation_tr": "Her salı muayene → b. Başlangıç Ocak, 'ab sofort' değil."
+     "explanation_tr": "Her salı muayene → b. Başlangıç Ocak, 'ab sofort' değil.",
+     "explanation_en": "Consultation every Tuesday → b. It starts in January, not 'ab sofort'.",
+     "explanation_uk": "Прийом щовівторка → b. Початок у січні, а не 'ab sofort'."
     }
    ]
   },
@@ -9559,6 +9571,8 @@
    "part": "lesen-schreiben1",
    "title": "Lesen & Schreiben T1 · Set 3 (Prüfungsstil): Spülmaschine",
    "instructions_tr": "SINAV TARZI: Önce ŞEFİN iç e-postası (ne yazman gerektiği), altında müşterinin şikâyeti. Sorular müşteri hakkında. Sonra şefin talimatlarının HEPSİNİ cevabına koy!",
+   "instructions_en": "EXAM STYLE: First the BOSS's internal email (what you need to write), below it the customer's complaint. The questions are about the customer. Then put ALL of the boss's instructions into your reply!",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Спочатку внутрішній лист КЕРІВНИКА (що тобі потрібно написати), під ним скарга клієнта. Питання стосуються клієнта. Потім додай у свою відповідь УСІ вказівки керівника!",
    "layout": "text-questions",
    "texts": [
     {
@@ -9585,7 +9599,9 @@
       "hatte einen Wasserschaden in der Küche."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak c: 'Wasser läuft nicht ab' = su boşalmıyor, hasar değil → b. Yeni makine istemiyor, tamir istiyor."
+     "explanation_tr": "Tuzak c: 'Wasser läuft nicht ab' = su boşalmıyor, hasar değil → b. Yeni makine istemiyor, tamir istiyor.",
+     "explanation_en": "Trap c: 'Wasser läuft nicht ab' = the water doesn't drain, not damage → b. He doesn't want a new machine, he wants a repair.",
+     "explanation_uk": "Пастка c: 'Wasser läuft nicht ab' = вода не зливається, це не пошкодження → b. Він не хоче нову машину, він хоче ремонт."
     },
     {
      "id": "LS1-3-q2",
@@ -9599,7 +9615,9 @@
       "die Kosten für die Aushilfe erstatten."
      ],
      "answer": 1,
-     "explanation_tr": "Rabatt YOK; yardımcı masrafından şef hiç bahsetmiyor. Ödünç makine → b."
+     "explanation_tr": "Rabatt YOK; yardımcı masrafından şef hiç bahsetmiyor. Ödünç makine → b.",
+     "explanation_en": "NO Rabatt; the boss doesn't mention the helper's costs at all. Loan machine → b.",
+     "explanation_uk": "Rabatt НЕМАЄ; про витрати на помічника керівник взагалі не згадує. Машина на позику → b."
     }
    ]
   },
@@ -9608,6 +9626,8 @@
    "part": "lesen-schreiben1",
    "title": "Lesen & Schreiben T1 · Set 4 (Prüfungsstil): Kopierer – höflich ablehnen",
    "instructions_tr": "SINAV TARZI: Önce ŞEFİN iç e-postası (ne yazman gerektiği), altında müşterinin şikâyeti. Sorular müşteri hakkında. Sonra şefin talimatlarının HEPSİNİ cevabına koy!",
+   "instructions_en": "EXAM STYLE: First the BOSS's internal email (what you need to write), below it the customer's complaint. The questions are about the customer. Then put ALL of the boss's instructions into your reply!",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Спочатку внутрішній лист КЕРІВНИКА (що тобі потрібно написати), під ним скарга клієнта. Питання стосуються клієнта. Потім додай у свою відповідь УСІ вказівки керівника!",
    "layout": "text-questions",
    "texts": [
     {
@@ -9634,7 +9654,9 @@
       "möchte den Mietvertrag kündigen."
      ],
      "answer": 0,
-     "explanation_tr": "b teknisyenin görüşü, müşterinin değil! Tuzak: kim ne diyor? → a."
+     "explanation_tr": "b teknisyenin görüşü, müşterinin değil! Tuzak: kim ne diyor? → a.",
+     "explanation_en": "b is the technician's opinion, not the customer's! Trap: who says what? → a.",
+     "explanation_uk": "b — це думка техніка, а не клієнта! Пастка: хто що каже? → a."
     },
     {
      "id": "LS1-4-q2",
@@ -9648,7 +9670,9 @@
       "auf die Rechnung für den Technikereinsatz verzichten."
      ],
      "answer": 1,
-     "explanation_tr": "Şef: değişim YOK, masraf müşteride; ücretsiz eğitim VAR → b."
+     "explanation_tr": "Şef: değişim YOK, masraf müşteride; ücretsiz eğitim VAR → b.",
+     "explanation_en": "Boss: NO replacement, the customer pays the costs; free training YES → b.",
+     "explanation_uk": "Керівник: заміни НЕМАЄ, витрати несе клієнт; безкоштовне навчання Є → b."
     }
    ]
   },
@@ -9657,6 +9681,8 @@
    "part": "lesen2",
    "title": "Lesen T2 · Set 10 (Prüfungsstil): Urlaub & Einführungswoche",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_en": "EXAM STYLE: The texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Тексти — це завжди розділи 'Willkommensmappe' (папка для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "layout": "text-questions",
    "texts": [
     {
@@ -9682,7 +9708,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Anteilig, nach Absprache mümkün → falsch. Tuzak 'überhaupt keinen'."
+     "explanation_tr": "Anteilig, nach Absprache mümkün → falsch. Tuzak 'überhaupt keinen'.",
+     "explanation_en": "Anteilig, nach Absprache possible → falsch. Trap: 'überhaupt keinen'.",
+     "explanation_uk": "Anteilig, nach Absprache можливо → falsch. Пастка: 'überhaupt keinen'."
     },
     {
      "id": "L2-10-q2",
@@ -9696,7 +9724,9 @@
       "haben Eltern immer Vorrang."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak c: ebeveyn önceliği SADECE okul tatillerinde → b."
+     "explanation_tr": "Tuzak c: ebeveyn önceliği SADECE okul tatillerinde → b.",
+     "explanation_en": "Trap c: parents have priority ONLY during school holidays → b.",
+     "explanation_uk": "Пастка c: батьки мають перевагу ЛИШЕ під час шкільних канікул → b."
     },
     {
      "id": "L2-10-q3",
@@ -9709,7 +9739,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch."
+     "explanation_tr": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch.",
+     "explanation_en": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch.",
+     "explanation_uk": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch."
     },
     {
      "id": "L2-10-q4",
@@ -9723,7 +9755,9 @@
       "wird ausgezahlt."
      ],
      "answer": 1,
-     "explanation_tr": "31 Mart'a kadar; ödeme yok → b."
+     "explanation_tr": "31 Mart'a kadar; ödeme yok → b.",
+     "explanation_en": "Until 31 March; no payout → b.",
+     "explanation_uk": "До 31 березня; виплати немає → b."
     },
     {
      "id": "L2-10-q5",
@@ -9736,7 +9770,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Personalabteilung otomatik kaydediyor → falsch."
+     "explanation_tr": "Personalabteilung otomatik kaydediyor → falsch.",
+     "explanation_en": "The Personalabteilung registers you automatically → falsch.",
+     "explanation_uk": "Personalabteilung реєструє автоматично → falsch."
     },
     {
      "id": "L2-10-q6",
@@ -9750,7 +9786,9 @@
       "führt die Geschäftsführung durch das Gebäude."
      ],
      "answer": 0,
-     "explanation_tr": "Tuzak c: turu PATE yapıyor, Geschäftsführung kahvaltı veriyor → a."
+     "explanation_tr": "Tuzak c: turu PATE yapıyor, Geschäftsführung kahvaltı veriyor → a.",
+     "explanation_en": "Trap c: the tour is given by the PATE, the Geschäftsführung hosts a breakfast → a.",
+     "explanation_uk": "Пастка c: екскурсію проводить PATE, а Geschäftsführung запрошує на сніданок → a."
     },
     {
      "id": "L2-10-q7",
@@ -9763,7 +9801,9 @@
       "falsch"
      ],
      "answer": 0,
-     "explanation_tr": "Bir sonraki ayki programda → richtig."
+     "explanation_tr": "Bir sonraki ayki programda → richtig.",
+     "explanation_en": "In the next month's programme → richtig.",
+     "explanation_uk": "У програмі наступного місяця → richtig."
     },
     {
      "id": "L2-10-q8",
@@ -9777,7 +9817,9 @@
       "leitet die Personalabteilung."
      ],
      "answer": 0,
-     "explanation_tr": "→ a."
+     "explanation_tr": "→ a.",
+     "explanation_en": "→ a.",
+     "explanation_uk": "→ a."
     }
    ]
   },
@@ -9786,6 +9828,8 @@
    "part": "lesen2",
    "title": "Lesen T2 · Set 11 (Prüfungsstil): IT-Sicherheit & Kantine",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_en": "EXAM STYLE: The texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Тексти — це завжди розділи 'Willkommensmappe' (папка для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "layout": "text-questions",
    "texts": [
     {
@@ -9811,7 +9855,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "90 gün = yaklaşık 3 ay → falsch."
+     "explanation_tr": "90 gün = yaklaşık 3 ay → falsch.",
+     "explanation_en": "90 days = about 3 months → falsch.",
+     "explanation_uk": "90 днів = приблизно 3 місяці → falsch."
     },
     {
      "id": "L2-11-q2",
@@ -9825,7 +9871,9 @@
       "darf man nur in der Pause benutzen."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: 'nie' fazla kesin; test SONRASI kullanılabilir → b."
+     "explanation_tr": "Tuzak a: 'nie' fazla kesin; test SONRASI kullanılabilir → b.",
+     "explanation_en": "Trap a: 'nie' is too absolute; they can be used AFTER testing → b.",
+     "explanation_uk": "Пастка a: 'nie' — занадто категорично; можна використовувати ПІСЛЯ перевірки → b."
     },
     {
      "id": "L2-11-q3",
@@ -9838,7 +9886,9 @@
       "falsch"
      ],
      "answer": 0,
-     "explanation_tr": "→ richtig."
+     "explanation_tr": "→ richtig.",
+     "explanation_en": "→ richtig.",
+     "explanation_uk": "→ richtig."
     },
     {
      "id": "L2-11-q4",
@@ -9852,7 +9902,9 @@
       "öffnet man nur in der Pause."
      ],
      "answer": 1,
-     "explanation_tr": "→ b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-11-q5",
@@ -9865,7 +9917,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'Bargeld wird nicht angenommen' → falsch."
+     "explanation_tr": "'Bargeld wird nicht angenommen' → falsch.",
+     "explanation_en": "'Bargeld wird nicht angenommen' → falsch.",
+     "explanation_uk": "'Bargeld wird nicht angenommen' → falsch."
     },
     {
      "id": "L2-11-q6",
@@ -9879,7 +9933,9 @@
       "gibt es auch für Gäste."
      ],
      "answer": 1,
-     "explanation_tr": "'automatisch abgezogen' → b."
+     "explanation_tr": "'automatisch abgezogen' → b.",
+     "explanation_en": "'automatisch abgezogen' → b.",
+     "explanation_uk": "'automatisch abgezogen' → b."
     },
     {
      "id": "L2-11-q7",
@@ -9892,7 +9948,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak: 7–15 arası; 24 saat açık olan OTOMATLAR → falsch."
+     "explanation_tr": "Tuzak: 7–15 arası; 24 saat açık olan OTOMATLAR → falsch.",
+     "explanation_en": "Trap: open 7–15; the VENDING MACHINES are the ones open 24 hours → falsch.",
+     "explanation_uk": "Пастка: відкрито з 7 до 15; цілодобово працюють АВТОМАТИ → falsch."
     },
     {
      "id": "L2-11-q8",
@@ -9906,7 +9964,9 @@
       "wird vom Gehalt abgezogen."
      ],
      "answer": 0,
-     "explanation_tr": "→ a."
+     "explanation_tr": "→ a.",
+     "explanation_en": "→ a.",
+     "explanation_uk": "→ a."
     }
    ]
   },
@@ -9915,6 +9975,8 @@
    "part": "lesen3",
    "title": "Lesen T3 · Set 9 (Prüfungsstil): Kinder & Arbeitszeit",
    "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "instructions_en": "EXAM STYLE: Long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Довгі питання на форумі від першої особи; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
    "context_de": "Forum: Rund um den Beruf",
    "layout": "matching",
    "allow_none": true,
@@ -9957,7 +10019,9 @@
      "kind": "match",
      "prompt": "Derya: Mein Sohn hat hohes Fieber und ich muss zu Hause bleiben. Meine Chefin sagt, dafür müsse ich Urlaub nehmen. Stimmt das wirklich?",
      "answer": "a",
-     "explanation_tr": "Hasta çocuk + izin mi? → a."
+     "explanation_tr": "Hasta çocuk + izin mi? → a.",
+     "explanation_en": "Sick child + take leave? → a.",
+     "explanation_uk": "Хвора дитина + відпустка? → a."
     },
     {
      "id": "L3-9-q2",
@@ -9965,7 +10029,9 @@
      "kind": "match",
      "prompt": "Jonas: Ich arbeite seit zehn Jahren Teilzeit. Jetzt sind die Kinder groß und ich möchte wieder Vollzeit arbeiten. Muss mein Arbeitgeber das akzeptieren?",
      "answer": "c",
-     "explanation_tr": "Kısmi süreden tam süreye dönüş → c."
+     "explanation_tr": "Kısmi süreden tam süreye dönüş → c.",
+     "explanation_en": "Returning from part-time to full-time → c.",
+     "explanation_uk": "Повернення з неповного на повний робочий день → c."
     },
     {
      "id": "L3-9-q3",
@@ -9973,7 +10039,9 @@
      "kind": "match",
      "prompt": "Selma: Ich mache eine Ausbildung und habe gerade erfahren, dass ich schwanger bin. Muss ich das meinem Betrieb sofort sagen?",
      "answer": "e",
-     "explanation_tr": "Azubi + hamilelik bildirimi → e."
+     "explanation_tr": "Azubi + hamilelik bildirimi → e.",
+     "explanation_en": "Azubi + reporting a pregnancy → e.",
+     "explanation_uk": "Azubi + повідомлення про вагітність → e."
     },
     {
      "id": "L3-9-q4",
@@ -9981,7 +10049,9 @@
      "kind": "match",
      "prompt": "Frank: Unsere Kita schließt im August drei Wochen, und wir haben keine Betreuung. Darf ich meine Kinder dann mit ins Büro bringen?",
      "answer": "x",
-     "explanation_tr": "Tuzak d: çocuk ofiste ✓ ama HASTA çocuk. Frank'in çocukları sağlıklı, kreş kapalı → cevap yok → x. Tuzak b: sadece fikir."
+     "explanation_tr": "Tuzak d: çocuk ofiste ✓ ama HASTA çocuk. Frank'in çocukları sağlıklı, kreş kapalı → cevap yok → x. Tuzak b: sadece fikir.",
+     "explanation_en": "Trap d: child in the office ✓ but a SICK child. Frank's children are healthy, the daycare is closed → no answer → x. Trap b: only an opinion.",
+     "explanation_uk": "Пастка d: дитина в офісі ✓, але ХВОРА дитина. Діти Франка здорові, садочок зачинений → відповіді немає → x. Пастка b: лише думка."
     }
    ]
   },
@@ -9990,6 +10060,8 @@
    "part": "lesen3",
    "title": "Lesen T3 · Set 10 (Prüfungsstil): Arbeitsweg & Arbeitsort",
    "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
+   "instructions_en": "EXAM STYLE: Long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: Довгі питання на форумі від першої особи; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
    "context_de": "Forum: Rund um den Beruf",
    "layout": "matching",
    "allow_none": true,
@@ -10032,7 +10104,9 @@
      "kind": "match",
      "prompt": "Tanja: Wegen Glatteis fuhr heute früh kein einziger Bus, und ich bin zu Hause geblieben. Bekomme ich für den Tag trotzdem meinen Lohn?",
      "answer": "a",
-     "explanation_tr": "Buz yüzünden gelinemedi → Wegerisiko → a."
+     "explanation_tr": "Buz yüzünden gelinemedi → Wegerisiko → a.",
+     "explanation_en": "Couldn't get to work because of ice → Wegerisiko → a.",
+     "explanation_uk": "Не вдалося доїхати через ожеледицю → Wegerisiko → a."
     },
     {
      "id": "L3-10-q2",
@@ -10040,7 +10114,9 @@
      "kind": "match",
      "prompt": "Kerem: Auf dem Weg zur Arbeit habe ich meine Tochter zur Kita gebracht und bin dort auf der Treppe gestürzt. Bin ich trotzdem versichert?",
      "answer": "b",
-     "explanation_tr": "Kreş dolambacı sigortalı → b."
+     "explanation_tr": "Kreş dolambacı sigortalı → b.",
+     "explanation_en": "A detour to the daycare is insured → b.",
+     "explanation_uk": "Заїзд до садочка дорогою на роботу застрахований → b."
     },
     {
      "id": "L3-10-q3",
@@ -10048,7 +10124,9 @@
      "kind": "match",
      "prompt": "Nadine: Mein Chef verlangt, dass ich auch bei 34 Grad im Anzug zur Arbeit komme. Darf er das?",
      "answer": "x",
-     "explanation_tr": "Tuzak c: sıcaklık ✓ ama konu ofis sıcaklığı; Nadine KIYAFET kuralını soruyor → x."
+     "explanation_tr": "Tuzak c: sıcaklık ✓ ama konu ofis sıcaklığı; Nadine KIYAFET kuralını soruyor → x.",
+     "explanation_en": "Trap c: heat ✓ but the topic is the office temperature; Nadine is asking about the DRESS code → x.",
+     "explanation_uk": "Пастка c: спека ✓, але йдеться про температуру в офісі; Надін питає про правила ОДЯГУ → x."
     },
     {
      "id": "L3-10-q4",
@@ -10056,7 +10134,9 @@
      "kind": "match",
      "prompt": "Björn: Unsere Firma zieht an den Stadtrand, mein Arbeitsweg wird dadurch eine Stunde länger. Muss ich das einfach akzeptieren?",
      "answer": "e",
-     "explanation_tr": "İşyeri taşınıyor, sözleşmeye bağlı → e."
+     "explanation_tr": "İşyeri taşınıyor, sözleşmeye bağlı → e.",
+     "explanation_en": "The workplace is moving, it depends on the contract → e.",
+     "explanation_uk": "Робоче місце переїжджає, залежить від договору → e."
     }
    ]
   },
@@ -10065,6 +10145,8 @@
    "part": "lesen4",
    "title": "Lesen T4 · Set 9 (Prüfungsstil): Möbelhersteller",
    "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
+   "instructions_en": "EXAM STYLE: 6 TOPs, in TOP 1 a CORRECTION to the previous minutes, one TOP brought forward or postponed. In the questions, people are referred to by their TITLE (Protokollantin, Einkauf…).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: 6 TOP, у TOP 1 — ВИПРАВЛЕННЯ до попереднього протоколу, один TOP перенесено раніше або відкладено. У питаннях людей називають за ПОСАДОЮ (Protokollantin, Einkauf…).",
    "layout": "text-questions",
    "texts": [
     {
@@ -10086,7 +10168,9 @@
       "liegt vor der Sommerpause."
      ],
      "answer": 1,
-     "explanation_tr": "'per Umfrage festgelegt' = henüz belli değil → b."
+     "explanation_tr": "'per Umfrage festgelegt' = henüz belli değil → b.",
+     "explanation_en": "'per Umfrage festgelegt' = not decided yet → b.",
+     "explanation_uk": "'per Umfrage festgelegt' = ще не визначено → b."
     },
     {
      "id": "L4-9-q2",
@@ -10100,7 +10184,9 @@
       "müssen die Kunden selbst aufkommen."
      ],
      "answer": 0,
-     "explanation_tr": "Tuzak b: folyo Haziran'da TEST edilecek, 'ab sofort' değil → a."
+     "explanation_tr": "Tuzak b: folyo Haziran'da TEST edilecek, 'ab sofort' değil → a.",
+     "explanation_en": "Trap b: the film will be TESTED in June, not 'ab sofort' → a.",
+     "explanation_uk": "Пастка b: плівку ПРОТЕСТУЮТЬ у червні, а не 'ab sofort' → a."
     },
     {
      "id": "L4-9-q3",
@@ -10114,7 +10200,9 @@
       "entscheidet Frau Ceylan allein."
      ],
      "answer": 1,
-     "explanation_tr": "Çoğunluk fuardan yana ama 'entschieden wird erst danach' → b."
+     "explanation_tr": "Çoğunluk fuardan yana ama 'entschieden wird erst danach' → b.",
+     "explanation_en": "The majority favours the trade fair, but 'entschieden wird erst danach' → b.",
+     "explanation_uk": "Більшість за ярмарок, але 'entschieden wird erst danach' → b."
     },
     {
      "id": "L4-9-q4",
@@ -10128,7 +10216,9 @@
       "werden abgeschafft."
      ],
      "answer": 0,
-     "explanation_tr": "Tuzak b: Betriebsrat ZATEN onayladı → a."
+     "explanation_tr": "Tuzak b: Betriebsrat ZATEN onayladı → a.",
+     "explanation_en": "Trap b: the Betriebsrat has ALREADY approved it → a.",
+     "explanation_uk": "Пастка b: Betriebsrat УЖЕ погодив → a."
     },
     {
      "id": "L4-9-q5",
@@ -10142,7 +10232,9 @@
       "muss sich beim Personal melden."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak c: Personal'e başvuru OTOPARK için → b."
+     "explanation_tr": "Tuzak c: Personal'e başvuru OTOPARK için → b.",
+     "explanation_en": "Trap c: applying to Personal is for the PARKING space → b.",
+     "explanation_uk": "Пастка c: звертатися до Personal потрібно щодо ПАРКОВКИ → b."
     }
    ]
   }

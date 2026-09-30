@@ -1840,6 +1840,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'bis dahin' = o zamana kadar.",
+   "explanation_en": "'bis dahin' = until then.",
+   "explanation_uk": "'bis dahin' = до того часу.",
    "tags": [
     "zeit",
     "da-wort",
@@ -1860,6 +1862,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'eines davon' = bunlardan biri.",
+   "explanation_en": "'eines davon' = one of them.",
+   "explanation_uk": "'eines davon' = один із них.",
    "tags": [
     "da-wort",
     "exam-häufig"
@@ -1879,6 +1883,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Olmuş şeye sevinmek: sich freuen ÜBER → darüber. (Gelecek için: darauf.)",
+   "explanation_en": "Being happy about something that has happened: sich freuen ÜBER → darüber. (For the future: darauf.)",
+   "explanation_uk": "Радіти тому, що вже сталося: sich freuen ÜBER → darüber. (Про майбутнє: darauf.)",
    "tags": [
     "da-wort",
     "exam-häufig"
@@ -1898,6 +1904,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Çoğul sahiplik → 'deren'. Eril/nötr tekil → 'dessen'.",
+   "explanation_en": "Plural possession → 'deren'. Masculine/neuter singular → 'dessen'.",
+   "explanation_uk": "Присвійність у множині → 'deren'. Чоловічий/середній рід однини → 'dessen'.",
    "tags": [
     "relativ",
     "genitiv",
@@ -1918,6 +1926,8 @@
    ],
    "answer": 0,
    "explanation_tr": "die Firma (dişil) + sahiplik → 'deren'.",
+   "explanation_en": "die Firma (feminine) + possession → 'deren'.",
+   "explanation_uk": "die Firma (жіночий рід) + присвійність → 'deren'.",
    "tags": [
     "relativ",
     "genitiv",
@@ -1938,6 +1948,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'sowie' = ve ayrıca (tek başına). 'sowohl' yalnızsa 'als auch' ister.",
+   "explanation_en": "'sowie' = and also (on its own). 'sowohl' needs 'als auch'.",
+   "explanation_uk": "'sowie' = а також (вживається самостійно). 'sowohl' вимагає 'als auch'.",
    "tags": [
     "konnektor",
     "exam-häufig"
@@ -1957,6 +1969,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Zıtlık + fiil 2. sırada → 'dennoch' (= trotzdem).",
+   "explanation_en": "Contrast + verb in 2nd position → 'dennoch' (= trotzdem).",
+   "explanation_uk": "Протиставлення + дієслово на 2-му місці → 'dennoch' (= trotzdem).",
    "tags": [
     "gegensatz",
     "exam-häufig"
@@ -1976,6 +1990,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'sobald' = …ır …maz.",
+   "explanation_en": "'sobald' = as soon as …",
+   "explanation_uk": "'sobald' = щойно / як тільки …",
    "tags": [
     "zeit",
     "nebensatz",
@@ -1996,6 +2012,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Cümle İÇİNDE sebep → 'nämlich'. 'denn' sadece cümle başında.",
+   "explanation_en": "Reason INSIDE the sentence → 'nämlich'. 'denn' only at the start of the sentence.",
+   "explanation_uk": "Причина ВСЕРЕДИНІ речення → 'nämlich'. 'denn' лише на початку речення.",
    "tags": [
     "grund",
     "exam-häufig"
@@ -2015,6 +2033,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'Ihres' = Genitiv → 'während' (süresince). 'bei' Dativ ister (bei Ihrem Aufenthalt).",
+   "explanation_en": "'Ihres' = Genitiv → 'während' (during). 'bei' takes the Dativ (bei Ihrem Aufenthalt).",
+   "explanation_uk": "'Ihres' = Genitiv → 'während' (протягом). 'bei' вимагає Dativ (bei Ihrem Aufenthalt).",
    "tags": [
     "zeit",
     "genitiv",
@@ -2035,6 +2055,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kalıp: zur Verfügung stehen/stellen.",
+   "explanation_en": "Set phrase: zur Verfügung stehen/stellen.",
+   "explanation_uk": "Сталий вираз: zur Verfügung stehen/stellen.",
    "tags": [
     "feste Verbindung",
     "exam-häufig"
@@ -2054,6 +2076,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'zum Beispiel' (das Beispiel → zum).",
+   "explanation_en": "'zum Beispiel' (das Beispiel → zum).",
+   "explanation_uk": "'zum Beispiel' (das Beispiel → zum).",
    "tags": [
     "feste Verbindung",
     "exam-häufig"
@@ -2073,6 +2097,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'bitten, … zu + Infinitiv'.",
+   "explanation_en": "'bitten, … zu + Infinitiv'.",
+   "explanation_uk": "'bitten, … zu + Infinitiv'.",
    "tags": [
     "infinitiv",
     "exam-häufig"
@@ -2092,6 +2118,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sıfat çekimi: 'wegen der …' Genitiv dişil → -en: 'der anhaltenden Hitze'.",
+   "explanation_en": "Adjective ending: 'wegen der …' Genitiv feminine → -en: 'der anhaltenden Hitze'.",
+   "explanation_uk": "Відмінювання прикметника: 'wegen der …' Genitiv жіночого роду → -en: 'der anhaltenden Hitze'.",
    "tags": [
     "adjektiv",
     "exam-häufig"
@@ -2111,6 +2139,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'die' + dişil Akk. → -e: 'die vorzeitige Kündigung'.",
+   "explanation_en": "'die' + feminine Akk. → -e: 'die vorzeitige Kündigung'.",
+   "explanation_uk": "'die' + жіночий рід Akk. → -e: 'die vorzeitige Kündigung'.",
    "tags": [
     "adjektiv",
     "exam-häufig"
@@ -2130,6 +2160,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Fiili niteliyor = zarf → çekimsiz 'ausdrücklich'.",
+   "explanation_en": "It describes the verb = adverb → no ending: 'ausdrücklich'.",
+   "explanation_uk": "Стосується дієслова = прислівник → без закінчення: 'ausdrücklich'.",
    "tags": [
     "adverb",
     "exam-häufig"
@@ -2149,6 +2181,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Evet/hayır sorusu dolaylı → 'ob'.",
+   "explanation_en": "Indirect yes/no question → 'ob'.",
+   "explanation_uk": "Непряме питання «так/ні» → 'ob'.",
    "tags": [
     "frage",
     "exam-häufig"
@@ -2168,6 +2202,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich interessieren FÜR.",
+   "explanation_en": "sich interessieren FÜR.",
+   "explanation_uk": "sich interessieren FÜR.",
    "tags": [
     "präposition",
     "exam-häufig"
@@ -2186,6 +2222,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Ware trifft ein = mal ulaşır. Şikâyetlerde çok sık.",
+   "explanation_en": "Ware trifft ein = the goods arrive. Very common in complaints.",
+   "explanation_uk": "Ware trifft ein = товар надходить. Дуже часто в скаргах.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2205,6 +2243,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Rechnung/Betrag begleichen = ödemek.",
+   "explanation_en": "Rechnung/Betrag begleichen = to pay.",
+   "explanation_uk": "Rechnung/Betrag begleichen = сплатити.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2224,6 +2264,8 @@
    ],
    "answer": 0,
    "explanation_tr": "fällig = vadesi gelmiş. gültig = geçerli.",
+   "explanation_en": "fällig = due. gültig = valid.",
+   "explanation_uk": "fällig = належить до сплати (термін настав). gültig = дійсний.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2243,6 +2285,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Angebot ist gültig = teklif geçerli.",
+   "explanation_en": "Angebot ist gültig = the offer is valid.",
+   "explanation_uk": "Angebot ist gültig = пропозиція дійсна.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2262,6 +2306,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Skonto/Rabatt/Preisnachlass GEWÄHREN.",
+   "explanation_en": "Skonto/Rabatt/Preisnachlass GEWÄHREN.",
+   "explanation_uk": "Skonto/Rabatt/Preisnachlass GEWÄHREN.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2281,6 +2327,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas einem Dokument entnehmen = belgeden öğrenmek.",
+   "explanation_en": "etwas einem Dokument entnehmen = to find out from a document.",
+   "explanation_uk": "etwas einem Dokument entnehmen = дізнатися з документа.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2300,6 +2348,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Unannehmlichkeiten = rahatsızlıklar. Özür kalıbı.",
+   "explanation_en": "Unannehmlichkeiten = inconvenience. Apology phrase.",
+   "explanation_uk": "Unannehmlichkeiten = незручності. Фраза для вибачення.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2319,6 +2369,8 @@
    ],
    "answer": 0,
    "explanation_tr": "bereithalten = hazır bulundurmak. 'bereits' = zaten (tuzak!).",
+   "explanation_en": "bereithalten = to have ready. 'bereits' = already (trap!).",
+   "explanation_uk": "bereithalten = мати напоготові. 'bereits' = вже (пастка!).",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2338,6 +2390,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Reklamation prüfen = incelemek.",
+   "explanation_en": "Reklamation prüfen = to examine.",
+   "explanation_uk": "Reklamation prüfen = розглянути.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2357,6 +2411,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas veranlassen = başlatmak/talimat vermek.",
+   "explanation_en": "etwas veranlassen = to arrange/give instructions for.",
+   "explanation_uk": "etwas veranlassen = ініціювати / дати розпорядження.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2376,6 +2432,8 @@
    ],
    "answer": 0,
    "explanation_tr": "mittlerweile = bu arada / artık.",
+   "explanation_en": "mittlerweile = meanwhile / by now.",
+   "explanation_uk": "mittlerweile = тим часом / вже.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2395,6 +2453,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Höhe von = … tutarında.",
+   "explanation_en": "in Höhe von = in the amount of …",
+   "explanation_uk": "in Höhe von = у розмірі …",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2414,6 +2474,8 @@
    ],
    "answer": 0,
    "explanation_tr": "jemanden begrüßen dürfen = ağırlamak. Kapanış kalıbı.",
+   "explanation_en": "jemanden begrüßen dürfen = to welcome someone. Closing phrase.",
+   "explanation_uk": "jemanden begrüßen dürfen = вітати (приймати) когось. Фраза для завершення листа.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2433,6 +2495,8 @@
    ],
    "answer": 0,
    "explanation_tr": "nach Ablauf = süre bitince.",
+   "explanation_en": "nach Ablauf = when the period ends.",
+   "explanation_uk": "nach Ablauf = після закінчення терміну.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2452,6 +2516,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Stellungnahme = görüş/açıklama.",
+   "explanation_en": "Stellungnahme = statement/opinion.",
+   "explanation_uk": "Stellungnahme = позиція / пояснення.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2471,6 +2537,8 @@
    ],
    "answer": 0,
    "explanation_tr": "übersehen = gözden kaçırmak.",
+   "explanation_en": "übersehen = to overlook.",
+   "explanation_uk": "übersehen = не помітити, пропустити.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2490,6 +2558,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in diesem Zustand = bu durumda (fiziksel hâl).",
+   "explanation_en": "in diesem Zustand = in this condition (physical state).",
+   "explanation_uk": "in diesem Zustand = у такому стані (фізичний стан).",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2509,6 +2579,8 @@
    ],
    "answer": 0,
    "explanation_tr": "schnellstmöglich = en kısa sürede.",
+   "explanation_en": "schnellstmöglich = as soon as possible.",
+   "explanation_uk": "schnellstmöglich = якнайшвидше.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2528,6 +2600,8 @@
    ],
    "answer": 0,
    "explanation_tr": "gemäß + Dativ = …e uygun olarak.",
+   "explanation_en": "gemäß + Dativ = in accordance with …",
+   "explanation_uk": "gemäß + Dativ = відповідно до …",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2547,6 +2621,8 @@
    ],
    "answer": 0,
    "explanation_tr": "daraufhin = bunun üzerine.",
+   "explanation_en": "daraufhin = thereupon / as a result.",
+   "explanation_uk": "daraufhin = після цього / у відповідь на це.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2566,6 +2642,8 @@
    ],
    "answer": 0,
    "explanation_tr": "umgehend = derhal.",
+   "explanation_en": "umgehend = immediately.",
+   "explanation_uk": "umgehend = негайно.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2585,6 +2663,8 @@
    ],
    "answer": 0,
    "explanation_tr": "ein Gutachten erstellen = bilirkişi raporu hazırlamak.",
+   "explanation_en": "ein Gutachten erstellen = to prepare an expert report.",
+   "explanation_uk": "ein Gutachten erstellen = підготувати експертний висновок.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2604,6 +2684,8 @@
    ],
    "answer": 0,
    "explanation_tr": "jemanden zu den Kunden zählen = müşterilerimiz arasında saymak.",
+   "explanation_en": "jemanden zu den Kunden zählen = to count someone among our customers.",
+   "explanation_uk": "jemanden zu den Kunden zählen = зараховувати когось до наших клієнтів.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2623,6 +2705,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zwischenzeitlich = bu arada.",
+   "explanation_en": "zwischenzeitlich = meanwhile.",
+   "explanation_uk": "zwischenzeitlich = тим часом.",
    "tags": [
     "kollokation",
     "geschäftsbrief",
@@ -2643,6 +2727,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zur Verfügung STEHEN = hazır olmak (kişi). En sık kalıp!",
+   "explanation_en": "zur Verfügung STEHEN = to be available (person). The most common phrase!",
+   "explanation_uk": "zur Verfügung STEHEN = бути в розпорядженні (про людину). Найчастіший вираз!",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2662,6 +2748,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas zur Verfügung STELLEN = sağlamak/tahsis etmek.",
+   "explanation_en": "etwas zur Verfügung STELLEN = to provide/make available.",
+   "explanation_uk": "etwas zur Verfügung STELLEN = надати / виділити.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2681,6 +2769,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sabit: ZUR Verfügung.",
+   "explanation_en": "Fixed: ZUR Verfügung.",
+   "explanation_uk": "Сталий вираз: ZUR Verfügung.",
    "tags": [
     "nvv",
     "exam-häufig"

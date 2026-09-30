@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.6.4';
+const APP_VERSION = '1.9.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -19,6 +19,124 @@ const store = {
     try { localStorage.removeItem(PREFIX + key); } catch (e) { /* ignore */ }
   }
 };
+
+/* ---------- i18n ----------
+   UI strings live in i18n/ui.<lang>.json (flat keys). t(key) falls back to Turkish, then to the key.
+   Exam content stays German; only explanations/help texts are localized (see tx / nameOf / cardView). */
+const LANGS = [
+  { id: 'tr', flag: '🇹🇷', name: 'Türkçe', locale: 'tr-TR', llm: 'Turkish' },
+  { id: 'en', flag: '🇬🇧', name: 'English', locale: 'en-GB', llm: 'English' },
+  { id: 'uk', flag: '🇺🇦', name: 'Українська', locale: 'uk-UA', llm: 'Ukrainian' }
+];
+let LANG = 'tr';
+let UI = {};
+let UI_TR = {};
+function defaultLang() {
+  const l = String(navigator.language || '').toLowerCase();
+  if (l.startsWith('uk')) return 'uk';
+  if (l.startsWith('tr')) return 'tr';
+  return 'en';
+}
+function isLang(l) { return LANGS.some(x => x.id === l); }
+function langInfo() { return LANGS.find(x => x.id === LANG) || LANGS[0]; }
+function locale() { return langInfo().locale; }
+async function loadStrings(lang) {
+  const get = l => fetch(`./i18n/ui.${l}.json`).then(r => (r.ok ? r.json() : {})).catch(() => ({}));
+  UI_TR = await get('tr');
+  UI = lang === 'tr' ? UI_TR : await get(lang);
+  LANG = lang;
+  document.documentElement.lang = lang;
+}
+// t('key', { n: 3 }) → string with {n} replaced.
+function t(key, vars) {
+  let s = UI[key] != null ? UI[key] : (UI_TR[key] != null ? UI_TR[key] : key);
+  if (vars) s = String(s).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+  return s;
+}
+/* Content fields from b2-data.json:
+   tx(q, 'explanation') → explanation_<lang>, else explanation_tr; nameOf(section) → name_<lang>, else name;
+   cardView(card) → { prompt, blocks } from card.i18n[lang] when present, else the card's own fields. */
+function tx(obj, field) {
+  if (!obj) return '';
+  return obj[field + '_' + LANG] || obj[field + '_tr'] || '';
+}
+function nameOf(obj) { return (obj && (obj['name_' + LANG] || obj.name)) || ''; }
+function cardView(card) {
+  const l = card && card.i18n && card.i18n[LANG];
+  return {
+    prompt: (l && l.prompt) || (card && card.prompt) || '',
+    blocks: (l && Array.isArray(l.blocks) && l.blocks) || (card && card.blocks) || []
+  };
+}
+
+/* Translation feedback: a small ⚑ next to every explanation opens a box (item id, language, current text,
+   suggestion). "Send" shares one line via navigator.share (WhatsApp/Telegram) or copies it:
+   [b2trainer-i18n] id=L2-5-q3 lang=uk | mevcut: … | öneri: … */
+function flagBtn(id, text) {
+  if (!id || !text) return '';
+  return `<button type="button" class="flag-btn" data-flag-id="${esc(id)}" data-flag-text="${esc(text)}"
+    title="${esc(t('flag.title'))}" aria-label="${esc(t('flag.title'))}">⚑</button>`;
+}
+function oneLine(s) { return String(s || '').replace(/\s*\n+\s*/g, ' / ').replace(/\|/g, '¦').trim(); }
+function flagMessage(id, lang, current, suggestion) {
+  return `[b2trainer-i18n] id=${id} lang=${lang} | mevcut: ${oneLine(current)} | öneri: ${oneLine(suggestion)}`;
+}
+function openFlagDialog(id, text) {
+  closeFlagDialog();
+  const box = document.createElement('div');
+  box.className = 'flag-modal';
+  box.id = 'flagModal';
+  box.innerHTML = `
+    <div class="card flag-box" role="dialog" aria-modal="true" aria-labelledby="flagTitle">
+      <h3 id="flagTitle">⚑ ${esc(t('flag.title'))}</h3>
+      <p class="small muted">${esc(t('flag.item'))}: <code>${esc(id)}</code> · ${esc(t('flag.lang'))}: <code>${esc(LANG)}</code></p>
+      <p class="small muted">${esc(t('flag.current'))}</p>
+      <div class="sample small">${esc(text)}</div>
+      <label class="field"><span>${esc(t('flag.suggestion'))}</span>
+        <textarea id="flagInput" rows="4"></textarea>
+      </label>
+      <p class="small error" id="flagErr"></p>
+      <div class="row">
+        <button class="btn" id="flagCancel">${esc(t('flag.cancel'))}</button>
+        <button class="btn primary" id="flagSend">${esc(t('common.send'))}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(box);
+  const input = box.querySelector('#flagInput');
+  const errEl = box.querySelector('#flagErr');
+  input.focus();
+  box.addEventListener('click', e => { if (e.target === box) closeFlagDialog(); });
+  box.querySelector('#flagCancel').onclick = closeFlagDialog;
+  box.querySelector('#flagSend').onclick = async () => {
+    const suggestion = input.value.trim();
+    if (!suggestion) { errEl.textContent = t('flag.empty'); return; }
+    const msg = flagMessage(id, LANG, text, suggestion);
+    if (navigator.share) {
+      try {
+        await navigator.share({ text: msg });
+        closeFlagDialog();
+        return;
+      } catch (e) {
+        if (e && e.name === 'AbortError') return; // user closed the share sheet
+      }
+    }
+    const ok = await copyText(msg);
+    errEl.className = 'small ' + (ok ? 'verdict ok' : 'error');
+    errEl.textContent = ok ? t('flag.copied') : t('fallback.copyFailed');
+  };
+}
+function closeFlagDialog() {
+  const old = document.getElementById('flagModal');
+  if (old) old.remove();
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest && e.target.closest('.flag-btn');
+  if (!b) return;
+  e.preventDefault();
+  e.stopPropagation();
+  openFlagDialog(b.dataset.flagId, b.dataset.flagText);
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFlagDialog(); });
 
 // progress: { [questionId]: { n: attempts, ok: correct attempts, last: timestamp } }
 function getProgress() { return store.get('progress', {}); }
@@ -79,13 +197,13 @@ function speakingCues(noteEl, total) {
       if (!milestone && total > EXAM_STOP_SEC && elapsed >= EXAM_STOP_SEC && remaining > 0) {
         milestone = true;
         vibrate(200);
-        noteEl.textContent = '⏱ 2:00 — Sınavda burada durdurulabilirsin';
+        noteEl.textContent = t('timer.examStop');
         noteEl.className = 'timer-note milestone';
       }
     },
     finish() {
       vibrate([300, 150, 300]);
-      noteEl.textContent = '⏰ Süre doldu!';
+      noteEl.textContent = t('timer.over');
       noteEl.className = 'timer-note over';
     },
     reset() { milestone = false; noteEl.textContent = ''; noteEl.className = 'timer-note'; }
@@ -144,8 +262,11 @@ async function loadData() {
   DATA.cards = DATA.cards || [];
   DATA.reading_parts = (DATA.reading_parts || []).filter(p => p && p.id);
   DATA.reading = (DATA.reading || []).filter(s => s && s.id && Array.isArray(s.texts) && Array.isArray(s.questions));
+  buildSectionNames();
+}
+function buildSectionNames() {
   SECTION_NAME = {};
-  DATA.sections.forEach(s => { SECTION_NAME[s.id] = s.name; });
+  DATA.sections.forEach(s => { SECTION_NAME[s.id] = nameOf(s); });
 }
 
 /* ---------- Router ---------- */
@@ -188,37 +309,37 @@ function renderHome() {
   $app.innerHTML = `
     <div class="card hero">
       <div class="big">${due}</div>
-      <div class="muted">soru tekrar bekliyor</div>
-      <div class="muted small">${solved} / ${DATA.questions.length} soru çözüldü</div>
+      <div class="muted">${esc(t('home.dueLabel'))}</div>
+      <div class="muted small">${esc(t('home.solved', { n: solved, total: DATA.questions.length }))}</div>
     </div>
-    <a class="btn primary" href="#/practice">Pratik</a>
-    <a class="btn" href="#/exam">Sınav modu</a>
-    <a class="btn" href="#/review">Tekrar${due ? ` (${due})` : ''}</a>
+    <a class="btn primary" href="#/practice">${esc(t('home.practice'))}</a>
+    <a class="btn" href="#/exam">${esc(t('home.exam'))}</a>
+    <a class="btn" href="#/review">${esc(t('home.review'))}${due ? ` (${due})` : ''}</a>
     <a class="btn" href="#/lesen">📖 Lesen</a>
     <a class="btn" href="#/schreiben">✍️ Schreiben</a>
-    <a class="btn" href="#/cards">Kartlar</a>
+    <a class="btn" href="#/cards">${esc(t('home.cards'))}</a>
     <a class="btn" href="#/coach">🎙 Sprechen-Coach</a>
-    <a class="btn" href="#/progress">İlerleme</a>
-    <a class="btn" href="#/settings">Ayarlar</a>
+    <a class="btn" href="#/progress">${esc(t('home.progress'))}</a>
+    <a class="btn" href="#/settings">${esc(t('home.settings'))}</a>
   `;
 }
 
 /* ---------- Practice setup ---------- */
 function renderPracticeSetup() {
-  setHeader('Pratik', true);
+  setHeader(t('home.practice'), true);
   const last = store.get('practiceFilter', { section: '', topic: '' });
   const sectionOpts = DATA.sections.map(s =>
-    `<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('');
+    `<option value="${esc(s.id)}">${esc(nameOf(s))}</option>`).join('');
   $app.innerHTML = `
     <div class="card">
-      <label class="field"><span>Bölüm</span>
-        <select id="secSel"><option value="">Tüm bölümler</option>${sectionOpts}</select>
+      <label class="field"><span>${esc(t('practice.section'))}</span>
+        <select id="secSel"><option value="">${esc(t('practice.allSections'))}</option>${sectionOpts}</select>
       </label>
-      <label class="field"><span>Konu (opsiyonel)</span>
+      <label class="field"><span>${esc(t('practice.topic'))}</span>
         <select id="topSel"></select>
       </label>
       <p class="muted small" id="countInfo"></p>
-      <button class="btn primary" id="startBtn">10 soruluk turu başlat</button>
+      <button class="btn primary" id="startBtn">${esc(t('practice.start'))}</button>
     </div>
   `;
   const secSel = document.getElementById('secSel');
@@ -234,13 +355,13 @@ function renderPracticeSetup() {
   function fillTopics(keep) {
     const qs = DATA.questions.filter(q => !secSel.value || q.section === secSel.value);
     const topics = uniq(qs.map(q => q.topic).filter(Boolean)).sort((a, b) => a.localeCompare(b, 'de'));
-    topSel.innerHTML = '<option value="">Tüm konular</option>' +
+    topSel.innerHTML = `<option value="">${esc(t('practice.allTopics'))}</option>` +
       topics.map(t => `<option value="${esc(t)}">${esc(t)}</option>`).join('');
     topSel.value = topics.includes(keep) ? keep : '';
   }
   function update() {
     const n = pool().length;
-    info.textContent = `${n} soru mevcut`;
+    info.textContent = t('practice.available', { n });
     startBtn.disabled = n === 0;
     store.set('practiceFilter', { section: secSel.value, topic: topSel.value });
   }
@@ -251,7 +372,7 @@ function renderPracticeSetup() {
   topSel.onchange = update;
   startBtn.onclick = () => {
     const qs = shuffle(pool()).slice(0, 10);
-    runQuiz({ title: 'Pratik', questions: qs, feedback: true, onDone: showPracticeResult });
+    runQuiz({ title: t('home.practice'), questions: qs, feedback: true, onDone: showPracticeResult });
   };
 }
 
@@ -261,10 +382,10 @@ function showPracticeResult(results) {
   $app.innerHTML = `
     <div class="card hero">
       <div class="big">${ok} / ${results.length}</div>
-      <div class="muted">doğru</div>
+      <div class="muted">${esc(t('common.correctLower'))}</div>
     </div>
-    <button class="btn primary" id="againBtn">Yeni tur</button>
-    <a class="btn" href="#/">Ana sayfa</a>
+    <button class="btn primary" id="againBtn">${esc(t('practice.again'))}</button>
+    <a class="btn" href="#/">${esc(t('common.home'))}</a>
   `;
   document.getElementById('againBtn').onclick = renderPracticeSetup;
 }
@@ -328,10 +449,10 @@ function runQuiz(opts) {
           document.getElementById('qPrompt').innerHTML = renderPrompt(q.prompt, rightText);
           after.innerHTML = `
             <div class="card explain ${correct ? 'ok' : 'bad'}">
-              <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? '✓ Doğru' : '✗ Yanlış — doğrusu: ' + esc(rightText)}</div>
-              <div>${esc(q.explanation_tr || '')}</div>
+              <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? esc(t('quiz.correct')) : esc(t('quiz.wrongAnswer', { answer: rightText }))}</div>
+              <div>${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>
             </div>
-            <button class="btn primary" id="nextBtn">Devam</button>`;
+            <button class="btn primary" id="nextBtn">${esc(t('common.next'))}</button>`;
           const next = document.getElementById('nextBtn');
           next.onclick = () => { i++; show(); };
           next.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -350,7 +471,7 @@ function runQuiz(opts) {
 const REVIEW_LIMIT = 20;
 
 function renderReview() {
-  setHeader('Tekrar', true);
+  setHeader(t('home.review'), true);
   const due = dueQuestions();
   if (!due.length) {
     const srs = getSrs();
@@ -358,11 +479,11 @@ function renderReview() {
     $app.innerHTML = `
       <div class="card hero">
         <div class="big">✓</div>
-        <div>Şu an tekrar bekleyen soru yok.</div>
-        ${next ? `<div class="muted small">Sıradaki tekrar: ${new Date(next).toLocaleString('tr-TR', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</div>` : ''}
+        <div>${esc(t('review.none'))}</div>
+        ${next ? `<div class="muted small">${esc(t('review.next', { date: new Date(next).toLocaleString(locale(), { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) }))}</div>` : ''}
       </div>
-      <a class="btn primary" href="#/practice">Pratik yap</a>
-      <a class="btn" href="#/">Ana sayfa</a>`;
+      <a class="btn primary" href="#/practice">${esc(t('review.practice'))}</a>
+      <a class="btn" href="#/">${esc(t('common.home'))}</a>`;
     return;
   }
   const srs = getSrs();
@@ -371,15 +492,15 @@ function renderReview() {
   $app.innerHTML = `
     <div class="card hero">
       <div class="big">${due.length}</div>
-      <div class="muted">soru tekrar bekliyor</div>
-      <div class="muted small">Kutu 0–4: ${counts.join(' · ')}</div>
+      <div class="muted">${esc(t('home.dueLabel'))}</div>
+      <div class="muted small">${esc(t('review.boxes', { list: counts.join(' · ') }))}</div>
     </div>
-    <button class="btn primary" id="startBtn">Tekrara başla (${Math.min(due.length, REVIEW_LIMIT)} soru)</button>
-    <p class="muted small">Yanlış cevaplanan sorular tur sonunda bir kez daha sorulur. Doğru → sonraki kutu (1, 2, 4, 7 gün sonra).</p>
+    <button class="btn primary" id="startBtn">${esc(t('review.start', { n: Math.min(due.length, REVIEW_LIMIT) }))}</button>
+    <p class="muted small">${esc(t('review.help'))}</p>
   `;
   document.getElementById('startBtn').onclick = () => {
     runQuiz({
-      title: 'Tekrar',
+      title: t('home.review'),
       questions: due.slice(0, REVIEW_LIMIT),
       feedback: true,
       requeueWrong: true,
@@ -389,11 +510,11 @@ function renderReview() {
         $app.innerHTML = `
           <div class="card hero">
             <div class="big">${ok} / ${results.length}</div>
-            <div class="muted">doğru</div>
-            <div class="muted small">${left} soru hâlâ tekrar bekliyor</div>
+            <div class="muted">${esc(t('common.correctLower'))}</div>
+            <div class="muted small">${esc(t('review.left', { n: left }))}</div>
           </div>
-          ${left ? '<button class="btn primary" id="moreBtn">Devam et</button>' : ''}
-          <a class="btn" href="#/">Ana sayfa</a>`;
+          ${left ? `<button class="btn primary" id="moreBtn">${esc(t('review.more'))}</button>` : ''}
+          <a class="btn" href="#/">${esc(t('common.home'))}</a>`;
         const more = document.getElementById('moreBtn');
         if (more) more.onclick = renderReview;
       }
@@ -405,15 +526,15 @@ function renderReview() {
 const EXAM_SIZE = 20;
 
 function renderExamSetup() {
-  setHeader('Sınav modu', true);
+  setHeader(t('home.exam'), true);
   const settings = getSettings();
   $app.innerHTML = `
     <div class="card">
-      <p>Tüm bölümlerden karışık <strong>${Math.min(EXAM_SIZE, DATA.questions.length)} soru</strong>. Sınav sırasında açıklama gösterilmez; sonuçlar sonda.</p>
-      <label class="field"><span>Süre (dakika)</span>
+      <p>${t('exam.intro', { n: Math.min(EXAM_SIZE, DATA.questions.length) })}</p>
+      <label class="field"><span>${esc(t('exam.minutes'))}</span>
         <input type="number" id="minutes" min="1" max="120" inputmode="numeric" value="${settings.examMinutes}">
       </label>
-      <button class="btn primary" id="startBtn">Sınavı başlat</button>
+      <button class="btn primary" id="startBtn">${esc(t('exam.start'))}</button>
     </div>`;
   document.getElementById('startBtn').onclick = () => {
     const m = Math.max(1, Math.min(120, parseInt(document.getElementById('minutes').value, 10) || 12));
@@ -430,7 +551,7 @@ function startExam(minutes) {
   let finished = false;
 
   const quiz = runQuiz({
-    title: 'Sınav modu',
+    title: t('home.exam'),
     questions,
     feedback: false,
     onDone: results => {
@@ -462,24 +583,24 @@ function showExamResult(questions, results, timeUp) {
   const pct = Math.round((ok / questions.length) * 100);
   $app.innerHTML = `
     <div class="card hero">
-      ${timeUp ? '<div class="verdict bad">Süre doldu</div>' : ''}
+      ${timeUp ? `<div class="verdict bad">${esc(t('common.timeUp'))}</div>` : ''}
       <div class="big">${ok} / ${questions.length}</div>
-      <div class="muted">%${pct} doğru ${pct >= 60 ? '· geçme sınırı (%60) üstünde' : '· hedef: %60+'}</div>
+      <div class="muted">${esc(t('exam.pct', { pct }))} ${esc(pct >= 60 ? t('exam.passed') : t('exam.target'))}</div>
     </div>
-    ${wrong.length ? '<h3>Yanlışlar</h3>' : '<p class="center">Hepsi doğru! 🎉</p>'}
+    ${wrong.length ? `<h3>${esc(t('exam.wrongList'))}</h3>` : `<p class="center">${esc(t('exam.allRight'))}</p>`}
     ${wrong.map(q => {
       const r = byId[q.id];
       const right = q.options[q.answer];
       return `<div class="card explain bad">
         <div class="q-meta">${esc([SECTION_NAME[q.section], q.topic].filter(Boolean).join(' · '))}</div>
         <div lang="de" style="margin-bottom:6px">${renderPrompt(q.prompt, right)}</div>
-        <div class="small">${r ? `Senin cevabın: <span class="verdict bad">${esc(r.chosen)}</span>` : '<span class="muted">Cevaplanmadı</span>'}
-          · Doğrusu: <strong class="verdict ok">${esc(right)}</strong></div>
-        <div class="small" style="margin-top:6px">${esc(q.explanation_tr || '')}</div>
+        <div class="small">${r ? `${esc(t('exam.yourAnswer'))} <span class="verdict bad">${esc(r.chosen)}</span>` : `<span class="muted">${esc(t('exam.unanswered'))}</span>`}
+          · ${esc(t('exam.rightAnswer'))} <strong class="verdict ok">${esc(right)}</strong></div>
+        <div class="small" style="margin-top:6px">${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>
       </div>`;
     }).join('')}
-    <button class="btn primary" id="againBtn">Yeni sınav</button>
-    <a class="btn" href="#/">Ana sayfa</a>`;
+    <button class="btn primary" id="againBtn">${esc(t('exam.again'))}</button>
+    <a class="btn" href="#/">${esc(t('common.home'))}</a>`;
   document.getElementById('againBtn').onclick = renderExamSetup;
 }
 
@@ -494,7 +615,7 @@ function barRow(label, ok, n) {
 }
 
 function renderProgress() {
-  setHeader('İlerleme', true);
+  setHeader(t('home.progress'), true);
   const prog = getProgress();
   const srs = getSrs();
   const bySection = {};
@@ -521,20 +642,20 @@ function renderProgress() {
   $app.innerHTML = `
     <div class="card hero">
       <div class="big">${solved} / ${DATA.questions.length}</div>
-      <div class="muted">soru çözüldü · ${attempts} deneme · %${attempts ? Math.round(correct / attempts * 100) : 0} doğru</div>
-      <div class="muted small">Leitner kutuları 0–4: ${boxes.join(' · ')} · Öğrenilen kart: ${learned}/${DATA.cards.length}</div>
+      <div class="muted">${esc(t('progress.summary', { attempts, pct: attempts ? Math.round(correct / attempts * 100) : 0 }))}</div>
+      <div class="muted small">${esc(t('progress.boxes', { list: boxes.join(' · '), learned, total: DATA.cards.length }))}</div>
     </div>
-    ${weakest.length ? `<div class="card"><h3>En zayıf 3 konu</h3>
+    ${weakest.length ? `<div class="card"><h3>${esc(t('progress.weakest'))}</h3>
       ${weakest.map(x => barRow(x.t, x.ok, x.n)).join('')}
-      <button class="btn" id="weakBtn">En zayıf konuyu çalış</button></div>` : ''}
-    <div class="card"><h3>Bölümler</h3>
-      ${DATA.sections.map(s => barRow(s.name, (bySection[s.id] || {}).ok || 0, (bySection[s.id] || {}).n || 0)).join('')}
+      <button class="btn" id="weakBtn">${esc(t('progress.weakBtn'))}</button></div>` : ''}
+    <div class="card"><h3>${esc(t('progress.sections'))}</h3>
+      ${DATA.sections.map(s => barRow(nameOf(s), (bySection[s.id] || {}).ok || 0, (bySection[s.id] || {}).n || 0)).join('')}
     </div>
-    ${topics.length ? `<div class="card"><h3>Konular</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
+    ${topics.length ? `<div class="card"><h3>${esc(t('progress.topics'))}</h3>${topics.map(x => barRow(x.t, x.ok, x.n)).join('')}</div>` : ''}
     ${readingProgressHtml()}
     ${coachProgressHtml()}
     ${writingProgressHtml()}
-    <button class="btn danger" id="resetBtn">İlerlemeyi sıfırla</button>
+    <button class="btn danger" id="resetBtn">${esc(t('progress.reset'))}</button>
   `;
   const weakBtn = document.getElementById('weakBtn');
   if (weakBtn) weakBtn.onclick = () => {
@@ -542,7 +663,7 @@ function renderProgress() {
     location.hash = '#/practice';
   };
   document.getElementById('resetBtn').onclick = () => {
-    if (!confirm('Tüm ilerleme, tekrar kutuları, "öğrendim" işaretleri, Lesen skorları, Coach ve Schreiben puanları silinsin mi? ("Benim kalıplarım" kalır.) Bu işlem geri alınamaz.')) return;
+    if (!confirm(t('progress.resetConfirm'))) return;
     ['progress', 'srs', 'learned', 'practiceFilter', 'coachHistory', 'reading', 'writingHistory'].forEach(k => store.remove(k));
     renderProgress();
   };
@@ -555,10 +676,10 @@ function coachProgressHtml() {
   if (!keys.length) return '';
   const rows = keys.map(k => last[k]).sort((a, b) => b.date - a.date).map(e => `
     <div class="coach-row">
-      <span class="t">${esc(e.theme)}<span class="sub">${new Date(e.date).toLocaleString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span></span>
+      <span class="t">${esc(e.theme)}<span class="sub">${new Date(e.date).toLocaleString(locale(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span></span>
       <span class="mini-scores">${scoresInline(e.scores)}</span>
     </div>`).join('');
-  return `<div class="card"><h3>Sprechen-Coach · son puanlar</h3>
+  return `<div class="card"><h3>${esc(t('progress.coachScores'))}</h3>
     <p class="small muted">Aufgabe · Kohärenz · Wortschatz · Strukturen</p>${rows}</div>`;
 }
 
@@ -583,11 +704,11 @@ function saveReadingResult(set, ok, wrongIds) {
 
 // Sets grouped by reading_parts order; sets with an unknown part go into a trailing group.
 function readingGroups() {
-  const groups = DATA.reading_parts.map(p => ({ id: p.id, name: p.name, sets: [] }));
+  const groups = DATA.reading_parts.map(p => ({ id: p.id, name: nameOf(p), sets: [] }));
   const byId = {};
   groups.forEach(g => { byId[g.id] = g; });
   DATA.reading.forEach(s => {
-    if (!byId[s.part]) groups.push(byId[s.part] = { id: s.part, name: s.part || 'Diğer', sets: [] });
+    if (!byId[s.part]) groups.push(byId[s.part] = { id: s.part, name: s.part || t('lesen.other'), sets: [] });
     byId[s.part].sets.push(s);
   });
   return groups.filter(g => g.sets.length);
@@ -604,10 +725,10 @@ function renderLesen(args) {
       const e = rec[s.id];
       const total = s.questions.length;
       return `<li><a href="#/lesen/${encodeURIComponent(s.id)}">
-        <span class="t">${esc(s.title)}<span class="sub">${total} soru${e ? ` · son: ${e.last}/${total}` : ''}</span></span>
+        <span class="t">${esc(s.title)}<span class="sub">${esc(t('lesen.nQuestions', { n: total }))}${e ? ' · ' + esc(t('lesen.lastScore', { n: e.last, total })) : ''}</span></span>
         <span class="best ${e && e.best === total ? 'full' : ''}">${e ? `${e.best}/${total}` : '–'}</span>
       </a></li>`;
-    }).join('')}</ul>`).join('') || '<p class="muted center">Okuma alıştırması yok.</p>';
+    }).join('')}</ul>`).join('') || `<p class="muted center">${esc(t('lesen.none'))}</p>`;
 }
 
 function readingParagraphs(body) {
@@ -672,22 +793,22 @@ function renderReadingSet(id) {
           <div class="card rscroll rbody" data-text="${esc(t.key)}" lang="de">
             ${t.title ? `<p class="rtitle">${esc(t.title)}</p>` : ''}${readingParagraphs(t.body)}
           </div>`).join('')}
-        <button class="rpane-toggle" id="rpaneToggle">⤢ Metni büyüt</button>
+        <button class="rpane-toggle" id="rpaneToggle">${esc(t('lesen.expand'))}</button>
       </div>`;
 
   $app.innerHTML = `
     <div class="rhead">
-      <p class="small muted">${esc(set.instructions_tr || '')}</p>
+      <p class="small muted">${esc(tx(set, 'instructions'))}${flagBtn(set.id, tx(set, 'instructions'))}</p>
       ${set.context_de ? `<p class="context" lang="de">${esc(set.context_de)}</p>` : ''}
-      <label class="switch"><input type="checkbox" id="timerChk"> Zamanlayıcı (${minutes} dk)</label>
-      ${last && last.wrong && last.wrong.length ? `<p class="small muted">Son deneme: ${last.last}/${last.total} · ${last.wrong.length} yanlış</p>` : ''}
+      <label class="switch"><input type="checkbox" id="timerChk"> ${esc(t('lesen.timer', { n: minutes }))}</label>
+      ${last && last.wrong && last.wrong.length ? `<p class="small muted">${esc(t('lesen.lastTry', { n: last.last, total: last.total, wrong: last.wrong.length }))}</p>` : ''}
     </div>
     ${textsHtml}
-    <h3>Sorular</h3>
+    <h3>${esc(t('lesen.questions'))}</h3>
     <div id="rqs">${set.questions.map(questionHtml).join('')}</div>
     <div class="check-bar" id="checkBar">
       <span id="checkInfo" class="small muted"></span>
-      <button class="btn primary" id="checkBtn">Kontrol et</button>
+      <button class="btn primary" id="checkBtn">${esc(t('lesen.check'))}</button>
     </div>`;
   document.body.classList.add('has-checkbar');
 
@@ -700,7 +821,7 @@ function renderReadingSet(id) {
   function drawInfo() {
     if (checked) return;
     const n = Object.keys(answers).length;
-    checkInfo.textContent = `${n}/${set.questions.length} cevaplandı`;
+    checkInfo.textContent = t('lesen.answered', { n, total: set.questions.length });
   }
 
   /* text-questions: tabs + auto-switch to the text of the question being worked on */
@@ -728,7 +849,7 @@ function renderReadingSet(id) {
     const toggle = document.getElementById('rpaneToggle');
     toggle.onclick = () => {
       const big = pane.classList.toggle('big');
-      toggle.textContent = big ? '⤡ Metni küçült' : '⤢ Metni büyüt';
+      toggle.textContent = big ? t('lesen.shrink') : t('lesen.expand');
     };
     showText(activeKey);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -759,7 +880,7 @@ function renderReadingSet(id) {
   function check(timeUp) {
     if (checked) return;
     const empty = set.questions.length - Object.keys(answers).length;
-    if (!timeUp && empty && !confirm(`${empty} soru boş. Yine de kontrol edilsin mi?`)) return;
+    if (!timeUp && empty && !confirm(t('lesen.emptyConfirm', { n: empty }))) return;
     checked = true;
     stopTimer();
     let ok = 0;
@@ -777,15 +898,15 @@ function renderReadingSet(id) {
         else if (b.dataset.v === chosen) b.classList.add('wrong');
       });
       row.querySelector('.rq-after').innerHTML = `
-        <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? '✓ Doğru'
-          : `✗ ${chosen === undefined ? 'Boş' : 'Yanlış'} — doğrusu: <span lang="de">${esc(answerLabel(q, right))}</span>`}</div>
-        ${q.explanation_tr ? `<div class="small">${esc(q.explanation_tr)}</div>` : ''}`;
+        <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? esc(t('quiz.correct'))
+          : `✗ ${esc(chosen === undefined ? t('lesen.empty') : t('lesen.wrong'))} — ${esc(t('lesen.rightIs'))} <span lang="de">${esc(answerLabel(q, right))}</span>`}</div>
+        ${tx(q, 'explanation') ? `<div class="small">${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>` : ''}`;
     });
     saveReadingResult(set, ok, wrongIds);
     document.getElementById('timerChk').disabled = true;
     checkInfo.className = 'verdict ' + (ok === set.questions.length ? 'ok' : (ok / set.questions.length >= 0.6 ? '' : 'bad'));
-    checkInfo.textContent = `${timeUp ? 'Süre doldu · ' : ''}${ok}/${set.questions.length} doğru`;
-    checkBtn.textContent = 'Tekrar çöz';
+    checkInfo.textContent = (timeUp ? t('common.timeUp') + ' · ' : '') + t('lesen.score', { n: ok, total: set.questions.length });
+    checkBtn.textContent = t('lesen.retry');
     checkBtn.classList.remove('primary');
     checkBtn.onclick = () => renderReadingSet(set.id);
     const firstBad = rqs.querySelector('.rq.bad');
@@ -862,11 +983,11 @@ const DECKS = [
 ];
 
 function renderCards(args) {
-  setHeader('Kartlar', true);
+  setHeader(t('home.cards'), true);
   const known = DECKS.map(d => d.id);
   const extra = uniq(DATA.cards.map(c => c.deck)).filter(d => !known.includes(d))
     .map(d => ({ id: d, name: d }));
-  const decks = DECKS.concat(extra, [{ id: MY_PHRASES_DECK, name: 'Benim kalıplarım' }]);
+  const decks = DECKS.concat(extra, [{ id: MY_PHRASES_DECK, name: t('cards.myPhrases') }]);
   const deck = args[0] || store.get('lastDeck', 'pruefung');
   if (deck === MY_PHRASES_DECK) return renderMyPhrasesDeck(decks);
   const learned = getLearned();
@@ -877,8 +998,8 @@ function renderCards(args) {
     <ul class="list">${cards.map(c => `
       <li><a href="#/card/${encodeURIComponent(c.id)}">
         <span class="tick">${learned[c.id] ? '✓' : ''}</span>
-        <span class="t">${esc(c.title)}<span class="sub">${esc(c.prompt || '')}</span></span>
-      </a></li>`).join('') || '<p class="muted center">Bu destede kart yok.</p>'}</ul>
+        <span class="t">${esc(c.title)}<span class="sub">${esc(cardView(c).prompt)}</span></span>
+      </a></li>`).join('') || `<p class="muted center">${esc(t('cards.emptyDeck'))}</p>`}</ul>
   `;
   store.set('lastDeck', deck);
   document.querySelectorAll('.tab').forEach(t => {
@@ -897,8 +1018,8 @@ function renderMyPhrasesDeck(decks) {
     ${phrases.length ? `<ul class="phrase-list card">${phrases.map((p, i) => `
       <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
         <button class="icon-btn" data-say="${i}" aria-label="Vorlesen">🔊</button>
-        <button class="icon-btn" data-del="${i}" aria-label="Sil">🗑</button></li>`).join('')}</ul>`
-    : '<p class="muted center">Henüz kalıp yok. Schreiben değerlendirmesinde "➕ Kartlara ekle" ile ekleyebilirsin.</p>'}`;
+        <button class="icon-btn" data-del="${i}" aria-label="${esc(t('common.delete'))}">🗑</button></li>`).join('')}</ul>`
+    : `<p class="muted center">${esc(t('cards.noPhrases'))}</p>`}`;
   document.querySelectorAll('.tab').forEach(t => {
     t.onclick = () => { location.hash = '#/cards/' + encodeURIComponent(t.dataset.deck); };
   });
@@ -917,28 +1038,30 @@ function renderCardDetail(args) {
   onLeave(() => $back.setAttribute('href', '#/'));
 
   const isLearned = !!getLearned()[card.id];
-  const blocks = (card.blocks || []).map(b => `
+  const view = cardView(card);
+  const blocks = view.blocks.map((b, i) => `
     <div class="card">
+      ${flagBtn(card.id + '#b' + i, [b.heading].concat(b.lines || []).filter(Boolean).join('\n'))}
       ${b.heading ? `<h3>${esc(b.heading)}</h3>` : ''}
       <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>
     </div>`).join('');
   const timer = card.deck === 'sprechen' ? `
     <div class="card">
-      <h3>Konuşma zamanlayıcısı</h3>
+      <h3>${esc(t('cards.speakTimer'))}</h3>
       <div class="timer" id="timer">${fmtClock(monologSeconds())}</div>
       <p class="timer-note" id="timerNote" aria-live="polite"></p>
       <div class="row">
-        <button class="btn primary" id="tStart">Başlat</button>
-        <button class="btn" id="tReset">Sıfırla</button>
+        <button class="btn primary" id="tStart">${esc(t('timer.start'))}</button>
+        <button class="btn" id="tReset">${esc(t('timer.reset'))}</button>
       </div>
     </div>` : '';
   const sample = card.sample ? `
     <div class="card">
       <details id="sampleBox">
-        <summary>Mustertext göster</summary>
+        <summary>${esc(t('cards.showSample'))}</summary>
         <div class="row" style="margin:8px 0">
           <button class="btn" id="speakBtn">🔊 Vorlesen</button>
-          <button class="btn" id="stopBtn">■ Durdur</button>
+          <button class="btn" id="stopBtn">${esc(t('common.stop'))}</button>
         </div>
         <div class="sample" lang="de">${esc(card.sample)}</div>
       </details>
@@ -951,15 +1074,15 @@ function renderCardDetail(args) {
 
   const coachHref = coachLinkFor(card);
   $app.innerHTML = `
-    <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong></div>
-    ${coachHref ? `<a class="btn primary" href="${coachHref}">🎙 Coach ile çalış</a>` : ''}
-    ${card.deck === 'lesen' && DATA.reading.length ? '<a class="btn primary" href="#/lesen">📖 Lesen alıştırmaları</a>' : ''}
+    <div class="card"><strong>${esc(view.prompt)}</strong>${flagBtn(card.id + '#prompt', view.prompt)}</div>
+    ${coachHref ? `<a class="btn primary" href="${coachHref}">${esc(t('cards.coach'))}</a>` : ''}
+    ${card.deck === 'lesen' && DATA.reading.length ? `<a class="btn primary" href="#/lesen">${esc(t('cards.lesenLink'))}</a>` : ''}
     ${timer}
     ${blocks}
     ${sample}
     ${exq}
     <button class="btn ${isLearned ? '' : 'primary'}" id="learnBtn">
-      ${isLearned ? '✓ Öğrendim (geri al)' : 'Öğrendim olarak işaretle'}</button>
+      ${esc(isLearned ? t('cards.learnedUndo') : t('cards.markLearned'))}</button>
   `;
 
   document.getElementById('learnBtn').onclick = () => {
@@ -994,13 +1117,13 @@ function setupSpeakingTimer(seconds, makeCues) {
   function stop() {
     if (handle) clearInterval(handle);
     handle = null;
-    startBtn.textContent = remaining === 0 ? 'Başlat' : (remaining < seconds ? 'Devam' : 'Başlat');
+    startBtn.textContent = remaining > 0 && remaining < seconds ? t('timer.resume') : t('timer.start');
   }
   startBtn.onclick = () => {
     if (handle) { stop(); return; }
     if (remaining === 0) { remaining = seconds; cues.reset(); }
     const endAt = Date.now() + remaining * 1000;
-    startBtn.textContent = 'Durdur';
+    startBtn.textContent = t('timer.pause');
     handle = setInterval(() => {
       remaining = Math.max(0, Math.round((endAt - Date.now()) / 1000));
       draw();
@@ -1012,7 +1135,7 @@ function setupSpeakingTimer(seconds, makeCues) {
     }, 250);
     draw();
   };
-  resetBtn.onclick = () => { stop(); remaining = seconds; cues.reset(); draw(); startBtn.textContent = 'Başlat'; };
+  resetBtn.onclick = () => { stop(); remaining = seconds; cues.reset(); draw(); startBtn.textContent = t('timer.start'); };
   onLeave(stop);
   draw();
 }
@@ -1041,27 +1164,43 @@ function getApiKey() { return store.get('apiKey', ''); }
 function getModel() { return getSettings().model || DEFAULT_MODEL; }
 
 let promptsModule = null;
-function loadPrompts() {
+// Prompts with {{LANG_NAME}} / {{PROFESSION}} filled in for the current language and the optional profession setting.
+async function loadPrompts() {
   if (!promptsModule) promptsModule = import('./prompts.js').catch(e => { promptsModule = null; throw e; });
-  return promptsModule;
+  const mod = await promptsModule;
+  const out = {};
+  Object.keys(mod).forEach(k => { out[k] = localizePrompt(mod[k]); });
+  return out;
+}
+function localizePrompt(text) {
+  const job = String(getSettings().profession || '').trim();
+  return String(text)
+    .split('{{LANG_NAME}}').join(langInfo().llm)
+    .split('{{PROFESSION}}').join(job ? ', working as ' + job : '');
+}
+/* AI replies use language-neutral field names (summary, explanation, tips, comment, goal, ok);
+   older replies/history used *_tr — read both. */
+function pick(obj, name) {
+  if (!obj) return undefined;
+  return obj[name] != null ? obj[name] : obj[name + '_tr'];
 }
 
 class CoachError extends Error {}
 
 function apiErrorText(status, apiMsg) {
-  if (status === 401) return 'Anahtar hatalı';
-  if (status === 429 || status === 529) return 'Yoğunluk var, 10 sn sonra tekrar dene';
-  if (status === 403) return 'Bu anahtarın yetkisi yok';
-  if (status === 404) return 'Model bulunamadı — Ayarlar\'da model adını kontrol et';
-  if (status >= 500) return 'Sunucu hatası, biraz sonra tekrar dene';
-  return 'İstek hatası (' + status + ')' + (apiMsg ? ': ' + apiMsg : '');
+  if (status === 401) return t('api.badKey');
+  if (status === 429 || status === 529) return t('api.busy');
+  if (status === 403) return t('api.forbidden');
+  if (status === 404) return t('api.noModel');
+  if (status >= 500) return t('api.server');
+  return t('api.request', { status }) + (apiMsg ? ': ' + apiMsg : '');
 }
 
 /* Single entry point for the Claude API. Returns the joined text blocks.
    opts.maxTokens: 2000 for evaluations, 400 for chat. */
 async function callClaude(system, messages, opts) {
   const key = getApiKey();
-  if (!key) throw new CoachError('API anahtarı yok — Ayarlar\'dan ekle');
+  if (!key) throw new CoachError(t('api.noKey'));
   const body = {
     model: getModel(),
     max_tokens: (opts && opts.maxTokens) || CHAT_TOKENS,
@@ -1070,7 +1209,7 @@ async function callClaude(system, messages, opts) {
     thinking: { type: 'disabled' } // short answers; retried without it for models that reject this
   };
   async function post() {
-    if (navigator.onLine === false) throw new CoachError('İnternet yok');
+    if (navigator.onLine === false) throw new CoachError(t('api.offline'));
     try {
       return await fetch(API_URL, {
         method: 'POST',
@@ -1083,7 +1222,7 @@ async function callClaude(system, messages, opts) {
         body: JSON.stringify(body)
       });
     } catch (e) {
-      throw new CoachError('İnternet yok');
+      throw new CoachError(t('api.offline'));
     }
   }
   let res = await post();
@@ -1095,9 +1234,9 @@ async function callClaude(system, messages, opts) {
   }
   if (!res.ok) throw new CoachError(apiErrorText(res.status, err && err.error && err.error.message));
   const data = await res.json();
-  if (data.stop_reason === 'refusal') throw new CoachError('Model bu isteği yanıtlamadı, metni değiştirip tekrar dene');
+  if (data.stop_reason === 'refusal') throw new CoachError(t('api.refusal'));
   const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
-  if (!text) throw new CoachError('Boş cevap geldi, tekrar dene');
+  if (!text) throw new CoachError(t('api.empty'));
   return text;
 }
 
@@ -1117,7 +1256,7 @@ function parseJsonReply(text) {
 async function withBusy(btn, fn) {
   const label = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span> Bekle…';
+  btn.innerHTML = '<span class="spinner"></span> ' + esc(t('common.wait'));
   try { return await fn(); } finally {
     btn.disabled = false;
     btn.innerHTML = label;
@@ -1169,17 +1308,17 @@ async function copyText(text) {
 function renderFallback(el, getPrompt, reason) {
   el.innerHTML = `
     <div class="card fallback">
-      <h3>Yedek mod</h3>
+      <h3>${esc(t('fallback.title'))}</h3>
       ${reason ? `<p class="small">${esc(reason)}</p>` : ''}
-      <button class="btn" data-copy>📋 Prompt'u kopyala</button>
-      <p class="small muted" data-hint>Kopyaladıktan sonra Claude uygulamasını aç, yeni sohbete yapıştır ve gönder.</p>
+      <button class="btn" data-copy>${esc(t('fallback.copy'))}</button>
+      <p class="small muted" data-hint>${esc(t('fallback.hint'))}</p>
     </div>`;
   const btn = el.querySelector('[data-copy]');
   btn.onclick = async () => {
     const ok = await copyText(await getPrompt());
     el.querySelector('[data-hint]').innerHTML = ok
-      ? '✅ Kopyalandı. Şimdi <strong>Claude uygulamasına yapıştır</strong> ve gönder.'
-      : 'Kopyalanamadı — metni elle seçip kopyala.';
+      ? t('fallback.copied')
+      : esc(t('fallback.copyFailed'));
   };
 }
 
@@ -1200,37 +1339,37 @@ function correctionsHtml(list) {
   return `<ul class="corrections">${list.map(c => `
     <li>
       <div lang="de"><span class="wrong-text">${esc(c.original)}</span> → <span class="right-text">${esc(c.corrected)}</span></div>
-      ${c.explanation_tr ? `<div class="small muted">${esc(c.explanation_tr)}</div>` : ''}
+      ${pick(c, 'explanation') ? `<div class="small muted">${esc(pick(c, 'explanation'))}</div>` : ''}
     </li>`).join('')}</ul>`;
 }
 function renderEvalResult(el, result, rawText) {
   if (!result) {
-    el.innerHTML = `<div class="card"><h3>Değerlendirme (ham metin)</h3>
+    el.innerHTML = `<div class="card"><h3>${esc(t('eval.raw'))}</h3>
       <div class="sample small">${esc(rawText)}</div></div>`;
     return;
   }
   const scores = result.scores || {};
   el.innerHTML = `
     <div class="card">
-      <h3>Puanlar</h3>
+      <h3>${esc(t('eval.scores'))}</h3>
       <div class="scores" lang="de">${CRITERIA.map(([k, name]) => `
         <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
       <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1</p>
-      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+      ${pick(result, 'summary') ? `<p>${esc(pick(result, 'summary'))}</p>` : ''}
     </div>
     ${Array.isArray(result.corrections) && result.corrections.length ? `
-      <div class="card"><h3>Düzeltmeler</h3>${correctionsHtml(result.corrections)}</div>` : ''}
+      <div class="card"><h3>${esc(t('eval.corrections'))}</h3>${correctionsHtml(result.corrections)}</div>` : ''}
     ${result.improved_de ? `
       <div class="card">
         <h3>Verbesserte Version</h3>
         <div class="row" style="margin:8px 0">
           <button class="btn" data-speak>🔊 Vorlesen</button>
-          <button class="btn" data-stop>■ Durdur</button>
+          <button class="btn" data-stop>${esc(t('common.stop'))}</button>
         </div>
         <div class="sample" lang="de">${esc(result.improved_de)}</div>
       </div>` : ''}
-    ${Array.isArray(result.tips_tr) && result.tips_tr.length ? `
-      <div class="card"><h3>İpuçları</h3><ul>${result.tips_tr.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+    ${Array.isArray(pick(result, 'tips')) && pick(result, 'tips').length ? `
+      <div class="card"><h3>${esc(t('eval.tips'))}</h3><ul>${pick(result, 'tips').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}`;
   const sp = el.querySelector('[data-speak]');
   if (sp) {
     sp.onclick = () => speakDe(result.improved_de);
@@ -1256,43 +1395,62 @@ function scoresInline(scores, criteria) {
 
 /* ---------- Settings ---------- */
 function renderSettings() {
-  setHeader('Ayarlar', true);
+  setHeader(t('home.settings'), true);
   const settings = getSettings();
   const hasKey = !!getApiKey();
   $app.innerHTML = `
     <div class="card">
+      <h3>${esc(t('settings.language'))}</h3>
+      <div class="lang-row">${langButtonsHtml(LANG)}</div>
+    </div>
+    <div class="card">
       <h3>Sprechen-Coach (Claude API)</h3>
-      <label class="field"><span>API anahtarı (sadece bu cihazda saklanır)</span>
+      <label class="field"><span>${esc(t('settings.apiKey'))}</span>
         <input type="password" id="keyInput" autocomplete="off" autocapitalize="off" spellcheck="false"
-          placeholder="${hasKey ? '•••••••• (kayıtlı)' : 'sk-ant-…'}">
+          placeholder="${hasKey ? esc(t('settings.keySaved')) : 'sk-ant-…'}">
       </label>
       <div class="row">
-        <button class="btn primary" id="saveKey">Kaydet</button>
-        <button class="btn danger" id="delKey" ${hasKey ? '' : 'disabled'}>Sil</button>
+        <button class="btn primary" id="saveKey">${esc(t('common.save'))}</button>
+        <button class="btn danger" id="delKey" ${hasKey ? '' : 'disabled'}>${esc(t('common.delete'))}</button>
       </div>
       <label class="field"><span>Model</span>
         <input type="text" id="modelInput" autocomplete="off" autocapitalize="off" spellcheck="false"
           value="${esc(settings.model || DEFAULT_MODEL)}">
       </label>
-      <button class="btn" id="testBtn">Bağlantıyı test et</button>
+      <button class="btn" id="testBtn">${esc(t('settings.test'))}</button>
       <p id="testOut" class="small"></p>
-      <p class="small muted">Anahtar yoksa Coach ekranları yedek modda çalışır: prompt kopyalanır, Claude uygulamasına yapıştırılır.</p>
+      <p class="small muted">${esc(t('settings.noKeyHelp'))}</p>
+    </div>
+    <div class="card">
+      <h3>${esc(t('settings.aiTitle'))}</h3>
+      <label class="field"><span>${esc(t('settings.profession'))}</span>
+        <input type="text" id="jobInput" autocomplete="organization-title" value="${esc(settings.profession || '')}"
+          placeholder="${esc(t('settings.professionPlaceholder'))}">
+      </label>
+      <p class="small muted">${esc(t('settings.professionHelp'))}</p>
     </div>
     <div class="card">
       <h3>Sprechen</h3>
-      <label class="field"><span>Monolog süresi</span>
+      <label class="field"><span>${esc(t('settings.monolog'))}</span>
         <select id="monoSelect">${MONOLOG_OPTIONS.map(m =>
-          `<option value="${m}" ${monologSeconds() === m * 60 ? 'selected' : ''}>${m} dk</option>`).join('')}</select>
+          `<option value="${m}" ${monologSeconds() === m * 60 ? 'selected' : ''}>${esc(t('common.minutes', { n: m }))}</option>`).join('')}</select>
       </label>
-      <p class="small muted">Coach Monolog ve Sprechen kartlarındaki zamanlayıcı bu süreyi kullanır. Sınavda 2 dk'dan sonra durdurulabilirsin.</p>
+      <p class="small muted">${esc(t('settings.monologHelp'))}</p>
     </div>
     <div class="card">
       <h3>Schreiben</h3>
       ${Object.keys(WRITING_KINDS).map(k => `
-        <label class="field"><span>${WRITING_KINDS[k].name} süresi (dk)</span>
+        <label class="field"><span>${esc(t('settings.writingMinutes', { name: WRITING_KINDS[k].name }))}</span>
           <input type="number" data-wmin="${k}" min="5" max="60" inputmode="numeric" value="${writingMinutes(k)}">
         </label>`).join('')}
     </div>`;
+  $app.querySelectorAll('[data-lang]').forEach(b => {
+    b.onclick = async () => {
+      if (b.dataset.lang === LANG) return;
+      await setLang(b.dataset.lang);
+      renderSettings();
+    };
+  });
   document.querySelectorAll('[data-wmin]').forEach(inp => {
     inp.onchange = () => {
       const K = WRITING_KINDS[inp.dataset.wmin];
@@ -1302,6 +1460,11 @@ function renderSettings() {
       inp.value = s[K.minutesKey];
     };
   });
+  document.getElementById('jobInput').onchange = e => {
+    const s = getSettings();
+    s.profession = e.target.value.trim();
+    saveSettings(s);
+  };
   document.getElementById('monoSelect').onchange = e => {
     const s = getSettings();
     s.monologMinutes = parseInt(e.target.value, 10) || 3;
@@ -1318,13 +1481,13 @@ function renderSettings() {
   modelInput.onchange = saveModel;
   document.getElementById('saveKey').onclick = () => {
     const v = keyInput.value.trim();
-    if (!v) { out.textContent = 'Anahtar alanı boş.'; return; }
+    if (!v) { out.textContent = t('settings.keyEmpty'); return; }
     store.set('apiKey', v);
     renderSettings();
-    document.getElementById('testOut').textContent = 'Kaydedildi.';
+    document.getElementById('testOut').textContent = t('settings.saved');
   };
   document.getElementById('delKey').onclick = () => {
-    if (!confirm('API anahtarı bu cihazdan silinsin mi?')) return;
+    if (!confirm(t('settings.delKeyConfirm'))) return;
     store.remove('apiKey');
     renderSettings();
   };
@@ -1335,9 +1498,9 @@ function renderSettings() {
     out.textContent = '';
     try {
       await callClaude('Reply with the single word: OK', [{ role: 'user', content: 'Test' }], { maxTokens: 16 });
-      out.textContent = '✅ Bağlantı çalışıyor (' + getModel() + ')';
+      out.textContent = t('settings.testOk', { model: getModel() });
     } catch (e) {
-      out.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      out.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
     }
   });
 }
@@ -1354,15 +1517,15 @@ function renderCoachHub() {
       ${entry ? `<span class="mini-scores">${scoresInline(entry.scores)}</span>` : ''}
     </a></li>`;
   $app.innerHTML = `
-    ${getApiKey() ? '' : `<div class="card small">API anahtarı yok → <strong>yedek mod</strong> (prompt kopyala → Claude uygulaması).
-      <a href="#/settings">Ayarlar'dan anahtar ekle</a></div>`}
+    ${getApiKey() ? '' : `<div class="card small">${t('coach.noKey')}
+      <a href="#/settings">${esc(t('coach.addKey'))}</a></div>`}
     <h3>Teil 1 · Monolog</h3>
-    <ul class="list">${t1Cards().map(c => item('#/coach/mono/' + encodeURIComponent(c.id), c.title, c.prompt, last[c.id])).join('')}</ul>
+    <ul class="list">${t1Cards().map(c => item('#/coach/mono/' + encodeURIComponent(c.id), c.title, cardView(c).prompt, last[c.id])).join('')}</ul>
     <h3>Teil 2 · Smalltalk (Partner)</h3>
-    <ul class="list">${item('#/coach/t2/' + encodeURIComponent((t2Cards()[0] || {}).id || ''), 'Smalltalk mit Kollegen', '5 tur · du-Form · sesli', last['coach-t2'])}</ul>
+    <ul class="list">${item('#/coach/t2/' + encodeURIComponent((t2Cards()[0] || {}).id || ''), 'Smalltalk mit Kollegen', t('coach.t2Sub'), last['coach-t2'])}</ul>
     <h3>Teil 3 · Lösungswege (Partner)</h3>
     <a class="btn primary" href="#/coach/t3/new">✨ Neue Situation</a>
-    <ul class="list">${t3Situations().map(c => item('#/coach/t3/' + encodeURIComponent(c.id), c.title, c.prompt, last[c.id])).join('')}</ul>
+    <ul class="list">${t3Situations().map(c => item('#/coach/t3/' + encodeURIComponent(c.id), c.title, cardView(c).prompt, last[c.id])).join('')}</ul>
   `;
 }
 
@@ -1380,24 +1543,24 @@ function renderCoachMonolog(args) {
   const monoMin = monoSec / 60;
 
   $app.innerHTML = `
-    <div class="card"><strong lang="de">${esc(card.prompt || '')}</strong>
-      ${(card.blocks || []).length ? `<details><summary>Stichpunkte</summary>${card.blocks.map(b => `
+    <div class="card"><strong>${esc(cardView(card).prompt)}</strong>
+      ${cardView(card).blocks.length ? `<details><summary>Stichpunkte</summary>${cardView(card).blocks.map(b => `
         ${b.heading ? `<h3>${esc(b.heading)}</h3>` : ''}
-        <ul>${(b.lines || []).map(l => `<li lang="de">${esc(l)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
+        <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
     </div>
     <div class="card">
-      <h3>1 · Kayıt (${monoMin} dk)</h3>
+      <h3>${esc(t('mono.record', { n: monoMin }))}</h3>
       <div class="timer" id="recTimer">${fmtClock(monoSec)}</div>
       <p class="timer-note" id="recNote" aria-live="polite"></p>
       <div class="row">
-        <button class="btn primary" id="recBtn">🎙 Kaydı başlat</button>
-        <button class="btn" id="playBtn" disabled>▶ Dinle</button>
+        <button class="btn primary" id="recBtn">${esc(t('rec.start'))}</button>
+        <button class="btn" id="playBtn" disabled>${esc(t('rec.play'))}</button>
       </div>
-      <p class="small muted" id="recInfo">Kayıt sadece bu oturumda, telefonda kalır; hiçbir yere gönderilmez.</p>
+      <p class="small muted" id="recInfo">${esc(t('rec.info'))}</p>
     </div>
     <div class="card">
-      <h3>2 · Metin</h3>
-      <p class="small muted">Klavyedeki 🎤 simgesine bas ve tekrar konuş.</p>
+      <h3>${esc(t('mono.text'))}</h3>
+      <p class="small muted">${esc(t('mono.dictate'))}</p>
       <textarea id="mText" rows="8" lang="de" placeholder="Ich möchte über … sprechen."></textarea>
       <p class="small muted" id="wordCount"></p>
       ${hasKey ? '<button class="btn primary" id="evalBtn">Bewerten</button>' : ''}
@@ -1413,7 +1576,7 @@ function renderCoachMonolog(args) {
   const wc = document.getElementById('wordCount');
   function countWords() {
     const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
-    wc.textContent = n + ' kelime' + (n ? ` (${monoMin} dk ≈ ${monoMin * 100}–${monoMin * 125} kelime)` : '');
+    wc.textContent = t('common.words', { n }) + (n ? ' ' + t('mono.wordTarget', { min: monoMin, a: monoMin * 100, b: monoMin * 125 }) : '');
   }
   ta.value = store.get(draftKey, '');
   countWords();
@@ -1429,14 +1592,14 @@ function renderCoachMonolog(args) {
   const fallbackEl = document.getElementById('fallback');
   const fallbackPrompt = async () => (await loadPrompts()).PROMPT_MONOLOG + '\n\n' + userMessage();
   if (!hasKey) {
-    renderFallback(fallbackEl, fallbackPrompt, 'API anahtarı yok. Metni yazdıktan sonra prompt\'u kopyalayıp Claude uygulamasına yapıştır.');
+    renderFallback(fallbackEl, fallbackPrompt, t('mono.noKey'));
     return;
   }
 
   const evalBtn = document.getElementById('evalBtn');
   const errEl = document.getElementById('evalErr');
   evalBtn.onclick = () => {
-    if (!ta.value.trim()) { errEl.textContent = 'Önce metni yaz (dikte).'; return; }
+    if (!ta.value.trim()) { errEl.textContent = t('mono.writeFirst'); return; }
     errEl.textContent = '';
     fallbackEl.innerHTML = '';
     withBusy(evalBtn, async () => {
@@ -1446,7 +1609,7 @@ function renderCoachMonolog(args) {
         text = await callClaude(P.PROMPT_MONOLOG, [{ role: 'user', content: userMessage() }], { maxTokens: EVAL_TOKENS });
       } catch (e) {
         if (my !== screenId) return;
-        errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+        errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
         renderFallback(fallbackEl, fallbackPrompt);
         return;
       }
@@ -1470,7 +1633,7 @@ function renderFollowups(el, questions, card, my) {
     <div class="card" data-i="${i}">
       <p lang="de"><strong>${esc(q)}</strong></p>
       <button class="btn inline" data-say>🔊 Frage vorlesen</button>
-      <textarea rows="4" lang="de" placeholder="Klavyedeki 🎤 ile cevapla…"></textarea>
+      <textarea rows="4" lang="de" placeholder="${esc(t('followup.placeholder'))}"></textarea>
       <button class="btn primary" data-send>Antwort prüfen</button>
       <p class="small error" data-err></p>
       <div data-out></div>
@@ -1483,7 +1646,7 @@ function renderFollowups(el, questions, card, my) {
     box.querySelector('[data-say]').onclick = () => speakDe(q);
     const send = box.querySelector('[data-send]');
     send.onclick = () => {
-      if (!ta.value.trim()) { err.textContent = 'Önce cevabını yaz (dikte).'; return; }
+      if (!ta.value.trim()) { err.textContent = t('followup.writeFirst'); return; }
       err.textContent = '';
       withBusy(send, async () => {
         const msg = `Talk topic: ${card.prompt}\n\nExaminer question: ${q}\n\nCandidate answer (dictation):\n${ta.value.trim()}`;
@@ -1493,7 +1656,7 @@ function renderFollowups(el, questions, card, my) {
           text = await callClaude(P.PROMPT_FOLLOWUP, [{ role: 'user', content: msg }], { maxTokens: EVAL_TOKENS });
         } catch (e) {
           if (my !== screenId) return;
-          err.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+          err.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
           renderFallback(out, async () => (await loadPrompts()).PROMPT_FOLLOWUP + '\n\n' + msg);
           return;
         }
@@ -1501,7 +1664,7 @@ function renderFollowups(el, questions, card, my) {
         const r = parseJsonReply(text);
         if (!r) { out.innerHTML = `<div class="sample small">${esc(text)}</div>`; return; }
         out.innerHTML = `
-          ${r.ok_tr ? `<p class="verdict ok">✓ ${esc(r.ok_tr)}</p>` : ''}
+          ${pick(r, 'ok') ? `<p class="verdict ok">✓ ${esc(pick(r, 'ok'))}</p>` : ''}
           ${correctionsHtml(r.corrections)}
           ${r.better_answer_de ? `<h3>Musterantwort</h3>
             <button class="btn inline" data-say2>🔊 Vorlesen</button>
@@ -1541,7 +1704,7 @@ function setupRecorder(seconds) {
   }
   if (!window.MediaRecorder || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     recBtn.disabled = true;
-    info.textContent = 'Bu cihaz/tarayıcı ses kaydını desteklemiyor. Zamanlayıcı yerine doğrudan dikte kullan.';
+    info.textContent = t('rec.unsupported');
     return;
   }
   recBtn.onclick = async () => {
@@ -1549,7 +1712,7 @@ function setupRecorder(seconds) {
     try {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (e) {
-      info.textContent = 'Mikrofon izni verilmedi.';
+      info.textContent = t('rec.denied');
       return;
     }
     const type = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].find(t => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t));
@@ -1560,15 +1723,15 @@ function setupRecorder(seconds) {
       if (url) URL.revokeObjectURL(url);
       url = URL.createObjectURL(new Blob(chunks, { type: recorder.mimeType || type || 'audio/mp4' }));
       audio = new Audio(url);
-      audio.onended = () => { playBtn.textContent = '▶ Dinle'; };
+      audio.onended = () => { playBtn.textContent = t('rec.play'); };
       playBtn.disabled = false;
-      playBtn.textContent = '▶ Dinle';
-      recBtn.textContent = '🎙 Yeniden kaydet';
+      playBtn.textContent = t('rec.play');
+      recBtn.textContent = t('rec.again');
     };
     recorder.start(1000);
     cues.reset();
     const endAt = Date.now() + seconds * 1000;
-    recBtn.textContent = '■ Durdur';
+    recBtn.textContent = t('common.stop');
     playBtn.disabled = true;
     if (audio) audio.pause();
     handle = setInterval(() => {
@@ -1584,8 +1747,8 @@ function setupRecorder(seconds) {
   };
   playBtn.onclick = () => {
     if (!audio) return;
-    if (audio.paused) { audio.currentTime = audio.ended ? 0 : audio.currentTime; audio.play(); playBtn.textContent = '❚❚ Durdur'; }
-    else { audio.pause(); playBtn.textContent = '▶ Dinle'; }
+    if (audio.paused) { audio.currentTime = audio.ended ? 0 : audio.currentTime; audio.play(); playBtn.textContent = t('rec.pause'); }
+    else { audio.pause(); playBtn.textContent = t('rec.play'); }
   };
   onLeave(() => {
     stop();
@@ -1597,7 +1760,8 @@ function setupRecorder(seconds) {
 
 /* ---------- Modes 2 + 3: partner dialogues (Teil 2 Smalltalk, Teil 3 Lösungswege) ---------- */
 const PROMPT_NEW_SITUATION = `You write practice situations for the German exam "Deutsch-Test für den Beruf B2", Sprechen Teil 3 (Lösungswege diskutieren).
-Invent ONE new, realistic workplace problem that two colleagues must solve together (vary the setting: office, clinic, care, counselling centre, logistics, customer service). 1-2 German sentences at B2 level. Output only the situation, no introduction, no quotes.`;
+Invent ONE new, realistic workplace problem that two colleagues must solve together (vary the setting: office, clinic, care, counselling centre, logistics, customer service). 1-2 German sentences at B2 level. Output only the situation, no introduction, no quotes.
+Write every explanation, summary, tip and comment in {{LANG_NAME}}. Corrections and model texts stay in German.`;
 
 const DIALOG_KINDS = {
   t2: { title: 'Teil 2 · Smalltalk', task: 'Teil 2 Smalltalk mit Kollegen (du-Form)', turns: '5', maxTurns: 5 },
@@ -1631,10 +1795,10 @@ function renderCoachT3Picker() {
   $back.setAttribute('href', '#/coach');
   onLeave(() => $back.setAttribute('href', '#/'));
   $app.innerHTML = `
-    <p class="muted small">Bir durum seç ya da Claude yeni bir iş yeri sorunu üretsin.</p>
+    <p class="muted small">${esc(t('t3.pick'))}</p>
     <a class="btn primary" href="#/coach/t3/new">✨ Neue Situation</a>
     <ul class="list">${t3Situations().map(c => `
-      <li><a href="#/coach/t3/${encodeURIComponent(c.id)}"><span class="t">${esc(c.title)}<span class="sub" lang="de">${esc(c.prompt)}</span></span></a></li>`).join('')}</ul>`;
+      <li><a href="#/coach/t3/${encodeURIComponent(c.id)}"><span class="t">${esc(c.title)}<span class="sub">${esc(cardView(c).prompt)}</span></span></a></li>`).join('')}</ul>`;
 }
 
 function renderCoachDialog(kind, arg) {
@@ -1670,12 +1834,12 @@ function renderCoachDialog(kind, arg) {
   function drawSituation() {
     if (kind === 't2') {
       sitBox.innerHTML = `<strong>Smalltalk mit einer Kollegin / einem Kollegen</strong>
-        <p class="small muted">Claude bir iş arkadaşı, sana "du" diye hitap eder. ${K.turns} tur. Cevap ver → gerekçe → örnek → karşı soru (Und du?).</p>`;
+        <p class="small muted">${esc(t('t2.help', { n: K.turns }))}</p>`;
     } else {
       sitBox.innerHTML = `
         <strong>Situation</strong>
-        <p lang="de" id="sitText">${situation ? esc(situation) : '<span class="muted">Henüz durum yok.</span>'}</p>
-        <p class="small muted">Claude iş arkadaşın; birlikte çözüm bulun, görev paylaşın, uzun vadeli önlem konuşun. ${K.turns} tur.</p>
+        <p lang="de" id="sitText">${situation ? esc(situation) : `<span class="muted">${esc(t('t3.noSituation'))}</span>`}</p>
+        <p class="small muted">${esc(t('t3.help', { n: K.turns }))}</p>
         ${hasKey ? '<button class="btn" id="newSitBtn">✨ Neue Situation</button><p class="small error" id="sitErr"></p>' : ''}`;
       const nb = document.getElementById('newSitBtn');
       if (nb) nb.onclick = () => withBusy(nb, newSituation);
@@ -1686,7 +1850,7 @@ function renderCoachDialog(kind, arg) {
     const errEl = document.getElementById('sitErr');
     errEl.textContent = '';
     try {
-      const text = await callClaude(PROMPT_NEW_SITUATION,
+      const text = await callClaude(localizePrompt(PROMPT_NEW_SITUATION),
         [{ role: 'user', content: 'Neue Situation, bitte. (' + Math.floor(Math.random() * 1e6) + ')' }], { maxTokens: CHAT_TOKENS });
       if (my !== screenId) return;
       situation = text.replace(/^["„]|["“]$/g, '').trim();
@@ -1697,7 +1861,7 @@ function renderCoachDialog(kind, arg) {
     } catch (e) {
       if (my !== screenId) return;
       const el = document.getElementById('sitErr');
-      if (el) el.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      if (el) el.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
     }
   }
 
@@ -1728,8 +1892,8 @@ function renderCoachDialog(kind, arg) {
     const turns = candidateTurns();
     chatArea.innerHTML = `
       <div class="chat-bar">
-        <span class="small muted">${started ? `Tur ${Math.min(turns, K.maxTurns)} / ${K.turns}` : ''}</span>
-        <button class="btn inline" id="muteBtn">${muted ? '🔇 Ses kapalı' : '🔊 Ses açık'}</button>
+        <span class="small muted">${started ? esc(t('chat.turn', { n: Math.min(turns, K.maxTurns), total: K.turns })) : ''}</span>
+        <button class="btn inline" id="muteBtn">${esc(muted ? t('chat.muted') : t('chat.unmuted'))}</button>
       </div>
       <div class="chat" id="chatLog">${history.slice(1).map(m => `
         <div class="msg ${m.role === 'user' ? 'me' : 'them'}" lang="de">${esc(m.content)}${m.role === 'assistant'
@@ -1737,10 +1901,10 @@ function renderCoachDialog(kind, arg) {
         ${busy ? '<div class="msg them typing"><span class="spinner"></span></div>' : ''}
       </div>
       ${started ? `
-        <p class="small muted">Klavyedeki 🎤 simgesine bas ve konuş, sonra gönder.</p>
+        <p class="small muted">${esc(t('chat.dictate'))}</p>
         <textarea id="chatInput" rows="3" lang="de" placeholder="Deine Antwort…"></textarea>
-        <button class="btn primary" id="sendBtn" ${busy ? 'disabled' : ''}>Gönder</button>
-        ${turns >= K.maxTurns ? '<p class="small">Tur sayısı doldu — şimdi değerlendirebilirsin.</p>' : ''}
+        <button class="btn primary" id="sendBtn" ${busy ? 'disabled' : ''}>${esc(t('common.send'))}</button>
+        ${turns >= K.maxTurns ? `<p class="small">${esc(t('chat.turnsDone'))}</p>` : ''}
         <button class="btn" id="endBtn" ${busy || !turns ? 'disabled' : ''}>Beenden &amp; bewerten</button>`
       : `<button class="btn primary" id="startBtn" ${busy ? 'disabled' : ''}>Gespräch starten</button>`}
       <p class="small error" id="chatErr"></p>`;
@@ -1748,7 +1912,7 @@ function renderCoachDialog(kind, arg) {
       muted = !muted;
       store.set('coachMute', muted);
       if (muted) stopSpeech();
-      document.getElementById('muteBtn').textContent = muted ? '🔇 Ses kapalı' : '🔊 Ses açık';
+      document.getElementById('muteBtn').textContent = muted ? t('chat.muted') : t('chat.unmuted');
     };
     chatArea.querySelectorAll('.msg.them .say').forEach(btn => {
       btn.onclick = () => speakDe(btn.parentNode.firstChild.textContent);
@@ -1798,8 +1962,8 @@ function renderCoachDialog(kind, arg) {
       busy = false;
       drawChat();
       if (history.length && last) { const inp = document.getElementById('chatInput'); if (inp) inp.value = last.content; }
-      document.getElementById('chatErr').textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
-      renderFallback(fallbackEl, rolePlayPrompt, 'Konuşmayı Claude uygulamasında sürdürebilirsin.');
+      document.getElementById('chatErr').textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
+      renderFallback(fallbackEl, rolePlayPrompt, t('chat.continueInApp'));
     }
   }
 
@@ -1822,7 +1986,7 @@ function renderCoachDialog(kind, arg) {
       text = await callClaude(system, [{ role: 'user', content: user }], { maxTokens: EVAL_TOKENS });
     } catch (e) {
       if (my !== screenId) return;
-      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
       renderFallback(fallbackEl, async () => { const p = await evaluationPrompt(); return p.system + '\n\n' + p.user; });
       return;
     }
@@ -1842,11 +2006,10 @@ function renderCoachDialog(kind, arg) {
   async function rolePlayPrompt() {
     const sys = await systemPrompt();
     const done = history.length > 1 ? '\n\nConversation so far:\n' + transcript() + '\n\nContinue the role-play from here.' : '\n\n' + kickoff();
-    return sys + done + '\n\nAt the end, when I write "Bewerten", evaluate only my turns as a DTB B2 examiner (A/B/C/D for Aufgabe, Kohärenz, Wortschatz, Strukturen; corrections with Turkish explanations).';
+    return sys + done + '\n\nAt the end, when I write "Bewerten", evaluate only my turns as a DTB B2 examiner (A/B/C/D for Aufgabe, Kohärenz, Wortschatz, Strukturen; corrections with explanations in ' + langInfo().llm + ').';
   }
   function drawNoKeyFallback() {
-    renderFallback(fallbackEl, rolePlayPrompt,
-      'API anahtarı yok. Rol oyunu prompt\'unu kopyala; Claude uygulamasında (sesli modda da olur) konuşmayı yap.');
+    renderFallback(fallbackEl, rolePlayPrompt, t('chat.noKey'));
   }
 
   drawSituation();
@@ -1855,7 +2018,7 @@ function renderCoachDialog(kind, arg) {
     const nb = document.getElementById('newSitBtn');
     if (nb) withBusy(nb, newSituation);
   } else if (kind === 't3' && !situation) {
-    sitBox.insertAdjacentHTML('beforeend', '<p class="small">Yeni durum üretmek için API anahtarı gerekir — listeden bir durum seç.</p>');
+    sitBox.insertAdjacentHTML('beforeend', `<p class="small">${esc(t('t3.needKey'))}</p>`);
   }
 }
 
@@ -1871,7 +2034,6 @@ const IMAGE_MAX_SIDE = 1600;
 const IMAGE_QUALITY = 0.8;
 const MIN_TRANSCRIPT_WORDS = 30;
 const TRANSCRIBE_TOKENS = 2000;
-const BLURRY_MSG = 'Fotoğraf net değil, daha aydınlık bir yerde ve düz açıdan tekrar çek.';
 const WRITING_EVAL_TOKENS = 3000;
 const WRITING_CRITERIA = [
   ['aufgabe', 'Aufgabe'],
@@ -1955,14 +2117,16 @@ function writingEvalPrompt(P, task, text) {
 }
 function isCovered(item) { return item && (item.covered === true || item.covered === 'true'); }
 
-/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım") */
+/* My phrases: b2trainer:myPhrases = [{ de, tr, date }] (shown in Kartlar → "Benim kalıplarım").
+   `tr` keeps its old name for stored data but holds the meaning in whatever language the evaluation used. */
+function phraseMeaning(p) { return (p && (p.translation || p.tr)) || ''; }
 function getMyPhrases() { return store.get('myPhrases', []); }
 function phraseKey(de) { return String(de || '').trim().toLowerCase(); }
 function hasMyPhrase(de) { return getMyPhrases().some(p => phraseKey(p.de) === phraseKey(de)); }
 function addMyPhrase(p) {
   const list = getMyPhrases();
   if (!p || !p.de || list.some(x => phraseKey(x.de) === phraseKey(p.de))) return;
-  list.push({ de: String(p.de).trim(), tr: String(p.tr || '').trim(), date: Date.now() });
+  list.push({ de: String(p.de).trim(), tr: String(phraseMeaning(p)).trim(), date: Date.now() });
   store.set('myPhrases', list);
 }
 function removeMyPhrase(de) {
@@ -1984,7 +2148,7 @@ function lastWritingByTask() {
 
 function renderWritingResult(el, result, rawText, task, text) {
   if (!result) {
-    el.innerHTML = `<div class="card"><h3>Değerlendirme (ham metin)</h3><div class="sample small">${esc(rawText)}</div></div>`;
+    el.innerHTML = `<div class="card"><h3>${esc(t('eval.raw'))}</h3><div class="sample small">${esc(rawText)}</div></div>`;
     return;
   }
   const K = WRITING_KINDS[task.kind];
@@ -1992,31 +2156,31 @@ function renderWritingResult(el, result, rawText, task, text) {
   const checklist = Array.isArray(result.checklist) ? result.checklist : [];
   const okN = checklist.filter(isCovered).length;
   const phrases = (Array.isArray(result.useful_phrases) ? result.useful_phrases : []).filter(p => p && p.de);
-  const tips = Array.isArray(result.tips_tr) ? result.tips_tr : [];
+  const tips = Array.isArray(pick(result, 'tips')) ? pick(result, 'tips') : [];
   el.innerHTML = `
     ${checklist.length ? `
       <div class="card">
-        <h3>Kontrol listesi · ${okN}/${checklist.length}</h3>
-        <p class="small muted">En çok puan buradan gelir: her madde metinde olmalı.</p>
+        <h3>${esc(t('write.checklist', { n: okN, total: checklist.length }))}</h3>
+        <p class="small muted">${esc(t('write.checklistHelp'))}</p>
         <ul class="checklist">${checklist.map(c => `
           <li class="${isCovered(c) ? 'ok' : 'bad'}"><span class="mark">${isCovered(c) ? '✅' : '❌'}</span>
-            <span><span lang="de">${esc(c.point)}</span>${c.comment_tr ? `<span class="sub">${esc(c.comment_tr)}</span>` : ''}</span></li>`).join('')}
+            <span><span lang="de">${esc(c.point)}</span>${pick(c, 'comment') ? `<span class="sub">${esc(pick(c, 'comment'))}</span>` : ''}</span></li>`).join('')}
         </ul>
       </div>` : ''}
     <div class="card">
-      <h3>Puanlar</h3>
+      <h3>${esc(t('eval.scores'))}</h3>
       <div class="scores" lang="de">${WRITING_CRITERIA.map(([k, name]) => `
         <div class="score">${gradeBadge(scores[k])}<span class="small">${name}</span></div>`).join('')}</div>
-      <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1 · <strong>${countWords(text)} kelime</strong> (hedef ≈ ${K.words})</p>
-      ${result.summary_tr ? `<p>${esc(result.summary_tr)}</p>` : ''}
+      <p class="small muted">A = B2 gut · B = B2 · C = B1 · D = unter B1 · <strong>${esc(t('common.words', { n: countWords(text) }))}</strong> (${esc(t('write.target', { words: K.words }))})</p>
+      ${pick(result, 'summary') ? `<p>${esc(pick(result, 'summary'))}</p>` : ''}
     </div>
     ${Array.isArray(result.corrections) && result.corrections.length ? `
-      <div class="card"><h3>Düzeltmeler</h3>${correctionsHtml(result.corrections)}</div>` : ''}
+      <div class="card"><h3>${esc(t('eval.corrections'))}</h3>${correctionsHtml(result.corrections)}</div>` : ''}
     ${phrases.length ? `
-      <div class="card"><h3>Kullanabileceğin Redemittel</h3>
+      <div class="card"><h3>${esc(t('write.phrases'))}</h3>
         <ul class="phrase-list">${phrases.map((p, i) => `
-          <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span>
-            <button class="btn inline" data-add="${i}" ${hasMyPhrase(p.de) ? 'disabled' : ''}>${hasMyPhrase(p.de) ? '✓ Eklendi' : '➕ Kartlara ekle'}</button></li>`).join('')}
+          <li><span class="t"><span lang="de">${esc(p.de)}</span>${phraseMeaning(p) ? `<span class="sub">${esc(phraseMeaning(p))}</span>` : ''}</span>
+            <button class="btn inline" data-add="${i}" ${hasMyPhrase(p.de) ? 'disabled' : ''}>${esc(hasMyPhrase(p.de) ? t('write.added') : t('write.addToCards'))}</button></li>`).join('')}
         </ul>
       </div>` : ''}
     ${result.improved_de ? `
@@ -2025,17 +2189,17 @@ function renderWritingResult(el, result, rawText, task, text) {
           <summary>Mustertext</summary>
           <div class="row" style="margin:8px 0">
             <button class="btn" data-speak>🔊 Vorlesen</button>
-            <button class="btn" data-stop>■ Durdur</button>
+            <button class="btn" data-stop>${esc(t('common.stop'))}</button>
           </div>
           <div class="sample" lang="de">${esc(result.improved_de)}</div>
         </details>
       </div>` : ''}
-    ${tips.length ? `<div class="card"><h3>İpuçları</h3><ul>${tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
+    ${tips.length ? `<div class="card"><h3>${esc(t('eval.tips'))}</h3><ul>${tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}`;
   el.querySelectorAll('[data-add]').forEach(b => {
     b.onclick = () => {
       addMyPhrase(phrases[Number(b.dataset.add)]);
       b.disabled = true;
-      b.textContent = '✓ Eklendi';
+      b.textContent = t('write.added');
     };
   });
   const sp = el.querySelector('[data-speak]');
@@ -2050,25 +2214,17 @@ function writingProgressHtml() {
   const last = lastWritingByTask();
   const rows = Object.keys(last).map(k => last[k]).sort((a, b) => b.date - a.date).map(e => `
     <div class="coach-row">
-      <span class="t">${esc((WRITING_KINDS[e.kind] || {}).name || '')} · ${esc(e.title)}<span class="sub">${new Date(e.date).toLocaleString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
-        · ${e.words || 0} kelime${e.checklist && e.checklist.n ? ` · ✅ ${e.checklist.ok}/${e.checklist.n}` : ''}</span></span>
+      <span class="t">${esc((WRITING_KINDS[e.kind] || {}).name || '')} · ${esc(e.title)}<span class="sub">${new Date(e.date).toLocaleString(locale(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+        · ${esc(t('common.words', { n: e.words || 0 }))}${e.checklist && e.checklist.n ? ` · ✅ ${e.checklist.ok}/${e.checklist.n}` : ''}</span></span>
       <span class="mini-scores">${scoresInline(e.scores, WRITING_CRITERIA)}</span>
     </div>`).join('');
   if (!rows) return '';
-  return `<div class="card"><h3>Schreiben · son puanlar</h3>
+  return `<div class="card"><h3>${esc(t('progress.writingScores'))}</h3>
     <p class="small muted">Aufgabe · Register · Kohärenz · Sprache</p>${rows}</div>`;
 }
 
 /* Writing support: task points to tick while writing on paper, offline cards, outline (API), my phrases. */
-const FORUM_POINTS = [
-  'Net kişisel görüş',
-  'En az iki argüman + gerekçe',
-  'Kişisel örnek / deneyim',
-  'Karşı tarafı da düşün',
-  'Öneri ya da uzlaşma',
-  'Sonuç cümlesi',
-  'Forum üslubu (samimi: du/ihr ya da nötr)'
-];
+const FORUM_POINTS = ['opinion', 'arguments', 'example', 'otherSide', 'compromise', 'conclusion', 'register'];
 // Boss instructions split into single points ("Siehe …: a, b, c" lists are split at commas).
 function chefPoints(lines) {
   const out = [];
@@ -2081,8 +2237,8 @@ function chefPoints(lines) {
   return out.filter(Boolean);
 }
 function writingPoints(task) {
-  if (task.kind === 'forum') return FORUM_POINTS;
-  return chefPoints(task.chef).concat(['Müşterinin her şikâyetine cevap ver', 'Resmî çerçeve: Anrede, Gruß, Sie-Form']);
+  if (task.kind === 'forum') return FORUM_POINTS.map(k => t('forumPoint.' + k));
+  return chefPoints(task.chef).concat([t('write.pointCustomer'), t('write.pointFormal')]);
 }
 // Refusal wording in the boss instructions ("kein Austauschgerät", "nicht verantwortlich", …).
 const REFUSAL_RE = /\bkein(e|en|em|er|es)?\b|nicht verantwortlich|nicht (am|an|bei|in) |nicht unsere|bleiben bestehen|ablehnen/i;
@@ -2104,39 +2260,39 @@ function renderWritingSupport(el, task, hasKey, my) {
   const phrases = getMyPhrases();
   el.innerHTML = `
     <div class="card">
-      <h3>✅ Görev maddeleri</h3>
-      <p class="small muted">Kâğıda yazarken eklediğin maddeyi işaretle.</p>
+      <h3>${esc(t('write.points'))}</h3>
+      <p class="small muted">${esc(t('write.pointsHelp'))}</p>
       <ul class="ticklist">${points.map((pt, i) => `
         <li><label><input type="checkbox" data-tick="${i}"><span ${task.kind === 'bs' && i < points.length - 2 ? 'lang="de"' : ''}>${esc(pt)}</span></label></li>`).join('')}</ul>
       <p class="small muted" id="tickInfo"></p>
     </div>
     <details class="card support">
-      <summary>🧰 Yazma desteği</summary>
-      <h3>Kartlar</h3>
+      <summary>${esc(t('write.support'))}</summary>
+      <h3>${esc(t('home.cards'))}</h3>
       ${cards.map(c => `
         <details class="sub-card">
           <summary>${esc(c.title)}</summary>
-          ${(c.blocks || []).map(b => `${b.heading ? `<h4>${esc(b.heading)}</h4>` : ''}
+          ${cardView(c).blocks.map(b => `${b.heading ? `<h4>${esc(b.heading)}</h4>` : ''}
             <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>`).join('')}
           ${c.sample ? `<h4>Mustertext</h4>
             <button class="btn inline" data-say-card="${esc(c.id)}">🔊 Vorlesen</button>
             <div class="sample small" lang="de">${esc(c.sample)}</div>` : ''}
         </details>`).join('')}
-      <h3>🧭 Paragraf planı</h3>
-      ${hasKey ? '<button class="btn" id="outlineBtn">🧭 Başlamama yardım et</button>' : ''}
-      <p class="small muted">Hazır metin değil: her paragraf için amaç + cümle başlangıçları.</p>
+      <h3>${esc(t('write.outline'))}</h3>
+      ${hasKey ? `<button class="btn" id="outlineBtn">${esc(t('write.outlineBtn'))}</button>` : ''}
+      <p class="small muted">${esc(t('write.outlineHelp'))}</p>
       <p class="small error" id="outlineErr"></p>
       <div id="outline"></div>
-      <h3>Benim kalıplarım</h3>
+      <h3>${esc(t('cards.myPhrases'))}</h3>
       ${phrases.length ? `<ul class="phrase-list">${phrases.map(p => `
         <li><span class="t"><span lang="de">${esc(p.de)}</span>${p.tr ? `<span class="sub">${esc(p.tr)}</span>` : ''}</span></li>`).join('')}</ul>`
-        : '<p class="small muted">Henüz yok — değerlendirmeden sonra "➕ Kartlara ekle" ile kaydedebilirsin.</p>'}
+        : `<p class="small muted">${esc(t('write.noPhrases'))}</p>`}
     </details>`;
 
   const ticks = Array.from(el.querySelectorAll('[data-tick]'));
   const tickInfo = el.querySelector('#tickInfo');
-  const drawTicks = () => { tickInfo.textContent = `${ticks.filter(t => t.checked).length}/${ticks.length} madde işaretlendi`; };
-  ticks.forEach(t => { t.onchange = drawTicks; });
+  const drawTicks = () => { tickInfo.textContent = t('write.ticked', { n: ticks.filter(x => x.checked).length, total: ticks.length }); };
+  ticks.forEach(x => { x.onchange = drawTicks; });
   drawTicks();
 
   el.querySelectorAll('[data-say-card]').forEach(b => {
@@ -2148,7 +2304,7 @@ function renderWritingSupport(el, task, hasKey, my) {
   const outlinePrompt = async () => fillPrompt((await loadPrompts()).PROMPT_OUTLINE, { TASKINFO: outlineTaskInfo(task) });
   const btn = el.querySelector('#outlineBtn');
   if (!btn) {
-    renderFallback(outlineEl, outlinePrompt, 'API anahtarı yok. Plan için prompt\'u kopyalayıp Claude uygulamasına yapıştırabilirsin.');
+    renderFallback(outlineEl, outlinePrompt, t('write.outlineNoKey'));
     return;
   }
   btn.onclick = () => withBusy(btn, async () => {
@@ -2159,7 +2315,7 @@ function renderWritingSupport(el, task, hasKey, my) {
       raw = await callClaude(undefined, [{ role: 'user', content: await outlinePrompt() }], { maxTokens: 1200 });
     } catch (e) {
       if (my !== screenId) return;
-      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+      errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
       renderFallback(outlineEl, outlinePrompt);
       return;
     }
@@ -2167,7 +2323,7 @@ function renderWritingSupport(el, task, hasKey, my) {
     const r = parseJsonReply(raw);
     const paras = r && Array.isArray(r.paragraphs) ? r.paragraphs : null;
     outlineEl.innerHTML = paras ? `<ol class="outline">${paras.map(p => `
-      <li><div>${esc(p.goal_tr || '')}</div>
+      <li><div>${esc(pick(p, 'goal') || '')}</div>
         <ul>${(Array.isArray(p.starters_de) ? p.starters_de : []).map(x => `<li lang="de">${esc(x)}</li>`).join('')}</ul></li>`).join('')}</ol>`
       : `<div class="sample small">${esc(raw)}</div>`;
   });
@@ -2191,29 +2347,29 @@ function renderSchreibenList(tab) {
   const last = lastWritingByTask();
   const tabs = `<div class="tabs">${Object.keys(WRITING_KINDS).map(k =>
     `<button class="tab ${k === tab ? 'active' : ''}" data-tab="${k}">${WRITING_KINDS[k].name}</button>`).join('')}</div>`;
-  const intro = getApiKey() ? '' : `<div class="card small">API anahtarı yok → metin girişi + <strong>yedek mod</strong> (prompt kopyala → Claude uygulaması).
-    Fotoğrafla okuma için <a href="#/settings">Ayarlar'dan anahtar ekle</a>.</div>`;
+  const intro = getApiKey() ? '' : `<div class="card small">${t('write.noKeyIntro')}
+    <a href="#/settings">${esc(t('coach.addKey'))}</a></div>`;
   let body;
   if (tab === 'bs') {
-    body = `<p class="small muted">Şefin talimatlarıyla müşteriye resmî cevap yaz (${writingMinutes('bs')} dk).</p>
+    body = `<p class="small muted">${esc(t('write.bsIntro', { n: writingMinutes('bs') }))}</p>
       <ul class="list">${beschwerdeCards().map(c => {
-        const t = writingTask('bs', c.id);
-        return `<li><a href="${t.href}">
-          <span class="t">${esc(t.title)}<span class="sub" lang="de">${esc(t.kunde.join(' '))}</span></span>
-          ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}
+        const tk = writingTask('bs', c.id);
+        return `<li><a href="${tk.href}">
+          <span class="t">${esc(tk.title)}<span class="sub" lang="de">${esc(tk.kunde.join(' '))}</span></span>
+          ${last[tk.id] ? `<span class="mini-scores">${scoresInline(last[tk.id].scores, WRITING_CRITERIA)}</span>` : ''}
         </a></li>`;
-      }).join('') || '<p class="muted center">Beschwerde görevi yok.</p>'}</ul>`;
+      }).join('') || `<p class="muted center">${esc(t('write.noBs'))}</p>`}</ul>`;
   } else {
-    body = `<p class="small muted">Sınavda iki konu verilir, birini seçersin (${writingMinutes('forum')} dk).</p>
-      <a class="btn primary" href="#/schreiben/sim">🎲 Sınav simülasyonu</a>
+    body = `<p class="small muted">${esc(t('write.forumIntro', { n: writingMinutes('forum') }))}</p>
+      <a class="btn primary" href="#/schreiben/sim">🎲 ${esc(t('write.sim'))}</a>
       ${forumCards().map(c => `
         <h3>${esc(c.title.replace(/^Forum-Themen\s*·\s*/, ''))}</h3>
         <ul class="list">${forumLines(c).map((line, i) => {
-          const t = writingTask('forum', c.id, i);
-          return `<li class="topic"><a href="${t.href}"><span class="t" lang="de">${esc(t.title)}</span>
-            ${last[t.id] ? `<span class="mini-scores">${scoresInline(last[t.id].scores, WRITING_CRITERIA)}</span>` : ''}</a>
-            <button class="hint-btn" data-hint aria-label="İpucu göster" aria-expanded="false">💡</button>
-            <div class="hint small" hidden>${topicHintHtml(t.topic)}</div></li>`;
+          const tk = writingTask('forum', c.id, i);
+          return `<li class="topic"><a href="${tk.href}"><span class="t" lang="de">${esc(tk.title)}</span>
+            ${last[tk.id] ? `<span class="mini-scores">${scoresInline(last[tk.id].scores, WRITING_CRITERIA)}</span>` : ''}</a>
+            <button class="hint-btn" data-hint aria-label="${esc(t('write.hint'))}" aria-expanded="false">💡</button>
+            <div class="hint small" hidden>${topicHintHtml(tk.topic)}</div></li>`;
         }).join('')}</ul>`).join('')}`;
   }
   $app.innerHTML = intro + tabs + body;
@@ -2231,22 +2387,22 @@ function renderSchreibenList(tab) {
 
 // Exam simulation: two random topics, pick one (as in the exam).
 function renderForumSim() {
-  setHeader('Sınav simülasyonu', true);
+  setHeader(t('write.sim'), true);
   $back.setAttribute('href', '#/schreiben/tab/forum');
   onLeave(() => $back.setAttribute('href', '#/'));
   const all = [];
   forumCards().forEach(c => forumLines(c).forEach((l, i) => all.push(writingTask('forum', c.id, i))));
   const pick = shuffle(all.filter(Boolean)).slice(0, 2);
   $app.innerHTML = `
-    <p class="small muted">Sınavdaki gibi: iki konudan birini seç, ${writingMinutes('forum')} dk içinde yaz.</p>
-    ${pick.map((t, k) => `
+    <p class="small muted">${esc(t('write.simIntro', { n: writingMinutes('forum') }))}</p>
+    ${pick.map((tk, k) => `
       <div class="card">
         <h3>Thema ${'AB'.charAt(k)}</h3>
-        <p lang="de"><strong>${esc(t.title)}</strong></p>
-        <details><summary>💡 İpucu göster</summary><p class="small">${topicHintHtml(t.topic)}</p></details>
-        <a class="btn primary" href="${t.href}">Bu konuyu seç</a>
+        <p lang="de"><strong>${esc(tk.title)}</strong></p>
+        <details><summary>💡 ${esc(t('write.hint'))}</summary><p class="small">${topicHintHtml(tk.topic)}</p></details>
+        <a class="btn primary" href="${tk.href}">${esc(t('write.pickTopic'))}</a>
       </div>`).join('')}
-    <button class="btn" id="againBtn">🔀 Başka iki konu</button>`;
+    <button class="btn" id="againBtn">${esc(t('write.otherTopics'))}</button>`;
   document.getElementById('againBtn').onclick = renderForumSim;
 }
 
@@ -2290,7 +2446,7 @@ function writingTaskCardHtml(task) {
     <h3>Forumsbeitrag</h3>
     <p lang="de"><strong>${esc(task.title)}</strong></p>
     <p lang="de" class="small">${esc(task.task)}</p>
-    <details><summary>💡 İpucu göster</summary><p class="small">${topicHintHtml(task.topic)}</p></details>
+    <details><summary>💡 ${esc(t('write.hint'))}</summary><p class="small">${topicHintHtml(task.topic)}</p></details>
   </div>`;
 }
 
@@ -2305,7 +2461,7 @@ function writingCues(noteEl, total) {
       if (!warned && total > 300 && remaining <= 300 && remaining > 0) {
         warned = true;
         vibrate(200);
-        noteEl.textContent = '⏱ Son 5 dk — görev maddelerini kontrol et';
+        noteEl.textContent = t('write.last5');
         noteEl.className = 'timer-note milestone';
       }
     },
@@ -2333,32 +2489,32 @@ function renderWritingTask(task) {
   $app.innerHTML = `
     ${writingTaskCardHtml(task)}
     <div class="card">
-      <h3>Zamanlayıcı (${seconds / 60} dk)</h3>
+      <h3>${esc(t('lesen.timer', { n: seconds / 60 }))}</h3>
       <div class="timer" id="timer">${fmtClock(seconds)}</div>
       <p class="timer-note" id="timerNote" aria-live="polite"></p>
       <div class="row">
-        <button class="btn primary" id="tStart">Başlat</button>
-        <button class="btn" id="tReset">Sıfırla</button>
+        <button class="btn primary" id="tStart">${esc(t('timer.start'))}</button>
+        <button class="btn" id="tReset">${esc(t('timer.reset'))}</button>
       </div>
     </div>
     <div id="support"></div>
     <div class="card">
-      <h3>Metni yükle</h3>
+      <h3>${esc(t('write.upload'))}</h3>
       ${hasKey ? `
-        <label class="btn primary file-btn" id="camLabel">📷 Fotoğraf çek / yükle
+        <label class="btn primary file-btn" id="camLabel">${esc(t('write.camera'))}
           <input type="file" class="file-input" id="camInput" accept="image/*" capture="environment" multiple></label>
-        <label class="btn file-btn" id="galLabel">🖼 Galeriden seç
+        <label class="btn file-btn" id="galLabel">${esc(t('write.gallery'))}
           <input type="file" class="file-input" id="galInput" accept="image/*" multiple></label>
         <div class="thumbs" id="thumbs"></div>
         <p class="small muted" id="pageInfo"></p>
-        <button class="btn primary" id="readBtn" hidden>📝 Metni oku</button>
+        <button class="btn primary" id="readBtn" hidden>${esc(t('write.read'))}</button>
         <p class="small error" id="upErr"></p>
-        <button class="btn" id="typeBtn">⌨️ Metin olarak gir</button>`
-      : `<p class="small">Fotoğrafla okuma için API anahtarı gerekir (<a href="#/settings">Ayarlar</a>). Kâğıda yazdığın metni aşağıya yaz.</p>`}
+        <button class="btn" id="typeBtn">${esc(t('write.type'))}</button>`
+      : `<p class="small">${t('write.noKeyPhoto')}</p>`}
     </div>
     <div class="card" id="textCard" hidden>
-      <h3>Metin</h3>
-      <p class="warn-note" id="trWarn" hidden>⚠️ Okunamayan yerleri düzelt, ama kendi hatalarını düzeltme.</p>
+      <h3>${esc(t('write.text'))}</h3>
+      <p class="warn-note" id="trWarn" hidden>${esc(t('write.trWarn'))}</p>
       <p class="small error" id="trErr"></p>
       <textarea id="sText" rows="12" lang="de" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
         placeholder="Sehr geehrte… / Hallo zusammen, …"></textarea>
@@ -2381,10 +2537,10 @@ function renderWritingTask(task) {
   function drawText() {
     const n = (ta.value.match(/\[\?\]/g) || []).length;
     unclear.innerHTML = n ? `
-      <p class="small"><strong>${n} okunamayan yer</strong> — fotoğrafa bakıp düzelt, sonra <code>[?]</code> işaretini sil.</p>
+      <p class="small">${t('write.unclear', { n })}</p>
       <div class="sample unclear-preview" lang="de">${esc(ta.value).replace(/(\S*\s?)\[\?\]/g, '<mark>$1[?]</mark>')}</div>` : '';
     const w = countWords(ta.value);
-    sCount.textContent = `${w} kelime · hedef ≈ ${K.words}`;
+    sCount.textContent = t('common.words', { n: w }) + ' · ' + t('write.target', { words: K.words });
   }
   function showText(text, fromPhoto) {
     textCard.hidden = false;
@@ -2403,7 +2559,7 @@ function renderWritingTask(task) {
   function setupEvaluation() {
     const area = document.getElementById('evalArea');
     area.innerHTML = `
-      ${hasKey ? '<button class="btn primary" id="evalBtn">Değerlendir</button>' : ''}
+      ${hasKey ? `<button class="btn primary" id="evalBtn">${esc(t('write.evaluate'))}</button>` : ''}
       <p class="small error" id="evalErr"></p>
       <div id="wFallback"></div>`;
     const errEl = document.getElementById('evalErr');
@@ -2412,13 +2568,13 @@ function renderWritingTask(task) {
     const cleanText = () => ta.value.replace(/[ \t]*\[\?\]/g, '').trim();
     const fallbackPrompt = async () => writingEvalPrompt(await loadPrompts(), task, cleanText());
     if (!hasKey) {
-      renderFallback(fallbackEl, fallbackPrompt, 'API anahtarı yok. Metni yazdıktan sonra prompt\'u (görev + metin) kopyalayıp Claude uygulamasına yapıştır.');
+      renderFallback(fallbackEl, fallbackPrompt, t('write.evalNoKey'));
       return;
     }
     const evalBtn = document.getElementById('evalBtn');
     evalBtn.onclick = () => {
       const text = cleanText();
-      if (!text) { errEl.textContent = 'Önce metni yükle ya da yaz.'; return; }
+      if (!text) { errEl.textContent = t('write.textFirst'); return; }
       errEl.textContent = '';
       fallbackEl.innerHTML = '';
       withBusy(evalBtn, async () => {
@@ -2428,7 +2584,7 @@ function renderWritingTask(task) {
           raw = await callClaude(undefined, [{ role: 'user', content: writingEvalPrompt(P, task, text) }], { maxTokens: WRITING_EVAL_TOKENS });
         } catch (e) {
           if (my !== screenId) return;
-          errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata');
+          errEl.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected'));
           renderFallback(fallbackEl, fallbackPrompt);
           return;
         }
@@ -2459,25 +2615,25 @@ function renderWritingTask(task) {
 
     function drawPages() {
       thumbs.innerHTML = pages.map((data, i) => `
-        <div class="thumb"><img src="${data}" alt="Sayfa ${i + 1}"><span>${i + 1}</span>
-          <button data-del="${i}" aria-label="Sayfa ${i + 1} sil">×</button></div>`).join('');
+        <div class="thumb"><img src="${data}" alt="${esc(t('write.page', { n: i + 1 }))}"><span>${i + 1}</span>
+          <button data-del="${i}" aria-label="${esc(t('write.delPage', { n: i + 1 }))}">×</button></div>`).join('');
       thumbs.querySelectorAll('[data-del]').forEach(b => {
         b.onclick = () => { pages.splice(Number(b.dataset.del), 1); drawPages(); };
       });
       const full = pages.length >= MAX_PAGES;
       inputs.forEach(inp => { inp.disabled = full; inp.parentNode.classList.toggle('disabled', full); });
       readBtn.hidden = !pages.length;
-      readBtn.textContent = `📝 Metni oku (${pages.length} sayfa)`;
-      pageInfo.textContent = preparing ? 'Fotoğraf hazırlanıyor…'
-        : pages.length ? `${pages.length}/${MAX_PAGES} sayfa. Sıra doğru mu? Yanlış sayfayı × ile sil.`
-          : `Kâğıdın tamamı görünsün, düz açıdan ve aydınlıkta çek. En fazla ${MAX_PAGES} sayfa. Fotoğraflar hiçbir yerde saklanmaz.`;
+      readBtn.textContent = t('write.readN', { n: pages.length });
+      pageInfo.textContent = preparing ? t('write.preparing')
+        : pages.length ? t('write.pagesInfo', { n: pages.length, max: MAX_PAGES })
+          : t('write.photoHelp', { max: MAX_PAGES });
     }
     async function addFiles(input) {
       const files = Array.from(input.files || []);
       input.value = '';
       upErr.textContent = '';
       const room = MAX_PAGES - pages.length - preparing;
-      if (files.length > room) upErr.textContent = `En fazla ${MAX_PAGES} sayfa — ${files.length - Math.max(0, room)} fotoğraf eklenmedi.`;
+      if (files.length > room) upErr.textContent = t('write.tooMany', { max: MAX_PAGES, n: files.length - Math.max(0, room) });
       for (const f of files.slice(0, Math.max(0, room))) {
         preparing += 1;
         drawPages();
@@ -2487,7 +2643,7 @@ function renderWritingTask(task) {
           pages.push(data);
         } catch (e) {
           if (my !== screenId) return;
-          upErr.textContent = 'Bu fotoğraf açılamadı, tekrar çek.';
+          upErr.textContent = t('write.photoFailed');
         } finally { preparing -= 1; }
         drawPages();
       }
@@ -2509,15 +2665,14 @@ function renderWritingTask(task) {
         text = await callClaude(undefined, [{ role: 'user', content }], { maxTokens: TRANSCRIBE_TOKENS });
       } catch (e) {
         if (my !== screenId) return;
-        upErr.textContent = '❌ ' + (e instanceof CoachError ? e.message : 'Beklenmeyen hata') +
-          ' — tekrar dene ya da "⌨️ Metin olarak gir" ile devam et.';
+        upErr.textContent = '❌ ' + (e instanceof CoachError ? e.message : t('api.unexpected')) + ' — ' + t('write.readFailed');
         return;
       }
       if (my !== screenId) return;
       pages = []; // the photos leave memory once the text is back
       drawPages();
       showText(text.trim(), true);
-      if (countWords(text) < MIN_TRANSCRIPT_WORDS) trErr.textContent = BLURRY_MSG;
+      if (countWords(text) < MIN_TRANSCRIPT_WORDS) trErr.textContent = t('write.blurry');
       textCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
@@ -2557,12 +2712,12 @@ function showUpdateBanner(version) {
   const bar = document.createElement('div');
   bar.id = 'updateBanner';
   bar.className = 'update-banner';
-  bar.innerHTML = '<span>Yeni sürüm var 🎉</span><button class="btn primary inline" id="updateBtn">Yenile</button>';
+  bar.innerHTML = `<span>${esc(t('update.available'))}</span><button class="btn primary inline" id="updateBtn">${esc(t('update.reload'))}</button>`;
   document.body.appendChild(bar);
   document.body.classList.add('has-banner');
   document.getElementById('updateBtn').onclick = e => {
     e.target.disabled = true;
-    e.target.textContent = 'Yükleniyor…';
+    e.target.textContent = t('common.loading');
     applyUpdate(version);
   };
 }
@@ -2602,15 +2757,57 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') checkForUpdate();
 });
 
+/* ---------- Language ----------
+   First launch (no b2trainer:lang yet): full-screen picker, the navigator.language default is highlighted. */
+function langButtonsHtml(current) {
+  return LANGS.map(l => `
+    <button class="btn lang-btn ${l.id === current ? 'primary' : ''}" data-lang="${l.id}" lang="${l.id}">
+      <span class="flag">${l.flag}</span> ${esc(l.name)}</button>`).join('');
+}
+async function setLang(lang) {
+  store.set('lang', lang);
+  await loadStrings(lang);
+  if (DATA) buildSectionNames();
+  applyStaticStrings();
+}
+function applyStaticStrings() {
+  $back.setAttribute('aria-label', t('common.home'));
+}
+function showLangPicker() {
+  return new Promise(resolve => {
+    const box = document.createElement('div');
+    box.className = 'lang-screen';
+    box.innerHTML = `
+      <div class="lang-inner">
+        <h1>B2 Prüfungstrainer</h1>
+        <p class="muted">Dil seç · Choose your language · Оберіть мову</p>
+        ${langButtonsHtml(defaultLang())}
+      </div>`;
+    document.body.appendChild(box);
+    box.querySelectorAll('[data-lang]').forEach(b => {
+      b.onclick = async () => {
+        await setLang(b.dataset.lang);
+        box.remove();
+        resolve();
+      };
+    });
+  });
+}
+
 async function boot() {
+  const saved = store.get('lang', '');
+  await loadStrings(isLang(saved) ? saved : defaultLang());
+  applyStaticStrings();
+  $app.innerHTML = `<p class="muted center">${esc(t('common.loading'))}</p>`;
   try {
     await loadData();
   } catch (e) {
-    $app.innerHTML = `<div class="card"><p>İçerik yüklenemedi (b2-data.json).</p>
+    $app.innerHTML = `<div class="card"><p>${esc(t('boot.loadFailed'))}</p>
       <p class="muted small">${esc(e.message)}</p>
-      <button class="btn primary" onclick="location.reload()">Tekrar dene</button></div>`;
+      <button class="btn primary" onclick="location.reload()">${esc(t('boot.retry'))}</button></div>`;
     return;
   }
+  if (!isLang(saved)) await showLangPicker();
   window.addEventListener('hashchange', router);
   router();
   checkForUpdate();

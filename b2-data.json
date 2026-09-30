@@ -2790,6 +2790,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Ersatz leisten = tazmin etmek / yenisini vermek.",
+   "explanation_en": "Ersatz leisten = to compensate / to provide a replacement.",
+   "explanation_uk": "Ersatz leisten = відшкодувати / надати заміну.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2809,6 +2811,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Schadenersatz verlangen/fordern = tazminat istemek.",
+   "explanation_en": "Schadenersatz verlangen/fordern = to demand compensation.",
+   "explanation_uk": "Schadenersatz verlangen/fordern = вимагати відшкодування.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2828,6 +2832,8 @@
    ],
    "answer": 0,
    "explanation_tr": "jemandem Bescheid geben/sagen = haber vermek.",
+   "explanation_en": "jemandem Bescheid geben/sagen = to let someone know.",
+   "explanation_uk": "jemandem Bescheid geben/sagen = повідомити когось.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2847,6 +2853,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Bescheid SAGEN (günlük) = Bescheid geben.",
+   "explanation_en": "Bescheid SAGEN (everyday) = Bescheid geben.",
+   "explanation_uk": "Bescheid SAGEN (розмовне) = Bescheid geben.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2866,6 +2874,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Skonto / Rabatt / Preisnachlass GEWÄHREN.",
+   "explanation_en": "Skonto / Rabatt / Preisnachlass GEWÄHREN.",
+   "explanation_uk": "Skonto / Rabatt / Preisnachlass GEWÄHREN.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2885,6 +2895,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Preisnachlass gewähren.",
+   "explanation_en": "einen Preisnachlass gewähren.",
+   "explanation_uk": "einen Preisnachlass gewähren.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2904,6 +2916,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Verantwortung übernehmen/tragen = sorumluluğu üstlenmek.",
+   "explanation_en": "Verantwortung übernehmen/tragen = to take on responsibility.",
+   "explanation_uk": "Verantwortung übernehmen/tragen = брати на себе відповідальність.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2923,6 +2937,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Verantwortung TRAGEN (olumsuz cümlede sık: keine Verantwortung tragen).",
+   "explanation_en": "Verantwortung TRAGEN (common in negative sentences: keine Verantwortung tragen).",
+   "explanation_uk": "Verantwortung TRAGEN (часто в запереченні: keine Verantwortung tragen).",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2942,6 +2958,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Vorschlag machen = öneride bulunmak. Sprechen T3 için de!",
+   "explanation_en": "einen Vorschlag machen = to make a suggestion. Useful for Sprechen T3 too!",
+   "explanation_uk": "einen Vorschlag machen = вносити пропозицію. Знадобиться і для Sprechen T3!",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2961,6 +2979,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Ordnung bringen = düzeltmek/halletmek.",
+   "explanation_en": "in Ordnung bringen = to fix / to sort out.",
+   "explanation_uk": "in Ordnung bringen = виправити / залагодити.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2980,6 +3000,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Überstunden leisten/machen.",
+   "explanation_en": "Überstunden leisten/machen.",
+   "explanation_uk": "Überstunden leisten/machen.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -2999,6 +3021,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Rechnung stellen = faturaya eklemek.",
+   "explanation_en": "in Rechnung stellen = to add to the invoice.",
+   "explanation_uk": "in Rechnung stellen = включити в рахунок.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3018,6 +3042,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zu etwas Stellung nehmen = görüş bildirmek.",
+   "explanation_en": "zu etwas Stellung nehmen = to give one's opinion.",
+   "explanation_uk": "zu etwas Stellung nehmen = висловити свою думку.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3037,6 +3063,8 @@
    ],
    "answer": 0,
    "explanation_tr": "von etwas Gebrauch machen = …i kullanmak.",
+   "explanation_en": "von etwas Gebrauch machen = to make use of ….",
+   "explanation_uk": "von etwas Gebrauch machen = скористатися ….",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3056,6 +3084,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich Mühe geben = çaba göstermek.",
+   "explanation_en": "sich Mühe geben = to make an effort.",
+   "explanation_uk": "sich Mühe geben = докладати зусиль.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3075,6 +3105,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich in Verbindung setzen.",
+   "explanation_en": "sich in Verbindung setzen.",
+   "explanation_uk": "sich in Verbindung setzen.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3094,6 +3126,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Termin vereinbaren = randevu almak.",
+   "explanation_en": "einen Termin vereinbaren = to make an appointment.",
+   "explanation_uk": "einen Termin vereinbaren = домовитися про зустріч.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3113,6 +3147,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Frist einhalten = süreye uymak. (Frist SETZEN = süre vermek.)",
+   "explanation_en": "eine Frist einhalten = to meet a deadline. (Frist SETZEN = to set a deadline.)",
+   "explanation_uk": "eine Frist einhalten = дотримуватися терміну. (Frist SETZEN = встановити термін.)",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3132,6 +3168,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Bestellung aufgeben = sipariş vermek.",
+   "explanation_en": "eine Bestellung aufgeben = to place an order.",
+   "explanation_uk": "eine Bestellung aufgeben = зробити замовлення.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3151,6 +3189,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Anspruch haben AUF + Akk.",
+   "explanation_en": "Anspruch haben AUF + Akk.",
+   "explanation_uk": "Anspruch haben AUF + Akk.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3170,6 +3210,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Anspruch nehmen = yararlanmak.",
+   "explanation_en": "in Anspruch nehmen = to make use of.",
+   "explanation_uk": "in Anspruch nehmen = скористатися.",
    "tags": [
     "nvv"
    ]
@@ -3188,6 +3230,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Maßnahmen ergreifen/treffen.",
+   "explanation_en": "Maßnahmen ergreifen/treffen.",
+   "explanation_uk": "Maßnahmen ergreifen/treffen.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3207,6 +3251,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Bezug nehmen AUF (resmî mektup girişi). Ayrıca: 'Bezugnehmend auf …'.",
+   "explanation_en": "Bezug nehmen AUF (opening of a formal letter). Also: 'Bezugnehmend auf …'.",
+   "explanation_uk": "Bezug nehmen AUF (початок офіційного листа). Також: 'Bezugnehmend auf …'.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3226,6 +3272,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kontakt aufnehmen = irtibata geçmek.",
+   "explanation_en": "Kontakt aufnehmen = to get in touch.",
+   "explanation_uk": "Kontakt aufnehmen = зв'язатися.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3245,6 +3293,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Wert legen AUF = önem vermek.",
+   "explanation_en": "Wert legen AUF = to attach importance to.",
+   "explanation_uk": "Wert legen AUF = надавати значення.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3264,6 +3314,8 @@
    ],
    "answer": 0,
    "explanation_tr": "die Kosten tragen/übernehmen.",
+   "explanation_en": "die Kosten tragen/übernehmen.",
+   "explanation_uk": "die Kosten tragen/übernehmen.",
    "tags": [
     "nvv",
     "exam-häufig"
@@ -3283,6 +3335,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Rücksicht nehmen AUF = saygı göstermek/dikkate almak.",
+   "explanation_en": "Rücksicht nehmen AUF = to show consideration for / to take into account.",
+   "explanation_uk": "Rücksicht nehmen AUF = зважати на / враховувати.",
    "tags": [
     "nvv"
    ]
@@ -3301,6 +3355,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Entscheidung treffen.",
+   "explanation_en": "eine Entscheidung treffen.",
+   "explanation_uk": "eine Entscheidung treffen.",
    "tags": [
     "nvv"
    ]
@@ -3319,6 +3375,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Betracht kommen = söz konusu olmak. (= in Frage kommen)",
+   "explanation_en": "in Betracht kommen = to be an option. (= in Frage kommen)",
+   "explanation_uk": "in Betracht kommen = розглядатися як варіант. (= in Frage kommen)",
    "tags": [
     "nvv"
    ]
@@ -3337,6 +3395,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zur Kenntnis nehmen = not etmek, bilgi edinmek.",
+   "explanation_en": "zur Kenntnis nehmen = to take note of, to be informed.",
+   "explanation_uk": "zur Kenntnis nehmen = взяти до відома, прийняти до уваги.",
    "tags": [
     "nvv"
    ]
@@ -3355,6 +3415,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Antrag stellen = başvuru yapmak.",
+   "explanation_en": "einen Antrag stellen = to submit an application.",
+   "explanation_uk": "einen Antrag stellen = подати заяву.",
    "tags": [
     "nvv"
    ]
@@ -3373,6 +3435,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Rolle spielen = rol oynamak.",
+   "explanation_en": "eine Rolle spielen = to play a role.",
+   "explanation_uk": "eine Rolle spielen = відігравати роль.",
    "tags": [
     "nvv"
    ]
@@ -3391,6 +3455,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kritik üben AN + Dativ.",
+   "explanation_en": "Kritik üben AN + Dativ.",
+   "explanation_uk": "Kritik üben AN + Dativ.",
    "tags": [
     "nvv"
    ]
@@ -3409,6 +3475,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zur Folge haben = sonucunu doğurmak.",
+   "explanation_en": "zur Folge haben = to result in.",
+   "explanation_uk": "zur Folge haben = мати наслідком.",
    "tags": [
     "nvv"
    ]
@@ -3427,6 +3495,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Kauf nehmen = (olumsuzluğa) katlanmak.",
+   "explanation_en": "in Kauf nehmen = to put up with (a downside).",
+   "explanation_uk": "in Kauf nehmen = миритися (з недоліком).",
    "tags": [
     "nvv"
    ]
@@ -3445,6 +3515,8 @@
    ],
    "answer": 0,
    "explanation_tr": "in Kraft treten = yürürlüğe girmek.",
+   "explanation_en": "in Kraft treten = to come into force.",
+   "explanation_uk": "in Kraft treten = набирати чинності.",
    "tags": [
     "nvv"
    ]
@@ -3463,6 +3535,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zum Ausdruck bringen = ifade etmek.",
+   "explanation_en": "zum Ausdruck bringen = to express.",
+   "explanation_uk": "zum Ausdruck bringen = висловлювати.",
    "tags": [
     "nvv"
    ]
@@ -3481,6 +3555,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Beitrag leisten ZU = katkıda bulunmak.",
+   "explanation_en": "einen Beitrag leisten ZU = to contribute to.",
+   "explanation_uk": "einen Beitrag leisten ZU = робити внесок у.",
    "tags": [
     "nvv"
    ]
@@ -3499,6 +3575,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Erste Hilfe leisten.",
+   "explanation_en": "Erste Hilfe leisten.",
+   "explanation_uk": "Erste Hilfe leisten.",
    "tags": [
     "nvv"
    ]
@@ -3517,6 +3595,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich Sorgen machen UM.",
+   "explanation_en": "sich Sorgen machen UM.",
+   "explanation_uk": "sich Sorgen machen UM.",
    "tags": [
     "nvv"
    ]
@@ -3535,6 +3615,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Einfluss haben/nehmen AUF.",
+   "explanation_en": "Einfluss haben/nehmen AUF.",
+   "explanation_uk": "Einfluss haben/nehmen AUF.",
    "tags": [
     "nvv"
    ]
@@ -3553,6 +3635,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Abschied nehmen VON.",
+   "explanation_en": "Abschied nehmen VON.",
+   "explanation_uk": "Abschied nehmen VON.",
    "tags": [
     "nvv"
    ]
@@ -3571,6 +3655,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Lösung finden. (Entscheidung TREFFEN ile karıştırma!)",
+   "explanation_en": "eine Lösung finden. (Don't mix it up with Entscheidung TREFFEN!)",
+   "explanation_uk": "eine Lösung finden. (Не плутай з Entscheidung TREFFEN!)",
    "tags": [
     "nvv",
     "exam-häufig"

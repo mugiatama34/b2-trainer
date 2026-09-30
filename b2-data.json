@@ -6659,6 +6659,8 @@
    "part": "lesen1",
    "title": "Lesen T1 · Set 3: Artikel für Freunde",
    "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır.",
+   "instructions_en": "Choose the right article for each person (a–h). 3 articles are left over.",
+   "instructions_uk": "Обери відповідну статтю для кожної людини (a–h). 3 статті залишаються зайвими.",
    "context_de": "Sie lesen den Online-Ratgeber einer Krankenkasse und einer Wirtschaftszeitung und möchten Bekannten Artikel empfehlen.",
    "layout": "matching",
    "allow_none": false,
@@ -6711,7 +6713,9 @@
      "kind": "match",
      "prompt": "Sevgi arbeitet im Schichtdienst und kann nach der Arbeit schlecht einschlafen.",
      "answer": "c",
-     "explanation_tr": "Tuzak b: 'Nacht/Schicht' kelimeleri var ama konu PARA. Sevgi'nin sorunu uyku → c."
+     "explanation_tr": "Tuzak b: 'Nacht/Schicht' kelimeleri var ama konu PARA. Sevgi'nin sorunu uyku → c.",
+     "explanation_en": "Trap b: the words 'Nacht/Schicht' appear, but the topic is MONEY. Sevgi's problem is sleep → c.",
+     "explanation_uk": "Пастка b: є слова 'Nacht/Schicht', але тема — ГРОШІ. Проблема Sevgi — сон → c."
     },
     {
      "id": "L1-3-q2",
@@ -6719,7 +6723,9 @@
      "kind": "match",
      "prompt": "Robert leitet ein kleines Team und möchte seine Leute motivieren, ohne mehr zu bezahlen.",
      "answer": "f",
-     "explanation_tr": "Tuzak g: 'Gehälter, Beschäftigte' geçiyor ama maaş artışı; Robert 'ohne mehr zu bezahlen' → f."
+     "explanation_tr": "Tuzak g: 'Gehälter, Beschäftigte' geçiyor ama maaş artışı; Robert 'ohne mehr zu bezahlen' → f.",
+     "explanation_en": "Trap g: 'Gehälter, Beschäftigte' appear, but it's about a pay rise; Robert: 'ohne mehr zu bezahlen' → f.",
+     "explanation_uk": "Пастка g: є 'Gehälter, Beschäftigte', але йдеться про підвищення зарплати; Robert: 'ohne mehr zu bezahlen' → f."
     },
     {
      "id": "L1-3-q3",
@@ -6727,7 +6733,9 @@
      "kind": "match",
      "prompt": "Elif ist 35 und möchte jetzt noch eine Berufsausbildung beginnen.",
      "answer": "a",
-     "explanation_tr": "Tuzak d: 'Ausbildung' var ama işverenin sorunu, yaşlı başvuran değil → a (30 plus)."
+     "explanation_tr": "Tuzak d: 'Ausbildung' var ama işverenin sorunu, yaşlı başvuran değil → a (30 plus).",
+     "explanation_en": "Trap d: 'Ausbildung' is there, but it's about the employer's problem, not older applicants → a (30 plus).",
+     "explanation_uk": "Пастка d: є 'Ausbildung', але це проблема роботодавця, а не старших кандидатів → a (30 plus)."
     },
     {
      "id": "L1-3-q4",
@@ -6735,7 +6743,9 @@
      "kind": "match",
      "prompt": "Karins Sohn ist oft krank. Sie will wissen, wie viele Tage sie deshalb zu Hause bleiben darf.",
      "answer": "h",
-     "explanation_tr": "Kaç gün evde kalabilir → h (Kinderkrankentage)."
+     "explanation_tr": "Kaç gün evde kalabilir → h (Kinderkrankentage).",
+     "explanation_en": "How many days can she stay at home → h (Kinderkrankentage).",
+     "explanation_uk": "Скільки днів можна залишатися вдома → h (Kinderkrankentage)."
     },
     {
      "id": "L1-3-q5",
@@ -6743,7 +6753,9 @@
      "kind": "match",
      "prompt": "Burak möchte bald in Österreich arbeiten und sich über die Bedingungen dort informieren.",
      "answer": "e",
-     "explanation_tr": "Avusturya'da çalışma koşulları → e."
+     "explanation_tr": "Avusturya'da çalışma koşulları → e.",
+     "explanation_en": "Working conditions in Austria → e.",
+     "explanation_uk": "Умови праці в Австрії → e."
     }
    ]
   },
@@ -6752,6 +6764,8 @@
    "part": "lesen1",
    "title": "Lesen T1 · Set 4: Artikel für Kolleginnen",
    "instructions_tr": "Her kişiye uygun makaleyi seç (a–h). 3 makale boşta kalır.",
+   "instructions_en": "Choose the right article for each person (a–h). 3 articles are left over.",
+   "instructions_uk": "Обери відповідну статтю для кожної людини (a–h). 3 статті залишаються зайвими.",
    "context_de": "Sie lesen Artikel in einem Online-Magazin für Beschäftigte und möchten sie Kolleginnen und Kollegen schicken.",
    "layout": "matching",
    "allow_none": false,
@@ -6804,7 +6818,9 @@
      "kind": "match",
      "prompt": "Tanja hat 15 Jahre im Büro gearbeitet und möchte jetzt in einen sozialen Beruf wechseln.",
      "answer": "d",
-     "explanation_tr": "Büro → sosyal meslek = Quereinstieg → d."
+     "explanation_tr": "Büro → sosyal meslek = Quereinstieg → d.",
+     "explanation_en": "Office → social profession = Quereinstieg → d.",
+     "explanation_uk": "Офіс → соціальна професія = Quereinstieg → d."
     },
     {
      "id": "L1-4-q2",
@@ -6812,7 +6828,9 @@
      "kind": "match",
      "prompt": "Michaels Vertrag endet im Sommer. Er fragt sich, ob die Firma ihn verlängern muss.",
      "answer": "a",
-     "explanation_tr": "Tuzak e: 'befristet' var ama sadece istatistik. Michael'ın sorusu 'uzatmak zorunda mı?' → a (Anspruch yok)."
+     "explanation_tr": "Tuzak e: 'befristet' var ama sadece istatistik. Michael'ın sorusu 'uzatmak zorunda mı?' → a (Anspruch yok).",
+     "explanation_en": "Trap e: 'befristet' appears, but only as a statistic. Michael's question is 'does it have to extend it?' → a (no Anspruch).",
+     "explanation_uk": "Пастка e: є 'befristet', але лише як статистика. Питання Michael: 'чи мусить продовжити?' → a (Anspruch немає)."
     },
     {
      "id": "L1-4-q3",
@@ -6820,7 +6838,9 @@
      "kind": "match",
      "prompt": "Aynur möchte lernen, wie sie Kollegen in einer psychischen Krise unterstützen kann.",
      "answer": "g",
-     "explanation_tr": "Tuzak f: 'Stress' ama kendini koruma. Aynur BAŞKALARINA yardım etmek istiyor → g."
+     "explanation_tr": "Tuzak f: 'Stress' ama kendini koruma. Aynur BAŞKALARINA yardım etmek istiyor → g.",
+     "explanation_en": "Trap f: 'Stress', but about protecting yourself. Aynur wants to help OTHERS → g.",
+     "explanation_uk": "Пастка f: 'Stress', але про захист себе. Aynur хоче допомагати ІНШИМ → g."
     },
     {
      "id": "L1-4-q4",
@@ -6828,7 +6848,9 @@
      "kind": "match",
      "prompt": "Frank fährt jeden Tag 80 Kilometer zur Arbeit und möchte Steuern sparen.",
      "answer": "c",
-     "explanation_tr": "Tuzak b: yol/işe gidiş var ama vergi yok. 'Steuern sparen' → c."
+     "explanation_tr": "Tuzak b: yol/işe gidiş var ama vergi yok. 'Steuern sparen' → c.",
+     "explanation_en": "Trap b: commuting is mentioned, but no taxes. 'Steuern sparen' → c.",
+     "explanation_uk": "Пастка b: є дорога на роботу, але немає податків. 'Steuern sparen' → c."
     },
     {
      "id": "L1-4-q5",
@@ -6836,7 +6858,9 @@
      "kind": "match",
      "prompt": "Julia hat eine Idee, wie ihre Firma Energie sparen kann, und hofft auf eine Belohnung.",
      "answer": "h",
-     "explanation_tr": "Fikir + ödül (Prämie) → h. 'Energie sparen' ≈ 'Geld sparen'."
+     "explanation_tr": "Fikir + ödül (Prämie) → h. 'Energie sparen' ≈ 'Geld sparen'.",
+     "explanation_en": "Idea + reward (Prämie) → h. 'Energie sparen' ≈ 'Geld sparen'.",
+     "explanation_uk": "Ідея + винагорода (Prämie) → h. 'Energie sparen' ≈ 'Geld sparen'."
     }
    ]
   },
@@ -6845,6 +6869,8 @@
    "part": "lesen2",
    "title": "Lesen T2 · Set 3: Informationen im Betrieb",
    "instructions_tr": "Her numara için önce richtig/falsch, sonra a/b/c.",
+   "instructions_en": "For each number, first richtig/falsch, then a/b/c.",
+   "instructions_uk": "Для кожного номера спочатку richtig/falsch, потім a/b/c.",
    "layout": "text-questions",
    "texts": [
     {
@@ -6870,7 +6896,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak: E-posta 'nicht ausreichend' → sadece telefon. Falsch."
+     "explanation_tr": "Tuzak: E-posta 'nicht ausreichend' → sadece telefon. Falsch.",
+     "explanation_en": "Trap: email is 'nicht ausreichend' → only by phone. Falsch.",
+     "explanation_uk": "Пастка: email — 'nicht ausreichend' → лише телефоном. Falsch."
     },
     {
      "id": "L2-3-q2",
@@ -6884,7 +6912,9 @@
       "braucht man erst ab dem fünften Tag."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: eski kural. Metin: muayenehane kasaya elektronik gönderiyor, firma oradan alıyor → b. c: 3. gün, 5 değil."
+     "explanation_tr": "Tuzak a: eski kural. Metin: muayenehane kasaya elektronik gönderiyor, firma oradan alıyor → b. c: 3. gün, 5 değil.",
+     "explanation_en": "Trap a: old rule. Text: the practice sends it electronically to the health insurer, the company gets it from there → b. c: 3rd day, not 5th.",
+     "explanation_uk": "Пастка a: старе правило. Текст: лікарня надсилає електронно до страхової каси, фірма отримує звідти → b. c: 3-й день, а не 5-й."
     },
     {
      "id": "L2-3-q3",
@@ -6897,7 +6927,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak 'automatisch': Sadece doktor belgesiyle → falsch."
+     "explanation_tr": "Tuzak 'automatisch': Sadece doktor belgesiyle → falsch.",
+     "explanation_en": "Trap 'automatisch': only with a doctor's certificate → falsch.",
+     "explanation_uk": "Пастка 'automatisch': лише з довідкою від лікаря → falsch."
     },
     {
      "id": "L2-3-q4",
@@ -6911,7 +6943,9 @@
       "braucht man keine Bescheinigung."
      ],
      "answer": 0,
-     "explanation_tr": "'Bescheinigung … an die Personalabteilung' → a."
+     "explanation_tr": "'Bescheinigung … an die Personalabteilung' → a.",
+     "explanation_en": "'Bescheinigung … an die Personalabteilung' → a.",
+     "explanation_uk": "'Bescheinigung … an die Personalabteilung' → a."
     },
     {
      "id": "L2-3-q5",
@@ -6924,7 +6958,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'auch am Wochenende nicht erlaubt' → falsch. Tuzak: istisna sadece çok günlük iş seyahatinde."
+     "explanation_tr": "'auch am Wochenende nicht erlaubt' → falsch. Tuzak: istisna sadece çok günlük iş seyahatinde.",
+     "explanation_en": "'auch am Wochenende nicht erlaubt' → falsch. Trap: the only exception is multi-day business trips.",
+     "explanation_uk": "'auch am Wochenende nicht erlaubt' → falsch. Пастка: виняток лише для багатоденних відряджень."
     },
     {
      "id": "L2-3-q6",
@@ -6938,7 +6974,9 @@
       "ruft den Empfang an."
      ],
      "answer": 1,
-     "explanation_tr": "'spätestens einen Arbeitstag vorher … im Intranet' → b. Tuzak c: Empfang anahtar verir, rezervasyon almaz."
+     "explanation_tr": "'spätestens einen Arbeitstag vorher … im Intranet' → b. Tuzak c: Empfang anahtar verir, rezervasyon almaz.",
+     "explanation_en": "'spätestens einen Arbeitstag vorher … im Intranet' → b. Trap c: reception hands out keys, doesn't take reservations.",
+     "explanation_uk": "'spätestens einen Arbeitstag vorher … im Intranet' → b. Пастка c: Empfang видає ключі, але не приймає бронювання."
     },
     {
      "id": "L2-3-q7",
@@ -6951,7 +6989,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tankkarte var, 'nichts vorstrecken' → falsch."
+     "explanation_tr": "Tankkarte var, 'nichts vorstrecken' → falsch.",
+     "explanation_en": "There is a Tankkarte, 'nichts vorstrecken' → falsch.",
+     "explanation_uk": "Є Tankkarte, 'nichts vorstrecken' → falsch."
     },
     {
      "id": "L2-3-q8",
@@ -6965,7 +7005,9 @@
       "den Wagen am Empfang kontrollieren lassen."
      ],
      "answer": 1,
-     "explanation_tr": "Tarih, hedef, km → Fahrtenbuch → b."
+     "explanation_tr": "Tarih, hedef, km → Fahrtenbuch → b.",
+     "explanation_en": "Date, destination, km → Fahrtenbuch → b.",
+     "explanation_uk": "Дата, пункт призначення, км → Fahrtenbuch → b."
     }
    ]
   },
@@ -6974,6 +7016,8 @@
    "part": "lesen2",
    "title": "Lesen T2 · Set 4: Informationen im Betrieb",
    "instructions_tr": "Her numara için önce richtig/falsch, sonra a/b/c.",
+   "instructions_en": "For each number, first richtig/falsch, then a/b/c.",
+   "instructions_uk": "Для кожного номера спочатку richtig/falsch, потім a/b/c.",
    "layout": "text-questions",
    "texts": [
     {
@@ -6999,7 +7043,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak 'allein': 'gemeinsam mit Ihrer Teamleitung' → falsch."
+     "explanation_tr": "Tuzak 'allein': 'gemeinsam mit Ihrer Teamleitung' → falsch.",
+     "explanation_en": "Trap 'allein': 'gemeinsam mit Ihrer Teamleitung' → falsch.",
+     "explanation_uk": "Пастка 'allein': 'gemeinsam mit Ihrer Teamleitung' → falsch."
     },
     {
      "id": "L2-4-q2",
@@ -7013,7 +7059,9 @@
       "muss man nur bis 14 Uhr erreichbar sein."
      ],
      "answer": 0,
-     "explanation_tr": "'Dienstag ist Teamtag: alle im Büro' → a."
+     "explanation_tr": "'Dienstag ist Teamtag: alle im Büro' → a.",
+     "explanation_en": "'Dienstag ist Teamtag: alle im Büro' → a.",
+     "explanation_uk": "'Dienstag ist Teamtag: alle im Büro' → a."
     },
     {
      "id": "L2-4-q3",
@@ -7026,7 +7074,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Yurt dışından çalışmak 'nicht gestattet' → falsch."
+     "explanation_tr": "Yurt dışından çalışmak 'nicht gestattet' → falsch.",
+     "explanation_en": "Working from abroad is 'nicht gestattet' → falsch.",
+     "explanation_uk": "Працювати з-за кордону 'nicht gestattet' → falsch."
     },
     {
      "id": "L2-4-q4",
@@ -7040,7 +7090,9 @@
       "erlaubt private Laptops mit VPN."
      ],
      "answer": 1,
-     "explanation_tr": "İnternet ödenmiyor (a yanlış), özel cihaz yasak (c yanlış), monitör ödünç → b."
+     "explanation_tr": "İnternet ödenmiyor (a yanlış), özel cihaz yasak (c yanlış), monitör ödünç → b.",
+     "explanation_en": "Internet isn't paid (a wrong), private devices are banned (c wrong), monitor on loan → b.",
+     "explanation_uk": "Інтернет не оплачують (a неправильно), особисті пристрої заборонені (c неправильно), монітор дають у користування → b."
     },
     {
      "id": "L2-4-q5",
@@ -7053,7 +7105,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Essenswagen'da iki sıcak yemek var → falsch."
+     "explanation_tr": "Essenswagen'da iki sıcak yemek var → falsch.",
+     "explanation_en": "The Essenswagen has two hot dishes → falsch.",
+     "explanation_uk": "В Essenswagen є дві гарячі страви → falsch."
     },
     {
      "id": "L2-4-q6",
@@ -7067,7 +7121,9 @@
       "erhöht die Firma nach dem Umbau."
      ],
      "answer": 1,
-     "explanation_tr": "'gilt auch am Essenswagen' → b. c: artış hiç söylenmiyor."
+     "explanation_tr": "'gilt auch am Essenswagen' → b. c: artış hiç söylenmiyor.",
+     "explanation_en": "'gilt auch am Essenswagen' → b. c: an increase is never mentioned.",
+     "explanation_uk": "'gilt auch am Essenswagen' → b. c: про підвищення взагалі не сказано."
     },
     {
      "id": "L2-4-q7",
@@ -7080,7 +7136,9 @@
       "falsch"
      ],
      "answer": 0,
-     "explanation_tr": "'eine halbe Stunde länger als bisher' → richtig."
+     "explanation_tr": "'eine halbe Stunde länger als bisher' → richtig.",
+     "explanation_en": "'eine halbe Stunde länger als bisher' → richtig.",
+     "explanation_uk": "'eine halbe Stunde länger als bisher' → richtig."
     },
     {
      "id": "L2-4-q8",
@@ -7094,7 +7152,9 @@
       "das Essen für Juli vorbestellen."
      ],
      "answer": 1,
-     "explanation_tr": "Online-Umfrage = istek bildirmek → b."
+     "explanation_tr": "Online-Umfrage = istek bildirmek → b.",
+     "explanation_en": "Online-Umfrage = sharing your wishes → b.",
+     "explanation_uk": "Online-Umfrage = висловити побажання → b."
     }
    ]
   },
@@ -7103,6 +7163,8 @@
    "part": "lesen3",
    "title": "Lesen T3 · Set 3: Neu im deutschen Job",
    "instructions_tr": "Her soruya uygun ipucunu seç (a–f). Bir sorunun cevabı YOK → x.",
+   "instructions_en": "Choose the right tip for each question (a–f). One question has NO answer → x.",
+   "instructions_uk": "Обери відповідну пораду до кожного питання (a–f). На одне питання відповіді НЕМАЄ → x.",
    "context_de": "Auf einer Website für internationale Fachkräfte beantworten Expertinnen Fragen zum Arbeitsalltag in Deutschland.",
    "layout": "matching",
    "allow_none": true,
@@ -7145,7 +7207,9 @@
      "kind": "match",
      "prompt": "Jin: Mein Chef duzt mich. Darf ich ihn jetzt auch duzen?",
      "answer": "b",
-     "explanation_tr": "Du/Sie sorusu → b."
+     "explanation_tr": "Du/Sie sorusu → b.",
+     "explanation_en": "Du/Sie question → b.",
+     "explanation_uk": "Питання про Du/Sie → b."
     },
     {
      "id": "L3-3-q2",
@@ -7153,7 +7217,9 @@
      "kind": "match",
      "prompt": "Carla: Ich verstehe meine Gehaltsabrechnung nicht. Warum bekomme ich so viel weniger ausgezahlt?",
      "answer": "e",
-     "explanation_tr": "Brüt/net farkı → e."
+     "explanation_tr": "Brüt/net farkı → e.",
+     "explanation_en": "Gross/net difference → e.",
+     "explanation_uk": "Різниця між брутто і нетто → e."
     },
     {
      "id": "L3-3-q3",
@@ -7161,7 +7227,9 @@
      "kind": "match",
      "prompt": "Amir: Ich habe im Iran eine Ausbildung begonnen, aber nicht beendet. Kann ich sie hier fortsetzen?",
      "answer": "x",
-     "explanation_tr": "Tuzak d: tanınma var ama BİTMİŞ üniversite diploması için. Amir'in yarım kalmış Ausbildung'u için ipucu yok → x."
+     "explanation_tr": "Tuzak d: tanınma var ama BİTMİŞ üniversite diploması için. Amir'in yarım kalmış Ausbildung'u için ipucu yok → x.",
+     "explanation_en": "Trap d: recognition is there, but for a COMPLETED university degree. There's no tip for Amir's unfinished Ausbildung → x.",
+     "explanation_uk": "Пастка d: є визнання, але для ЗАКІНЧЕНОГО університетського диплома. Для незавершеної Ausbildung Amir поради немає → x."
     },
     {
      "id": "L3-3-q4",
@@ -7169,7 +7237,9 @@
      "kind": "match",
      "prompt": "Olga: Meine Kollegen kritisieren meine Arbeit sehr offen. Ist das unhöflich gemeint?",
      "answer": "a",
-     "explanation_tr": "Açık eleştiri kaba mı? → a."
+     "explanation_tr": "Açık eleştiri kaba mı? → a.",
+     "explanation_en": "Is open criticism rude? → a.",
+     "explanation_uk": "Чи відкрита критика — це грубо? → a."
     }
    ]
   },
@@ -7178,6 +7248,8 @@
    "part": "lesen3",
    "title": "Lesen T3 · Set 4: Gesund arbeiten",
    "instructions_tr": "Her soruya uygun ipucunu seç (a–f). Bir sorunun cevabı YOK → x.",
+   "instructions_en": "Choose the right tip for each question (a–f). One question has NO answer → x.",
+   "instructions_uk": "Обери відповідну пораду до кожного питання (a–f). На одне питання відповіді НЕМАЄ → x.",
    "context_de": "In der Mitarbeiterzeitung gibt es die Rubrik „Gesund im Job – Ihre Fragen“.",
    "layout": "matching",
    "allow_none": true,
@@ -7220,7 +7292,9 @@
      "kind": "match",
      "prompt": "Petra: Ich sitze den ganzen Tag am Schreibtisch und habe abends Rückenschmerzen.",
      "answer": "c",
-     "explanation_tr": "Uzun oturma + sırt ağrısı → c."
+     "explanation_tr": "Uzun oturma + sırt ağrısı → c.",
+     "explanation_en": "Sitting for long + back pain → c.",
+     "explanation_uk": "Довге сидіння + біль у спині → c."
     },
     {
      "id": "L3-4-q2",
@@ -7228,7 +7302,9 @@
      "kind": "match",
      "prompt": "Hakan: Nach der Nachtschicht kann ich tagsüber einfach nicht schlafen.",
      "answer": "x",
-     "explanation_tr": "Tuzak b: yorgunluk var ama öğleden sonra düşüşü; gece vardiyası sonrası gündüz uykusu için ipucu yok → x."
+     "explanation_tr": "Tuzak b: yorgunluk var ama öğleden sonra düşüşü; gece vardiyası sonrası gündüz uykusu için ipucu yok → x.",
+     "explanation_en": "Trap b: tiredness is there, but it's the afternoon slump; no tip for daytime sleep after a night shift → x.",
+     "explanation_uk": "Пастка b: є втома, але це післяобідній спад; поради щодо денного сну після нічної зміни немає → x."
     },
     {
      "id": "L3-4-q3",
@@ -7236,7 +7312,9 @@
      "kind": "match",
      "prompt": "Ines: Bei der Arbeit vergesse ich oft zu trinken und bekomme nachmittags Kopfschmerzen.",
      "answer": "f",
-     "explanation_tr": "Tuzak d: 'Kopfschmerzen' geçiyor ama sebep ekran. Ines'in sorunu su içmeyi unutmak → f."
+     "explanation_tr": "Tuzak d: 'Kopfschmerzen' geçiyor ama sebep ekran. Ines'in sorunu su içmeyi unutmak → f.",
+     "explanation_en": "Trap d: 'Kopfschmerzen' appears, but the cause is the screen. Ines's problem is forgetting to drink water → f.",
+     "explanation_uk": "Пастка d: є 'Kopfschmerzen', але причина — екран. Проблема Ines — забуває пити воду → f."
     },
     {
      "id": "L3-4-q4",
@@ -7244,7 +7322,9 @@
      "kind": "match",
      "prompt": "Stefan: Mein Team ist nach einem schwierigen Projekt völlig erschöpft. Was kann ich als Teamleiter tun?",
      "answer": "a",
-     "explanation_tr": "Ekip lideri + tükenmiş ekip → a."
+     "explanation_tr": "Ekip lideri + tükenmiş ekip → a.",
+     "explanation_en": "Team leader + exhausted team → a.",
+     "explanation_uk": "Керівник команди + виснажена команда → a."
     }
    ]
   },
@@ -7253,6 +7333,8 @@
    "part": "lesen4",
    "title": "Lesen T4 · Set 3: Protokoll (Beratungsstelle)",
    "instructions_tr": "Tutanağı oku, a/b/c seç.",
+   "instructions_en": "Read the Protokoll, choose a/b/c.",
+   "instructions_uk": "Прочитай Protokoll, обери a/b/c.",
    "layout": "text-questions",
    "texts": [
     {
@@ -7274,7 +7356,9 @@
       "ersetzt die sechswöchige Wartezeit komplett."
      ],
      "answer": 0,
-     "explanation_tr": "Perşembe 14–16, Mayıs'tan itibaren → a. b tuzak: iki kişi 'abwechselnd' (dönüşümlü). c: metinde yok."
+     "explanation_tr": "Perşembe 14–16, Mayıs'tan itibaren → a. b tuzak: iki kişi 'abwechselnd' (dönüşümlü). c: metinde yok.",
+     "explanation_en": "Thursday 14–16, from May → a. b is a trap: two people 'abwechselnd' (taking turns). c: not in the text.",
+     "explanation_uk": "Четвер 14–16, з травня → a. b — пастка: двоє 'abwechselnd' (по черзі). c: у тексті цього немає."
     },
     {
      "id": "L4-3-q2",
@@ -7288,7 +7372,9 @@
       "können nicht mehr eingesetzt werden."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: Herr Kühn sadece SORUYOR, karar yok. 'Bis zu einer Antwort … nur für Erstgespräche' → b. c aşırı genelleme."
+     "explanation_tr": "Tuzak a: Herr Kühn sadece SORUYOR, karar yok. 'Bis zu einer Antwort … nur für Erstgespräche' → b. c aşırı genelleme.",
+     "explanation_en": "Trap a: Herr Kühn is only ASKING, no decision yet. 'Bis zu einer Antwort … nur für Erstgespräche' → b. c overgeneralises.",
+     "explanation_uk": "Пастка a: Herr Kühn лише ПИТАЄ, рішення немає. 'Bis zu einer Antwort … nur für Erstgespräche' → b. c — надмірне узагальнення."
     },
     {
      "id": "L4-3-q3",
@@ -7302,7 +7388,9 @@
       "im Mai nicht an der Teamsitzung teilnehmen."
      ],
      "answer": 1,
-     "explanation_tr": "Mayıs'ta katılıyor, Haziran'da ekibe anlatıyor → b. Tuzak a: 'leiten' ≠ 'besuchen'."
+     "explanation_tr": "Mayıs'ta katılıyor, Haziran'da ekibe anlatıyor → b. Tuzak a: 'leiten' ≠ 'besuchen'.",
+     "explanation_en": "She attends in May and tells the team in June → b. Trap a: 'leiten' ≠ 'besuchen'.",
+     "explanation_uk": "У травні вона відвідує, у червні розповідає команді → b. Пастка a: 'leiten' ≠ 'besuchen'."
     },
     {
      "id": "L4-3-q4",
@@ -7316,7 +7404,9 @@
       "Herrn Kühn."
      ],
      "answer": 0,
-     "explanation_tr": "'Frau Arslan übernimmt die Einarbeitung' → a."
+     "explanation_tr": "'Frau Arslan übernimmt die Einarbeitung' → a.",
+     "explanation_en": "'Frau Arslan übernimmt die Einarbeitung' → a.",
+     "explanation_uk": "'Frau Arslan übernimmt die Einarbeitung' → a."
     },
     {
      "id": "L4-3-q5",
@@ -7330,7 +7420,9 @@
       "wird im Juni geplant."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: 'verschoben' = ertelendi, iptal değil → b."
+     "explanation_tr": "Tuzak a: 'verschoben' = ertelendi, iptal değil → b.",
+     "explanation_en": "Trap a: 'verschoben' = postponed, not cancelled → b.",
+     "explanation_uk": "Пастка a: 'verschoben' = перенесено, а не скасовано → b."
     }
    ]
   },
@@ -7339,6 +7431,8 @@
    "part": "lesen4",
    "title": "Lesen T4 · Set 4: Protokoll (Lager)",
    "instructions_tr": "Tutanağı oku, a/b/c seç.",
+   "instructions_en": "Read the Protokoll, choose a/b/c.",
+   "instructions_uk": "Прочитай Protokoll, обери a/b/c.",
    "layout": "text-questions",
    "texts": [
     {
@@ -7360,7 +7454,9 @@
       "dürfen nur noch erfahrene Kollegen Stapler fahren."
      ],
      "answer": 0,
-     "explanation_tr": "Tuzak b: Stapler kontrol edildi, sağlam → değiştirilmiyor. → a."
+     "explanation_tr": "Tuzak b: Stapler kontrol edildi, sağlam → değiştirilmiyor. → a.",
+     "explanation_en": "Trap b: the Stapler was checked and is fine → not being replaced. → a.",
+     "explanation_uk": "Пастка b: Stapler перевірили, він справний → його не замінюють. → a."
     },
     {
      "id": "L4-4-q2",
@@ -7374,7 +7470,9 @@
       "darf nicht mehr im Lager arbeiten."
      ],
      "answer": 1,
-     "explanation_tr": "'holt sie bis Monatsende … nach' → b."
+     "explanation_tr": "'holt sie bis Monatsende … nach' → b.",
+     "explanation_en": "'holt sie bis Monatsende … nach' → b.",
+     "explanation_uk": "'holt sie bis Monatsende … nach' → b."
     },
     {
      "id": "L4-4-q3",
@@ -7388,7 +7486,9 @@
       "beginnt die Spätschicht um 13 Uhr."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: 'vorläufig' = şimdilik, 'für immer' değil; sonbaharda tekrar karar verilecek → b."
+     "explanation_tr": "Tuzak a: 'vorläufig' = şimdilik, 'für immer' değil; sonbaharda tekrar karar verilecek → b.",
+     "explanation_en": "Trap a: 'vorläufig' = for now, not 'für immer'; it will be decided again in autumn → b.",
+     "explanation_uk": "Пастка a: 'vorläufig' = поки що, а не 'für immer'; восени вирішуватимуть знову → b."
     },
     {
      "id": "L4-4-q4",
@@ -7402,7 +7502,9 @@
       "ist das Lager wegen Inventur geschlossen."
      ],
      "answer": 0,
-     "explanation_tr": "Urlaubssperre = yeni izin yok; onaylanmış izin etkilenmez (b yanlış) → a."
+     "explanation_tr": "Urlaubssperre = yeni izin yok; onaylanmış izin etkilenmez (b yanlış) → a.",
+     "explanation_en": "Urlaubssperre = no new leave; already approved leave is not affected (b wrong) → a.",
+     "explanation_uk": "Urlaubssperre = нових відпусток немає; вже погоджених відпусток це не стосується (b неправильно) → a."
     },
     {
      "id": "L4-4-q5",
@@ -7416,7 +7518,9 @@
       "wurde abgeschafft."
      ],
      "answer": 0,
-     "explanation_tr": "Değişen sadece YER, zaman 'wie bisher' → a. b tuzak: her ayın ilk pazartesi."
+     "explanation_tr": "Değişen sadece YER, zaman 'wie bisher' → a. b tuzak: her ayın ilk pazartesi.",
+     "explanation_en": "Only the PLACE changes, the time stays 'wie bisher' → a. b is a trap: the first Monday of every month.",
+     "explanation_uk": "Змінюється лише МІСЦЕ, час 'wie bisher' → a. b — пастка: перший понеділок кожного місяця."
     }
    ]
   },
@@ -7425,6 +7529,8 @@
    "part": "lesen-schreiben1",
    "title": "Lesen & Schreiben T1 · Beschwerde verstehen (2)",
    "instructions_tr": "Şikâyet e-postasını oku, a/b/c seç. Sonra şablonla cevap yaz!",
+   "instructions_en": "Read the complaint email, choose a/b/c. Then write a reply using the template!",
+   "instructions_uk": "Прочитай лист-скаргу, обери a/b/c. Потім напиши відповідь за шаблоном!",
    "layout": "text-questions",
    "texts": [
     {
@@ -7446,7 +7552,9 @@
       "Der Kurs war zu teuer."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: gecikme var ama 'nicht mein Hauptproblem' diyor → b."
+     "explanation_tr": "Tuzak a: gecikme var ama 'nicht mein Hauptproblem' diyor → b.",
+     "explanation_en": "Trap a: there is a delay, but he says 'nicht mein Hauptproblem' → b.",
+     "explanation_uk": "Пастка a: запізнення було, але він каже 'nicht mein Hauptproblem' → b."
     },
     {
      "id": "LS1-2-q2",
@@ -7460,7 +7568,9 @@
       "Er möchte den Kurs bei einem anderen Kursleiter wiederholen."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: 'Hälfte' ≠ 'ganze'. İki talep: belge + ücretsiz kurs ya da yarı iade → b."
+     "explanation_tr": "Tuzak a: 'Hälfte' ≠ 'ganze'. İki talep: belge + ücretsiz kurs ya da yarı iade → b.",
+     "explanation_en": "Trap a: 'Hälfte' ≠ 'ganze'. Two requests: certificate + free course or half refund → b.",
+     "explanation_uk": "Пастка a: 'Hälfte' ≠ 'ganze'. Дві вимоги: довідка + безкоштовний курс або повернення половини → b."
     }
    ]
   },

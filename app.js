@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.8.0';
+const APP_VERSION = '1.9.0';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -68,6 +68,75 @@ function cardView(card) {
     blocks: (l && Array.isArray(l.blocks) && l.blocks) || (card && card.blocks) || []
   };
 }
+
+/* Translation feedback: a small ⚑ next to every explanation opens a box (item id, language, current text,
+   suggestion). "Send" shares one line via navigator.share (WhatsApp/Telegram) or copies it:
+   [b2trainer-i18n] id=L2-5-q3 lang=uk | mevcut: … | öneri: … */
+function flagBtn(id, text) {
+  if (!id || !text) return '';
+  return `<button type="button" class="flag-btn" data-flag-id="${esc(id)}" data-flag-text="${esc(text)}"
+    title="${esc(t('flag.title'))}" aria-label="${esc(t('flag.title'))}">⚑</button>`;
+}
+function oneLine(s) { return String(s || '').replace(/\s*\n+\s*/g, ' / ').replace(/\|/g, '¦').trim(); }
+function flagMessage(id, lang, current, suggestion) {
+  return `[b2trainer-i18n] id=${id} lang=${lang} | mevcut: ${oneLine(current)} | öneri: ${oneLine(suggestion)}`;
+}
+function openFlagDialog(id, text) {
+  closeFlagDialog();
+  const box = document.createElement('div');
+  box.className = 'flag-modal';
+  box.id = 'flagModal';
+  box.innerHTML = `
+    <div class="card flag-box" role="dialog" aria-modal="true" aria-labelledby="flagTitle">
+      <h3 id="flagTitle">⚑ ${esc(t('flag.title'))}</h3>
+      <p class="small muted">${esc(t('flag.item'))}: <code>${esc(id)}</code> · ${esc(t('flag.lang'))}: <code>${esc(LANG)}</code></p>
+      <p class="small muted">${esc(t('flag.current'))}</p>
+      <div class="sample small">${esc(text)}</div>
+      <label class="field"><span>${esc(t('flag.suggestion'))}</span>
+        <textarea id="flagInput" rows="4"></textarea>
+      </label>
+      <p class="small error" id="flagErr"></p>
+      <div class="row">
+        <button class="btn" id="flagCancel">${esc(t('flag.cancel'))}</button>
+        <button class="btn primary" id="flagSend">${esc(t('common.send'))}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(box);
+  const input = box.querySelector('#flagInput');
+  const errEl = box.querySelector('#flagErr');
+  input.focus();
+  box.addEventListener('click', e => { if (e.target === box) closeFlagDialog(); });
+  box.querySelector('#flagCancel').onclick = closeFlagDialog;
+  box.querySelector('#flagSend').onclick = async () => {
+    const suggestion = input.value.trim();
+    if (!suggestion) { errEl.textContent = t('flag.empty'); return; }
+    const msg = flagMessage(id, LANG, text, suggestion);
+    if (navigator.share) {
+      try {
+        await navigator.share({ text: msg });
+        closeFlagDialog();
+        return;
+      } catch (e) {
+        if (e && e.name === 'AbortError') return; // user closed the share sheet
+      }
+    }
+    const ok = await copyText(msg);
+    errEl.className = 'small ' + (ok ? 'verdict ok' : 'error');
+    errEl.textContent = ok ? t('flag.copied') : t('fallback.copyFailed');
+  };
+}
+function closeFlagDialog() {
+  const old = document.getElementById('flagModal');
+  if (old) old.remove();
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest && e.target.closest('.flag-btn');
+  if (!b) return;
+  e.preventDefault();
+  e.stopPropagation();
+  openFlagDialog(b.dataset.flagId, b.dataset.flagText);
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFlagDialog(); });
 
 // progress: { [questionId]: { n: attempts, ok: correct attempts, last: timestamp } }
 function getProgress() { return store.get('progress', {}); }
@@ -381,7 +450,7 @@ function runQuiz(opts) {
           after.innerHTML = `
             <div class="card explain ${correct ? 'ok' : 'bad'}">
               <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? esc(t('quiz.correct')) : esc(t('quiz.wrongAnswer', { answer: rightText }))}</div>
-              <div>${esc(tx(q, 'explanation'))}</div>
+              <div>${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>
             </div>
             <button class="btn primary" id="nextBtn">${esc(t('common.next'))}</button>`;
           const next = document.getElementById('nextBtn');
@@ -527,7 +596,7 @@ function showExamResult(questions, results, timeUp) {
         <div lang="de" style="margin-bottom:6px">${renderPrompt(q.prompt, right)}</div>
         <div class="small">${r ? `${esc(t('exam.yourAnswer'))} <span class="verdict bad">${esc(r.chosen)}</span>` : `<span class="muted">${esc(t('exam.unanswered'))}</span>`}
           · ${esc(t('exam.rightAnswer'))} <strong class="verdict ok">${esc(right)}</strong></div>
-        <div class="small" style="margin-top:6px">${esc(tx(q, 'explanation'))}</div>
+        <div class="small" style="margin-top:6px">${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>
       </div>`;
     }).join('')}
     <button class="btn primary" id="againBtn">${esc(t('exam.again'))}</button>
@@ -729,7 +798,7 @@ function renderReadingSet(id) {
 
   $app.innerHTML = `
     <div class="rhead">
-      <p class="small muted">${esc(tx(set, 'instructions'))}</p>
+      <p class="small muted">${esc(tx(set, 'instructions'))}${flagBtn(set.id, tx(set, 'instructions'))}</p>
       ${set.context_de ? `<p class="context" lang="de">${esc(set.context_de)}</p>` : ''}
       <label class="switch"><input type="checkbox" id="timerChk"> ${esc(t('lesen.timer', { n: minutes }))}</label>
       ${last && last.wrong && last.wrong.length ? `<p class="small muted">${esc(t('lesen.lastTry', { n: last.last, total: last.total, wrong: last.wrong.length }))}</p>` : ''}
@@ -831,7 +900,7 @@ function renderReadingSet(id) {
       row.querySelector('.rq-after').innerHTML = `
         <div class="verdict ${correct ? 'ok' : 'bad'}">${correct ? esc(t('quiz.correct'))
           : `✗ ${esc(chosen === undefined ? t('lesen.empty') : t('lesen.wrong'))} — ${esc(t('lesen.rightIs'))} <span lang="de">${esc(answerLabel(q, right))}</span>`}</div>
-        ${tx(q, 'explanation') ? `<div class="small">${esc(tx(q, 'explanation'))}</div>` : ''}`;
+        ${tx(q, 'explanation') ? `<div class="small">${esc(tx(q, 'explanation'))}${flagBtn(q.id, tx(q, 'explanation'))}</div>` : ''}`;
     });
     saveReadingResult(set, ok, wrongIds);
     document.getElementById('timerChk').disabled = true;
@@ -970,8 +1039,9 @@ function renderCardDetail(args) {
 
   const isLearned = !!getLearned()[card.id];
   const view = cardView(card);
-  const blocks = view.blocks.map(b => `
+  const blocks = view.blocks.map((b, i) => `
     <div class="card">
+      ${flagBtn(card.id + '#b' + i, [b.heading].concat(b.lines || []).filter(Boolean).join('\n'))}
       ${b.heading ? `<h3>${esc(b.heading)}</h3>` : ''}
       <ul>${(b.lines || []).map(l => `<li>${esc(l)}</li>`).join('')}</ul>
     </div>`).join('');
@@ -1004,7 +1074,7 @@ function renderCardDetail(args) {
 
   const coachHref = coachLinkFor(card);
   $app.innerHTML = `
-    <div class="card"><strong>${esc(view.prompt)}</strong></div>
+    <div class="card"><strong>${esc(view.prompt)}</strong>${flagBtn(card.id + '#prompt', view.prompt)}</div>
     ${coachHref ? `<a class="btn primary" href="${coachHref}">${esc(t('cards.coach'))}</a>` : ''}
     ${card.deck === 'lesen' && DATA.reading.length ? `<a class="btn primary" href="#/lesen">${esc(t('cards.lesenLink'))}</a>` : ''}
     ${timer}

@@ -69,3 +69,39 @@ DTB B2 (Deutsch-Test für den Beruf) için mobil çalışma uygulaması. Statik 
 - **🧭 Başlamama yardım et** (`PROMPT_OUTLINE`): paragraf başına Türkçe amaç + Almanca cümle başlangıçları (hazır metin yok). Anahtar yoksa prompt kopyalanabilir.
 - **Benim kalıplarım**: kaydedilen Redemittel panelde listelenir.
 - Test: Schreiben → "Drucker – nicht unsere Schuld" → Yazma desteği'ni aç → ilk kart "Höflich ablehnen"; bir maddeyi işaretle → sayaç artar; "Başlamama yardım et" → paragraf planı. Forum konusunda 3 kart + 7 madde.
+
+## Görev 6 – Çok dilli destek (Türkçe · English · Українська)
+Sınav içeriği (sorular, metinler, Mustertext, Redemittel) Almanca kalır; sadece açıklamalar, arayüz ve AI geri bildirimleri seçilen dilde.
+
+### Adım 1 – Altyapı (v1.7.0)
+- Arayüz metinleri `i18n/ui.tr.json`, `ui.en.json`, `ui.uk.json` dosyalarında (düz anahtarlar, ör. `"home.practice"`). `t(key, vars)`: eksik anahtarda Türkçeye, o da yoksa anahtarın kendisine düşer; `{n}` gibi yer tutucular doldurulur. Dosyalar `sw.js` → `APP_FILES` içinde.
+- İlk açılışta tam ekran dil seçimi (🇹🇷 · 🇬🇧 · 🇺🇦); varsayılan `navigator.language`'e göre (`uk`/`tr`, diğerleri `en`). Seçim `b2trainer:lang`; Ayarlar'ın en üstünden değiştirilebilir.
+- İçerik yardımcıları: `tx(obj, 'explanation' | 'instructions')` → `<alan>_<dil>`, yoksa `<alan>_tr`; `nameOf(section)` → `name_<dil>`, yoksa `name`; `cardView(card)` → `card.i18n[dil].prompt/blocks`, yoksa kartın kendi alanları. Coach/Schreiben mantığı (şef talimatları, forum konuları, AI'ye giden görev metni) her zaman orijinal Almanca alanları kullanır.
+
+### Adım 2 – İçerik çevirisi (v1.7.1–v1.7.12, veri `meta.version` 2.1)
+- `b2-data.json`'a sadece yeni alanlar eklendi: `explanation_en/uk`, `instructions_en/uk`, `name_en/uk`, `cards[].i18n.{en,uk}.{prompt,blocks}`.
+- Doğrulama: `node tools/check-i18n.mjs [yedek.json] [--partial]` (yedek verilmezse `git show HEAD:b2-data.json`). Kontroller: her öğede en+uk var mı; Almanca alıntılar (`'…'`, `„…“`) ve `→ a/b/x/richtig/falsch` işaretleri korunmuş mu; çeviride Türkçe harf kalmış mı; yeni alanlar çıkarılınca dosya orijinalle birebir aynı mı (ID, `answer`, `options`, Almanca metinler); JSON geçerli mi; `meta.version` 2.1 mi.
+- Not: kart başlıkları (`title`) çeviri kapsamında değil; birkaç Türkçe başlık Türkçe görünür.
+
+### Adım 3 – AI promptlarının dili (v1.8.0)
+- `prompts.js` alanları dilden bağımsız: `summary`, `explanation`, `tips`, `comment`, `goal`, `ok` (Redemittel anlamı: `translation`). Uygulama eski `*_tr` alanlarını da okur (`pick()`).
+- Her prompta: `Write every explanation, summary, tip and comment in {{LANG_NAME}}. Corrections and model texts stay in German.` Aday tanımı: `a candidate whose native language is {{LANG_NAME}}{{PROFESSION}}`. `{{LANG_NAME}}` = Turkish/English/Ukrainian; `{{PROFESSION}}` Ayarlar → **Meslek** alanından (boşsa hiçbir şey, doluysa `, working as …`; ör. "Psychologin").
+
+### Adım 4 – Çeviri geri bildirimi ⚑ (v1.9.0)
+- Açıklama gösterilen her yerde küçük **⚑** (Pratik/Tekrar/Sınav sonuçları, Lesen talimatı + açıklamalar, kart prompt'u ve blokları). Kutu: öğe ID'si, dil, mevcut metin, "önerin" alanı. **Gönder** → `navigator.share()` (WhatsApp/Telegram); paylaşım yoksa panoya kopyalar.
+- Mesaj formatı (tek satır; satır sonları ` / ` olur, `|` karakteri `¦` olur):
+  `[b2trainer-i18n] id=L2-5-q3 lang=uk | mevcut: … | öneri: …`
+
+### Çeviri nasıl güncellenir (⚑ mesajlarını JSON'a işlemek)
+1. `id` ile öğeyi bul ve `lang` alanına göre ilgili alanı düzelt:
+   | `id` şekli | Nerede | Alan |
+   |---|---|---|
+   | `sprachbausteine1-002` gibi (soru) | `questions[]` | `explanation_<lang>` |
+   | `L2-5-q3` (Lesen sorusu) | `reading[id=L2-5].questions[]` | `explanation_<lang>` |
+   | `L2-5` (Lesen seti) | `reading[]` | `instructions_<lang>` |
+   | `nvv-top#prompt` | `cards[id=nvv-top]` | `i18n.<lang>.prompt` |
+   | `nvv-top#b2` | `cards[id=nvv-top]` | `i18n.<lang>.blocks[2]` (mesajdaki ` / ` = satır sınırı; ilk parça `heading`, gerisi `lines`) |
+   `lang=tr` gelirse Türkçe orijinal (`explanation_tr`, `instructions_tr`, kartın kendi `prompt`/`blocks`) düzeltilir.
+2. Sadece çeviri metnini değiştir: Almanca alıntılar, `→ x` işaretleri, ID'ler, `answer`/`options` aynen kalır.
+3. Değişiklikten önce yedek al (`cp b2-data.json /tmp/b2-data.orig.json`), sonra `node tools/check-i18n.mjs /tmp/b2-data.orig.json` → temiz geçmeden push etme.
+4. CLAUDE.md kuralı: sürümü üç yerde artır (`version.json`, `sw.js` `VERSION`, `app.js` `APP_VERSION`).

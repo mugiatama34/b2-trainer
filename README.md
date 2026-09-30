@@ -80,7 +80,7 @@ Sınav içeriği (sorular, metinler, Mustertext, Redemittel) Almanca kalır; sad
 
 ### Adım 2 – İçerik çevirisi (v1.7.1–v1.7.12, veri `meta.version` 2.1)
 - `b2-data.json`'a sadece yeni alanlar eklendi: `explanation_en/uk`, `instructions_en/uk`, `name_en/uk`, `cards[].i18n.{en,uk}.{prompt,blocks}`.
-- Doğrulama: `node tools/check-i18n.mjs [yedek.json] [--partial]` (yedek verilmezse `git show HEAD:b2-data.json`). Kontroller: her öğede en+uk var mı; Almanca alıntılar (`'…'`, `„…“`) ve `→ a/b/x/richtig/falsch` işaretleri korunmuş mu; çeviride Türkçe harf kalmış mı; yeni alanlar çıkarılınca dosya orijinalle birebir aynı mı (ID, `answer`, `options`, Almanca metinler); JSON geçerli mi; `meta.version` 2.1 mi.
+- Doğrulama: `node tools/check-i18n.mjs [yedek.json] [--partial]` (yedek verilmezse `git show HEAD:b2-data.json`). Kontroller: her öğede en+uk var mı; Almanca alıntılar (`'…'`, `„…“`) ve `→ a/b/x/richtig/falsch` işaretleri korunmuş mu; çeviride Türkçe harf kalmış mı; yeni alanlar çıkarılınca dosya orijinalle birebir aynı mı (ID, `answer`, `options`, Almanca metinler); JSON geçerli mi; `meta.version` doğru mu (şu an 2.2).
 - Not: kart başlıkları (`title`) çeviri kapsamında değil; birkaç Türkçe başlık Türkçe görünür.
 
 ### Adım 3 – AI promptlarının dili (v1.8.0)
@@ -105,3 +105,8 @@ Sınav içeriği (sorular, metinler, Mustertext, Redemittel) Almanca kalır; sad
 2. Sadece çeviri metnini değiştir: Almanca alıntılar, `→ x` işaretleri, ID'ler, `answer`/`options` aynen kalır.
 3. Değişiklikten önce yedek al (`cp b2-data.json /tmp/b2-data.orig.json`), sonra `node tools/check-i18n.mjs /tmp/b2-data.orig.json` → temiz geçmeden push etme.
 4. CLAUDE.md kuralı: sürümü üç yerde artır (`version.json`, `sw.js` `VERSION`, `app.js` `APP_VERSION`).
+
+## Görev 7 – İçerik temizliği (patch v2.2, v1.9.1)
+- Resmî materyale fazla yakın 14 Lesen seti (`L1-8, L1-9, L2-8…L2-11, L3-7…L3-10, L4-7…L4-9, LS1-4`) ve 23 kart (Sprechen Teil 1 temaları, Teil 2/3 örnekleri, Teil 3 vakaları, `info-analyse`) `patch-v2.2.json`'daki özgün versiyonlarla aynı ID ve sırada bütünüyle değiştirildi; en/uk çevirileri yeniden eklendi. `meta.version` 2.2. Patch dosyası uygulandıktan sonra repodan silindi (git geçmişinde duruyor).
+- `tools/check-i18n.mjs --patch <dosya>` (varsayılan: kökte varsa `patch-v2.2.json`): patch'teki ID'ler orijinal yerine patch'le karşılaştırılır; diğer her şey eskisi gibi. Yedek: `tools/b2-data.before-v2.2.json` (`.gitignore`'da).
+- Açılışta bir kez (`b2trainer:migrated_2_2` bayrağı): bu setlerin `b2trainer:reading` kayıtları (en iyi skor, yanlış listesi, toplamlar) silinir.

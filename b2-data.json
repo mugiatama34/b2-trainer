@@ -1,7 +1,7 @@
 {
  "meta": {
   "exam": "Deutsch-Test für den Beruf B2 (telc/BAMF)",
-  "version": "2.1",
+  "version": "2.2",
   "created": "2026-09-25",
   "language_ui": "tr",
   "notes": "Sorular orijinal olarak yazıldı; resmi test sorularının kopyası değildir."
@@ -4174,7 +4174,7 @@
    "id": "sprechen-t1-1",
    "deck": "sprechen",
    "title": "Teil 1A · 1 · Arbeitgeber",
-   "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+   "prompt": "Erzählen Sie von einem Unternehmen, bei dem Sie gearbeitet haben oder gern arbeiten würden: Was macht die Firma, wie ist sie aufgebaut, was waren oder wären Ihre Aufgaben, und was ist besonders?",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4204,7 +4204,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+     "prompt": "Erzählen Sie von einem Unternehmen, bei dem Sie gearbeitet haben oder gern arbeiten würden: Was macht die Firma, wie ist sie aufgebaut, was waren oder wären Ihre Aufgaben, und was ist besonders?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4234,7 +4234,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie einen Arbeitgeber, für den Sie gearbeitet haben oder arbeiten möchten (Branche, Produkte/Dienstleistungen, Abteilungen, Ihre Aufgaben, Besonderheiten).",
+     "prompt": "Erzählen Sie von einem Unternehmen, bei dem Sie gearbeitet haben oder gern arbeiten würden: Was macht die Firma, wie ist sie aufgebaut, was waren oder wären Ihre Aufgaben, und was ist besonders?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4280,7 +4280,7 @@
    "id": "sprechen-t1-2",
    "deck": "sprechen",
    "title": "Teil 1A · 2 · Gutes Arbeitsumfeld",
-   "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+   "prompt": "Wie sieht für Sie ein guter Arbeitsplatz aus? Gehen Sie zum Beispiel auf Sicherheit, Bezahlung, Entwicklungsmöglichkeiten und den Umgang miteinander ein und nennen Sie Beispiele aus Ihrer Erfahrung.",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4310,7 +4310,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+     "prompt": "Wie sieht für Sie ein guter Arbeitsplatz aus? Gehen Sie zum Beispiel auf Sicherheit, Bezahlung, Entwicklungsmöglichkeiten und den Umgang miteinander ein und nennen Sie Beispiele aus Ihrer Erfahrung.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4340,7 +4340,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie, wie Sie sich ein gutes Arbeitsumfeld vorstellen (Jobsicherheit, Lohn/Gehalt, Karrierechancen, Kommunikation, Beispiele aus Ihrer Berufserfahrung).",
+     "prompt": "Wie sieht für Sie ein guter Arbeitsplatz aus? Gehen Sie zum Beispiel auf Sicherheit, Bezahlung, Entwicklungsmöglichkeiten und den Umgang miteinander ein und nennen Sie Beispiele aus Ihrer Erfahrung.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4386,7 +4386,7 @@
    "id": "sprechen-t1-3",
    "deck": "sprechen",
    "title": "Teil 1A · 3 · Berufswahl",
-   "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+   "prompt": "Wie sind Sie zu Ihrem Beruf gekommen? Erzählen Sie von wichtigen Etappen, Menschen und Gründen – und davon, was sich dadurch verändert hat.",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4416,7 +4416,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+     "prompt": "Wie sind Sie zu Ihrem Beruf gekommen? Erzählen Sie von wichtigen Etappen, Menschen und Gründen – und davon, was sich dadurch verändert hat.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4446,7 +4446,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie Ereignisse und Erfahrungen, die Ihre Berufswahl beeinflusst haben (Stationen, wichtige Personen, Motivation, Folgen).",
+     "prompt": "Wie sind Sie zu Ihrem Beruf gekommen? Erzählen Sie von wichtigen Etappen, Menschen und Gründen – und davon, was sich dadurch verändert hat.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4492,7 +4492,7 @@
    "id": "sprechen-t1-4",
    "deck": "sprechen",
    "title": "Teil 1A · 4 · Berufliches Vorbild",
-   "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+   "prompt": "Stellen Sie eine Person aus Ihrem Umfeld vor, die Sie beruflich beeindruckt: Woher kennen Sie sie, was zeichnet sie aus, und was haben Sie von ihr gelernt?",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4522,7 +4522,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+     "prompt": "Stellen Sie eine Person aus Ihrem Umfeld vor, die Sie beruflich beeindruckt: Woher kennen Sie sie, was zeichnet sie aus, und was haben Sie von ihr gelernt?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4552,7 +4552,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie eine Person aus Ihrem Umfeld, die für Sie ein berufliches Vorbild ist (Beziehung, Eigenschaften, Einfluss auf Sie).",
+     "prompt": "Stellen Sie eine Person aus Ihrem Umfeld vor, die Sie beruflich beeindruckt: Woher kennen Sie sie, was zeichnet sie aus, und was haben Sie von ihr gelernt?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4598,7 +4598,7 @@
    "id": "sprechen-t1-5",
    "deck": "sprechen",
    "title": "Teil 1A · 5 · Arbeitssuche in einem Land",
-   "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+   "prompt": "Wie findet man in einem Land Ihrer Wahl eine Arbeitsstelle? Beschreiben Sie den Weg von der Suche über die erste Kontaktaufnahme bis zu den Unterlagen oder dem Gespräch.",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4628,7 +4628,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+     "prompt": "Wie findet man in einem Land Ihrer Wahl eine Arbeitsstelle? Beschreiben Sie den Weg von der Suche über die erste Kontaktaufnahme bis zu den Unterlagen oder dem Gespräch.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4658,7 +4658,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie das Vorgehen bei der Arbeitssuche für ein Land Ihrer Wahl (Angebote finden, Erstkontakt, Bewerbungsunterlagen oder -gespräch).",
+     "prompt": "Wie findet man in einem Land Ihrer Wahl eine Arbeitsstelle? Beschreiben Sie den Weg von der Suche über die erste Kontaktaufnahme bis zu den Unterlagen oder dem Gespräch.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4704,7 +4704,7 @@
    "id": "sprechen-t1-6",
    "deck": "sprechen",
    "title": "Teil 1A · 6 · Bewerbungsgespräch",
-   "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+   "prompt": "Was zählt in einem Land Ihrer Wahl bei einem Vorstellungsgespräch? Denken Sie zum Beispiel an Vorbereitung, passende Kleidung und typische Fragen – je nach Berufsfeld.",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4734,7 +4734,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+     "prompt": "Was zählt in einem Land Ihrer Wahl bei einem Vorstellungsgespräch? Denken Sie zum Beispiel an Vorbereitung, passende Kleidung und typische Fragen – je nach Berufsfeld.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4764,7 +4764,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie, worauf es bei einem Bewerbungsgespräch ankommt, in einem Land Ihrer Wahl (Berufsfeld, Vorbereitung, Kleidung, typische Fragen).",
+     "prompt": "Was zählt in einem Land Ihrer Wahl bei einem Vorstellungsgespräch? Denken Sie zum Beispiel an Vorbereitung, passende Kleidung und typische Fragen – je nach Berufsfeld.",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4810,7 +4810,7 @@
    "id": "sprechen-t1-7",
    "deck": "sprechen",
    "title": "Teil 1A · 7 · Produkt / Dienstleistung",
-   "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+   "prompt": "Stellen Sie ein Produkt oder eine Dienstleistung vor: Was kann es, wem nützt es, was spricht dafür und dagegen, und wie erfolgreich ist es?",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4840,7 +4840,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+     "prompt": "Stellen Sie ein Produkt oder eine Dienstleistung vor: Was kann es, wem nützt es, was spricht dafür und dagegen, und wie erfolgreich ist es?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4870,7 +4870,7 @@
      ]
     },
     "uk": {
-     "prompt": "Beschreiben Sie ein Produkt/eine Dienstleistung Ihrer Wahl (Merkmale, Nutzen für Kunden, Vor- und Nachteile, Erfolg).",
+     "prompt": "Stellen Sie ein Produkt oder eine Dienstleistung vor: Was kann es, wem nützt es, was spricht dafür und dagegen, und wie erfolgreich ist es?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4916,7 +4916,7 @@
    "id": "sprechen-t1-8",
    "deck": "sprechen",
    "title": "Teil 1A · 8 · Geschäftsidee (Selbstständigkeit)",
-   "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+   "prompt": "Stellen Sie sich vor, Sie gründen ein eigenes Unternehmen. Was bieten Sie an, was ist das Besondere daran, und wer sind Ihre Kundinnen und Kunden?",
    "blocks": [
     {
      "heading": "Aufbau (≈2 Min.)",
@@ -4946,7 +4946,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+     "prompt": "Stellen Sie sich vor, Sie gründen ein eigenes Unternehmen. Was bieten Sie an, was ist das Besondere daran, und wer sind Ihre Kundinnen und Kunden?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -4976,7 +4976,7 @@
      ]
     },
     "uk": {
-     "prompt": "Sie möchten sich selbstständig machen. Beschreiben Sie Ihre Geschäftsidee (Produkt/Dienstleistung, Besonderheiten, Zielgruppe).",
+     "prompt": "Stellen Sie sich vor, Sie gründen ein eigenes Unternehmen. Was bieten Sie an, was ist das Besondere daran, und wer sind Ihre Kundinnen und Kunden?",
      "blocks": [
       {
        "heading": "Aufbau (≈2 Min.)",
@@ -5269,7 +5269,7 @@
     "sprechen",
     "teil2"
    ],
-   "sample": "Karte: „Ich arbeite manchmal ganz gerne am Wochenende. Und du?“\n\nA: Ehrlich gesagt nicht so gern. Am Wochenende habe ich Zeit für meine Familie, und die Kinder haben frei. Aber wenn es ein wichtiges Projekt gibt, mache ich natürlich eine Ausnahme. Warum arbeitest du gern am Wochenende?\nB: Es ist ruhiger im Büro, niemand ruft an.\nA: Ach so, das verstehe ich. Bekommst du dafür einen Freizeitausgleich?\n\nKarte: „Unternimmst du gerne in der Freizeit etwas mit den Kollegen?“\n\nA: Ja, ab und zu. Letzten Monat waren wir zusammen bowlen, das war richtig lustig. Aber jede Woche wäre mir zu viel. Wie ist das bei dir?"
+   "sample": "Karte: „Ich gehe in der Mittagspause fast immer spazieren. Und du?“\n\nA: Nicht immer, ehrlich gesagt. Oft esse ich schnell in der Kantine, weil ich so viel zu tun habe. Aber wenn das Wetter schön ist, gehe ich gern eine Runde um den Block. Wohin gehst du denn?\nB: Meistens in den kleinen Park hinter dem Bürogebäude.\nA: Ach, den kenne ich gar nicht! Nimmst du mich morgen mal mit?\n\nKarte: „Gehst du dieses Jahr zur Weihnachtsfeier?“\n\nA: Ja, auf jeden Fall. Letztes Jahr war es richtig lustig, wir haben sogar Karaoke gesungen. Und man lernt Kolleginnen aus anderen Abteilungen kennen. Kommst du auch?"
   },
   {
    "id": "sprechen-t2-themen",
@@ -5510,7 +5510,7 @@
     "sprechen",
     "teil3"
    ],
-   "sample": "Situation: Falsche Ware geliefert (Lamm statt Rind), Veranstaltung heute Abend für 40 Personen, Menükarten schon gedruckt.\n\nA: Wir haben ein Problem: Der Lieferant hat Lamm statt Rind gebracht, und heute Abend kommen 40 Gäste. Was machen wir?\nB: Ich schlage vor, dass wir zuerst den Lieferanten anrufen. Vielleicht kann er das Rindfleisch noch heute bringen.\nA: Gute Idee. Aber wenn das nicht klappt, brauchen wir einen Plan B. Wie wäre es, wenn wir den Kunden anrufen und ihm ein Lammgericht anbieten?\nB: Einverstanden. Wir könnten ihm als Entschuldigung ein kostenloses Dessert anbieten.\nA: Gut. Ich kümmere mich um den Lieferanten, und du rufst den Kunden an, okay?\nB: Okay. Und langfristig? Das ist schon das zweite Mal.\nA: Langfristig sollten wir einen zweiten Lieferanten suchen. Wenn es noch einmal passiert, kündigen wir den Vertrag.\nB: Also, fassen wir zusammen: …"
+   "sample": "Situation: Sie arbeiten in einem Blumengeschäft. Für eine Hochzeit morgen wurden 200 rote Rosen bestellt, aber der Großhändler hat weiße geliefert.\n\nA: Wir haben ein Problem: Statt roter Rosen sind weiße gekommen, und die Hochzeit ist schon morgen. Was machen wir?\nB: Ich schlage vor, dass wir sofort den Großhändler anrufen. Vielleicht kann er heute noch nachliefern.\nA: Gute Idee. Aber falls das nicht klappt, brauchen wir einen Plan B. Wie wäre es, wenn wir das Brautpaar anrufen und fragen, ob weiße Rosen mit roten Akzenten auch in Frage kommen?\nB: Einverstanden. Wir könnten als Entschuldigung einen Blumenstrauß für die Trauzeugin gratis dazugeben.\nA: Gut. Ich kümmere mich um den Großhändler, und du rufst das Brautpaar an, okay?\nB: Okay. Und langfristig? Das war schon das zweite Mal.\nA: Langfristig sollten wir einen zweiten Lieferanten haben. Und große Bestellungen prüfen wir künftig zwei Tage vorher.\nB: Also, fassen wir zusammen: …"
   },
   {
    "id": "sprechen-t3-fall-1",
@@ -7562,43 +7562,43 @@
    "id": "sprechen-t3-fall-5",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 5",
-   "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+   "prompt": "Sie arbeiten in einer Kita. An einem kalten Wintermorgen fällt die Heizung aus; die ersten Kinder kommen um 7 Uhr.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
       "Sofort: Was tun?",
-      "Gäste: Wie informieren? Was anbieten?",
+      "Eltern: Wie informieren? Was anbieten?",
       "Wen anrufen?",
-      "Langfristig: Wartung? Ersatzgerät?"
+      "Langfristig: Wartung? Notfallplan?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+     "prompt": "Sie arbeiten in einer Kita. An einem kalten Wintermorgen fällt die Heizung aus; die ersten Kinder kommen um 7 Uhr.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
         "Sofort: Was tun?",
-        "Gäste: Wie informieren? Was anbieten?",
+        "Eltern: Wie informieren? Was anbieten?",
         "Wen anrufen?",
-        "Langfristig: Wartung? Ersatzgerät?"
+        "Langfristig: Wartung? Notfallplan?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Café. Am Samstagmorgen fällt die große Kaffeemaschine aus – das Café ist voll.",
+     "prompt": "Sie arbeiten in einer Kita. An einem kalten Wintermorgen fällt die Heizung aus; die ersten Kinder kommen um 7 Uhr.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
         "Sofort: Was tun?",
-        "Gäste: Wie informieren? Was anbieten?",
+        "Eltern: Wie informieren? Was anbieten?",
         "Wen anrufen?",
-        "Langfristig: Wartung? Ersatzgerät?"
+        "Langfristig: Wartung? Notfallplan?"
        ]
       }
      ]
@@ -7615,43 +7615,43 @@
    "id": "sprechen-t3-fall-6",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 6",
-   "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+   "prompt": "Sie arbeiten in einem Fitnessstudio. Das Online-Buchungssystem zeigt seit gestern falsche Kurszeiten; viele Mitglieder standen umsonst vor der Tür.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Chef/Chefin: Wie informieren?",
-      "Kunden: Wie informieren? Was anbieten?",
-      "Neues Mehl: Woher? Wie lagern?",
-      "Lager: Was ändern?"
+      "Mitglieder: Wie informieren? Was anbieten?",
+      "Anbieter des Systems: Wie kontaktieren?",
+      "Heute: Wie Kurse organisieren?",
+      "Langfristig: Kontrolle? anderes System?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+     "prompt": "Sie arbeiten in einem Fitnessstudio. Das Online-Buchungssystem zeigt seit gestern falsche Kurszeiten; viele Mitglieder standen umsonst vor der Tür.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Chef/Chefin: Wie informieren?",
-        "Kunden: Wie informieren? Was anbieten?",
-        "Neues Mehl: Woher? Wie lagern?",
-        "Lager: Was ändern?"
+        "Mitglieder: Wie informieren? Was anbieten?",
+        "Anbieter des Systems: Wie kontaktieren?",
+        "Heute: Wie Kurse organisieren?",
+        "Langfristig: Kontrolle? anderes System?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einer Konditorei. Im Lager ist das Mehl verdorben, aber für heute gibt es viele Kuchenbestellungen.",
+     "prompt": "Sie arbeiten in einem Fitnessstudio. Das Online-Buchungssystem zeigt seit gestern falsche Kurszeiten; viele Mitglieder standen umsonst vor der Tür.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Chef/Chefin: Wie informieren?",
-        "Kunden: Wie informieren? Was anbieten?",
-        "Neues Mehl: Woher? Wie lagern?",
-        "Lager: Was ändern?"
+        "Mitglieder: Wie informieren? Was anbieten?",
+        "Anbieter des Systems: Wie kontaktieren?",
+        "Heute: Wie Kurse organisieren?",
+        "Langfristig: Kontrolle? anderes System?"
        ]
       }
      ]
@@ -7668,43 +7668,43 @@
    "id": "sprechen-t3-fall-7",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 7",
-   "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+   "prompt": "Sie arbeiten in einer Zahnarztpraxis. Das Röntgengerät ist ausgefallen, der Terminkalender ist für die ganze Woche voll.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Hotel?",
-      "Abholung?",
-      "Wen treffen?",
-      "Was zeigen? Abendprogramm?"
+      "Techniker: Wie schnell?",
+      "Patienten: Wie informieren? Termine verschieben?",
+      "Andere Praxis fragen?",
+      "Langfristig: Wartungsvertrag?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+     "prompt": "Sie arbeiten in einer Zahnarztpraxis. Das Röntgengerät ist ausgefallen, der Terminkalender ist für die ganze Woche voll.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Hotel?",
-        "Abholung?",
-        "Wen treffen?",
-        "Was zeigen? Abendprogramm?"
+        "Techniker: Wie schnell?",
+        "Patienten: Wie informieren? Termine verschieben?",
+        "Andere Praxis fragen?",
+        "Langfristig: Wartungsvertrag?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Produktionsbetrieb. Ein wichtiger Kunde aus dem Ausland kommt nächsten Monat für drei Tage. Sie sollen den Besuch organisieren.",
+     "prompt": "Sie arbeiten in einer Zahnarztpraxis. Das Röntgengerät ist ausgefallen, der Terminkalender ist für die ganze Woche voll.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Hotel?",
-        "Abholung?",
-        "Wen treffen?",
-        "Was zeigen? Abendprogramm?"
+        "Techniker: Wie schnell?",
+        "Patienten: Wie informieren? Termine verschieben?",
+        "Andere Praxis fragen?",
+        "Langfristig: Wartungsvertrag?"
        ]
       }
      ]
@@ -7721,46 +7721,43 @@
    "id": "sprechen-t3-fall-8",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 8",
-   "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+   "prompt": "Sie arbeiten in einer Druckerei. 5.000 Flyer für einen Kunden wurden mit einem Tippfehler in der Telefonnummer gedruckt. Der Kunde holt sie morgen früh ab.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Kollege: Was tun?",
-      "Chef/Chefin: Wie ansprechen?",
-      "Kurzfristig: Wie reagieren?",
-      "Arbeitsablauf: Was umorganisieren?",
-      "Langfristig?"
+      "Kunden: Informieren – wie?",
+      "Neu drucken: Zeit? Kosten?",
+      "Wer macht was?",
+      "Langfristig: Korrekturprozess?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+     "prompt": "Sie arbeiten in einer Druckerei. 5.000 Flyer für einen Kunden wurden mit einem Tippfehler in der Telefonnummer gedruckt. Der Kunde holt sie morgen früh ab.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kollege: Was tun?",
-        "Chef/Chefin: Wie ansprechen?",
-        "Kurzfristig: Wie reagieren?",
-        "Arbeitsablauf: Was umorganisieren?",
-        "Langfristig?"
+        "Kunden: Informieren – wie?",
+        "Neu drucken: Zeit? Kosten?",
+        "Wer macht was?",
+        "Langfristig: Korrekturprozess?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten zu zweit in der Frühschicht eines Supermarkts. Ein Kollege kommt immer wieder zu spät, obwohl Sie ihn schon angesprochen haben.",
+     "prompt": "Sie arbeiten in einer Druckerei. 5.000 Flyer für einen Kunden wurden mit einem Tippfehler in der Telefonnummer gedruckt. Der Kunde holt sie morgen früh ab.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kollege: Was tun?",
-        "Chef/Chefin: Wie ansprechen?",
-        "Kurzfristig: Wie reagieren?",
-        "Arbeitsablauf: Was umorganisieren?",
-        "Langfristig?"
+        "Kunden: Informieren – wie?",
+        "Neu drucken: Zeit? Kosten?",
+        "Wer macht was?",
+        "Langfristig: Korrekturprozess?"
        ]
       }
      ]
@@ -7777,46 +7774,43 @@
    "id": "sprechen-t3-fall-9",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 9",
-   "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+   "prompt": "Sie arbeiten bei einem ambulanten Pflegedienst. Zwei Dienstwagen sind gleichzeitig in der Werkstatt; heute stehen 30 Hausbesuche an.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Wie Personal bekommen?",
-      "Öffnungszeiten ändern?",
-      "Überstunden? Urlaubssperre?",
-      "Abteilung schließen?",
-      "Wie den Mitarbeitenden danken?"
+      "Besuche: Was ist dringend?",
+      "Ersatzfahrzeuge: woher?",
+      "Patienten/Angehörige informieren?",
+      "Langfristig: Reservefahrzeug?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+     "prompt": "Sie arbeiten bei einem ambulanten Pflegedienst. Zwei Dienstwagen sind gleichzeitig in der Werkstatt; heute stehen 30 Hausbesuche an.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Wie Personal bekommen?",
-        "Öffnungszeiten ändern?",
-        "Überstunden? Urlaubssperre?",
-        "Abteilung schließen?",
-        "Wie den Mitarbeitenden danken?"
+        "Besuche: Was ist dringend?",
+        "Ersatzfahrzeuge: woher?",
+        "Patienten/Angehörige informieren?",
+        "Langfristig: Reservefahrzeug?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Kaufhaus. In der Vorweihnachtszeit sind viele Kolleginnen und Kollegen krank.",
+     "prompt": "Sie arbeiten bei einem ambulanten Pflegedienst. Zwei Dienstwagen sind gleichzeitig in der Werkstatt; heute stehen 30 Hausbesuche an.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Wie Personal bekommen?",
-        "Öffnungszeiten ändern?",
-        "Überstunden? Urlaubssperre?",
-        "Abteilung schließen?",
-        "Wie den Mitarbeitenden danken?"
+        "Besuche: Was ist dringend?",
+        "Ersatzfahrzeuge: woher?",
+        "Patienten/Angehörige informieren?",
+        "Langfristig: Reservefahrzeug?"
        ]
       }
      ]
@@ -7833,46 +7827,43 @@
    "id": "sprechen-t3-fall-10",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 10",
-   "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+   "prompt": "Sie arbeiten in einem Reisebüro. Die Fluggesellschaft hat den Flug einer Reisegruppe von 25 Personen für übermorgen gestrichen.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Andere Umzugsfirmen?",
-      "Umzug anders organisieren?",
-      "Wer kann helfen?",
-      "Vermieter informieren?",
-      "Schadenersatz?"
+      "Alternative Flüge?",
+      "Kunden: Wie informieren? Was anbieten?",
+      "Hotel am Zielort informieren?",
+      "Entschädigung von der Airline?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+     "prompt": "Sie arbeiten in einem Reisebüro. Die Fluggesellschaft hat den Flug einer Reisegruppe von 25 Personen für übermorgen gestrichen.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Andere Umzugsfirmen?",
-        "Umzug anders organisieren?",
-        "Wer kann helfen?",
-        "Vermieter informieren?",
-        "Schadenersatz?"
+        "Alternative Flüge?",
+        "Kunden: Wie informieren? Was anbieten?",
+        "Hotel am Zielort informieren?",
+        "Entschädigung von der Airline?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Ihre Firma zieht nächsten Monat um. Die beauftragte Umzugsfirma hat kurzfristig abgesagt.",
+     "prompt": "Sie arbeiten in einem Reisebüro. Die Fluggesellschaft hat den Flug einer Reisegruppe von 25 Personen für übermorgen gestrichen.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Andere Umzugsfirmen?",
-        "Umzug anders organisieren?",
-        "Wer kann helfen?",
-        "Vermieter informieren?",
-        "Schadenersatz?"
+        "Alternative Flüge?",
+        "Kunden: Wie informieren? Was anbieten?",
+        "Hotel am Zielort informieren?",
+        "Entschädigung von der Airline?"
        ]
       }
      ]
@@ -7889,43 +7880,43 @@
    "id": "sprechen-t3-fall-11",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 11",
-   "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+   "prompt": "Sie arbeiten in der IT-Abteilung. Nach einem Update am Wochenende können sich am Montagmorgen viele Kolleginnen und Kollegen nicht anmelden.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Kühlraum: Wen kontaktieren?",
-      "Verdorbene Lebensmittel: Ersatz woher?",
-      "Andere Lebensmittel: Wie verwenden?",
-      "Langfristig: Kühlalternativen?"
+      "Sofort: Wie helfen?",
+      "Kollegen: Wie informieren?",
+      "Hersteller kontaktieren?",
+      "Langfristig: Updates anders planen?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+     "prompt": "Sie arbeiten in der IT-Abteilung. Nach einem Update am Wochenende können sich am Montagmorgen viele Kolleginnen und Kollegen nicht anmelden.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kühlraum: Wen kontaktieren?",
-        "Verdorbene Lebensmittel: Ersatz woher?",
-        "Andere Lebensmittel: Wie verwenden?",
-        "Langfristig: Kühlalternativen?"
+        "Sofort: Wie helfen?",
+        "Kollegen: Wie informieren?",
+        "Hersteller kontaktieren?",
+        "Langfristig: Updates anders planen?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einer Großküche. Es ist sehr heiß, und der Kühlraum ist ausgefallen.",
+     "prompt": "Sie arbeiten in der IT-Abteilung. Nach einem Update am Wochenende können sich am Montagmorgen viele Kolleginnen und Kollegen nicht anmelden.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kühlraum: Wen kontaktieren?",
-        "Verdorbene Lebensmittel: Ersatz woher?",
-        "Andere Lebensmittel: Wie verwenden?",
-        "Langfristig: Kühlalternativen?"
+        "Sofort: Wie helfen?",
+        "Kollegen: Wie informieren?",
+        "Hersteller kontaktieren?",
+        "Langfristig: Updates anders planen?"
        ]
       }
      ]
@@ -7942,43 +7933,43 @@
    "id": "sprechen-t3-fall-12",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 12",
-   "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+   "prompt": "Sie arbeiten in einem Friseursalon. Die bestellte Haarfarbe wurde nicht geliefert, heute sind acht Färbetermine gebucht.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Heute: Was tun?",
-      "Gäste: Was anbieten?",
-      "Buchungen kontrollieren: Wie?",
-      "Langfristig: Wie vermeiden?"
+      "Kundinnen: Wie informieren? Was anbieten?",
+      "Farbe woanders besorgen?",
+      "Lieferant: Was fordern?",
+      "Langfristig: Lagerbestand?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+     "prompt": "Sie arbeiten in einem Friseursalon. Die bestellte Haarfarbe wurde nicht geliefert, heute sind acht Färbetermine gebucht.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Heute: Was tun?",
-        "Gäste: Was anbieten?",
-        "Buchungen kontrollieren: Wie?",
-        "Langfristig: Wie vermeiden?"
+        "Kundinnen: Wie informieren? Was anbieten?",
+        "Farbe woanders besorgen?",
+        "Lieferant: Was fordern?",
+        "Langfristig: Lagerbestand?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten an der Rezeption eines Hotels. In letzter Zeit wurden mehrmals Zimmer doppelt gebucht.",
+     "prompt": "Sie arbeiten in einem Friseursalon. Die bestellte Haarfarbe wurde nicht geliefert, heute sind acht Färbetermine gebucht.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Heute: Was tun?",
-        "Gäste: Was anbieten?",
-        "Buchungen kontrollieren: Wie?",
-        "Langfristig: Wie vermeiden?"
+        "Kundinnen: Wie informieren? Was anbieten?",
+        "Farbe woanders besorgen?",
+        "Lieferant: Was fordern?",
+        "Langfristig: Lagerbestand?"
        ]
       }
      ]
@@ -7995,43 +7986,43 @@
    "id": "sprechen-t3-fall-13",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 13",
-   "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+   "prompt": "Sie arbeiten im Versand eines Online-Shops. Der Paketdienst streikt seit zwei Tagen, viele Bestellungen bleiben liegen.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Kunden: Wie beruhigen? Was anbieten?",
-      "Lieferant: Wie kontaktieren? Was verlangen?",
-      "Prospekt / Aushang?",
-      "Langfristig: Lieferanten wechseln?"
+      "Kunden: Wie informieren?",
+      "Anderen Paketdienst nutzen?",
+      "Kosten: Wer trägt sie?",
+      "Langfristig: zweiter Versanddienstleister?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+     "prompt": "Sie arbeiten im Versand eines Online-Shops. Der Paketdienst streikt seit zwei Tagen, viele Bestellungen bleiben liegen.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kunden: Wie beruhigen? Was anbieten?",
-        "Lieferant: Wie kontaktieren? Was verlangen?",
-        "Prospekt / Aushang?",
-        "Langfristig: Lieferanten wechseln?"
+        "Kunden: Wie informieren?",
+        "Anderen Paketdienst nutzen?",
+        "Kosten: Wer trägt sie?",
+        "Langfristig: zweiter Versanddienstleister?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Supermarkt. Laut Prospekt gibt es ab heute günstigen Schulbedarf, aber die Ware wurde nicht geliefert.",
+     "prompt": "Sie arbeiten im Versand eines Online-Shops. Der Paketdienst streikt seit zwei Tagen, viele Bestellungen bleiben liegen.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Kunden: Wie beruhigen? Was anbieten?",
-        "Lieferant: Wie kontaktieren? Was verlangen?",
-        "Prospekt / Aushang?",
-        "Langfristig: Lieferanten wechseln?"
+        "Kunden: Wie informieren?",
+        "Anderen Paketdienst nutzen?",
+        "Kosten: Wer trägt sie?",
+        "Langfristig: zweiter Versanddienstleister?"
        ]
       }
      ]
@@ -8048,43 +8039,43 @@
    "id": "sprechen-t3-fall-14",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 14",
-   "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+   "prompt": "Sie arbeiten in einer Veranstaltungsagentur. Für eine Firmenfeier im Freien mit 150 Gästen gibt es für morgen eine Unwetterwarnung.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Handwerker: Wie finden?",
-      "Gäste: Wie informieren? Was anbieten?",
-      "Eingekaufte Lebensmittel?",
-      "Aushilfen informieren?"
+      "Plan B: Zelt? Halle?",
+      "Kunden: Wie informieren?",
+      "Dienstleister (Catering, Musik)?",
+      "Langfristig: Wetterklausel im Vertrag?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+     "prompt": "Sie arbeiten in einer Veranstaltungsagentur. Für eine Firmenfeier im Freien mit 150 Gästen gibt es für morgen eine Unwetterwarnung.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Handwerker: Wie finden?",
-        "Gäste: Wie informieren? Was anbieten?",
-        "Eingekaufte Lebensmittel?",
-        "Aushilfen informieren?"
+        "Plan B: Zelt? Halle?",
+        "Kunden: Wie informieren?",
+        "Dienstleister (Catering, Musik)?",
+        "Langfristig: Wetterklausel im Vertrag?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Restaurant. Heute Abend ist eine große Feier geplant, aber es gibt einen Wasserschaden im Saal.",
+     "prompt": "Sie arbeiten in einer Veranstaltungsagentur. Für eine Firmenfeier im Freien mit 150 Gästen gibt es für morgen eine Unwetterwarnung.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Handwerker: Wie finden?",
-        "Gäste: Wie informieren? Was anbieten?",
-        "Eingekaufte Lebensmittel?",
-        "Aushilfen informieren?"
+        "Plan B: Zelt? Halle?",
+        "Kunden: Wie informieren?",
+        "Dienstleister (Catering, Musik)?",
+        "Langfristig: Wetterklausel im Vertrag?"
        ]
       }
      ]
@@ -8101,43 +8092,43 @@
    "id": "sprechen-t3-fall-15",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 15",
-   "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+   "prompt": "Sie arbeiten in einer Kantine. Auf dem Speiseplan waren Allergene falsch gekennzeichnet; eine Kollegin hatte eine allergische Reaktion.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Heute: Wie aufwärmen?",
-      "Bewohner: Wie beruhigen?",
-      "Lieferant: Wie kontaktieren? Was fordern?",
-      "Langfristig: Neuer Lieferant? Selbst kochen?"
+      "Sofort: Was tun?",
+      "Gäste: Wie informieren?",
+      "Wer ist verantwortlich?",
+      "Langfristig: Kontrolle der Kennzeichnung?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+     "prompt": "Sie arbeiten in einer Kantine. Auf dem Speiseplan waren Allergene falsch gekennzeichnet; eine Kollegin hatte eine allergische Reaktion.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Heute: Wie aufwärmen?",
-        "Bewohner: Wie beruhigen?",
-        "Lieferant: Wie kontaktieren? Was fordern?",
-        "Langfristig: Neuer Lieferant? Selbst kochen?"
+        "Sofort: Was tun?",
+        "Gäste: Wie informieren?",
+        "Wer ist verantwortlich?",
+        "Langfristig: Kontrolle der Kennzeichnung?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Seniorenheim. Das Mittagessen vom Lieferanten kommt immer wieder zu spät und kalt an.",
+     "prompt": "Sie arbeiten in einer Kantine. Auf dem Speiseplan waren Allergene falsch gekennzeichnet; eine Kollegin hatte eine allergische Reaktion.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Heute: Wie aufwärmen?",
-        "Bewohner: Wie beruhigen?",
-        "Lieferant: Wie kontaktieren? Was fordern?",
-        "Langfristig: Neuer Lieferant? Selbst kochen?"
+        "Sofort: Was tun?",
+        "Gäste: Wie informieren?",
+        "Wer ist verantwortlich?",
+        "Langfristig: Kontrolle der Kennzeichnung?"
        ]
       }
      ]
@@ -8207,43 +8198,43 @@
    "id": "sprechen-t3-fall-17",
    "deck": "sprechen",
    "title": "Teil 3 · Übungsfall 17",
-   "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+   "prompt": "Sie arbeiten in einer Autowerkstatt. Das Diagnosegerät ist ausgefallen, und viele Kunden warten auf ihre Autos für die Hauptuntersuchung.",
    "blocks": [
     {
      "heading": "Stichpunkte",
      "lines": [
-      "Winterdienst informieren?",
-      "Kunden: Wie beruhigen? Was anbieten?",
-      "Was selbst tun?",
-      "Erste Hilfe nötig?"
+      "Kunden: Wie informieren? Ersatzwagen?",
+      "Techniker/Hersteller kontaktieren?",
+      "Termine umplanen?",
+      "Langfristig: zweites Gerät?"
      ]
     }
    ],
    "i18n": {
     "en": {
-     "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+     "prompt": "Sie arbeiten in einer Autowerkstatt. Das Diagnosegerät ist ausgefallen, und viele Kunden warten auf ihre Autos für die Hauptuntersuchung.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Winterdienst informieren?",
-        "Kunden: Wie beruhigen? Was anbieten?",
-        "Was selbst tun?",
-        "Erste Hilfe nötig?"
+        "Kunden: Wie informieren? Ersatzwagen?",
+        "Techniker/Hersteller kontaktieren?",
+        "Termine umplanen?",
+        "Langfristig: zweites Gerät?"
        ]
       }
      ]
     },
     "uk": {
-     "prompt": "Sie arbeiten in einem Möbelhaus am Stadtrand. Wegen Eisregen ist der Parkplatz spiegelglatt, Kundinnen und Kunden können nicht losfahren.",
+     "prompt": "Sie arbeiten in einer Autowerkstatt. Das Diagnosegerät ist ausgefallen, und viele Kunden warten auf ihre Autos für die Hauptuntersuchung.",
      "blocks": [
       {
        "heading": "Stichpunkte",
        "lines": [
-        "Winterdienst informieren?",
-        "Kunden: Wie beruhigen? Was anbieten?",
-        "Was selbst tun?",
-        "Erste Hilfe nötig?"
+        "Kunden: Wie informieren? Ersatzwagen?",
+        "Techniker/Hersteller kontaktieren?",
+        "Termine umplanen?",
+        "Langfristig: zweites Gerät?"
        ]
       }
      ]
@@ -8260,7 +8251,7 @@
    "id": "info-analyse",
    "deck": "pruefung",
    "title": "Sınav analizi · Sık çıkanlar",
-   "prompt": "Gerçek sınav derlemelerindeki kalıpların özeti (içerik kopyalanmadı, sadece desenler).",
+   "prompt": "Sık çıkan görev tipleri ve tuzakların özeti (sınav formatına dayalı).",
    "blocks": [
     {
      "heading": "Lesen",
@@ -8295,7 +8286,7 @@
    ],
    "i18n": {
     "en": {
-     "prompt": "Summary of patterns from real exam collections (no content copied, only patterns).",
+     "prompt": "Summary of common task types and traps (based on the exam format).",
      "blocks": [
       {
        "heading": "Lesen",
@@ -8330,7 +8321,7 @@
      ]
     },
     "uk": {
-     "prompt": "Підсумок шаблонів зі збірок реальних іспитів (зміст не скопійовано, лише шаблони).",
+     "prompt": "Огляд типових завдань і пасток (за форматом іспиту).",
      "blocks": [
       {
        "heading": "Lesen",
@@ -11675,8 +11666,8 @@
     },
     {
      "key": "b",
-     "title": "Kinder im Büro?",
-     "body": "Grundsätzlich entscheidet der Arbeitgeber, ob Kinder mit an den Arbeitsplatz dürfen. Bei einem kranken Kind raten Experten davon ab – besser sind Kinderkrankentage. Einige Firmen bieten inzwischen Eltern-Kind-Büros für Notfälle an."
+     "title": "Arbeitszeit nach dem Kita-Plan",
+     "body": "Viele Betriebe sind bereit, den Arbeitsbeginn für Eltern zu verschieben, wenn die Abläufe es zulassen. Experten raten: Bringen Sie einen konkreten Vorschlag mit ins Gespräch und bieten Sie an, die Zeit am Nachmittag auszugleichen."
     },
     {
      "key": "c",
@@ -11724,11 +11715,11 @@
      "id": "L1-8-q2",
      "num": 2,
      "kind": "match",
-     "prompt": "Tobias möchte wissen, ob er sein krankes Kind mit ins Büro bringen darf.",
+     "prompt": "Tobias möchte später anfangen zu arbeiten, damit er seine Tochter morgens selbst in die Kita bringen kann.",
      "answer": "b",
-     "explanation_tr": "Hasta çocuk ofise → b. f/h tuzak: çocuk var ama konu farklı.",
-     "explanation_en": "Sick child to the office → b. f/h are traps: a child is mentioned, but the topic is different.",
-     "explanation_uk": "Хвора дитина в офісі → b. f/h — пастка: дитина є, але тема інша."
+     "explanation_tr": "Tuzak h: Kita kelimesi ✓ ama konu kreş yeri eksikliği. Mesaiyi geç başlatmak → b.",
+     "explanation_en": "Trap h: the word Kita ✓, but the topic is the shortage of daycare places. Starting work later → b.",
+     "explanation_uk": "Пастка h: слово Kita ✓, але тема — брак місць у садочку. Пізніше починати роботу → b."
     },
     {
      "id": "L1-8-q3",
@@ -11746,9 +11737,9 @@
      "kind": "match",
      "prompt": "Martin muss sich um seinen pflegebedürftigen Vater kümmern und braucht Zeit.",
      "answer": "e",
-     "explanation_tr": "Bakıma muhtaç baba = naher Angehöriger → e. Kelime 'Vater' geçmiyor, 'Angehörige' geçiyor.",
-     "explanation_en": "Father in need of care = naher Angehöriger → e. The word 'Vater' doesn't appear, 'Angehörige' does.",
-     "explanation_uk": "Батько, який потребує догляду = naher Angehöriger → e. Слова 'Vater' немає, є 'Angehörige'."
+     "explanation_tr": "Bakıma muhtaç baba = naher Angehöriger → e.",
+     "explanation_en": "Father in need of care = naher Angehöriger → e.",
+     "explanation_uk": "Батько, який потребує догляду = naher Angehöriger → e."
     },
     {
      "id": "L1-8-q5",
@@ -11780,8 +11771,8 @@
     },
     {
      "key": "b",
-     "title": "Weniger Klagen vor Arbeitsgerichten",
-     "body": "Die Zahl der Verfahren an deutschen Arbeitsgerichten ist im vergangenen Jahr erneut gesunken. Experten führen das auf den stabilen Arbeitsmarkt zurück."
+     "title": "Besonderer Schutz in der Elternzeit",
+     "body": "Während der Elternzeit darf der Arbeitgeber grundsätzlich nicht kündigen. Nur in seltenen Ausnahmefällen kann eine Behörde die Kündigung erlauben."
     },
     {
      "key": "c",
@@ -11805,13 +11796,13 @@
     },
     {
      "key": "g",
-     "title": "Warum Mitarbeiter gehen",
-     "body": "Nicht das Gehalt ist der häufigste Grund für eine Kündigung, sondern fehlende Wertschätzung und schlechte Führung. So halten Unternehmen ihre Fachkräfte."
+     "title": "Der Aufhebungsvertrag",
+     "body": "Arbeitgeber und Beschäftigte können das Arbeitsverhältnis jederzeit gemeinsam beenden – auch ohne Kündigungsfrist. Achtung: Wer danach arbeitslos ist, bekommt unter Umständen eine Zeit lang kein Arbeitslosengeld."
     },
     {
      "key": "h",
-     "title": "Arbeitslos? Zeit nutzen",
-     "body": "Die Zeit zwischen zwei Jobs muss nicht verloren sein: Weiterbildungen, ein Ehrenamt oder ein Sprachkurs machen sich gut im Lebenslauf – und halten fit für den nächsten Start."
+     "title": "Abfindung: kein Automatismus",
+     "body": "Einen allgemeinen Anspruch auf eine Abfindung gibt es nicht. Geld gibt es meist nur, wenn es im Sozialplan steht, der Arbeitgeber es anbietet oder man sich vor Gericht einigt."
     }
    ],
    "questions": [
@@ -11821,9 +11812,9 @@
      "kind": "match",
      "prompt": "Deniz hat die Kündigung bekommen und hält sie für ungerecht.",
      "answer": "a",
-     "explanation_tr": "Tuzak b: dava konusu ✓ ama istatistik. Tuzak c: fesih ✓ ama İŞVEREN için. Deniz itiraz etmek istiyor → a.",
-     "explanation_en": "Trap b: lawsuit topic ✓ but statistics. Trap c: dismissal ✓ but for the EMPLOYER. Deniz wants to challenge it → a.",
-     "explanation_uk": "Пастка b: тема суду ✓, але статистика. Пастка c: звільнення ✓, але для РОБОТОДАВЦЯ. Deniz хоче його оскаржити → a."
+     "explanation_tr": "Tuzak c: fesih ✓ ama İŞVEREN için kurallar. Deniz itiraz etmek istiyor → a.",
+     "explanation_en": "Trap c: dismissal ✓, but rules for the EMPLOYER. Deniz wants to object → a.",
+     "explanation_uk": "Пастка c: звільнення ✓, але правила для РОБОТОДАВЦЯ. Deniz хоче оскаржити → a."
     },
     {
      "id": "L1-9-q2",
@@ -11831,29 +11822,29 @@
      "kind": "match",
      "prompt": "Lara hat ein besseres Angebot und möchte ihre Stelle selbst aufgeben.",
      "answer": "e",
-     "explanation_tr": "Tuzak f: iş değişikliği ✓ ama maaş. Kendi istifası nasıl olur → e.",
-     "explanation_en": "Trap f: changing jobs ✓ but salary. How to resign yourself → e.",
-     "explanation_uk": "Пастка f: зміна роботи ✓, але зарплата. Як звільнитися самому → e."
+     "explanation_tr": "Tuzak f: iş değişikliği ✓ ama maaş. Kendi istifası → e.",
+     "explanation_en": "Trap f: changing jobs ✓, but it's about salary. Resigning yourself → e.",
+     "explanation_uk": "Пастка f: зміна роботи ✓, але про зарплату. Власне звільнення → e."
     },
     {
      "id": "L1-9-q3",
      "num": 3,
      "kind": "match",
-     "prompt": "Herr Wolf leitet eine Firma, aus der immer wieder gute Leute weggehen.",
+     "prompt": "Olga möchte ihre Firma möglichst schnell verlassen, ohne die lange Kündigungsfrist abzuwarten.",
      "answer": "g",
-     "explanation_tr": "Herr Wolf İŞVEREN, çalışanlar gidiyor → g (işveren bakış açısı).",
-     "explanation_en": "Herr Wolf is the EMPLOYER, employees keep leaving → g (employer's perspective).",
-     "explanation_uk": "Herr Wolf — РОБОТОДАВЕЦЬ, працівники йдуть → g (точка зору роботодавця)."
+     "explanation_tr": "Süreyi beklemeden ayrılmak = karşılıklı fesih → g.",
+     "explanation_en": "Leaving without waiting out the notice period = mutual termination → g.",
+     "explanation_uk": "Піти, не чекаючи кінця строку = розірвання за згодою сторін → g."
     },
     {
      "id": "L1-9-q4",
      "num": 4,
      "kind": "match",
-     "prompt": "Emil ist seit Kurzem ohne Arbeit und will die Zeit bis zur nächsten Stelle sinnvoll nutzen.",
+     "prompt": "Emil wurde gekündigt und fragt sich, ob ihm eine Zahlung beim Abschied zusteht.",
      "answer": "h",
-     "explanation_tr": "İşsiz, zamanı değerlendirmek → h.",
-     "explanation_en": "Unemployed, wants to use the time well → h.",
-     "explanation_uk": "Безробітний, хоче з користю провести час → h."
+     "explanation_tr": "'Zahlung beim Abschied' = Abfindung → h.",
+     "explanation_en": "'Zahlung beim Abschied' = Abfindung → h.",
+     "explanation_uk": "'Zahlung beim Abschied' = Abfindung → h."
     },
     {
      "id": "L1-9-q5",
@@ -12017,7 +12008,7 @@
   {
    "id": "L2-8",
    "part": "lesen2",
-   "title": "Lesen T2 · Set 8 (Prüfungsstil): Betriebssport & Zeitkonto",
+   "title": "Lesen T2 · Set 8 (Prüfungsstil): Betriebsarzt & Zeitkonto",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "instructions_en": "EXAM STYLE: the texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "instructions_uk": "ФОРМАТ ІСПИТУ: тексти — це завжди розділи 'Willkommensmappe' (папки для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
@@ -12025,13 +12016,13 @@
    "texts": [
     {
      "key": "T1",
-     "title": "Willkommensmappe – Betriebssport",
-     "body": "Im Untergeschoss steht Ihnen unser Fitnessraum zur Verfügung. Er ist von 6 bis 22 Uhr geöffnet und kann vor und nach der Arbeit sowie in der Mittagspause genutzt werden. Vor der ersten Nutzung ist eine Einweisung durch unseren Trainer Pflicht; einen Termin buchen Sie im Intranet.\n\nZusätzlich bieten wir kostenlose Kurse wie Yoga und Rückenfit an. Da die Plätze auf zwölf Personen begrenzt sind, ist eine Anmeldung erforderlich.\n\nJeden Donnerstag um 17.30 Uhr startet unsere Laufgruppe am Haupteingang. Hier sind auch Familienangehörige herzlich willkommen.\n\nBitte bringen Sie ein eigenes Handtuch mit."
+     "title": "Willkommensmappe – Betriebsarzt und Gesundheit",
+     "body": "Unsere Betriebsärztin Dr. Reuter bietet jeden Mittwoch von 9 bis 12 Uhr eine Sprechstunde in Raum E.07 an. Die Beratung ist freiwillig und kostenlos; was Sie dort besprechen, unterliegt der ärztlichen Schweigepflicht und wird dem Arbeitgeber nicht mitgeteilt.\n\nIm Oktober können sich alle Beschäftigten kostenlos gegen Grippe impfen lassen. Termine vergeben wir über das Intranet.\n\nWer viel am Bildschirm arbeitet, kann bei der Betriebsärztin einen Sehtest machen. Wird eine spezielle Bildschirmbrille nötig, beteiligt sich die Firma mit bis zu 150 Euro an den Kosten."
     },
     {
      "key": "T2",
      "title": "Willkommensmappe – Lebensarbeitszeitkonto",
-     "body": "Mit dem Lebensarbeitszeitkonto können Sie Überstunden und Teile Ihres Weihnachtsgelds ansparen. Das Guthaben wird in Euro geführt. Später können Sie es nutzen, um längere Zeit bei vollem Gehalt freizunehmen – etwa für eine Auszeit, die Pflege von Angehörigen oder einen früheren Ruhestand.\n\nDie Teilnahme ist freiwillig. Wie viel Sie im nächsten Jahr einzahlen möchten, beantragen Sie jeweils bis zum 31. Oktober.\n\nWechseln Sie den Arbeitgeber, geht Ihr Guthaben nicht verloren: Es kann zum neuen Arbeitgeber übertragen oder – nach Abzug von Steuern – ausgezahlt werden."
+     "body": "Mit dem Lebensarbeitszeitkonto können Sie Überstunden und Teile Ihres Weihnachtsgelds ansparen. Das Guthaben wird in Euro geführt. Später können Sie es nutzen, um längere Zeit bei vollem Gehalt freizunehmen – etwa für eine Auszeit oder einen früheren Ruhestand.\n\nDie Teilnahme ist freiwillig. Wie viel Sie im nächsten Jahr einzahlen möchten, beantragen Sie jeweils bis zum 31. Oktober.\n\nWechseln Sie den Arbeitgeber, geht Ihr Guthaben nicht verloren: Es kann zum neuen Arbeitgeber übertragen oder – nach Abzug von Steuern – ausgezahlt werden."
     }
    ],
    "questions": [
@@ -12040,62 +12031,62 @@
      "num": 6,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "Man darf den Fitnessraum während der Arbeitszeit benutzen.",
+     "prompt": "Die Betriebsärztin informiert den Arbeitgeber über die Gespräche.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Sadece iş öncesi/sonrası ve öğle arasında → falsch.",
-     "explanation_en": "Only before/after work and during the lunch break → falsch.",
-     "explanation_uk": "Лише до/після роботи та в обідню перерву → falsch."
+     "explanation_tr": "'ärztliche Schweigepflicht … nicht mitgeteilt' → falsch.",
+     "explanation_en": "'ärztliche Schweigepflicht … nicht mitgeteilt' → falsch.",
+     "explanation_uk": "'ärztliche Schweigepflicht … nicht mitgeteilt' → falsch."
     },
     {
      "id": "L2-8-q2",
      "num": 6,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Bevor man zum ersten Mal trainiert, …",
+     "prompt": "Die Grippeimpfung …",
      "options": [
-      "braucht man eine Einweisung.",
-      "muss man eine Gebühr bezahlen.",
-      "braucht man ein ärztliches Attest."
+      "kostet einen kleinen Beitrag.",
+      "ist für alle kostenlos.",
+      "gibt es nur für Bildschirmarbeiter."
      ],
-     "answer": 0,
-     "explanation_tr": "'Einweisung durch unseren Trainer Pflicht' → a.",
-     "explanation_en": "'Einweisung durch unseren Trainer Pflicht' → a.",
-     "explanation_uk": "'Einweisung durch unseren Trainer Pflicht' → a."
+     "answer": 1,
+     "explanation_tr": "→ b. Tuzak c: ekran çalışanları için olan GÖZ TESTİ.",
+     "explanation_en": "→ b. Trap c: the EYE TEST is for screen workers.",
+     "explanation_uk": "→ b. Пастка c: ПЕРЕВІРКА ЗОРУ — для тих, хто працює за екраном."
     },
     {
      "id": "L2-8-q3",
      "num": 7,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "An der Laufgruppe können auch Partnerinnen und Partner teilnehmen.",
+     "prompt": "Die Firma bezahlt eine Bildschirmbrille komplett.",
      "options": [
       "richtig",
       "falsch"
      ],
-     "answer": 0,
-     "explanation_tr": "'auch Familienangehörige herzlich willkommen' → richtig.",
-     "explanation_en": "'auch Familienangehörige herzlich willkommen' → richtig.",
-     "explanation_uk": "'auch Familienangehörige herzlich willkommen' → richtig."
+     "answer": 1,
+     "explanation_tr": "'bis zu 150 Euro' = masrafın bir kısmı → falsch.",
+     "explanation_en": "'bis zu 150 Euro' = only part of the cost → falsch.",
+     "explanation_uk": "'bis zu 150 Euro' = лише частина витрат → falsch."
     },
     {
      "id": "L2-8-q4",
      "num": 7,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Für die Kurse …",
+     "prompt": "Einen Termin für die Impfung …",
      "options": [
-      "muss man sich anmelden.",
-      "zahlt man einen kleinen Beitrag.",
-      "gibt es keine Teilnehmerbegrenzung."
+      "bucht man im Intranet.",
+      "vereinbart man mittwochs in der Sprechstunde.",
+      "bekommt man automatisch."
      ],
      "answer": 0,
-     "explanation_tr": "Kurslar ücretsiz, 12 kişiyle sınırlı → kayıt gerekli → a.",
-     "explanation_en": "Courses are free, limited to 12 people → registration required → a.",
-     "explanation_uk": "Курси безкоштовні, до 12 осіб → потрібна реєстрація → a."
+     "explanation_tr": "→ a. Tuzak b: çarşamba MUAYENE saati.",
+     "explanation_en": "→ a. Trap b: Wednesday is the CONSULTATION hour.",
+     "explanation_uk": "→ a. Пастка b: у середу — години ПРИЙОМУ."
     },
     {
      "id": "L2-8-q5",
@@ -12108,9 +12099,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'Die Teilnahme ist freiwillig' → falsch.",
-     "explanation_en": "'Die Teilnahme ist freiwillig' → falsch.",
-     "explanation_uk": "'Die Teilnahme ist freiwillig' → falsch."
+     "explanation_tr": "'freiwillig' → falsch.",
+     "explanation_en": "'freiwillig' → falsch.",
+     "explanation_uk": "'freiwillig' → falsch."
     },
     {
      "id": "L2-8-q6",
@@ -12124,9 +12115,9 @@
       "mehr Überstunden zu machen."
      ],
      "answer": 1,
-     "explanation_tr": "'längere Zeit … freizunehmen' → b.",
-     "explanation_en": "'längere Zeit … freizunehmen' → b.",
-     "explanation_uk": "'längere Zeit … freizunehmen' → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-8-q7",
@@ -12139,9 +12130,9 @@
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'geht Ihr Guthaben nicht verloren' → falsch.",
-     "explanation_en": "'geht Ihr Guthaben nicht verloren' → falsch.",
-     "explanation_uk": "'geht Ihr Guthaben nicht verloren' → falsch."
+     "explanation_tr": "'geht … nicht verloren' → falsch.",
+     "explanation_en": "'geht … nicht verloren' → falsch.",
+     "explanation_uk": "'geht … nicht verloren' → falsch."
     },
     {
      "id": "L2-8-q8",
@@ -12155,16 +12146,16 @@
       "bestimmt die Firma."
      ],
      "answer": 1,
-     "explanation_tr": "'bis zum 31. Oktober' → b.",
-     "explanation_en": "'bis zum 31. Oktober' → b.",
-     "explanation_uk": "'bis zum 31. Oktober' → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     }
    ]
   },
   {
    "id": "L2-9",
    "part": "lesen2",
-   "title": "Lesen T2 · Set 9 (Prüfungsstil): Rauchen & Berichtsheft",
+   "title": "Lesen T2 · Set 9 (Prüfungsstil): Dienstkleidung & Berufsschule",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "instructions_en": "EXAM STYLE: the texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "instructions_uk": "ФОРМАТ ІСПИТУ: тексти — це завжди розділи 'Willkommensmappe' (папки для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
@@ -12172,13 +12163,13 @@
    "texts": [
     {
      "key": "T1",
-     "title": "Willkommensmappe – Rauchen",
-     "body": "Im gesamten Gebäude gilt ein striktes Rauchverbot. Das gilt ausdrücklich auch für E-Zigaretten. Rauchen ist nur im gekennzeichneten Bereich im Innenhof hinter Halle 2 erlaubt – nicht vor dem Haupteingang und nicht auf dem Parkplatz.\n\nRaucherpausen gelten nicht als Arbeitszeit. Bitte stempeln Sie dafür aus.\n\nSie möchten aufhören? Wir unterstützen Sie: Die Kosten für einen anerkannten Nichtraucherkurs übernehmen wir zur Hälfte. Wenn Sie den Kurs erfolgreich abschließen, erstatten wir auch den Rest."
+     "title": "Willkommensmappe – Dienstkleidung",
+     "body": "Alle Beschäftigten im Verkauf und im Lager erhalten zu Beginn drei Garnituren Dienstkleidung. Die Reinigung übernimmt unser Wäscheservice: Geben Sie getragene Kleidung jeden Montag bis 10 Uhr im Lager ab.\n\nFür Sicherheitsschuhe erhalten Beschäftigte im Lager einmal im Jahr einen Zuschuss von 80 Euro. Den Beleg reichen Sie bei der Personalabteilung ein.\n\nIm Büro gilt „Business casual“; freitags sind Jeans erlaubt. Im Kundenkontakt ist das Namensschild für alle Pflicht."
     },
     {
      "key": "T2",
-     "title": "Willkommensmappe – Für Auszubildende: der Ausbildungsnachweis",
-     "body": "Während Ihrer Ausbildung führen Sie wöchentlich einen digitalen Ausbildungsnachweis, das sogenannte Berichtsheft. Dafür steht Ihnen etwa eine Stunde pro Woche während der Arbeitszeit zur Verfügung.\n\nTragen Sie ein, welche Tätigkeiten Sie im Betrieb ausgeführt haben. Auch die Berufsschultage gehören dazu – mit den Themen des Unterrichts. Wenn Sie krank waren, vermerken Sie das ebenfalls.\n\nIhre Ausbilderin oder Ihr Ausbilder kontrolliert und unterschreibt die Nachweise einmal im Monat. Bitte nehmen Sie das ernst: Ein vollständiges Berichtsheft ist Voraussetzung für die Zulassung zur Abschlussprüfung."
+     "title": "Willkommensmappe – Für Auszubildende: Berufsschule",
+     "body": "Die Berufsschule findet im ersten Ausbildungsjahr an zwei Tagen pro Woche statt, ab dem zweiten Jahr im Blockunterricht. Berufsschultage gelten als Arbeitszeit; an Tagen mit mehr als fünf Unterrichtsstunden kommen Sie danach nicht mehr in den Betrieb.\n\nDie Fahrtkosten zur Berufsschule übernimmt die Firma zur Hälfte; das Monatsticket reichen Sie im Personalbüro ein.\n\nVor der Abschlussprüfung erhalten Sie einen zusätzlichen freien Tag zur Vorbereitung."
     }
    ],
    "questions": [
@@ -12187,124 +12178,124 @@
      "num": 6,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "E-Zigaretten sind im Büro erlaubt.",
+     "prompt": "Die Dienstkleidung muss man selbst waschen.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'ausdrücklich auch für E-Zigaretten' → falsch.",
-     "explanation_en": "'ausdrücklich auch für E-Zigaretten' → falsch.",
-     "explanation_uk": "'ausdrücklich auch für E-Zigaretten' → falsch."
+     "explanation_tr": "Wäscheservice var → falsch.",
+     "explanation_en": "There is a Wäscheservice → falsch.",
+     "explanation_uk": "Wäscheservice є → falsch."
     },
     {
      "id": "L2-9-q2",
      "num": 6,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Raucherpausen …",
+     "prompt": "Sicherheitsschuhe …",
      "options": [
-      "zählen als Arbeitszeit.",
-      "muss man ausstempeln.",
-      "sind nur mittags erlaubt."
+      "bezahlt die Firma komplett.",
+      "werden mit einem jährlichen Zuschuss unterstützt.",
+      "braucht man nur im Büro."
      ],
      "answer": 1,
-     "explanation_tr": "'nicht als Arbeitszeit … stempeln Sie aus' → b.",
-     "explanation_en": "'nicht als Arbeitszeit … stempeln Sie aus' → b.",
-     "explanation_uk": "'nicht als Arbeitszeit … stempeln Sie aus' → b."
+     "explanation_tr": "80 € yıllık destek → b.",
+     "explanation_en": "€80 yearly allowance → b.",
+     "explanation_uk": "80 € щорічної допомоги → b."
     },
     {
      "id": "L2-9-q3",
      "num": 7,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "Die Firma bezahlt einen Nichtraucherkurs ganz, wenn man ihn erfolgreich beendet.",
+     "prompt": "Das Namensschild müssen alle mit Kundenkontakt tragen.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 0,
-     "explanation_tr": "Yarısı baştan, başarıyla bitirirse kalanı da → richtig.",
-     "explanation_en": "Half up front, the rest too if you finish successfully → richtig.",
-     "explanation_uk": "Половину одразу, решту — якщо успішно завершиш → richtig."
+     "explanation_tr": "→ richtig.",
+     "explanation_en": "→ richtig.",
+     "explanation_uk": "→ richtig."
     },
     {
      "id": "L2-9-q4",
      "num": 7,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Rauchen darf man …",
+     "prompt": "Im Büro …",
      "options": [
-      "vor dem Haupteingang.",
-      "im Innenhof hinter Halle 2.",
-      "auf dem Parkplatz."
+      "trägt man Dienstkleidung.",
+      "sind freitags Jeans erlaubt.",
+      "ist die Kleidung frei wählbar."
      ],
      "answer": 1,
-     "explanation_tr": "a ve c açıkça yasak → b.",
-     "explanation_en": "a and c are explicitly forbidden → b.",
-     "explanation_uk": "a і c прямо заборонені → b."
+     "explanation_tr": "→ b. Tuzak c: 'Business casual' kuralı var.",
+     "explanation_en": "→ b. Trap c: there is a 'Business casual' rule.",
+     "explanation_uk": "→ b. Пастка c: є правило 'Business casual'."
     },
     {
      "id": "L2-9-q5",
      "num": 8,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "Das Berichtsheft schreibt man in der Freizeit.",
+     "prompt": "Berufsschultage zählen nicht als Arbeitszeit.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'während der Arbeitszeit' → falsch.",
-     "explanation_en": "'während der Arbeitszeit' → falsch.",
-     "explanation_uk": "'während der Arbeitszeit' → falsch."
+     "explanation_tr": "'gelten als Arbeitszeit' → falsch.",
+     "explanation_en": "'gelten als Arbeitszeit' → falsch.",
+     "explanation_uk": "'gelten als Arbeitszeit' → falsch."
     },
     {
      "id": "L2-9-q6",
      "num": 8,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "Die Ausbilderin …",
+     "prompt": "Nach einem langen Schultag (mehr als fünf Stunden) …",
      "options": [
-      "unterschreibt jede Woche.",
-      "prüft die Nachweise monatlich.",
-      "schreibt das Berichtsheft für die Azubis."
+      "muss man noch in den Betrieb.",
+      "muss man nicht mehr in den Betrieb.",
+      "holt man die Zeit am Samstag nach."
      ],
      "answer": 1,
-     "explanation_tr": "'einmal im Monat' → b. Tuzak a: Azubi HAFTALIK yazar, eğitmen AYLIK imzalar.",
-     "explanation_en": "'einmal im Monat' → b. Trap a: the Azubi writes WEEKLY, the trainer signs MONTHLY.",
-     "explanation_uk": "'einmal im Monat' → b. Пастка a: Azubi пише ЩОТИЖНЯ, інструкторка підписує ЩОМІСЯЦЯ."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-9-q7",
      "num": 9,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "Ohne vollständiges Berichtsheft wird man nicht zur Abschlussprüfung zugelassen.",
+     "prompt": "Die Firma zahlt die Hälfte der Fahrtkosten zur Berufsschule.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 0,
-     "explanation_tr": "'Voraussetzung für die Zulassung' → richtig.",
-     "explanation_en": "'Voraussetzung für die Zulassung' → richtig.",
-     "explanation_uk": "'Voraussetzung für die Zulassung' → richtig."
+     "explanation_tr": "→ richtig.",
+     "explanation_en": "→ richtig.",
+     "explanation_uk": "→ richtig."
     },
     {
      "id": "L2-9-q8",
      "num": 9,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "Berufsschultage …",
+     "prompt": "Vor der Abschlussprüfung …",
      "options": [
-      "muss man nicht eintragen.",
-      "trägt man mit den Unterrichtsthemen ein.",
-      "zählen als Urlaub."
+      "gibt es einen Tag frei zum Lernen.",
+      "muss man Urlaub nehmen.",
+      "ist Blockunterricht."
      ],
-     "answer": 1,
-     "explanation_tr": "'mit den Themen des Unterrichts' → b.",
-     "explanation_en": "'mit den Themen des Unterrichts' → b.",
-     "explanation_uk": "'mit den Themen des Unterrichts' → b."
+     "answer": 0,
+     "explanation_tr": "→ a.",
+     "explanation_en": "→ a.",
+     "explanation_uk": "→ a."
     }
    ]
   },
@@ -12327,22 +12318,22 @@
     {
      "key": "b",
      "title": "",
-     "body": "Mareike, vor 5 Stunden: Ich finde, in Arztpraxen wird sowieso viel zu viel gearbeitet. Unser ganzes Gesundheitssystem müsste sich ändern, sonst gibt es bald keine Praxishelferinnen mehr."
+     "body": "Mareike, vor 5 Stunden: Ich finde, in Arztpraxen wird sowieso viel zu viel gearbeitet. Unser ganzes Gesundheitssystem müsste sich ändern."
     },
     {
      "key": "c",
      "title": "",
-     "body": "Tom, vor 1 Stunde: Pünktlich anzukommen ist deine Sache – Stau, Streik oder Glatteis gehören zum sogenannten Wegerisiko. Dein Arbeitgeber darf verlangen, dass du die Zeit nacharbeitest oder sie von deinem Zeitkonto abzieht."
+     "body": "Tom, vor 1 Stunde: Bei Rufbereitschaft zählt nur die Zeit als Arbeitszeit, in der du tatsächlich arbeitest. Die Bereitschaft selbst wird aber meistens mit einer Pauschale bezahlt – schau in deinen Vertrag. Anders ist es beim Bereitschaftsdienst im Betrieb: Der zählt komplett."
     },
     {
      "key": "d",
      "title": "",
-     "body": "Heike, vor 3 Stunden: Wenn du freiwillig am Wochenende eine Fortbildung besuchst, die dein Arbeitgeber nicht angeordnet hat, ist das deine Privatsache. Einen Ausgleich kannst du dann leider nicht verlangen."
+     "body": "Heike, vor 3 Stunden: An Sonn- und Feiertagen darf man nur in bestimmten Branchen arbeiten, zum Beispiel in Krankenhäusern oder in der Gastronomie. Dafür muss es dann einen Ersatzruhetag geben."
     },
     {
      "key": "e",
      "title": "",
-     "body": "Nils, vor 30 Minuten: Wenn der Arbeitgeber eine bestimmte Kleidung vorschreibt und man sie im Betrieb an- und ausziehen muss, gilt die Umkleidezeit in der Regel als Arbeitszeit. Sprich doch mal mit dem Betriebsrat."
+     "body": "Nils, vor 30 Minuten: Zwischen zwei Schichten müssen normalerweise mindestens elf Stunden Ruhezeit liegen. In einigen Branchen darf sie auf zehn Stunden verkürzt werden, aber sieben Stunden sind auf keinen Fall genug."
     },
     {
      "key": "f",
@@ -12357,46 +12348,46 @@
      "kind": "match",
      "prompt": "Selin: Ich arbeite in einer Arztpraxis. Wenn viele Patienten da sind, soll ich meine Mittagspause verschieben – manchmal mache ich dann gar keine. Meine Chefin sagt, ich könne ja dafür früher gehen. Ist das in Ordnung?",
      "answer": "a",
-     "explanation_tr": "Tuzak b: Arztpraxis kelimesi ✓ ama sadece FİKİR. Mola kuralı → a.",
-     "explanation_en": "Trap b: the word Arztpraxis ✓ but only an OPINION. Break rules → a.",
-     "explanation_uk": "Пастка b: слово Arztpraxis ✓, але лише ДУМКА. Правила перерви → a."
+     "explanation_tr": "Tuzak b: sadece FİKİR. Mola kuralı → a.",
+     "explanation_en": "Trap b: just an OPINION. Break rule → a.",
+     "explanation_uk": "Пастка b: лише ДУМКА. Правило про перерви → a."
     },
     {
      "id": "L3-7-q2",
      "num": 11,
      "kind": "match",
-     "prompt": "Boris: In unserem Werk muss ich vor Schichtbeginn Schutzkleidung anziehen, die im Betrieb bleibt. Das dauert jeden Tag 15 Minuten. Mein Chef rechnet das nicht als Arbeitszeit. Darf er das?",
+     "prompt": "Boris: Gestern hatte ich Spätschicht bis 23 Uhr, und heute soll ich schon um 6 Uhr wieder anfangen. Ist das überhaupt erlaubt?",
      "answer": "e",
-     "explanation_tr": "İşyerinde giyilen zorunlu kıyafet → e.",
-     "explanation_en": "Mandatory clothing worn at the workplace → e.",
-     "explanation_uk": "Обов'язковий одяг, який носять на робочому місці → e."
+     "explanation_tr": "23'ten 6'ya 7 saat → dinlenme süresi kuralı → e.",
+     "explanation_en": "11 pm to 6 am = 7 hours → rest period rule → e.",
+     "explanation_uk": "З 23:00 до 6:00 = 7 годин → правило про час відпочинку → e."
     },
     {
      "id": "L3-7-q3",
      "num": 12,
      "kind": "match",
-     "prompt": "Anja: Gestern stand ich auf dem Weg ins Büro im Stau und kam 40 Minuten zu spät. Jetzt soll ich die Zeit nacharbeiten. Ich kann doch nichts dafür!",
+     "prompt": "Anja: Ich habe am Wochenende Rufbereitschaft: Ich muss erreichbar sein, werde aber selten angerufen. Zählt das trotzdem als Arbeitszeit?",
      "answer": "c",
-     "explanation_tr": "Trafik = Wegerisiko → c.",
-     "explanation_en": "Traffic = Wegerisiko → c.",
-     "explanation_uk": "Затор = Wegerisiko → c."
+     "explanation_tr": "Rufbereitschaft → c.",
+     "explanation_en": "Rufbereitschaft → c.",
+     "explanation_uk": "Rufbereitschaft → c."
     },
     {
      "id": "L3-7-q4",
      "num": 13,
      "kind": "match",
-     "prompt": "Felix: Mein Chef hat angeordnet, dass ich letzten Samstag unseren Stand auf einer Messe betreue. Bekomme ich dafür einen Ausgleich?",
+     "prompt": "Felix: Mein Chef möchte, dass ich am Ostermontag arbeite. Bekomme ich dafür einen Zuschlag?",
      "answer": "x",
-     "explanation_tr": "Tuzak d: hafta sonu ✓ ama GÖNÜLLÜ ve emredilmemiş eğitim. Felix'e ise ŞEF EMRETTİ → farklı durum → x.",
-     "explanation_en": "Trap d: weekend ✓ but VOLUNTARY training that wasn't ordered. Felix's BOSS ORDERED it → different situation → x.",
-     "explanation_uk": "Пастка d: вихідні ✓, але ДОБРОВІЛЬНЕ навчання без наказу. А у Felix КЕРІВНИК НАКАЗАВ → інша ситуація → x."
+     "explanation_tr": "Tuzak d: bayram günü çalışma ✓ ama konu İZİN/yedek gün; tuzak f: zam ✓ ama GECE çalışması. Bayram zammı hakkında cevap yok → x.",
+     "explanation_en": "Trap d: working on a public holiday ✓, but the topic is TIME OFF / a replacement day; trap f: a bonus ✓, but for NIGHT work. No answer about a holiday bonus → x.",
+     "explanation_uk": "Пастка d: робота у святковий день ✓, але тема — ВИХІДНИЙ / замінний день; пастка f: надбавка ✓, але за НІЧНУ роботу. Про святкову надбавку відповіді немає → x."
     }
    ]
   },
   {
    "id": "L3-8",
    "part": "lesen3",
-   "title": "Lesen T3 · Set 8 (Prüfungsstil): Urlaub & Krankheit",
+   "title": "Lesen T3 · Set 8 (Prüfungsstil): Urlaub",
    "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
    "instructions_en": "EXAM STYLE: long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
    "instructions_uk": "ФОРМАТ ІСПИТУ: довгі питання від першої особи на форумі; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
@@ -12412,22 +12403,22 @@
     {
      "key": "b",
      "title": "",
-     "body": "Sven, vor 1 Stunde: Genehmigten Urlaub darf der Chef nur in absoluten Ausnahmefällen zurücknehmen. Dass Personal fehlt, reicht in der Regel nicht. Und falls doch: Die Kosten für deine Stornierung muss dann die Firma tragen."
+     "body": "Sven, vor 1 Stunde: Ja, aus dringenden betrieblichen Gründen darf der Arbeitgeber für bestimmte Zeiten eine Urlaubssperre festlegen. Er sollte das aber möglichst früh bekannt geben."
     },
     {
      "key": "c",
      "title": "",
-     "body": "Anna, vor 3 Stunden: Keine Sorge! Wenn du im Urlaub krank wirst und eine ärztliche Bescheinigung hast, werden dir die Tage wieder gutgeschrieben. Informiere deinen Arbeitgeber aber sofort."
+     "body": "Anna, vor 3 Stunden: Im Prinzip hat er recht. Urlaub soll zusammenhängend gewährt werden; wird er geteilt, soll ein Teil mindestens zwei Wochen lang sein. Ausnahmen kann man aber vereinbaren."
     },
     {
      "key": "d",
      "title": "",
-     "body": "Ralf, vor 2 Stunden: Ich nehme nie mehr als eine Woche Urlaub am Stück. Nach zwei Wochen ist man völlig raus aus der Arbeit, das lohnt sich doch gar nicht."
+     "body": "Ralf, vor 2 Stunden: Ich nehme nie mehr als eine Woche Urlaub am Stück. Nach zwei Wochen ist man völlig raus aus der Arbeit."
     },
     {
      "key": "e",
      "title": "",
-     "body": "Miriam, vor 45 Minuten: Den vollen Urlaubsanspruch hast du tatsächlich erst nach sechs Monaten. Vorher steht dir aber für jeden vollen Monat ein Zwölftel zu – nach vier Monaten also schon einige Tage. Frag einfach in der Personalabteilung."
+     "body": "Miriam, vor 45 Minuten: Den vollen Urlaubsanspruch hast du tatsächlich erst nach sechs Monaten. Vorher steht dir aber für jeden vollen Monat ein Zwölftel zu – nach vier Monaten also schon einige Tage."
     },
     {
      "key": "f",
@@ -12442,29 +12433,29 @@
      "kind": "match",
      "prompt": "Ömer: Ich bin seit vier Monaten in meiner neuen Firma und würde im Sommer gern zwei Wochen Urlaub machen. Eine Kollegin meint, im ersten halben Jahr hätte ich überhaupt keinen Anspruch. Stimmt das?",
      "answer": "e",
-     "explanation_tr": "Tuzak: kolegası 'hiç hakkın yok' diyor ama e: orantılı hak var → e.",
-     "explanation_en": "Trap: her colleague says 'you have no right at all', but e: there is a proportional entitlement → e.",
-     "explanation_uk": "Пастка: колега каже 'ти взагалі не маєш права', але e: є пропорційне право → e."
+     "explanation_tr": "Tuzak: 'hiç hakkın yok' ama orantılı hak var → e.",
+     "explanation_en": "Trap: 'hiç hakkın yok' (you have no right at all), but there is a pro-rata entitlement → e.",
+     "explanation_uk": "Пастка: 'hiç hakkın yok' (у тебе взагалі немає права), але є пропорційне право → e."
     },
     {
      "id": "L3-8-q2",
      "num": 11,
      "kind": "match",
-     "prompt": "Katja: Gleich am zweiten Urlaubstag habe ich eine schwere Grippe bekommen und war beim Arzt. Sind diese Urlaubstage jetzt einfach weg?",
+     "prompt": "Katja: Ich möchte meinen Urlaub dieses Jahr nur tageweise nehmen. Mein Chef sagt, ein Teil müsse mindestens zwei Wochen am Stück sein. Hat er recht?",
      "answer": "c",
-     "explanation_tr": "Tatilde hastalık → c.",
-     "explanation_en": "Illness during holiday → c.",
-     "explanation_uk": "Хвороба під час відпустки → c."
+     "explanation_tr": "Parçalı izin, 2 hafta kuralı → c. Tuzak d: sadece fikir.",
+     "explanation_en": "Split leave, 2-week rule → c. Trap d: just an opinion.",
+     "explanation_uk": "Відпустка частинами, правило 2 тижнів → c. Пастка d: лише думка."
     },
     {
      "id": "L3-8-q3",
      "num": 12,
      "kind": "match",
-     "prompt": "Luca: Mein Urlaub ist seit Monaten genehmigt und gebucht. Jetzt hat ein Kollege gekündigt, und mein Chef will, dass ich den Urlaub absage. Muss ich das?",
+     "prompt": "Luca: Unser Chef hat gesagt, dass im Dezember wegen der Inventur niemand Urlaub nehmen darf. Kann er das einfach so bestimmen?",
      "answer": "b",
-     "explanation_tr": "Onaylı izin geri alınabilir mi → b.",
-     "explanation_en": "Can approved leave be withdrawn → b.",
-     "explanation_uk": "Чи можна скасувати погоджену відпустку → b."
+     "explanation_tr": "Envanter için izin yasağı = Urlaubssperre → b.",
+     "explanation_en": "No leave allowed because of stocktaking = Urlaubssperre → b.",
+     "explanation_uk": "Заборона відпусток через інвентаризацію = Urlaubssperre → b."
     },
     {
      "id": "L3-8-q4",
@@ -12472,16 +12463,16 @@
      "kind": "match",
      "prompt": "Vera: Ich habe noch acht Tage Resturlaub, möchte aber lieber arbeiten und mir die Tage auszahlen lassen. Geht das?",
      "answer": "x",
-     "explanation_tr": "Tuzak a: Resturlaub ✓ ama konu SÜRESİNİN DOLMASI; Vera PARA OLARAK ödenmesini soruyor → cevap yok → x.",
-     "explanation_en": "Trap a: Resturlaub ✓ but the topic is it EXPIRING; Vera asks about getting it PAID OUT IN MONEY → no answer → x.",
-     "explanation_uk": "Пастка a: Resturlaub ✓, але тема — його ЗГОРЯННЯ; Vera питає про ВИПЛАТУ ГРОШИМА → відповіді немає → x."
+     "explanation_tr": "Tuzak a: Resturlaub ✓ ama konu SÜRE DOLMASI; Vera ödeme soruyor → x.",
+     "explanation_en": "Trap a: Resturlaub ✓, but the topic is it EXPIRING; Vera is asking about payment → x.",
+     "explanation_uk": "Пастка a: Resturlaub ✓, але тема — ЗАКІНЧЕННЯ СТРОКУ; Vera питає про виплату → x."
     }
    ]
   },
   {
    "id": "L4-7",
    "part": "lesen4",
-   "title": "Lesen T4 · Set 7 (Prüfungsstil): Abteilungsleitersitzung",
+   "title": "Lesen T4 · Set 7 (Prüfungsstil): Teamleitersitzung",
    "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
    "instructions_en": "EXAM STYLE: 6 TOPs, a CORRECTION to the previous minutes in TOP 1, one TOP brought forward or postponed. People are referred to in the questions by their TITLE (Protokollantin, Einkauf…).",
    "instructions_uk": "ФОРМАТ ІСПИТУ: 6 TOP, у TOP 1 — ВИПРАВЛЕННЯ до попереднього протоколу, один TOP перенесено раніше або відкладено. У питаннях людей називають за ПОСАДОЮ (Protokollantin, Einkauf…).",
@@ -12489,8 +12480,8 @@
    "texts": [
     {
      "key": "P",
-     "title": "Protokoll der Abteilungsleitersitzung",
-     "body": "Datum: 12.03., 09.00–11.30 Uhr\nProtokollantin: Julia Neumann (JN)\nAnwesend: Herr Kraus (Vertrieb), Frau Özdemir (Einkauf), Herr Lenz (Betriebsrat), Frau Hahn (Produktion), Frau Neumann (Assistenz der Geschäftsführung)\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nHerr Kraus bittet um eine Korrektur: Die Messe in Köln findet nicht im April, sondern im Mai statt. Mit dieser Änderung wird das Protokoll genehmigt. Da Herr Lenz die Sitzung um 10 Uhr verlassen muss, wird TOP 5 vorgezogen und als TOP 2 behandelt.\n\nTOP 2 Neue Pausenregelung (vorgezogener TOP)\nUm das Gedränge in der Kantine zu verringern, sollen die Mittagspausen künftig zwischen 11.30 und 13.30 Uhr nach Abteilungen gestaffelt werden. Herr Lenz stimmt im Namen des Betriebsrats unter einer Bedingung zu: Die Regelung wird zunächst drei Monate getestet und danach gemeinsam bewertet.\n\nTOP 3 Probleme mit einem Zulieferer\nDie Firma Bolt & Co. hat in diesem Quartal dreimal verspätet geliefert, wodurch es in der Produktion zu Stillständen kam. Frau Özdemir führt nächste Woche ein Gespräch mit dem Geschäftsführer von Bolt & Co. Verbessert sich die Lage bis Ende April nicht, wird ein zweiter Lieferant hinzugezogen. Herr Kraus holt bereits jetzt Vergleichsangebote ein.\n\nTOP 4 Messe in Köln\nDer Stand wird aus Kostengründen nur halb so groß wie im Vorjahr. Am Stand werden vier Personen benötigt. Interessierte melden sich bis zum 30.03. bei Frau Neumann. Die Hotelzimmer bucht das Sekretariat der Geschäftsführung.\n\nTOP 5 Fahrradständer\nEs werden 20 überdachte Stellplätze gebaut. Der ursprünglich geplante Platz vor dem Haupteingang ist nicht möglich, weil dort die Feuerwehrzufahrt liegt. Die Stellplätze entstehen stattdessen neben Halle B. Der Bau beginnt im Juni.\n\nTOP 6 Sonstiges\nHerr Kraus geht ab 1. April für vier Monate in Elternzeit. Die Vertretung im Vertrieb übernimmt Herr Yildiz; Frau Özdemir bleibt für den Einkauf zuständig.\n\nNächste Sitzung: 09.04., 09.00 Uhr"
+     "title": "Protokoll der Teamleitersitzung – Versicherungsbüro Hanse",
+     "body": "Datum: 04.02., 13.00–15.00 Uhr\nProtokollantin: Mira Engel (ME, Assistenz)\nSitzungsleitung: Dr. Paul Kaiser (PK, Büroleitung)\nAnwesend: Frau Yıldız (FY, Kundenservice), Herr Brandt (HB, Außendienst), Frau Sommer (FS, Personal), Frau Engel\nGast: Herr Laufer (Krankenkasse)\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nFS weist darauf hin, dass im letzten Protokoll der Name der neuen Auszubildenden falsch geschrieben wurde; richtig ist „Aylin Doğan“. Mit dieser Korrektur wird das Protokoll genehmigt. Da Herr Laufer um 13.45 Uhr gehen muss, wird TOP 4 vorgezogen.\n\nTOP 2 Gesundheitstag (vorgezogener TOP 4)\nHerr Laufer stellt das Angebot der Krankenkasse vor: ein Gesundheitstag im April mit Rückenscreening und Stressworkshop. Die Kosten übernimmt die Krankenkasse. Der Termin wird noch mit FS abgestimmt.\n\nTOP 3 Digitale Urlaubsanträge\nAb März werden Urlaubsanträge nur noch digital gestellt. Papieranträge werden danach nicht mehr bearbeitet. FS bietet für ältere Kolleginnen und Kollegen auf Wunsch eine kurze Einführung an.\n\nTOP 4 Kundenzufriedenheit\nFY berichtet, dass die Zufriedenheit laut Umfrage gestiegen ist. Kritisiert werden nur noch die Wartezeiten am Telefon. HB schlägt eine Rückruffunktion vor; darüber wird nach einem Kostenvergleich im nächsten Monat entschieden.\n\nTOP 5 Weihnachtsfeier\nDie Feier findet dieses Jahr nicht im Restaurant, sondern im eigenen Haus statt. Ein Caterer wird beauftragt. Wer beim Aufbau hilft, bekommt die Zeit als Arbeitszeit angerechnet.\n\nTOP 6 Sonstiges\nIn der Küche gilt ab sofort: Wer die Spülmaschine ausräumt, trägt sich auf der Liste an der Tür ein."
     }
    ],
    "questions": [
@@ -12499,96 +12490,96 @@
      "num": 14,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Im Protokoll der letzten Sitzung …",
+     "prompt": "Im letzten Protokoll …",
      "options": [
-      "stand ein falscher Monat für die Messe.",
+      "war ein Name nicht richtig geschrieben.",
       "fehlte ein Tagesordnungspunkt.",
-      "war der Name des Zulieferers falsch."
+      "stand ein falsches Datum."
      ],
      "answer": 0,
-     "explanation_tr": "Kraus'un düzeltmesi: Nisan değil Mayıs → a.",
-     "explanation_en": "Kraus's correction: May, not April → a.",
-     "explanation_uk": "Виправлення від Kraus: не квітень, а травень → a."
+     "explanation_tr": "→ a.",
+     "explanation_en": "→ a.",
+     "explanation_uk": "→ a."
     },
     {
      "id": "L4-7-q2",
      "num": 15,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Die neue Pausenregelung …",
+     "prompt": "Der Gesundheitstag …",
      "options": [
-      "wird zunächst ausprobiert.",
-      "wurde vom Betriebsrat abgelehnt.",
-      "gilt ab sofort dauerhaft."
+      "findet sicher im April statt; der Tag steht fest.",
+      "wird von der Krankenkasse bezahlt.",
+      "wird von FS organisiert und bezahlt."
      ],
-     "answer": 0,
-     "explanation_tr": "Betriebsrat ŞARTLI kabul etti: 3 ay test → a. (TOP öne alındı çünkü Lenz erken çıkıyor.)",
-     "explanation_en": "The Betriebsrat agreed ON CONDITION: 3-month trial → a. (The TOP was brought forward because Lenz is leaving early.)",
-     "explanation_uk": "Betriebsrat погодився З УМОВОЮ: 3 місяці випробування → a. (TOP перенесли раніше, бо Lenz іде рано.)"
+     "answer": 1,
+     "explanation_tr": "Tuzak a: tarih HENÜZ belirlenmedi → b.",
+     "explanation_en": "Trap a: the date has NOT been set YET → b.",
+     "explanation_uk": "Пастка a: дату ЩЕ НЕ визначено → b."
     },
     {
      "id": "L4-7-q3",
      "num": 16,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Wenn Bolt & Co. weiter zu spät liefert, …",
+     "prompt": "Urlaubsanträge …",
      "options": [
-      "wird der Vertrag sofort gekündigt.",
-      "arbeitet die Firma zusätzlich mit einem anderen Lieferanten.",
-      "übernimmt Herr Kraus den Einkauf."
+      "kann man weiterhin auch auf Papier stellen.",
+      "stellt man ab März nur noch digital.",
+      "müssen ältere Beschäftigte persönlich abgeben."
      ],
      "answer": 1,
-     "explanation_tr": "'ein zweiter Lieferant hinzugezogen' = ek tedarikçi, iptal değil → b.",
-     "explanation_en": "'ein zweiter Lieferant hinzugezogen' = an additional supplier, not a cancellation → b.",
-     "explanation_uk": "'ein zweiter Lieferant hinzugezogen' = додатковий постачальник, а не розірвання → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L4-7-q4",
      "num": 17,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Wer auf der Messe arbeiten möchte, meldet sich …",
+     "prompt": "Über eine Rückruffunktion …",
      "options": [
-      "beim Sekretariat der Geschäftsführung.",
-      "bei der Protokollantin.",
-      "beim Vertriebsleiter."
+      "wurde heute entschieden.",
+      "entscheidet man später.",
+      "entscheidet der Außendienst allein."
      ],
      "answer": 1,
-     "explanation_tr": "Frau Neumann = Protokollantin (başlıkta). Tuzak a: sekreterlik OTEL rezervasyonu yapar → b.",
-     "explanation_en": "Frau Neumann = Protokollantin (in the header). Trap a: the secretariat books the HOTEL → b.",
-     "explanation_uk": "Frau Neumann = Protokollantin (у заголовку). Пастка a: секретаріат бронює ГОТЕЛЬ → b."
+     "explanation_tr": "'nach einem Kostenvergleich im nächsten Monat' → b.",
+     "explanation_en": "'nach einem Kostenvergleich im nächsten Monat' → b.",
+     "explanation_uk": "'nach einem Kostenvergleich im nächsten Monat' → b."
     },
     {
      "id": "L4-7-q5",
      "num": 18,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Die Fahrradständer …",
+     "prompt": "Bei der Weihnachtsfeier …",
      "options": [
-      "werden vor dem Haupteingang gebaut.",
-      "entstehen an einem anderen Ort als geplant.",
-      "sind bereits fertig."
+      "gehen alle ins Restaurant.",
+      "bekommt man den Aufbau als Arbeitszeit angerechnet.",
+      "kochen die Beschäftigten selbst."
      ],
      "answer": 1,
-     "explanation_tr": "Planlanan yer olmadı, Halle B yanına → b.",
-     "explanation_en": "Not at the planned location, but next to Halle B → b.",
-     "explanation_uk": "Не в запланованому місці, а біля Halle B → b."
+     "explanation_tr": "Tuzak c: catering firması → b.",
+     "explanation_en": "Trap c: the catering company → b.",
+     "explanation_uk": "Пастка c: кейтерингова фірма → b."
     }
    ]
   },
   {
    "id": "L4-8",
    "part": "lesen4",
-   "title": "Lesen T4 · Set 8 (Prüfungsstil): Mitarbeiterbesprechung Verwaltung",
+   "title": "Lesen T4 · Set 8 (Prüfungsstil): Autohaus",
    "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
-   "instructions_en": "EXAM STYLE: 6 TOPs, in TOP 1 a CORRECTION to the previous minutes, one TOP brought forward or postponed. In the questions, people are referred to by their TITLE (Protokollantin, Einkauf…).",
+   "instructions_en": "EXAM STYLE: 6 TOPs, a CORRECTION to the previous minutes in TOP 1, one TOP brought forward or postponed. People are referred to in the questions by their TITLE (Protokollantin, Einkauf…).",
    "instructions_uk": "ФОРМАТ ІСПИТУ: 6 TOP, у TOP 1 — ВИПРАВЛЕННЯ до попереднього протоколу, один TOP перенесено раніше або відкладено. У питаннях людей називають за ПОСАДОЮ (Protokollantin, Einkauf…).",
    "layout": "text-questions",
    "texts": [
     {
      "key": "P",
-     "title": "Protokoll der Mitarbeiterbesprechung – Verwaltung",
-     "body": "Datum: 03.11., 14.00–16.00 Uhr\nProtokollant: Jonas Stoll\nAnwesend: Frau Richter (Leitung Verwaltung), Frau Aksoy, Herr Brandt, Frau Lorenz (Betriebsrat), Herr Stoll\n\nTOP 1 Begrüßung und Tagesordnung\nFrau Richter begrüßt die Anwesenden. TOP 4 „Betriebliche Altersvorsorge“ entfällt heute, da der Referent der Versicherung erkrankt ist, und wird in der nächsten Sitzung behandelt.\n\nTOP 2 Kosteneinsparungen\nDer Papierverbrauch soll um 20 Prozent sinken. Alle Drucker werden auf doppelseitigen Schwarz-Weiß-Druck eingestellt; Farbdrucke sind nur noch mit einer persönlichen PIN möglich. Der Vorschlag, die Raumtemperatur auf 19 Grad zu senken, wird nach Einwänden des Betriebsrats nicht umgesetzt. Stattdessen wird die Heizung am Wochenende abgesenkt.\n\nTOP 3 Personelle Engpässe in der Buchhaltung\nZwei Kolleginnen der Buchhaltung sind bis Mitte nächsten Jahres abwesend. Eine befristete Stelle wurde bereits ausgeschrieben. Bis sie besetzt ist, unterstützen Frau Aksoy und Herr Brandt die Buchhaltung an jeweils einem Tag pro Woche. Die dadurch entstehenden Überstunden werden ausnahmsweise ausgezahlt.\n\nTOP 4 Betriebliche Altersvorsorge\nentfällt (siehe TOP 1)\n\nTOP 5 Betriebsausflug\nIn einer Umfrage hat sich die Mehrheit für eine Schifffahrt auf dem Rhein statt einer Wanderung entschieden. Termin ist Freitag, der 15. Mai. Der Ausflug gilt als Arbeitszeit. Aus Kostengründen können Angehörige diesmal nicht teilnehmen.\n\nTOP 6 Sonstiges\nDer Vertrag mit dem bisherigen Betriebsarzt wurde gekündigt. Ab Januar ist Dr. Wegner zuständig. Er bietet jeden Dienstag eine Sprechstunde in Raum 004 an.\n\nNächste Sitzung: 01.12., 14.00 Uhr"
+     "title": "Protokoll der Mitarbeiterbesprechung – Autohaus Sommer & Söhne",
+     "body": "Datum: 10.10., 16.00–17.30 Uhr\nProtokollant: Tim Wolff (TW, Serviceannahme)\nSitzungsleitung: Karin Sommer (KS, Geschäftsführung)\nAnwesend: Herr Nowak (HN, Werkstattmeister), Frau Arslan (FA, Verkauf), Herr Wolff, zwei Auszubildende\nEntschuldigt: Herr Pohl (Ersatzteillager, Urlaub)\n\nTOP 1 Begrüßung und Tagesordnung\nKS begrüßt alle. TOP 4 „Neue Arbeitskleidung“ entfällt, weil der Lieferant noch keine Muster geschickt hat; er wird auf die nächste Besprechung verschoben.\n\nTOP 2 Online-Terminbuchung\nSeit September können Kunden Werkstatttermine online buchen. HN berichtet, dass dadurch zu viele Termine auf den Montag fallen. Künftig werden montags online nur noch zehn Termine angeboten.\n\nTOP 3 Reifenwechsel-Saison\nFür Oktober und November werden samstags zusätzliche Schichten eingeplant. Die Teilnahme ist freiwillig; die Stunden werden mit einem Zuschlag von 25 Prozent bezahlt. Listen hängen in der Werkstatt aus.\n\nTOP 4 Neue Arbeitskleidung\nentfällt (siehe TOP 1)\n\nTOP 5 Zukunftstag\nAm Zukunftstag im April besuchen zehn Schülerinnen die Werkstatt. Die beiden Auszubildenden übernehmen die Führung; FA bereitet eine kleine Präsentation über Berufe im Autohaus vor.\n\nTOP 6 Sonstiges\nKundenfahrzeuge dürfen ab sofort nicht mehr vor der Einfahrt der Werkstatt geparkt werden, sondern nur auf dem Kundenparkplatz hinter dem Verkaufsraum."
     }
    ],
    "questions": [
@@ -12597,80 +12588,80 @@
      "num": 14,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Über die Altersvorsorge …",
+     "prompt": "Über neue Arbeitskleidung …",
      "options": [
-      "wurde heute ausführlich gesprochen.",
-      "spricht man bei einem späteren Treffen.",
-      "informiert künftig der Betriebsarzt."
+      "wurde heute entschieden.",
+      "spricht man beim nächsten Treffen.",
+      "hat der Lieferant schon Muster geschickt."
      ],
      "answer": 1,
-     "explanation_tr": "'entfällt heute … in der nächsten Sitzung' → b. TOP listede var ama konuşulmadı!",
-     "explanation_en": "'entfällt heute … in der nächsten Sitzung' → b. The TOP is on the list but was not discussed!",
-     "explanation_uk": "'entfällt heute … in der nächsten Sitzung' → b. TOP є в списку, але його не обговорювали!"
+     "explanation_tr": "'entfällt … verschoben' → b.",
+     "explanation_en": "'entfällt … verschoben' → b.",
+     "explanation_uk": "'entfällt … verschoben' → b."
     },
     {
      "id": "L4-8-q2",
      "num": 15,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Um Kosten zu sparen, …",
+     "prompt": "Wegen der Online-Buchung …",
      "options": [
-      "wird die Raumtemperatur auf 19 Grad gesenkt.",
-      "kann man farbig nur noch mit einer PIN drucken.",
-      "werden einige Drucker abgeschafft."
+      "gibt es montags weniger Online-Termine.",
+      "werden Termine nur noch telefonisch vergeben.",
+      "ist die Werkstatt montags geschlossen."
      ],
-     "answer": 1,
-     "explanation_tr": "Tuzak a: öneri Betriebsrat itirazıyla REDDEDİLDİ → b.",
-     "explanation_en": "Trap a: the proposal was REJECTED after the Betriebsrat objected → b.",
-     "explanation_uk": "Пастка a: пропозицію ВІДХИЛИЛИ через заперечення Betriebsrat → b."
+     "answer": 0,
+     "explanation_tr": "→ a.",
+     "explanation_en": "→ a.",
+     "explanation_uk": "→ a."
     },
     {
      "id": "L4-8-q3",
      "num": 16,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Die Buchhaltung …",
+     "prompt": "Die Samstagsschichten …",
      "options": [
-      "bekommt vorübergehend Hilfe aus dem eigenen Haus.",
-      "erhält zwei neue unbefristete Stellen.",
-      "darf keine Überstunden machen."
+      "sind für alle Pflicht.",
+      "werden besser bezahlt.",
+      "gibt es das ganze Jahr."
      ],
-     "answer": 0,
-     "explanation_tr": "Aksoy ve Brandt haftada birer gün yardım ediyor; ilan edilen yer 'befristet' ve BİR tane → a.",
-     "explanation_en": "Aksoy and Brandt each help one day a week; the advertised position is 'befristet' and there is only ONE → a.",
-     "explanation_uk": "Aksoy і Brandt допомагають по одному дню на тиждень; оголошена посада 'befristet' і лише ОДНА → a."
+     "answer": 1,
+     "explanation_tr": "%25 zam; gönüllü; sadece Ekim-Kasım → b.",
+     "explanation_en": "25% bonus; voluntary; only October–November → b.",
+     "explanation_uk": "Надбавка 25%; добровільно; лише жовтень–листопад → b."
     },
     {
      "id": "L4-8-q4",
      "num": 17,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Beim Betriebsausflug …",
+     "prompt": "Beim Zukunftstag …",
      "options": [
-      "wird gewandert.",
-      "dürfen Familienmitglieder mitkommen.",
-      "fährt man mit dem Schiff."
+      "führen die Azubis die Gäste durch die Werkstatt.",
+      "hält der Werkstattmeister einen Vortrag.",
+      "besuchen Schüler den Verkaufsraum."
      ],
-     "answer": 2,
-     "explanation_tr": "Schifffahrt → c. Aileler bu kez katılamıyor.",
-     "explanation_en": "Schifffahrt → c. Families can't come along this time.",
-     "explanation_uk": "Schifffahrt → c. Цього разу родини не можуть поїхати."
+     "answer": 0,
+     "explanation_tr": "→ a. Tuzak b: sunumu FA (satış) yapıyor.",
+     "explanation_en": "→ a. Trap b: FA (sales) gives the presentation.",
+     "explanation_uk": "→ a. Пастка b: презентацію робить FA (продажі)."
     },
     {
      "id": "L4-8-q5",
      "num": 18,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Der neue Betriebsarzt …",
+     "prompt": "Kundenfahrzeuge …",
      "options": [
-      "ist ab sofort im Haus.",
-      "bietet einmal pro Woche eine Sprechstunde an.",
-      "ersetzt die Leiterin der Verwaltung."
+      "parkt man vor der Werkstatteinfahrt.",
+      "parkt man auf dem Parkplatz hinter dem Verkaufsraum.",
+      "dürfen nicht mehr aufs Gelände."
      ],
      "answer": 1,
-     "explanation_tr": "Her salı muayene → b. Başlangıç Ocak, 'ab sofort' değil.",
-     "explanation_en": "Consultation every Tuesday → b. It starts in January, not 'ab sofort'.",
-     "explanation_uk": "Прийом щовівторка → b. Початок у січні, а не 'ab sofort'."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     }
    ]
   },
@@ -12732,7 +12723,7 @@
   {
    "id": "LS1-4",
    "part": "lesen-schreiben1",
-   "title": "Lesen & Schreiben T1 · Set 4 (Prüfungsstil): Kopierer – höflich ablehnen",
+   "title": "Lesen & Schreiben T1 · Set 4 (Prüfungsstil): Klimaanlage – höflich ablehnen",
    "instructions_tr": "SINAV TARZI: Önce ŞEFİN iç e-postası (ne yazman gerektiği), altında müşterinin şikâyeti. Sorular müşteri hakkında. Sonra şefin talimatlarının HEPSİNİ cevabına koy!",
    "instructions_en": "EXAM STYLE: First the BOSS's internal email (what you need to write), below it the customer's complaint. The questions are about the customer. Then put ALL of the boss's instructions into your reply!",
    "instructions_uk": "ФОРМАТ ІСПИТУ: Спочатку внутрішній лист КЕРІВНИКА (що тобі потрібно написати), під ним скарга клієнта. Питання стосуються клієнта. Потім додай у свою відповідь УСІ вказівки керівника!",
@@ -12741,12 +12732,12 @@
     {
      "key": "C",
      "title": "Interne E-Mail von Ihrem Chef",
-     "body": "Guten Morgen,\ndie Nachricht unten kam gerade von der Firma Solmar. Unser Techniker hat das Gerät geprüft: Der Fehler entstand, weil dort falsches Papier verwendet wurde – dafür sind wir nicht verantwortlich. Bitte antworten Sie Frau Kessler freundlich, aber klar: Ein kostenloses Austauschgerät gibt es nicht. Wir bieten aber an, dass unser Techniker die Mitarbeitenden dort kostenlos schult. Die Kosten für den Technikereinsatz trägt Solmar.\nViele Grüße\nJan Brenner"
+     "body": "Guten Morgen,\ndie Nachricht unten kam gerade von der Kanzlei Weber. Unser Techniker war gestern dort: Die Klimaanlage ist technisch in Ordnung, aber die Filter wurden seit einem Jahr nicht gewechselt – laut Vertrag ist das Aufgabe des Kunden. Bitte antworten Sie Frau Lindner freundlich, aber klar: Eine kostenlose Reparatur ist nicht möglich. Bieten Sie an, dass wir die Filter künftig im Rahmen eines Wartungsvertrags wechseln; die erste Wartung ist gratis. Die Rechnung für den gestrigen Einsatz bleibt bestehen.\nViele Grüße\nJan Brenner"
     },
     {
      "key": "M",
-     "title": "E-Mail von Frau Kessler, Solmar GmbH",
-     "body": "Sehr geehrter Herr Brenner,\nder Kopierer, den wir vor zwei Monaten bei Ihnen gemietet haben, hat in dieser Woche schon zum dritten Mal Papierstau. Gestern konnten wir deshalb wichtige Unterlagen für einen Kunden nicht rechtzeitig fertigstellen.\nOffensichtlich handelt es sich um einen technischen Mangel des Geräts. Ich bitte Sie deshalb, uns umgehend und kostenlos ein anderes Gerät zu liefern. Die Rechnung für den letzten Technikerbesuch werden wir nicht bezahlen.\nMit freundlichen Grüßen\nSandra Kessler"
+     "title": "E-Mail von Frau Lindner, Kanzlei Weber",
+     "body": "Sehr geehrter Herr Brenner,\ndie Klimaanlage, die Sie uns im letzten Sommer eingebaut haben, kühlt kaum noch, und es riecht unangenehm in den Büros. Bei 30 Grad können wir unsere Mandanten so nicht empfangen.\nOffensichtlich wurde bei der Installation etwas falsch gemacht. Ich erwarte daher eine kostenlose Reparatur noch in dieser Woche. Die Rechnung für den gestrigen Technikerbesuch werden wir nicht bezahlen.\nMit freundlichen Grüßen\nSabine Lindner"
     }
    ],
    "questions": [
@@ -12755,16 +12746,16 @@
      "num": 19,
      "text_ref": "M",
      "kind": "mc",
-     "prompt": "Frau Kessler …",
+     "prompt": "Frau Lindner …",
      "options": [
-      "meint, das Gerät habe einen technischen Fehler.",
-      "hat falsches Papier gekauft.",
-      "möchte den Mietvertrag kündigen."
+      "glaubt, dass die Anlage falsch eingebaut wurde.",
+      "hat die Filter selbst gewechselt.",
+      "möchte eine neue Klimaanlage kaufen."
      ],
      "answer": 0,
-     "explanation_tr": "b teknisyenin görüşü, müşterinin değil! Tuzak: kim ne diyor? → a.",
-     "explanation_en": "b is the technician's opinion, not the customer's! Trap: who says what? → a.",
-     "explanation_uk": "b — це думка техніка, а не клієнта! Пастка: хто що каже? → a."
+     "explanation_tr": "Tuzak: filtre bilgisi TEKNİSYENİN; müşteri montaj hatası diyor → a.",
+     "explanation_en": "Trap: the filter info comes from the TECHNICIAN; the customer says it's an installation error → a.",
+     "explanation_uk": "Пастка: інформація про фільтр — від ТЕХНІКА; клієнт каже, що це помилка монтажу → a."
     },
     {
      "id": "LS1-4-q2",
@@ -12773,35 +12764,35 @@
      "kind": "mc",
      "prompt": "In Ihrer Antwort sollen Sie …",
      "options": [
-      "ein Austauschgerät zusagen.",
-      "eine kostenlose Schulung anbieten.",
-      "auf die Rechnung für den Technikereinsatz verzichten."
+      "eine kostenlose Reparatur zusagen.",
+      "einen Wartungsvertrag mit kostenloser erster Wartung anbieten.",
+      "auf die Rechnung verzichten."
      ],
      "answer": 1,
-     "explanation_tr": "Şef: değişim YOK, masraf müşteride; ücretsiz eğitim VAR → b.",
-     "explanation_en": "Boss: NO replacement, the customer pays the costs; free training YES → b.",
-     "explanation_uk": "Керівник: заміни НЕМАЄ, витрати несе клієнт; безкоштовне навчання Є → b."
+     "explanation_tr": "Şef: ücretsiz tamir YOK, fatura geçerli; bakım sözleşmesi + ilk bakım bedava → b.",
+     "explanation_en": "Boss: NO free repair, the invoice stands; maintenance contract + first service free → b.",
+     "explanation_uk": "Керівник: безкоштовного ремонту НЕМАЄ, рахунок чинний; договір на обслуговування + перше обслуговування безкоштовно → b."
     }
    ]
   },
   {
    "id": "L2-10",
    "part": "lesen2",
-   "title": "Lesen T2 · Set 10 (Prüfungsstil): Urlaub & Einführungswoche",
+   "title": "Lesen T2 · Set 10 (Prüfungsstil): Mitarbeitervorteile & Ideen",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
-   "instructions_en": "EXAM STYLE: The texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
-   "instructions_uk": "ФОРМАТ ІСПИТУ: Тексти — це завжди розділи 'Willkommensmappe' (папка для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_en": "EXAM STYLE: the texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: тексти — це завжди розділи 'Willkommensmappe' (папки для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "layout": "text-questions",
    "texts": [
     {
      "key": "T1",
-     "title": "Willkommensmappe – Urlaub",
-     "body": "Alle Beschäftigten haben Anspruch auf 28 Urlaubstage im Jahr. Während der sechsmonatigen Probezeit ist nach Absprache mit der Teamleitung bereits ein anteiliger Urlaub möglich.\n\nIhre Urlaubswünsche für das kommende Jahr tragen Sie bitte bis zum 30. November im Personalportal ein. Die Anträge prüft Ihre Teamleitung, nicht die Personalabteilung.\n\nWollen mehrere Kolleginnen und Kollegen gleichzeitig Urlaub nehmen, haben in den Schulferien Eltern schulpflichtiger Kinder Vorrang. Außerhalb der Ferien hat Vorrang, wer im Vorjahr auf einen Wunschtermin verzichten musste.\n\nNicht genommener Urlaub kann bis zum 31. März des Folgejahres nachgeholt werden. Eine Auszahlung ist nicht möglich."
+     "title": "Willkommensmappe – Ihre Vorteile",
+     "body": "Als Beschäftigte erhalten Sie 20 Prozent Rabatt auf alle Produkte in unserem Werksverkauf. Der Rabatt gilt nicht für bereits reduzierte Ware.\n\nÜber unser Vorteilsportal im Intranet bekommen Sie außerdem Ermäßigungen bei vielen Partnerfirmen, zum Beispiel bei Fitnessstudios und Handyverträgen. Die Registrierung erfolgt mit Ihrer dienstlichen E-Mail-Adresse.\n\nNach einem Jahr Betriebszugehörigkeit können Sie an unserem Programm „Mitarbeiter werben Mitarbeiter“ teilnehmen: Für jede erfolgreiche Empfehlung zahlen wir eine Prämie von 500 Euro, sobald die neue Kollegin oder der neue Kollege die Probezeit bestanden hat."
     },
     {
      "key": "T2",
-     "title": "Willkommensmappe – Ihre Einführungswoche",
-     "body": "In Ihrer ersten Woche nehmen Sie an unserem Einführungsprogramm teil. Die Teilnahme ist verpflichtend; angemeldet werden Sie automatisch von der Personalabteilung.\n\nAm ersten Tag zeigt Ihnen Ihre Patin oder Ihr Pate das Gebäude und stellt Sie Ihrem Team vor. Am zweiten Tag erhalten Sie eine IT-Schulung und eine Unterweisung zum Brandschutz. Zum Abschluss lädt die Geschäftsführung alle neuen Kolleginnen und Kollegen am dritten Tag zu einem Frühstück ein.\n\nSollten Sie an einem Tag krank sein, holen Sie die verpassten Teile beim nächsten Einführungsprogramm im Folgemonat nach."
+     "title": "Willkommensmappe – Ideenmanagement",
+     "body": "Gute Ideen sind bei uns willkommen! Verbesserungsvorschläge reichen Sie über das Formular im Intranet ein. Sie können auch im Team einreichen.\n\nEin Ausschuss aus Geschäftsleitung und Betriebsrat prüft die Vorschläge einmal im Quartal. Wird eine Idee umgesetzt, erhalten Sie eine Prämie. Deren Höhe richtet sich nach der Ersparnis im ersten Jahr.\n\nVorschläge, die zu Ihren normalen Arbeitsaufgaben gehören, sind leider nicht prämienberechtigt."
     }
    ],
    "questions": [
@@ -12810,145 +12801,145 @@
      "num": 6,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "In der Probezeit kann man überhaupt keinen Urlaub nehmen.",
+     "prompt": "Der Mitarbeiterrabatt gilt auch für Sonderangebote.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Anteilig, nach Absprache mümkün → falsch. Tuzak 'überhaupt keinen'.",
-     "explanation_en": "Anteilig, nach Absprache possible → falsch. Trap: 'überhaupt keinen'.",
-     "explanation_uk": "Anteilig, nach Absprache можливо → falsch. Пастка: 'überhaupt keinen'."
+     "explanation_tr": "'nicht für bereits reduzierte Ware' → falsch.",
+     "explanation_en": "'nicht für bereits reduzierte Ware' → falsch.",
+     "explanation_uk": "'nicht für bereits reduzierte Ware' → falsch."
     },
     {
      "id": "L2-10-q2",
      "num": 6,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Wenn außerhalb der Schulferien mehrere gleichzeitig Urlaub wollen, …",
+     "prompt": "Für das Vorteilsportal …",
      "options": [
-      "entscheidet das Los.",
-      "hat Vorrang, wer im Vorjahr verzichten musste.",
-      "haben Eltern immer Vorrang."
+      "braucht man die dienstliche E-Mail-Adresse.",
+      "zahlt man eine Gebühr.",
+      "muss man ein Jahr im Betrieb sein."
      ],
-     "answer": 1,
-     "explanation_tr": "Tuzak c: ebeveyn önceliği SADECE okul tatillerinde → b.",
-     "explanation_en": "Trap c: parents have priority ONLY during school holidays → b.",
-     "explanation_uk": "Пастка c: батьки мають перевагу ЛИШЕ під час шкільних канікул → b."
+     "answer": 0,
+     "explanation_tr": "→ a. Tuzak c: 1 yıl şartı TAVSİYE programı için.",
+     "explanation_en": "→ a. Trap c: the 1-year condition is for the REFERRAL programme.",
+     "explanation_uk": "→ a. Пастка c: умова в 1 рік — для програми РЕКОМЕНДАЦІЙ."
     },
     {
      "id": "L2-10-q3",
      "num": 7,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "Urlaubsanträge werden von der Personalabteilung geprüft.",
+     "prompt": "Die Prämie für eine Empfehlung wird sofort bei der Einstellung gezahlt.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch.",
-     "explanation_en": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch.",
-     "explanation_uk": "'prüft Ihre Teamleitung, nicht die Personalabteilung' → falsch."
+     "explanation_tr": "Yeni kişi deneme süresini geçince → falsch.",
+     "explanation_en": "Once the new person has passed the probation period → falsch.",
+     "explanation_uk": "Коли нова людина пройде випробувальний строк → falsch."
     },
     {
      "id": "L2-10-q4",
      "num": 7,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Resturlaub …",
+     "prompt": "Am Programm „Mitarbeiter werben Mitarbeiter“ …",
      "options": [
-      "verfällt am Jahresende.",
-      "kann man bis Ende März nehmen.",
-      "wird ausgezahlt."
+      "können alle sofort teilnehmen.",
+      "kann man nach einem Jahr teilnehmen.",
+      "nehmen nur Führungskräfte teil."
      ],
      "answer": 1,
-     "explanation_tr": "31 Mart'a kadar; ödeme yok → b.",
-     "explanation_en": "Until 31 March; no payout → b.",
-     "explanation_uk": "До 31 березня; виплати немає → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-10-q5",
      "num": 8,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "Neue Mitarbeitende müssen sich selbst für die Einführungswoche anmelden.",
+     "prompt": "Man kann Vorschläge auch gemeinsam mit Kollegen einreichen.",
      "options": [
       "richtig",
       "falsch"
      ],
-     "answer": 1,
-     "explanation_tr": "Personalabteilung otomatik kaydediyor → falsch.",
-     "explanation_en": "The Personalabteilung registers you automatically → falsch.",
-     "explanation_uk": "Personalabteilung реєструє автоматично → falsch."
+     "answer": 0,
+     "explanation_tr": "'auch im Team' → richtig.",
+     "explanation_en": "'auch im Team' → richtig.",
+     "explanation_uk": "'auch im Team' → richtig."
     },
     {
      "id": "L2-10-q6",
      "num": 8,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "In der Einführungswoche …",
+     "prompt": "Die Vorschläge …",
      "options": [
-      "lernt man Regeln zum Brandschutz kennen.",
-      "stellt jede Abteilung sich vor.",
-      "führt die Geschäftsführung durch das Gebäude."
+      "prüft die Teamleitung sofort.",
+      "werden alle drei Monate geprüft.",
+      "werden immer umgesetzt."
      ],
-     "answer": 0,
-     "explanation_tr": "Tuzak c: turu PATE yapıyor, Geschäftsführung kahvaltı veriyor → a.",
-     "explanation_en": "Trap c: the tour is given by the PATE, the Geschäftsführung hosts a breakfast → a.",
-     "explanation_uk": "Пастка c: екскурсію проводить PATE, а Geschäftsführung запрошує на сніданок → a."
+     "answer": 1,
+     "explanation_tr": "'einmal im Quartal' → b.",
+     "explanation_en": "'einmal im Quartal' → b.",
+     "explanation_uk": "'einmal im Quartal' → b."
     },
     {
      "id": "L2-10-q7",
      "num": 9,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "Wer krank ist, kann verpasste Teile später nachholen.",
+     "prompt": "Jede umgesetzte Idee bringt eine Prämie.",
      "options": [
       "richtig",
       "falsch"
      ],
-     "answer": 0,
-     "explanation_tr": "Bir sonraki ayki programda → richtig.",
-     "explanation_en": "In the next month's programme → richtig.",
-     "explanation_uk": "У програмі наступного місяця → richtig."
+     "answer": 1,
+     "explanation_tr": "Normal iş görevine ait fikirler hariç → falsch.",
+     "explanation_en": "Ideas that belong to your normal job duties are excluded → falsch.",
+     "explanation_uk": "Ідеї, що належать до звичайних робочих обов'язків, не враховуються → falsch."
     },
     {
      "id": "L2-10-q8",
      "num": 9,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "Den Rundgang durch das Gebäude …",
+     "prompt": "Die Höhe der Prämie …",
      "options": [
-      "macht man mit einer Patin oder einem Paten.",
-      "organisiert die IT-Abteilung.",
-      "leitet die Personalabteilung."
+      "ist für alle gleich.",
+      "hängt von der Ersparnis ab.",
+      "bestimmt der Betriebsrat allein."
      ],
-     "answer": 0,
-     "explanation_tr": "→ a.",
-     "explanation_en": "→ a.",
-     "explanation_uk": "→ a."
+     "answer": 1,
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     }
    ]
   },
   {
    "id": "L2-11",
    "part": "lesen2",
-   "title": "Lesen T2 · Set 11 (Prüfungsstil): IT-Sicherheit & Kantine",
+   "title": "Lesen T2 · Set 11 (Prüfungsstil): Kundenkommunikation & Parken",
    "instructions_tr": "SINAV TARZI: Metinler her zaman 'Willkommensmappe' (yeni çalışan dosyası) bölümleri. Konular: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
-   "instructions_en": "EXAM STYLE: The texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
-   "instructions_uk": "ФОРМАТ ІСПИТУ: Тексти — це завжди розділи 'Willkommensmappe' (папка для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_en": "EXAM STYLE: the texts are always sections of a 'Willkommensmappe' (new employee folder). Topics: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: тексти — це завжди розділи 'Willkommensmappe' (папки для нового працівника). Теми: Zeiterfassung, Arbeitsunfall, Datenschutz, Betriebssport, Rauchen, Kantine, Berichtsheft…",
    "layout": "text-questions",
    "texts": [
     {
      "key": "T1",
-     "title": "Willkommensmappe – IT-Sicherheit",
-     "body": "Ihr Passwort muss mindestens zwölf Zeichen haben und wird alle 90 Tage geändert; das System erinnert Sie automatisch daran. Verwenden Sie es nicht für private Konten.\n\nSperren Sie Ihren Bildschirm immer, wenn Sie Ihren Arbeitsplatz verlassen – auch nur kurz.\n\nUSB-Sticks, die nicht von der Firma stammen, dürfen erst nach einer Prüfung durch die IT-Abteilung angeschlossen werden. Software dürfen Sie grundsätzlich nicht selbst installieren.\n\nIn den Pausen dürfen Sie auf dem Firmenlaptop private E-Mails lesen. Verdächtige Nachrichten öffnen Sie bitte nicht, sondern leiten sie an it-sicherheit@firma.de weiter."
+     "title": "Willkommensmappe – E-Mail und Telefon im Kundenkontakt",
+     "body": "Kundenanfragen per E-Mail beantworten wir innerhalb von 24 Stunden – an Werktagen. Kann eine Frage nicht so schnell geklärt werden, schicken Sie eine kurze Zwischennachricht.\n\nVerwenden Sie immer die einheitliche Signatur, die Sie im Intranet finden. Bei Abwesenheit von mehr als einem Tag richten Sie bitte eine Abwesenheitsnotiz mit dem Namen Ihrer Vertretung ein.\n\nAm Telefon melden Sie sich mit Firmenname, Vor- und Nachnamen. Rückrufe sollen noch am selben Tag erfolgen."
     },
     {
      "key": "T2",
-     "title": "Willkommensmappe – Verpflegung",
-     "body": "Unsere Kantine ist montags bis freitags von 7 bis 15 Uhr geöffnet. Für die Spät- und Nachtschicht stehen im Erdgeschoss rund um die Uhr Automaten mit Snacks und warmen Gerichten zur Verfügung.\n\nBezahlt wird ausschließlich mit dem Mitarbeiterausweis; Bargeld wird nicht angenommen. Guthaben laden Sie am Terminal neben der Kasse auf. Pro Mittagessen gewährt die Firma einen Zuschuss von 2,50 Euro, der automatisch abgezogen wird.\n\nGäste sind willkommen, zahlen aber den vollen Preis. Den Speiseplan finden Sie jeden Freitag für die folgende Woche im Intranet."
+     "title": "Willkommensmappe – Anfahrt und Parken",
+     "body": "Unser Firmengelände hat 60 Parkplätze für Beschäftigte. Da das nicht für alle reicht, werden sie jedes Jahr im Januar neu vergeben. Vorrang haben Beschäftigte mit Schwerbehinderung und Pendelnde, die mit öffentlichen Verkehrsmitteln länger als eine Stunde brauchen würden.\n\nFahrräder können Sie im abschließbaren Fahrradraum abstellen; den Schlüssel erhalten Sie gegen Pfand am Empfang. Duschen gibt es im Untergeschoss.\n\nFür das Deutschlandticket zahlt die Firma einen monatlichen Zuschuss von 25 Euro."
     }
    ],
    "questions": [
@@ -12957,57 +12948,57 @@
      "num": 6,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "Das Passwort muss jedes halbe Jahr geändert werden.",
+     "prompt": "Kunden-E-Mails muss man auch am Wochenende innerhalb von 24 Stunden beantworten.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "90 gün = yaklaşık 3 ay → falsch.",
-     "explanation_en": "90 days = about 3 months → falsch.",
-     "explanation_uk": "90 днів = приблизно 3 місяці → falsch."
+     "explanation_tr": "'an Werktagen' → falsch.",
+     "explanation_en": "'an Werktagen' → falsch.",
+     "explanation_uk": "'an Werktagen' → falsch."
     },
     {
      "id": "L2-11-q2",
      "num": 6,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Fremde USB-Sticks …",
+     "prompt": "Wenn eine Frage länger dauert, …",
      "options": [
-      "darf man nie benutzen.",
-      "muss die IT-Abteilung vorher prüfen.",
-      "darf man nur in der Pause benutzen."
+      "leitet man sie an die Vertretung weiter.",
+      "schickt man eine kurze Zwischennachricht.",
+      "ruft man den Kunden am nächsten Tag an."
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak a: 'nie' fazla kesin; test SONRASI kullanılabilir → b.",
-     "explanation_en": "Trap a: 'nie' is too absolute; they can be used AFTER testing → b.",
-     "explanation_uk": "Пастка a: 'nie' — занадто категорично; можна використовувати ПІСЛЯ перевірки → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-11-q3",
      "num": 7,
      "text_ref": "T1",
      "kind": "rf",
-     "prompt": "In der Pause darf man auf dem Firmenlaptop private E-Mails lesen.",
+     "prompt": "Eine Abwesenheitsnotiz braucht man schon bei einem halben Tag Abwesenheit.",
      "options": [
       "richtig",
       "falsch"
      ],
-     "answer": 0,
-     "explanation_tr": "→ richtig.",
-     "explanation_en": "→ richtig.",
-     "explanation_uk": "→ richtig."
+     "answer": 1,
+     "explanation_tr": "'mehr als einem Tag' → falsch.",
+     "explanation_en": "'mehr als einem Tag' → falsch.",
+     "explanation_uk": "'mehr als einem Tag' → falsch."
     },
     {
      "id": "L2-11-q4",
      "num": 7,
      "text_ref": "T1",
      "kind": "mc",
-     "prompt": "Verdächtige E-Mails …",
+     "prompt": "Am Telefon nennt man …",
      "options": [
-      "löscht man sofort.",
-      "leitet man an die IT-Sicherheit weiter.",
-      "öffnet man nur in der Pause."
+      "nur den Firmennamen.",
+      "Firma, Vor- und Nachnamen.",
+      "die Abteilung und die Durchwahl."
      ],
      "answer": 1,
      "explanation_tr": "→ b.",
@@ -13019,72 +13010,72 @@
      "num": 8,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "In der Kantine kann man bar bezahlen.",
+     "prompt": "Jeder Beschäftigte bekommt einen festen Parkplatz.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "'Bargeld wird nicht angenommen' → falsch.",
-     "explanation_en": "'Bargeld wird nicht angenommen' → falsch.",
-     "explanation_uk": "'Bargeld wird nicht angenommen' → falsch."
+     "explanation_tr": "60 yer herkese yetmiyor, yılda bir dağıtılıyor → falsch.",
+     "explanation_en": "60 places aren't enough for everyone; they are allocated once a year → falsch.",
+     "explanation_uk": "60 місць не вистачає всім, їх розподіляють раз на рік → falsch."
     },
     {
      "id": "L2-11-q6",
      "num": 8,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "Den Zuschuss zum Mittagessen …",
+     "prompt": "Bei der Vergabe der Parkplätze haben Vorrang, …",
      "options": [
-      "muss man jeden Monat beantragen.",
-      "bekommt man automatisch.",
-      "gibt es auch für Gäste."
+      "wer zuerst kommt.",
+      "wer mit Bus und Bahn sehr lange brauchen würde.",
+      "wer schon lange in der Firma ist."
      ],
      "answer": 1,
-     "explanation_tr": "'automatisch abgezogen' → b.",
-     "explanation_en": "'automatisch abgezogen' → b.",
-     "explanation_uk": "'automatisch abgezogen' → b."
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L2-11-q7",
      "num": 9,
      "text_ref": "T2",
      "kind": "rf",
-     "prompt": "Die Kantine ist rund um die Uhr geöffnet.",
+     "prompt": "Den Schlüssel für den Fahrradraum bekommt man kostenlos und ohne Pfand.",
      "options": [
       "richtig",
       "falsch"
      ],
      "answer": 1,
-     "explanation_tr": "Tuzak: 7–15 arası; 24 saat açık olan OTOMATLAR → falsch.",
-     "explanation_en": "Trap: open 7–15; the VENDING MACHINES are the ones open 24 hours → falsch.",
-     "explanation_uk": "Пастка: відкрито з 7 до 15; цілодобово працюють АВТОМАТИ → falsch."
+     "explanation_tr": "'gegen Pfand' → falsch.",
+     "explanation_en": "'gegen Pfand' → falsch.",
+     "explanation_uk": "'gegen Pfand' → falsch."
     },
     {
      "id": "L2-11-q8",
      "num": 9,
      "text_ref": "T2",
      "kind": "mc",
-     "prompt": "Guthaben auf dem Ausweis …",
+     "prompt": "Für das Deutschlandticket …",
      "options": [
-      "lädt man am Terminal auf.",
-      "bezahlt die Firma.",
-      "wird vom Gehalt abgezogen."
+      "zahlt die Firma einen Teil.",
+      "gibt es keinen Zuschuss.",
+      "muss man einen Antrag beim Empfang stellen."
      ],
      "answer": 0,
-     "explanation_tr": "→ a.",
-     "explanation_en": "→ a.",
-     "explanation_uk": "→ a."
+     "explanation_tr": "25 € destek → a.",
+     "explanation_en": "€25 allowance → a.",
+     "explanation_uk": "25 € допомоги → a."
     }
    ]
   },
   {
    "id": "L3-9",
    "part": "lesen3",
-   "title": "Lesen T3 · Set 9 (Prüfungsstil): Kinder & Arbeitszeit",
+   "title": "Lesen T3 · Set 9 (Prüfungsstil): Familie & Arbeit",
    "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
-   "instructions_en": "EXAM STYLE: Long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
-   "instructions_uk": "ФОРМАТ ІСПИТУ: Довгі питання на форумі від першої особи; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
+   "instructions_en": "EXAM STYLE: long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: довгі питання від першої особи на форумі; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
    "context_de": "Forum: Rund um den Beruf",
    "layout": "matching",
    "allow_none": true,
@@ -13092,7 +13083,7 @@
     {
      "key": "a",
      "title": "",
-     "body": "Mira, vor 2 Stunden: Nein, Urlaub musst du dafür nicht nehmen. Mit einer Bescheinigung vom Kinderarzt hast du Anspruch auf Kinderkrankentage. In dieser Zeit zahlt die Krankenkasse Kinderkrankengeld."
+     "body": "Mira, vor 2 Stunden: Ja. Wenn plötzlich ein naher Angehöriger pflegebedürftig wird, darfst du bis zu zehn Arbeitstage fernbleiben, um die Pflege zu organisieren. Dafür gibt es unter Umständen sogar Pflegeunterstützungsgeld."
     },
     {
      "key": "b",
@@ -13102,22 +13093,22 @@
     {
      "key": "c",
      "title": "",
-     "body": "Petra, vor 1 Stunde: Einen automatischen Anspruch hast du leider nicht – außer du hattest damals eine befristete Teilzeit vereinbart. Wird aber eine passende Vollzeitstelle frei, muss dein Arbeitgeber dich bevorzugt berücksichtigen."
+     "body": "Petra, vor 1 Stunde: Für die Elternzeit in den ersten drei Lebensjahren musst du den Antrag spätestens sieben Wochen vor dem Beginn schriftlich stellen. Am besten sprichst du aber schon früher mit deinem Chef."
     },
     {
      "key": "d",
      "title": "",
-     "body": "Heike, vor 3 Stunden: Kranke Kinder gehören auf keinen Fall ins Büro, auch nicht mit Erlaubnis des Chefs. Die Ansteckungsgefahr für die Kolleginnen und Kollegen ist einfach zu groß."
+     "body": "Heike, vor 3 Stunden: Während der Elternzeit darfst du bei deinem eigenen Arbeitgeber bis zu 32 Stunden pro Woche arbeiten. Frag einfach in deiner Personalabteilung."
     },
     {
      "key": "e",
      "title": "",
-     "body": "Tim, vor 4 Stunden: Eine gesetzliche Pflicht, es sofort zu sagen, gibt es nicht. Aber der Mutterschutz gilt auch für Auszubildende – und er schützt dich erst richtig, wenn dein Betrieb davon weiß. Deshalb ist es klug, bald Bescheid zu geben."
+     "body": "Tim, vor 4 Stunden: Stillende Mütter haben im ersten Jahr nach der Geburt Anspruch auf bezahlte Stillpausen – zum Beispiel zweimal täglich eine halbe Stunde. Nacharbeiten musst du diese Zeit nicht."
     },
     {
      "key": "f",
      "title": "",
-     "body": "Lars, vor 6 Stunden: Elternzeit kann man teilweise auch später nehmen, bis das Kind acht Jahre alt ist. Das wissen viele gar nicht."
+     "body": "Lars, vor 6 Stunden: Mit dem Elterngeldrechner im Internet kannst du ausrechnen, wie viel Geld du bekommst."
     }
    ],
    "questions": [
@@ -13125,51 +13116,51 @@
      "id": "L3-9-q1",
      "num": 10,
      "kind": "match",
-     "prompt": "Derya: Mein Sohn hat hohes Fieber und ich muss zu Hause bleiben. Meine Chefin sagt, dafür müsse ich Urlaub nehmen. Stimmt das wirklich?",
+     "prompt": "Derya: Mein Vater hatte gestern einen Schlaganfall, und ich muss jetzt seine Pflege organisieren. Kann ich kurzfristig ein paar Tage freinehmen, ohne Urlaub zu nehmen?",
      "answer": "a",
-     "explanation_tr": "Hasta çocuk + izin mi? → a.",
-     "explanation_en": "Sick child + take leave? → a.",
-     "explanation_uk": "Хвора дитина + відпустка? → a."
+     "explanation_tr": "Ani bakım durumu, 10 gün → a.",
+     "explanation_en": "Sudden care situation, 10 days → a.",
+     "explanation_uk": "Раптова потреба в догляді, 10 днів → a."
     },
     {
      "id": "L3-9-q2",
      "num": 11,
      "kind": "match",
-     "prompt": "Jonas: Ich arbeite seit zehn Jahren Teilzeit. Jetzt sind die Kinder groß und ich möchte wieder Vollzeit arbeiten. Muss mein Arbeitgeber das akzeptieren?",
+     "prompt": "Jonas: Unser Baby kommt im März. Wann muss ich meinem Arbeitgeber sagen, dass ich Elternzeit nehmen möchte?",
      "answer": "c",
-     "explanation_tr": "Kısmi süreden tam süreye dönüş → c.",
-     "explanation_en": "Returning from part-time to full-time → c.",
-     "explanation_uk": "Повернення з неповного на повний робочий день → c."
+     "explanation_tr": "Elternzeit başvuru süresi → c.",
+     "explanation_en": "Elternzeit application deadline → c.",
+     "explanation_uk": "Строк подання заяви на Elternzeit → c."
     },
     {
      "id": "L3-9-q3",
      "num": 12,
      "kind": "match",
-     "prompt": "Selma: Ich mache eine Ausbildung und habe gerade erfahren, dass ich schwanger bin. Muss ich das meinem Betrieb sofort sagen?",
+     "prompt": "Selma: Ich stille meine Tochter noch und arbeite seit Kurzem wieder. Darf ich während der Arbeit Pausen dafür machen?",
      "answer": "e",
-     "explanation_tr": "Azubi + hamilelik bildirimi → e.",
-     "explanation_en": "Azubi + reporting a pregnancy → e.",
-     "explanation_uk": "Azubi + повідомлення про вагітність → e."
+     "explanation_tr": "Emzirme molası → e.",
+     "explanation_en": "Breastfeeding break → e.",
+     "explanation_uk": "Перерва на годування груддю → e."
     },
     {
      "id": "L3-9-q4",
      "num": 13,
      "kind": "match",
-     "prompt": "Frank: Unsere Kita schließt im August drei Wochen, und wir haben keine Betreuung. Darf ich meine Kinder dann mit ins Büro bringen?",
+     "prompt": "Frank: Ich möchte während meiner Elternzeit nebenbei bei einer anderen Firma arbeiten. Brauche ich dafür eine Erlaubnis?",
      "answer": "x",
-     "explanation_tr": "Tuzak d: çocuk ofiste ✓ ama HASTA çocuk. Frank'in çocukları sağlıklı, kreş kapalı → cevap yok → x. Tuzak b: sadece fikir.",
-     "explanation_en": "Trap d: child in the office ✓ but a SICK child. Frank's children are healthy, the daycare is closed → no answer → x. Trap b: only an opinion.",
-     "explanation_uk": "Пастка d: дитина в офісі ✓, але ХВОРА дитина. Діти Франка здорові, садочок зачинений → відповіді немає → x. Пастка b: лише думка."
+     "explanation_tr": "Tuzak d: Elternzeit'ta çalışma ✓ ama KENDİ işvereninde. Başka firmada çalışma izni hakkında cevap yok → x.",
+     "explanation_en": "Trap d: working during Elternzeit ✓, but for your OWN employer. No answer about permission to work at another company → x.",
+     "explanation_uk": "Пастка d: робота під час Elternzeit ✓, але у ВЛАСНОГО роботодавця. Про дозвіл працювати в іншій фірмі відповіді немає → x."
     }
    ]
   },
   {
    "id": "L3-10",
    "part": "lesen3",
-   "title": "Lesen T3 · Set 10 (Prüfungsstil): Arbeitsweg & Arbeitsort",
+   "title": "Lesen T3 · Set 10 (Prüfungsstil): Kosten & Haftung",
    "instructions_tr": "SINAV TARZI: Forumda uzun, birinci ağızdan sorular; 6 cevap. Tuzaklar: sadece FİKİR bildiren cevaplar (bilgi yok) ve BENZER AMA FARKLI durumu anlatan cevap (→ genelde x).",
-   "instructions_en": "EXAM STYLE: Long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
-   "instructions_uk": "ФОРМАТ ІСПИТУ: Довгі питання на форумі від першої особи; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
+   "instructions_en": "EXAM STYLE: long first-person questions in a forum; 6 answers. Traps: answers that only give an OPINION (no information) and an answer describing a SIMILAR BUT DIFFERENT situation (→ usually x).",
+   "instructions_uk": "ФОРМАТ ІСПИТУ: довгі питання від першої особи на форумі; 6 відповідей. Пастки: відповіді, що лише висловлюють ДУМКУ (без інформації), і відповідь про СХОЖУ, АЛЕ ІНШУ ситуацію (→ зазвичай x).",
    "context_de": "Forum: Rund um den Beruf",
    "layout": "matching",
    "allow_none": true,
@@ -13177,12 +13168,12 @@
     {
      "key": "a",
      "title": "",
-     "body": "Uwe, vor 1 Stunde: Leider trägst du als Arbeitnehmerin das Wegerisiko. Für die ausgefallene Zeit hast du keinen Anspruch auf Lohn. Oft kann man aber einen Urlaubstag nehmen oder die Stunden vom Zeitkonto abbuchen lassen."
+     "body": "Uwe, vor 1 Stunde: Für Dienstfahrten mit dem Privatauto wird meistens eine Kilometerpauschale erstattet, oft 30 Cent pro Kilometer. Das ist bis zu dieser Höhe sogar steuerfrei. Frag in der Buchhaltung nach dem Formular."
     },
     {
      "key": "b",
      "title": "",
-     "body": "Dana, vor 2 Stunden: Ja! Wer auf dem Arbeitsweg sein Kind zur Betreuung bringt, ist auch auf diesem Umweg gesetzlich unfallversichert. Melde den Unfall schnell bei deiner Firma."
+     "body": "Dana, vor 2 Stunden: Wenn der Arbeitgeber verlangt, dass du zu Hause arbeitest, muss er dir die nötigen Arbeitsmittel stellen oder die Kosten erstatten. Arbeitest du freiwillig zu Hause, kommt es auf eure Vereinbarung an."
     },
     {
      "key": "c",
@@ -13192,17 +13183,17 @@
     {
      "key": "d",
      "title": "",
-     "body": "Sina, vor 3 Stunden: Ich fahre seit Jahren nur noch mit dem Rad zur Arbeit. Kein Stau, kein Ärger mit dem Bus – kann ich jedem empfehlen!"
+     "body": "Sina, vor 3 Stunden: Ich arbeite am liebsten im Büro. Zu Hause kann ich mich einfach nicht konzentrieren."
     },
     {
      "key": "e",
      "title": "",
-     "body": "Klaus, vor 30 Minuten: Das hängt von deinem Arbeitsvertrag ab. Steht dort kein fester Arbeitsort, darf die Firma innerhalb der Stadt umziehen. Ist der Ort im Vertrag festgelegt, braucht sie deine Zustimmung."
+     "body": "Klaus, vor 30 Minuten: Das kommt darauf an, wie es passiert ist. Bei einem kleinen Versehen haftest du normalerweise gar nicht, bei mittlerer Fahrlässigkeit teilweise und nur bei grober Fahrlässigkeit voll."
     },
     {
      "key": "f",
      "title": "",
-     "body": "Ilse, vor 5 Stunden: Wer einen Dienstwagen auch privat nutzt, muss meistens ein Fahrtenbuch führen. Frag am besten in der Buchhaltung nach."
+     "body": "Ilse, vor 5 Stunden: Wer einen Dienstwagen auch privat nutzt, muss meistens ein Fahrtenbuch führen."
     }
    ],
    "questions": [
@@ -13210,21 +13201,21 @@
      "id": "L3-10-q1",
      "num": 10,
      "kind": "match",
-     "prompt": "Tanja: Wegen Glatteis fuhr heute früh kein einziger Bus, und ich bin zu Hause geblieben. Bekomme ich für den Tag trotzdem meinen Lohn?",
+     "prompt": "Tanja: Ich fahre für meine Firma oft mit meinem eigenen Auto zu Kunden. Bekomme ich dafür eigentlich Geld?",
      "answer": "a",
-     "explanation_tr": "Buz yüzünden gelinemedi → Wegerisiko → a.",
-     "explanation_en": "Couldn't get to work because of ice → Wegerisiko → a.",
-     "explanation_uk": "Не вдалося доїхати через ожеледицю → Wegerisiko → a."
+     "explanation_tr": "Özel araçla iş seyahati → km ücreti → a. Tuzak f: DIENSTWAGEN, özel araç değil.",
+     "explanation_en": "Business trip in your private car → mileage allowance → a. Trap f: DIENSTWAGEN, not a private car.",
+     "explanation_uk": "Відрядження на власному авто → компенсація за км → a. Пастка f: DIENSTWAGEN, а не власне авто."
     },
     {
      "id": "L3-10-q2",
      "num": 11,
      "kind": "match",
-     "prompt": "Kerem: Auf dem Weg zur Arbeit habe ich meine Tochter zur Kita gebracht und bin dort auf der Treppe gestürzt. Bin ich trotzdem versichert?",
+     "prompt": "Kerem: Mein Chef will, dass ich zwei Tage pro Woche zu Hause arbeite. Dafür nutze ich meinen privaten Drucker und mein Internet. Muss die Firma das bezahlen?",
      "answer": "b",
-     "explanation_tr": "Kreş dolambacı sigortalı → b.",
-     "explanation_en": "A detour to the daycare is insured → b.",
-     "explanation_uk": "Заїзд до садочка дорогою на роботу застрахований → b."
+     "explanation_tr": "Şef evden çalışmayı istiyor → b. Tuzak d: sadece fikir.",
+     "explanation_en": "The boss wants working from home → b. Trap d: just an opinion.",
+     "explanation_uk": "Керівник хоче роботу з дому → b. Пастка d: лише думка."
     },
     {
      "id": "L3-10-q3",
@@ -13232,35 +13223,35 @@
      "kind": "match",
      "prompt": "Nadine: Mein Chef verlangt, dass ich auch bei 34 Grad im Anzug zur Arbeit komme. Darf er das?",
      "answer": "x",
-     "explanation_tr": "Tuzak c: sıcaklık ✓ ama konu ofis sıcaklığı; Nadine KIYAFET kuralını soruyor → x.",
-     "explanation_en": "Trap c: heat ✓ but the topic is the office temperature; Nadine is asking about the DRESS code → x.",
-     "explanation_uk": "Пастка c: спека ✓, але йдеться про температуру в офісі; Надін питає про правила ОДЯГУ → x."
+     "explanation_tr": "Tuzak c: sıcaklık ✓ ama konu ofis ısısı; Nadine KIYAFET kuralını soruyor → x.",
+     "explanation_en": "Trap c: heat ✓, but the topic is office temperature; Nadine is asking about the DRESS rule → x.",
+     "explanation_uk": "Пастка c: спека ✓, але тема — температура в офісі; Nadine питає про правила ОДЯГУ → x."
     },
     {
      "id": "L3-10-q4",
      "num": 13,
      "kind": "match",
-     "prompt": "Björn: Unsere Firma zieht an den Stadtrand, mein Arbeitsweg wird dadurch eine Stunde länger. Muss ich das einfach akzeptieren?",
+     "prompt": "Björn: Ich habe mein Diensthandy im Zug liegen lassen, es ist weg. Muss ich es jetzt ersetzen?",
      "answer": "e",
-     "explanation_tr": "İşyeri taşınıyor, sözleşmeye bağlı → e.",
-     "explanation_en": "The workplace is moving, it depends on the contract → e.",
-     "explanation_uk": "Робоче місце переїжджає, залежить від договору → e."
+     "explanation_tr": "Kayıp iş telefonu = sorumluluk → e.",
+     "explanation_en": "Lost work phone = liability → e.",
+     "explanation_uk": "Загублений робочий телефон = відповідальність → e."
     }
    ]
   },
   {
    "id": "L4-9",
    "part": "lesen4",
-   "title": "Lesen T4 · Set 9 (Prüfungsstil): Möbelhersteller",
+   "title": "Lesen T4 · Set 9 (Prüfungsstil): Stadtbibliothek",
    "instructions_tr": "SINAV TARZI: 6 TOP, TOP 1'de önceki tutanakta DÜZELTME, bir TOP öne alınmış veya ertelenmiş. Kişiler sorularda UNVANLA anılır (Protokollantin, Einkauf…).",
-   "instructions_en": "EXAM STYLE: 6 TOPs, in TOP 1 a CORRECTION to the previous minutes, one TOP brought forward or postponed. In the questions, people are referred to by their TITLE (Protokollantin, Einkauf…).",
+   "instructions_en": "EXAM STYLE: 6 TOPs, a CORRECTION to the previous minutes in TOP 1, one TOP brought forward or postponed. People are referred to in the questions by their TITLE (Protokollantin, Einkauf…).",
    "instructions_uk": "ФОРМАТ ІСПИТУ: 6 TOP, у TOP 1 — ВИПРАВЛЕННЯ до попереднього протоколу, один TOP перенесено раніше або відкладено. У питаннях людей називають за ПОСАДОЮ (Protokollantin, Einkauf…).",
    "layout": "text-questions",
    "texts": [
     {
      "key": "P",
-     "title": "Protokoll der Abteilungsleitersitzung – Holzwerk Brandner GmbH",
-     "body": "Datum: 06.05., 10.00–12.00 Uhr\nSitzungsleitung: Ute Brandner (UB, Geschäftsführung)\nProtokoll: Kai Lang (KL, Personal)\nAnwesend: Frau Brandner, Herr Lang, Frau Ceylan (FC, Marketing), Herr Roth (HR, Produktion), Frau Nowak (AN, Finanzen)\nEntschuldigt: Herr Petersen (Vertrieb)\n\nTOP 1 Begrüßung und Genehmigung der Tagesordnung\nUB begrüßt die Anwesenden. Auf Wunsch von KL wird unter „Sonstiges“ das Thema Parkplätze ergänzt. Mit dieser Ergänzung wird die Tagesordnung genehmigt. Der Termin der nächsten Sitzung soll nach der Sommerpause liegen und wird per Umfrage festgelegt.\n\nTOP 2 Reklamationen\nHR berichtet, dass die Zahl der Reklamationen wegen zerkratzter Möbel gestiegen ist. Die Ursache liegt beim Logistikpartner, der die Ware nicht ausreichend sichert. Nach einem Gespräch hat sich der Partner bereit erklärt, die Kosten für beschädigte Ware zu übernehmen. Zusätzlich wird ab Juni eine neue Schutzfolie getestet.\n\nTOP 3 Werbemaßnahmen\nFür dieses Jahr stehen 80.000 Euro zur Verfügung. Die Mehrheit spricht sich dafür aus, das Geld eher für einen Messeauftritt als für Anzeigen in Zeitschriften zu verwenden. FC holt bis zur nächsten Sitzung Angebote von Messebauern ein; entschieden wird erst danach.\n\nTOP 4 Überstunden\nBisher konnten Überstunden ausgezahlt oder durch Freizeit ausgeglichen werden. Wegen des Personalmangels in der Produktion werden sie bis Jahresende ausschließlich ausgezahlt. Der Betriebsrat hat dieser Regelung bereits zugestimmt.\n\nTOP 5 Dienstwagen\nDie Dienstwagenflotte wird schrittweise auf Elektroautos umgestellt. Die private Nutzung bleibt erlaubt. Wer sein Fahrzeug zu Hause lädt, bekommt die Stromkosten gegen Nachweis erstattet.\n\nTOP 6 Sonstiges\nAuf dem Mitarbeiterparkplatz werden zehn Plätze für Fahrgemeinschaften reserviert. Interessierte melden sich bei KL."
+     "title": "Protokoll der Teambesprechung – Stadtbibliothek Nord",
+     "body": "Datum: 12.05., 09.00–10.30 Uhr\nProtokoll: Lena Hofmann (LH, Ausleihe)\nSitzungsleitung: Frank Berger (FB, Leitung)\nAnwesend: Frau Hofmann, Frau Kurt (AK, Kinderbibliothek), Herr Ivanov (SI, IT), Frau Pieper (MP, Verwaltung)\n\nTOP 1 Begrüßung und Genehmigung der Tagesordnung\nFB begrüßt alle. AK bittet darum, unter „Sonstiges“ die Sommerleseaktion zu ergänzen. Die Tagesordnung wird mit dieser Ergänzung genehmigt. Der Termin der nächsten Besprechung wird per E-Mail abgestimmt.\n\nTOP 2 Selbstverbuchung\nDie neuen Selbstverbuchungsgeräte laufen seit April. SI berichtet von häufigen Störungen bei Kinderbüchern mit alten Etiketten. Diese Etiketten werden bis Ende Juni ausgetauscht; dafür werden zwei Aushilfen eingestellt.\n\nTOP 3 Öffnungszeiten\nDer Vorschlag, samstags länger zu öffnen, wird aus Personalgründen abgelehnt. Stattdessen öffnet die Bibliothek donnerstags bis 20 Uhr.\n\nTOP 4 Fortbildung\nMP teilt mit, dass das Budget für Fortbildungen gekürzt wurde. Jede Mitarbeiterin und jeder Mitarbeiter kann dieses Jahr nur eine externe Fortbildung besuchen. Online-Kurse sind davon nicht betroffen.\n\nTOP 5 Veranstaltungen\nFür die Lesung im Juni werden noch zwei Helferinnen oder Helfer gesucht. Die Stunden werden als Überstunden gutgeschrieben.\n\nTOP 6 Sonstiges\nAK stellt die Sommerleseaktion vor: Kinder, die in den Ferien fünf Bücher lesen, bekommen eine Urkunde."
     }
    ],
    "questions": [
@@ -13269,80 +13260,80 @@
      "num": 14,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Der Termin der nächsten Sitzung …",
+     "prompt": "Der Termin der nächsten Besprechung …",
      "options": [
       "wurde heute festgelegt.",
       "wird noch abgestimmt.",
-      "liegt vor der Sommerpause."
+      "ist im Juni."
      ],
      "answer": 1,
-     "explanation_tr": "'per Umfrage festgelegt' = henüz belli değil → b.",
-     "explanation_en": "'per Umfrage festgelegt' = not decided yet → b.",
-     "explanation_uk": "'per Umfrage festgelegt' = ще не визначено → b."
+     "explanation_tr": "'per E-Mail abgestimmt' → henüz yok → b.",
+     "explanation_en": "'per E-Mail abgestimmt' → not there yet → b.",
+     "explanation_uk": "'per E-Mail abgestimmt' → ще немає → b."
     },
     {
      "id": "L4-9-q2",
      "num": 15,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Für beschädigte Möbel …",
+     "prompt": "Die Probleme mit der Selbstverbuchung …",
      "options": [
-      "zahlt der Logistikpartner.",
-      "gibt es ab sofort eine neue Folie.",
-      "müssen die Kunden selbst aufkommen."
+      "liegen an alten Etiketten.",
+      "werden von der IT-Firma gelöst.",
+      "betreffen alle Bücher."
      ],
      "answer": 0,
-     "explanation_tr": "Tuzak b: folyo Haziran'da TEST edilecek, 'ab sofort' değil → a.",
-     "explanation_en": "Trap b: the film will be TESTED in June, not 'ab sofort' → a.",
-     "explanation_uk": "Пастка b: плівку ПРОТЕСТУЮТЬ у червні, а не 'ab sofort' → a."
+     "explanation_tr": "Sadece eski etiketli ÇOCUK kitapları → a.",
+     "explanation_en": "Only CHILDREN'S books with old labels → a.",
+     "explanation_uk": "Лише ДИТЯЧІ книжки зі старими етикетками → a."
     },
     {
      "id": "L4-9-q3",
      "num": 16,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Über die Verwendung des Werbebudgets …",
+     "prompt": "Die Bibliothek …",
      "options": [
-      "wurde endgültig entschieden.",
-      "entscheidet man in einer späteren Sitzung.",
-      "entscheidet Frau Ceylan allein."
+      "öffnet samstags länger.",
+      "hat donnerstags länger geöffnet.",
+      "behält die alten Zeiten."
      ],
      "answer": 1,
-     "explanation_tr": "Çoğunluk fuardan yana ama 'entschieden wird erst danach' → b.",
-     "explanation_en": "The majority favours the trade fair, but 'entschieden wird erst danach' → b.",
-     "explanation_uk": "Більшість за ярмарок, але 'entschieden wird erst danach' → b."
+     "explanation_tr": "Tuzak a: öneri REDDEDİLDİ → b.",
+     "explanation_en": "Trap a: the proposal was REJECTED → b.",
+     "explanation_uk": "Пастка a: пропозицію ВІДХИЛИЛИ → b."
     },
     {
      "id": "L4-9-q4",
      "num": 17,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Überstunden …",
+     "prompt": "Bei Fortbildungen …",
      "options": [
-      "werden bis Jahresende nur bezahlt.",
-      "muss der Betriebsrat noch genehmigen.",
-      "werden abgeschafft."
+      "werden Online-Kurse gestrichen.",
+      "kann jeder nur eine externe Fortbildung machen.",
+      "gibt es mehr Geld als letztes Jahr."
      ],
-     "answer": 0,
-     "explanation_tr": "Tuzak b: Betriebsrat ZATEN onayladı → a.",
-     "explanation_en": "Trap b: the Betriebsrat has ALREADY approved it → a.",
-     "explanation_uk": "Пастка b: Betriebsrat УЖЕ погодив → a."
+     "answer": 1,
+     "explanation_tr": "→ b.",
+     "explanation_en": "→ b.",
+     "explanation_uk": "→ b."
     },
     {
      "id": "L4-9-q5",
      "num": 18,
      "text_ref": "P",
      "kind": "mc",
-     "prompt": "Wer ein E-Auto zu Hause lädt, …",
+     "prompt": "Wer bei der Lesung hilft, …",
      "options": [
-      "darf es nicht mehr privat nutzen.",
-      "bekommt die Stromkosten erstattet.",
-      "muss sich beim Personal melden."
+      "bekommt die Zeit als Überstunden.",
+      "bekommt eine Urkunde.",
+      "muss sich bei AK melden."
      ],
-     "answer": 1,
-     "explanation_tr": "Tuzak c: Personal'e başvuru OTOPARK için → b.",
-     "explanation_en": "Trap c: applying to Personal is for the PARKING space → b.",
-     "explanation_uk": "Пастка c: звертатися до Personal потрібно щодо ПАРКОВКИ → b."
+     "answer": 0,
+     "explanation_tr": "Tuzak b: sertifika ÇOCUKLAR için → a.",
+     "explanation_en": "Trap b: the certificate is for CHILDREN → a.",
+     "explanation_uk": "Пастка b: сертифікат — для ДІТЕЙ → a."
     }
    ]
   }

@@ -1,7 +1,7 @@
 'use strict';
 
 // Must match version.json and the cache name in sw.js (see CLAUDE.md).
-const APP_VERSION = '1.9.0';
+const APP_VERSION = '1.9.1';
 
 /* ---------- Storage (all keys prefixed with "b2trainer:") ---------- */
 const PREFIX = 'b2trainer:';
@@ -687,6 +687,20 @@ function coachProgressHtml() {
    b2trainer:reading = { [setId]: { best, last, total, wrong: [questionId], ok, n, date } }
    ok/n add up every checked attempt (used for the per-part percentage on the progress screen). */
 function getReading() { return store.get('reading', {}); }
+
+/* Content patch 2.2 replaced the questions of these sets: drop their old results
+   (best score, wrong list, totals) once. b2trainer:migrated_2_2 keeps it from running twice. */
+const REPLACED_SETS_2_2 = ['L1-8', 'L1-9', 'L2-8', 'L2-9', 'L2-10', 'L2-11', 'L3-7', 'L3-8', 'L3-9', 'L3-10',
+  'L4-7', 'L4-8', 'L4-9', 'LS1-4'];
+function migrateReading22() {
+  if (store.get('migrated_2_2', false)) return;
+  const all = getReading();
+  if (REPLACED_SETS_2_2.some(id => id in all)) {
+    REPLACED_SETS_2_2.forEach(id => { delete all[id]; });
+    store.set('reading', all);
+  }
+  store.set('migrated_2_2', true);
+}
 function saveReadingResult(set, ok, wrongIds) {
   const all = getReading();
   const total = set.questions.length;
@@ -2795,6 +2809,7 @@ function showLangPicker() {
 }
 
 async function boot() {
+  migrateReading22();
   const saved = store.get('lang', '');
   await loadStrings(isLang(saved) ? saved : defaultLang());
   applyStaticStrings();

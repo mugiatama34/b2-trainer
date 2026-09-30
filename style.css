@@ -353,3 +353,17 @@ mark { background: #ffe58a; color: #1b1f27; border-radius: 3px; padding: 0 2px; 
 .outline { padding-left: 22px; margin: 0; }
 .outline > li { margin-bottom: 10px; }
 .outline ul { color: var(--primary); font-style: italic; }
+
+/* Language picker (first launch) + settings row */
+.lang-screen {
+  position: fixed; inset: 0; z-index: 50;
+  background: var(--bg, #fff);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+}
+.lang-inner { width: 100%; max-width: 420px; text-align: center; }
+.lang-inner h1 { font-size: 1.4rem; margin: 0 0 8px; }
+.lang-inner p { margin: 0 0 20px; }
+.lang-btn { font-size: 1.15rem; }
+.lang-btn .flag { font-size: 1.4rem; margin-right: 6px; }
+.lang-row .lang-btn { font-size: 1rem; }

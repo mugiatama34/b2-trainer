@@ -10,26 +10,36 @@
   {
    "id": "sprachbausteine1",
    "name": "Sprachbausteine T1 · Bağlaçlar & edatlar",
+   "name_en": "Sprachbausteine T1 · Connectors & prepositions",
+   "name_uk": "Sprachbausteine T1 · Сполучники й прийменники",
    "exam_part": "Sprachbausteine Teil 1"
   },
   {
    "id": "sprachbausteine2",
    "name": "Sprachbausteine T2 · Resmî kalıplar",
+   "name_en": "Sprachbausteine T2 · Formal phrases",
+   "name_uk": "Sprachbausteine T2 · Офіційні звороти",
    "exam_part": "Sprachbausteine Teil 2"
   },
   {
    "id": "wortschatz",
    "name": "İş hayatı kelimeleri (Lesen/Hören)",
+   "name_en": "Work vocabulary (Lesen/Hören)",
+   "name_uk": "Робоча лексика (Lesen/Hören)",
    "exam_part": "Lesen/Hören"
   },
   {
    "id": "schreiben-redemittel",
    "name": "Schreiben · Doğru kalıp",
+   "name_en": "Schreiben · The right phrase",
+   "name_uk": "Schreiben · Правильний зворот",
    "exam_part": "Schreiben"
   },
   {
    "id": "nvv",
    "name": "Nomen-Verb-Verbindungen",
+   "name_en": "Nomen-Verb-Verbindungen",
+   "name_uk": "Nomen-Verb-Verbindungen",
    "exam_part": "Sprachbausteine T2 / Schreiben"
   }
  ],
@@ -48,6 +58,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Fiil (umziehe) sonda → yan cümle bağlacı lazım: 'da' (çünkü). 'denn' ve 'deshalb' yan cümle kurmaz.",
+   "explanation_en": "Verb (umziehe) at the end → you need a subordinating conjunction: 'da' (because). 'denn' and 'deshalb' don't form a subordinate clause.",
+   "explanation_uk": "Дієслово (umziehe) в кінці → потрібен сполучник підрядного речення: 'da' (бо). 'denn' і 'deshalb' не утворюють підрядного речення.",
    "tags": [
     "grund",
     "nebensatz"
@@ -67,6 +79,8 @@
    ],
    "answer": 0,
    "explanation_tr": "İsimden önce 'seit' (+Dativ) = '...den beri'. 'Seitdem' cümle başlatır (fiil ile).",
+   "explanation_en": "Before a noun 'seit' (+Dativ) = 'since / for ...'. 'Seitdem' starts a clause (with a verb).",
+   "explanation_uk": "Перед іменником 'seit' (+Dativ) = 'з ... / вже ...'. 'Seitdem' починає речення (з дієсловом).",
    "tags": [
     "zeit"
    ]
@@ -85,6 +99,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'Seitdem' + yan cümle = '...dığımdan beri'. Geçmişte başlayıp hâlâ süren durum.",
+   "explanation_en": "'Seitdem' + subordinate clause = 'since I ...'. A situation that started in the past and is still going on.",
+   "explanation_uk": "'Seitdem' + підрядне речення = 'відтоді як я ...'. Ситуація, що почалася в минулому й досі триває.",
    "tags": [
     "zeit",
     "nebensatz"
@@ -104,6 +120,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Dolaylı soru, zaman soruluyor → 'wann'. 'wenn' koşul/tekrar, soru değildir.",
+   "explanation_en": "Indirect question asking about time → 'wann'. 'wenn' is a condition/repetition, not a question.",
+   "explanation_uk": "Непряме питання про час → 'wann'. 'wenn' — умова/повторення, не питання.",
    "tags": [
     "frage"
    ]
@@ -122,6 +140,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Evet/hayır sorusu dolaylı hale gelince → 'ob' (-ip -madığı).",
+   "explanation_en": "When a yes/no question becomes indirect → 'ob' (whether).",
+   "explanation_uk": "Коли питання так/ні стає непрямим → 'ob' (чи).",
    "tags": [
     "frage"
    ]
@@ -140,6 +160,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'zwischen ... und ...' kalıbı. 'von' olsaydı 'bis' gerekirdi.",
+   "explanation_en": "Pattern 'zwischen ... und ...'. With 'von' you would need 'bis'.",
+   "explanation_uk": "Конструкція 'zwischen ... und ...'. Якби було 'von', потрібно було б 'bis'.",
    "tags": [
     "zeit",
     "feste Verbindung"
@@ -159,6 +181,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Son tarih → 'bis' (…e kadar).",
+   "explanation_en": "Deadline → 'bis' (by/until …).",
+   "explanation_uk": "Кінцевий термін → 'bis' (до …).",
    "tags": [
     "zeit"
    ]
@@ -177,6 +201,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'bis heute nicht' = hâlâ gelmedi. Şikâyet mektuplarında çok sık.",
+   "explanation_en": "'bis heute nicht' = still hasn't arrived. Very common in complaint letters.",
+   "explanation_uk": "'bis heute nicht' = досі не прийшло. Дуже часто в листах-скаргах.",
    "tags": [
     "zeit",
     "beschwerde"
@@ -196,6 +222,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sonuç → 'sodass' (…dığı için / böylece). 'damit' amaç bildirir; 'deshalb' fiili 2. sıraya çeker.",
+   "explanation_en": "Result → 'sodass' (so / as a result). 'damit' expresses purpose; with 'deshalb' the verb goes in 2nd position.",
+   "explanation_uk": "Наслідок → 'sodass' (тож / тому). 'damit' виражає мету; з 'deshalb' дієслово стоїть на 2-му місці.",
    "tags": [
     "folge",
     "nebensatz"
@@ -215,6 +243,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Amaç → 'damit' (…sın diye).",
+   "explanation_en": "Purpose → 'damit' (so that …).",
+   "explanation_uk": "Мета → 'damit' (щоб …).",
    "tags": [
     "ziel",
     "nebensatz"
@@ -234,6 +264,8 @@
    ],
    "answer": 0,
    "explanation_tr": "İsim + Genitiv ile sebep → 'aufgrund'. 'trotz' zıtlık; 'obwohl/damit' yan cümle kurar.",
+   "explanation_en": "Reason with a noun + Genitiv → 'aufgrund'. 'trotz' = contrast; 'obwohl/damit' form a subordinate clause.",
+   "explanation_uk": "Причина з іменником + Genitiv → 'aufgrund'. 'trotz' — протиставлення; 'obwohl/damit' утворюють підрядне речення.",
    "tags": [
     "grund",
     "genitiv"
@@ -253,6 +285,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich bedanken FÜR → 'dafür'. Fiilin edatını bil, da(r)+edat seç.",
+   "explanation_en": "sich bedanken FÜR → 'dafür'. Know the verb's preposition, pick da(r)+preposition.",
+   "explanation_uk": "sich bedanken FÜR → 'dafür'. Знай прийменник дієслова, обирай da(r)+прийменник.",
    "tags": [
     "da-wort"
    ]
@@ -271,6 +305,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Gelecekteki şeye sevinmek: sich freuen AUF → 'darauf'.",
+   "explanation_en": "Looking forward to something in the future: sich freuen AUF → 'darauf'.",
+   "explanation_uk": "Радіти чомусь у майбутньому: sich freuen AUF → 'darauf'.",
    "tags": [
     "da-wort"
    ]
@@ -289,6 +325,8 @@
    ],
    "answer": 0,
    "explanation_tr": "jemanden erinnern AN → 'daran'.",
+   "explanation_en": "jemanden erinnern AN → 'daran'.",
+   "explanation_uk": "jemanden erinnern AN → 'daran'.",
    "tags": [
     "da-wort"
    ]
@@ -307,6 +345,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sonuç zarfı, fiil 2. sırada → 'daher' (bu yüzden).",
+   "explanation_en": "Adverb of result, verb in 2nd position → 'daher' (therefore).",
+   "explanation_uk": "Прислівник наслідку, дієслово на 2-му місці → 'daher' (тому).",
    "tags": [
     "folge"
    ]
@@ -325,6 +365,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Beklenenin tersi, fiil 2. sırada → 'trotzdem'. 'obwohl' olsaydı fiil sona giderdi.",
+   "explanation_en": "Contrary to expectation, verb in 2nd position → 'trotzdem'. With 'obwohl' the verb would go to the end.",
+   "explanation_uk": "Всупереч очікуванню, дієслово на 2-му місці → 'trotzdem'. З 'obwohl' дієслово було б у кінці.",
    "tags": [
     "gegensatz"
    ]
@@ -343,6 +385,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Koşul → 'falls' (= wenn, eğer).",
+   "explanation_en": "Condition → 'falls' (= wenn, if).",
+   "explanation_uk": "Умова → 'falls' (= wenn, якщо).",
    "tags": [
     "bedingung"
    ]
@@ -361,6 +405,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Geçmişte TEK seferlik dönem → 'als'. Tekrarlıysa 'wenn'.",
+   "explanation_en": "A ONE-TIME period in the past → 'als'. If repeated, 'wenn'.",
+   "explanation_uk": "ОДНОРАЗОВИЙ період у минулому → 'als'. Якщо повторюється — 'wenn'.",
    "tags": [
     "zeit",
     "als-wenn"
@@ -380,6 +426,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'jedes Mal' = tekrar → 'wenn'.",
+   "explanation_en": "'jedes Mal' = repetition → 'wenn'.",
+   "explanation_uk": "'jedes Mal' = повторення → 'wenn'.",
    "tags": [
     "zeit",
     "als-wenn"
@@ -399,6 +447,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sabit kalıp: sowohl ... als auch.",
+   "explanation_en": "Fixed pattern: sowohl ... als auch.",
+   "explanation_uk": "Стала конструкція: sowohl ... als auch.",
    "tags": [
     "doppel"
    ]
@@ -417,6 +467,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sabit kalıp: weder ... noch (ne ... ne).",
+   "explanation_en": "Fixed pattern: weder ... noch (neither ... nor).",
+   "explanation_uk": "Стала конструкція: weder ... noch (ні ... ні).",
    "tags": [
     "doppel"
    ]
@@ -435,6 +487,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'als auch' görünce → 'sowohl'. Metinde ikinci parçayı ara!",
+   "explanation_en": "When you see 'als auch' → 'sowohl'. Look for the second part in the text!",
+   "explanation_uk": "Бачиш 'als auch' → 'sowohl'. Шукай у тексті другу частину!",
    "tags": [
     "doppel"
    ]
@@ -453,6 +507,8 @@
    ],
    "answer": 0,
    "explanation_tr": "zwar ... aber (gerçi ... ama).",
+   "explanation_en": "zwar ... aber (admittedly ... but).",
+   "explanation_uk": "zwar ... aber (хоча ... але).",
    "tags": [
     "doppel"
    ]
@@ -471,6 +527,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Kalıp: 'In der Anlage' / 'Anbei' (ekte).",
+   "explanation_en": "Set phrase: 'In der Anlage' / 'Anbei' (attached).",
+   "explanation_uk": "Стала фраза: 'In der Anlage' / 'Anbei' (у додатку).",
    "tags": [
     "brief"
    ]
@@ -489,6 +547,8 @@
    ],
    "answer": 0,
    "explanation_tr": "aufmerksam werden AUF + Akk.",
+   "explanation_en": "aufmerksam werden AUF + Akk.",
+   "explanation_uk": "aufmerksam werden AUF + Akk.",
    "tags": [
     "bewerbung"
    ]
@@ -507,6 +567,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich bewerben BEI (firma), UM (die Stelle), AUF (die Anzeige).",
+   "explanation_en": "sich bewerben BEI (company), UM (die Stelle), AUF (die Anzeige).",
+   "explanation_uk": "sich bewerben BEI (фірма), UM (die Stelle), AUF (die Anzeige).",
    "tags": [
     "bewerbung"
    ]
@@ -525,6 +587,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'erst ... nicht früher' → en erken: 'frühestens'. Karşıtı: 'spätestens'.",
+   "explanation_en": "'erst ... nicht früher' → at the earliest: 'frühestens'. Opposite: 'spätestens'.",
+   "explanation_uk": "'erst ... nicht früher' → щонайраніше: 'frühestens'. Протилежне: 'spätestens'.",
    "tags": [
     "zeit"
    ]
@@ -543,6 +607,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Cümle zaten tam; boşluğa sadece zarf girebilir → 'selbstverständlich' (elbette).",
+   "explanation_en": "The sentence is already complete; only an adverb fits in the gap → 'selbstverständlich' (of course).",
+   "explanation_uk": "Речення вже повне; у пропуск підходить лише прислівник → 'selbstverständlich' (звісно).",
    "tags": [
     "adverb"
    ]
@@ -561,6 +627,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'bereits' = zaten/çoktan. 'erst' = ancak (geç kalma vurgusu).",
+   "explanation_en": "'bereits' = already. 'erst' = only (stresses that it's late).",
+   "explanation_uk": "'bereits' = вже. 'erst' = лише (підкреслює, що пізно).",
    "tags": [
     "adverb"
    ]
@@ -579,6 +647,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Çoğul, 'schicken' Akkusativ ister → 'die'.",
+   "explanation_en": "Plural, 'schicken' takes the Akkusativ → 'die'.",
+   "explanation_uk": "Множина, 'schicken' вимагає Akkusativ → 'die'.",
    "tags": [
     "relativ"
    ]
@@ -597,6 +667,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'mit jemandem machen' → edat + Dativ dişil: 'mit der'.",
+   "explanation_en": "'mit jemandem machen' → preposition + Dativ feminine: 'mit der'.",
+   "explanation_uk": "'mit jemandem machen' → прийменник + Dativ жіночого роду: 'mit der'.",
    "tags": [
     "relativ"
    ]
@@ -615,6 +687,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Sahiplik, eril (der Kunde) → 'dessen'.",
+   "explanation_en": "Possession, masculine (der Kunde) → 'dessen'.",
+   "explanation_uk": "Приналежність, чоловічий рід (der Kunde) → 'dessen'.",
    "tags": [
     "relativ",
     "genitiv"
@@ -634,6 +708,8 @@
    ],
    "answer": 0,
    "explanation_tr": "etwas schicken AN + Akk. → 'an wen'.",
+   "explanation_en": "etwas schicken AN + Akk. → 'an wen'.",
+   "explanation_uk": "etwas schicken AN + Akk. → 'an wen'.",
    "tags": [
     "frage"
    ]
@@ -652,6 +728,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Koşul → 'falls'.",
+   "explanation_en": "Condition → 'falls'.",
+   "explanation_uk": "Умова → 'falls'.",
    "tags": [
     "bedingung"
    ]
@@ -670,6 +748,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'wobei' = bununla birlikte / ...ken (ek bilgi, hafif kısıtlama).",
+   "explanation_en": "'wobei' = although / while (extra info, a slight restriction).",
+   "explanation_uk": "'wobei' = хоча / при цьому (додаткова інформація, легке обмеження).",
    "tags": [
     "nebensatz"
    ]
@@ -687,6 +767,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Auftrag erteilen (sipariş/iş vermek).",
+   "explanation_en": "einen Auftrag erteilen (to place an order / award a job).",
+   "explanation_uk": "einen Auftrag erteilen (дати замовлення / доручити роботу).",
    "tags": [
     "kollokation"
    ]
@@ -704,6 +786,8 @@
    ],
    "answer": 0,
    "explanation_tr": "sich mit jdm. in Verbindung setzen (iletişime geçmek).",
+   "explanation_en": "sich mit jdm. in Verbindung setzen (to get in touch).",
+   "explanation_uk": "sich mit jdm. in Verbindung setzen (зв’язатися).",
    "tags": [
     "kollokation"
    ]
@@ -721,6 +805,8 @@
    ],
    "answer": 0,
    "explanation_tr": "ein Versprechen halten (sözünü tutmak).",
+   "explanation_en": "ein Versprechen halten (to keep a promise).",
+   "explanation_uk": "ein Versprechen halten (дотримати обіцянки).",
    "tags": [
     "kollokation"
    ]
@@ -738,6 +824,8 @@
    ],
    "answer": 0,
    "explanation_tr": "ein Angebot unterbreiten (resmî: teklif sunmak).",
+   "explanation_en": "ein Angebot unterbreiten (formal: to submit an offer).",
+   "explanation_uk": "ein Angebot unterbreiten (офіційно: надати пропозицію).",
    "tags": [
     "kollokation"
    ]
@@ -755,6 +843,8 @@
    ],
    "answer": 0,
    "explanation_tr": "eine Bestellung geht ein (sipariş ulaştı).",
+   "explanation_en": "eine Bestellung geht ein (the order has arrived).",
+   "explanation_uk": "eine Bestellung geht ein (замовлення надійшло).",
    "tags": [
     "kollokation"
    ]
@@ -772,6 +862,8 @@
    ],
    "answer": 0,
    "explanation_tr": "'frei Haus' = kargo ücretsiz kapıya teslim. 'ab Werk' = alıcı taşır.",
+   "explanation_en": "'frei Haus' = delivered to the door, shipping free. 'ab Werk' = the buyer handles transport.",
+   "explanation_uk": "'frei Haus' = безкоштовна доставка до дверей. 'ab Werk' = покупець сам забирає товар.",
    "tags": [
     "kollokation"
    ]
@@ -789,6 +881,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Erken ödeme indirimi = Skonto.",
+   "explanation_en": "Discount for early payment = Skonto.",
+   "explanation_uk": "Знижка за дострокову оплату = Skonto.",
    "tags": [
     "kollokation"
    ]
@@ -806,6 +900,8 @@
    ],
    "answer": 0,
    "explanation_tr": "langfristige Zusammenarbeit (uzun vadeli iş birliği).",
+   "explanation_en": "langfristige Zusammenarbeit (long-term cooperation).",
+   "explanation_uk": "langfristige Zusammenarbeit (довгострокова співпраця).",
    "tags": [
     "kollokation"
    ]
@@ -823,6 +919,8 @@
    ],
    "answer": 0,
    "explanation_tr": "Siparişin onayı = Auftragsbestätigung.",
+   "explanation_en": "Confirmation of the order = Auftragsbestätigung.",
+   "explanation_uk": "Підтвердження замовлення = Auftragsbestätigung.",
    "tags": [
     "kollokation"
    ]
@@ -840,6 +938,8 @@
    ],
    "answer": 0,
    "explanation_tr": "einen Termin verschieben (ertelemek).",
+   "explanation_en": "einen Termin verschieben (to postpone).",
+   "explanation_uk": "einen Termin verschieben (перенести).",
    "tags": [
     "kollokation"
    ]
@@ -5338,23 +5438,33 @@
  "reading_parts": [
   {
    "id": "lesen1",
-   "name": "Lesen T1 · Kişi ↔ Makale"
+   "name": "Lesen T1 · Kişi ↔ Makale",
+   "name_en": "Lesen T1 · Person ↔ Article",
+   "name_uk": "Lesen T1 · Особа ↔ Стаття"
   },
   {
    "id": "lesen2",
-   "name": "Lesen T2 · richtig/falsch + a/b/c"
+   "name": "Lesen T2 · richtig/falsch + a/b/c",
+   "name_en": "Lesen T2 · richtig/falsch + a/b/c",
+   "name_uk": "Lesen T2 · richtig/falsch + a/b/c"
   },
   {
    "id": "lesen3",
-   "name": "Lesen T3 · Soru ↔ İpucu (x)"
+   "name": "Lesen T3 · Soru ↔ İpucu (x)",
+   "name_en": "Lesen T3 · Question ↔ Tip (x)",
+   "name_uk": "Lesen T3 · Питання ↔ Порада (x)"
   },
   {
    "id": "lesen4",
-   "name": "Lesen T4 · Protokoll"
+   "name": "Lesen T4 · Protokoll",
+   "name_en": "Lesen T4 · Protokoll",
+   "name_uk": "Lesen T4 · Protokoll"
   },
   {
    "id": "lesen-schreiben1",
-   "name": "Lesen & Schreiben T1 · Şikâyet"
+   "name": "Lesen & Schreiben T1 · Şikâyet",
+   "name_en": "Lesen & Schreiben T1 · Complaint",
+   "name_uk": "Lesen & Schreiben T1 · Скарга"
   }
  ],
  "reading": [
